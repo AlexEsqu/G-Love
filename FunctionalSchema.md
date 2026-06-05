@@ -1,120 +1,151 @@
 ```mermaid
 %%{init:
-	{'flowchart':
+	{'graph':
 		{
-			'curve': 'linear',
-			'nodeSpacing':20,
+			'curve': 'basis',
+			'nodeSpacing':50,
 			'rankSpacing': 20,
 			'diagramMarginX': 50,
 			'diagramMarginY': 50,
 			'htmlLabels': true,
 			'useMaxWidth': true
 		},
-		'theme': 'base',
-		'primaryColor': '#ffffff'
+		'theme': 'base'
 	}
 }%%
-graph LR
 
-	%% Hand Subsystem
+graph BT
+
 	subgraph Hand["Hand - ATmega 328P"]
-		direction LR
-		%% Input sensors (left side)
+		direction BT
+
+		%% Input
 		HandIMU@{ shape: stadium, label: "Hand IMU" }
 		HandHallCaptor@{ shape: stadium, label: "Hall Sensor" }
+		ForearmForceResistanceSensor@{ shape: stadium, label: "Forearm Force Sensor" }
+		MultiplexerFlex@{ shape: inv-trapezoid, label: "Multiplexer Flex" }
 		FingerFlexSensors@{ shape: stadium, label: "Finger Flex Sensors" }
 		FingerForceResistanceSensor@{ shape: stadium, label: "Finger Force Sensor" }
-		ForearmForceResistanceSensor@{ shape: stadium, label: "Forearm Force Sensor" }
-		MultiplexerFlex@{ shape: hex, label: "Multiplexer Flex" }
 
-		%% Central processor
+		%% Output
+		LedDoigts5@{ shape: lean-right, label: "4x LED Band Fingers" }
+		LedBras@{ shape: lean-right, label: "LED Surface Arm" }
+
+		%% Central
 		MicrochipHand@{ shape: rect, label: "ATmega 328P" }
 
-		%% Output components (right side)
-		LedDoigts5@{ shape: triangle, label: "4x LED Band Fingers" }
-		LedBras@{ shape: triangle, label: "LED Surface Arm" }
-
-		MicrochipHand <-->|I2C| HandIMU
-		HandHallCaptor -->|Digital| MicrochipHand
-		FingerFlexSensors -->|ADC| MultiplexerFlex
-		FingerForceResistanceSensor -->|ADC| MultiplexerFlex
-		ForearmForceResistanceSensor -->|ADC| MicrochipHand
-		MultiplexerFlex -->|Digital| MicrochipHand
-		MicrochipHand -->|SPI| LedDoigts5
-		MicrochipHand -->|SPI| LedBras
 	end
 
-	%% Arm Subsystem
 	subgraph Arm["Arm - ATmega 2561"]
-		direction RL
+		direction BT
 
-		%% Central processor
-		MicrochipArm@{ shape: rect, label: "ATmega 2561" }
+		%% Input
+		HeartSensorRTD@{ shape: stadium, label: "Heart Sensor RTD" }
 
 		%% FINGERTIPS (modular addons)
 		subgraph FingerTips
-			direction LR
-			PogoReception@{ shape:hex, label: "Pogo"}
+			direction TB
+			PogoReception@{ shape: trapezoid, label: "Pogo"}
 
 			subgraph FingertipHeartbeat["Heartbeat"]
 				direction TB
 				ATtinyHeartBeat@{ label: "AT tiny HeartBeat"}
 				PulseSensor@{ shape: stadium, label: "Pulse Sensor" }
-				PulseSensor -->|I2C| ATtinyHeartBeat
-				PogoHeartbeat <-->|I2C| ATtinyHeartBeat
+				PogoHeartbeat@{ shape: trapezoid, label: "Pogo Heartbeat"}
 			end
 
 			subgraph FingertipCursor["Cursor"]
-				direction LR
+				direction TB
 				ATtinyCursor@{ label: "AT tiny Cursor"}
 				FingerIMU@{ shape: stadium, label: "Finger IMU" }
-				FingerIMU <-->|I2C| ATtinyCursor
-				PogoCursor <-->|I2C| ATtinyCursor
+				PogoCursor@{ shape: trapezoid, label: "Pogo Cursor"}
 			end
 
 			subgraph FingertipGun["Pistodoigt"]
 				ATtinyPistodoigt@{ label: "AT tiny Pistodoigt"}
-				LaserPointer@{ shape: rect, label: "Laser Pointer" }
-				ATtinyPistodoigt <-->|I2C| LaserPointer
-				PogoPistodoigt <-->|I2C| ATtinyPistodoigt
+				LaserPointer@{ shape: lean-right, label: "Laser Pointer" }
+				PogoPistodoigt@{ shape: trapezoid, label: "Pogo Pistodoigt"}
 			end
 
 		end
 
-		%% Input sensors (left side)
-		HeartSensorRTD@{ shape: stadium, label: "Heart Sensor RTD" }
-
-		%% Output/Interface components (right side)
+		%% Output
 		Touchscreen@{ shape: rect, label: "Touchscreen" }
-		MultiplexerUart@{ shape: hex, label: "Multiplexer UART" }
+		MultiplexerUart@{ shape: inv-trapezoid, label: "Multiplexer UART" }
+			DriverDMX@{ shape: lean-right, label: "DMX Driver" }
+			DriverUSB@{ shape: lean-right, label: "USB Driver" }
+			DriverSecondGlove@{ shape: lean-right, label: "USB Driver" }
 
-		DriverDMX@{ shape: rect, label: "DMX Driver" }
-		DriverUSB@{ shape: rect, label: "USB Driver" }
+		%% Central processor
+		MicrochipArm@{ shape: rect, label: "ATmega 2561" }
 
-		MicrochipArm <-->|I2C| PogoReception
-
-		PogoReception <-->|I2C| PogoHeartbeat
-		PogoReception <-->|I2C| PogoCursor
-		PogoReception <-->|I2C| PogoPistodoigt
-
-		MicrochipArm -->|SPI| Touchscreen
-		Touchscreen -->|I2C| MicrochipArm
-
-		MicrochipArm <-->|UART| MultiplexerUart
-		MultiplexerUart <-->|UART| DriverDMX
-		MultiplexerUart <-->|UART| DriverUSB
-		MultiplexerUart <-->|UART| DriverSecondGlove
-
-		HeartSensorRTD -->|ADC| MicrochipArm
 	end
 
-	%% Inter-subsystem Connection
-	MicrochipHand -->|UART| MicrochipArm
+	subgraph Glossary["Shape Glossary"]
+		direction BT
+		G_Sensor@{ shape: stadium, label: "Sensor" }
+		G_Chip@{ shape: rect, label: "Microchip" }
+		G_Mux@{ shape: inv-trapezoid, label: "Multiplexer" }
+		G_Out@{ shape: lean-right, label: "Output / Driver" }
+		G_Conn@{ shape: trapezoid, label: "Connector" }
+		G_Sensor ~~~ G_Chip ~~~ G_Mux ~~~ G_Out ~~~ G_Conn
+	end
 
-	%% Styling for Connection Types
-	classDef i2c stroke:#0066cc,stroke-width:2px,color:#000
-	classDef uart stroke:#ff6600,stroke-width:2px,color:#000
-	classDef digital stroke:#00aa00,stroke-width:2px,color:#000
-	classDef adc stroke:#9933ff,stroke-width:2px,color:#000
-	classDef sensor padding:2px,font-size:11px,rx:10px,ry:10px
+	HandIMU -.-> |I2C| MicrochipHand
+	HandHallCaptor -->|Digital| MicrochipHand
+	ForearmForceResistanceSensor -->|ADC| MicrochipHand
+
+	MultiplexerFlex -->|Digital| MicrochipHand
+	FingerFlexSensors -->|ADC| MultiplexerFlex
+	FingerForceResistanceSensor -->|ADC| MultiplexerFlex
+
+	MicrochipHand -->|SPI| LedDoigts5
+	MicrochipHand -->|SPI| LedBras
+
+	MicrochipHand <==>|UART| MicrochipArm
+
+	MicrochipArm <==>|UART| MultiplexerUart
+	MultiplexerUart <==>|UART| DriverDMX
+	MultiplexerUart <==>|UART| DriverUSB
+	MultiplexerUart <==>|UART| DriverSecondGlove
+
+	MicrochipArm <-.->|I2C| PogoReception
+
+	PogoReception <-.->|I2C| PogoHeartbeat
+	PogoHeartbeat <-.->|I2C| ATtinyHeartBeat
+	ATtinyHeartBeat <-.->|I2C| PulseSensor
+
+	PogoReception <-.->|I2C| PogoCursor
+	PogoCursor <-.->|I2C| ATtinyCursor
+	ATtinyCursor <-.->|I2C| FingerIMU
+
+	PogoReception <-.->|I2C| PogoPistodoigt
+	ATtinyPistodoigt <-.->|I2C| LaserPointer
+	PogoPistodoigt <-.->|I2C| ATtinyPistodoigt
+
+	MicrochipArm -->|SPI| Touchscreen
+	Touchscreen -.->|I2C| MicrochipArm
+
+	HeartSensorRTD -->|ADC| MicrochipArm
+
+	%% Style
+
+	classDef sensor padding:0px,font-size:11px,fill:#FFF9C4,stroke:#D97706,stroke-width:2px,color:#000
+	classDef chip padding:0px,font-size:11px,fill:#DBEAFE,stroke:#1D4ED8,stroke-width:2px,color:#000
+	classDef multiplexer padding:0px,font-size:11px,fill:#EDE9FE,stroke:#7C3AED,stroke-width:2px,color:#000
+	classDef led padding:0px,font-size:11px,fill:#DCFCE7,stroke:#16A34A,stroke-width:2px,color:#000
+	classDef connector padding:0px,font-size:11px,fill:#FED7AA,stroke:#C2410C,stroke-width:2px,color:#000
+
+	class HandIMU,HandHallCaptor,FingerFlexSensors,FingerForceResistanceSensor,ForearmForceResistanceSensor,PulseSensor,FingerIMU,HeartSensorRTD sensor
+	class MicrochipHand,MicrochipArm,ATtinyHeartBeat,ATtinyCursor,ATtinyPistodoigt chip
+	class MultiplexerFlex,MultiplexerUart multiplexer
+	class LedDoigts5,LedBras,LaserPointer,Touchscreen,DriverDMX,DriverUSB,DriverSecondGlove led
+	class PogoReception,PogoHeartbeat,PogoCursor,PogoPistodoigt connector
+
+	class G_Sensor sensor
+	class G_Chip chip
+	class G_Mux multiplexer
+	class G_Out led
+	class G_Conn connector
+
 ```
