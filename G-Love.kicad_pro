@@ -234,7 +234,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
       "similar_label_and_power": "warning",
@@ -253,9 +253,7 @@
   },
   "libraries": {
     "pinned_footprint_libs": [],
-    "pinned_symbol_libs": [
-      "G-Love"
-    ]
+    "pinned_symbol_libs": []
   },
   "meta": {
     "filename": "G-Love.kicad_pro",
@@ -406,7 +404,7 @@
     "meta": {
       "version": 1
     },
-    "page_layout_descr_file": "",
+    "page_layout_descr_file": "FlexSensor",
     "plot_directory": "",
     "reuse_designators": true,
     "subpart_first_id": 65,
@@ -418,13 +416,37 @@
         "uuid": "808bc5ea-49ac-4454-ba77-8b20d01ce159"
       }
     ],
-    "used_designators": "CD1-2,S1,C3-5,U2,R1",
+    "used_designators": "U1-4,R2-22,C4-25,S1,CD1,FSR401_1,FSR1-2,FSR403-404,FSR402_1-5,FSR_1-11,FS_1-12",
     "variants": []
   },
   "sheets": [
     [
       "808bc5ea-49ac-4454-ba77-8b20d01ce159",
       "Root"
+    ],
+    [
+      "52f23cc9-2062-4d54-8672-927411957f50",
+      "FSR_1"
+    ],
+    [
+      "e4aaae8d-1356-402f-a319-460dc305add0",
+      "FSR_2"
+    ],
+    [
+      "b113fd65-2f12-4e1e-aec7-dd6a1df96f57",
+      "FSR_3"
+    ],
+    [
+      "7c113836-a471-4d2d-8c68-a827b118ba02",
+      "FSR_4"
+    ],
+    [
+      "ae5d6fd8-601e-4e9c-b308-39a915f41e95",
+      "FSR_5"
+    ],
+    [
+      "3c8798d6-47f3-4cbb-a48b-6b009499c5e7",
+      "Flex_Sensor_1"
     ]
   ],
   "text_variables": {},
