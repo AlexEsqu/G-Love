@@ -5,6 +5,122 @@
 	(uuid "abd39005-001e-4402-b85f-7ba4735388ae")
 	(paper "A4")
 	(lib_symbols
+		(symbol "G-Love:+3.3V"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 3.81 -1.778 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+3.3V"
+				(at -0.254 2.794 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+3.3V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.524) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+3.3V_1_1"
+				(pin power_in line
+					(at 0 -1.27 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "G-Love:C"
 			(pin_numbers
 				(hide yes)
@@ -288,6 +404,110 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "G-Love:GND"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "GND"
+				(at 0 -3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.016 -1.27) (xy 0 -2.54) (xy -1.016 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "G-Love:R"
 			(pin_numbers
 				(hide yes)
@@ -405,46 +625,46 @@
 		)
 	)
 	(junction
-		(at 35.56 29.21)
+		(at 24.13 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "2b25b204-7e74-4179-8ec2-06506f1d0a9f")
+		(uuid "793174dd-61a0-415c-9d91-4fffd1da0b4b")
 	)
 	(junction
-		(at 26.67 33.02)
+		(at 24.13 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7170499c-7ab7-42af-b46f-87552f0cf5fb")
+		(uuid "9bb0aac8-10ae-4a54-aa8d-05c022260c8b")
 	)
 	(junction
-		(at 34.29 33.02)
+		(at 24.13 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "dd7bd58d-d5ca-4132-8eb6-c560f449fe50")
+		(uuid "f681cce3-2653-44dd-8ae1-adad9498ab19")
 	)
 	(wire
 		(pts
-			(xy 26.67 33.02) (xy 26.67 31.75)
+			(xy 24.13 24.13) (xy 24.13 27.94)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0dddfcf8-4b24-426a-a7b9-23bc9218e84e")
+		(uuid "026f05b2-5095-4597-9e7a-5c4e23a8e174")
 	)
 	(wire
 		(pts
-			(xy 34.29 31.75) (xy 31.75 31.75)
+			(xy 24.13 53.34) (xy 24.13 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0f81b280-9332-4fe7-80f6-c996216eb4aa")
+		(uuid "0a69ead1-bde4-4d1f-bc34-81b566907e70")
 	)
 	(wire
 		(pts
-			(xy 26.67 33.02) (xy 25.4 33.02)
+			(xy 24.13 58.42) (xy 24.13 53.34)
 		)
 		(stroke
 			(width 0)
@@ -454,7 +674,17 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 35.56) (xy 26.67 35.56)
+			(xy 24.13 45.72) (xy 24.13 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "420e0877-082a-4b15-a72c-650742f2d966")
+	)
+	(wire
+		(pts
+			(xy 30.48 49.53) (xy 30.48 53.34)
 		)
 		(stroke
 			(width 0)
@@ -464,27 +694,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 29.21) (xy 35.56 26.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "73d79cfe-7807-4591-a5b1-7a171f781b92")
-	)
-	(wire
-		(pts
-			(xy 35.56 29.21) (xy 38.1 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "742882db-2948-4897-a0c2-4094ce5accb0")
-	)
-	(wire
-		(pts
-			(xy 34.29 35.56) (xy 34.29 33.02)
+			(xy 30.48 43.18) (xy 24.13 43.18)
 		)
 		(stroke
 			(width 0)
@@ -494,57 +704,47 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 26.67) (xy 26.67 26.67)
+			(xy 24.13 53.34) (xy 30.48 53.34)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a73b9bb7-420e-465f-a551-9b18778976f0")
+		(uuid "9b21e279-c4e7-42af-b77a-1d07d9b2a54a")
 	)
 	(wire
 		(pts
-			(xy 31.75 26.67) (xy 35.56 26.67)
+			(xy 24.13 38.1) (xy 38.1 38.1)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "af8d29ae-2e02-4820-8288-02f5d72e298a")
+		(uuid "c3f58f6e-37f8-49da-bdc0-a2f6d5ea9b65")
 	)
 	(wire
 		(pts
-			(xy 35.56 33.02) (xy 35.56 29.21)
+			(xy 24.13 33.02) (xy 24.13 38.1)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bcb94a0f-67da-46a8-98e7-ab263e89c903")
+		(uuid "cfedb22c-4f18-40dc-93af-8275d0114b46")
 	)
 	(wire
 		(pts
-			(xy 34.29 33.02) (xy 35.56 33.02)
+			(xy 24.13 38.1) (xy 24.13 43.18)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e39da066-fc70-4bdf-ad8b-94ec97238df3")
+		(uuid "e584d521-1c46-4b54-bb05-ef222a404e2e")
 	)
 	(wire
 		(pts
-			(xy 26.67 35.56) (xy 26.67 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f0c8de73-7219-436c-b41d-db6d08710470")
-	)
-	(wire
-		(pts
-			(xy 34.29 35.56) (xy 31.75 35.56)
+			(xy 30.48 43.18) (xy 30.48 46.99)
 		)
 		(stroke
 			(width 0)
@@ -552,30 +752,9 @@
 		)
 		(uuid "fddeaff1-5fd6-46c7-b1aa-9ca6b2b80395")
 	)
-	(wire
-		(pts
-			(xy 34.29 33.02) (xy 34.29 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ff9476f7-0974-40a6-b072-5a80470c3e04")
-	)
-	(hierarchical_label "GND"
-		(shape input)
-		(at 25.4 33.02 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7b5e0f42-3469-49c5-ab3b-315efd7e1049")
-	)
 	(hierarchical_label "TouchADC"
 		(shape input)
-		(at 38.1 29.21 0)
+		(at 38.1 38.1 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -584,20 +763,9 @@
 		)
 		(uuid "b61bd7b5-1276-47fe-a052-2ce6e67f235e")
 	)
-	(hierarchical_label "3.3V"
-		(shape input)
-		(at 25.4 26.67 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "decd1634-db42-49d2-8e34-981fcf6d94b2")
-	)
 	(symbol
 		(lib_id "G-Love:C")
-		(at 30.48 35.56 90)
+		(at 30.48 48.26 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -606,8 +774,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2c26dfa9-3e63-45ac-b932-eb7f7097320d")
-		(property "Reference" "C15"
-			(at 27.432 37.084 90)
+		(property "Reference" "C4"
+			(at 32.004 47.244 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -618,7 +786,7 @@
 			)
 		)
 		(property "Value" "47pF"
-			(at 32.766 36.576 90)
+			(at 34.036 49.276 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -628,7 +796,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 30.48 35.56 0)
+			(at 30.48 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -639,7 +807,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 30.48 35.56 0)
+			(at 30.48 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -650,7 +818,7 @@
 			)
 		)
 		(property "Description" "Capacitor"
-			(at 39.624 35.56 0)
+			(at 30.48 39.116 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -661,70 +829,71 @@
 			)
 		)
 		(pin "1"
-			(uuid "b3ae6531-fedd-419c-837e-e529bf3c7f05")
+			(uuid "1fbc2042-5947-4fab-9a2f-287ff4f23ca0")
 		)
 		(pin "2"
-			(uuid "59b9844a-95ca-4a1d-8186-4f95239a7a1f")
+			(uuid "5ab4ec9a-29fe-4f0b-9715-b13e62f4d16e")
 		)
 		(instances
 			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/185948cd-0261-4630-ab7a-4e349f63e8f6"
-					(reference "C18")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/37af386b-7ce6-4870-a68c-ae99ba82dbad"
+					(reference "C7")
 					(unit 1)
 				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/52f23cc9-2062-4d54-8672-927411957f50"
-					(reference "C15")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/453d6392-c542-4af6-837e-2e104174f7f6"
+					(reference "C6")
 					(unit 1)
 				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c235a4c3-809f-4c84-94b5-1d06c0923728"
-					(reference "C16")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/be704af6-369e-469c-9a64-eba8c880de1d"
+					(reference "C8")
 					(unit 1)
 				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/e11b42b5-b238-4909-97ef-42893c8784be"
-					(reference "C19")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c49d2019-530e-4048-9fd9-ae6fd51965ac"
+					(reference "C4")
 					(unit 1)
 				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/f1277231-6d7a-4b42-9bd4-3f9751d066ca"
-					(reference "C17")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/d5c7025e-3cd9-4f35-bc65-6ba34181f2fa"
+					(reference "C5")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "G-Love:R")
-		(at 29.21 31.75 0)
+		(lib_id "G-Love:+3.3V")
+		(at 24.13 22.86 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "48ec955f-1aeb-44ed-b8cc-7521000c376e")
-		(property "Reference" "R12"
-			(at 27.94 29.972 0)
+		(fields_autoplaced yes)
+		(uuid "442379e4-4ea3-4ab3-b64a-02016fe88e6c")
+		(property "Reference" "#PWR01"
+			(at 27.94 24.638 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "10kΩ"
-			(at 32.766 30.988 0)
+		(property "Value" "+3.3V"
+			(at 24.13 19.05 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.016 1.016)
+					(size 1.27 1.27)
 				)
 			)
 		)
 		(property "Footprint" ""
-			(at 29.21 31.75 0)
+			(at 24.13 22.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -735,7 +904,100 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 29.21 31.75 0)
+			(at 24.13 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 24.13 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "aab5d3a3-b859-405f-aa3c-ade560044732")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/37af386b-7ce6-4870-a68c-ae99ba82dbad"
+					(reference "#PWR05")
+					(unit 1)
+				)
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/453d6392-c542-4af6-837e-2e104174f7f6"
+					(reference "#PWR04")
+					(unit 1)
+				)
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/be704af6-369e-469c-9a64-eba8c880de1d"
+					(reference "#PWR06")
+					(unit 1)
+				)
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c49d2019-530e-4048-9fd9-ae6fd51965ac"
+					(reference "#PWR01")
+					(unit 1)
+				)
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/d5c7025e-3cd9-4f35-bc65-6ba34181f2fa"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:R")
+		(at 24.13 48.26 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "48ec955f-1aeb-44ed-b8cc-7521000c376e")
+		(property "Reference" "R1"
+			(at 22.86 48.006 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10kΩ"
+			(at 20.828 50.038 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 24.13 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 24.13 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -746,7 +1008,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 29.21 31.75 0)
+			(at 24.13 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -757,31 +1019,31 @@
 			)
 		)
 		(pin "1"
-			(uuid "f46a4798-a64c-4be6-a4f7-46c8cbeaa282")
+			(uuid "3ce93135-bb62-4794-a614-215a65e8f7a7")
 		)
 		(pin "2"
-			(uuid "07316ef7-6c3a-40c5-88b2-b4e083fd79cf")
+			(uuid "f5dd9300-f1c7-4c3f-ab4e-30e9c58031a6")
 		)
 		(instances
 			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/185948cd-0261-4630-ab7a-4e349f63e8f6"
-					(reference "R15")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/37af386b-7ce6-4870-a68c-ae99ba82dbad"
+					(reference "R4")
 					(unit 1)
 				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/52f23cc9-2062-4d54-8672-927411957f50"
-					(reference "R12")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/453d6392-c542-4af6-837e-2e104174f7f6"
+					(reference "R3")
 					(unit 1)
 				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c235a4c3-809f-4c84-94b5-1d06c0923728"
-					(reference "R13")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/be704af6-369e-469c-9a64-eba8c880de1d"
+					(reference "R5")
 					(unit 1)
 				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/e11b42b5-b238-4909-97ef-42893c8784be"
-					(reference "R16")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c49d2019-530e-4048-9fd9-ae6fd51965ac"
+					(reference "R1")
 					(unit 1)
 				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/f1277231-6d7a-4b42-9bd4-3f9751d066ca"
-					(reference "R14")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/d5c7025e-3cd9-4f35-bc65-6ba34181f2fa"
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -789,7 +1051,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:FSR")
-		(at 29.21 26.67 0)
+		(at 24.13 30.48 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -798,8 +1060,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c7d93a59-cd79-453e-a9ce-c2bfee896661")
-		(property "Reference" "FSR_6"
-			(at 29.718 24.13 0)
+		(property "Reference" "FSR_1"
+			(at 20.828 30.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -809,7 +1071,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 29.21 26.67 0)
+			(at 24.13 30.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -819,7 +1081,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 29.21 26.67 0)
+			(at 24.13 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -830,7 +1092,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn.sparkfun.com/assets/8/a/1/2/0/2010-10-26-DataSheet-FSR402-Layout2.pdf"
-			(at 32.766 35.052 0)
+			(at 32.512 26.924 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -841,7 +1103,7 @@
 			)
 		)
 		(property "Description" "Touch Force Sensor Resistor"
-			(at 30.734 32.004 0)
+			(at 29.464 28.956 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -852,31 +1114,126 @@
 			)
 		)
 		(pin "2"
-			(uuid "cb461ed0-3c58-49a3-ad39-e22abb3daf32")
+			(uuid "3da43d62-55e1-4f23-a9f7-df4f5074190b")
 		)
 		(pin "1"
-			(uuid "0e90d4e3-6c8b-4bc8-8a93-891a5c034573")
+			(uuid "9d6348f0-55ef-4fb0-b1f4-3c647f4d89f8")
 		)
 		(instances
 			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/185948cd-0261-4630-ab7a-4e349f63e8f6"
-					(reference "FSR_9")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/37af386b-7ce6-4870-a68c-ae99ba82dbad"
+					(reference "FSR_4")
 					(unit 1)
 				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/52f23cc9-2062-4d54-8672-927411957f50"
-					(reference "FSR_6")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/453d6392-c542-4af6-837e-2e104174f7f6"
+					(reference "FSR_3")
 					(unit 1)
 				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c235a4c3-809f-4c84-94b5-1d06c0923728"
-					(reference "FSR_7")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/be704af6-369e-469c-9a64-eba8c880de1d"
+					(reference "FSR_5")
 					(unit 1)
 				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/e11b42b5-b238-4909-97ef-42893c8784be"
-					(reference "FSR_10")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c49d2019-530e-4048-9fd9-ae6fd51965ac"
+					(reference "FSR_1")
 					(unit 1)
 				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/f1277231-6d7a-4b42-9bd4-3f9751d066ca"
-					(reference "FSR_8")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/d5c7025e-3cd9-4f35-bc65-6ba34181f2fa"
+					(reference "FSR_2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:GND")
+		(at 24.13 58.42 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d5401977-9f29-4e7e-b29e-54138e00bb17")
+		(property "Reference" "GND017"
+			(at 24.13 61.976 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 24.13 61.976 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 24.13 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 24.13 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 24.13 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dbbdd353-cb49-482c-a704-5863d68142f9")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/37af386b-7ce6-4870-a68c-ae99ba82dbad"
+					(reference "GND020")
+					(unit 1)
+				)
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/453d6392-c542-4af6-837e-2e104174f7f6"
+					(reference "GND019")
+					(unit 1)
+				)
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/be704af6-369e-469c-9a64-eba8c880de1d"
+					(reference "GND021")
+					(unit 1)
+				)
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c49d2019-530e-4048-9fd9-ae6fd51965ac"
+					(reference "GND017")
+					(unit 1)
+				)
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/d5c7025e-3cd9-4f35-bc65-6ba34181f2fa"
+					(reference "GND018")
 					(unit 1)
 				)
 			)
