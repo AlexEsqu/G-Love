@@ -3,7 +3,7 @@
 
 #include <avr/io.h>
 
-#define myUBBR (F_CPU / (8UL * BAUD) - 1UL) // Formula p.182
+#define myUBBR (F_CPU / (8UL * BAUDRATE) - 1UL) // Formula p.182
 
 /* =======================
    UART MODE FLAGS
@@ -33,7 +33,6 @@
 
 /* Mode USART (UMSEL01:0) */
 #define UART_MODE_ASYNC        (0 << UMSEL01) | (0 << UMSEL00)
-#define UART_MODE_SPI          (1 << UMSEL01) | (0 << UMSEL00)
 
 /* Parité (UPM01:0) */
 #define UART_PARITY_DISABLED   (0 << UPM01) | (0 << UPM00)
@@ -62,5 +61,6 @@ __attribute__((signal)) void USART_TX_vect(void);
 __attribute__((signal)) void USART_RX_vect(void);
 void uart_printstr(const char* str);
 void uart_printint(const int nb);
+void uart_printhex(const int nb);
 
 #endif

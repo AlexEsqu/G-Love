@@ -4,6 +4,8 @@ INC_DIR = includes/
 
 TARGET = prog
 MCU = atmega328p
+BIN = $(TARGET).bin
+HEX = $(TARGET).hex
 
 F_CPU = 16000000UL
 BAUD = 115200
@@ -13,17 +15,31 @@ CFLAGS += -DF_CPU=$(F_CPU) -DBAUD=$(BAUD)
 
 SRC_PATH = $(addprefix $(SRCS_DIR), $(SRCS))
 
-all: hex flash
+all: $(HEX)
 
-hex: $(SRC_PATH)
-	@avr-gcc $(CFLAGS) $(SRC_PATH) -o $(TARGET).bin
-	@avr-objcopy -O ihex -R .eeprom $(TARGET).bin $(TARGET).hex
-	@echo "$(TARGET).hex generated!"
+$(BIN): $(SRC_PATH)
+	@avr-gcc $(CFLAGS) $(SRC_PATH) -o $(BIN)
+	@echo "$(BIN) generated!"
 
-flash: hex
-	@avrdude -p $(MCU) -c arduino -b 115200 -P /dev/ttyACM0 -U flash:w:$(TARGET).hex:i	
-	@make --no-print-directory clean
+$(HEX): $(BIN)
+	@avr-objcopy -O ihex -R .eeprom $(BIN) $(HEX)
+	@echo "$(HEX) generated!"
+
+hex: $(HEX)
+
+flash: $(HEX)
+	@avrdude -p $(MCU) -c arduino -b 115200 -P /dev/ttyACM0 -U flash:w:$(HEX):i
+
+display: all
+	@printf "\n---------------------------------------------------\n"
+	@echo "Displaying output from /dev/ttyACM0 at 115200 baud:"
+	@stty -F /dev/ttyACM0 115200 cs8 -cstopb -parenb
+	@cat /dev/ttyACM0
 
 clean:
-	@rm -f $(TARGET).bin $(TARGET).hex
+	@rm -f $(BIN) $(HEX)
 	@echo "Clean done!"
+
+re: clean all
+
+.PHONY: all hex flash display clean re

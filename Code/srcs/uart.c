@@ -4,7 +4,7 @@ void uart_init(void)
 {
 	UCSR0A = (1 << U2X0);														// Double speed mode (U2X0 = 1) is used to reduce baud rate error and improve communication accuracy, especially at high speeds like 115200 baud. (178–179/182)
 	
-	UBRR0 = (F_CPU / (8UL * BAUD)) - 1UL;
+	UBRR0 = (F_CPU / (8UL * BAUDRATE)) - 1UL;
 
 	UCSR0B = UART_MODE_TX_RX;									// Setting the Transmit Enable (TXEN) and Receive Enable (RXEN) bits in the UCSRnB Register.  (p185/188)
 	UCSR0C = UART_CHAR_SIZE_8BIT | UART_MODE_ASYNC | UART_PARITY_DISABLED;		// The UMSELn bit in USART Control and Status Register C (UCSRnC) selects between asynchronous and synchronous operation (180/184/202) || (1 << UCSZ00) | (1 << UCSZ01) Data size 8 bits (p.203)
@@ -55,8 +55,32 @@ void uart_printint(int nb)
 	for (; i > 0; i--)
 		uart_tx(str[i]);
 	uart_tx(str[i]);
-	
 }
+
+void uart_printhex(const int nb)
+{
+	char hex[] = "0123456789ABCDEF";
+	char buf[10];
+	int i = 0;
+
+	uart_printstr("0x");
+	if (nb == 0)
+	{
+		uart_tx('0');
+		return;
+	}
+
+	int temp = nb;
+	while (temp > 0)
+	{
+		buf[i++] = hex[temp % 16];
+		temp /= 16;
+	}
+
+	while (i > 0)
+		uart_tx(buf[i--]);
+}
+
 /** USART Receive Complete interrupt service routine
  * Triggered when a new byte is received and stored in UDR0 (RXC0 flag set)*/
 __attribute__((signal)) void USART_RX_vect(void)

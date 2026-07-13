@@ -2,7 +2,7 @@
 #define G_LOVE_H
 
 #include <stdint.h>
-#include <avr/io.h>
+#include <iom328p.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
 #include <config.h>
