@@ -1,7 +1,5 @@
 #include <G_Love.h>
 
-#define IMU_ADDR 0x68 // Address of the IMU device (ICM20948) on the I2C bus
-
 int main(void)
 {
 	uart_init();

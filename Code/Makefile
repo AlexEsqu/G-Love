@@ -1,4 +1,4 @@
-SRCS = main.c uart.c twi.c
+SRCS = main.c uart.c twi.c imu.c
 SRCS_DIR = srcs/
 INC_DIR = includes/
 
