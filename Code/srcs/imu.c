@@ -9,7 +9,6 @@ void select_bank(uint8_t bank)
 	twi_write_reg(IMU_ADDR, REG_BANK_SEL, bank);
 }
 
-
 void set_imu()
 {
 	select_bank(BANK_0);
@@ -25,15 +24,35 @@ void set_imu()
 	twi_write_reg(IMU_ADDR, FIFO_COUNTH, 0);
 }
 
-void read_imu_value(uint8_t *accel, uint8_t *gyro)
+uint16_t get_fifo_count()
 {
-	data = twi_read_reg(IMU_ADDR, FIFO_HEADER);
-	if (data & (1 << HEADER_ACCEL))
+	uint16_t count = 0;
+	count = twi_read_reg(IMU_ADDR, FIFO_COUNTL);
+	count |= (twi_read_reg(IMU_ADDR, FIFO_COUNTH) << 8);
+	return (count);
+}
+
+void read_fifo_data(int32_t *imu_data)
+{
+	uint8_t fifo_data[20];
+	twi_read_burst(IMU_ADDR, FIFO_DATA, fifo_data, 20);
+	
+	for (int i = 0; i < 6; i++)
+		imu_data[i] = DEF_VALUE;
+
+	if (!(fifo_data[0] & (1 << HEADER_20) || fifo_data[0] & (1 << HEADER_MSG)))
+		return;
+	
+	if (fifo_data[0] & (1 << HEADER_ACCEL))
 	{
-		twi_read_burst(IMU_ADDR, ACCEL_X_1, accel, 6);
+		imu_data[0] = (fifo_data[1] << 12) | (fifo_data[2] << 4) | (fifo_data[18] >> 4);
+		imu_data[1] = (fifo_data[3] << 12) | (fifo_data[4] << 4) | (fifo_data[19] >> 4);
+		imu_data[2] = (fifo_data[5] << 12) | (fifo_data[6] << 4) | (fifo_data[20] >> 4);
 	}
-	if (data & (1 << HEADER_GYRO))
+	if (fifo_data[0] & (1 << HEADER_GYRO))
 	{
-		twi_read_burst(IMU_ADDR, GYRO_X_1, gyro, 6);
+		imu_data[3] = (fifo_data[7] << 12) | (fifo_data[8] << 4) | fifo_data[18];
+		imu_data[4] = (fifo_data[9] << 12) | (fifo_data[10] << 4) | fifo_data[19];
+		imu_data[5] = (fifo_data[11] << 12) | (fifo_data[12] << 4) | fifo_data[20];
 	}
 }

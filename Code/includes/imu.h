@@ -1,6 +1,9 @@
 #ifndef IMU_H
 #define IMU_H
 
+
+#define DEF_VALUE 524288
+
 /*****************************************************************************/
 /*                              BANK SELECTION                               */
 /*****************************************************************************/
@@ -53,6 +56,11 @@ void select_bank(uint8_t bank);
 #define FIFO_COUNT_REC 6
 #define FIFO_COUNT_ENDIAN 5
 #define SENSOR_DATA_ENDIAN 4
+
+#define TEMP_DIS 5
+#define IDLE 4
+#define GYRO_MODE 2
+#define ACCEL_MODE 0
 
 /*****************************************************************************/
 /*                              FIFO DATA REGISTERS                          */
