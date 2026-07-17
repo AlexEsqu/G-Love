@@ -1,9 +1,5 @@
 #include <G_Love.h>
 
-uint8_t gyro[3];
-uint8_t accel[3];
-uint8_t data;
-
 static void select_bank(uint8_t bank)
 {
 	twi_write_reg(IMU_ADDR, REG_BANK_SEL, bank);
@@ -11,6 +7,7 @@ static void select_bank(uint8_t bank)
 
 void set_imu()
 {
+	uint8_t data;
 	select_bank(BANK_0);
 	twi_write_reg(IMU_ADDR, FIFO_CONFIG, 1); // stream to FIFO mode
 

@@ -12,21 +12,25 @@ typedef struct imu_data_s {
     int32_t gyro_z;
 } imu_data_t;
 
-#define GYRO_LOWEST -524256
-#define GYRO_HIGHEST 524286
-#define ACCEL_LOWEST -524256
-#define ACCEL_HIGHEST 524284
+enum {
+    GYRO_LOWEST = -524256,
+    GYRO_HIGHEST = 524286,
+    ACCEL_LOWEST = -524256,
+    ACCEL_HIGHEST = 524284
+};
 
 /*****************************************************************************/
 /*                              BANK SELECTION                               */
 /*****************************************************************************/
 
 #define REG_BANK_SEL 0x76
-#define BANK_0 0b00
-#define BANK_1 0b01
-#define BANK_2 0b10
-#define BANK_3 0b11
-#define BANK_4 0b100
+enum imu_banks {
+    BANK_0 = 0,
+    BANK_1 = 1,
+    BANK_2 = 2,
+    BANK_3 = 3,
+    BANK_4 = 4
+};
 
 /*****************************************************************************/
 /*                         FIFO CONFIG REGISTERS                             */
@@ -49,38 +53,46 @@ void set_imu();
 /*                              FIFO HEADER BITS                             */
 /*****************************************************************************/
 
-#define HEADER_MSG 7
-#define HEADER_ACCEL 6
-#define HEADER_GYRO 5
-#define HEADER_20 4
-#define HEADER_ODR_ACCEL 1
-#define HEADER_ODR_GYRO 0
+enum fifo_header_bits {
+    HEADER_MSG = 7,
+    HEADER_ACCEL = 6,
+    HEADER_GYRO = 5,
+    HEADER_20 = 4,
+    HEADER_ODR_ACCEL = 1,
+    HEADER_ODR_GYRO = 0
+};
 
 /*****************************************************************************/
 /*                              FIFO CONFIG BITS                             */
 /*****************************************************************************/
 
-#define FIFO_RESUME_PARTIAL_RD 6
-#define FIFO_WM_GT_TH 5
-#define FIFO_HIRES_EN 4
-#define FIFO_TMST_FSYNC_EN 3
-#define FIFO_TEMP_EN 2
-#define FIFO_GYRO_EN 1
-#define FIFO_ACCEL_EN 0
+enum fifo_config_bits {
+    FIFO_RESUME_PARTIAL_RD = 6,
+    FIFO_WM_GT_TH = 5,
+    FIFO_HIRES_EN = 4,
+    FIFO_TMST_FSYNC_EN = 3,
+    FIFO_TEMP_EN = 2,
+    FIFO_GYRO_EN = 1,
+    FIFO_ACCEL_EN = 0
+};
 
-#define FIFO_HOLD_LAST_DATA_EN 7
-#define FIFO_COUNT_REC 6
-#define FIFO_COUNT_ENDIAN 5
-#define SENSOR_DATA_ENDIAN 4
+enum fifo_config_flags {
+    FIFO_HOLD_LAST_DATA_EN = 7,
+    FIFO_COUNT_REC = 6,
+    FIFO_COUNT_ENDIAN = 5,
+    SENSOR_DATA_ENDIAN = 4
+};
 
-#define TEMP_DIS 5
-#define IDLE 4
-#define GYRO_MODE 2
-#define ACCEL_MODE 0
+enum pwr_mgmt_bits {
+    TEMP_DIS = 5,
+    IDLE = 4,
+    GYRO_MODE = 2,
+    ACCEL_MODE = 0
+};
 
 #define GYRO_ODR 0
 #define ACCEL_ODR 0
-#define SAMPLE_COUNT 5
+#define SAMPLE_COUNT 5 /* Nombre d'échantillons à moyenne (5 samples @ 1kHz = moyenne sur 5 valeurs) */
 
 /*****************************************************************************/
 /*                              FIFO DATA                                    */
