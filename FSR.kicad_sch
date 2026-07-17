@@ -774,7 +774,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2c26dfa9-3e63-45ac-b932-eb7f7097320d")
-		(property "Reference" "C4"
+		(property "Reference" "C5"
 			(at 32.004 47.244 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -837,23 +837,23 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/37af386b-7ce6-4870-a68c-ae99ba82dbad"
-					(reference "C7")
-					(unit 1)
-				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/453d6392-c542-4af6-837e-2e104174f7f6"
-					(reference "C6")
-					(unit 1)
-				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/be704af6-369e-469c-9a64-eba8c880de1d"
 					(reference "C8")
 					(unit 1)
 				)
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/453d6392-c542-4af6-837e-2e104174f7f6"
+					(reference "C7")
+					(unit 1)
+				)
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/be704af6-369e-469c-9a64-eba8c880de1d"
+					(reference "C9")
+					(unit 1)
+				)
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c49d2019-530e-4048-9fd9-ae6fd51965ac"
-					(reference "C4")
+					(reference "C5")
 					(unit 1)
 				)
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/d5c7025e-3cd9-4f35-bc65-6ba34181f2fa"
-					(reference "C5")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -871,7 +871,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "442379e4-4ea3-4ab3-b64a-02016fe88e6c")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR04"
 			(at 27.94 24.638 0)
 			(hide yes)
 			(show_name no)
@@ -931,23 +931,23 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/37af386b-7ce6-4870-a68c-ae99ba82dbad"
-					(reference "#PWR05")
+					(reference "#PWR07")
 					(unit 1)
 				)
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/453d6392-c542-4af6-837e-2e104174f7f6"
-					(reference "#PWR04")
-					(unit 1)
-				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/be704af6-369e-469c-9a64-eba8c880de1d"
 					(reference "#PWR06")
 					(unit 1)
 				)
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/be704af6-369e-469c-9a64-eba8c880de1d"
+					(reference "#PWR08")
+					(unit 1)
+				)
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c49d2019-530e-4048-9fd9-ae6fd51965ac"
-					(reference "#PWR01")
+					(reference "#PWR04")
 					(unit 1)
 				)
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/d5c7025e-3cd9-4f35-bc65-6ba34181f2fa"
-					(reference "#PWR03")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -1156,7 +1156,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d5401977-9f29-4e7e-b29e-54138e00bb17")
-		(property "Reference" "GND017"
+		(property "Reference" "GND09"
 			(at 24.13 61.976 0)
 			(hide yes)
 			(show_name no)
@@ -1217,23 +1217,23 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/37af386b-7ce6-4870-a68c-ae99ba82dbad"
-					(reference "GND020")
+					(reference "GND012")
 					(unit 1)
 				)
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/453d6392-c542-4af6-837e-2e104174f7f6"
-					(reference "GND019")
+					(reference "GND011")
 					(unit 1)
 				)
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/be704af6-369e-469c-9a64-eba8c880de1d"
-					(reference "GND021")
+					(reference "GND013")
 					(unit 1)
 				)
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c49d2019-530e-4048-9fd9-ae6fd51965ac"
-					(reference "GND017")
+					(reference "GND09")
 					(unit 1)
 				)
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/d5c7025e-3cd9-4f35-bc65-6ba34181f2fa"
-					(reference "GND018")
+					(reference "GND010")
 					(unit 1)
 				)
 			)
