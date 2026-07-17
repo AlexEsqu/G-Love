@@ -1189,7 +1189,7 @@
 		)
 	)
 	(circle
-		(center 92.202 97.028)
+		(center 92.202 96.012)
 		(radius 67.2069)
 		(stroke
 			(width 0)
@@ -1222,6 +1222,12 @@
 		(color 0 0 0 0)
 		(uuid "b8763e18-7be7-4bf7-9167-52b400f4e8b3")
 	)
+	(junction
+		(at 90.17 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e30fb74e-e79b-4bb9-b528-4027a8f2c147")
+	)
 	(wire
 		(pts
 			(xy 224.79 102.87) (xy 227.33 102.87)
@@ -1231,6 +1237,16 @@
 			(type default)
 		)
 		(uuid "02cade8d-fba9-4b3d-b427-953e0af8bf58")
+	)
+	(wire
+		(pts
+			(xy 104.14 87.63) (xy 81.28 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04c4ecae-6791-44e3-8cb0-8ac52dad5ffc")
 	)
 	(wire
 		(pts
@@ -1314,13 +1330,13 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 77.47) (xy 105.41 72.39)
+			(xy 90.17 45.72) (xy 90.17 48.26)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3565e8fc-84bf-4b0d-9be0-b6f6bb538ec3")
+		(uuid "35182614-2fde-44fb-9ab9-9541b7b4074b")
 	)
 	(wire
 		(pts
@@ -1464,6 +1480,16 @@
 	)
 	(wire
 		(pts
+			(xy 81.28 87.63) (xy 81.28 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b98f6a4-a9a2-4ddd-ba4e-8236e2a3e203")
+	)
+	(wire
+		(pts
 			(xy 176.53 95.25) (xy 134.62 95.25)
 		)
 		(stroke
@@ -1494,13 +1520,13 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 77.47) (xy 114.3 77.47)
+			(xy 104.14 72.39) (xy 102.87 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b40305f5-7cec-4bfe-988e-04feb181d8a6")
+		(uuid "a7c0525e-2507-4bad-9648-ae1b6a4e251a")
 	)
 	(wire
 		(pts
@@ -1511,6 +1537,16 @@
 			(type default)
 		)
 		(uuid "b67b7734-637e-40c8-b07d-0c2af63721b6")
+	)
+	(wire
+		(pts
+			(xy 81.28 48.26) (xy 90.17 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9225059-3572-4794-b472-7c872d3e9022")
 	)
 	(wire
 		(pts
@@ -1574,13 +1610,13 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 72.39) (xy 102.87 72.39)
+			(xy 104.14 72.39) (xy 104.14 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d5824144-0e5d-4771-a0b4-7883b0b6b8e1")
+		(uuid "da16c76d-809d-4056-b249-3a62cd22941c")
 	)
 	(wire
 		(pts
@@ -1641,16 +1677,6 @@
 			(type default)
 		)
 		(uuid "ff392398-6164-461b-80c0-ec4570cccbce")
-	)
-	(wire
-		(pts
-			(xy 114.3 74.93) (xy 114.3 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ffedc4b7-8b48-4404-bd77-38dedd07fd72")
 	)
 	(hierarchical_label "Screen_SPI_SS"
 		(shape input)
@@ -1739,44 +1765,6 @@
 			(justify left)
 		)
 		(uuid "b545ff15-5462-46ca-9628-9ec3006fac8f")
-	)
-	(rule_area
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(polyline
-			(pts
-				(xy 207.01 160.02) (xy 207.01 180.34) (xy 160.02 180.34) (xy 160.02 160.02)
-			)
-			(stroke
-				(width 0)
-				(type dash)
-			)
-			(fill
-				(type none)
-			)
-			(uuid "2a52f959-8b78-4231-8914-c114835ed379")
-		)
-	)
-	(rule_area
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(polyline
-			(pts
-				(xy 46.99 0) (xy 46.99 20.32) (xy 0 20.32) (xy 0 0)
-			)
-			(stroke
-				(width 0)
-				(type dash)
-			)
-			(fill
-				(type none)
-			)
-			(uuid "3958eaa2-6773-48d0-9cec-682078061854")
-		)
 	)
 	(symbol
 		(lib_id "G-Love:GND")
@@ -2225,7 +2213,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:+3.3V")
-		(at 90.17 46.99 0)
+		(at 90.17 44.45 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2235,7 +2223,7 @@
 		(dnp no)
 		(uuid "3b0f9808-9e8e-4255-b70b-8d2bd79da511")
 		(property "Reference" "#PWR0127"
-			(at 93.98 48.768 0)
+			(at 93.98 46.228 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2246,7 +2234,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 91.44 44.45 0)
+			(at 89.662 40.894 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2256,7 +2244,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 90.17 46.99 0)
+			(at 90.17 44.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2267,7 +2255,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 90.17 46.99 0)
+			(at 90.17 44.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2278,7 +2266,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 90.17 46.99 0)
+			(at 90.17 44.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2559,10 +2547,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "73490f65-beda-4751-bf5d-0a5fde3b1c60")
 		(property "Reference" "U7"
-			(at 83.82 62.8649 0)
+			(at 98.044 47.244 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2573,7 +2560,7 @@
 			)
 		)
 		(property "Value" "GC9A01_TFT"
-			(at 83.82 65.4049 0)
+			(at 107.442 49.276 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2644,83 +2631,6 @@
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/b7368ea2-67ab-4b39-bd74-fcc932e3527a"
 					(reference "U7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "G-Love:+3.3V")
-		(at 114.3 73.66 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "b4774b22-3d45-407d-84e2-b2bb2087c141")
-		(property "Reference" "#PWR0128"
-			(at 118.11 75.438 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 117.602 74.676 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 114.3 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 114.3 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 114.3 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "022a7758-8879-46a3-a93c-6c6b26f11f71")
-		)
-		(instances
-			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/b7368ea2-67ab-4b39-bd74-fcc932e3527a"
-					(reference "#PWR0128")
 					(unit 1)
 				)
 			)
