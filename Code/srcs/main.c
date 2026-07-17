@@ -12,6 +12,5 @@ int main(void)
 	{
 		fifo_sampling(&imu_data);
 		uart_printstr("\r\n");
-		_delay_ms(1000);
 	}
 }
