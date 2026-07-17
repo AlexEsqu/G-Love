@@ -1,8 +1,21 @@
 #ifndef IMU_H
 #define IMU_H
 
+#define IMU_ADDR 0x68
 
-#define DEF_VALUE 524288
+typedef struct imu_data_s {
+    int32_t accel_x;
+    int32_t accel_y;
+    int32_t accel_z;
+    int32_t gyro_x;
+    int32_t gyro_y;
+    int32_t gyro_z;
+} imu_data_t;
+
+#define GYRO_LOWEST -524256
+#define GYRO_HIGHEST 524286
+#define ACCEL_LOWEST -524256
+#define ACCEL_HIGHEST 524284
 
 /*****************************************************************************/
 /*                              BANK SELECTION                               */
@@ -15,8 +28,6 @@
 #define BANK_3 0b11
 #define BANK_4 0b100
 
-void select_bank(uint8_t bank);
-
 /*****************************************************************************/
 /*                         FIFO CONFIG REGISTERS                             */
 /*****************************************************************************/
@@ -28,6 +39,11 @@ void select_bank(uint8_t bank);
 #define INTF_CONFIG0 0x4C
 #define FIFO_COUNTL 0x2F
 #define FIFO_COUNTH 0x2E
+#define PWR_MGMT0 0x4E
+#define GYRO_CONFIG0 0x4F
+#define ACCEL_CONFIG0 0x50
+
+void set_imu();
 
 /*****************************************************************************/
 /*                              FIFO HEADER BITS                             */
@@ -62,36 +78,16 @@ void select_bank(uint8_t bank);
 #define GYRO_MODE 2
 #define ACCEL_MODE 0
 
+#define GYRO_ODR 0
+#define ACCEL_ODR 0
+#define SAMPLE_COUNT 5
+
 /*****************************************************************************/
-/*                              FIFO DATA REGISTERS                          */
+/*                              FIFO DATA                                    */
 /*****************************************************************************/
 
 #define FIFO_DATA 0x30
 
-#define FIFO_HEADER 0x00
-
-#define ACCEL_X_1 0x01 
-#define ACCEL_X_2 0x02 
-#define ACCEL_Y_1  0x03 
-#define ACCEL_Y_2  0x04 
-#define ACCEL_Z_1  0x05 
-#define ACCEL_Z_2  0x06
-
-#define GYRO_X_1  0x07 
-#define GYRO_X_2  0x08 
-#define GYRO_Y_1  0x09 
-#define GYRO_Y_2  0x0A 
-#define GYRO_Z_1  0x0B 
-#define GYRO_Z_2  0x0C
-
-#define ACCEL_GYRO_X_3 0x11
-#define ACCEL_GYRO_Y_3 0x12 
-#define ACCEL_GYRO_Z_3 0x13 
-
-#define TEMP_1 0x0D 
-#define TEMP_2 0x0E 
-
-#define TIMESTAMP_1 0x0F 
-#define TIMESTAMP_2 0x10 
+void fifo_sampling(imu_data_t *imu_data);
 
 #endif

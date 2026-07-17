@@ -5,6 +5,7 @@ void twi_init(void)
 {
 	TWSR = 0;
 	TWBR = (F_CPU / SCL - 16) / (2 * 1);
+	TWCR = (1 << TWEN);
 }
 
 /**Sends a START condition to initiate data transfer*/

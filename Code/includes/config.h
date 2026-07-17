@@ -6,6 +6,4 @@
 #define SCL 100000
 #define TW_PRESCALER 1
 
-#define IMU_ADDR 0x68
-
 #endif
