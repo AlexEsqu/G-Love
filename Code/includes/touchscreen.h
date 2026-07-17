@@ -2,6 +2,7 @@
 #define TOUCHSCREEN_H
 
 #include <stdint.h>
+#include <twi.h>
 
 #define TOUCHSCREEN_ADDR 0x15
 
@@ -18,5 +19,7 @@ typedef struct touchscreen_data_s {
     uint16_t y;
     uint8_t gesture;
 } touchscreen_data_t;
+
+void touchscreen_read(touchscreen_data_t *data);
 
 #endif
