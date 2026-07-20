@@ -5,6 +5,7 @@ void twi_init(void)
 {
 	TWSR = 0;
 	TWBR = (F_CPU / SCL - 16) / (2 * 1);
+	TWCR = (1 << TWEN);
 }
 
 /**Sends a START condition to initiate data transfer*/
@@ -47,23 +48,32 @@ uint8_t twi_read(uint8_t ack)
 	return (TWDR);
 }
 
-void	twi_write_reg(uint8_t dev_addr, uint8_t reg, uint8_t val)
+int	twi_write_reg(uint8_t dev_addr, uint8_t reg, uint8_t val)
 {
 	twi_start();
 	twi_write((dev_addr << 1) | 0);
+	if (TW_STATUS != MT_SLA_ACK) { twi_stop(); return -1; }
 	twi_write(reg);
+	if (TW_STATUS != MT_DATA_ACK) { twi_stop(); return -1; }
 	twi_write(val);
+	if (TW_STATUS != MT_DATA_ACK) { twi_stop(); return -1; }
 	twi_stop();
+	return 0;
 }
 
-void	twi_write_burst(uint8_t dev_addr, uint8_t reg, uint8_t *data, uint8_t size)
+int	twi_write_burst(uint8_t dev_addr, uint8_t reg, uint8_t *data, uint8_t size)
 {
 	twi_start();
 	twi_write((dev_addr << 1) | 0);
+	if (TW_STATUS != MT_SLA_ACK) { twi_stop(); return -1; }
 	twi_write(reg);
-	for (uint8_t i = 0; i < size - 1; i++)
+	if (TW_STATUS != MT_DATA_ACK) { twi_stop(); return -1; }
+	for (uint8_t i = 0; i < size; i++) {
 		twi_write(data[i]);
+		if (TW_STATUS != MT_DATA_ACK && i < size - 1) { twi_stop(); return -1; }
+	}
 	twi_stop();
+	return 0;
 }
 
 uint8_t	twi_read_reg(uint8_t dev_addr, uint8_t reg)
@@ -72,9 +82,12 @@ uint8_t	twi_read_reg(uint8_t dev_addr, uint8_t reg)
 
 	twi_start();
 	twi_write((dev_addr << 1) | 0);
+	if (TW_STATUS != MT_SLA_ACK) { twi_stop(); return 0; }
 	twi_write(reg);
+	if (TW_STATUS != MT_DATA_ACK) { twi_stop(); return 0; }
 	twi_start();
 	twi_write((dev_addr << 1) | 1);
+	if (TW_STATUS != MR_SLA_ACK) { twi_stop(); return 0; }
 	val = twi_read(0);
 	twi_stop();
 	return (val);
@@ -84,9 +97,12 @@ void	twi_read_burst(uint8_t dev_addr, uint8_t reg, uint8_t *buf, uint8_t len)
 {
 	twi_start();
 	twi_write((dev_addr << 1) | 0);
+	if (TW_STATUS != MT_SLA_ACK) { twi_stop(); return; }
 	twi_write(reg);
+	if (TW_STATUS != MT_DATA_ACK) { twi_stop(); return; }
 	twi_start();
 	twi_write((dev_addr << 1) | 1);
+	if (TW_STATUS != MR_SLA_ACK) { twi_stop(); return; }
 	for (uint8_t i = 0; i < len; i++)
 		buf[i] = twi_read(i < len - 1);
 	twi_stop();

@@ -1,4 +1,4 @@
-SRCS = main.c uart.c twi.c
+SRCS = main.c uart.c twi.c imu.c utils.c touchscreen.c
 SRCS_DIR = srcs/
 INC_DIR = includes/
 
@@ -11,7 +11,7 @@ F_CPU = 16000000UL
 BAUD = 115200
 
 CFLAGS = -Wextra -Wall -Werror -I$(INC_DIR) -mmcu=$(MCU) -Os
-CFLAGS += -DF_CPU=$(F_CPU) -DBAUD=$(BAUD)
+CFLAGS += -DF_CPU=$(F_CPU) -DBAUDRATE=$(BAUD)
 
 SRC_PATH = $(addprefix $(SRCS_DIR), $(SRCS))
 

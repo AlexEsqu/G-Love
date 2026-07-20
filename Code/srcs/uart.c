@@ -36,49 +36,56 @@ void uart_printstr(const char* str)
 
 void uart_printint(int nb)
 {
-	char str[11];
-	uint8_t i = 0;
-	uint8_t neg = 0;
-
-	if (nb < 0) {
-		neg = 1;
-		nb *= -1;
-	}
-	while (nb > 9)
+	if (nb == 0) 
 	{
-		str[i++] = (nb % 10) + 48;
-		nb /= 10;
+		uart_tx('0');
+		return ;
 	}
-	str[i] = nb + 48;
-	if (neg)
+
+	unsigned int n;
+	if (nb < 0)
+	{
 		uart_tx('-');
-	for (; i > 0; i--)
-		uart_tx(str[i]);
-	uart_tx(str[i]);
+		n = (unsigned int)(- (long) nb);
+	}
+	else 
+	{
+		n = (unsigned int) nb;
+	}
+
+	char buf[12];
+	int pos = 0;
+	while (n > 0 && pos < (int)sizeof(buf)) {
+		buf[pos++] = '0' + (n % 10);
+		n /= 10;
+	}
+
+	for (int i = pos - 1; i >= 0; i--)
+		uart_tx(buf[i]);
 }
 
 void uart_printhex(const int nb)
 {
-	char hex[] = "0123456789ABCDEF";
-	char buf[10];
-	int i = 0;
+	const char hex[] = "0123456789ABCDEF";
+	unsigned int n = (unsigned int) nb;
+	char buf[9];
+	int pos = 0;
 
 	uart_printstr("0x");
-	if (nb == 0)
+	if (n == 0)
 	{
 		uart_tx('0');
 		return;
 	}
 
-	int temp = nb;
-	while (temp > 0)
+	while (n > 0 && pos < (int)sizeof(buf))
 	{
-		buf[i++] = hex[temp % 16];
-		temp /= 16;
+		buf[pos++] = hex[n & 0xF]; // Get the last 4 bits (a hex digit)
+		n >>= 4; // Shift right by 4 bits to process the next hex digit
 	}
 
-	while (i > 0)
-		uart_tx(buf[i--]);
+	for (int i = pos - 1; i >= 0; i--)
+		uart_tx(buf[i]);
 }
 
 /** USART Receive Complete interrupt service routine
