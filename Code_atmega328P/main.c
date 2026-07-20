@@ -1,11 +1,14 @@
 #include "../includes/config_atm328p.h"
+#include <stdint.h>
 #include "../includes/main.h"
 
 
 // Définition des broche pour les LED
 #define NUM_LEDS 144
-#define DATA_PIN 8  // Fil DI connecté sur la broche 8
-#define CLOCK_PIN 9 // Fil CI connecté sur la broche 9
+
+#define CLOCK_PIN 13 // Fil CI connecté sur la broche 13
+#define DATA_PIN 11  // Fil DI connecté sur la broche 11
+
 t_rgb_color colors[NUM_LEDS];
 uint8_t brightness = 1;
 int sensorState[16];
@@ -121,9 +124,9 @@ int main()
 		readAllChannels(2);
 
 		//led strip
-		for (int i = 0; i < NUM_LEDS; i++)
+		for (uint8_t i = 0; i < NUM_LEDS; i++)
 		{
-			colors[i] = hsvToRgb(128, 255, 255); 
+			colors[i] = hsvToRgb(255, 255, 255); 
 		}
 		spi_send_color(colors, NUM_LEDS, brightness);
 
