@@ -1,4 +1,5 @@
-#include "main.h"
+#include "../includes/config_atm2560.h"
+#include "../includes/main.h"
 
 void setup() {
   // uart_init
@@ -17,6 +18,8 @@ void setup() {
 int main(void) {
 
   setup();
+  char buf[100];
+  int i = 0;
 
   while (1) {
     // uart0_printstr("test\n");
@@ -64,12 +67,23 @@ int main(void) {
         uart0_printstr("\n");
       }
     }
-    /*
+    
     if (uart1_available() > 0)
     {
-        uart0_tx(uart1_rx());
+      char c = uart1_rx();
+      if (c == '\n')
+      {
+        buf[i] = '\0';
+        uart0_printstr(buf);
+        uart0_printstr("\n");
+        i = 0;
+      }
+      else
+      {
+        buf[i] = c;
+        i++;
+      }
     }
-    */
   }
   return 0;
 }
