@@ -1,7 +1,7 @@
 F_CPU    = 16000000UL
 DEVICE   = atmega2560
 BAUDRATE = 115200
-PORT     = /dev/ttyACM0
+PORT     = /dev/ttyACM1
 NAME     = main
 
 BIN      = ${NAME}.bin
@@ -11,7 +11,9 @@ CC       = avr-gcc
 OBJCOPY  = avr-objcopy
 CFLAGS   = -Os -mmcu=${DEVICE} -DF_CPU=${F_CPU}
 
-SRCS = main.c uart.c i2c.c spi.c
+LIBDIR = lib
+
+SRCS = Code_atmega2560/main.c $(LIBDIR)/uart.c $(LIBDIR)/i2c.c $(LIBDIR)/spi.c
 
 OBJS = $(SRCS:.c=.o)
 
