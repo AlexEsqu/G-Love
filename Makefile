@@ -1,61 +1,67 @@
 F_CPU    = 16000000UL
-DEVICE   = atmega2560
-BAUDRATE = 115200
-PORT     = /dev/ttyACM1
+
+DEVICE1   = atmega328p
+BAUDRATE1 = 115200
+PORT1     = /dev/ttyACM0
+CODEDIR1  = Code_atmega328P
+
+DEVICE2   = atmega2560
+BAUDRATE2 = 115200
+PORT2     = /dev/ttyACM1
+CODEDIR2  = Code_atmega2560
+
 NAME     = main
 
-BIN      = ${NAME}.bin
-HEX      = ${NAME}.hex
+BIN1     = ${NAME}_uno.bin
+HEX1     = ${NAME}_uno.hex
+BIN2     = ${NAME}_mega.bin
+HEX2     = ${NAME}_mega.hex
 
 CC       = avr-gcc
 OBJCOPY  = avr-objcopy
-CFLAGS   = -Os -mmcu=${DEVICE} -DF_CPU=${F_CPU}
 
-LIBDIR = lib
+LIBDIR   = lib
 
-SRCS = Code_atmega2560/main.c $(LIBDIR)/uart.c $(LIBDIR)/i2c.c $(LIBDIR)/spi.c
+SRCS1    = $(CODEDIR1)/main.c \
+           $(LIBDIR)/adc.c \
+           $(LIBDIR)/i2c.c \
+           $(LIBDIR)/spi.c \
+           $(LIBDIR)/uart.c
 
-OBJS = $(SRCS:.c=.o)
+SRCS2    = $(CODEDIR2)/main.c \
+           $(LIBDIR)/adc.c \
+           $(LIBDIR)/i2c.c \
+           $(LIBDIR)/spi.c \
+           $(LIBDIR)/uart.c
 
-%.o: %.c
-	${CC} ${CFLAGS} -c $< -o $@
+OBJS1    = $(SRCS1:.c=_uno.o)
+OBJS2    = $(SRCS2:.c=_mega.o)
 
-all: flash
+# for UNO / atmega328P
+%_uno.o: %.c
+	${CC} -Os -mmcu=${DEVICE1} -DF_CPU=${F_CPU} -c $< -o $@
 
-hex: ${HEX}
+# for MEGA / atmega2560
+%_mega.o: %.c
+	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} -c $< -o $@
 
-${BIN}: ${OBJS}
-	${CC} ${CFLAGS} ${OBJS} -o ${BIN}
+all: uno mega
 
-${HEX}: ${BIN}
-	${OBJCOPY} -O ihex ${BIN} ${HEX}
+uno: ${OBJS1}
+	${CC} -Os -mmcu=${DEVICE1} -DF_CPU=${F_CPU} ${OBJS1} -o ${BIN1}
+	${OBJCOPY} -O ihex ${BIN1} ${HEX1}
+	avrdude -p ${DEVICE1} -c arduino -P ${PORT1} -b ${BAUDRATE1} -D -v -U flash:w:${HEX1}:i
 
-flash: hex
-	avrdude -p ${DEVICE} -c wiring -P ${PORT} -b ${BAUDRATE} -D -v -U flash:w:${HEX}:i
+mega: ${OBJS2}
+	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${OBJS2} -o ${BIN2}
+	${OBJCOPY} -O ihex ${BIN2} ${HEX2}
+	avrdude -p ${DEVICE2} -c wiring -P ${PORT2} -b ${BAUDRATE2} -D -v -U flash:w:${HEX2}:i
 
-screen: flash
-	screen ${PORT} ${BAUDRATE}
-	
 clean:
-	rm -f ${BIN} ${HEX} ${OBJS}
+	rm -f ${BIN1} ${HEX1} ${BIN2} ${HEX2} ${OBJS1} ${OBJS2}
 
 fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re hex flash
-
-# avr-gcc
-	# -Os : -O optimise -s size// necessaire pour <utils/delay.h> plustard
-	# -mmcu : compile avec le .h compatible avec notre board
-	# -DF_CPU : define F_CPU (8000000UL si pas define)
-
-#objcopy
-	# -O : output intel hex voulu (format de fichier destines aux microcontrolleurs, aux eeprom)
-
-#avrdude
-	# -p : specifie le board avec lequel on travail
-	# -c : utilise le programmeur donne en argument
-	# -b : 115200 baud rate //"la bande passante" pour transmettre des donnees entre des appareils
-	# -P : port usb du pc // ls /dev/ttyUSB*
-	# -U : "flash en write le fichier hexa vers l'input de la board"
+.PHONY: all clean fclean re uno mega

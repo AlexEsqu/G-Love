@@ -50,6 +50,8 @@ void uart0_print_10bit(uint32_t c) {
 	uart0_tx('0' + (c % 10));
 }
 
+#ifdef __AVR_ATmega2560__
+
 //UART1
 void uart1_init(unsigned long baudrate) {
     // Double speed mode
@@ -103,6 +105,8 @@ void uart1_print_10bit(uint32_t c) {
 uint8_t uart1_available(void) {
 	return (UCSR1A & (1 << RXC1));
 }
+#endif
+
 
 uint8_t ft_hex(uint8_t val) {
 	char hex[] = "0123456789ABCDEF";
