@@ -5,7 +5,7 @@
 	(uuid "b9bebc87-44da-4f3b-83dd-910a5a9b0c81")
 	(paper "A4")
 	(lib_symbols
-		(symbol "G-Love:+3.3V"
+		(symbol "G-Love:+5V"
 			(power global)
 			(pin_numbers
 				(hide yes)
@@ -30,7 +30,7 @@
 					)
 				)
 			)
-			(property "Value" "+3.3V"
+			(property "Value" "+5V"
 				(at -0.254 2.794 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -73,7 +73,7 @@
 					)
 				)
 			)
-			(symbol "+3.3V_0_1"
+			(symbol "+5V_0_1"
 				(polyline
 					(pts
 						(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
@@ -99,7 +99,7 @@
 					)
 				)
 			)
-			(symbol "+3.3V_1_1"
+			(symbol "+5V_1_1"
 				(pin power_in line
 					(at 0 -1.27 90)
 					(length 2.54)
@@ -1194,7 +1194,7 @@
 		)
 	)
 	(symbol
-		(lib_id "G-Love:+3.3V")
+		(lib_id "G-Love:+5V")
 		(at 31.75 22.86 0)
 		(unit 1)
 		(body_style 1)
@@ -1204,7 +1204,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "d4473492-9f39-48fc-ada4-5c24da50dca8")
+		(uuid "f34876a4-dd54-4f58-815f-188eebc37978")
 		(property "Reference" "#PWR09"
 			(at 35.56 24.638 0)
 			(hide yes)
@@ -1216,7 +1216,7 @@
 				)
 			)
 		)
-		(property "Value" "+3.3V"
+		(property "Value" "+5V"
 			(at 31.75 19.05 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1260,7 +1260,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "0cff2bf5-8924-455d-a5c1-dc073bf9f8ca")
+			(uuid "7440bae0-ff6c-4005-973b-bc634a74df2d")
 		)
 		(instances
 			(project "G-Love"
