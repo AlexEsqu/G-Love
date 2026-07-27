@@ -2313,16 +2313,16 @@
 		(uuid "0e88a369-613c-47c1-8815-3a14e73c7e1b")
 	)
 	(junction
-		(at 76.2 90.17)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "165e8a64-d5a2-4be1-a647-d0642ace9213")
-	)
-	(junction
 		(at 76.2 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1dd8bda7-b656-4ca1-99cd-2efcf270c244")
+	)
+	(junction
+		(at 76.2 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "20c79d36-6454-4a0f-8545-faa1b8d57602")
 	)
 	(junction
 		(at 58.42 82.55)
@@ -2347,6 +2347,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4aff5a60-5045-46a2-a6b1-be822086085e")
+	)
+	(junction
+		(at 49.53 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "60bbde53-2459-4483-a9fa-e31b74e31180")
 	)
 	(junction
 		(at 26.67 82.55)
@@ -2389,12 +2395,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bff35270-0a4a-4f1e-8776-9ffffb8d4be1")
-	)
-	(junction
-		(at 49.53 90.17)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e15e30ae-dbfe-4a1a-9309-4b9e1f95e59f")
 	)
 	(junction
 		(at 93.98 80.01)
@@ -2604,6 +2604,16 @@
 	)
 	(wire
 		(pts
+			(xy 73.66 90.17) (xy 76.2 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4906e0e7-1bc2-46fb-a492-a8e133b11f4a")
+	)
+	(wire
+		(pts
 			(xy 76.2 111.76) (xy 49.53 111.76)
 		)
 		(stroke
@@ -2704,7 +2714,7 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 90.17) (xy 73.66 90.17)
+			(xy 49.53 90.17) (xy 71.12 90.17)
 		)
 		(stroke
 			(width 0)
@@ -3691,7 +3701,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:C")
-		(at 74.93 90.17 90)
+		(at 72.39 90.17 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3701,7 +3711,7 @@
 		(dnp no)
 		(uuid "b628c9c2-07cd-4ea9-8363-9b2080502533")
 		(property "Reference" "C35"
-			(at 73.152 86.36 90)
+			(at 70.612 86.36 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3711,7 +3721,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 72.898 88.138 90)
+			(at 70.358 88.138 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3721,7 +3731,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 74.93 90.17 0)
+			(at 72.39 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3732,7 +3742,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 74.93 90.17 0)
+			(at 72.39 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3743,7 +3753,7 @@
 			)
 		)
 		(property "Description" "Capacitor"
-			(at 84.074 90.17 0)
+			(at 81.534 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
