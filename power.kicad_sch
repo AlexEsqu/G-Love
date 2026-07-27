@@ -874,6 +874,24 @@
 		(uuid "153c1c84-256c-435b-abf8-dc9cbdc4a616")
 	)
 	(junction
+		(at 156.21 62.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "188d010e-80b9-4ea2-8f2b-1ca908f6dfdc")
+	)
+	(junction
+		(at 146.05 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7e0bc64f-5cf2-4919-a8e7-418d7a5da154")
+	)
+	(junction
+		(at 166.37 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "93a8edb7-cd5f-4dfa-9561-d1b337a89116")
+	)
+	(junction
 		(at 106.68 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -901,13 +919,23 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 55.88) (xy 166.37 55.88)
+			(xy 146.05 62.23) (xy 156.21 62.23)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "34c525c1-f42e-40ea-9897-957b2b6be04f")
+		(uuid "16dd8d31-0d73-4d4f-9b32-77177652b781")
+	)
+	(wire
+		(pts
+			(xy 166.37 58.42) (xy 166.37 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "423d386d-2b9a-41b8-b351-8d038cff29e8")
 	)
 	(wire
 		(pts
@@ -981,6 +1009,26 @@
 	)
 	(wire
 		(pts
+			(xy 166.37 55.88) (xy 176.53 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae3a349c-3b31-412d-8587-fa685547cf3a")
+	)
+	(wire
+		(pts
+			(xy 166.37 62.23) (xy 156.21 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba42972a-b21c-48bc-bc5e-53c707f43c8b")
+	)
+	(wire
+		(pts
 			(xy 67.31 63.5) (xy 76.2 63.5)
 		)
 		(stroke
@@ -988,6 +1036,16 @@
 			(type default)
 		)
 		(uuid "dfa663ec-3ac3-410d-82d8-bee400b44e39")
+	)
+	(wire
+		(pts
+			(xy 146.05 58.42) (xy 146.05 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e29a8334-b187-4c3a-8a3a-760a60c653f4")
 	)
 	(wire
 		(pts
@@ -1573,6 +1631,86 @@
 	)
 	(symbol
 		(lib_id "G-Love:C")
+		(at 146.05 57.15 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b4cc00f2-dc90-43b6-b2ab-1368c306892d")
+		(property "Reference" "C40"
+			(at 140.97 57.15 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 142.748 58.928 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 146.05 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 146.05 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Capacitor"
+			(at 146.05 66.294 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "515f9bbc-b77d-4cf2-b47f-fe82a3bc90bb")
+		)
+		(pin "1"
+			(uuid "1adafadb-3b16-4292-9d49-dff08f9d6a30")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/7d8a1e93-5494-4471-871c-2c3abe915f88"
+					(reference "C40")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:C")
 		(at 76.2 68.58 0)
 		(unit 1)
 		(body_style 1)
@@ -1885,6 +2023,86 @@
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/7d8a1e93-5494-4471-871c-2c3abe915f88"
 					(reference "LDO0101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:C")
+		(at 166.37 57.15 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e19d04fd-afca-46c7-b3e6-688a30a73c81")
+		(property "Reference" "C41"
+			(at 167.894 57.404 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 170.18 59.182 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 166.37 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 166.37 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Capacitor"
+			(at 166.37 66.294 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4acbb137-0c33-4e58-8c09-a320d6061ed6")
+		)
+		(pin "2"
+			(uuid "06f685bf-e0b3-438c-8572-c97477bffd86")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/7d8a1e93-5494-4471-871c-2c3abe915f88"
+					(reference "C41")
 					(unit 1)
 				)
 			)
