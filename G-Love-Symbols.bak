@@ -10546,8 +10546,8 @@
 		)
 		(symbol "TPS2113APWR_0_0"
 			(rectangle
-				(start -12.7 -12.7)
-				(end 12.7 12.7)
+				(start -12.7 12.7)
+				(end 12.7 -12.7)
 				(stroke
 					(width 0.41)
 					(type default)
@@ -10585,24 +10585,6 @@
 					)
 				)
 				(number "2"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at 17.78 10.16 180)
-				(length 5.08)
-				(name "VSNS"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
-				(number "3"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10664,24 +10646,6 @@
 					)
 				)
 			)
-			(pin output line
-				(at 17.78 5.08 180)
-				(length 5.08)
-				(name "OUT"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
-				(number "7"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
-			)
 			(pin input line
 				(at -17.78 0 0)
 				(length 5.08)
@@ -10693,6 +10657,44 @@
 					)
 				)
 				(number "8"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+		)
+		(symbol "TPS2113APWR_1_0"
+			(pin passive line
+				(at 17.78 10.16 180)
+				(length 5.08)
+				(name "VSNS"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 17.78 5.08 180)
+				(length 5.08)
+				(name "OUT"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "7"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -11535,7 +11537,7 @@
 		)
 		(symbol "TestPoint_0_1"
 			(circle
-				(center 3.302 0)
+				(center 2.032 0)
 				(radius 0.7184)
 				(stroke
 					(width 0)
@@ -11548,8 +11550,8 @@
 		)
 		(symbol "TestPoint_1_1"
 			(pin passive line
-				(at 2.032 0 0)
-				(length 0.508)
+				(at 0 0 0)
+				(length 1.27)
 				(name ""
 					(effects
 						(font
