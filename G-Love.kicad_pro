@@ -252,8 +252,12 @@
     }
   },
   "libraries": {
-    "pinned_footprint_libs": [],
-    "pinned_symbol_libs": []
+    "pinned_footprint_libs": [
+      "G-Love"
+    ],
+    "pinned_symbol_libs": [
+      "G-Love"
+    ]
   },
   "meta": {
     "filename": "G-Love.kicad_pro",
@@ -322,8 +326,8 @@
       "fields_ordered": [
         {
           "group_by": false,
-          "label": "Reference",
-          "name": "Reference",
+          "label": "Description",
+          "name": "Description",
           "show": true
         },
         {
@@ -339,10 +343,28 @@
           "show": true
         },
         {
+          "group_by": false,
+          "label": "Price",
+          "name": "Price",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "SUPPLIER",
+          "name": "SUPPLIER",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Reference",
+          "name": "Reference",
+          "show": true
+        },
+        {
           "group_by": true,
           "label": "DNP",
           "name": "${DNP}",
-          "show": true
+          "show": false
         },
         {
           "group_by": true,
@@ -354,19 +376,19 @@
           "group_by": true,
           "label": "Exclude from Board",
           "name": "${EXCLUDE_FROM_BOARD}",
-          "show": true
+          "show": false
         },
         {
           "group_by": true,
           "label": "Footprint",
           "name": "Footprint",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
           "label": "Datasheet",
           "name": "Datasheet",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
@@ -412,20 +434,8 @@
         },
         {
           "group_by": false,
-          "label": "Price",
-          "name": "Price",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "SnapEDA_Link",
           "name": "SnapEDA_Link",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "SUPPLIER",
-          "name": "SUPPLIER",
           "show": false
         },
         {
@@ -436,14 +446,26 @@
         },
         {
           "group_by": false,
-          "label": "Description",
-          "name": "Description",
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
           "show": false
         },
         {
           "group_by": false,
-          "label": "#",
-          "name": "${ITEM_NUMBER}",
+          "label": "Package",
+          "name": "Package",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "PROD_ID",
+          "name": "PROD_ID",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Minimum quantity per command",
+          "name": "Minimum quantity per command",
           "show": false
         }
       ],
@@ -452,7 +474,7 @@
       "include_excluded_from_bom": true,
       "name": "",
       "sort_asc": true,
-      "sort_field": "Reference"
+      "sort_field": "Description"
     },
     "bus_aliases": {},
     "connection_grid_size": 50.0,
@@ -503,7 +525,7 @@
         "uuid": "808bc5ea-49ac-4454-ba77-8b20d01ce159"
       }
     ],
-    "used_designators": "+5.5V1,U_1,C19-20,C22-53,B0505S\\-1W1-2,Diode Schottky D1,LDO101-102,GND3-4,GND7-8,GND20,GND130,GND134-163,SW_1,R15-35,TP1-18,flow1-35,Q1-2,U9-11,U13-18,D101-102,PAUL1,GNDA1,J_2-5,J1-4,PWR1,GC9A01_1,#PWR1-15,#PWR125,#PWR128-129,#PWR131,#PWR133-143",
+    "used_designators": "J1-3,PWR1,GC9A01_1,PAUL1,J_2-5,R15-33,SW_1,flow1-35,TP1-16,Diode Schottky D1,C22-44,B0505S\\-1W1,D101-102,U9,U13-16,Q1-2,GND3-4,GND7-8,GND20,GND130,GND136-156,LDO101,#PWR1-15,#PWR125,#PWR131,#PWR133-143",
     "variants": []
   },
   "sheets": [

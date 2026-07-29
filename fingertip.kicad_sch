@@ -664,6 +664,17 @@
 				)
 			)
 		)
+		(property "Minimum quantity per command" ""
+			(at 55.88 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "316b40e2-9614-4e58-bd30-24aef0fd803a")
 		)
@@ -760,7 +771,7 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
@@ -810,6 +821,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 72.39 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
 			(at 72.39 72.39 0)
 			(hide yes)
 			(show_name no)
