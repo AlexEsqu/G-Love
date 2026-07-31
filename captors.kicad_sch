@@ -1352,6 +1352,97 @@
 		(uuid "fd236048-008b-417b-b5c9-91e3db9be9bf")
 	)
 	(symbol
+<<<<<<< HEAD
+		(lib_id "G-Love:TestPoint")
+		(at 45.72 156.21 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "39dbf165-7420-48f1-a1f9-f77a327eea21")
+		(property "Reference" "TP15"
+			(at 43.688 160.02 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" ""
+			(at 45.72 156.21 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "GLove-footprint:Test_point"
+			(at 45.72 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 45.72 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 45.72 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 45.72 156.21 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "13fa667f-5988-42ee-8a94-7a8a6bd386cf")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db"
+					(reference "TP15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+=======
+>>>>>>> ab3f992 (Ajout led indication)
 		(lib_id "G-Love:+5V")
 		(at 57.15 77.47 0)
 		(unit 1)
@@ -1429,12 +1520,103 @@
 		)
 	)
 	(symbol
+<<<<<<< HEAD
+		(lib_id "G-Love:TestPoint")
+		(at 45.72 152.4 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8f58ccbe-c51a-4ce4-849f-af28836a5e74")
+		(property "Reference" "TP16"
+			(at 47.752 148.59 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" ""
+			(at 45.72 152.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "GLove-footprint:Test_point"
+			(at 45.72 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 45.72 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 45.72 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 45.72 152.4 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c211c387-7659-4e46-a2c2-fafa4c428ec3")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db"
+					(reference "TP16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+=======
+>>>>>>> ab3f992 (Ajout led indication)
 		(lib_id "G-Love:GND")
 		(at 57.15 129.54 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
@@ -1550,7 +1732,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "GLove-footprint:CD4097BPWR_TSSOP-24_L7.8-W4.4-P0.65-LS6.4-TL"
 			(at 57.15 105.41 0)
 			(hide yes)
 			(show_name no)
