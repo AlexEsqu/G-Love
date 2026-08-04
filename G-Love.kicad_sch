@@ -3506,9 +3506,9 @@
 				)
 			)
 			(symbol "TestPoint_1_1"
-				(pin bidirectional line
-					(at -2.54 0 0)
-					(length 1.905)
+				(pin passive line
+					(at 0 0 0)
+					(length 0)
 					(name ""
 						(effects
 							(font
@@ -3517,24 +3517,6 @@
 						)
 					)
 					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 2.54 0 180)
-					(length 1.905)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3804,6 +3786,12 @@
 		(uuid "27b5e2bb-67b1-4902-b614-a71d6739160f")
 	)
 	(junction
+		(at 118.11 92.71)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "29445ade-7783-49d9-a63f-1858c7861627")
+	)
+	(junction
 		(at 43.18 176.53)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3870,6 +3858,12 @@
 		(uuid "6c42802f-f7b0-4474-901b-d831accb2ad4")
 	)
 	(junction
+		(at 119.38 95.25)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6d429522-2eda-4aab-9dd6-0b038872b9e4")
+	)
+	(junction
 		(at 128.27 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3912,6 +3906,12 @@
 		(uuid "878a9fb5-f6d8-446e-8957-aaddc23e9724")
 	)
 	(junction
+		(at 62.23 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8f1b1ad8-a57d-4be1-85fc-bdda1359d143")
+	)
+	(junction
 		(at 55.88 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3934,6 +3934,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "af7192ca-9eda-476c-b9ea-98c49b1b5ff3")
+	)
+	(junction
+		(at 55.88 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bce8fa88-5efd-4e5e-b6e2-09e08fdd9f2d")
 	)
 	(junction
 		(at 93.98 31.75)
@@ -3980,14 +3986,6 @@
 		(uuid "04d9946f-0d14-4d08-81a9-367d47e7dcb5")
 	)
 	(no_connect
-		(at 62.23 125.73)
-		(uuid "06c8131e-7769-4b83-88b5-18718e5eb0ef")
-	)
-	(no_connect
-		(at 62.23 80.01)
-		(uuid "0d0217e7-b269-4ec5-8563-bc9b2811e5c3")
-	)
-	(no_connect
 		(at 113.03 107.95)
 		(uuid "0da79037-9bbd-4903-93f0-3afb31725e0c")
 	)
@@ -3998,10 +3996,6 @@
 	(no_connect
 		(at 113.03 46.99)
 		(uuid "11e9a223-7351-421f-aa26-3daf0a172851")
-	)
-	(no_connect
-		(at 62.23 82.55)
-		(uuid "1214095e-64dc-435d-8304-0802cb924d28")
 	)
 	(no_connect
 		(at 113.03 87.63)
@@ -4036,20 +4030,12 @@
 		(uuid "39ce3ff4-d18e-4a0f-9229-0fb5b585071f")
 	)
 	(no_connect
-		(at 62.23 123.19)
-		(uuid "39d79778-3a82-4bc7-a6ef-b39ee83ecb18")
-	)
-	(no_connect
 		(at 177.8 95.25)
 		(uuid "40f7c400-0f8c-4be1-850f-7a5683e5f9ff")
 	)
 	(no_connect
 		(at 113.03 59.69)
 		(uuid "43d8732d-1bc1-4e25-a49e-c2102947b869")
-	)
-	(no_connect
-		(at 62.23 72.39)
-		(uuid "4e864c50-727e-41d0-b433-0ca574bb42f2")
 	)
 	(no_connect
 		(at 213.36 50.8)
@@ -4060,24 +4046,8 @@
 		(uuid "51adcc84-8dfb-4bbf-8896-977afc15d854")
 	)
 	(no_connect
-		(at 62.23 113.03)
-		(uuid "548703d7-1364-4af1-a55d-f50fd77c5e8b")
-	)
-	(no_connect
 		(at 113.03 105.41)
 		(uuid "5a754622-cfb2-4c63-9c9c-7b0e78ec9c5a")
-	)
-	(no_connect
-		(at 62.23 118.11)
-		(uuid "611042cb-dec3-4101-bd0d-2ee2d7e00c67")
-	)
-	(no_connect
-		(at 62.23 128.27)
-		(uuid "87775ff1-332d-462b-8e25-6006d0e33e70")
-	)
-	(no_connect
-		(at 62.23 115.57)
-		(uuid "957e45e4-12ca-4c1e-a94b-e9f05088efc3")
 	)
 	(no_connect
 		(at 113.03 57.15)
@@ -4088,10 +4058,6 @@
 		(uuid "9985eb94-2967-4ca8-8396-05dfce8f22cb")
 	)
 	(no_connect
-		(at 62.23 77.47)
-		(uuid "a37995ea-4e9c-4bae-8a26-3b3aa7d4aa9c")
-	)
-	(no_connect
 		(at 177.8 107.95)
 		(uuid "a4eb63c6-8afb-4639-81e9-5a2c89fb1bcc")
 	)
@@ -4100,20 +4066,12 @@
 		(uuid "a9ed90d3-8e31-41e5-9860-643ff3ec57d8")
 	)
 	(no_connect
-		(at 62.23 120.65)
-		(uuid "af4fa151-baa4-45ff-bf85-2bcb711c948f")
-	)
-	(no_connect
 		(at 113.03 82.55)
 		(uuid "b2907cef-0974-430b-b3ef-5089b061ce38")
 	)
 	(no_connect
 		(at 113.03 102.87)
 		(uuid "b69de293-a13d-434d-8429-57b2bea0d7fd")
-	)
-	(no_connect
-		(at 62.23 69.85)
-		(uuid "c13bd979-31f9-4bbd-b7d5-b326b2c92624")
 	)
 	(no_connect
 		(at 113.03 74.93)
@@ -4138,14 +4096,6 @@
 	(no_connect
 		(at 67.31 105.41)
 		(uuid "f19f899a-e53b-41a4-b4a4-0ec417b1b92b")
-	)
-	(no_connect
-		(at 62.23 74.93)
-		(uuid "f8b96b80-960f-4dde-8fad-7302e636c507")
-	)
-	(no_connect
-		(at 62.23 110.49)
-		(uuid "fc088231-eae9-4df4-a4ee-dc5ea8a41821")
 	)
 	(wire
 		(pts
@@ -4249,6 +4199,16 @@
 	)
 	(wire
 		(pts
+			(xy 55.88 87.63) (xy 67.31 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1311f7fb-4e7d-4933-ad0d-59fe9c158595")
+	)
+	(wire
+		(pts
 			(xy 167.64 58.42) (xy 167.64 44.45)
 		)
 		(stroke
@@ -4326,6 +4286,16 @@
 			(type default)
 		)
 		(uuid "1fabc269-3532-4a6d-a22e-d7de842fe37f")
+	)
+	(wire
+		(pts
+			(xy 62.23 90.17) (xy 67.31 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21301eaa-1796-4614-8f7a-bf3ef410f9a5")
 	)
 	(wire
 		(pts
@@ -4429,16 +4399,6 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 95.25) (xy 125.73 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2baa8b25-8b41-4725-81ad-1a93e8bb4221")
-	)
-	(wire
-		(pts
 			(xy 97.79 34.29) (xy 100.33 34.29)
 		)
 		(stroke
@@ -4446,16 +4406,6 @@
 			(type default)
 		)
 		(uuid "2c73c0d8-7661-4505-b056-e0671a559620")
-	)
-	(wire
-		(pts
-			(xy 120.65 92.71) (xy 123.19 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2fd60f11-b659-4ff2-ae29-ece3f18fdb5c")
 	)
 	(wire
 		(pts
@@ -4529,7 +4479,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 92.71) (xy 115.57 92.71)
+			(xy 113.03 92.71) (xy 118.11 92.71)
 		)
 		(stroke
 			(width 0)
@@ -4869,7 +4819,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 95.25) (xy 116.84 95.25)
+			(xy 113.03 95.25) (xy 119.38 95.25)
 		)
 		(stroke
 			(width 0)
@@ -4879,7 +4829,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 90.17) (xy 60.96 90.17)
+			(xy 44.45 90.17) (xy 62.23 90.17)
 		)
 		(stroke
 			(width 0)
@@ -4906,16 +4856,6 @@
 			(type default)
 		)
 		(uuid "729a6284-5500-419e-b84f-6639b0d6811f")
-	)
-	(wire
-		(pts
-			(xy 60.96 87.63) (xy 67.31 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7322b507-89c9-45bc-880f-9fee19c9cf7c")
 	)
 	(wire
 		(pts
@@ -5149,6 +5089,16 @@
 	)
 	(wire
 		(pts
+			(xy 118.11 92.71) (xy 123.19 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f15f618-c228-475c-8552-350c8c36188c")
+	)
+	(wire
+		(pts
 			(xy 123.19 72.39) (xy 140.97 72.39)
 		)
 		(stroke
@@ -5246,6 +5196,16 @@
 			(type default)
 		)
 		(uuid "a1e15caf-af01-4db2-bb39-f3609e2d85bc")
+	)
+	(wire
+		(pts
+			(xy 119.38 95.25) (xy 125.73 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a21d4a0e-fab7-45f5-9ad2-fb9dcf31209f")
 	)
 	(wire
 		(pts
@@ -5779,16 +5739,6 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 90.17) (xy 67.31 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fafb343e-198d-4c9e-9454-d7b91175886a")
-	)
-	(wire
-		(pts
 			(xy 52.07 40.64) (xy 55.88 40.64)
 		)
 		(stroke
@@ -6051,7 +6001,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:TestPoint")
-		(at 64.77 69.85 180)
+		(at 67.31 69.85 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6061,7 +6011,7 @@
 		(dnp no)
 		(uuid "049981c0-42a6-411c-b3da-7173e9f83042")
 		(property "Reference" "TP1"
-			(at 57.912 69.85 0)
+			(at 60.452 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6071,7 +6021,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 64.77 69.85 0)
+			(at 67.31 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6080,8 +6030,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 64.77 69.85 0)
+		(property "Footprint" "G-Love:Test_point"
+			(at 67.31 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6092,7 +6042,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 64.77 69.85 0)
+			(at 67.31 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6103,7 +6053,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 64.77 69.85 0)
+			(at 67.31 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6114,7 +6064,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 64.77 69.85 0)
+			(at 67.31 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6126,9 +6076,6 @@
 		)
 		(pin "1"
 			(uuid "1265edaa-0fe9-4d9b-b9d6-9570a95104eb")
-		)
-		(pin "2"
-			(uuid "b2f4b95b-2a5f-42c9-8998-9a8a63065a14")
 		)
 		(instances
 			(project "G-Love"
@@ -6146,7 +6093,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom no)
-		(on_board yes)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -6233,7 +6180,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom no)
-		(on_board yes)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -6434,7 +6381,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Crystal_16MHz"
 			(at 233.68 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -6643,7 +6590,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Capacitor_0603"
 			(at 173.99 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -6726,7 +6673,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:TestPoint")
-		(at 64.77 120.65 180)
+		(at 67.31 120.65 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6736,7 +6683,7 @@
 		(dnp no)
 		(uuid "1565a9aa-3579-471b-934f-163cbc805853")
 		(property "Reference" "TP11"
-			(at 57.912 120.65 0)
+			(at 60.452 120.65 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6746,7 +6693,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 64.77 120.65 0)
+			(at 67.31 120.65 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6755,8 +6702,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 64.77 120.65 0)
+		(property "Footprint" "G-Love:Test_point"
+			(at 67.31 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6767,7 +6714,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 64.77 120.65 0)
+			(at 67.31 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6778,7 +6725,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 64.77 120.65 0)
+			(at 67.31 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6789,7 +6736,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 64.77 120.65 0)
+			(at 67.31 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6801,9 +6748,6 @@
 		)
 		(pin "1"
 			(uuid "3c36e593-df45-4751-9721-4ac1a6940f4c")
-		)
-		(pin "2"
-			(uuid "5f2a50ca-9d67-4e5b-ab10-d37f740486af")
 		)
 		(instances
 			(project "G-Love"
@@ -6846,7 +6790,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Resistor_0603"
 			(at 168.91 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -7015,7 +6959,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:PinHeader_1x06_Pas2.54mm"
 			(at 219.71 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -7088,7 +7032,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:TestPoint")
-		(at 64.77 80.01 180)
+		(at 67.31 80.01 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7098,7 +7042,7 @@
 		(dnp no)
 		(uuid "21ee3140-66bb-43f3-95a5-15f376a9fe7f")
 		(property "Reference" "TP5"
-			(at 57.912 80.01 0)
+			(at 60.452 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7108,7 +7052,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 64.77 80.01 0)
+			(at 67.31 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7117,8 +7061,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 64.77 80.01 0)
+		(property "Footprint" "G-Love:Test_point"
+			(at 67.31 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7129,7 +7073,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 64.77 80.01 0)
+			(at 67.31 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7140,7 +7084,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 64.77 80.01 0)
+			(at 67.31 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7151,7 +7095,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 64.77 80.01 0)
+			(at 67.31 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7164,9 +7108,6 @@
 		(pin "1"
 			(uuid "0ec03f82-d183-4172-a12f-422b47ccbcf0")
 		)
-		(pin "2"
-			(uuid "c0c307ec-6bea-4d5b-b3b2-3f79f10d305e")
-		)
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
@@ -7178,7 +7119,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:TestPoint")
-		(at 64.77 125.73 180)
+		(at 67.31 125.73 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7188,7 +7129,7 @@
 		(dnp no)
 		(uuid "2f25ca5c-77ba-4c87-8cc1-3f87bcb6a037")
 		(property "Reference" "TP13"
-			(at 57.912 125.73 0)
+			(at 60.452 125.73 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7198,7 +7139,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 64.77 125.73 0)
+			(at 67.31 125.73 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7207,8 +7148,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 64.77 125.73 0)
+		(property "Footprint" "G-Love:Test_point"
+			(at 67.31 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7219,7 +7160,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 64.77 125.73 0)
+			(at 67.31 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7230,7 +7171,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 64.77 125.73 0)
+			(at 67.31 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7241,7 +7182,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 64.77 125.73 0)
+			(at 67.31 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7253,9 +7194,6 @@
 		)
 		(pin "1"
 			(uuid "3045ccfe-bbbd-4df6-9508-d8b2f8db2322")
-		)
-		(pin "2"
-			(uuid "318af099-90b9-4f1c-bd3a-49aeffcd4716")
 		)
 		(instances
 			(project "G-Love"
@@ -7297,7 +7235,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Capacitor_0603"
 			(at 27.94 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -7410,7 +7348,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Resistor_0603"
 			(at 148.59 69.85 0)
 			(hide yes)
 			(show_name no)
@@ -7523,7 +7461,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Capacitor_0603"
 			(at 93.98 35.56 0)
 			(hide yes)
 			(show_name no)
@@ -7726,7 +7664,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Resistor_0603"
 			(at 243.84 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -8006,7 +7944,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:PinHeader_1x06_Pas2.54mm"
 			(at 21.59 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -8110,7 +8048,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:ATMega328P-AU"
 			(at 196.85 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -8283,7 +8221,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:TestPoint")
-		(at 64.77 118.11 180)
+		(at 67.31 118.11 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8293,7 +8231,7 @@
 		(dnp no)
 		(uuid "524e93dc-26f0-4122-aa94-2119f947b1ec")
 		(property "Reference" "TP10"
-			(at 57.912 118.11 0)
+			(at 60.452 118.11 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8303,7 +8241,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 64.77 118.11 0)
+			(at 67.31 118.11 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8312,8 +8250,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 64.77 118.11 0)
+		(property "Footprint" "G-Love:Test_point"
+			(at 67.31 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8324,7 +8262,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 64.77 118.11 0)
+			(at 67.31 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8335,7 +8273,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 64.77 118.11 0)
+			(at 67.31 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8346,7 +8284,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 64.77 118.11 0)
+			(at 67.31 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8358,9 +8296,6 @@
 		)
 		(pin "1"
 			(uuid "a89ab07b-bda3-4a40-aec0-49ae48ce61de")
-		)
-		(pin "2"
-			(uuid "218e91d1-1d83-4568-beba-2199e934d211")
 		)
 		(instances
 			(project "G-Love"
@@ -8403,7 +8338,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Resistor_0603"
 			(at 140.97 69.85 0)
 			(hide yes)
 			(show_name no)
@@ -8486,7 +8421,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:TestPoint")
-		(at 64.77 115.57 180)
+		(at 67.31 115.57 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8496,7 +8431,7 @@
 		(dnp no)
 		(uuid "63653c7a-d9f4-43f1-8797-cbe7c0e04a5b")
 		(property "Reference" "TP9"
-			(at 57.912 115.57 0)
+			(at 60.452 115.57 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8506,7 +8441,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 64.77 115.57 0)
+			(at 67.31 115.57 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8515,8 +8450,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 64.77 115.57 0)
+		(property "Footprint" "G-Love:Test_point"
+			(at 67.31 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8527,7 +8462,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 64.77 115.57 0)
+			(at 67.31 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8538,7 +8473,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 64.77 115.57 0)
+			(at 67.31 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8549,7 +8484,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 64.77 115.57 0)
+			(at 67.31 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8562,9 +8497,6 @@
 		(pin "1"
 			(uuid "811c1caf-56c1-49e2-85ad-095ede2d9d6e")
 		)
-		(pin "2"
-			(uuid "71e6ef41-4ded-4b4b-8840-a6297b6300a3")
-		)
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
@@ -8576,7 +8508,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:TestPoint")
-		(at 63.5 90.17 0)
+		(at 62.23 90.17 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8586,7 +8518,7 @@
 		(dnp no)
 		(uuid "64113842-bf07-4482-a7de-ba7f9fe1e051")
 		(property "Reference" "TP21"
-			(at 67.056 91.44 0)
+			(at 65.786 90.424 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8596,7 +8528,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 63.5 90.17 0)
+			(at 62.23 90.17 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8605,8 +8537,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 63.5 90.17 0)
+		(property "Footprint" "G-Love:Test_point"
+			(at 62.23 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8617,7 +8549,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 63.5 90.17 0)
+			(at 62.23 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8628,7 +8560,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 63.5 90.17 0)
+			(at 62.23 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8637,9 +8569,6 @@
 					(size 1.27 1.27)
 				)
 			)
-		)
-		(pin "2"
-			(uuid "f7f4d084-b33c-44fa-832f-6b3b28707652")
 		)
 		(pin "1"
 			(uuid "5ae7f0b2-7e78-413a-a3f9-93f913831d5a")
@@ -8685,7 +8614,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:D_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
 			(at 168.91 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -8765,7 +8694,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Resistor_0603"
 			(at 173.99 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -8924,7 +8853,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Capacitor_0603"
 			(at 187.96 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -9007,7 +8936,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:TestPoint")
-		(at 64.77 72.39 180)
+		(at 67.31 72.39 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9017,7 +8946,7 @@
 		(dnp no)
 		(uuid "741edb8d-b601-4602-a1ab-8724cc8b7dd2")
 		(property "Reference" "TP2"
-			(at 57.912 72.39 0)
+			(at 60.452 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9027,7 +8956,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 64.77 72.39 0)
+			(at 67.31 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9036,8 +8965,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 64.77 72.39 0)
+		(property "Footprint" "G-Love:Test_point"
+			(at 67.31 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9048,7 +8977,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 64.77 72.39 0)
+			(at 67.31 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9059,7 +8988,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 64.77 72.39 0)
+			(at 67.31 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9070,7 +8999,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 64.77 72.39 0)
+			(at 67.31 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9083,9 +9012,6 @@
 		(pin "1"
 			(uuid "e3a34f4b-a698-4aa4-8940-0179901e61c9")
 		)
-		(pin "2"
-			(uuid "84c63b70-c9a2-47b7-9d17-df0268a6dab9")
-		)
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
@@ -9097,7 +9023,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:TestPoint")
-		(at 58.42 87.63 0)
+		(at 55.88 87.63 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9107,7 +9033,7 @@
 		(dnp no)
 		(uuid "7a3d5e81-fad0-4027-8e0e-db6377cf9caa")
 		(property "Reference" "TP20"
-			(at 61.468 86.36 0)
+			(at 52.578 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9117,7 +9043,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 58.42 87.63 0)
+			(at 55.88 87.63 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9126,8 +9052,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 58.42 87.63 0)
+		(property "Footprint" "G-Love:Test_point"
+			(at 55.88 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9138,7 +9064,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 58.42 87.63 0)
+			(at 55.88 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9149,7 +9075,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 58.42 87.63 0)
+			(at 55.88 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9162,9 +9088,6 @@
 		(pin "1"
 			(uuid "60fd2099-a856-4ec0-81d2-38b8722b2bf3")
 		)
-		(pin "2"
-			(uuid "8c87dcd1-453d-43c8-a712-0aab77fdffb8")
-		)
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
@@ -9176,7 +9099,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:TestPoint")
-		(at 64.77 123.19 180)
+		(at 67.31 123.19 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9186,7 +9109,7 @@
 		(dnp no)
 		(uuid "7f205620-9f85-4c8d-8f96-8c2f1f3075e6")
 		(property "Reference" "TP12"
-			(at 57.912 123.19 0)
+			(at 60.452 123.19 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9196,7 +9119,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 64.77 123.19 0)
+			(at 67.31 123.19 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9205,8 +9128,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 64.77 123.19 0)
+		(property "Footprint" "G-Love:Test_point"
+			(at 67.31 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9217,7 +9140,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 64.77 123.19 0)
+			(at 67.31 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9228,7 +9151,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 64.77 123.19 0)
+			(at 67.31 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9239,7 +9162,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 64.77 123.19 0)
+			(at 67.31 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9251,9 +9174,6 @@
 		)
 		(pin "1"
 			(uuid "36a3d230-daf0-4cd0-8901-3447008fdf11")
-		)
-		(pin "2"
-			(uuid "e1b272b3-fa05-4fda-b581-04438271153c")
 		)
 		(instances
 			(project "G-Love"
@@ -9296,7 +9216,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Capacitor_0603"
 			(at 204.47 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -9408,7 +9328,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Crystal_16MHz"
 			(at 55.88 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -9502,7 +9422,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom no)
-		(on_board yes)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -9674,7 +9594,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:TestPoint")
-		(at 64.77 128.27 180)
+		(at 67.31 128.27 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9684,7 +9604,7 @@
 		(dnp no)
 		(uuid "8dfc3e69-8424-496a-9dd6-5092a475b474")
 		(property "Reference" "TP14"
-			(at 57.912 128.27 0)
+			(at 60.452 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9694,7 +9614,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 64.77 128.27 0)
+			(at 67.31 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9703,8 +9623,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 64.77 128.27 0)
+		(property "Footprint" "G-Love:Test_point"
+			(at 67.31 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9715,7 +9635,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 64.77 128.27 0)
+			(at 67.31 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9726,7 +9646,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 64.77 128.27 0)
+			(at 67.31 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9737,7 +9657,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 64.77 128.27 0)
+			(at 67.31 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9749,9 +9669,6 @@
 		)
 		(pin "1"
 			(uuid "f027b689-df80-4f24-b791-a6f112319611")
-		)
-		(pin "2"
-			(uuid "9e86587e-52b2-41b8-99d9-d56bb59f32cd")
 		)
 		(instances
 			(project "G-Love"
@@ -9796,7 +9713,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:D_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
 			(at 173.99 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -10119,7 +10036,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Resistor_0603"
 			(at 243.84 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -10231,7 +10148,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Capacitor_0603"
 			(at 241.034 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -10343,7 +10260,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Capacitor_0603"
 			(at 100.33 35.56 0)
 			(hide yes)
 			(show_name no)
@@ -10426,7 +10343,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:TestPoint")
-		(at 64.77 74.93 180)
+		(at 67.31 74.93 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10436,7 +10353,7 @@
 		(dnp no)
 		(uuid "a8db59af-ee8a-46da-b52c-d74e5f35dabb")
 		(property "Reference" "TP3"
-			(at 57.912 74.93 0)
+			(at 60.452 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10446,7 +10363,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 64.77 74.93 0)
+			(at 67.31 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10455,8 +10372,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 64.77 74.93 0)
+		(property "Footprint" "G-Love:Test_point"
+			(at 67.31 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10467,7 +10384,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 64.77 74.93 0)
+			(at 67.31 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10478,7 +10395,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 64.77 74.93 0)
+			(at 67.31 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10489,7 +10406,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 64.77 74.93 0)
+			(at 67.31 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10501,9 +10418,6 @@
 		)
 		(pin "1"
 			(uuid "dd547433-d11f-42c3-93ae-b54d06f4a998")
-		)
-		(pin "2"
-			(uuid "92a64f01-5941-4417-81d6-b5fefed83ccb")
 		)
 		(instances
 			(project "G-Love"
@@ -10545,7 +10459,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Capacitor_0603"
 			(at 50.8 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -10628,7 +10542,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:TestPoint")
-		(at 64.77 77.47 180)
+		(at 67.31 77.47 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10638,7 +10552,7 @@
 		(dnp no)
 		(uuid "ba2627cb-86b6-4fd7-861b-f349f6953478")
 		(property "Reference" "TP4"
-			(at 57.912 77.47 0)
+			(at 60.452 77.47 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10648,7 +10562,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 64.77 77.47 0)
+			(at 67.31 77.47 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10657,8 +10571,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 64.77 77.47 0)
+		(property "Footprint" "G-Love:Test_point"
+			(at 67.31 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10669,7 +10583,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 64.77 77.47 0)
+			(at 67.31 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10680,7 +10594,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 64.77 77.47 0)
+			(at 67.31 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10691,7 +10605,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 64.77 77.47 0)
+			(at 67.31 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10703,9 +10617,6 @@
 		)
 		(pin "1"
 			(uuid "ce3458fb-e619-4ed0-a805-26101b11730d")
-		)
-		(pin "2"
-			(uuid "bebac3d1-4e5b-4a13-91d4-ad85963a72d8")
 		)
 		(instances
 			(project "G-Love"
@@ -10975,7 +10886,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:TestPoint")
-		(at 64.77 110.49 180)
+		(at 67.31 110.49 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10985,7 +10896,7 @@
 		(dnp no)
 		(uuid "c1a79fcc-d1c0-4bd6-8fc2-5bef9a24f027")
 		(property "Reference" "TP17"
-			(at 57.912 110.49 0)
+			(at 60.452 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10995,7 +10906,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 64.77 110.49 0)
+			(at 67.31 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11004,8 +10915,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 64.77 110.49 0)
+		(property "Footprint" "G-Love:Test_point"
+			(at 67.31 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11016,7 +10927,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 64.77 110.49 0)
+			(at 67.31 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11027,7 +10938,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 64.77 110.49 0)
+			(at 67.31 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11038,7 +10949,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 64.77 110.49 0)
+			(at 67.31 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11050,9 +10961,6 @@
 		)
 		(pin "1"
 			(uuid "d5183063-4eba-4892-b504-5e938e83636f")
-		)
-		(pin "2"
-			(uuid "e8f3c75d-5886-40e8-8f10-204040906c58")
 		)
 		(instances
 			(project "G-Love"
@@ -11095,7 +11003,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Test_point"
 			(at 119.38 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -11130,9 +11038,6 @@
 		)
 		(pin "1"
 			(uuid "e543afff-9c4e-4e1c-9944-d82634ecc77e")
-		)
-		(pin "2"
-			(uuid "80c04b85-637b-4561-86f8-d932abcba610")
 		)
 		(instances
 			(project "G-Love"
@@ -11175,7 +11080,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Test_point"
 			(at 34.29 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -11241,7 +11146,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom no)
-		(on_board yes)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -11443,7 +11348,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Resistor_0603"
 			(at 43.18 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -11555,7 +11460,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Capacitor_0603"
 			(at 50.8 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -11667,7 +11572,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Capacitor_0603"
 			(at 241.3 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -11750,7 +11655,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:TestPoint")
-		(at 64.77 113.03 180)
+		(at 67.31 113.03 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11760,7 +11665,7 @@
 		(dnp no)
 		(uuid "e0ab7db0-8331-4262-9d0b-b325c99d5232")
 		(property "Reference" "TP18"
-			(at 57.912 113.03 0)
+			(at 60.452 113.03 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11770,7 +11675,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 64.77 113.03 0)
+			(at 67.31 113.03 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11779,8 +11684,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 64.77 113.03 0)
+		(property "Footprint" "G-Love:Test_point"
+			(at 67.31 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11791,7 +11696,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 64.77 113.03 0)
+			(at 67.31 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11802,7 +11707,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 64.77 113.03 0)
+			(at 67.31 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11813,7 +11718,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 64.77 113.03 0)
+			(at 67.31 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11825,9 +11730,6 @@
 		)
 		(pin "1"
 			(uuid "5654d198-30cc-42f2-b5f2-570c587199d4")
-		)
-		(pin "2"
-			(uuid "336627e7-b52e-4d8e-931e-f9af79fdcb82")
 		)
 		(instances
 			(project "G-Love"
@@ -12028,7 +11930,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "G-Love:ATMEGA2561-16AU"
+		(property "Footprint" "G-Love:ATMega2561"
 			(at 102.87 150.876 0)
 			(hide yes)
 			(show_name no)
@@ -12451,7 +12353,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Test_point"
 			(at 118.11 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -12486,9 +12388,6 @@
 		)
 		(pin "1"
 			(uuid "1e67a250-4186-48e2-8ed5-8bca6cf7b03d")
-		)
-		(pin "2"
-			(uuid "85a86e9b-33e5-43f2-a90d-40ec2a50e0a6")
 		)
 		(instances
 			(project "G-Love"
@@ -12607,7 +12506,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Capacitor_0603"
 			(at 85.09 35.56 0)
 			(hide yes)
 			(show_name no)
@@ -12720,7 +12619,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:Capacitor_0603"
 			(at 43.18 184.15 0)
 			(hide yes)
 			(show_name no)
@@ -12803,7 +12702,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:TestPoint")
-		(at 64.77 82.55 180)
+		(at 67.31 82.55 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12813,7 +12712,7 @@
 		(dnp no)
 		(uuid "fad0dd9b-c4cc-4545-aafa-99d86442849a")
 		(property "Reference" "TP6"
-			(at 57.912 82.55 0)
+			(at 60.452 82.55 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12823,7 +12722,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 64.77 82.55 0)
+			(at 67.31 82.55 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12832,8 +12731,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 64.77 82.55 0)
+		(property "Footprint" "G-Love:Test_point"
+			(at 67.31 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12844,7 +12743,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 64.77 82.55 0)
+			(at 67.31 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12855,7 +12754,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 64.77 82.55 0)
+			(at 67.31 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12866,7 +12765,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 64.77 82.55 0)
+			(at 67.31 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12878,9 +12777,6 @@
 		)
 		(pin "1"
 			(uuid "8bfda207-da6d-4b31-a0ed-9ec68a890c6c")
-		)
-		(pin "2"
-			(uuid "ebadabb7-db0f-4416-9903-7579f5dc7028")
 		)
 		(instances
 			(project "G-Love"
