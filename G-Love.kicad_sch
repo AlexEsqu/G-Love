@@ -11,6 +11,10 @@
 	)
 	(lib_symbols
 		(symbol "Conn_6_boot_1"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -80,7 +84,7 @@
 							)
 						)
 					)
-					(number "GND"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -98,7 +102,7 @@
 							)
 						)
 					)
-					(number "MISO"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -116,7 +120,7 @@
 							)
 						)
 					)
-					(number "MOSI"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -134,7 +138,7 @@
 							)
 						)
 					)
-					(number "SCK"
+					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -152,7 +156,7 @@
 							)
 						)
 					)
-					(number "VCC"
+					(number "6"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -172,7 +176,7 @@
 							)
 						)
 					)
-					(number "RESET"
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2496,6 +2500,10 @@
 			(embedded_fonts no)
 		)
 		(symbol "G-Love:Conn_6_boot"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2565,7 +2573,7 @@
 							)
 						)
 					)
-					(number "GND"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2583,7 +2591,7 @@
 							)
 						)
 					)
-					(number "MISO"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2601,7 +2609,7 @@
 							)
 						)
 					)
-					(number "MOSI"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2619,7 +2627,7 @@
 							)
 						)
 					)
-					(number "SCK"
+					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2637,7 +2645,7 @@
 							)
 						)
 					)
-					(number "VCC"
+					(number "6"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2657,7 +2665,7 @@
 							)
 						)
 					)
-					(number "RESET"
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -7003,22 +7011,22 @@
 				)
 			)
 		)
-		(pin "RESET"
+		(pin "3"
 			(uuid "ab2961ce-a37a-4d9c-abc9-77d156f78ac3")
 		)
-		(pin "VCC"
+		(pin "5"
 			(uuid "83d77b32-8b39-4799-bf90-0ef9212cfae1")
 		)
-		(pin "GND"
+		(pin "1"
 			(uuid "6ccf8b73-d5d6-4a4e-a071-1dac4ccc34f9")
 		)
-		(pin "MISO"
+		(pin "2"
 			(uuid "0c02da9f-a0e5-4ee5-ac6b-9c24fdcd6e4c")
 		)
-		(pin "MOSI"
+		(pin "6"
 			(uuid "fb7a2caf-82e4-4c17-a216-b291651f8c29")
 		)
-		(pin "SCK"
+		(pin "4"
 			(uuid "a6d64a71-ec61-4eb3-9e24-7d958f0e6407")
 		)
 		(instances
@@ -7988,22 +7996,22 @@
 				)
 			)
 		)
-		(pin "RESET"
+		(pin "5"
 			(uuid "87d02cda-1c36-43ba-a235-6fa637708643")
 		)
-		(pin "VCC"
+		(pin "2"
 			(uuid "4e97e435-3238-43ba-b955-f7c26d892a5b")
 		)
-		(pin "GND"
+		(pin "3"
 			(uuid "83d15686-d7ff-4ac8-9096-189f4c898c41")
 		)
-		(pin "MISO"
+		(pin "6"
 			(uuid "c66b4fbc-cd2a-400a-a889-c329c14cf079")
 		)
-		(pin "MOSI"
+		(pin "1"
 			(uuid "7da76ee8-89f7-4ee4-b07d-a52333976149")
 		)
-		(pin "SCK"
+		(pin "4"
 			(uuid "5998a0aa-5337-4755-b7d1-18e204b8d782")
 		)
 		(instances
@@ -11080,7 +11088,7 @@
 				)
 			)
 		)
-		(property "Footprint" "G-Love:Test_point"
+		(property "Footprint" "G-Love:SW_SPST_TL3305A"
 			(at 34.29 176.53 0)
 			(hide yes)
 			(show_name no)
