@@ -747,27 +747,29 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U_"
-				(at 2.286 -19.558 0)
+			(property "Reference" "U_1"
+				(at 2.032 -19.05 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
 			(property "Value" "CH340K"
-				(at 5.08 -16.764 0)
+				(at 1.27 -17.018 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "G-Love:CH340K"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -790,6 +792,39 @@
 				)
 			)
 			(property "Description" "USB UART bridge"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Minimum quantity per command" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Price" "0.6"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "SUPPLIER" "https://www.lcsc.com/product-detail/C968586.html"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -976,7 +1011,7 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin power_out line
 					(at -1.27 17.78 270)
 					(length 2.54)
 					(name "V3"
