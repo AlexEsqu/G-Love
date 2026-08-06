@@ -3,11 +3,11 @@
 	(generator "pcbnew")
 	(generator_version "10.0")
 	(layer "F.Cu")
-	(property "Reference" "REF**"
+	(property "Reference" "LDO0102"
 		(at 0.6 -4.2 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "116df267-267a-4246-8645-e6a060656588")
+		(uuid "b63aa891-4f51-4c80-aca6-60759de627a2")
 		(effects
 			(font
 				(size 1 1)
@@ -19,7 +19,7 @@
 		(at 0 5.4 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "e9eea3de-ccbd-43a6-91bc-358d0ac6de70")
+		(uuid "e6ed3977-a247-4d9c-bc29-18b3f73f7031")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "af362ced-7cd3-43ca-ab4a-ca5c6b055153")
+		(uuid "e9e97bb3-93c1-4ade-a5ab-c0b43ac55413")
 		(effects
 			(font
 				(size 1 1)
@@ -40,12 +40,12 @@
 			)
 		)
 	)
-	(property "Description" ""
+	(property "Description" "régulateur de tension"
 		(at 0 0 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "49e57b2f-0594-46ab-b833-047bb5cd28fc")
+		(uuid "bc496424-ff16-4b71-a393-7129354d63bf")
 		(effects
 			(font
 				(size 1 1)
@@ -53,6 +53,47 @@
 			)
 		)
 	)
+	(property "Minimum quantity per command" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4dc3af4d-7cbc-45d4-aee9-d3ff22a35613")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Price" "0.91"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "38454030-203d-4aa7-92d9-c73064c5502a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "SUPPLIER" "https://www.lcsc.com/product-detail/C6186.html"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4c15add8-cc3a-4a9a-a769-0da605f2ed5d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(sheetname "/Data/power I/O/Power/")
+	(sheetfile "power.kicad_sch")
 	(attr smd)
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_line
@@ -63,7 +104,7 @@
 			(type default)
 		)
 		(layer "F.SilkS")
-		(uuid "e9704a68-34a8-43db-b482-b8c82b1bb33c")
+		(uuid "c4f928fe-8ec0-4af3-b2b6-46e7506c99c2")
 	)
 	(fp_line
 		(start 1.5 -3.4)
@@ -73,7 +114,7 @@
 			(type default)
 		)
 		(layer "F.SilkS")
-		(uuid "205dd01f-a7de-44ed-8321-93de4089cb67")
+		(uuid "e687ed27-b5a8-4518-ab5c-cfff20b6afa5")
 	)
 	(fp_line
 		(start 1.5 -3.4)
@@ -83,7 +124,7 @@
 			(type default)
 		)
 		(layer "F.SilkS")
-		(uuid "00be015f-957a-4766-b743-a8edd37565b9")
+		(uuid "1a5d3e60-2b5d-4370-bee5-0fa9385a678e")
 	)
 	(fp_line
 		(start 1.5 3.4)
@@ -93,7 +134,7 @@
 			(type default)
 		)
 		(layer "F.SilkS")
-		(uuid "dfd537e9-f8e9-4ca4-b5cc-0bd9395cbb81")
+		(uuid "ffcd1a76-1d7f-4d24-afeb-0459070d2104")
 	)
 	(fp_line
 		(start -4.3 -2)
@@ -103,7 +144,7 @@
 			(type default)
 		)
 		(layer "F.CrtYd")
-		(uuid "0aff1b2c-3b17-4cdd-a990-c17aca5b6913")
+		(uuid "e9348f87-3057-4872-885c-d1597889ad64")
 	)
 	(fp_line
 		(start -4.3 2)
@@ -113,7 +154,7 @@
 			(type default)
 		)
 		(layer "F.CrtYd")
-		(uuid "d7765b71-3644-431d-b28a-4e94e4651380")
+		(uuid "5eb46871-ab1b-4e0b-95a6-264b2b1e3c9a")
 	)
 	(fp_line
 		(start -2 2)
@@ -123,7 +164,7 @@
 			(type default)
 		)
 		(layer "F.CrtYd")
-		(uuid "14c4fd69-e25a-476f-9652-fc8f96eef770")
+		(uuid "12b3e0eb-35cd-492f-af35-56a28836b4cd")
 	)
 	(fp_line
 		(start -2 3.6)
@@ -133,7 +174,7 @@
 			(type default)
 		)
 		(layer "F.CrtYd")
-		(uuid "29e91391-a849-45dc-9d35-11b149465ebf")
+		(uuid "0c89f25d-05f7-4cae-afa7-2090465e6f67")
 	)
 	(fp_line
 		(start -1.8 -3.6)
@@ -143,7 +184,7 @@
 			(type default)
 		)
 		(layer "F.CrtYd")
-		(uuid "a8af9318-a41f-4549-9900-f93815dacfff")
+		(uuid "72237670-0eaa-4fa0-869f-227beb488026")
 	)
 	(fp_line
 		(start -1.8 -3.6)
@@ -153,7 +194,7 @@
 			(type default)
 		)
 		(layer "F.CrtYd")
-		(uuid "019ec5bf-e310-49ef-a3b7-9241fa00a195")
+		(uuid "e9c92644-2724-4837-b161-96a3b37a8f9b")
 	)
 	(fp_line
 		(start 1.8 -3.6)
@@ -163,7 +204,7 @@
 			(type default)
 		)
 		(layer "F.CrtYd")
-		(uuid "a53db1e8-be0a-4a42-a3b2-fa6f9fd85434")
+		(uuid "814e675a-0641-47bf-8c25-88db90d1cb10")
 	)
 	(fp_line
 		(start 1.8 -3)
@@ -173,7 +214,7 @@
 			(type default)
 		)
 		(layer "F.CrtYd")
-		(uuid "bf76f11f-4992-44c4-9014-fa12a5c636a1")
+		(uuid "672324e4-5583-4796-aa02-b4e93be77352")
 	)
 	(fp_line
 		(start 1.8 3)
@@ -183,7 +224,7 @@
 			(type default)
 		)
 		(layer "F.CrtYd")
-		(uuid "df4aa3b1-1ea3-43a1-abb7-a15e77438f81")
+		(uuid "72f88b81-38f0-4802-983c-ee5fb6808864")
 	)
 	(fp_line
 		(start 1.8 3.6)
@@ -193,7 +234,7 @@
 			(type default)
 		)
 		(layer "F.CrtYd")
-		(uuid "456d557e-5933-47ec-a1fe-14d30dba96fa")
+		(uuid "4a5b8c69-59c5-4171-b5c6-b889b6f691b7")
 	)
 	(fp_line
 		(start 4.4 -3)
@@ -203,7 +244,7 @@
 			(type default)
 		)
 		(layer "F.CrtYd")
-		(uuid "9bc8f4a7-9f0a-4c59-b12c-a09beb6ae7b7")
+		(uuid "278d6ee7-3c0d-459e-9616-c037ec8679bc")
 	)
 	(fp_line
 		(start 4.4 3)
@@ -213,13 +254,13 @@
 			(type default)
 		)
 		(layer "F.CrtYd")
-		(uuid "423d97d9-a7af-4093-9c64-93e5e09c77e7")
+		(uuid "26cfd9a5-b387-4368-9f9b-1f457a957291")
 	)
 	(fp_text user "${REFERENCE}"
 		(at 0 4 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "1abc85e2-ac92-4872-94d1-7e85e64b6507")
+		(uuid "d581fb24-0682-4f4d-99a7-0922ec82d844")
 		(effects
 			(font
 				(size 1 1)
@@ -231,25 +272,25 @@
 		(at 2.97 2.3)
 		(size 2.5 1.1)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "96d8f95d-fff0-4bac-af40-a518f2ebfbac")
+		(uuid "0036d420-b873-47f5-a851-731c99ebae4a")
+	)
+	(pad "2" smd rect
+		(at -2.97 0)
+		(size 2.34 3.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "764f6fe0-a9de-4ed3-a304-ddcc6fac6974")
 	)
 	(pad "2" smd rect
 		(at 2.97 0)
 		(size 2.5 1.1)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "96bc343d-4808-4ac2-b2b9-e049bf24b51e")
+		(uuid "f1e25e5f-8592-4d39-94df-e13ec30d2e97")
 	)
 	(pad "3" smd rect
 		(at 2.97 -2.3)
 		(size 2.5 1.1)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "66b653ef-2ad3-45b6-a10d-1a32d81066af")
-	)
-	(pad "4" smd rect
-		(at -2.97 0)
-		(size 2.34 3.6)
-		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "007f95d3-a00c-44c2-a2c2-67d07794ab73")
+		(uuid "7231f405-122f-4e46-b257-10b9b7a3bfaf")
 	)
 	(embedded_fonts no)
 )

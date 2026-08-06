@@ -135,7 +135,7 @@
 			(on_board no)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR0139"
+			(property "Reference" "#PWR"
 				(at 3.81 -1.778 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -146,8 +146,8 @@
 					)
 				)
 			)
-			(property "Value" "VCC"
-				(at 0 3.81 0)
+			(property "Value" "+5V"
+				(at -0.254 2.794 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -2868,7 +2868,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2c61ad78-0187-471b-8a5c-a087748dfa79")
-		(property "Reference" "#PWR17"
+		(property "Reference" "#PWR017"
 			(at 223.52 74.168 0)
 			(hide yes)
 			(show_name no)
@@ -2928,7 +2928,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/700d9331-d0f9-41ba-950d-ef1246641225"
-					(reference "#PWR17")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)

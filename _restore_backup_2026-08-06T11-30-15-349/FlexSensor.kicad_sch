@@ -19,7 +19,7 @@
 			(on_board no)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR0139"
+			(property "Reference" "#PWR"
 				(at 3.81 -1.778 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -30,8 +30,8 @@
 					)
 				)
 			)
-			(property "Value" "VCC"
-				(at 0 3.81 0)
+			(property "Value" "+5V"
+				(at -0.254 2.794 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -1293,7 +1293,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f34876a4-dd54-4f58-815f-188eebc37978")
-		(property "Reference" "#PWR9"
+		(property "Reference" "#PWR09"
 			(at 35.56 24.638 0)
 			(hide yes)
 			(show_name no)
@@ -1353,27 +1353,27 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db/11d9268e-1547-4db8-9ef6-819c0ece3649"
-					(reference "#PWR13")
+					(reference "#PWR013")
 					(unit 1)
 				)
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db/1ccae2d5-3b8d-492e-8f3e-31d532153427"
-					(reference "#PWR14")
+					(reference "#PWR014")
 					(unit 1)
 				)
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db/7a2974e5-124b-4db5-8e90-e949fd9545a7"
-					(reference "#PWR10")
+					(reference "#PWR010")
 					(unit 1)
 				)
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db/93c35869-ca7a-4596-991e-6eeeacdf1f70"
-					(reference "#PWR12")
+					(reference "#PWR012")
 					(unit 1)
 				)
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db/a00bc8a6-48ba-4c2b-a585-b9390a223b1c"
-					(reference "#PWR11")
+					(reference "#PWR011")
 					(unit 1)
 				)
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db/d64adc8c-2a84-4c15-a7c4-b37086fe5b0e"
-					(reference "#PWR9")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)

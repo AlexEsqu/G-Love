@@ -315,7 +315,7 @@
 			(on_board no)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR0139"
+			(property "Reference" "#PWR"
 				(at 3.81 -1.778 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -326,8 +326,8 @@
 					)
 				)
 			)
-			(property "Value" "VCC"
-				(at 0 3.81 0)
+			(property "Value" "+5V"
+				(at -0.254 2.794 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -1082,7 +1082,7 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U14"
+			(property "Reference" "U13"
 				(at 0 17.78 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1102,7 +1102,7 @@
 					)
 				)
 			)
-			(property "Footprint" "MyGlove:TPS2113"
+			(property "Footprint" "TPS2113APWR:SOP65P640X120-8N"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1161,7 +1161,7 @@
 					(justify bottom)
 				)
 			)
-			(property "Price" "2.67"
+			(property "Price" "None"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1219,28 +1219,6 @@
 						(size 1.27 1.27)
 					)
 					(justify bottom)
-				)
-			)
-			(property "Minimum quantity per command" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "SUPPLIER" "https://www.lcsc.com/product-detail/C130052.html"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
 				)
 			)
 			(symbol "TPS2113APWR_0_0"
@@ -3191,7 +3169,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6a3a77d7-a5b5-4f99-a797-be255ca700e3")
-		(property "Reference" "#PWR137"
+		(property "Reference" "#PWR0137"
 			(at 77.47 53.848 0)
 			(hide yes)
 			(show_name no)
@@ -3251,7 +3229,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a/0a598795-0604-41b3-948f-4efe200200e3"
-					(reference "#PWR137")
+					(reference "#PWR0137")
 					(unit 1)
 				)
 			)
@@ -3381,7 +3359,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9821ff51-9bdc-413b-abf6-6bb29901bc3b")
-		(property "Reference" "#PWR140"
+		(property "Reference" "#PWR0140"
 			(at 118.11 146.558 0)
 			(hide yes)
 			(show_name no)
@@ -3392,7 +3370,7 @@
 				)
 			)
 		)
-		(property "Value" "VCC"
+		(property "Value" "+5V"
 			(at 114.046 141.224 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3441,7 +3419,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a/0a598795-0604-41b3-948f-4efe200200e3"
-					(reference "#PWR140")
+					(reference "#PWR0140")
 					(unit 1)
 				)
 			)
