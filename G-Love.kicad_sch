@@ -3890,12 +3890,6 @@
 		(uuid "78bed5cf-85ba-469e-bd3c-5e6bb2bcc685")
 	)
 	(junction
-		(at 196.85 30.48)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "81d9bd1f-0f30-450a-aa2f-cce4886f9e04")
-	)
-	(junction
 		(at 168.91 113.03)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3918,12 +3912,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "96bccf06-28ec-49ab-a253-8c1af75b2ed8")
-	)
-	(junction
-		(at 93.98 26.67)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9e7d6da7-1a92-49c9-a3f2-ac5be58232cd")
 	)
 	(junction
 		(at 91.44 31.75)
@@ -4322,16 +4310,6 @@
 			(type default)
 		)
 		(uuid "232b68cd-eae5-45ac-aa1f-384bf13a771e")
-	)
-	(wire
-		(pts
-			(xy 93.98 26.67) (xy 101.6 26.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "23697164-2fc0-4bab-868d-32c282a513d5")
 	)
 	(wire
 		(pts
@@ -4795,16 +4773,6 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 30.48) (xy 196.85 30.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "66ef4575-82b8-463c-9e44-538fb178bd72")
-	)
-	(wire
-		(pts
 			(xy 113.03 128.27) (xy 133.35 128.27)
 		)
 		(stroke
@@ -5062,16 +5030,6 @@
 			(type default)
 		)
 		(uuid "8cd5ec85-3c1d-4569-bc43-51c116871481")
-	)
-	(wire
-		(pts
-			(xy 93.98 21.59) (xy 93.98 26.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8dad6203-0478-45a5-a7a6-4881a68bd5c9")
 	)
 	(wire
 		(pts
@@ -5485,7 +5443,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 26.67) (xy 93.98 31.75)
+			(xy 93.98 21.59) (xy 93.98 31.75)
 		)
 		(stroke
 			(width 0)
@@ -5803,16 +5761,6 @@
 		)
 		(uuid "37ddd172-e512-4e53-88f3-d5402c72d544")
 	)
-	(label "VCC"
-		(at 191.77 30.48 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "4a518b55-4ffd-458f-bdd2-fd419449c42e")
-	)
 	(label "MOSI_BOOT_328P"
 		(at 228.6 158.75 0)
 		(effects
@@ -5822,17 +5770,6 @@
 			(justify left bottom)
 		)
 		(uuid "598f3ff5-c293-4078-9835-cb883cf8bb01")
-	)
-	(label "VCC"
-		(at 101.6 26.67 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.1588)
-			)
-			(justify left bottom)
-		)
-		(uuid "5c5ccbfc-c57b-4615-a747-b2d9b6a7cc00")
 	)
 	(label "DTR"
 		(at 54.61 100.33 0)
@@ -5884,17 +5821,6 @@
 		)
 		(uuid "6ec6d7f8-2381-4115-8cf7-04ca10c47a09")
 	)
-	(label "VCC"
-		(at 228.6 148.59 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.1588)
-			)
-			(justify left bottom)
-		)
-		(uuid "74e54aa2-4e84-4d1a-905f-45bd0df5d379")
-	)
 	(label "MOSI_BOOT_2561"
 		(at 113.03 123.19 0)
 		(effects
@@ -5914,16 +5840,6 @@
 			(justify left bottom)
 		)
 		(uuid "878fbc3e-5b5e-433f-8727-1a1532b9dc43")
-	)
-	(label "VCC"
-		(at 30.48 143.51 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a073426d-203e-4fe7-ade8-4907c3288fa1")
 	)
 	(label "MISO_BOOT_2561"
 		(at 30.48 156.21 0)
@@ -9748,6 +9664,83 @@
 		)
 	)
 	(symbol
+		(lib_id "G-Love:VCC")
+		(at 30.48 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "922b3498-714a-473c-968b-51fedbcc906a")
+		(property "Reference" "#PWR0145"
+			(at 34.29 144.018 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 30.48 139.954 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 30.48 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 30.48 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 30.48 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a71ee4d1-0bb3-4f35-87ea-8f32830477d5")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
+					(reference "#PWR0145")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "G-Love:GND")
 		(at 248.92 151.13 0)
 		(unit 1)
@@ -10210,6 +10203,83 @@
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
 					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:VCC")
+		(at 228.6 147.32 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a1f4e804-4764-44f8-89cf-23981e7bc925")
+		(property "Reference" "#PWR0144"
+			(at 232.41 149.098 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 228.6 145.034 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 228.6 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 228.6 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "16f1292c-460f-44d8-8120-b4f955a43633")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
+					(reference "#PWR0144")
 					(unit 1)
 				)
 			)
@@ -12776,13 +12846,13 @@
 	(group ""
 		(uuid "767e9ab1-05ae-440e-ab08-1ad0fef621fd")
 		(members "03495a6e-e039-4f88-9882-7015e799ac9d" "4e4026bd-909d-4dc1-a531-c1b8086fb430"
-			"8184ef5b-865d-4447-851d-efdd331b3ad7" "a073426d-203e-4fe7-ade8-4907c3288fa1"
+			"8184ef5b-865d-4447-851d-efdd331b3ad7" "922b3498-714a-473c-968b-51fedbcc906a"
 		)
 	)
 	(group ""
 		(uuid "8bc124bd-1aa2-41a2-8706-fd8ad589297e")
-		(members "18b93928-6a79-440b-8493-a30583d0debf" "74e54aa2-4e84-4d1a-905f-45bd0df5d379"
-			"d9476296-0b8d-40bd-84e9-21555e9e7914" "e1b01dee-5cb3-4212-be02-fb139d8b7caa"
+		(members "18b93928-6a79-440b-8493-a30583d0debf" "d9476296-0b8d-40bd-84e9-21555e9e7914"
+			"e1b01dee-5cb3-4212-be02-fb139d8b7caa"
 		)
 	)
 	(sheet

@@ -2436,6 +2436,12 @@
 		(uuid "bff35270-0a4a-4f1e-8776-9ffffb8d4be1")
 	)
 	(junction
+		(at 80.01 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ddb894a1-5bcd-4912-96cf-e91976736423")
+	)
+	(junction
 		(at 124.46 80.01)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2566,6 +2572,16 @@
 			(type default)
 		)
 		(uuid "23f61317-3a44-49c3-9317-e9db5cde0e4d")
+	)
+	(wire
+		(pts
+			(xy 80.01 104.14) (xy 80.01 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b0eb75b-0173-43e3-8fee-1ce93f0e22b9")
 	)
 	(wire
 		(pts
@@ -2919,16 +2935,6 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 104.14) (xy 99.06 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cb3b2bff-f069-423f-8894-fbe35ef7ba14")
-	)
-	(wire
-		(pts
 			(xy 119.38 82.55) (xy 124.46 82.55)
 		)
 		(stroke
@@ -2936,6 +2942,16 @@
 			(type default)
 		)
 		(uuid "cbdbb934-34e0-41d5-8987-995a9e1a81c3")
+	)
+	(wire
+		(pts
+			(xy 80.01 104.14) (xy 99.06 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce5f9296-a7ff-4750-96da-8aebd1f03825")
 	)
 	(wire
 		(pts
@@ -2999,7 +3015,7 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 90.17) (xy 80.01 111.76)
+			(xy 80.01 90.17) (xy 80.01 104.14)
 		)
 		(stroke
 			(width 0)
@@ -3676,96 +3692,6 @@
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a/4989b515-8901-47ca-ab95-4d280b30f712/a1b0dccf-5d55-40c3-a416-6945c903a7af"
 					(reference "C52")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "G-Love:GND")
-		(at 93.98 104.14 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "60b1f19e-22f7-4e37-a1b5-3ff3cc12cd79")
-		(property "Reference" "GND0139"
-			(at 93.98 107.696 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 93.98 107.696 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 93.98 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 93.98 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 93.98 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Minimum quantity per command" ""
-			(at 93.98 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "42aebffa-884d-4679-a176-dfe550072d05")
-		)
-		(instances
-			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a/4989b515-8901-47ca-ab95-4d280b30f712/a1b0dccf-5d55-40c3-a416-6945c903a7af"
-					(reference "GND0139")
 					(unit 1)
 				)
 			)

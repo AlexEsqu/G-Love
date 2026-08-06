@@ -1652,16 +1652,16 @@
 		(uuid "befdfe12-421a-498a-8cba-31b751f7a3f6")
 	)
 	(junction
-		(at 80.01 86.36)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cf545bc2-eb33-4234-9a22-8c252bbb0331")
-	)
-	(junction
 		(at 213.36 77.47)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e8e6dd1d-b728-4a22-aeec-fe997d0b3ac7")
+	)
+	(junction
+		(at 80.01 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ecaf995e-211a-4e5c-8d18-1d7e4a730f32")
 	)
 	(no_connect
 		(at 167.64 67.31)
@@ -1731,6 +1731,16 @@
 	)
 	(wire
 		(pts
+			(xy 80.01 87.63) (xy 80.01 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0db1babb-6bf0-442e-a938-d5c6df3a0c62")
+	)
+	(wire
+		(pts
 			(xy 44.45 146.05) (xy 57.15 146.05)
 		)
 		(stroke
@@ -1781,16 +1791,6 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 86.36) (xy 80.01 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "265c492c-1396-44cb-9066-85e202de0615")
-	)
-	(wire
-		(pts
 			(xy 63.5 128.27) (xy 63.5 130.81)
 		)
 		(stroke
@@ -1811,13 +1811,13 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 86.36) (xy 83.82 86.36)
+			(xy 80.01 87.63) (xy 85.09 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "38f10319-718a-49a4-8293-1e5a564a26bb")
+		(uuid "38b6651c-ec2f-4ea6-a139-908fd862a27e")
 	)
 	(wire
 		(pts
@@ -1901,16 +1901,6 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 82.55) (xy 80.01 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6136ee78-0fae-4446-a47c-24ea80d4ff93")
-	)
-	(wire
-		(pts
 			(xy 72.39 31.75) (xy 156.21 31.75)
 		)
 		(stroke
@@ -1968,6 +1958,16 @@
 			(type default)
 		)
 		(uuid "77a82729-4407-424c-8f8e-866d71ef745e")
+	)
+	(wire
+		(pts
+			(xy 85.09 83.82) (xy 85.09 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78a387a3-37b3-4a3d-bc7a-ae8ad395c7bc")
 	)
 	(wire
 		(pts
@@ -2281,6 +2281,16 @@
 	)
 	(wire
 		(pts
+			(xy 80.01 82.55) (xy 80.01 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db52f517-54a2-4b3a-8baa-c0b7b1997611")
+	)
+	(wire
+		(pts
 			(xy 77.47 77.47) (xy 144.78 77.47)
 		)
 		(stroke
@@ -2338,6 +2348,16 @@
 			(type default)
 		)
 		(uuid "e9689d47-a400-4a02-84cc-9a694f173d7f")
+	)
+	(wire
+		(pts
+			(xy 80.01 91.44) (xy 80.01 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebd64ede-596c-4a88-ad85-e095bc540ddb")
 	)
 	(wire
 		(pts
@@ -3062,6 +3082,84 @@
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a/4989b515-8901-47ca-ab95-4d280b30f712"
 					(reference "#PWR125")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:VCC")
+		(at 85.09 82.55 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "339813c6-c5f1-4358-a63c-045a1f6a3ada")
+		(property "Reference" "#PWR03"
+			(at 88.9 84.328 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 85.09 78.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 85.09 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 85.09 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 85.09 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a84aaedf-f8db-40b3-aa23-456de11d638d")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a/4989b515-8901-47ca-ab95-4d280b30f712"
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -3853,83 +3951,6 @@
 		)
 	)
 	(symbol
-		(lib_id "G-Love:VCC")
-		(at 83.82 85.09 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "84ff100a-f4cd-4f52-978f-4c709baaa415")
-		(property "Reference" "#PWR3"
-			(at 87.63 86.868 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VCC"
-			(at 83.566 82.55 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 83.82 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 83.82 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 83.82 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f499b519-598e-4814-9ecf-5f3c5249df79")
-		)
-		(instances
-			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a/4989b515-8901-47ca-ab95-4d280b30f712"
-					(reference "#PWR3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "G-Love:FlowDirection")
 		(at 96.52 142.24 0)
 		(unit 1)
@@ -4527,7 +4548,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:GND")
-		(at 80.01 91.44 0)
+		(at 80.01 95.25 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4538,7 +4559,7 @@
 		(fields_autoplaced yes)
 		(uuid "bac34ece-1e3d-499d-aa1f-93b2a550f5ff")
 		(property "Reference" "GND0146"
-			(at 80.01 94.996 0)
+			(at 80.01 98.806 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4549,7 +4570,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 80.01 94.996 0)
+			(at 80.01 98.806 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4560,7 +4581,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 80.01 91.44 0)
+			(at 80.01 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4571,7 +4592,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 80.01 91.44 0)
+			(at 80.01 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4582,7 +4603,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 80.01 91.44 0)
+			(at 80.01 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4593,7 +4614,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 80.01 91.44 0)
+			(at 80.01 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

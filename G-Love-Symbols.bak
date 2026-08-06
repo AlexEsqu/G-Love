@@ -8138,7 +8138,7 @@
 			)
 		)
 		(symbol "Conn_POGO_4_1_1"
-			(pin unspecified line
+			(pin power_in line
 				(at -11.43 1.27 0)
 				(length 10.16)
 				(name ""
@@ -8192,7 +8192,7 @@
 					)
 				)
 			)
-			(pin unspecified line
+			(pin power_in line
 				(at -11.43 -6.35 0)
 				(length 10.16)
 				(name ""
@@ -11165,7 +11165,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "LDO"
-		(power global)
 		(pin_numbers
 			(hide yes)
 		)
@@ -11174,7 +11173,7 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "LDO0102"
+		(property "Reference" "U"
 			(at -0.254 5.842 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13388,7 +13387,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin power_out line
 				(at 17.78 5.08 180)
 				(length 5.08)
 				(name "OUT"
