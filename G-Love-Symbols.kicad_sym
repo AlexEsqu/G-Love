@@ -118,121 +118,6 @@
 		)
 		(embedded_fonts no)
 	)
-	(symbol "+5.5V"
-		(power global)
-		(pin_numbers
-			(hide yes)
-		)
-		(pin_names
-			(offset 0)
-			(hide yes)
-		)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "+5.5V"
-			(at -0.254 1.016 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(symbol "+5.5V_0_1"
-			(polyline
-				(pts
-					(xy 0 0) (xy -1.27 -1.27)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 0 0) (xy 1.27 -1.27)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-		)
-		(symbol "+5.5V_1_1"
-			(pin power_out line
-				(at 0 -2.54 90)
-				(length 2.54)
-				(name ""
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(embedded_fonts no)
-	)
 	(symbol "+5.5VA"
 		(power global)
 		(pin_numbers
@@ -330,122 +215,6 @@
 		(symbol "+5.5VA_1_1"
 			(pin power_out line
 				(at 0 0 90)
-				(length 2.54)
-				(name ""
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(embedded_fonts no)
-	)
-	(symbol "+5V"
-		(power global)
-		(pin_numbers
-			(hide yes)
-		)
-		(pin_names
-			(offset 0)
-			(hide yes)
-		)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "#PWR0139"
-			(at 3.81 -1.778 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VCC"
-			(at 0 3.81 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(symbol "+5V_0_1"
-			(polyline
-				(pts
-					(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 0 1.524) (xy 0 -0.762)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-		)
-		(symbol "+5V_1_1"
-			(pin power_in line
-				(at 0 -1.27 90)
 				(length 2.54)
 				(name ""
 					(effects
@@ -8152,14 +7921,15 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "J_"
-			(at 3.048 -15.494 0)
+		(property "Reference" "J_3"
+			(at 5.08 -2.5399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Value" ""
@@ -8172,7 +7942,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MyGlove:PinHeader_1x04_Pas2.54mm"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8195,6 +7965,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8357,7 +8138,7 @@
 			)
 		)
 		(symbol "Conn_POGO_4_1_1"
-			(pin unspecified line
+			(pin power_in line
 				(at -11.43 1.27 0)
 				(length 10.16)
 				(name ""
@@ -8375,7 +8156,7 @@
 					)
 				)
 			)
-			(pin unspecified line
+			(pin bidirectional line
 				(at -11.43 -1.27 0)
 				(length 10.16)
 				(name ""
@@ -8393,7 +8174,7 @@
 					)
 				)
 			)
-			(pin unspecified line
+			(pin bidirectional line
 				(at -11.43 -3.81 0)
 				(length 10.16)
 				(name ""
@@ -8411,7 +8192,7 @@
 					)
 				)
 			)
-			(pin unspecified line
+			(pin power_in line
 				(at -11.43 -6.35 0)
 				(length 10.16)
 				(name ""
@@ -14475,6 +14256,122 @@
 			(pin passive line
 				(at 0 0 0)
 				(length 0)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "VCC"
+		(power global)
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "#PWR0139"
+			(at 3.81 -1.778 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 0 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "VCC_0_1"
+			(polyline
+				(pts
+					(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 1.524) (xy 0 -0.762)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "VCC_1_1"
+			(pin power_in line
+				(at 0 -1.27 90)
+				(length 2.54)
 				(name ""
 					(effects
 						(font

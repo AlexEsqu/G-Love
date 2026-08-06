@@ -200,122 +200,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "G-Love:+5V"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom no)
-			(on_board no)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR0139"
-				(at 3.81 -1.778 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "VCC"
-				(at 0 3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "+5V_0_1"
-				(polyline
-					(pts
-						(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.524) (xy 0 -0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+5V_1_1"
-				(pin power_in line
-					(at 0 -1.27 90)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "G-Love:ATmega2561"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -3535,6 +3419,122 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "G-Love:VCC"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR0139"
+				(at 3.81 -1.778 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "VCC"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "VCC_0_1"
+				(polyline
+					(pts
+						(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.524) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "VCC_1_1"
+				(pin power_in line
+					(at 0 -1.27 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "G-Love:switch"
 			(pin_numbers
 				(hide yes)
@@ -5803,7 +5803,7 @@
 		)
 		(uuid "37ddd172-e512-4e53-88f3-d5402c72d544")
 	)
-	(label "VCC_BOOT_328P"
+	(label "VCC"
 		(at 191.77 30.48 180)
 		(effects
 			(font
@@ -5823,7 +5823,7 @@
 		)
 		(uuid "598f3ff5-c293-4078-9835-cb883cf8bb01")
 	)
-	(label "VCC_BOOT_2561"
+	(label "VCC"
 		(at 101.6 26.67 0)
 		(effects
 			(font
@@ -5884,7 +5884,7 @@
 		)
 		(uuid "6ec6d7f8-2381-4115-8cf7-04ca10c47a09")
 	)
-	(label "VCC_BOOT_328P"
+	(label "VCC"
 		(at 228.6 148.59 0)
 		(effects
 			(font
@@ -5915,7 +5915,7 @@
 		)
 		(uuid "878fbc3e-5b5e-433f-8727-1a1532b9dc43")
 	)
-	(label "VCC_BOOT_2561"
+	(label "VCC"
 		(at 30.48 143.51 0)
 		(effects
 			(font
@@ -7822,7 +7822,7 @@
 		)
 	)
 	(symbol
-		(lib_id "G-Love:+5V")
+		(lib_id "G-Love:VCC")
 		(at 171.45 93.98 0)
 		(unit 1)
 		(body_style 1)
@@ -7843,7 +7843,7 @@
 				)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "VCC"
 			(at 171.45 90.932 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9838,7 +9838,7 @@
 		)
 	)
 	(symbol
-		(lib_id "G-Love:+5V")
+		(lib_id "G-Love:VCC")
 		(at 93.98 20.32 0)
 		(unit 1)
 		(body_style 1)
@@ -9859,7 +9859,7 @@
 				)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "VCC"
 			(at 91.186 19.05 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9915,7 +9915,7 @@
 		)
 	)
 	(symbol
-		(lib_id "G-Love:+5V")
+		(lib_id "G-Love:VCC")
 		(at 196.85 29.21 0)
 		(unit 1)
 		(body_style 1)
@@ -10794,7 +10794,7 @@
 		)
 	)
 	(symbol
-		(lib_id "G-Love:+5V")
+		(lib_id "G-Love:VCC")
 		(at 144.78 60.96 0)
 		(unit 1)
 		(body_style 1)
@@ -10815,7 +10815,7 @@
 				)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "VCC"
 			(at 144.78 58.674 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11806,7 +11806,7 @@
 		)
 	)
 	(symbol
-		(lib_id "G-Love:+5V")
+		(lib_id "G-Love:VCC")
 		(at 43.18 168.91 0)
 		(unit 1)
 		(body_style 1)
@@ -11828,7 +11828,7 @@
 				)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "VCC"
 			(at 43.18 165.1 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12385,7 +12385,7 @@
 		)
 	)
 	(symbol
-		(lib_id "G-Love:+5V")
+		(lib_id "G-Love:VCC")
 		(at 252.73 109.22 0)
 		(unit 1)
 		(body_style 1)
@@ -12406,7 +12406,7 @@
 				)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "VCC"
 			(at 252.984 106.934 0)
 			(show_name no)
 			(do_not_autoplace no)

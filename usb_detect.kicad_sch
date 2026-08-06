@@ -346,7 +346,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "G-Love:+5V"
+		(symbol "G-Love:VCC"
 			(power global)
 			(pin_numbers
 				(hide yes)
@@ -371,7 +371,7 @@
 					)
 				)
 			)
-			(property "Value" "+5V"
+			(property "Value" "VCC"
 				(at -0.254 2.794 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -414,7 +414,7 @@
 					)
 				)
 			)
-			(symbol "+5V_0_1"
+			(symbol "VCC_0_1"
 				(polyline
 					(pts
 						(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
@@ -440,7 +440,7 @@
 					)
 				)
 			)
-			(symbol "+5V_1_1"
+			(symbol "VCC_1_1"
 				(pin power_in line
 					(at 0 -1.27 90)
 					(length 2.54)
@@ -779,7 +779,7 @@
 		)
 	)
 	(symbol
-		(lib_id "G-Love:+5V")
+		(lib_id "G-Love:VCC")
 		(at 118.11 77.47 0)
 		(unit 1)
 		(body_style 1)
@@ -801,7 +801,7 @@
 				)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "VCC"
 			(at 118.11 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
