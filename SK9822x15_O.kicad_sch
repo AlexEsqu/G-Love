@@ -7,33 +7,13 @@
 	(lib_symbols)
 	(wire
 		(pts
-			(xy 207.01 25.4) (xy 210.82 25.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1c1dfdba-065c-4eb2-85cb-a9128e9f175c")
-	)
-	(wire
-		(pts
-			(xy 81.28 27.94) (xy 85.09 27.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3b8d402b-002b-4d09-bdbb-407ecc6e0f4f")
-	)
-	(wire
-		(pts
 			(xy 81.28 25.4) (xy 85.09 25.4)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "806c1669-3f2a-430e-a1cf-54820dceef96")
+		(uuid "4e1fb521-6bdb-46b4-9400-0ebe5408ceaa")
 	)
 	(wire
 		(pts
@@ -43,27 +23,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a015a339-dfaa-4064-bddc-c9a504b2547d")
-	)
-	(wire
-		(pts
-			(xy 207.01 27.94) (xy 210.82 27.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bc1df69a-95e2-4f2f-9090-fdf47ff1b928")
-	)
-	(wire
-		(pts
-			(xy 123.19 27.94) (xy 127 27.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c3f000c0-4b5b-4792-aefe-0856dfcc3f4c")
+		(uuid "514181e1-05e8-4a43-b86c-379aba069c4d")
 	)
 	(wire
 		(pts
@@ -73,7 +33,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "dd705711-c598-4341-a0ab-b6f8222dd293")
+		(uuid "8998f339-910d-4479-ab65-1a1cbd3f6f9a")
 	)
 	(wire
 		(pts
@@ -83,29 +43,47 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e5c2038b-9935-48d6-b5ae-4f78913d2b11")
+		(uuid "94269bf0-357c-486e-af68-b51fa60ddd2e")
 	)
-	(hierarchical_label "CLK_OUTPUT"
-		(shape input)
-		(at 248.92 25.4 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
+	(wire
+		(pts
+			(xy 81.28 27.94) (xy 85.09 27.94)
 		)
-		(uuid "02cdb060-3f4b-4fe9-903a-19385a20de66")
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94ec81d2-d0bd-4a1f-9cfa-bcd8ac9982a9")
 	)
-	(hierarchical_label "DATA_INPUT"
-		(shape input)
-		(at 43.18 27.94 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
+	(wire
+		(pts
+			(xy 207.01 27.94) (xy 210.82 27.94)
 		)
-		(uuid "7c5a435c-330a-46b9-9803-906bac19edab")
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb803131-d8dd-4f4e-ba2e-b5628b2f0f98")
+	)
+	(wire
+		(pts
+			(xy 207.01 25.4) (xy 210.82 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5ccb8cd-de9e-42ab-a73a-6ea530a0b40d")
+	)
+	(wire
+		(pts
+			(xy 123.19 27.94) (xy 127 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e85eaf34-0544-487a-b52f-06395b594703")
 	)
 	(hierarchical_label "DATA_OUTPUT"
 		(shape input)
@@ -116,7 +94,29 @@
 			)
 			(justify left)
 		)
-		(uuid "a33e8a1d-d6af-4fb1-b494-f40ab0362a7d")
+		(uuid "33529cb5-e0cb-4e87-9938-dcdddddce757")
+	)
+	(hierarchical_label "CLK_OUTPUT"
+		(shape input)
+		(at 248.92 25.4 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3fcc8bcc-0027-4a5f-a810-44b0388903bc")
+	)
+	(hierarchical_label "DATA_INPUT"
+		(shape input)
+		(at 43.18 27.94 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8676796c-2f79-40d8-b123-2d4732fae666")
 	)
 	(hierarchical_label "CLK_INPUT"
 		(shape input)
@@ -127,7 +127,7 @@
 			)
 			(justify right)
 		)
-		(uuid "ad79d5a5-1dee-4022-ab21-7d4ee607b10d")
+		(uuid "bc1eb0fe-b37a-462e-ab9a-c5fdb3e0076d")
 	)
 	(sheet
 		(at 127 22.86)
@@ -143,7 +143,7 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "32057457-8680-4154-8b8a-1a13212eb66f")
+		(uuid "56300770-06b9-4586-abf3-6db0dacb6dcc")
 		(property "Sheetname" "SK9822x5_3"
 			(at 127 22.1484 0)
 			(show_name no)
@@ -208,106 +208,8 @@
 		)
 		(instances
 			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/9c376b41-f2ee-4fc8-ab7c-f0dde4d7f9f4"
-					(page "23")
-				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/9730839e-7cf8-4bb0-89ed-e6ff80729323"
-					(page "29")
-				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/27c125d2-0495-4d4a-a4da-6961c81f3232"
-					(page "35")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 43.18 22.86)
-		(size 38.1 6.35)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "402f35bc-f7d7-4704-aa94-5336a8a1cf91")
-		(property "Sheetname" "SK9822x5_1"
-			(at 43.18 22.1484 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "SK9822.kicad_sch"
-			(at 43.18 29.7946 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "LED_SPI_CKL_IN" input
-			(at 43.18 25.4 180)
-			(uuid "14b51890-7f43-41cd-84a3-8849fe97e87f")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "LED_SPI_DAT_IN" input
-			(at 43.18 27.94 180)
-			(uuid "f057747e-2d4a-410d-a421-15cd2539cd16")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "LED_SPI_CKL_OUT" input
-			(at 81.28 25.4 0)
-			(uuid "ea85b193-4f42-4dda-b26d-0dba32af0375")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "LED_SPI_DAT_OUT" input
-			(at 81.28 27.94 0)
-			(uuid "af408ce5-d23c-4f8c-b406-bc1b2abedc54")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(instances
-			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/9c376b41-f2ee-4fc8-ab7c-f0dde4d7f9f4"
-					(page "27")
-				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/9730839e-7cf8-4bb0-89ed-e6ff80729323"
-					(page "33")
-				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/27c125d2-0495-4d4a-a4da-6961c81f3232"
-					(page "39")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/508c8d26-610d-4395-9434-749869aaa3fc"
+					(page "17")
 				)
 			)
 		)
@@ -326,7 +228,7 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "51251c9c-2f3b-4f96-af09-d08af439e7af")
+		(uuid "96618517-c0bc-4037-908d-6eb912f6bfa9")
 		(property "Sheetname" "SK9822x5_2"
 			(at 85.09 22.1484 0)
 			(show_name no)
@@ -391,14 +293,8 @@
 		)
 		(instances
 			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/9c376b41-f2ee-4fc8-ab7c-f0dde4d7f9f4"
-					(page "24")
-				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/9730839e-7cf8-4bb0-89ed-e6ff80729323"
-					(page "30")
-				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/27c125d2-0495-4d4a-a4da-6961c81f3232"
-					(page "36")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/508c8d26-610d-4395-9434-749869aaa3fc"
+					(page "18")
 				)
 			)
 		)
@@ -417,7 +313,7 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "ab06081b-274c-47b6-a66f-a3b79fade958")
+		(uuid "bced93eb-e525-4e5d-9f15-41746cc383d2")
 		(property "Sheetname" "SK9822x5_4"
 			(at 168.91 22.1484 0)
 			(show_name no)
@@ -482,14 +378,94 @@
 		)
 		(instances
 			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/9c376b41-f2ee-4fc8-ab7c-f0dde4d7f9f4"
-					(page "25")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/508c8d26-610d-4395-9434-749869aaa3fc"
+					(page "19")
 				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/9730839e-7cf8-4bb0-89ed-e6ff80729323"
-					(page "31")
+			)
+		)
+	)
+	(sheet
+		(at 43.18 22.86)
+		(size 38.1 6.35)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "cb06373c-fd44-4fb3-af88-6af9d82061bd")
+		(property "Sheetname" "SK9822xO"
+			(at 43.18 22.1484 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/27c125d2-0495-4d4a-a4da-6961c81f3232"
-					(page "37")
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "SK9822_O.kicad_sch"
+			(at 43.18 29.7946 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "LED_SPI_CKL_IN" input
+			(at 43.18 25.4 180)
+			(uuid "14b51890-7f43-41cd-84a3-8849fe97e87f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LED_SPI_DAT_IN" input
+			(at 43.18 27.94 180)
+			(uuid "f057747e-2d4a-410d-a421-15cd2539cd16")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LED_SPI_CKL_OUT" input
+			(at 81.28 25.4 0)
+			(uuid "ea85b193-4f42-4dda-b26d-0dba32af0375")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LED_SPI_DAT_OUT" input
+			(at 81.28 27.94 0)
+			(uuid "af408ce5-d23c-4f8c-b406-bc1b2abedc54")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/508c8d26-610d-4395-9434-749869aaa3fc"
+					(page "21")
 				)
 			)
 		)
@@ -508,7 +484,7 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "feeae6a9-c784-4f57-ae6a-333f9bba4903")
+		(uuid "ef8f0e29-655d-446c-b805-e2fd4bf0dd81")
 		(property "Sheetname" "SK9822x5_5"
 			(at 210.82 22.1484 0)
 			(show_name no)
@@ -573,14 +549,8 @@
 		)
 		(instances
 			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/9c376b41-f2ee-4fc8-ab7c-f0dde4d7f9f4"
-					(page "26")
-				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/9730839e-7cf8-4bb0-89ed-e6ff80729323"
-					(page "32")
-				)
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/27c125d2-0495-4d4a-a4da-6961c81f3232"
-					(page "38")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c/508c8d26-610d-4395-9434-749869aaa3fc"
+					(page "20")
 				)
 			)
 		)
