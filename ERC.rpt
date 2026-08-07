@@ -1,0 +1,131 @@
+ERC report (2026-08-06T17:41:31, Encoding UTF8)
+Report includes: Warnings
+
+***** Sheet /
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Device'
+    ; warning
+    @(2050 mils, 1950 mils): Symbol C46 [C_Polarized_Small_US]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Device'
+    ; warning
+    @(2100 mils, 5150 mils): Symbol C45 [C_Polarized_Small_US]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Interface_USB'
+    ; warning
+    @(5500 mils, 1700 mils): Symbol U9 [TUSB321]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Device'
+    ; warning
+    @(3600 mils, 6300 mils): Symbol C48 [C_Polarized_Small_US]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Device'
+    ; warning
+    @(1900 mils, 3350 mils): Symbol C40 [C_Polarized_Small_US]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Device'
+    ; warning
+    @(3500 mils, 3350 mils): Symbol C44 [C_Polarized_Small_US]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Connector_Audio'
+    ; warning
+    @(6700 mils, 3150 mils): Symbol J4 [XLR5_Ground]
+
+***** Sheet /Hand_Captors/FSR_Index/
+
+***** Sheet /Hand_Captors/FSR_Middle/
+
+***** Sheet /Hand_Captors/FSR_Ring/
+
+***** Sheet /Hand_Captors/FSR_Little/
+
+***** Sheet /Hand_Captors/FSR_Thumb/
+
+***** Sheet /Hand_Captors/Flex_Sensor0/
+
+***** Sheet /Hand_Captors/Flex_Sensor1/
+
+***** Sheet /Hand_Captors/Flex_Sensor2/
+
+***** Sheet /Hand_Captors/Flex_Sensor3/
+
+***** Sheet /Hand_Captors/Flex_Sensor4/
+
+***** Sheet /Hand_Captors/Flex_Sensor5/
+
+***** Sheet /Touchscreen/
+
+***** Sheet /Hand_Captors/IMU_1/
+
+***** Sheet /Hand_Captors/HallCaptor/
+
+***** Sheet /LEDs/SK9822x15_Index/
+
+***** Sheet /LEDs/SK9822x15_Index/SK9822x5_3/
+
+***** Sheet /LEDs/SK9822x15_Index/SK9822x5_2/
+
+***** Sheet /LEDs/SK9822x15_Index/SK9822x5_4/
+
+***** Sheet /LEDs/SK9822x15_Index/SK9822x5_5/
+
+***** Sheet /LEDs/SK9822x15_Index/SK9822x5_1/
+
+***** Sheet /LEDs/SK9822x15_Little/
+
+***** Sheet /LEDs/SK9822x15_Little/SK9822x5_3/
+
+***** Sheet /LEDs/SK9822x15_Little/SK9822x5_2/
+
+***** Sheet /LEDs/SK9822x15_Little/SK9822x5_4/
+
+***** Sheet /LEDs/SK9822x15_Little/SK9822x5_5/
+
+***** Sheet /LEDs/SK9822x15_Little/SK9822x5_1/
+
+***** Sheet /LEDs/SK9822x15_Middle/
+
+***** Sheet /LEDs/SK9822x15_Middle/SK9822x5_3/
+
+***** Sheet /LEDs/SK9822x15_Middle/SK9822x5_2/
+
+***** Sheet /LEDs/SK9822x15_Middle/SK9822x5_4/
+
+***** Sheet /LEDs/SK9822x15_Middle/SK9822x5_5/
+
+***** Sheet /LEDs/SK9822x15_Middle/SK9822x5_1/
+
+***** Sheet /LEDs/SK9822x15_Ring/
+
+***** Sheet /LEDs/SK9822x15_Ring/SK9822x5_3/
+
+***** Sheet /LEDs/SK9822x15_Ring/SK9822x5_2/
+
+***** Sheet /LEDs/SK9822x15_Ring/SK9822x5_4/
+
+***** Sheet /LEDs/SK9822x15_Ring/SK9822x5_5/
+
+***** Sheet /LEDs/SK9822x15_Ring/SK9822x5_1/
+
+***** Sheet /Data/power I/O/Data/
+
+***** Sheet /Hand_Captors/
+
+***** Sheet /Data/power I/O/
+
+***** Sheet /LEDs/
+
+***** Sheet /Data/power I/O/Power/
+[multiple_net_names]: Both AMS1117 and RAW are attached to the same items; AMS1117 will be used in the netlist
+    ; warning
+    @(4750 mils, 6050 mils): Symbol LDO0102 Pin 3 [Vin, Power input, Line]
+    @(1250 mils, 2200 mils): Symbol #PWR0134 Pin 1 [Power input, Line]
+[multiple_net_names]: Both AMS1117 and GND are attached to the same items; AMS1117 will be used in the netlist
+    ; warning
+    @(5150 mils, 6300 mils): Symbol LDO0102 Pin 1 [GND, Power input, Line]
+    @(5150 mils, 6400 mils): Label 'GND'
+
+***** Sheet /FingerTip Modules/
+
+***** Sheet /Data/power I/O/Data/DMX/
+
+ ** ERC messages: 9  Errors 0  Warnings 9
+
+ ** Ignored checks:
+    - Global label only appears once in the schematic
+    - Four connection points are joined together
+    - SPICE model issue
+    - Assigned footprint doesn't match footprint filters
