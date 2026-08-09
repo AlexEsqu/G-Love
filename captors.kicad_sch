@@ -882,16 +882,6 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 101.6) (xy 48.26 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2e24eee5-7bf0-4342-9cc0-7369b5386869")
-	)
-	(wire
-		(pts
 			(xy 116.84 96.52) (xy 67.31 96.52)
 		)
 		(stroke
@@ -902,6 +892,16 @@
 	)
 	(wire
 		(pts
+			(xy 41.91 101.6) (xy 48.26 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b183a12-c335-4278-a70e-614ee3814391")
+	)
+	(wire
+		(pts
 			(xy 124.46 88.9) (xy 116.84 88.9)
 		)
 		(stroke
@@ -909,16 +909,6 @@
 			(type default)
 		)
 		(uuid "3d4493dd-611d-4c60-bbb7-0b74df23c762")
-	)
-	(wire
-		(pts
-			(xy 41.91 104.14) (xy 48.26 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4177c97e-c34f-4be6-bebf-7f69bc0916b9")
 	)
 	(wire
 		(pts
@@ -1059,6 +1049,16 @@
 			(type default)
 		)
 		(uuid "98489bb7-68b9-4641-b5c0-dea99baa9e59")
+	)
+	(wire
+		(pts
+			(xy 41.91 104.14) (xy 48.26 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d639055-28da-480f-8fae-b37de6af4a36")
 	)
 	(wire
 		(pts
@@ -1252,7 +1252,7 @@
 	)
 	(hierarchical_label "ADC_Mux_Select_C"
 		(shape input)
-		(at 41.91 104.14 180)
+		(at 41.91 101.6 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1271,30 +1271,6 @@
 			(justify right)
 		)
 		(uuid "22a7b176-27f7-4005-a101-8b232b53b0b5")
-	)
-	(hierarchical_label "ADC_Mux_Inhibit"
-		(shape input)
-		(at 41.91 107.95 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "47665ac3-ddac-4a9c-9236-9db15cfd2245")
-		(property "Netclass" ""
-			(at 41.91 109.22 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify right)
-			)
-		)
 	)
 	(hierarchical_label "ADC_Mux_Select_A"
 		(shape input)
@@ -1331,7 +1307,7 @@
 	)
 	(hierarchical_label "ADC_Mux_Select_B"
 		(shape input)
-		(at 41.91 101.6 180)
+		(at 41.91 104.14 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1350,6 +1326,96 @@
 			(justify right)
 		)
 		(uuid "fd236048-008b-417b-b5c9-91e3db9be9bf")
+	)
+	(symbol
+		(lib_id "G-Love:GND")
+		(at 41.91 107.95 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "09c53301-7489-4177-a105-1c156bcf2664")
+		(property "Reference" "GND0161"
+			(at 41.91 111.506 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 40.132 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 41.91 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 41.91 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 41.91 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 41.91 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "69c83a04-4dda-43fc-a970-0fb10388380d")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db"
+					(reference "GND0161")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "G-Love:VCC")

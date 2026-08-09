@@ -4022,6 +4022,10 @@
 		(uuid "43d8732d-1bc1-4e25-a49e-c2102947b869")
 	)
 	(no_connect
+		(at 213.36 78.74)
+		(uuid "50455225-8032-4633-a0d8-b1a2bce7216c")
+	)
+	(no_connect
 		(at 213.36 50.8)
 		(uuid "506eb40e-b7dc-49d2-958d-85749d900ea0")
 	)
@@ -4870,16 +4874,6 @@
 			(type default)
 		)
 		(uuid "789ba8fd-500b-43d2-82db-7f3987c17779")
-	)
-	(wire
-		(pts
-			(xy 213.36 78.74) (xy 252.73 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "78a890ce-4081-48af-8f89-9e780aec22b8")
 	)
 	(wire
 		(pts
@@ -6861,7 +6855,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MyGlove:PinHeader_1x06_Pas2.54mm"
+		(property "Footprint" "MyGlove:PinHeader_1x06_P2.54mm_Vertical"
 			(at 219.71 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -7846,7 +7840,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MyGlove:PinHeader_1x06_Pas2.54mm"
+		(property "Footprint" "MyGlove:PinHeader_1x06_P2.54mm_Vertical"
 			(at 21.59 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -13335,16 +13329,6 @@
 		(pin "I2C_IMU_SDK" input
 			(at 252.73 86.36 180)
 			(uuid "03a3b21b-0a26-47dd-a26e-11a0e8df14e0")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "ADC_Mux_Inhibit" input
-			(at 252.73 78.74 180)
-			(uuid "45e6b518-1f90-4767-b4fa-6793af89662e")
 			(effects
 				(font
 					(size 1.27 1.27)
