@@ -5,6 +5,160 @@
 	(uuid "4accb2ac-0cab-4e92-89da-be9ea3f2cfb4")
 	(paper "A4")
 	(lib_symbols
+		(symbol "G-Love:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 1.778 -3.048 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Capacitor"
+				(at 0 -9.144 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -0.762 -0.254) (xy 0.762 -0.254)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 -1.016) (xy 0.254 -1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.254) (xy -0.762 0.254)
+					)
+					(stroke
+						(width 0.381)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 1.27 270)
+					(length 1.016)
+					(name ""
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -1.27 90)
+					(length 1.016)
+					(name ""
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "G-Love:CD4097B"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -794,6 +948,12 @@
 		)
 		(uuid "da80f13b-32a9-4b88-b347-d844cc61dc24")
 	)
+	(junction
+		(at 57.15 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7e5aee1e-404e-448b-909e-04614f55d54e")
+	)
 	(no_connect
 		(at 67.31 121.92)
 		(uuid "20872622-6e0d-441d-b279-73755ad3da67")
@@ -869,6 +1029,26 @@
 			(type default)
 		)
 		(uuid "18eaba04-8e51-4ffd-b8c8-06c512af3f84")
+	)
+	(wire
+		(pts
+			(xy 49.53 76.2) (xy 49.53 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2044b7b4-5d27-4928-ae92-0282f963ddab")
+	)
+	(wire
+		(pts
+			(xy 54.61 76.2) (xy 57.15 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23f26821-b3a6-45ab-8161-019f3fcd453e")
 	)
 	(wire
 		(pts
@@ -1032,6 +1212,16 @@
 	)
 	(wire
 		(pts
+			(xy 52.07 76.2) (xy 49.53 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88a35a90-3f2c-4605-9e55-5109a0e9a7d1")
+	)
+	(wire
+		(pts
 			(xy 124.46 107.95) (xy 124.46 106.68)
 		)
 		(stroke
@@ -1159,6 +1349,16 @@
 			(type default)
 		)
 		(uuid "d7049bf2-65ca-42c3-a43e-cff6d9bd08fa")
+	)
+	(wire
+		(pts
+			(xy 57.15 76.2) (xy 57.15 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc157823-88ac-4414-90bf-6580de9e76ab")
 	)
 	(wire
 		(pts
@@ -1419,7 +1619,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:VCC")
-		(at 57.15 77.47 0)
+		(at 57.15 74.93 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1429,7 +1629,7 @@
 		(dnp no)
 		(uuid "4ba61d6d-1b28-4f6f-8a08-0406a370ab9a")
 		(property "Reference" "#PWR0132"
-			(at 60.96 79.248 0)
+			(at 60.96 76.708 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1440,7 +1640,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 57.15 74.422 0)
+			(at 57.15 71.882 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1450,7 +1650,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 57.15 77.47 0)
+			(at 57.15 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1461,7 +1661,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 77.47 0)
+			(at 57.15 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1472,7 +1672,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 57.15 77.47 0)
+			(at 57.15 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1505,7 +1705,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a75eecb9-1136-46d3-abbb-94fbd1bac7bb")
-		(property "Reference" "GND0140"
+		(property "Reference" "GND0141"
 			(at 57.15 133.096 0)
 			(hide yes)
 			(show_name no)
@@ -1578,7 +1778,86 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db"
-					(reference "GND0140")
+					(reference "GND0141")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:C")
+		(at 53.34 76.2 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b11d0711-e320-4db8-8863-aa203083ea87")
+		(property "Reference" "C31"
+			(at 52.832 74.168 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100nF"
+			(at 53.594 77.978 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:Capacitor_0603"
+			(at 53.34 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Capacitor"
+			(at 62.484 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "95cd3293-4716-46a3-a210-f957a4b9ba13")
+		)
+		(pin "1"
+			(uuid "4292d243-b829-4e69-922f-d36c2e57f02c")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db"
+					(reference "C31")
 					(unit 1)
 				)
 			)
@@ -1758,6 +2037,96 @@
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db"
 					(reference "CD1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:GND")
+		(at 49.53 80.01 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c5777c5a-463d-4522-ac02-4e3858f606b6")
+		(property "Reference" "GND0140"
+			(at 49.53 83.566 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 47.752 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 49.53 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 49.53 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7a1e4ebc-2010-46f6-8887-b2f6e74bf52d")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db"
+					(reference "GND0140")
 					(unit 1)
 				)
 			)
