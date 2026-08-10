@@ -1,13 +1,14 @@
-(footprint "Untitled"
+(footprint "NPTH_Drill_Hole"
 	(version 20260206)
 	(generator "pcbnew")
 	(generator_version "10.0")
 	(layer "F.Cu")
 	(property "Reference" "REF**"
-		(at 0 -0.5 0)
+		(at 0.6 -2.1 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "5342b1b5-63cf-49e7-9256-dfdc95bc71f9")
+		(hide yes)
+		(uuid "6f5a5a4d-4449-483d-a889-cf9787138be6")
 		(effects
 			(font
 				(size 1 1)
@@ -15,11 +16,11 @@
 			)
 		)
 	)
-	(property "Value" "Untitled"
-		(at 0 1 0)
+	(property "Value" "NPTH_Drill_Hole"
+		(at 0 2.5 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "817184da-0719-423d-8fff-a41c1eb0c2a7")
+		(uuid "3afb0ade-6d89-4a03-afd5-7438e0d29628")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +33,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "a0609f1d-133f-4fad-8b65-619cea8504da")
+		(uuid "d4785aa5-5638-46f6-9a18-7bd4b4ab6207")
 		(effects
 			(font
 				(size 1 1)
@@ -45,7 +46,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "ae287615-efc7-44d1-bca5-65d525a18dd5")
+		(uuid "a8ded064-5a1a-4b24-93de-8837d11d147a")
 		(effects
 			(font
 				(size 1 1)
@@ -56,16 +57,24 @@
 	(attr through_hole)
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_text user "${REFERENCE}"
-		(at 0 2.5 0)
+		(at 0 4.1 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "3b47a71f-ae01-4146-b21c-84267f056d13")
+		(uuid "447c77fd-b9a4-478b-b1b9-f7dea009a62c")
 		(effects
 			(font
 				(size 1 1)
 				(thickness 0.15)
 			)
 		)
+	)
+	(pad "" np_thru_hole circle
+		(at 0 0)
+		(size 1.27 1.27)
+		(drill 1.9)
+		(layers "*.Cu" "*.Mask")
+		(thermal_bridge_angle 90)
+		(uuid "12ffb534-707d-4622-b027-63c0ad7218e4")
 	)
 	(embedded_fonts no)
 )
