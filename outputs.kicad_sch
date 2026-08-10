@@ -590,17 +590,6 @@
 				)
 			)
 			(symbol "J_USB_RECEPTACLE_0_1"
-				(rectangle
-					(start -10.414 20.32)
-					(end 10.16 -19.05)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
 				(circle
 					(center -2.794 8.763)
 					(radius 0.635)
@@ -791,6 +780,17 @@
 				)
 			)
 			(symbol "J_USB_RECEPTACLE_1_1"
+				(rectangle
+					(start -10.414 20.32)
+					(end 10.16 -19.05)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
 				(pin power_out line
 					(at -3.81 -21.59 90)
 					(length 2.54)
@@ -812,7 +812,7 @@
 				(pin power_out line
 					(at -6.35 22.86 270)
 					(length 2.54)
-					(name "VBUS"
+					(name "VBUS1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -903,7 +903,7 @@
 					(at -6.35 22.86 270)
 					(length 2.54)
 					(hide yes)
-					(name "VBUS"
+					(name "VBUS1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -960,7 +960,7 @@
 					(at -6.35 22.86 270)
 					(length 2.54)
 					(hide yes)
-					(name "VBUS"
+					(name "VBUS1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1051,7 +1051,7 @@
 					(at -6.35 22.86 270)
 					(length 2.54)
 					(hide yes)
-					(name "VBUS"
+					(name "VBUS1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1426,7 +1426,7 @@
 				(pin passive line
 					(at -6.35 22.86 270)
 					(length 2.54)
-					(name "VBUS"
+					(name "VBUS2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1513,11 +1513,11 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin passive line
 					(at -6.35 22.86 270)
 					(length 2.54)
 					(hide yes)
-					(name "VBUS"
+					(name "VBUS2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1532,7 +1532,7 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin passive line
 					(at -3.81 -21.59 90)
 					(length 2.54)
 					(hide yes)
@@ -1551,7 +1551,7 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin passive line
 					(at -3.81 -21.59 90)
 					(length 2.54)
 					(hide yes)
@@ -1570,11 +1570,11 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin passive line
 					(at -6.35 22.86 270)
 					(length 2.54)
 					(hide yes)
-					(name "VBUS"
+					(name "VBUS2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1661,11 +1661,11 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin passive line
 					(at -6.35 22.86 270)
 					(length 2.54)
 					(hide yes)
-					(name "VBUS"
+					(name "VBUS2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1680,7 +1680,7 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin passive line
 					(at -3.81 -21.59 90)
 					(length 2.54)
 					(hide yes)
@@ -1699,7 +1699,7 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin passive line
 					(at -7.62 -21.59 90)
 					(length 2.54)
 					(name "SHIELD"
@@ -3856,7 +3856,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "28755c5e-0392-4add-aa3b-c56575304f90")
-		(property "Reference" "GND0148"
+		(property "Reference" "GND0149"
 			(at 119.38 51.816 0)
 			(hide yes)
 			(show_name no)
@@ -3928,7 +3928,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a"
-					(reference "GND0148")
+					(reference "GND0149")
 					(unit 1)
 				)
 			)
@@ -4224,7 +4224,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5365fe06-8e9b-48c5-9aa2-53d347b6ffdd")
-		(property "Reference" "GND0144"
+		(property "Reference" "GND0145"
 			(at 60.96 111.506 0)
 			(hide yes)
 			(show_name no)
@@ -4296,7 +4296,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a"
-					(reference "GND0144")
+					(reference "GND0145")
 					(unit 1)
 				)
 			)
@@ -4585,7 +4585,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "59e13ec4-54d8-4864-9723-42327bd750a3")
-		(property "Reference" "GND0149"
+		(property "Reference" "GND0150"
 			(at 132.08 31.496 0)
 			(hide yes)
 			(show_name no)
@@ -4657,7 +4657,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a"
-					(reference "GND0149")
+					(reference "GND0150")
 					(unit 1)
 				)
 			)
@@ -4675,7 +4675,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6d60b431-7e08-4f88-b3b8-1fbc1eaf9942")
-		(property "Reference" "GND0142"
+		(property "Reference" "GND0143"
 			(at 52.07 59.436 0)
 			(hide yes)
 			(show_name no)
@@ -4747,7 +4747,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a"
-					(reference "GND0142")
+					(reference "GND0143")
 					(unit 1)
 				)
 			)
@@ -5456,7 +5456,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "936ad0a8-3ca7-49a1-b78b-38f8735b6fdc")
-		(property "Reference" "GND0150"
+		(property "Reference" "GND0151"
 			(at 139.7 59.436 0)
 			(hide yes)
 			(show_name no)
@@ -5528,7 +5528,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a"
-					(reference "GND0150")
+					(reference "GND0151")
 					(unit 1)
 				)
 			)
@@ -5850,7 +5850,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "aeaea29d-1fcc-43ed-80b4-c61552205606")
-		(property "Reference" "GND0146"
+		(property "Reference" "GND0147"
 			(at 93.98 140.716 0)
 			(hide yes)
 			(show_name no)
@@ -5922,7 +5922,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a"
-					(reference "GND0146")
+					(reference "GND0147")
 					(unit 1)
 				)
 			)
@@ -6053,7 +6053,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c5ad9392-c6e6-41ff-8668-eded452cdf12")
-		(property "Reference" "GND0143"
+		(property "Reference" "GND0144"
 			(at 53.34 136.906 0)
 			(hide yes)
 			(show_name no)
@@ -6125,7 +6125,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a"
-					(reference "GND0143")
+					(reference "GND0144")
 					(unit 1)
 				)
 			)
@@ -6230,7 +6230,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c970eceb-cdd0-48f8-b512-1bca46cee301")
-		(property "Reference" "GND0140"
+		(property "Reference" "GND0141"
 			(at 15.24 140.716 0)
 			(hide yes)
 			(show_name no)
@@ -6302,7 +6302,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a"
-					(reference "GND0140")
+					(reference "GND0141")
 					(unit 1)
 				)
 			)
@@ -6884,7 +6884,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e7184366-eaf2-40bc-a9b0-9d2a2d2c5612")
-		(property "Reference" "GND0145"
+		(property "Reference" "GND0146"
 			(at 62.23 196.596 0)
 			(hide yes)
 			(show_name no)
@@ -6956,7 +6956,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a"
-					(reference "GND0145")
+					(reference "GND0146")
 					(unit 1)
 				)
 			)
@@ -7164,7 +7164,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f48f4bf9-bf37-491b-9f6c-5d8c246cf377")
-		(property "Reference" "GND0141"
+		(property "Reference" "GND0142"
 			(at 25.4 140.716 0)
 			(hide yes)
 			(show_name no)
@@ -7236,7 +7236,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a"
-					(reference "GND0141")
+					(reference "GND0142")
 					(unit 1)
 				)
 			)
@@ -7254,7 +7254,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f526755e-8bdc-44c8-a7dc-ed3fe080ca82")
-		(property "Reference" "GND0147"
+		(property "Reference" "GND0148"
 			(at 100.33 58.166 0)
 			(hide yes)
 			(show_name no)
@@ -7326,7 +7326,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a"
-					(reference "GND0147")
+					(reference "GND0148")
 					(unit 1)
 				)
 			)

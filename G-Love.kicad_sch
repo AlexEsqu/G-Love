@@ -3331,7 +3331,7 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "TP"
+			(property "Reference" "."
 				(at 0.508 -2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3994,6 +3994,10 @@
 		(uuid "1c67b4af-5aec-4fb6-8893-3d7e72dc94cc")
 	)
 	(no_connect
+		(at 67.31 77.47)
+		(uuid "235cdf3f-610e-4a35-b5ed-fef7ead3ef9b")
+	)
+	(no_connect
 		(at 113.03 80.01)
 		(uuid "28b10250-8281-415e-8c20-981713200c5b")
 	)
@@ -4020,6 +4024,14 @@
 	(no_connect
 		(at 113.03 59.69)
 		(uuid "43d8732d-1bc1-4e25-a49e-c2102947b869")
+	)
+	(no_connect
+		(at 67.31 82.55)
+		(uuid "4525ddba-2256-4020-86cf-75b489e30346")
+	)
+	(no_connect
+		(at 67.31 80.01)
+		(uuid "47948708-aad0-4e5b-9992-a2a36926ca6f")
 	)
 	(no_connect
 		(at 213.36 78.74)
@@ -4050,6 +4062,10 @@
 		(uuid "a4eb63c6-8afb-4639-81e9-5a2c89fb1bcc")
 	)
 	(no_connect
+		(at 67.31 125.73)
+		(uuid "a50bd033-17fb-4103-9c05-d22643549c40")
+	)
+	(no_connect
 		(at 177.8 100.33)
 		(uuid "a9ed90d3-8e31-41e5-9860-643ff3ec57d8")
 	)
@@ -4060,6 +4076,10 @@
 	(no_connect
 		(at 113.03 102.87)
 		(uuid "b69de293-a13d-434d-8429-57b2bea0d7fd")
+	)
+	(no_connect
+		(at 67.31 128.27)
+		(uuid "b881eb72-da41-4648-8b32-2de67dc5d9e7")
 	)
 	(no_connect
 		(at 113.03 74.93)
@@ -5908,6 +5928,7 @@
 		(uuid "049981c0-42a6-411c-b3da-7173e9f83042")
 		(property "Reference" "TP3"
 			(at 60.452 69.85 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6578,8 +6599,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1565a9aa-3579-471b-934f-163cbc805853")
-		(property "Reference" "TP13"
+		(property "Reference" "TP10"
 			(at 60.452 120.65 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6648,7 +6670,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "TP13")
+					(reference "TP10")
 					(unit 1)
 				)
 			)
@@ -6921,180 +6943,6 @@
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
 					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "G-Love:TestPoint")
-		(at 67.31 80.01 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "21ee3140-66bb-43f3-95a5-15f376a9fe7f")
-		(property "Reference" "TP7"
-			(at 60.452 80.01 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 67.31 80.01 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MyGlove:TestPoint_Pad_D1.0mm"
-			(at 67.31 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 67.31 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 67.31 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Minimum quantity per command" ""
-			(at 67.31 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "0ec03f82-d183-4172-a12f-422b47ccbcf0")
-		)
-		(instances
-			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "TP7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "G-Love:TestPoint")
-		(at 67.31 125.73 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "2f25ca5c-77ba-4c87-8cc1-3f87bcb6a037")
-		(property "Reference" "TP15"
-			(at 60.452 125.73 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 67.31 125.73 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MyGlove:TestPoint_Pad_D1.0mm"
-			(at 67.31 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 67.31 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 67.31 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Minimum quantity per command" ""
-			(at 67.31 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3045ccfe-bbbd-4df6-9508-d8b2f8db2322")
-		)
-		(instances
-			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "TP15")
 					(unit 1)
 				)
 			)
@@ -8126,8 +7974,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "524e93dc-26f0-4122-aa94-2119f947b1ec")
-		(property "Reference" "TP12"
+		(property "Reference" "TP9"
 			(at 60.452 118.11 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8196,7 +8045,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "TP12")
+					(reference "TP9")
 					(unit 1)
 				)
 			)
@@ -8326,8 +8175,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "63653c7a-d9f4-43f1-8797-cbe7c0e04a5b")
-		(property "Reference" "TP11"
+		(property "Reference" "TP8"
 			(at 60.452 115.57 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8396,7 +8246,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "TP11")
+					(reference "TP8")
 					(unit 1)
 				)
 			)
@@ -8415,6 +8265,7 @@
 		(uuid "64113842-bf07-4482-a7de-ba7f9fe1e051")
 		(property "Reference" "TP2"
 			(at 65.786 90.424 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8843,6 +8694,7 @@
 		(uuid "741edb8d-b601-4602-a1ab-8724cc8b7dd2")
 		(property "Reference" "TP4"
 			(at 60.452 72.39 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8930,6 +8782,7 @@
 		(uuid "7a3d5e81-fad0-4027-8e0e-db6377cf9caa")
 		(property "Reference" "TP1"
 			(at 52.578 86.36 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9004,8 +8857,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7f205620-9f85-4c8d-8f96-8c2f1f3075e6")
-		(property "Reference" "TP14"
+		(property "Reference" "TP11"
 			(at 60.452 123.19 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9074,7 +8928,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "TP14")
+					(reference "TP11")
 					(unit 1)
 				)
 			)
@@ -9483,93 +9337,6 @@
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
 					(reference "GND01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "G-Love:TestPoint")
-		(at 67.31 128.27 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "8dfc3e69-8424-496a-9dd6-5092a475b474")
-		(property "Reference" "TP16"
-			(at 60.452 128.27 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 67.31 128.27 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MyGlove:TestPoint_Pad_D1.0mm"
-			(at 67.31 128.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 67.31 128.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 67.31 128.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Minimum quantity per command" ""
-			(at 67.31 128.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f027b689-df80-4f24-b791-a6f112319611")
-		)
-		(instances
-			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "TP16")
 					(unit 1)
 				)
 			)
@@ -10404,6 +10171,7 @@
 		(uuid "a8db59af-ee8a-46da-b52c-d74e5f35dabb")
 		(property "Reference" "TP5"
 			(at 60.452 74.93 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10585,93 +10353,6 @@
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
 					(reference "C4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "G-Love:TestPoint")
-		(at 67.31 77.47 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ba2627cb-86b6-4fd7-861b-f349f6953478")
-		(property "Reference" "TP6"
-			(at 60.452 77.47 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 67.31 77.47 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MyGlove:TestPoint_Pad_D1.0mm"
-			(at 67.31 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 67.31 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 67.31 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Minimum quantity per command" ""
-			(at 67.31 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ce3458fb-e619-4ed0-a805-26101b11730d")
-		)
-		(instances
-			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "TP6")
 					(unit 1)
 				)
 			)
@@ -10945,8 +10626,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c1a79fcc-d1c0-4bd6-8fc2-5bef9a24f027")
-		(property "Reference" "TP9"
+		(property "Reference" "TP6"
 			(at 60.452 110.49 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11015,7 +10697,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "TP9")
+					(reference "TP6")
 					(unit 1)
 				)
 			)
@@ -11033,8 +10715,9 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ca3ae9f8-381d-4862-be74-e292d96d26c6")
-		(property "Reference" "TP18"
+		(property "Reference" "TP13"
 			(at 119.38 92.71 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11092,7 +10775,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "TP18")
+					(reference "TP13")
 					(unit 1)
 				)
 			)
@@ -11714,8 +11397,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e0ab7db0-8331-4262-9d0b-b325c99d5232")
-		(property "Reference" "TP10"
+		(property "Reference" "TP7"
 			(at 60.452 113.03 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11784,7 +11468,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "TP10")
+					(reference "TP7")
 					(unit 1)
 				)
 			)
@@ -12371,8 +12055,9 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f0d525f7-a0c0-4658-b5bd-2b27a8ad4a4b")
-		(property "Reference" "TP17"
+		(property "Reference" "TP12"
 			(at 118.11 90.17 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12430,7 +12115,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "TP17")
+					(reference "TP12")
 					(unit 1)
 				)
 			)
@@ -12733,93 +12418,6 @@
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
 					(reference "C2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "G-Love:TestPoint")
-		(at 67.31 82.55 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "fad0dd9b-c4cc-4545-aafa-99d86442849a")
-		(property "Reference" "TP8"
-			(at 60.452 82.55 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 67.31 82.55 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MyGlove:TestPoint_Pad_D1.0mm"
-			(at 67.31 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 67.31 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 67.31 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Minimum quantity per command" ""
-			(at 67.31 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8bfda207-da6d-4b31-a0ed-9ec68a890c6c")
-		)
-		(instances
-			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "TP8")
 					(unit 1)
 				)
 			)

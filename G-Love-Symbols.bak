@@ -234,6 +234,122 @@
 		)
 		(embedded_fonts no)
 	)
+	(symbol "5VL"
+		(power global)
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "#PWR0127"
+			(at 3.81 -1.778 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5VL"
+			(at 0 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "5VL_0_1"
+			(polyline
+				(pts
+					(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 1.524) (xy 0 -0.762)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "5VL_1_1"
+			(pin power_in line
+				(at 0 -1.27 90)
+				(length 2.54)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
 	(symbol "6N137"
 		(pin_numbers
 			(hide yes)
@@ -10034,17 +10150,6 @@
 			)
 		)
 		(symbol "J_USB_RECEPTACLE_0_1"
-			(rectangle
-				(start -10.414 20.32)
-				(end 10.16 -19.05)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type background)
-				)
-			)
 			(circle
 				(center -2.794 8.763)
 				(radius 0.635)
@@ -10235,6 +10340,17 @@
 			)
 		)
 		(symbol "J_USB_RECEPTACLE_1_1"
+			(rectangle
+				(start -10.414 20.32)
+				(end 10.16 -19.05)
+				(stroke
+					(width 0)
+					(type solid)
+				)
+				(fill
+					(type background)
+				)
+			)
 			(pin power_out line
 				(at -3.81 -21.59 90)
 				(length 2.54)
@@ -10256,7 +10372,7 @@
 			(pin power_out line
 				(at -6.35 22.86 270)
 				(length 2.54)
-				(name "VBUS"
+				(name "VBUS1"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -10347,7 +10463,7 @@
 				(at -6.35 22.86 270)
 				(length 2.54)
 				(hide yes)
-				(name "VBUS"
+				(name "VBUS1"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -10404,7 +10520,7 @@
 				(at -6.35 22.86 270)
 				(length 2.54)
 				(hide yes)
-				(name "VBUS"
+				(name "VBUS1"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -10495,7 +10611,7 @@
 				(at -6.35 22.86 270)
 				(length 2.54)
 				(hide yes)
-				(name "VBUS"
+				(name "VBUS1"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -10870,7 +10986,7 @@
 			(pin passive line
 				(at -6.35 22.86 270)
 				(length 2.54)
-				(name "VBUS"
+				(name "VBUS2"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -10957,11 +11073,11 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -6.35 22.86 270)
 				(length 2.54)
 				(hide yes)
-				(name "VBUS"
+				(name "VBUS2"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -10976,7 +11092,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -3.81 -21.59 90)
 				(length 2.54)
 				(hide yes)
@@ -10995,7 +11111,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -3.81 -21.59 90)
 				(length 2.54)
 				(hide yes)
@@ -11014,11 +11130,11 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -6.35 22.86 270)
 				(length 2.54)
 				(hide yes)
-				(name "VBUS"
+				(name "VBUS2"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -11105,11 +11221,11 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -6.35 22.86 270)
 				(length 2.54)
 				(hide yes)
-				(name "VBUS"
+				(name "VBUS2"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -11124,7 +11240,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -3.81 -21.59 90)
 				(length 2.54)
 				(hide yes)
@@ -11143,7 +11259,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -7.62 -21.59 90)
 				(length 2.54)
 				(name "SHIELD"
