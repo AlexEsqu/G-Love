@@ -1062,6 +1062,16 @@
 	)
 	(wire
 		(pts
+			(xy 36.83 105.41) (xy 48.26 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28ba9837-edd5-46c7-88d3-5a616cfffbc4")
+	)
+	(wire
+		(pts
 			(xy 116.84 96.52) (xy 67.31 96.52)
 		)
 		(stroke
@@ -1069,16 +1079,6 @@
 			(type default)
 		)
 		(uuid "3007cece-7cd5-444e-8a3a-a3ad42fdbedb")
-	)
-	(wire
-		(pts
-			(xy 41.91 101.6) (xy 48.26 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3b183a12-c335-4278-a70e-614ee3814391")
 	)
 	(wire
 		(pts
@@ -1242,16 +1242,6 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 104.14) (xy 48.26 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9d639055-28da-480f-8fae-b37de6af4a36")
-	)
-	(wire
-		(pts
 			(xy 67.31 109.22) (xy 121.92 109.22)
 		)
 		(stroke
@@ -1259,6 +1249,16 @@
 			(type default)
 		)
 		(uuid "a58d7948-e6e2-481b-b37f-de3363b0cded")
+	)
+	(wire
+		(pts
+			(xy 38.1 101.6) (xy 48.26 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7b67d85-f571-4cc4-9c3a-7e76cb934557")
 	)
 	(wire
 		(pts
@@ -1322,6 +1322,16 @@
 	)
 	(wire
 		(pts
+			(xy 39.37 99.06) (xy 48.26 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1ef4bf8-e32d-445f-94e0-f06212b6452f")
+	)
+	(wire
+		(pts
 			(xy 116.84 142.24) (xy 182.88 142.24)
 		)
 		(stroke
@@ -1372,16 +1382,6 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 99.06) (xy 48.26 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e0f9ec15-17a3-4ec7-be83-f3ad0dfe413d")
-	)
-	(wire
-		(pts
 			(xy 119.38 130.81) (xy 119.38 111.76)
 		)
 		(stroke
@@ -1409,6 +1409,16 @@
 			(type default)
 		)
 		(uuid "eb1372d2-0090-436c-b810-02e44bcee0c1")
+	)
+	(wire
+		(pts
+			(xy 48.26 105.41) (xy 48.26 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f4007999-3959-40b3-a842-3c912a0ff19e")
 	)
 	(wire
 		(pts
@@ -1452,7 +1462,7 @@
 	)
 	(hierarchical_label "ADC_Mux_Select_C"
 		(shape input)
-		(at 41.91 101.6 180)
+		(at 38.1 101.6 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1474,7 +1484,7 @@
 	)
 	(hierarchical_label "ADC_Mux_Select_A"
 		(shape input)
-		(at 41.91 99.06 180)
+		(at 39.37 99.06 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1507,7 +1517,7 @@
 	)
 	(hierarchical_label "ADC_Mux_Select_B"
 		(shape input)
-		(at 41.91 104.14 180)
+		(at 36.83 105.41 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1538,7 +1548,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "09c53301-7489-4177-a105-1c156bcf2664")
-		(property "Reference" "GND0138"
+		(property "Reference" "GND0139"
 			(at 41.91 111.506 0)
 			(hide yes)
 			(show_name no)
@@ -1611,7 +1621,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db"
-					(reference "GND0138")
+					(reference "GND0139")
 					(unit 1)
 				)
 			)
@@ -1705,7 +1715,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a75eecb9-1136-46d3-abbb-94fbd1bac7bb")
-		(property "Reference" "GND0140"
+		(property "Reference" "GND0141"
 			(at 57.15 133.096 0)
 			(hide yes)
 			(show_name no)
@@ -1778,7 +1788,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db"
-					(reference "GND0140")
+					(reference "GND0141")
 					(unit 1)
 				)
 			)
@@ -1795,7 +1805,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b11d0711-e320-4db8-8863-aa203083ea87")
-		(property "Reference" "C31"
+		(property "Reference" "C32"
 			(at 52.832 74.168 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1857,7 +1867,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db"
-					(reference "C31")
+					(reference "C32")
 					(unit 1)
 				)
 			)
@@ -2053,7 +2063,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c5777c5a-463d-4522-ac02-4e3858f606b6")
-		(property "Reference" "GND0139"
+		(property "Reference" "GND0140"
 			(at 49.53 83.566 0)
 			(hide yes)
 			(show_name no)
@@ -2126,7 +2136,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db"
-					(reference "GND0139")
+					(reference "GND0140")
 					(unit 1)
 				)
 			)

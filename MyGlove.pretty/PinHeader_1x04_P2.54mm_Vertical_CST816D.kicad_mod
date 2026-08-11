@@ -1,14 +1,14 @@
-(footprint "PinHeader_1x04_P2.54mm_Vertical"
+(footprint "PinHeader_1x04_P2.54mm_Vertical_CST816D"
 	(version 20260206)
 	(generator "pcbnew")
 	(generator_version "10.0")
 	(layer "F.Cu")
 	(descr "Through hole straight pin header, 1x04, 2.54mm pitch, single row")
 	(tags "Through hole pin header THT 1x04 2.54mm single row")
-	(property "Reference" "REF**"
-		(at 0 -2.33 0)
+	(property "Reference" "U3"
+		(at 2.624426 3.358674 180)
 		(layer "F.SilkS")
-		(uuid "9d6aee92-176d-47c2-8ecc-13d6019264a6")
+		(uuid "cbd3e882-8972-4af1-a61c-7b805a0c2f57")
 		(effects
 			(font
 				(size 1 1)
@@ -16,10 +16,10 @@
 			)
 		)
 	)
-	(property "Value" "PinHeader_1x04_P2.54mm_Vertical"
-		(at 0 9.95 0)
+	(property "Value" "CST816D"
+		(at 0 9.95 180)
 		(layer "F.Fab")
-		(uuid "cd9c0e46-b4a7-437a-bbab-e3ad0a50a550")
+		(uuid "20f57367-5a82-4a79-b803-e7a3416b15a3")
 		(effects
 			(font
 				(size 1 1)
@@ -27,28 +27,56 @@
 			)
 		)
 	)
-	(property "Datasheet" ""
-		(at 0 0 0)
+	(property "Datasheet" "https://datasheet4u.com/download/1576442/CST816D.html"
+		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "e0d53e31-5737-4fd5-bef1-ca703b72d5d9")
+		(uuid "f694d5d7-4a3e-41a3-aeb1-18db702afe5e")
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
 	)
-	(property "Description" ""
-		(at 0 0 0)
+	(property "Description" "I2C Touch Controller"
+		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "1817ad5f-c994-4370-a138-ec2865c9e708")
+		(uuid "db6c65b0-92b3-4638-ab77-0e8f1acef88a")
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
 	)
+	(property "Minimum quantity per command" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6ae92606-b436-4534-9911-a2c75b42e6b3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Price" "OWNED"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "821bc7b1-ea95-449c-8fe3-5097d46b1856")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(sheetname "/Touchscreen/")
+	(sheetfile "touchscreen.kicad_sch")
 	(attr through_hole)
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_line
@@ -59,7 +87,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "1975f87c-8237-412b-b311-a5773af7a872")
+		(uuid "be021ee1-27bd-4699-8a9e-4a617df61ca1")
 	)
 	(fp_line
 		(start -1.33 0)
@@ -69,7 +97,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "78b57a53-cfc5-45e5-aa43-dda442ab8a04")
+		(uuid "a4f42092-3685-4a64-9b72-58fb4eb82020")
 	)
 	(fp_line
 		(start -1.33 1.27)
@@ -79,7 +107,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "0e22a6ce-e693-445a-a11c-ed06c4252487")
+		(uuid "523d9841-b853-4e79-a959-38275530a0b9")
 	)
 	(fp_line
 		(start -1.33 1.27)
@@ -89,7 +117,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "cd40a0af-de1c-44df-8119-0f27ed288763")
+		(uuid "e7031d5a-b429-469f-a710-92290f76268f")
 	)
 	(fp_line
 		(start -1.33 8.95)
@@ -99,7 +127,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "db7c680c-ee00-405b-baee-ee9ddf64996d")
+		(uuid "34eee3ad-d496-4f82-979e-ce0a2f13df72")
 	)
 	(fp_line
 		(start 1.33 1.27)
@@ -109,7 +137,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "5cc1dd7a-0c90-4f9f-b896-993b5d08b941")
+		(uuid "be9256c3-a675-44a9-8df5-cf9b3c31058b")
 	)
 	(fp_line
 		(start -1.8 -1.8)
@@ -119,7 +147,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "13a31804-1a37-4a43-b2a9-a26874ef94fe")
+		(uuid "9d66ce2e-7ed2-4ff6-a738-14c6af8ece07")
 	)
 	(fp_line
 		(start -1.8 9.4)
@@ -129,7 +157,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "232e6f0f-7998-4362-a2d7-d4188d113cad")
+		(uuid "24669eb2-afb8-4935-b8d7-30ac1ce32396")
 	)
 	(fp_line
 		(start 1.8 -1.8)
@@ -139,7 +167,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "8c2b5561-9df6-4611-9940-844587dd96b5")
+		(uuid "e14561a2-dfea-4f60-b8be-fe578155acad")
 	)
 	(fp_line
 		(start 1.8 9.4)
@@ -149,7 +177,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "ada20d3a-f8af-4fbe-a478-ba067fa05004")
+		(uuid "58e2ee67-ff33-4ed4-a598-a051d445e50a")
 	)
 	(fp_line
 		(start -1.27 -0.635)
@@ -159,7 +187,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "73e9d856-4dcb-4467-8932-53f95dc83736")
+		(uuid "54b1c98d-ce30-4220-9906-f6f6828581df")
 	)
 	(fp_line
 		(start -1.27 8.89)
@@ -169,7 +197,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "3626c718-ba3d-4b01-bac2-6e58e8c52596")
+		(uuid "e27bde9a-475d-4f7f-b373-cfe0850eb165")
 	)
 	(fp_line
 		(start -0.635 -1.27)
@@ -179,7 +207,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "9d40bd9c-a394-4548-bcab-6108c62962cb")
+		(uuid "443d1c0a-5ceb-41ab-80a3-f67ac215b27d")
 	)
 	(fp_line
 		(start 1.27 -1.27)
@@ -189,7 +217,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "fbbd6e28-24a9-4943-971f-50f07f8058b0")
+		(uuid "1f618675-339e-43bc-a41a-3790b4fa818e")
 	)
 	(fp_line
 		(start 1.27 8.89)
@@ -199,12 +227,12 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "09425ebc-d8c6-4cc8-a8a2-a3e8123cd9ef")
+		(uuid "0369bc9e-c3d1-40d4-91b4-588ab4ec06e8")
 	)
 	(fp_text user "${REFERENCE}"
-		(at 0 3.81 90)
+		(at 0 3.81 270)
 		(layer "F.Fab")
-		(uuid "6bd5bf84-3d96-463e-bede-83ce8acf0afc")
+		(uuid "884acef3-0e11-4474-a906-10e4f2cf7bbe")
 		(effects
 			(font
 				(size 1 1)
@@ -212,37 +240,81 @@
 			)
 		)
 	)
-	(pad "1" thru_hole rect
+	(pad "3" thru_hole rect
 		(at 0 0)
 		(size 1.7 1.7)
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "c6389f63-1b62-4fde-885e-fa8b81d9de86")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "21866f99-9b09-4459-bf57-45d5d39e21c1")
 	)
-	(pad "2" thru_hole oval
+	(pad "4" thru_hole oval
 		(at 0 2.54)
 		(size 1.7 1.7)
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "683b8fc4-bbb9-4369-bd80-d34c2f2b81ec")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "a5da22de-913b-41c8-bb69-dfce7f6fbc6b")
 	)
-	(pad "3" thru_hole oval
+	(pad "5" thru_hole oval
 		(at 0 5.08)
 		(size 1.7 1.7)
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "1fdc697c-1c0f-4345-973d-4e40646fb781")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "04e7e75e-46ff-4f3a-b53c-7ff8ad5de95b")
 	)
-	(pad "4" thru_hole oval
+	(pad "16" thru_hole oval
 		(at 0 7.62)
 		(size 1.7 1.7)
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "880e1133-4385-44bd-9319-eb4ecb288c00")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "5f92a458-ca6f-43ca-986a-c1b16ec638a6")
 	)
 	(embedded_fonts no)
 	(model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x04_P2.54mm_Vertical.wrl"
