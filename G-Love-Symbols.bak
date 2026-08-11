@@ -118,6 +118,121 @@
 		)
 		(embedded_fonts no)
 	)
+	(symbol "+5.5V"
+		(power global)
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "+5.5V"
+			(at -0.254 1.016 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "+5.5V_0_1"
+			(polyline
+				(pts
+					(xy 0 0) (xy -1.27 -1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 0) (xy 1.27 -1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "+5.5V_1_1"
+			(pin power_out line
+				(at 0 -2.54 90)
+				(length 2.54)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
 	(symbol "+5.5VA"
 		(power global)
 		(pin_numbers
@@ -215,122 +330,6 @@
 		(symbol "+5.5VA_1_1"
 			(pin power_out line
 				(at 0 0 90)
-				(length 2.54)
-				(name ""
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(embedded_fonts no)
-	)
-	(symbol "5VL"
-		(power global)
-		(pin_numbers
-			(hide yes)
-		)
-		(pin_names
-			(offset 0)
-			(hide yes)
-		)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "#PWR0127"
-			(at 3.81 -1.778 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "5VL"
-			(at 0 3.81 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(symbol "5VL_0_1"
-			(polyline
-				(pts
-					(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 0 1.524) (xy 0 -0.762)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-		)
-		(symbol "5VL_1_1"
-			(pin power_in line
-				(at 0 -1.27 90)
 				(length 2.54)
 				(name ""
 					(effects
@@ -6762,29 +6761,27 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "U_1"
-			(at 2.032 -19.05 0)
+		(property "Reference" "U_"
+			(at 2.286 -19.558 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "CH340K"
-			(at 1.27 -17.018 0)
+			(at 5.08 -16.764 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "MyGlove:CH340K"
+		(property "Footprint" ""
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6817,39 +6814,6 @@
 				)
 			)
 		)
-		(property "Minimum quantity per command" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" "0.6"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C968586.html"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(symbol "CH340K_0_1"
 			(rectangle
 				(start -8.636 15.24)
@@ -6864,6 +6828,25 @@
 			)
 		)
 		(symbol "CH340K_1_1"
+			(pin power_in line
+				(at -5.08 -17.78 90)
+				(length 2.54)
+				(hide yes)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "0"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
 			(pin bidirectional line
 				(at -11.43 6.35 0)
 				(length 2.54)
@@ -7011,7 +6994,7 @@
 			(pin bidirectional line
 				(at 11.43 -7.62 180)
 				(length 2.54)
-				(name "~{RESET}/~{RTS}"
+				(name "~{RESET}"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7026,7 +7009,7 @@
 					)
 				)
 			)
-			(pin power_out line
+			(pin power_in line
 				(at -1.27 17.78 270)
 				(length 2.54)
 				(name "V3"
@@ -7037,25 +7020,6 @@
 					)
 				)
 				(number "10"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -5.08 -17.78 90)
-				(length 2.54)
-				(hide yes)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "11"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7839,10 +7803,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "Conn_6_boot"
-		(pin_names
-			(offset 0)
-			(hide yes)
-		)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -7912,7 +7872,7 @@
 						)
 					)
 				)
-				(number "1"
+				(number "GND"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7930,7 +7890,7 @@
 						)
 					)
 				)
-				(number "2"
+				(number "MISO"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7948,7 +7908,7 @@
 						)
 					)
 				)
-				(number "3"
+				(number "MOSI"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7966,7 +7926,7 @@
 						)
 					)
 				)
-				(number "5"
+				(number "SCK"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7984,7 +7944,7 @@
 						)
 					)
 				)
-				(number "6"
+				(number "VCC"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -8004,7 +7964,7 @@
 						)
 					)
 				)
-				(number "4"
+				(number "RESET"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -8037,15 +7997,14 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "J_3"
-			(at 5.08 -2.5399 0)
+		(property "Reference" "J_"
+			(at 3.048 -15.494 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" ""
@@ -8058,7 +8017,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MyGlove:PinHeader_1x04_Pas2.54mm"
+		(property "Footprint" ""
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8081,17 +8040,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Minimum quantity per command" ""
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8254,7 +8202,7 @@
 			)
 		)
 		(symbol "Conn_POGO_4_1_1"
-			(pin power_in line
+			(pin unspecified line
 				(at -11.43 1.27 0)
 				(length 10.16)
 				(name ""
@@ -8272,7 +8220,7 @@
 					)
 				)
 			)
-			(pin bidirectional line
+			(pin unspecified line
 				(at -11.43 -1.27 0)
 				(length 10.16)
 				(name ""
@@ -8290,7 +8238,7 @@
 					)
 				)
 			)
-			(pin bidirectional line
+			(pin unspecified line
 				(at -11.43 -3.81 0)
 				(length 10.16)
 				(name ""
@@ -8308,7 +8256,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin unspecified line
 				(at -11.43 -6.35 0)
 				(length 10.16)
 				(name ""
@@ -8573,8 +8521,8 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "B0505S-1W2"
-			(at -0.254 5.842 0)
+		(property "Reference" "B0505S-1W"
+			(at 0 5.588 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8593,7 +8541,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MyGlove:B0505S"
+		(property "Footprint" ""
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8615,40 +8563,7 @@
 				)
 			)
 		)
-		(property "Description" "convertisseur de tension DC-DC"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Minimum quantity per command" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" "0.68"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C7465178.html"
+		(property "Description" ""
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8661,7 +8576,7 @@
 		)
 		(symbol "DC/DC_Isolated_module_0_0"
 			(pin power_in line
-				(at -8.89 2.54 0)
+				(at 8.89 2.54 180)
 				(length 2.54)
 				(name "VIN"
 					(effects
@@ -8679,7 +8594,7 @@
 				)
 			)
 			(pin power_in line
-				(at -8.89 -2.54 0)
+				(at 8.89 -2.54 180)
 				(length 2.54)
 				(name "GND"
 					(effects
@@ -8696,8 +8611,8 @@
 					)
 				)
 			)
-			(pin power_out line
-				(at 8.89 2.54 180)
+			(pin power_in line
+				(at -8.89 2.54 0)
 				(length 2.54)
 				(name "+VO"
 					(effects
@@ -8714,8 +8629,8 @@
 					)
 				)
 			)
-			(pin power_out line
-				(at 8.89 -2.54 180)
+			(pin power_in line
+				(at -8.89 -2.54 0)
 				(length 2.54)
 				(name "0V"
 					(effects
@@ -10351,6 +10266,24 @@
 			)
 		)
 		(symbol "J_USB_RECEPTACLE_1_1"
+			(pin power_in line
+				(at -7.62 -21.59 90)
+				(length 2.54)
+				(name "SHIELD"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
 			(pin power_out line
 				(at -3.81 -21.59 90)
 				(length 2.54)
@@ -10638,638 +10571,6 @@
 					)
 				)
 				(number "B12"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -7.62 -21.59 90)
-				(length 2.54)
-				(name "SHIELD"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "SH"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(embedded_fonts no)
-	)
-	(symbol "J_USB_RECEPTACLE_PASSIVE"
-		(pin_names
-			(offset 1.27)
-		)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "J_5"
-			(at 1.27 -23.368 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "Conn_USB_Receptacle"
-			(at 18.542 -20.574 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "MyGlove:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ApplicationNotes/ApplicationNotes/00001953A.pdf"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "USB C Connector"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Minimum quantity per command" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" "1.69/5"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C49261591.html"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(symbol "J_USB_RECEPTACLE_PASSIVE_0_1"
-			(rectangle
-				(start -10.414 20.32)
-				(end 10.16 -19.05)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type background)
-				)
-			)
-			(circle
-				(center -2.794 8.763)
-				(radius 0.635)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type outline)
-				)
-			)
-			(polyline
-				(pts
-					(xy -2.032 -11.938) (xy -2.032 -4.318)
-				)
-				(stroke
-					(width 0.508)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy -1.524 11.938) (xy -0.254 14.478) (xy 1.016 11.938) (xy -1.524 11.938)
-				)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type outline)
-				)
-			)
-			(rectangle
-				(start -0.762 -4.318)
-				(end 0.508 -11.938)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type outline)
-				)
-			)
-			(polyline
-				(pts
-					(xy -0.254 5.588) (xy 2.286 8.128) (xy 2.286 9.398)
-				)
-				(stroke
-					(width 0.508)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy -0.254 4.318) (xy -2.794 6.858) (xy -2.794 8.128)
-				)
-				(stroke
-					(width 0.508)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(circle
-				(center -0.254 1.778)
-				(radius 1.27)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type outline)
-				)
-			)
-			(polyline
-				(pts
-					(xy -0.254 1.778) (xy -0.254 11.938)
-				)
-				(stroke
-					(width 0.508)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(arc
-				(start -0.762 -4.318)
-				(mid -0.127 -3.6857)
-				(end 0.508 -4.318)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(arc
-				(start -0.762 -4.318)
-				(mid -0.127 -3.6857)
-				(end 0.508 -4.318)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type outline)
-				)
-			)
-			(arc
-				(start -2.032 -4.318)
-				(mid -0.127 -2.4213)
-				(end 1.778 -4.318)
-				(stroke
-					(width 0.508)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(arc
-				(start 1.778 -11.938)
-				(mid -0.127 -13.8347)
-				(end -2.032 -11.938)
-				(stroke
-					(width 0.508)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(arc
-				(start 0.508 -11.938)
-				(mid -0.127 -12.5703)
-				(end -0.762 -11.938)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(arc
-				(start 0.508 -11.938)
-				(mid -0.127 -12.5703)
-				(end -0.762 -11.938)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type outline)
-				)
-			)
-			(rectangle
-				(start 1.651 9.398)
-				(end 2.921 10.668)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type outline)
-				)
-			)
-			(polyline
-				(pts
-					(xy 1.778 -4.318) (xy 1.778 -11.938)
-				)
-				(stroke
-					(width 0.508)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-		)
-		(symbol "J_USB_RECEPTACLE_PASSIVE_1_1"
-			(pin passive line
-				(at -3.81 -21.59 90)
-				(length 2.54)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "A1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at -6.35 22.86 270)
-				(length 2.54)
-				(name "VBUS"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "A4"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin bidirectional line
-				(at 12.7 15.24 180)
-				(length 2.54)
-				(name "CC1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "A5"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin bidirectional line
-				(at 12.7 5.08 180)
-				(length 2.54)
-				(name "D-"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "A6"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin bidirectional line
-				(at 12.7 -1.27 180)
-				(length 2.54)
-				(name "D+"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "A7"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin bidirectional line
-				(at 12.7 -11.43 180)
-				(length 2.54)
-				(name "SBU1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "A8"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -6.35 22.86 270)
-				(length 2.54)
-				(hide yes)
-				(name "VBUS"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "A9"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -3.81 -21.59 90)
-				(length 2.54)
-				(hide yes)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "A12"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -3.81 -21.59 90)
-				(length 2.54)
-				(hide yes)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "B1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -6.35 22.86 270)
-				(length 2.54)
-				(hide yes)
-				(name "VBUS"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "B4"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin bidirectional line
-				(at 12.7 11.43 180)
-				(length 2.54)
-				(name "CC2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "B5"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin bidirectional line
-				(at 12.7 -3.81 180)
-				(length 2.54)
-				(name "D+"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "B6"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin bidirectional line
-				(at 12.7 2.54 180)
-				(length 2.54)
-				(name "D-"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "B7"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin bidirectional line
-				(at 12.7 -15.24 180)
-				(length 2.54)
-				(name "SBU2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "B8"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -6.35 22.86 270)
-				(length 2.54)
-				(hide yes)
-				(name "VBUS"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "B9"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -3.81 -21.59 90)
-				(length 2.54)
-				(hide yes)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "B12"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -7.62 -21.59 90)
-				(length 2.54)
-				(name "SHIELD"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "SH"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -11289,8 +10590,8 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "U"
-			(at -0.254 5.842 0)
+		(property "Reference" "PAUL"
+			(at 0 4.064 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11299,8 +10600,8 @@
 				)
 			)
 		)
-		(property "Value" "AMS1117"
-			(at -0.254 3.81 0)
+		(property "Value" ""
+			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11309,7 +10610,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MyGlove:AMS1117"
+		(property "Footprint" ""
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11331,40 +10632,7 @@
 				)
 			)
 		)
-		(property "Description" "régulateur de tension"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Minimum quantity per command" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" "0.91"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C6186.html"
+		(property "Description" ""
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11377,9 +10645,9 @@
 		)
 		(symbol "LDO_0_0"
 			(pin power_in line
-				(at 0 -6.35 90)
+				(at -10.16 0 0)
 				(length 2.54)
-				(name "GND"
+				(name "Vin"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -11413,9 +10681,9 @@
 				)
 			)
 			(pin power_in line
-				(at -10.16 0 0)
+				(at 0 -6.35 90)
 				(length 2.54)
-				(name "Vin"
+				(name "GND"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -13202,7 +12470,7 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "U14"
+		(property "Reference" "U13"
 			(at 0 17.78 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13222,7 +12490,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MyGlove:TPS2113"
+		(property "Footprint" "TPS2113APWR:SOP65P640X120-8N"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13281,7 +12549,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Price" "2.67"
+		(property "Price" "None"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13339,28 +12607,6 @@
 					(size 1.27 1.27)
 				)
 				(justify bottom)
-			)
-		)
-		(property "Minimum quantity per command" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C130052.html"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(symbol "TPS2113APWR_0_0"
@@ -13503,7 +12749,7 @@
 					)
 				)
 			)
-			(pin power_out line
+			(pin power_in line
 				(at 17.78 5.08 180)
 				(length 5.08)
 				(name "OUT"
@@ -14368,9 +13614,9 @@
 			)
 		)
 		(symbol "TestPoint_1_1"
-			(pin passive line
-				(at 0 0 0)
-				(length 0)
+			(pin bidirectional line
+				(at -2.54 0 0)
+				(length 1.905)
 				(name ""
 					(effects
 						(font
@@ -14386,107 +13632,9 @@
 					)
 				)
 			)
-		)
-		(embedded_fonts no)
-	)
-	(symbol "VCC"
-		(power global)
-		(pin_numbers
-			(hide yes)
-		)
-		(pin_names
-			(offset 0)
-			(hide yes)
-		)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "#PWR0139"
-			(at 3.81 -1.778 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VCC"
-			(at 0 3.81 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(symbol "VCC_0_1"
-			(polyline
-				(pts
-					(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 0 1.524) (xy 0 -0.762)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-		)
-		(symbol "VCC_1_1"
-			(pin power_in line
-				(at 0 -1.27 90)
-				(length 2.54)
+			(pin bidirectional line
+				(at 2.54 0 180)
+				(length 1.905)
 				(name ""
 					(effects
 						(font
@@ -14494,7 +13642,7 @@
 						)
 					)
 				)
-				(number "1"
+				(number "2"
 					(effects
 						(font
 							(size 1.27 1.27)
