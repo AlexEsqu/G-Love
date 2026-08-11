@@ -515,6 +515,14 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "name": "VCC",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.5,
+        "tuning_profile": ""
       }
     ],
     "meta": {
@@ -522,7 +530,12 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "VCC",
+        "pattern": "VCC"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
@@ -757,7 +770,7 @@
         "uuid": "808bc5ea-49ac-4454-ba77-8b20d01ce159"
       }
     ],
-    "used_designators": "SW_1,R15-33,R36-39,flow1-35,TP1-16,TP19-21,LDO101,GND3-4,GND7-8,GND20,GND130,GND136-156,GND164-166,Q1-2,U9,U13-16,D101-107,C22-44,C54,B0505S\\-1W1,Diode Schottky D1,PWR1,J1-3,GC9A01_1,+5.5V1,J_2-5,PAUL1,#PWR1-15,#PWR125,#PWR131,#PWR133-143",
+    "used_designators": "D101-107,U9,U13-16,C22-44,C54,B0505S\\-1W1,GND3-4,GND7-8,GND20,GND130,GND136-156,GND164-166,LDO101,PAUL1,J_2-5,Diode Schottky D1,+5.5V1,GC9A01_1,J1-3,PWR1,Q1-2,SW_1,R15-33,R36-39,TP1-16,TP19-21,flow1-35,#PWR1-15,#PWR125,#PWR131,#PWR133-143",
     "variants": []
   },
   "sheets": [
