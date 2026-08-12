@@ -60,7 +60,7 @@
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
-          "min_clearance": 0.5,
+          "min_clearance": 0.0,
           "min_island_area": 10.0,
           "min_thickness": 0.25,
           "pad_connection": 1,
@@ -177,7 +177,7 @@
       "teardrop_parameters": [
         {
           "td_allow_use_two_tracks": true,
-          "td_curve_segcount": 0,
+          "td_curve_segcount": 1,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -188,7 +188,7 @@
         },
         {
           "td_allow_use_two_tracks": true,
-          "td_curve_segcount": 0,
+          "td_curve_segcount": 1,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -199,7 +199,7 @@
         },
         {
           "td_allow_use_two_tracks": true,
-          "td_curve_segcount": 0,
+          "td_curve_segcount": 1,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -210,6 +210,7 @@
         }
       ],
       "track_widths": [
+        0.0,
         0.0
       ],
       "tuning_pattern_settings": {
@@ -530,6 +531,14 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "name": "PWR",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.5,
+        "tuning_profile": ""
       }
     ],
     "meta": {
@@ -537,13 +546,34 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "PWR",
+        "pattern": "*VCC*"
+      },
+      {
+        "netclass": "PWR",
+        "pattern": "*VBUS1*"
+      },
+      {
+        "netclass": "PWR",
+        "pattern": "*+VO*"
+      },
+      {
+        "netclass": "PWR",
+        "pattern": "*3.3V*"
+      },
+      {
+        "netclass": "PWR",
+        "pattern": "*BATTERY_USB*"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "../Gerber/",
+      "plot": "",
       "specctra_dsn": "",
       "step": "",
       "vrml": ""
@@ -623,7 +653,7 @@
           "group_by": true,
           "label": "Exclude from Board",
           "name": "${EXCLUDE_FROM_BOARD}",
-          "show": false
+          "show": true
         },
         {
           "group_by": true,
@@ -693,7 +723,7 @@
         },
         {
           "group_by": false,
-          "label": "Package",
+          "label": "PACKAGE",
           "name": "Package",
           "show": false
         },
@@ -708,15 +738,9 @@
           "label": "Minimum quantity per command",
           "name": "Minimum quantity per command",
           "show": false
-        },
-        {
-          "group_by": false,
-          "label": "PACKAGE",
-          "name": "PACKAGE",
-          "show": false
         }
       ],
-      "filter_string": "",
+      "filter_string": "R35",
       "group_symbols": true,
       "include_excluded_from_bom": true,
       "name": "",
@@ -772,7 +796,7 @@
         "uuid": "808bc5ea-49ac-4454-ba77-8b20d01ce159"
       }
     ],
-    "used_designators": "GND147,GND150,GND156,GND166-182,+5V1-22,#FLG1-2,PWR1-22",
+    "used_designators": ".1-2,SW_1,R1-39,FS_1-6,U_1,C1-56,B0505S\\-1W1,+5V1-22,FSR_1-5,GND1-182,CD1,U1-15,D1-127,J1-3,PWR1-22,#FLG1-2,FSR1-5,GNDA1,J_1-3,#GND1-2,TP1-18,flow1-18,#PWR1-142,#PWR144-145,FS1-6,Y1-2",
     "variants": []
   },
   "sheets": [
@@ -841,24 +865,24 @@
       "SK9822x15_Index"
     ],
     [
-      "32057457-8680-4154-8b8a-1a13212eb66f",
+      "56300770-06b9-4586-abf3-6db0dacb6dcc",
       "SK9822x5_3"
     ],
     [
-      "51251c9c-2f3b-4f96-af09-d08af439e7af",
+      "96618517-c0bc-4037-908d-6eb912f6bfa9",
       "SK9822x5_2"
     ],
     [
-      "ab06081b-274c-47b6-a66f-a3b79fade958",
+      "bced93eb-e525-4e5d-9f15-41746cc383d2",
       "SK9822x5_4"
     ],
     [
-      "feeae6a9-c784-4f57-ae6a-333f9bba4903",
+      "ef8f0e29-655d-446c-b805-e2fd4bf0dd81",
       "SK9822x5_5"
     ],
     [
-      "402f35bc-f7d7-4704-aa94-5336a8a1cf91",
-      "SK9822x5_1"
+      "cb06373c-fd44-4fb3-af88-6af9d82061bd",
+      "SK9822xO"
     ],
     [
       "9c376b41-f2ee-4fc8-ab7c-f0dde4d7f9f4",

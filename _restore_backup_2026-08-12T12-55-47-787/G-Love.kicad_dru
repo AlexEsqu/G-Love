@@ -9,11 +9,11 @@
 # - https://gist.github.com/darkxst/f713268e5469645425eed40115fb8b49 (with comments)
 # - https://gist.github.com/denniskupec/e163d13b0a64c2044bd259f64659485e (with comments)
 
+# --- Drill/Hole Size ---
+
 (rule "Clearance_Inter_Masse"
     (constraint clearance (min 2.0mm))
     (condition "A.NetName == 'GND' && B.NetName == 'Net-(B0505S-1W1-0V)'"))
-
-# --- Drill/Hole Size ---
 
 (rule "JLCPCB: Drill Hole Size"
   # Choose between:

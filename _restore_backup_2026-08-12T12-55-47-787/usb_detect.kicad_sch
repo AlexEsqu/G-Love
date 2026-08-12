@@ -2,20 +2,23 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "55a7a704-58f9-4886-90ea-7f00d807f8f7")
+	(uuid "cef05cf6-b1b4-406d-913f-9a87e2acd5b6")
 	(paper "A4")
 	(lib_symbols
-		(symbol "G-Love:Conn_POGO_4"
+		(symbol "Diode:BAT54C"
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.27)
+				(offset 1.016)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J_3"
-				(at 5.08 -2.5399 0)
+			(property "Reference" "D"
+				(at 0.635 -3.81 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -25,17 +28,41 @@
 					(justify left)
 				)
 			)
-			(property "Value" ""
-				(at 0 0 0)
+			(property "Value" "BAT54C"
+				(at -6.35 3.175 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Footprint" "MyGlove:PinHeader_1x04_Pas2.54mm"
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+				(at 1.905 3.175 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" "http://www.diodes.com/_files/datasheets/ds11005.pdf"
+				(at -2.032 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "dual schottky barrier diode, common cathode"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -46,7 +73,7 @@
 					)
 				)
 			)
-			(property "Datasheet" ""
+			(property "ki_keywords" "schottky diode common cathode"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -57,7 +84,7 @@
 					)
 				)
 			)
-			(property "Description" ""
+			(property "ki_fp_filters" "SOT?23*"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -68,147 +95,11 @@
 					)
 				)
 			)
-			(property "Minimum quantity per command" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Conn_POGO_4_0_1"
+			(symbol "BAT54C_0_1"
 				(polyline
 					(pts
-						(xy -3.556 4.826) (xy -3.556 -10.16)
+						(xy -3.175 -1.27) (xy -3.175 1.27) (xy -1.27 0) (xy -3.175 -1.27)
 					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -2.54 3.048)
-					(end 2.286 -8.128)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(rectangle
-					(start -2.54 1.778)
-					(end -0.762 0.762)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -2.54 -0.762)
-					(end -0.762 -1.778)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -2.54 -3.302)
-					(end -0.762 -4.318)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -2.54 -5.842)
-					(end -0.762 -6.858)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 8.636)
-					(mid 2.4401 7.4149)
-					(end 3.302 4.826)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 3.302 -10.16)
-					(mid 2.3875 -12.6219)
-					(end 0 -13.716)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -13.716)
-					(mid -2.5145 -12.6745)
-					(end -3.556 -10.16)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 5.588)
-					(radius 1.9838)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 0 -10.922)
-					(radius 1.9838)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(arc
-					(start -3.556 4.826)
-					(mid -2.5671 7.4675)
-					(end 0 8.636)
 					(stroke
 						(width 0)
 						(type default)
@@ -219,7 +110,174 @@
 				)
 				(polyline
 					(pts
-						(xy 3.302 4.826) (xy 3.302 -10.16)
+						(xy -1.905 1.27) (xy -1.905 1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 0) (xy 1.905 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.905 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -3.81 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -0.635 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.635 -1.27) (xy -0.635 -1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 -1.27) (xy 0.635 -1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.905 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 0.635 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 1.27) (xy 1.905 1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 -1.27) (xy 3.175 1.27) (xy 1.27 0) (xy 3.175 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 0) (xy 1.27 0)
 					)
 					(stroke
 						(width 0)
@@ -230,10 +288,10 @@
 					)
 				)
 			)
-			(symbol "Conn_POGO_4_1_1"
-				(pin power_in line
-					(at -11.43 1.27 0)
-					(length 10.16)
+			(symbol "BAT54C_1_1"
+				(pin passive line
+					(at -7.62 0 0)
+					(length 3.81)
 					(name ""
 						(effects
 							(font
@@ -249,9 +307,9 @@
 						)
 					)
 				)
-				(pin bidirectional line
-					(at -11.43 -1.27 0)
-					(length 10.16)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 3.81)
 					(name ""
 						(effects
 							(font
@@ -267,9 +325,9 @@
 						)
 					)
 				)
-				(pin bidirectional line
-					(at -11.43 -3.81 0)
-					(length 10.16)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 5.08)
 					(name ""
 						(effects
 							(font
@@ -278,128 +336,6 @@
 						)
 					)
 					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -11.43 -6.35 0)
-					(length 10.16)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "G-Love:GND"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom no)
-			(on_board no)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "GND"
-				(at 0 -3.556 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "GND"
-				(at 0 -3.556 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "GND_0_1"
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 -1.27) (xy 1.016 -1.27) (xy 0 -2.54) (xy -1.016 -1.27) (xy 0 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "GND_1_1"
-				(pin power_in line
-					(at 0 0 270)
-					(length 0)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -424,7 +360,7 @@
 			(on_board no)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR0139"
+			(property "Reference" "#PWR"
 				(at 3.81 -1.778 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -436,7 +372,7 @@
 				)
 			)
 			(property "Value" "VCC"
-				(at 0 3.81 0)
+				(at -0.254 2.794 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -526,104 +462,256 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "G-Love:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 0 -1.778 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.27 0.635)
+					(end 1.27 -0.635)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(junction
+		(at 118.11 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "468b0ab5-3b9a-46ba-97ec-b3cc942d0c62")
+	)
+	(junction
+		(at 95.25 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bff7e96d-486a-4b85-b055-482f764a08ae")
+	)
+	(junction
+		(at 95.25 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fdde0e8c-16a0-4453-bd68-ab3123052db6")
 	)
 	(wire
 		(pts
-			(xy 55.88 80.01) (xy 55.88 78.74)
+			(xy 87.63 78.74) (xy 95.25 78.74)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "027e8cf9-e480-44fc-a85f-1e161d926dcd")
+		(uuid "2f76e8ad-cf36-4b22-8193-2728d41e9a10")
 	)
 	(wire
 		(pts
-			(xy 55.88 78.74) (xy 60.96 78.74)
+			(xy 87.63 99.06) (xy 95.25 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2132d0d1-8f5e-47f6-ab9a-cbfc3dd5fb32")
+		(uuid "3cb48f26-85da-4f6a-8a63-574f5b7a9362")
 	)
 	(wire
 		(pts
-			(xy 55.88 67.31) (xy 55.88 71.12)
+			(xy 100.33 99.06) (xy 118.11 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "475168e0-b744-4b97-bb73-b435552986b8")
+		(uuid "50d707e3-38fa-4688-9ff8-d7706c413dda")
 	)
 	(wire
 		(pts
-			(xy 49.53 73.66) (xy 60.96 73.66)
+			(xy 95.25 78.74) (xy 95.25 81.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "776a78d9-93e1-4b38-8a61-b95d92cf9a90")
+		(uuid "701f913b-cc76-4c6c-815f-5ac0fa5517e3")
 	)
 	(wire
 		(pts
-			(xy 49.53 76.2) (xy 60.96 76.2)
+			(xy 100.33 78.74) (xy 118.11 78.74)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b6109dbd-5662-4de9-8aa4-8e8c07e9dbe2")
+		(uuid "a3c44ae1-147c-4c15-af63-4d03cd237cdb")
 	)
 	(wire
 		(pts
-			(xy 55.88 71.12) (xy 60.96 71.12)
+			(xy 95.25 96.52) (xy 95.25 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fd003e3a-a161-4dcf-8bcd-5453126e9d10")
+		(uuid "e67f2af1-8537-4b72-a523-5b137048d229")
 	)
-	(hierarchical_label "FingerTip_I2C_SDA"
+	(wire
+		(pts
+			(xy 118.11 99.06) (xy 118.11 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa0407c1-f2ec-492e-aa45-34998402ab21")
+	)
+	(hierarchical_label "CABLE_DET"
+		(shape output)
+		(at 100.33 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9c94c8b0-5a7c-42e4-966f-77fe127ef28b")
+	)
+	(hierarchical_label "CC2"
 		(shape input)
-		(at 49.53 76.2 180)
+		(at 87.63 99.06 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "42267b3c-8c4c-4ad7-a51c-e1300a58dc81")
+		(uuid "a71d6a30-14f2-4f7e-ba4a-4f34a54a84c9")
 	)
-	(hierarchical_label "FingerTip_I2C_SCL"
+	(hierarchical_label "CC1"
 		(shape input)
-		(at 49.53 73.66 180)
+		(at 87.63 78.74 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "9886c2fb-93ad-45fd-b686-6eee03fe3c95")
+		(uuid "ecdf767d-99fe-4680-8790-5a5ac2819dd6")
 	)
 	(symbol
-		(lib_id "G-Love:GND")
-		(at 55.88 80.01 0)
+		(lib_id "G-Love:R")
+		(at 97.79 78.74 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
+		(in_bom yes)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "797d7ae5-01fa-4059-9414-d90b384ec533")
-		(property "Reference" "GND0159"
-			(at 55.88 83.566 0)
-			(hide yes)
+		(uuid "4f17e490-ac37-4dd4-aaf1-c36ae46a3bf7")
+		(property "Reference" "R31"
+			(at 97.79 75.438 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -632,9 +720,8 @@
 				)
 			)
 		)
-		(property "Value" "GND"
-			(at 55.88 83.566 0)
-			(hide yes)
+		(property "Value" "100k"
+			(at 97.79 76.962 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -644,7 +731,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 55.88 80.01 0)
+			(at 97.79 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -655,7 +742,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 55.88 80.01 0)
+			(at 97.79 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -665,19 +752,8 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 55.88 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Minimum quantity per command" ""
-			(at 55.88 80.01 0)
+		(property "Description" "Resistor"
+			(at 97.79 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -688,12 +764,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "316b40e2-9614-4e58-bd30-24aef0fd803a")
+			(uuid "3f1696fe-fcc2-4dd0-96df-e146bcb51310")
+		)
+		(pin "2"
+			(uuid "25b64d6f-3bea-40fc-a18e-21b69174d82c")
 		)
 		(instances
 			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/8701d982-557e-4c73-bfaa-5f02d2e6c25d"
-					(reference "GND0159")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a/f882b88a-fdc0-4402-a4d5-ff7803d65cea"
+					(reference "R31")
 					(unit 1)
 				)
 			)
@@ -701,7 +780,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:VCC")
-		(at 55.88 66.04 0)
+		(at 118.11 77.47 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -710,9 +789,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "ace6e0ca-1b7e-420d-b9b2-faa65c8cbbb5")
-		(property "Reference" "#PWR0141"
-			(at 59.69 67.818 0)
+		(uuid "6f9f5be8-00ae-4e7b-a362-2eaa2ba07667")
+		(property "Reference" "#PWR0125"
+			(at 121.92 79.248 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -723,7 +802,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 55.88 62.23 0)
+			(at 118.11 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -733,7 +812,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 55.88 66.04 0)
+			(at 118.11 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -744,7 +823,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 55.88 66.04 0)
+			(at 118.11 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -755,7 +834,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 55.88 66.04 0)
+			(at 118.11 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -766,20 +845,20 @@
 			)
 		)
 		(pin "1"
-			(uuid "407688f0-4234-4260-9526-fcc522ccb526")
+			(uuid "ec13746f-248a-48c6-aab2-ddb51e5a8b94")
 		)
 		(instances
 			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/8701d982-557e-4c73-bfaa-5f02d2e6c25d"
-					(reference "#PWR0141")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a/f882b88a-fdc0-4402-a4d5-ff7803d65cea"
+					(reference "#PWR0125")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "G-Love:Conn_POGO_4")
-		(at 72.39 72.39 0)
+		(lib_id "Diode:BAT54C")
+		(at 95.25 88.9 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -788,9 +867,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "ad35fe82-3227-44c2-92fe-e3b11aa9bae5")
-		(property "Reference" "J_3"
-			(at 77.47 74.9299 0)
+		(uuid "c0be47f5-ec0f-45aa-9641-04d2945cec4f")
+		(property "Reference" "D101"
+			(at 92.71 87.6299 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -800,8 +879,32 @@
 				(justify left)
 			)
 		)
-		(property "Value" ""
-			(at 72.39 72.39 0)
+		(property "Value" "BAT54C"
+			(at 92.71 90.1699 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 92.075 86.995 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "http://www.diodes.com/_files/datasheets/ds11005.pdf"
+			(at 95.25 90.932 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -810,8 +913,68 @@
 				)
 			)
 		)
-		(property "Footprint" "MyGlove:PinHeader_1x04_Pas2.54mm"
-			(at 72.39 72.39 0)
+		(property "Description" "dual schottky barrier diode, common cathode"
+			(at 95.25 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "5b59edaf-cd26-41aa-b21c-d126a7c0bc60")
+		)
+		(pin "3"
+			(uuid "9b669063-fcfa-4cb7-b2f6-5c4ed4c3557e")
+		)
+		(pin "1"
+			(uuid "9e2254ed-821d-4974-bc66-a91759b8f99c")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a/f882b88a-fdc0-4402-a4d5-ff7803d65cea"
+					(reference "D101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:R")
+		(at 97.79 99.06 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e88f5e54-0c08-4aa8-97ba-ba4f5850783f")
+		(property "Reference" "R32"
+			(at 98.044 95.758 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 98.044 97.536 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 97.79 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -822,7 +985,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 72.39 72.39 0)
+			(at 97.79 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -832,8 +995,8 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 72.39 72.39 0)
+		(property "Description" "Resistor"
+			(at 97.79 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -842,34 +1005,17 @@
 					(size 1.27 1.27)
 				)
 			)
-		)
-		(property "Minimum quantity per command" ""
-			(at 72.39 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "4ef84e4c-6b73-4627-8f1b-7aa3ecbbe044")
 		)
 		(pin "2"
-			(uuid "c5badadc-1f86-4a93-87b0-9777cb2e3667")
+			(uuid "15c1233e-336b-4709-90de-1a5746c88605")
 		)
-		(pin "3"
-			(uuid "1ecba3df-2859-48d6-90dd-b24a7701f66a")
-		)
-		(pin "4"
-			(uuid "14bf7ee4-399b-47a6-9b08-6e633f35fc2d")
+		(pin "1"
+			(uuid "8d3354a5-aee4-40f8-bbe6-4161669419dd")
 		)
 		(instances
 			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/8701d982-557e-4c73-bfaa-5f02d2e6c25d"
-					(reference "J_3")
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a/f882b88a-fdc0-4402-a4d5-ff7803d65cea"
+					(reference "R32")
 					(unit 1)
 				)
 			)
