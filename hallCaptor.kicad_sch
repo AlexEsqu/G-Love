@@ -419,7 +419,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4a3579f6-8455-492b-b60f-f7da3fe4a3bb")
-		(property "Reference" "U6"
+		(property "Reference" "U8"
 			(at 60.198 35.052 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -439,7 +439,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MyGlove:Hall_Sensor_A3144"
+		(property "Footprint" "MyGlove:PinHeader_1x03_P2.54mm_Vertical"
 			(at 66.04 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -517,7 +517,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db/52001651-8f72-422f-9b98-937203a79121"
-					(reference "U6")
+					(reference "U8")
 					(unit 1)
 				)
 			)
@@ -534,7 +534,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7cf2d66a-14e6-4325-a718-ac85f045d3a7")
-		(property "Reference" "GND027"
+		(property "Reference" "GND031"
 			(at 66.04 54.356 0)
 			(hide yes)
 			(show_name no)
@@ -606,7 +606,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db/52001651-8f72-422f-9b98-937203a79121"
-					(reference "GND027")
+					(reference "GND031")
 					(unit 1)
 				)
 			)
@@ -624,7 +624,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bf69f7e4-a3b1-481c-9f99-990b0311bef0")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR028"
 			(at 69.85 30.988 0)
 			(hide yes)
 			(show_name no)
@@ -684,7 +684,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/c9027db4-6968-4e40-a138-b60eacbff4db/52001651-8f72-422f-9b98-937203a79121"
-					(reference "#PWR022")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
