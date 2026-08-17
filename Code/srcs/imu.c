@@ -2,39 +2,39 @@
 
 static void select_bank(uint8_t bank)
 {
-	twi_write_reg(IMU_ADDR, REG_BANK_SEL, bank);
+	i2c_write_reg(IMU_ADDR, REG_BANK_SEL, bank);
 }
 
 void set_imu()
 {
 	uint8_t data;
 	select_bank(BANK_0);
-	twi_write_reg(IMU_ADDR, FIFO_CONFIG, 1); // stream to FIFO mode
+	i2c_write_reg(IMU_ADDR, FIFO_CONFIG, 1); // stream to FIFO mode
 
 	data = (1 << FIFO_ACCEL_EN) | (1 << FIFO_GYRO_EN) | (1 << FIFO_WM_GT_TH) | (1 << FIFO_HIRES_EN); // enrable accel, gyro, watermark, high resolution
-	twi_write_reg(IMU_ADDR, FIFO_CONFIG1, data);
+	i2c_write_reg(IMU_ADDR, FIFO_CONFIG1, data);
 
 	data = (1 << FIFO_COUNT_REC); // enable FIFO count recovery for watermark
-	twi_write_reg(IMU_ADDR, INTF_CONFIG0, data);
+	i2c_write_reg(IMU_ADDR, INTF_CONFIG0, data);
 
-	twi_write_reg(IMU_ADDR, FIFO_COUNTL, 50); // set FIFO watermark to 50 FIFO samples
-	twi_write_reg(IMU_ADDR, FIFO_COUNTH, 0);
+	i2c_write_reg(IMU_ADDR, FIFO_COUNTL, 50); // set FIFO watermark to 50 FIFO samples
+	i2c_write_reg(IMU_ADDR, FIFO_COUNTH, 0);
 
 	data = (1 << TEMP_DIS) | (3 << GYRO_MODE) | (3 << ACCEL_MODE); // disable temperature sensor, set gyro and accel to Low Noise mode
-	twi_write_reg(IMU_ADDR, PWR_MGMT0, 0);						   // disable sleep mode
+	i2c_write_reg(IMU_ADDR, PWR_MGMT0, 0);						   // disable sleep mode
 
 	data = (6 << GYRO_ODR);
-	twi_write_reg(IMU_ADDR, GYRO_CONFIG0, data); // set gyro ODR to 1kHz
+	i2c_write_reg(IMU_ADDR, GYRO_CONFIG0, data); // set gyro ODR to 1kHz
 	data = (6 << ACCEL_ODR);
-	twi_write_reg(IMU_ADDR, ACCEL_CONFIG0, data); // set accel ODR to 1kHz
+	i2c_write_reg(IMU_ADDR, ACCEL_CONFIG0, data); // set accel ODR to 1kHz
 }
 
 static uint16_t get_fifo_count()
 {
 	select_bank(BANK_0);
 	uint16_t count = 0;
-	count = twi_read_reg(IMU_ADDR, FIFO_COUNTL);
-	count |= (twi_read_reg(IMU_ADDR, FIFO_COUNTH) << 8);
+	count = i2c_read_reg(IMU_ADDR, FIFO_COUNTL);
+	count |= (i2c_read_reg(IMU_ADDR, FIFO_COUNTH) << 8);
 	return (count);
 }
 
@@ -42,7 +42,7 @@ static void read_fifo_data(imu_data_t *imu_data)
 {
 	select_bank(BANK_0);
 	uint8_t fifo_data[20];
-	twi_read_burst(IMU_ADDR, FIFO_DATA, fifo_data, 20);
+	i2c_read_burst(IMU_ADDR, FIFO_DATA, fifo_data, 20);
 
 	if (!(fifo_data[0] & (1 << HEADER_20) || fifo_data[0] & (1 << HEADER_MSG)))
 		return;

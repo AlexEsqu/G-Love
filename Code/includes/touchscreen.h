@@ -2,7 +2,7 @@
 #define TOUCHSCREEN_H
 
 #include <stdint.h>
-#include <twi.h>
+#include <i2c.h>
 
 #define TOUCHSCREEN_ADDR 0x15
 

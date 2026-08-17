@@ -1,5 +1,5 @@
-#ifndef TWI_H
-#define TWI_H
+#ifndef I2C_H
+#define I2C_H
 
 #include <stdint.h>
 #include <avr/io.h>
@@ -8,9 +8,9 @@
 /*										STATUS										 */
 /* ********************************************************************************* */
 
-#define TW_STATUS (TWSR & 0xF8)    // Status register + status mask
+#define I2C_STATUS (TWSR & 0xF8)    // Status register + status mask
 
-enum twi_status_code {
+enum i2c_status_code {
 	START = 0x08,      /* Start status */
 	REP_START = 0x10,  /* Repeated start status */
 
@@ -32,14 +32,14 @@ enum twi_status_code {
 /*										FUNCTIONS									 */
 /* ********************************************************************************* */
 
-void 	    twi_init(void);
-void 	    twi_start(void);
-void 	    twi_stop(void);
-void 	    twi_write(uint8_t data);
-uint8_t     twi_read(uint8_t ack);
-int	    twi_write_reg(uint8_t dev_addr, uint8_t reg, uint8_t val);
-int        twi_write_burst(uint8_t dev_addr, uint8_t reg, uint8_t *data, uint8_t size);
-uint8_t	    twi_read_reg(uint8_t dev_addr, uint8_t reg);
-void	    twi_read_burst(uint8_t dev_addr, uint8_t reg, uint8_t *buf, uint8_t len);
+void 	    i2c_init(void);
+void 	    i2c_start(void);
+void 	    i2c_stop(void);
+void 	    i2c_write(uint8_t data);
+uint8_t     i2c_read(uint8_t ack);
+int	    i2c_write_reg(uint8_t dev_addr, uint8_t reg, uint8_t val);
+int        i2c_write_burst(uint8_t dev_addr, uint8_t reg, uint8_t *data, uint8_t size);
+uint8_t	    i2c_read_reg(uint8_t dev_addr, uint8_t reg);
+void	    i2c_read_burst(uint8_t dev_addr, uint8_t reg, uint8_t *buf, uint8_t len);
 
 #endif

@@ -1,4 +1,4 @@
-SRCS = main.c uart.c twi.c imu.c utils.c touchscreen.c
+SRCS = main.c uart.c i2c.c imu.c utils.c touchscreen.c
 SRCS_DIR = srcs/
 INC_DIR = includes/
 

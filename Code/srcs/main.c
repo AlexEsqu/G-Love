@@ -3,7 +3,7 @@
 int main(void)
 {
 	uart_init();
-	twi_init();
+	i2c_init();
 	set_imu();
 
 	imu_data_t imu_data;

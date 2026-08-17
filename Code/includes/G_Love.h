@@ -8,7 +8,7 @@
 
 #include <config.h>
 #include <uart.h>
-#include <twi.h>
+#include <i2c.h>
 
 #include <imu.h>
 #include <touchscreen.h>
