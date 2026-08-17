@@ -12,5 +12,8 @@
 
 #include <imu.h>
 #include <touchscreen.h>
+#include <adc.h>
+
+void setup(void);
 
 #endif

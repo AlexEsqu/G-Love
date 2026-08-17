@@ -1,5 +1,13 @@
 #include <G_Love.h>
 
+void setup(void)
+{
+	uart_init();
+	i2c_init();
+	set_imu();
+	adc_init();
+}
+
 void i2c_scan(void)
 {
     uint8_t found_devices = 0;
@@ -23,3 +31,4 @@ void i2c_scan(void)
         uart_printstr("No devices found on the I2C bus.\r\n");
     }
 }
+
