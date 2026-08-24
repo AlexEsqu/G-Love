@@ -581,7 +581,7 @@
           "group_by": false,
           "label": "Qty",
           "name": "${QUANTITY}",
-          "show": false
+          "show": true
         },
         {
           "group_by": true,
@@ -693,7 +693,7 @@
         },
         {
           "group_by": false,
-          "label": "Package",
+          "label": "PACKAGE",
           "name": "Package",
           "show": false
         },
@@ -707,12 +707,6 @@
           "group_by": false,
           "label": "Minimum quantity per command",
           "name": "Minimum quantity per command",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "PACKAGE",
-          "name": "PACKAGE",
           "show": false
         }
       ],
