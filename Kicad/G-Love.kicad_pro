@@ -599,7 +599,7 @@
           "group_by": false,
           "label": "SUPPLIER",
           "name": "SUPPLIER",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -629,7 +629,7 @@
           "group_by": true,
           "label": "Footprint",
           "name": "Footprint",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
@@ -708,6 +708,12 @@
           "label": "Minimum quantity per command",
           "name": "Minimum quantity per command",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "oui",
+          "name": "oui",
+          "show": false
         }
       ],
       "filter_string": "",
@@ -715,7 +721,7 @@
       "include_excluded_from_bom": true,
       "name": "",
       "sort_asc": true,
-      "sort_field": "Description"
+      "sort_field": "Value"
     },
     "bus_aliases": {},
     "connection_grid_size": 50.0,
@@ -766,7 +772,7 @@
         "uuid": "808bc5ea-49ac-4454-ba77-8b20d01ce159"
       }
     ],
-    "used_designators": "J4,GND147,GND150,GND156,GND166-182,+5V1-22,#FLG1-2,PWR1-22",
+    "used_designators": "GND147,GND150,GND156,GND166-182,+5V1-22,#FLG1-2,PWR1-22",
     "variants": []
   },
   "sheets": [
@@ -831,6 +837,102 @@
       "HallCaptor"
     ],
     [
+      "508c8d26-610d-4395-9434-749869aaa3fc",
+      "SK9822x15_Index"
+    ],
+    [
+      "56300770-06b9-4586-abf3-6db0dacb6dcc",
+      "SK9822x5_3"
+    ],
+    [
+      "96618517-c0bc-4037-908d-6eb912f6bfa9",
+      "SK9822x5_2"
+    ],
+    [
+      "bced93eb-e525-4e5d-9f15-41746cc383d2",
+      "SK9822x5_4"
+    ],
+    [
+      "ef8f0e29-655d-446c-b805-e2fd4bf0dd81",
+      "SK9822x5_5"
+    ],
+    [
+      "cb06373c-fd44-4fb3-af88-6af9d82061bd",
+      "SK9822xO"
+    ],
+    [
+      "9c376b41-f2ee-4fc8-ab7c-f0dde4d7f9f4",
+      "SK9822x15_Little"
+    ],
+    [
+      "32057457-8680-4154-8b8a-1a13212eb66f",
+      "SK9822x5_3"
+    ],
+    [
+      "51251c9c-2f3b-4f96-af09-d08af439e7af",
+      "SK9822x5_2"
+    ],
+    [
+      "ab06081b-274c-47b6-a66f-a3b79fade958",
+      "SK9822x5_4"
+    ],
+    [
+      "feeae6a9-c784-4f57-ae6a-333f9bba4903",
+      "SK9822x5_5"
+    ],
+    [
+      "402f35bc-f7d7-4704-aa94-5336a8a1cf91",
+      "SK9822x5_1"
+    ],
+    [
+      "9730839e-7cf8-4bb0-89ed-e6ff80729323",
+      "SK9822x15_Middle"
+    ],
+    [
+      "32057457-8680-4154-8b8a-1a13212eb66f",
+      "SK9822x5_3"
+    ],
+    [
+      "51251c9c-2f3b-4f96-af09-d08af439e7af",
+      "SK9822x5_2"
+    ],
+    [
+      "ab06081b-274c-47b6-a66f-a3b79fade958",
+      "SK9822x5_4"
+    ],
+    [
+      "feeae6a9-c784-4f57-ae6a-333f9bba4903",
+      "SK9822x5_5"
+    ],
+    [
+      "402f35bc-f7d7-4704-aa94-5336a8a1cf91",
+      "SK9822x5_1"
+    ],
+    [
+      "27c125d2-0495-4d4a-a4da-6961c81f3232",
+      "SK9822x15_Ring"
+    ],
+    [
+      "32057457-8680-4154-8b8a-1a13212eb66f",
+      "SK9822x5_3"
+    ],
+    [
+      "51251c9c-2f3b-4f96-af09-d08af439e7af",
+      "SK9822x5_2"
+    ],
+    [
+      "ab06081b-274c-47b6-a66f-a3b79fade958",
+      "SK9822x5_4"
+    ],
+    [
+      "feeae6a9-c784-4f57-ae6a-333f9bba4903",
+      "SK9822x5_5"
+    ],
+    [
+      "402f35bc-f7d7-4704-aa94-5336a8a1cf91",
+      "SK9822x5_1"
+    ],
+    [
       "4989b515-8901-47ca-ab95-4d280b30f712",
       "Data"
     ],
@@ -841,6 +943,10 @@
     [
       "0d387f9d-76d6-4b6a-aded-93bcda75ef5a",
       "Data/power I/O"
+    ],
+    [
+      "80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c",
+      "LEDs"
     ],
     [
       "0a598795-0604-41b3-948f-4efe200200e3",
