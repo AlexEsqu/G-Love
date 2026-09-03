@@ -430,7 +430,7 @@
 			(on_board no)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR0139"
+			(property "Reference" "#PWR04"
 				(at 3.81 -1.778 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -442,7 +442,7 @@
 				)
 			)
 			(property "Value" "VCC"
-				(at 0 3.81 0)
+				(at 0 2.286 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -532,122 +532,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "VCC_1"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom no)
-			(on_board no)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR04"
-				(at 3.81 -1.778 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "VCC"
-				(at 0 2.286 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "VCC_1_0_1"
-				(polyline
-					(pts
-						(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.524) (xy 0 -0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "VCC_1_1_1"
-				(pin power_in line
-					(at 0 -1.27 90)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 	)
 	(text "Split UART to\n- USB connector, \n- UART pins or \n- MAX driver"
 		(exclude_from_sim no)
@@ -659,12 +543,6 @@
 			(justify left)
 		)
 		(uuid "484ebddb-0db6-4bfc-bc61-b9ff98a70ef5")
-	)
-	(junction
-		(at 115.57 90.17)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0c3d03ff-4a90-4018-9ea0-528c6e92e628")
 	)
 	(junction
 		(at 119.38 100.33)
@@ -683,6 +561,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2f620866-c427-49c5-8f18-a436788e22cc")
+	)
+	(junction
+		(at 115.57 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "486cd97c-fc99-4885-8d36-c77932fdc0e3")
 	)
 	(junction
 		(at 138.43 80.01)
@@ -790,7 +674,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 90.17) (xy 119.38 90.17)
+			(xy 111.76 90.17) (xy 115.57 90.17)
 		)
 		(stroke
 			(width 0)
@@ -970,16 +854,6 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 90.17) (xy 115.57 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6803ad7e-dfe0-458d-8945-5c1f081a5bc2")
-	)
-	(wire
-		(pts
 			(xy 205.74 100.33) (xy 217.17 100.33)
 		)
 		(stroke
@@ -1007,6 +881,16 @@
 			(type default)
 		)
 		(uuid "7a69be61-ba27-43be-937a-39635b796f2b")
+	)
+	(wire
+		(pts
+			(xy 115.57 90.17) (xy 119.38 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f5aa5f3-8000-46f5-817a-dab75ce4207d")
 	)
 	(wire
 		(pts
@@ -1289,7 +1173,6 @@
 		)
 	)
 	(symbol
-		(lib_name "VCC_1")
 		(lib_id "G-Love:VCC")
 		(at 142.24 60.96 0)
 		(unit 1)
@@ -1301,7 +1184,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "330a691f-1631-4416-b7cd-7c5346e4ac7a")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR02"
 			(at 146.05 62.738 0)
 			(hide yes)
 			(show_name no)
@@ -1361,7 +1244,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "#PWR05")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -1378,7 +1261,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8764e353-79d7-489b-9aea-53c000e9c533")
-		(property "Reference" "R40"
+		(property "Reference" "R4"
 			(at 147.066 64.262 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1441,7 +1324,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "R40")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -1539,7 +1422,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a1bbf68e-5ed4-4e4f-96d1-f86287aa4b88")
-		(property "Reference" "flow2"
+		(property "Reference" "flow3"
 			(at 141.224 78.232 0)
 			(hide yes)
 			(show_name no)
@@ -1597,7 +1480,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "flow2")
+					(reference "flow3")
 					(unit 1)
 				)
 			)
@@ -1615,7 +1498,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a44d3f46-822e-4526-bac8-8d8ac5e3bf39")
-		(property "Reference" "flow3"
+		(property "Reference" "flow1"
 			(at 57.404 88.392 0)
 			(hide yes)
 			(show_name no)
@@ -1673,7 +1556,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "flow3")
+					(reference "flow1")
 					(unit 1)
 				)
 			)
@@ -1691,7 +1574,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b12ed430-88ad-442d-8a11-f8af4ad46866")
-		(property "Reference" "flow1"
+		(property "Reference" "flow4"
 			(at 141.986 79.248 0)
 			(hide yes)
 			(show_name no)
@@ -1749,7 +1632,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "flow1")
+					(reference "flow4")
 					(unit 1)
 				)
 			)
@@ -1766,7 +1649,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b7032909-45f6-41e7-98c4-a2f86c4d0132")
-		(property "Reference" "R5"
+		(property "Reference" "R3"
 			(at 139.446 64.262 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1829,84 +1712,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "R5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "G-Love:VCC")
-		(at 115.57 88.9 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "d2585b83-627f-48fe-a35a-a15253eb253e")
-		(property "Reference" "#PWR04"
-			(at 119.38 90.678 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VCC"
-			(at 115.57 86.614 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 115.57 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 115.57 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 115.57 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "4294e057-c11f-40c6-8ed5-395e079f2b14")
-		)
-		(instances
-			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "#PWR04")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -1924,7 +1730,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d836d007-423d-445f-b168-f3af46917619")
-		(property "Reference" "flow4"
+		(property "Reference" "flow2"
 			(at 58.166 94.488 0)
 			(hide yes)
 			(show_name no)
@@ -1982,7 +1788,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "flow4")
+					(reference "flow2")
 					(unit 1)
 				)
 			)
@@ -1999,7 +1805,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "eb0cedd9-3d91-49e1-87cc-6b5df450804b")
-		(property "Reference" "R2"
+		(property "Reference" "R1"
 			(at 113.03 91.948 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2095,7 +1901,85 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "R2")
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:VCC")
+		(at 115.57 88.9 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "eb5cc1f4-54bf-4e5f-a28a-78edf41262e1")
+		(property "Reference" "#PWR01"
+			(at 119.38 90.678 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 115.57 85.09 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 115.57 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 115.57 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 115.57 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bfe6a92c-cbae-4d45-a0aa-7d81d5de9267")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -2112,7 +1996,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "efe71ad3-95b0-496e-8384-e50175e4e1e8")
-		(property "Reference" "R3"
+		(property "Reference" "R2"
 			(at 120.396 91.948 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2208,7 +2092,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "R3")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -2361,7 +2245,7 @@
 			)
 		)
 		(property "Sheetfile" "ATmega328P_sch.kicad_sch"
-			(at 168.91 124.7906 0)
+			(at 168.91 125.0446 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2431,7 +2315,7 @@
 				(justify right)
 			)
 		)
-		(pin "328P_I2C_IMU_SCL" input
+		(pin "328P_I2C_IMU_SCL" output
 			(at 205.74 102.87 0)
 			(uuid "9aa0c04c-f8cb-4f46-b75c-4d77bf4c35f7")
 			(effects

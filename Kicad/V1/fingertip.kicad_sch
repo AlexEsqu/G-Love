@@ -14,15 +14,14 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J_3"
-				(at 5.08 -2.5399 0)
+			(property "Reference" "J"
+				(at 3.048 -15.494 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
 			(property "Value" ""
@@ -35,7 +34,7 @@
 					)
 				)
 			)
-			(property "Footprint" "MyGlove:PinHeader_1x04_Pas2.54mm"
+			(property "Footprint" ""
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -58,17 +57,6 @@
 				)
 			)
 			(property "Description" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Minimum quantity per command" ""
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -231,7 +219,7 @@
 				)
 			)
 			(symbol "Conn_POGO_4_1_1"
-				(pin power_in line
+				(pin passive line
 					(at -11.43 1.27 0)
 					(length 10.16)
 					(name ""
@@ -249,7 +237,7 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin passive line
 					(at -11.43 -1.27 0)
 					(length 10.16)
 					(name ""
@@ -267,7 +255,7 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin passive line
 					(at -11.43 -3.81 0)
 					(length 10.16)
 					(name ""
@@ -285,7 +273,7 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin passive line
 					(at -11.43 -6.35 0)
 					(length 10.16)
 					(name ""
@@ -424,7 +412,7 @@
 			(on_board no)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR0139"
+			(property "Reference" "#PWR04"
 				(at 3.81 -1.778 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -436,7 +424,7 @@
 				)
 			)
 			(property "Value" "VCC"
-				(at 0 3.81 0)
+				(at 0 2.286 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -621,7 +609,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "797d7ae5-01fa-4059-9414-d90b384ec533")
-		(property "Reference" "GND0159"
+		(property "Reference" "GND058"
 			(at 55.88 83.566 0)
 			(hide yes)
 			(show_name no)
@@ -693,85 +681,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/8701d982-557e-4c73-bfaa-5f02d2e6c25d"
-					(reference "GND0159")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "G-Love:VCC")
-		(at 55.88 66.04 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ace6e0ca-1b7e-420d-b9b2-faa65c8cbbb5")
-		(property "Reference" "#PWR0141"
-			(at 59.69 67.818 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VCC"
-			(at 55.88 62.23 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 55.88 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 55.88 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 55.88 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "407688f0-4234-4260-9526-fcc522ccb526")
-		)
-		(instances
-			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/8701d982-557e-4c73-bfaa-5f02d2e6c25d"
-					(reference "#PWR0141")
+					(reference "GND058")
 					(unit 1)
 				)
 			)
@@ -870,6 +780,84 @@
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/8701d982-557e-4c73-bfaa-5f02d2e6c25d"
 					(reference "J_3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:VCC")
+		(at 55.88 66.04 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f7acfc28-ea35-4757-a44a-1e7c4a7d291d")
+		(property "Reference" "#PWR040"
+			(at 59.69 67.818 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 55.88 62.23 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 55.88 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 55.88 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 55.88 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e2b4f19d-e93b-4556-a302-c36178314926")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/8701d982-557e-4c73-bfaa-5f02d2e6c25d"
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
