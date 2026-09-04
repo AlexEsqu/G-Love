@@ -2785,6 +2785,12 @@
 		(color 0 0 0 0)
 		(uuid "ebe48330-e3d6-49a2-b0d3-0a39e3be5f76")
 	)
+	(junction
+		(at 101.6 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ed27e1de-e369-4f83-b450-a9dff056d035")
+	)
 	(no_connect
 		(at 167.64 66.04)
 		(uuid "03c70b8c-60bc-482e-b831-2566d3cda014")
@@ -2899,6 +2905,16 @@
 	)
 	(wire
 		(pts
+			(xy 101.6 53.34) (xy 101.6 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c8d3e6f-a950-4eb2-9b59-6b4602f68ba4")
+	)
+	(wire
+		(pts
 			(xy 152.4 43.18) (xy 156.21 43.18)
 		)
 		(stroke
@@ -2939,7 +2955,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 46.99) (xy 101.6 59.69)
+			(xy 101.6 46.99) (xy 101.6 53.34)
 		)
 		(stroke
 			(width 0)
@@ -3329,6 +3345,16 @@
 	)
 	(wire
 		(pts
+			(xy 99.06 53.34) (xy 101.6 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "805d7317-9f0e-4ac3-ada1-16c3e64cc880")
+	)
+	(wire
+		(pts
 			(xy 167.64 127) (xy 191.77 127)
 		)
 		(stroke
@@ -3476,16 +3502,6 @@
 			(type default)
 		)
 		(uuid "b2479cec-eebf-4b9a-a181-d4a8b2874f0b")
-	)
-	(wire
-		(pts
-			(xy 104.14 53.34) (xy 105.41 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b821a00e-4420-426a-aebd-57a8340eff5c")
 	)
 	(wire
 		(pts
@@ -3656,6 +3672,16 @@
 			(type default)
 		)
 		(uuid "e20c0bc9-4bea-452b-94c7-aef62b9afaf9")
+	)
+	(wire
+		(pts
+			(xy 101.6 53.34) (xy 105.41 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e69d07a2-3751-42d2-9b99-cff56b1e8e1d")
 	)
 	(wire
 		(pts
@@ -5657,7 +5683,8 @@
 	)
 	(symbol
 		(lib_id "G-Love:GND")
-		(at 104.14 53.34 0)
+		(at 99.06 53.34 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5667,7 +5694,7 @@
 		(dnp no)
 		(uuid "62149cff-f6d7-4b0c-840a-3651e6fc4aa5")
 		(property "Reference" "#GND02"
-			(at 104.14 56.896 0)
+			(at 99.06 56.896 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5678,7 +5705,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 102.108 56.896 90)
+			(at 101.092 56.896 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5690,7 +5717,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 104.14 53.34 0)
+			(at 99.06 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5701,7 +5728,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 104.14 53.34 0)
+			(at 99.06 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5712,7 +5739,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 104.14 53.34 0)
+			(at 99.06 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

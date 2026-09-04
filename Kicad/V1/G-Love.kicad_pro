@@ -766,7 +766,7 @@
         "uuid": "808bc5ea-49ac-4454-ba77-8b20d01ce159"
       }
     ],
-    "used_designators": "J4,GND147,GND150,GND156,GND166-182,+5V1-22,#FLG1-2,PWR1-22",
+    "used_designators": "#GND3,J4,GND147,GND150,GND156,GND166-182,+5V1-22,#FLG1-2,PWR1-22",
     "variants": []
   },
   "sheets": [
@@ -775,72 +775,84 @@
       "Root"
     ],
     [
-      "15052d3f-5b94-4226-97e2-3e9ab10fafda",
-      "FSR_Index"
+      "1b9234a1-5071-4fc1-93e6-8cf4c57e8659",
+      "ATmega328p"
     ],
     [
-      "32c3dc22-6eac-49d0-b512-767615f82205",
-      "FSR_Middle"
-    ],
-    [
-      "5442b494-eff8-4ddd-bc03-bcc1bea75842",
-      "FSR_Ring"
-    ],
-    [
-      "3f48e459-1dc8-4eb9-8adc-befbe01eab22",
-      "FSR_Little"
-    ],
-    [
-      "f906f610-f118-4325-955e-6566f843376d",
-      "FSR_Thumb"
-    ],
-    [
-      "d64adc8c-2a84-4c15-a7c4-b37086fe5b0e",
-      "Flex_Sensor0"
-    ],
-    [
-      "7a2974e5-124b-4db5-8e90-e949fd9545a7",
-      "Flex_Sensor1"
-    ],
-    [
-      "a00bc8a6-48ba-4c2b-a585-b9390a223b1c",
-      "Flex_Sensor2"
-    ],
-    [
-      "93c35869-ca7a-4596-991e-6eeeacdf1f70",
-      "Flex_Sensor3"
-    ],
-    [
-      "11d9268e-1547-4db8-9ef6-819c0ece3649",
-      "Flex_Sensor4"
-    ],
-    [
-      "1ccae2d5-3b8d-492e-8f3e-31d532153427",
-      "Flex_Sensor5"
-    ],
-    [
-      "700d9331-d0f9-41ba-950d-ef1246641225",
-      "Touchscreen"
+      "7de4e8e6-4751-4acb-b71f-e492a47c8332",
+      "Hand_Captors"
     ],
     [
       "f73c6c7b-472d-4c5d-b434-31d2ac317fba",
       "IMU_1"
     ],
     [
+      "11d9268e-1547-4db8-9ef6-819c0ece3649",
+      "Flex_Sensor4"
+    ],
+    [
+      "93c35869-ca7a-4596-991e-6eeeacdf1f70",
+      "Flex_Sensor3"
+    ],
+    [
+      "a00bc8a6-48ba-4c2b-a585-b9390a223b1c",
+      "Flex_Sensor2"
+    ],
+    [
+      "d64adc8c-2a84-4c15-a7c4-b37086fe5b0e",
+      "Flex_Sensor0"
+    ],
+    [
+      "15052d3f-5b94-4226-97e2-3e9ab10fafda",
+      "FSR_Index"
+    ],
+    [
+      "3f48e459-1dc8-4eb9-8adc-befbe01eab22",
+      "FSR_Little"
+    ],
+    [
+      "5442b494-eff8-4ddd-bc03-bcc1bea75842",
+      "FSR_Ring"
+    ],
+    [
+      "f906f610-f118-4325-955e-6566f843376d",
+      "FSR_Thumb"
+    ],
+    [
+      "700d9331-d0f9-41ba-950d-ef1246641225",
+      "Touchscreen"
+    ],
+    [
       "52001651-8f72-422f-9b98-937203a79121",
       "HallCaptor"
+    ],
+    [
+      "1ccae2d5-3b8d-492e-8f3e-31d532153427",
+      "Flex_Sensor5"
+    ],
+    [
+      "8591a7a3-fa5a-416e-b459-40b6a5958f2a",
+      "ATMega2561"
+    ],
+    [
+      "7a2974e5-124b-4db5-8e90-e949fd9545a7",
+      "Flex_Sensor1"
+    ],
+    [
+      "32c3dc22-6eac-49d0-b512-767615f82205",
+      "FSR_Middle"
+    ],
+    [
+      "0d387f9d-76d6-4b6a-aded-93bcda75ef5a",
+      "Data/power I/O"
     ],
     [
       "4989b515-8901-47ca-ab95-4d280b30f712",
       "Data"
     ],
     [
-      "c9027db4-6968-4e40-a138-b60eacbff4db",
-      "Hand_Captors"
-    ],
-    [
-      "0d387f9d-76d6-4b6a-aded-93bcda75ef5a",
-      "Data/power I/O"
+      "a1b0dccf-5d55-40c3-a416-6945c903a7af",
+      "DMX"
     ],
     [
       "0a598795-0604-41b3-948f-4efe200200e3",
@@ -849,10 +861,6 @@
     [
       "8701d982-557e-4c73-bfaa-5f02d2e6c25d",
       "FingerTip Modules"
-    ],
-    [
-      "a1b0dccf-5d55-40c3-a416-6945c903a7af",
-      "DMX"
     ]
   ],
   "text_variables": {},
