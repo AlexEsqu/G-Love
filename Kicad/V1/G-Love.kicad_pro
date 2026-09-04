@@ -273,7 +273,24 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      [
+        "multiple_net_names|2146300|1244600|1363a1c9-b584-4ea3-bd07-8ec1a37edb1d|3ecb0f9b-6018-415d-b8a6-2de0b038fea0|/808bc5ea-49ac-4454-ba77-8b20d01ce159/8591a7a3-fa5a-416e-b459-40b6a5958f2a|/808bc5ea-49ac-4454-ba77-8b20d01ce159/8591a7a3-fa5a-416e-b459-40b6a5958f2a|/808bc5ea-49ac-4454-ba77-8b20d01ce159/8591a7a3-fa5a-416e-b459-40b6a5958f2a",
+        ""
+      ],
+      [
+        "multiple_net_names|508000|1117600|4223a808-6579-49a3-8345-15a845ed5109|67d7ea5d-0d22-4eea-9131-1ae8ff8def2a|/808bc5ea-49ac-4454-ba77-8b20d01ce159/8591a7a3-fa5a-416e-b459-40b6a5958f2a|/808bc5ea-49ac-4454-ba77-8b20d01ce159/8591a7a3-fa5a-416e-b459-40b6a5958f2a|/808bc5ea-49ac-4454-ba77-8b20d01ce159/8591a7a3-fa5a-416e-b459-40b6a5958f2a",
+        ""
+      ],
+      [
+        "multiple_net_names|508000|939800|93dde1b7-9c77-4db4-9e9b-4058cb58f4bf|c55d51df-03b7-4083-b4d2-ea4ed2e0f81d|/808bc5ea-49ac-4454-ba77-8b20d01ce159/8591a7a3-fa5a-416e-b459-40b6a5958f2a|/808bc5ea-49ac-4454-ba77-8b20d01ce159/8591a7a3-fa5a-416e-b459-40b6a5958f2a|/808bc5ea-49ac-4454-ba77-8b20d01ce159/8591a7a3-fa5a-416e-b459-40b6a5958f2a",
+        ""
+      ],
+      [
+        "multiple_net_names|508000|965200|4fcf771f-3191-4b7f-a41a-1bc506257e32|df0e914e-f759-4928-bd6e-4335c6676ee8|/808bc5ea-49ac-4454-ba77-8b20d01ce159/8591a7a3-fa5a-416e-b459-40b6a5958f2a|/808bc5ea-49ac-4454-ba77-8b20d01ce159/8591a7a3-fa5a-416e-b459-40b6a5958f2a|/808bc5ea-49ac-4454-ba77-8b20d01ce159/8591a7a3-fa5a-416e-b459-40b6a5958f2a",
+        ""
+      ]
+    ],
     "meta": {
       "version": 0
     },
@@ -623,7 +640,7 @@
           "group_by": true,
           "label": "Exclude from Board",
           "name": "${EXCLUDE_FROM_BOARD}",
-          "show": false
+          "show": true
         },
         {
           "group_by": true,
@@ -708,6 +725,12 @@
           "label": "Minimum quantity per command",
           "name": "Minimum quantity per command",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "PACKAGE",
+          "name": "PACKAGE",
+          "show": false
         }
       ],
       "filter_string": "",
@@ -766,7 +789,7 @@
         "uuid": "808bc5ea-49ac-4454-ba77-8b20d01ce159"
       }
     ],
-    "used_designators": "SW_1-2,R1-39,J_1-3,#FLG1-2,U_1-2,C1-50,U1-14,D1-6,GND1-58,GND147,GND150,GND156,GND166-182,Y1-2,#PWR1-40,CD1,PWR1-22,J1-5,TP1-18,#GND1-2,flow1-20,FS_1-6,+5V1-22,FSR_1-5",
+    "used_designators": "TP1-18,flow1-20,#GND1-2,R1-39,SW_1-2,FS_1-6,U_1-2,C1-50,FSR_1-5,+5V1-22,J1-5,PWR1-22,#FLG1-2,J_1-3,CD1,#PWR1-40,Y1-2,GND1-58,GND147,GND150,GND156,GND166-182,D1-6,U1-14",
     "variants": []
   },
   "sheets": [

@@ -11098,27 +11098,30 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "J"
-			(at 5.334 -23.368 0)
+		(property "Reference" "J_1"
+			(at 1.27 -23.368 0)
 			(show_name no)
 			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Value" "Conn_USB_Receptacle"
-			(at 14.478 -25.908 0)
+			(at 18.542 -20.574 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MyGlove:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11130,7 +11133,7 @@
 			)
 		)
 		(property "Datasheet" "https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ApplicationNotes/ApplicationNotes/00001953A.pdf"
-			(at 20.828 -34.29 0)
+			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(hide yes)
@@ -11140,7 +11143,40 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "USB C Connector"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "1.69/5"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C49261591.html"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11647,7 +11683,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin power_out line
 				(at -7.62 -21.59 90)
 				(length 2.54)
 				(name "SHIELD"
@@ -11677,10 +11713,11 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "J"
-			(at 1.27 -23.368 0)
+		(property "Reference" "J_2"
+			(at -11.43 1.9051 0)
 			(show_name no)
 			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11689,7 +11726,7 @@
 			)
 		)
 		(property "Value" "Conn_USB_Receptacle"
-			(at 18.542 -20.574 0)
+			(at -11.43 -0.6349 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12261,7 +12298,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin power_out line
 				(at -7.62 -21.59 90)
 				(length 2.54)
 				(name "SHIELD"

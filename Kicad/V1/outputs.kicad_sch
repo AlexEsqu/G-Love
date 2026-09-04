@@ -536,27 +536,30 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 5.334 -23.368 0)
+			(property "Reference" "J_1"
+				(at 1.27 -23.368 0)
 				(show_name no)
 				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify right)
 				)
 			)
 			(property "Value" "Conn_USB_Receptacle"
-				(at 14.478 -25.908 0)
+				(at 18.542 -20.574 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify right)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "MyGlove:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -568,7 +571,7 @@
 				)
 			)
 			(property "Datasheet" "https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ApplicationNotes/ApplicationNotes/00001953A.pdf"
-				(at 20.828 -34.29 0)
+				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -578,7 +581,40 @@
 					)
 				)
 			)
-			(property "Description" ""
+			(property "Description" "USB C Connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Minimum quantity per command" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Price" "1.69/5"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "SUPPLIER" "https://www.lcsc.com/product-detail/C49261591.html"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1085,7 +1121,7 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin power_out line
 					(at -7.62 -21.59 90)
 					(length 2.54)
 					(name "SHIELD"
@@ -1115,10 +1151,11 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 1.27 -23.368 0)
+			(property "Reference" "J_2"
+				(at -11.43 1.9051 0)
 				(show_name no)
 				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1127,7 +1164,7 @@
 				)
 			)
 			(property "Value" "Conn_USB_Receptacle"
-				(at 18.542 -20.574 0)
+				(at -11.43 -0.6349 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -1699,7 +1736,7 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin power_out line
 					(at -7.62 -21.59 90)
 					(length 2.54)
 					(name "SHIELD"
@@ -2574,18 +2611,6 @@
 		(uuid "7141ee42-51f8-45fc-b210-a2b88e7aa760")
 	)
 	(junction
-		(at 62.23 191.77)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8e0a2e10-4b34-4042-9979-8ba708e7264b")
-	)
-	(junction
-		(at 50.8 104.14)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "91159499-babd-4cf4-af83-831ef1a5a930")
-	)
-	(junction
 		(at 124.46 55.88)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2634,22 +2659,10 @@
 		(uuid "c88ed7b9-c694-4ca6-8cde-e3ba7ee917bd")
 	)
 	(junction
-		(at 60.96 106.68)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d94a2c31-2ca3-4880-9c02-8444fdec16a8")
-	)
-	(junction
 		(at 83.82 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e502d530-e593-444a-ac5b-b8be25821894")
-	)
-	(junction
-		(at 52.07 186.69)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fce60f73-50c4-4c65-b35e-401d5c368f63")
 	)
 	(no_connect
 		(at 78.74 148.59)
@@ -2769,7 +2782,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 186.69) (xy 62.23 191.77)
+			(xy 62.23 186.69) (xy 62.23 193.04)
 		)
 		(stroke
 			(width 0)
@@ -2849,7 +2862,7 @@
 	)
 	(wire
 		(pts
-			(xy 15.24 115.57) (xy 15.24 124.46)
+			(xy 26.67 115.57) (xy 26.67 124.46)
 		)
 		(stroke
 			(width 0)
@@ -2969,7 +2982,7 @@
 	)
 	(wire
 		(pts
-			(xy 15.24 115.57) (xy 41.91 115.57)
+			(xy 26.67 115.57) (xy 41.91 115.57)
 		)
 		(stroke
 			(width 0)
@@ -3059,7 +3072,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 107.95) (xy 60.96 106.68)
+			(xy 60.96 104.14) (xy 60.96 107.95)
 		)
 		(stroke
 			(width 0)
@@ -3069,23 +3082,13 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 120.65) (xy 25.4 124.46)
+			(xy 36.83 120.65) (xy 36.83 124.46)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "5fbc3fee-af06-4a9c-8903-ad2232a8cbce")
-	)
-	(wire
-		(pts
-			(xy 62.23 191.77) (xy 62.23 193.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6140a8ef-ab02-4848-bd2a-6f9a2f8343f1")
 	)
 	(wire
 		(pts
@@ -3109,16 +3112,6 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 106.68) (xy 60.96 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "65b2e09d-dfe7-4f37-a9ae-b56c69718106")
-	)
-	(wire
-		(pts
 			(xy 124.46 62.23) (xy 200.66 62.23)
 		)
 		(stroke
@@ -3139,7 +3132,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 120.65) (xy 25.4 120.65)
+			(xy 59.69 120.65) (xy 36.83 120.65)
 		)
 		(stroke
 			(width 0)
@@ -3269,16 +3262,6 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 106.68) (xy 60.96 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8f2ac3f7-bf71-4104-8c36-fcc87fab6d79")
-	)
-	(wire
-		(pts
 			(xy 241.3 68.58) (xy 252.73 68.58)
 		)
 		(stroke
@@ -3296,26 +3279,6 @@
 			(type default)
 		)
 		(uuid "90c99f4b-8b67-4d91-87bf-dbd68800a28e")
-	)
-	(wire
-		(pts
-			(xy 52.07 191.77) (xy 62.23 191.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9e004bce-66e4-4123-bb41-cf2db70a9b62")
-	)
-	(wire
-		(pts
-			(xy 50.8 104.14) (xy 50.8 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a1c38ed4-8421-44ab-ada8-f8043ae0759a")
 	)
 	(wire
 		(pts
@@ -3549,16 +3512,6 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 186.69) (xy 52.07 191.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "db64d0d4-53bf-45d3-813f-6abe1f03e42a")
-	)
-	(wire
-		(pts
 			(xy 132.08 27.94) (xy 133.35 27.94)
 		)
 		(stroke
@@ -3599,7 +3552,7 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 129.54) (xy 25.4 132.08)
+			(xy 36.83 129.54) (xy 36.83 132.08)
 		)
 		(stroke
 			(width 0)
@@ -3669,7 +3622,7 @@
 	)
 	(wire
 		(pts
-			(xy 15.24 129.54) (xy 15.24 132.08)
+			(xy 26.67 129.54) (xy 26.67 132.08)
 		)
 		(stroke
 			(width 0)
@@ -3766,7 +3719,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:LED_Indicator")
-		(at 25.4 127 270)
+		(at 36.83 127 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3776,7 +3729,7 @@
 		(dnp no)
 		(uuid "200af6c5-1813-4bef-bc76-2a311bdabc71")
 		(property "Reference" "D4"
-			(at 28.194 127 90)
+			(at 39.624 127 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3787,7 +3740,7 @@
 			)
 		)
 		(property "Value" "RED"
-			(at 29.464 129.286 90)
+			(at 40.894 129.286 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3797,7 +3750,7 @@
 			)
 		)
 		(property "Footprint" "MyGlove:LED"
-			(at 25.4 127 0)
+			(at 36.83 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3808,7 +3761,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 25.4 127 0)
+			(at 36.83 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3819,7 +3772,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 25.4 127 0)
+			(at 36.83 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4107,7 +4060,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "31610fc5-97ea-4d68-89e4-f3b272b1f520")
-		(property "Reference" "#PWR029"
+		(property "Reference" "#PWR028"
 			(at 118.11 53.848 0)
 			(hide yes)
 			(show_name no)
@@ -4167,7 +4120,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a"
-					(reference "#PWR029")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -4869,7 +4822,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:R")
-		(at 25.4 134.62 90)
+		(at 36.83 134.62 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4879,7 +4832,7 @@
 		(dnp no)
 		(uuid "76208c4f-9e50-418c-baed-ad6337472bf1")
 		(property "Reference" "R21"
-			(at 26.67 134.6199 90)
+			(at 38.1 134.6199 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4890,7 +4843,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 28.194 136.144 90)
+			(at 39.624 136.144 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4900,7 +4853,7 @@
 			)
 		)
 		(property "Footprint" "MyGlove:Resistor_0603"
-			(at 25.4 134.62 0)
+			(at 36.83 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4911,7 +4864,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 25.4 134.62 0)
+			(at 36.83 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4922,7 +4875,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 25.4 134.62 0)
+			(at 36.83 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5061,7 +5014,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:LED_Indicator")
-		(at 15.24 127 270)
+		(at 26.67 127 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5071,7 +5024,7 @@
 		(dnp no)
 		(uuid "822e1f3b-b1e5-48af-afd1-b10baed1f373")
 		(property "Reference" "D3"
-			(at 18.034 127 90)
+			(at 29.464 127 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5082,7 +5035,7 @@
 			)
 		)
 		(property "Value" "RED"
-			(at 19.304 129.286 90)
+			(at 30.734 129.286 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5092,7 +5045,7 @@
 			)
 		)
 		(property "Footprint" "MyGlove:LED"
-			(at 15.24 127 0)
+			(at 26.67 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5103,7 +5056,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 15.24 127 0)
+			(at 26.67 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5114,7 +5067,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 15.24 127 0)
+			(at 26.67 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5141,7 +5094,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:R")
-		(at 15.24 134.62 90)
+		(at 26.67 134.62 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5151,7 +5104,7 @@
 		(dnp no)
 		(uuid "85ebb74b-8f1f-43b6-9b6b-7ad38aef4e48")
 		(property "Reference" "R20"
-			(at 16.51 134.6199 90)
+			(at 27.94 134.6199 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5162,7 +5115,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 18.034 136.144 90)
+			(at 29.464 136.144 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5172,7 +5125,7 @@
 			)
 		)
 		(property "Footprint" "MyGlove:Resistor_0603"
-			(at 15.24 134.62 0)
+			(at 26.67 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5183,7 +5136,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 15.24 134.62 0)
+			(at 26.67 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5194,7 +5147,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 15.24 134.62 0)
+			(at 26.67 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6223,7 +6176,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:GND")
-		(at 15.24 137.16 0)
+		(at 26.67 137.16 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6234,7 +6187,7 @@
 		(fields_autoplaced yes)
 		(uuid "c970eceb-cdd0-48f8-b512-1bca46cee301")
 		(property "Reference" "GND031"
-			(at 15.24 140.716 0)
+			(at 26.67 140.716 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6245,7 +6198,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 15.24 140.716 0)
+			(at 26.67 140.716 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6256,7 +6209,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 15.24 137.16 0)
+			(at 26.67 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6267,7 +6220,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 15.24 137.16 0)
+			(at 26.67 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6278,7 +6231,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 15.24 137.16 0)
+			(at 26.67 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6289,7 +6242,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 15.24 137.16 0)
+			(at 26.67 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6662,7 +6615,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "daeb1b15-6c3c-4fd2-81a1-b474dad7c1e3")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR029"
 			(at 143.51 27.178 0)
 			(hide yes)
 			(show_name no)
@@ -6722,7 +6675,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a"
-					(reference "#PWR028")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -7157,7 +7110,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:GND")
-		(at 25.4 137.16 0)
+		(at 36.83 137.16 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7168,7 +7121,7 @@
 		(fields_autoplaced yes)
 		(uuid "f48f4bf9-bf37-491b-9f6c-5d8c246cf377")
 		(property "Reference" "GND032"
-			(at 25.4 140.716 0)
+			(at 36.83 140.716 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7179,7 +7132,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 25.4 140.716 0)
+			(at 36.83 140.716 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7190,7 +7143,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 25.4 137.16 0)
+			(at 36.83 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7201,7 +7154,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 25.4 137.16 0)
+			(at 36.83 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7212,7 +7165,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 25.4 137.16 0)
+			(at 36.83 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7223,7 +7176,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 25.4 137.16 0)
+			(at 36.83 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
