@@ -11713,10 +11713,11 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "J"
-			(at 1.27 -23.368 0)
+		(property "Reference" "J_2"
+			(at -11.43 1.9051 0)
 			(show_name no)
 			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11725,7 +11726,7 @@
 			)
 		)
 		(property "Value" "Conn_USB_Receptacle"
-			(at 18.542 -20.574 0)
+			(at -11.43 -0.6349 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12297,7 +12298,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin power_out line
 				(at -7.62 -21.59 90)
 				(length 2.54)
 				(name "SHIELD"

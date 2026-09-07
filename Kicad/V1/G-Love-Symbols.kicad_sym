@@ -4646,27 +4646,29 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "U"
-			(at -16.002 -48.006 0)
+		(property "Reference" "U1"
+			(at 3.048 -50.292 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Value" "ATMega328P"
-			(at -10.668 -50.292 0)
+			(at 2.54 -47.498 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MyGlove:ATMega328P-AU"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4678,7 +4680,7 @@
 			)
 		)
 		(property "Datasheet" "https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf"
-			(at 8.636 -60.198 0)
+			(at 7.366 -41.148 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(hide yes)
@@ -4688,7 +4690,40 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "MCU"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "2.19"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C14877.html"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4766,7 +4801,7 @@
 				)
 			)
 			(pin power_in line
-				(at -3.81 40.64 270)
+				(at -10.16 40.64 270)
 				(length 2.54)
 				(name "VCC"
 					(effects
@@ -4805,7 +4840,6 @@
 			(pin power_in line
 				(at -3.81 40.64 270)
 				(length 2.54)
-				(hide yes)
 				(name "VCC"
 					(effects
 						(font
