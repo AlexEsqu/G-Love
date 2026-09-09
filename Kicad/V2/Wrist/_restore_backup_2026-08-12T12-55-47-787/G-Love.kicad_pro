@@ -60,7 +60,7 @@
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
-          "min_clearance": 0.5,
+          "min_clearance": 0.0,
           "min_island_area": 10.0,
           "min_thickness": 0.25,
           "pad_connection": 1,
@@ -177,7 +177,7 @@
       "teardrop_parameters": [
         {
           "td_allow_use_two_tracks": true,
-          "td_curve_segcount": 0,
+          "td_curve_segcount": 1,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -188,7 +188,7 @@
         },
         {
           "td_allow_use_two_tracks": true,
-          "td_curve_segcount": 0,
+          "td_curve_segcount": 1,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -199,7 +199,7 @@
         },
         {
           "td_allow_use_two_tracks": true,
-          "td_curve_segcount": 0,
+          "td_curve_segcount": 1,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -210,6 +210,7 @@
         }
       ],
       "track_widths": [
+        0.0,
         0.0
       ],
       "tuning_pattern_settings": {
@@ -530,6 +531,14 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "name": "PWR",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.5,
+        "tuning_profile": ""
       }
     ],
     "meta": {
@@ -537,13 +546,34 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "PWR",
+        "pattern": "*VCC*"
+      },
+      {
+        "netclass": "PWR",
+        "pattern": "*VBUS1*"
+      },
+      {
+        "netclass": "PWR",
+        "pattern": "*+VO*"
+      },
+      {
+        "netclass": "PWR",
+        "pattern": "*3.3V*"
+      },
+      {
+        "netclass": "PWR",
+        "pattern": "*BATTERY_USB*"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "../Gerber/",
+      "plot": "",
       "specctra_dsn": "",
       "step": "",
       "vrml": ""
@@ -581,7 +611,7 @@
           "group_by": false,
           "label": "Qty",
           "name": "${QUANTITY}",
-          "show": true
+          "show": false
         },
         {
           "group_by": true,
@@ -623,7 +653,7 @@
           "group_by": true,
           "label": "Exclude from Board",
           "name": "${EXCLUDE_FROM_BOARD}",
-          "show": false
+          "show": true
         },
         {
           "group_by": true,
@@ -710,7 +740,7 @@
           "show": false
         }
       ],
-      "filter_string": "",
+      "filter_string": "R35",
       "group_symbols": true,
       "include_excluded_from_bom": true,
       "name": "",
@@ -766,7 +796,7 @@
         "uuid": "808bc5ea-49ac-4454-ba77-8b20d01ce159"
       }
     ],
-    "used_designators": "TP1-18,flow1-20,#GND1-3,R1-39,SW_1-2,FS_1-6,U_1,C1-51,FSR_1-5,+5V1-22,J1-5,PWR1-22,#FLG1-2,J_1-3,CD1,#PWR1-40,Y1-2,GND1-58,GND147,GND150,GND156,GND166-182,D1-6,U1-13",
+    "used_designators": ".1-2,SW_1,R1-39,FS_1-6,U_1,C1-56,B0505S\\-1W1,+5V1-22,FSR_1-5,GND1-182,CD1,U1-15,D1-127,J1-3,PWR1-22,#FLG1-2,FSR1-5,GNDA1,J_1-3,#GND1-2,TP1-18,flow1-18,#PWR1-142,#PWR144-145,FS1-6,Y1-2",
     "variants": []
   },
   "sheets": [
@@ -775,84 +805,172 @@
       "Root"
     ],
     [
-      "1b9234a1-5071-4fc1-93e6-8cf4c57e8659",
-      "ATmega328p"
-    ],
-    [
-      "7de4e8e6-4751-4acb-b71f-e492a47c8332",
-      "Hand_Captors"
-    ],
-    [
-      "f73c6c7b-472d-4c5d-b434-31d2ac317fba",
-      "IMU_1"
-    ],
-    [
-      "11d9268e-1547-4db8-9ef6-819c0ece3649",
-      "Flex_Sensor4"
-    ],
-    [
-      "93c35869-ca7a-4596-991e-6eeeacdf1f70",
-      "Flex_Sensor3"
-    ],
-    [
-      "a00bc8a6-48ba-4c2b-a585-b9390a223b1c",
-      "Flex_Sensor2"
-    ],
-    [
-      "d64adc8c-2a84-4c15-a7c4-b37086fe5b0e",
-      "Flex_Sensor0"
-    ],
-    [
       "15052d3f-5b94-4226-97e2-3e9ab10fafda",
       "FSR_Index"
-    ],
-    [
-      "3f48e459-1dc8-4eb9-8adc-befbe01eab22",
-      "FSR_Little"
-    ],
-    [
-      "5442b494-eff8-4ddd-bc03-bcc1bea75842",
-      "FSR_Ring"
-    ],
-    [
-      "f906f610-f118-4325-955e-6566f843376d",
-      "FSR_Thumb"
-    ],
-    [
-      "700d9331-d0f9-41ba-950d-ef1246641225",
-      "Touchscreen"
-    ],
-    [
-      "52001651-8f72-422f-9b98-937203a79121",
-      "HallCaptor"
-    ],
-    [
-      "1ccae2d5-3b8d-492e-8f3e-31d532153427",
-      "Flex_Sensor5"
-    ],
-    [
-      "8591a7a3-fa5a-416e-b459-40b6a5958f2a",
-      "ATMega2561"
-    ],
-    [
-      "7a2974e5-124b-4db5-8e90-e949fd9545a7",
-      "Flex_Sensor1"
     ],
     [
       "32c3dc22-6eac-49d0-b512-767615f82205",
       "FSR_Middle"
     ],
     [
-      "0d387f9d-76d6-4b6a-aded-93bcda75ef5a",
-      "Data/power I/O"
+      "5442b494-eff8-4ddd-bc03-bcc1bea75842",
+      "FSR_Ring"
+    ],
+    [
+      "3f48e459-1dc8-4eb9-8adc-befbe01eab22",
+      "FSR_Little"
+    ],
+    [
+      "f906f610-f118-4325-955e-6566f843376d",
+      "FSR_Thumb"
+    ],
+    [
+      "d64adc8c-2a84-4c15-a7c4-b37086fe5b0e",
+      "Flex_Sensor0"
+    ],
+    [
+      "7a2974e5-124b-4db5-8e90-e949fd9545a7",
+      "Flex_Sensor1"
+    ],
+    [
+      "a00bc8a6-48ba-4c2b-a585-b9390a223b1c",
+      "Flex_Sensor2"
+    ],
+    [
+      "93c35869-ca7a-4596-991e-6eeeacdf1f70",
+      "Flex_Sensor3"
+    ],
+    [
+      "11d9268e-1547-4db8-9ef6-819c0ece3649",
+      "Flex_Sensor4"
+    ],
+    [
+      "1ccae2d5-3b8d-492e-8f3e-31d532153427",
+      "Flex_Sensor5"
+    ],
+    [
+      "700d9331-d0f9-41ba-950d-ef1246641225",
+      "Touchscreen"
+    ],
+    [
+      "f73c6c7b-472d-4c5d-b434-31d2ac317fba",
+      "IMU_1"
+    ],
+    [
+      "52001651-8f72-422f-9b98-937203a79121",
+      "HallCaptor"
+    ],
+    [
+      "508c8d26-610d-4395-9434-749869aaa3fc",
+      "SK9822x15_Index"
+    ],
+    [
+      "56300770-06b9-4586-abf3-6db0dacb6dcc",
+      "SK9822x5_3"
+    ],
+    [
+      "96618517-c0bc-4037-908d-6eb912f6bfa9",
+      "SK9822x5_2"
+    ],
+    [
+      "bced93eb-e525-4e5d-9f15-41746cc383d2",
+      "SK9822x5_4"
+    ],
+    [
+      "ef8f0e29-655d-446c-b805-e2fd4bf0dd81",
+      "SK9822x5_5"
+    ],
+    [
+      "cb06373c-fd44-4fb3-af88-6af9d82061bd",
+      "SK9822xO"
+    ],
+    [
+      "9c376b41-f2ee-4fc8-ab7c-f0dde4d7f9f4",
+      "SK9822x15_Little"
+    ],
+    [
+      "32057457-8680-4154-8b8a-1a13212eb66f",
+      "SK9822x5_3"
+    ],
+    [
+      "51251c9c-2f3b-4f96-af09-d08af439e7af",
+      "SK9822x5_2"
+    ],
+    [
+      "ab06081b-274c-47b6-a66f-a3b79fade958",
+      "SK9822x5_4"
+    ],
+    [
+      "feeae6a9-c784-4f57-ae6a-333f9bba4903",
+      "SK9822x5_5"
+    ],
+    [
+      "402f35bc-f7d7-4704-aa94-5336a8a1cf91",
+      "SK9822x5_1"
+    ],
+    [
+      "9730839e-7cf8-4bb0-89ed-e6ff80729323",
+      "SK9822x15_Middle"
+    ],
+    [
+      "32057457-8680-4154-8b8a-1a13212eb66f",
+      "SK9822x5_3"
+    ],
+    [
+      "51251c9c-2f3b-4f96-af09-d08af439e7af",
+      "SK9822x5_2"
+    ],
+    [
+      "ab06081b-274c-47b6-a66f-a3b79fade958",
+      "SK9822x5_4"
+    ],
+    [
+      "feeae6a9-c784-4f57-ae6a-333f9bba4903",
+      "SK9822x5_5"
+    ],
+    [
+      "402f35bc-f7d7-4704-aa94-5336a8a1cf91",
+      "SK9822x5_1"
+    ],
+    [
+      "27c125d2-0495-4d4a-a4da-6961c81f3232",
+      "SK9822x15_Ring"
+    ],
+    [
+      "32057457-8680-4154-8b8a-1a13212eb66f",
+      "SK9822x5_3"
+    ],
+    [
+      "51251c9c-2f3b-4f96-af09-d08af439e7af",
+      "SK9822x5_2"
+    ],
+    [
+      "ab06081b-274c-47b6-a66f-a3b79fade958",
+      "SK9822x5_4"
+    ],
+    [
+      "feeae6a9-c784-4f57-ae6a-333f9bba4903",
+      "SK9822x5_5"
+    ],
+    [
+      "402f35bc-f7d7-4704-aa94-5336a8a1cf91",
+      "SK9822x5_1"
     ],
     [
       "4989b515-8901-47ca-ab95-4d280b30f712",
       "Data"
     ],
     [
-      "a1b0dccf-5d55-40c3-a416-6945c903a7af",
-      "DMX"
+      "c9027db4-6968-4e40-a138-b60eacbff4db",
+      "Hand_Captors"
+    ],
+    [
+      "0d387f9d-76d6-4b6a-aded-93bcda75ef5a",
+      "Data/power I/O"
+    ],
+    [
+      "80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c",
+      "LEDs"
     ],
     [
       "0a598795-0604-41b3-948f-4efe200200e3",
@@ -861,6 +979,10 @@
     [
       "8701d982-557e-4c73-bfaa-5f02d2e6c25d",
       "FingerTip Modules"
+    ],
+    [
+      "a1b0dccf-5d55-40c3-a416-6945c903a7af",
+      "DMX"
     ]
   ],
   "text_variables": {},
