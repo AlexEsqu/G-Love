@@ -123,7 +123,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "G-Love-Symbols:FSR"
+		(symbol "G-Love-Symbols:FS"
 			(pin_numbers
 				(hide yes)
 			)
@@ -132,7 +132,7 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "FSR"
+			(property "Reference" "FS"
 				(at -0.254 -2.794 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -163,7 +163,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://cdn.sparkfun.com/assets/8/a/1/2/0/2010-10-26-DataSheet-FSR402-Layout2.pdf"
+			(property "Datasheet" "https://cdn.sparkfun.com/assets/8/e/7/a/0/flex22.pdf"
 				(at 3.556 -8.382 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -174,7 +174,7 @@
 					)
 				)
 			)
-			(property "Description" "Touch Force Sensor Resistor"
+			(property "Description" "Flex Sensor Resistor"
 				(at 1.524 -5.334 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -185,7 +185,7 @@
 					)
 				)
 			)
-			(symbol "FSR_0_1"
+			(symbol "FS_0_1"
 				(polyline
 					(pts
 						(xy -1.27 0) (xy -1.016 0.762) (xy -0.508 -0.762) (xy 0 0.762) (xy 0.508 -0.762) (xy 1.016 0.762)
@@ -201,7 +201,19 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 1.524) (xy -1.27 -1.27) (xy -0.508 -1.016) (xy -1.27 -1.27) (xy -1.016 -0.508)
+						(xy 0.254 -1.524) (xy 0.254 -1.016) (xy 1.27 -1.524) (xy 0.254 -2.032) (xy 0.254 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.524 1.524) (xy -1.524 -1.524) (xy -0.254 -1.524) (xy -0.254 -1.524) (xy 0.508 -1.524)
 					)
 					(stroke
 						(width 0)
@@ -212,7 +224,7 @@
 					)
 				)
 			)
-			(symbol "FSR_1_1"
+			(symbol "FS_1_1"
 				(pin passive line
 					(at -2.54 0 0)
 					(length 1.27)
@@ -630,7 +642,7 @@
 		)
 	)
 	(symbol
-		(lib_id "G-Love-Symbols:FSR")
+		(lib_id "G-Love-Symbols:FS")
 		(at 31.75 30.48 90)
 		(unit 1)
 		(body_style 1)
@@ -640,9 +652,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "d81a50df-2a40-4f2a-b4b1-eebaede0f648")
-		(property "Reference" "FSR2"
-			(at 34.29 30.4799 90)
+		(uuid "51bacb00-4be1-4a4a-80d1-f81333dab11d")
+		(property "Reference" "FS1"
+			(at 35.56 30.4799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -673,7 +685,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://cdn.sparkfun.com/assets/8/a/1/2/0/2010-10-26-DataSheet-FSR402-Layout2.pdf"
+		(property "Datasheet" "https://cdn.sparkfun.com/assets/8/e/7/a/0/flex22.pdf"
 			(at 40.132 26.924 0)
 			(hide yes)
 			(show_name no)
@@ -684,7 +696,7 @@
 				)
 			)
 		)
-		(property "Description" "Touch Force Sensor Resistor"
+		(property "Description" "Flex Sensor Resistor"
 			(at 37.084 28.956 0)
 			(hide yes)
 			(show_name no)
@@ -695,32 +707,32 @@
 				)
 			)
 		)
-		(pin "1"
-			(uuid "fdefc89f-33a0-4550-ae24-42a9121ac56d")
-		)
 		(pin "2"
-			(uuid "59378cff-db7d-4354-bdd3-543d95fff95b")
+			(uuid "6e009318-ec9e-463d-a66a-191b2bed01c0")
+		)
+		(pin "1"
+			(uuid "3cce620b-0d28-455f-bb55-cc5420b95d71")
 		)
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/0b1bb178-9530-4748-8b07-933fe0c8d524"
-					(reference "FSR2")
+					(reference "FS1")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/7a2974e5-124b-4db5-8e90-e949fd9545a7"
-					(reference "FSR4")
+					(reference "FS3")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/93c35869-ca7a-4596-991e-6eeeacdf1f70"
-					(reference "FSR6")
+					(reference "FS5")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/a00bc8a6-48ba-4c2b-a585-b9390a223b1c"
-					(reference "FSR5")
+					(reference "FS4")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/d64adc8c-2a84-4c15-a7c4-b37086fe5b0e"
-					(reference "FSR3")
+					(reference "FS2")
 					(unit 1)
 				)
 			)
