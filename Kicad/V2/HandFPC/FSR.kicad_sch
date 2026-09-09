@@ -5,7 +5,125 @@
 	(uuid "abd39005-001e-4402-b85f-7ba4735388ae")
 	(paper "A4")
 	(lib_symbols
-		(symbol "G-Love:FSR"
+		(symbol "G-Love-Symbols:+5V"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 2.54 0.6351 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "5V"
+				(at -1.778 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+5V_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5V_1_1"
+				(pin power_in line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "G-Love-Symbols:FSR"
 			(pin_numbers
 				(hide yes)
 			)
@@ -124,122 +242,6 @@
 						)
 					)
 					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "G-Love:VCC"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom no)
-			(on_board no)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR04"
-				(at 3.81 -1.778 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "VCC"
-				(at 0 2.286 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "VCC_0_1"
-				(polyline
-					(pts
-						(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.524) (xy 0 -0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "VCC_1_1"
-				(pin power_in line
-					(at 0 -1.27 90)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -533,8 +535,8 @@
 		)
 	)
 	(symbol
-		(lib_id "G-Love:VCC")
-		(at 33.02 24.13 0)
+		(lib_id "G-Love-Symbols:+5V")
+		(at 33.02 22.86 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -543,9 +545,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "6d6fe7c9-3cb8-4a4d-b078-9a804bec3cca")
-		(property "Reference" "#PWR017"
-			(at 36.83 25.908 0)
+		(uuid "8ad1fcfe-3225-4af3-a0d7-46bebffda859")
+		(property "Reference" "#PWR01"
+			(at 35.56 22.2249 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -553,9 +555,10 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "VCC"
+		(property "Value" "5V"
 			(at 33.02 20.32 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -566,7 +569,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 33.02 24.13 0)
+			(at 33.02 22.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -577,7 +580,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 33.02 24.13 0)
+			(at 33.02 22.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -588,7 +591,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 33.02 24.13 0)
+			(at 33.02 22.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -599,52 +602,54 @@
 			)
 		)
 		(pin "1"
-			(uuid "05d87ab0-c632-405c-a953-6952c3e871d7")
+			(uuid "c99b6718-e6b3-465b-ab7f-0dbdb00efd53")
 		)
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/03ec02f7-0970-4f94-9fde-cabfa1326b5e"
-					(reference "#PWR017")
+					(reference "#PWR01")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/15052d3f-5b94-4226-97e2-3e9ab10fafda"
-					(reference "#PWR016")
+					(reference "#PWR02")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/32c3dc22-6eac-49d0-b512-767615f82205"
-					(reference "#PWR016")
+					(reference "#PWR03")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/3f48e459-1dc8-4eb9-8adc-befbe01eab22"
-					(reference "#PWR016")
+					(reference "#PWR05")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/5442b494-eff8-4ddd-bc03-bcc1bea75842"
-					(reference "#PWR016")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "G-Love:FSR")
+		(lib_id "G-Love-Symbols:FSR")
 		(at 33.02 31.75 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "c7d93a59-cd79-453e-a9ce-c2bfee896661")
-		(property "Reference" "FSR_2"
-			(at 29.718 31.75 0)
+		(fields_autoplaced yes)
+		(uuid "ace95687-adf9-4eed-a243-ce16f5cf9adb")
+		(property "Reference" "FSR1"
+			(at 35.56 31.7499 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Value" ""
@@ -657,7 +662,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MyGlove:PinHeader_1x02_P2.54mm_Vertical"
+		(property "Footprint" ""
 			(at 33.02 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -690,43 +695,32 @@
 				)
 			)
 		)
-		(property "Minimum quantity per command" ""
-			(at 33.02 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
-			(uuid "d1c93214-21db-487b-9069-cffb4ecd4c3a")
+			(uuid "9074723f-77d9-4fc2-8756-30ec3ca7aec7")
 		)
 		(pin "1"
-			(uuid "1dcf05db-e93d-4809-a887-49f63053f624")
+			(uuid "12716ce5-6620-4695-9a44-b5679a19bc33")
 		)
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/03ec02f7-0970-4f94-9fde-cabfa1326b5e"
-					(reference "FSR_2")
+					(reference "FSR1")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/15052d3f-5b94-4226-97e2-3e9ab10fafda"
-					(reference "FSR_1")
+					(reference "FSR2")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/32c3dc22-6eac-49d0-b512-767615f82205"
-					(reference "FSR_1")
+					(reference "FSR3")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/3f48e459-1dc8-4eb9-8adc-befbe01eab22"
-					(reference "FSR_1")
+					(reference "FSR5")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/5442b494-eff8-4ddd-bc03-bcc1bea75842"
-					(reference "FSR_1")
+					(reference "FSR4")
 					(unit 1)
 				)
 			)
