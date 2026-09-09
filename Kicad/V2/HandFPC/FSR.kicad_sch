@@ -1,0 +1,735 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "abd39005-001e-4402-b85f-7ba4735388ae")
+	(paper "A4")
+	(lib_symbols
+		(symbol "G-Love:FSR"
+			(pin_numbers
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "FSR"
+				(at -0.254 -2.794 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://cdn.sparkfun.com/assets/8/a/1/2/0/2010-10-26-DataSheet-FSR402-Layout2.pdf"
+				(at 3.556 -8.382 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Touch Force Sensor Resistor"
+				(at 1.524 -5.334 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "FSR_0_1"
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -1.016 0.762) (xy -0.508 -0.762) (xy 0 0.762) (xy 0.508 -0.762) (xy 1.016 0.762)
+						(xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.524) (xy -1.27 -1.27) (xy -0.508 -1.016) (xy -1.27 -1.27) (xy -1.016 -0.508)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "FSR_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "G-Love:VCC"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR04"
+				(at 3.81 -1.778 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "VCC"
+				(at 0 2.286 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "VCC_0_1"
+				(polyline
+					(pts
+						(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.524) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "VCC_1_1"
+				(pin power_in line
+					(at 0 -1.27 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(text "GND"
+		(exclude_from_sim no)
+		(at 33.02 79.756 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "1748db2b-a210-4917-a142-7439a77bfb26")
+	)
+	(text "Data"
+		(exclude_from_sim no)
+		(at 47.498 57.404 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "36fd7553-64c4-4952-8bce-677229cd02ac")
+	)
+	(text "On WristBoard"
+		(exclude_from_sim no)
+		(at 46.228 52.07 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "befb4cd6-960e-46b0-b8ea-e2f95d0f5e30")
+	)
+	(polyline
+		(pts
+			(xy 39.37 63.246) (xy 34.29 63.246)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01be0403-5aa4-46ea-a1ce-f20184f040b6")
+	)
+	(wire
+		(pts
+			(xy 33.02 25.4) (xy 33.02 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "026f05b2-5095-4597-9e7a-5c4e23a8e174")
+	)
+	(polyline
+		(pts
+			(xy 33.274 54.61) (xy 33.274 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b2de658-b3a5-4993-9330-8fa986e53f91")
+	)
+	(polyline
+		(pts
+			(xy 33.274 57.15) (xy 33.274 63.246)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19a1a457-cf21-4672-975d-660ea9a2fccf")
+	)
+	(polyline
+		(pts
+			(xy 39.37 68.58) (xy 39.37 63.246)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21ac22e0-c78d-4698-bce3-60de25ab7acc")
+	)
+	(polyline
+		(pts
+			(xy 27.432 70.104) (xy 28.956 70.104)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "390d5c47-0934-4894-8cd4-ea9986b45752")
+	)
+	(polyline
+		(pts
+			(xy 39.37 69.342) (xy 39.37 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d377c2d-5050-401d-9b62-fa39011f0ab5")
+	)
+	(polyline
+		(pts
+			(xy 28.194 72.39) (xy 39.37 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3da8fa1a-6abd-43a6-95a2-f20bb8cf33d3")
+	)
+	(polyline
+		(pts
+			(xy 32.004 76.708) (xy 34.29 76.708)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f64fc00-b4de-49f2-ad2c-22853ef18aef")
+	)
+	(polyline
+		(pts
+			(xy 33.274 63.246) (xy 34.29 63.246)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "530787c9-cd7e-4e8b-8dd2-5d86e4ac6dbb")
+	)
+	(polyline
+		(pts
+			(xy 33.274 63.246) (xy 28.194 63.246)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57339272-98ee-4661-b975-4da720c0805e")
+	)
+	(polyline
+		(pts
+			(xy 33.274 57.15) (xy 44.45 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "60015255-254b-452b-ac0c-82d5de1890a1")
+	)
+	(polyline
+		(pts
+			(xy 38.608 68.58) (xy 40.132 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74de0631-c9ce-41b0-bae1-6b17041fa2ef")
+	)
+	(polyline
+		(pts
+			(xy 33.274 72.39) (xy 33.274 76.708)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7eaa48d4-e2e0-4a54-b0b7-aa70112a9dc7")
+	)
+	(polyline
+		(pts
+			(xy 28.194 70.104) (xy 28.194 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80dcac25-0175-455c-bb2c-ddbc3ddb13a0")
+	)
+	(polyline
+		(pts
+			(xy 37.592 69.342) (xy 40.64 69.342)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "865aa7ba-2b5e-4c77-87f3-0a36f8b55285")
+	)
+	(polyline
+		(pts
+			(xy 27.432 67.31) (xy 27.432 70.104)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9309f6ad-29be-43a3-afa9-dd48a8fcdb44")
+	)
+	(polyline
+		(pts
+			(xy 28.956 67.31) (xy 27.432 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ed5e32e-b8c0-4848-8b29-2f105c61707e")
+	)
+	(polyline
+		(pts
+			(xy 28.194 63.246) (xy 28.194 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c075cd78-2710-4b53-ae0a-2cfced9533e0")
+	)
+	(polyline
+		(pts
+			(xy 32.766 77.47) (xy 33.528 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5bf8121-d000-4df9-8ac4-93d4edab0107")
+	)
+	(wire
+		(pts
+			(xy 33.02 34.29) (xy 33.02 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cfedb22c-4f18-40dc-93af-8275d0114b46")
+	)
+	(polyline
+		(pts
+			(xy 28.956 67.31) (xy 28.956 70.104)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d81c37d6-8550-42a4-936f-750b4f7c9c45")
+	)
+	(hierarchical_label "TouchADC"
+		(shape output)
+		(at 33.02 39.37 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b61bd7b5-1276-47fe-a052-2ce6e67f235e")
+	)
+	(rule_area
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(polyline
+			(pts
+				(xy 21.59 53.34) (xy 52.07 53.34) (xy 52.07 83.82) (xy 21.59 83.82)
+			)
+			(stroke
+				(width 0)
+				(type dash)
+				(color 255 255 255 1)
+			)
+			(fill
+				(type none)
+			)
+			(uuid "04f6dde3-9210-44a6-9be5-c93d6593dbee")
+		)
+	)
+	(symbol
+		(lib_id "G-Love:VCC")
+		(at 33.02 24.13 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6d6fe7c9-3cb8-4a4d-b078-9a804bec3cca")
+		(property "Reference" "#PWR017"
+			(at 36.83 25.908 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 33.02 20.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 33.02 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 33.02 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "05d87ab0-c632-405c-a953-6952c3e871d7")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/03ec02f7-0970-4f94-9fde-cabfa1326b5e"
+					(reference "#PWR017")
+					(unit 1)
+				)
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/15052d3f-5b94-4226-97e2-3e9ab10fafda"
+					(reference "#PWR016")
+					(unit 1)
+				)
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/32c3dc22-6eac-49d0-b512-767615f82205"
+					(reference "#PWR016")
+					(unit 1)
+				)
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/3f48e459-1dc8-4eb9-8adc-befbe01eab22"
+					(reference "#PWR016")
+					(unit 1)
+				)
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/5442b494-eff8-4ddd-bc03-bcc1bea75842"
+					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:FSR")
+		(at 33.02 31.75 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c7d93a59-cd79-453e-a9ce-c2bfee896661")
+		(property "Reference" "FSR_2"
+			(at 29.718 31.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 33.02 31.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:PinHeader_1x02_P2.54mm_Vertical"
+			(at 33.02 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://cdn.sparkfun.com/assets/8/a/1/2/0/2010-10-26-DataSheet-FSR402-Layout2.pdf"
+			(at 41.402 28.194 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Touch Force Sensor Resistor"
+			(at 38.354 30.226 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 33.02 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "d1c93214-21db-487b-9069-cffb4ecd4c3a")
+		)
+		(pin "1"
+			(uuid "1dcf05db-e93d-4809-a887-49f63053f624")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/03ec02f7-0970-4f94-9fde-cabfa1326b5e"
+					(reference "FSR_2")
+					(unit 1)
+				)
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/15052d3f-5b94-4226-97e2-3e9ab10fafda"
+					(reference "FSR_1")
+					(unit 1)
+				)
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/32c3dc22-6eac-49d0-b512-767615f82205"
+					(reference "FSR_1")
+					(unit 1)
+				)
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/3f48e459-1dc8-4eb9-8adc-befbe01eab22"
+					(reference "FSR_1")
+					(unit 1)
+				)
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/5442b494-eff8-4ddd-bc03-bcc1bea75842"
+					(reference "FSR_1")
+					(unit 1)
+				)
+			)
+		)
+	)
+)
