@@ -517,7 +517,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 80.01) (xy 55.88 78.74)
+			(xy 130.81 96.52) (xy 130.81 95.25)
 		)
 		(stroke
 			(width 0)
@@ -527,7 +527,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 78.74) (xy 60.96 78.74)
+			(xy 130.81 95.25) (xy 135.89 95.25)
 		)
 		(stroke
 			(width 0)
@@ -537,7 +537,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 67.31) (xy 55.88 71.12)
+			(xy 130.81 83.82) (xy 130.81 87.63)
 		)
 		(stroke
 			(width 0)
@@ -547,7 +547,7 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 73.66) (xy 60.96 73.66)
+			(xy 124.46 90.17) (xy 135.89 90.17)
 		)
 		(stroke
 			(width 0)
@@ -557,7 +557,7 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 76.2) (xy 60.96 76.2)
+			(xy 124.46 92.71) (xy 135.89 92.71)
 		)
 		(stroke
 			(width 0)
@@ -567,7 +567,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 71.12) (xy 60.96 71.12)
+			(xy 130.81 87.63) (xy 135.89 87.63)
 		)
 		(stroke
 			(width 0)
@@ -577,7 +577,7 @@
 	)
 	(hierarchical_label "FingerTip_I2C_SDA"
 		(shape input)
-		(at 49.53 76.2 180)
+		(at 124.46 92.71 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -588,7 +588,7 @@
 	)
 	(hierarchical_label "FingerTip_I2C_SCL"
 		(shape input)
-		(at 49.53 73.66 180)
+		(at 124.46 90.17 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -599,7 +599,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:GND")
-		(at 55.88 80.01 0)
+		(at 130.81 96.52 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -609,8 +609,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "797d7ae5-01fa-4059-9414-d90b384ec533")
-		(property "Reference" "GND045"
-			(at 55.88 83.566 0)
+		(property "Reference" "GND36"
+			(at 130.81 100.076 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -621,7 +621,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 55.88 83.566 0)
+			(at 130.81 100.076 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -632,7 +632,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 55.88 80.01 0)
+			(at 130.81 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -643,7 +643,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 55.88 80.01 0)
+			(at 130.81 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -654,7 +654,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 55.88 80.01 0)
+			(at 130.81 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -665,7 +665,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 55.88 80.01 0)
+			(at 130.81 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -681,7 +681,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/8701d982-557e-4c73-bfaa-5f02d2e6c25d"
-					(reference "GND045")
+					(reference "GND36")
 					(unit 1)
 				)
 			)
@@ -689,7 +689,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:Conn_POGO_4")
-		(at 72.39 72.39 0)
+		(at 147.32 88.9 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -699,8 +699,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ad35fe82-3227-44c2-92fe-e3b11aa9bae5")
-		(property "Reference" "J_3"
-			(at 77.47 74.9299 0)
+		(property "Reference" "J3"
+			(at 152.4 91.4399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -711,7 +711,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 72.39 72.39 0)
+			(at 147.32 88.9 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -721,7 +721,7 @@
 			)
 		)
 		(property "Footprint" "MyGlove:PinHeader_1x04_P2.54mm_Vertical"
-			(at 72.39 72.39 0)
+			(at 147.32 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -732,7 +732,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 72.39 72.39 0)
+			(at 147.32 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -743,7 +743,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 72.39 72.39 0)
+			(at 147.32 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -754,7 +754,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 72.39 72.39 0)
+			(at 147.32 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -779,7 +779,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/8701d982-557e-4c73-bfaa-5f02d2e6c25d"
-					(reference "J_3")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -787,7 +787,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:VCC")
-		(at 55.88 66.04 0)
+		(at 130.81 82.55 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -797,8 +797,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f7acfc28-ea35-4757-a44a-1e7c4a7d291d")
-		(property "Reference" "#PWR030"
-			(at 59.69 67.818 0)
+		(property "Reference" "#PWR27"
+			(at 134.62 84.328 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -809,7 +809,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 55.88 62.23 0)
+			(at 130.81 78.74 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -819,7 +819,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 55.88 66.04 0)
+			(at 130.81 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -830,7 +830,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 55.88 66.04 0)
+			(at 130.81 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -841,7 +841,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 55.88 66.04 0)
+			(at 130.81 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -857,7 +857,7 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/8701d982-557e-4c73-bfaa-5f02d2e6c25d"
-					(reference "#PWR030")
+					(reference "#PWR27")
 					(unit 1)
 				)
 			)
