@@ -546,7 +546,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4c747d67-435f-4b90-a617-8f3544ba9753")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR013"
 			(at 34.29 20.9549 0)
 			(hide yes)
 			(show_name no)
@@ -607,23 +607,23 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/0b1bb178-9530-4748-8b07-933fe0c8d524"
-					(reference "#PWR011")
+					(reference "#PWR013")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/7a2974e5-124b-4db5-8e90-e949fd9545a7"
-					(reference "#PWR018")
+					(reference "#PWR017")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/93c35869-ca7a-4596-991e-6eeeacdf1f70"
-					(reference "#PWR020")
-					(unit 1)
-				)
-				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/a00bc8a6-48ba-4c2b-a585-b9390a223b1c"
 					(reference "#PWR019")
 					(unit 1)
 				)
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/a00bc8a6-48ba-4c2b-a585-b9390a223b1c"
+					(reference "#PWR018")
+					(unit 1)
+				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/d64adc8c-2a84-4c15-a7c4-b37086fe5b0e"
-					(reference "#PWR017")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -641,7 +641,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d81a50df-2a40-4f2a-b4b1-eebaede0f648")
-		(property "Reference" "FSR6"
+		(property "Reference" "FSR2"
 			(at 34.29 30.4799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -704,23 +704,23 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/0b1bb178-9530-4748-8b07-933fe0c8d524"
-					(reference "FSR6")
+					(reference "FSR2")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/7a2974e5-124b-4db5-8e90-e949fd9545a7"
-					(reference "FSR8")
+					(reference "FSR4")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/93c35869-ca7a-4596-991e-6eeeacdf1f70"
-					(reference "FSR10")
+					(reference "FSR6")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/a00bc8a6-48ba-4c2b-a585-b9390a223b1c"
-					(reference "FSR9")
+					(reference "FSR5")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/d64adc8c-2a84-4c15-a7c4-b37086fe5b0e"
-					(reference "FSR7")
+					(reference "FSR3")
 					(unit 1)
 				)
 			)

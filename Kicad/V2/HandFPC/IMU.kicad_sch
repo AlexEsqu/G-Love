@@ -693,6 +693,42 @@
 			(embedded_fonts no)
 		)
 	)
+	(rectangle
+		(start 166.624 58.166)
+		(end 184.15 64.262)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "56ed91e8-6006-4855-8f70-329de8035bb6")
+	)
+	(rectangle
+		(start 163.576 70.866)
+		(end 161.036 66.802)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "6325834c-92b2-48b5-81af-3e1f93b1e9d9")
+	)
+	(rectangle
+		(start 161.036 50.8)
+		(end 163.576 54.864)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "cdda78b3-a8c6-4b18-92a8-f84dd1f4d0d5")
+	)
 	(text "Gyroscope and Accelerometer (IMU)\n"
 		(exclude_from_sim no)
 		(at 64.77 29.21 0)
@@ -703,6 +739,76 @@
 		)
 		(uuid "0850e0d0-1e53-4571-97af-3869ec092bf7")
 	)
+	(text "SDA"
+		(exclude_from_sim no)
+		(at 193.04 59.69 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2a0e60af-8d2a-402a-849a-a7391264716b")
+	)
+	(text "SCL\n"
+		(exclude_from_sim no)
+		(at 193.294 62.23 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2c04f345-d29a-4cf0-b97f-1fde4eacebbf")
+	)
+	(text "VCC"
+		(exclude_from_sim no)
+		(at 162.56 77.978 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "4c5c9785-7696-4e06-9101-15a8436b23b4")
+	)
+	(text "Level Shifter \nto 5V"
+		(exclude_from_sim no)
+		(at 175.514 61.214 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "5f1e3e13-5c0e-4a94-b210-10f8e45eec35")
+	)
+	(text "VCC"
+		(exclude_from_sim no)
+		(at 162.052 43.688 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "70e6c102-8307-4b71-9ac1-6c78536babfc")
+	)
+	(text "Pullup 10k\n"
+		(exclude_from_sim no)
+		(at 169.926 52.07 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "b1b4d92c-f3a4-4d6f-9fd8-17ce69477942")
+	)
+	(text "On WristBoard"
+		(exclude_from_sim no)
+		(at 193.294 33.782 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "d004dd2a-8ac4-4ac0-80c4-97f00756f57e")
+	)
 	(text "per Figure 6. ICM-42688-P Application Schematic (I2C) of IMU datasheet"
 		(exclude_from_sim no)
 		(at 68.58 87.63 0)
@@ -712,6 +818,16 @@
 			)
 		)
 		(uuid "de196fae-2943-4220-b5d8-9f41068ff820")
+	)
+	(text "Pullup 10k\n"
+		(exclude_from_sim no)
+		(at 169.926 69.088 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e1789f5a-8a4d-4fa0-b026-13af9b1ad645")
 	)
 	(junction
 		(at 82.55 77.47)
@@ -845,6 +961,16 @@
 		)
 		(uuid "3d7f0f60-6db1-4f9b-91da-ef20141a9a57")
 	)
+	(polyline
+		(pts
+			(xy 162.306 75.438) (xy 162.306 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f8fd00b-27be-4db5-ab14-d30bc162164d")
+	)
 	(wire
 		(pts
 			(xy 67.31 44.45) (xy 67.31 50.8)
@@ -854,6 +980,16 @@
 			(type default)
 		)
 		(uuid "3ff491db-04d4-402b-af3f-b38597576f55")
+	)
+	(polyline
+		(pts
+			(xy 184.15 62.484) (xy 190.754 62.484)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "424e0c07-0334-4a22-b507-b1d1c264be72")
 	)
 	(wire
 		(pts
@@ -905,6 +1041,16 @@
 		)
 		(uuid "7609fef6-654b-42ac-8b86-7b8caa2264d7")
 	)
+	(polyline
+		(pts
+			(xy 184.15 59.69) (xy 190.246 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a7cc9d4-123f-4b31-8c66-492bcf3e4a8b")
+	)
 	(wire
 		(pts
 			(xy 62.23 40.64) (xy 62.23 46.99)
@@ -914,6 +1060,16 @@
 			(type default)
 		)
 		(uuid "7b45f21d-ec31-4375-8ecb-bdadf7314ec1")
+	)
+	(polyline
+		(pts
+			(xy 162.306 55.118) (xy 162.306 59.436)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b28eee1-4080-4343-b60f-831d01acd62e")
 	)
 	(wire
 		(pts
@@ -945,6 +1101,16 @@
 		)
 		(uuid "a636b65a-1135-4fd5-a5f9-8472bcc5a104")
 	)
+	(polyline
+		(pts
+			(xy 143.51 59.69) (xy 166.37 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad8bac32-b07c-4724-90e1-d965d9693bbf")
+	)
 	(wire
 		(pts
 			(xy 62.23 46.99) (xy 62.23 53.34)
@@ -955,6 +1121,26 @@
 		)
 		(uuid "ade32693-3f29-473c-abd0-3c69307994fb")
 	)
+	(polyline
+		(pts
+			(xy 162.306 66.548) (xy 162.306 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bbebd2c3-1308-4985-a212-8009230cf165")
+	)
+	(polyline
+		(pts
+			(xy 162.306 46.228) (xy 162.306 50.546)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd5c306e-6500-4d85-9eec-35f6002cf223")
+	)
 	(wire
 		(pts
 			(xy 73.66 77.47) (xy 82.55 77.47)
@@ -964,6 +1150,16 @@
 			(type default)
 		)
 		(uuid "d1a0115f-0983-4f83-8e1d-e37f9ec20344")
+	)
+	(polyline
+		(pts
+			(xy 143.51 61.976) (xy 166.116 61.976)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d638634f-a427-4103-b20c-9dba68e6903d")
 	)
 	(wire
 		(pts
@@ -1006,6 +1202,26 @@
 			(justify left)
 		)
 		(uuid "289dc3a8-83a2-46c4-a1ed-6b980f07aa08")
+	)
+	(rule_area
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(polyline
+			(pts
+				(xy 144.78 35.56) (xy 200.66 35.56) (xy 200.914 88.9) (xy 144.78 88.9)
+			)
+			(stroke
+				(width 0)
+				(type dash)
+				(color 255 255 194 1)
+			)
+			(fill
+				(type none)
+			)
+			(uuid "e3a4a283-c8af-4e3f-af75-06ddccb943ff")
+		)
 	)
 	(symbol
 		(lib_id "G-Love-Symbols:C")
@@ -1097,7 +1313,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "17b05525-0f98-450c-aaaf-c8c3cef3d594")
-		(property "Reference" "C3"
+		(property "Reference" "C2"
 			(at 72.39 40.386 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1159,7 +1375,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
-					(reference "C3")
+					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -1177,7 +1393,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4b2a34f5-316c-439a-9533-eaaf48f2d8a1")
-		(property "Reference" "GND010"
+		(property "Reference" "GND011"
 			(at 76.2 55.626 0)
 			(hide yes)
 			(show_name no)
@@ -1238,7 +1454,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
-					(reference "GND010")
+					(reference "GND011")
 					(unit 1)
 				)
 			)
@@ -1255,7 +1471,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "591785f3-0e45-4a32-85d7-8b886fe60277")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR014"
 			(at 66.04 41.148 0)
 			(hide yes)
 			(show_name no)
@@ -1315,7 +1531,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
-					(reference "#PWR06")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -1412,7 +1628,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8d0dc300-cfbe-4baf-945c-4af49cd39503")
-		(property "Reference" "GND07"
+		(property "Reference" "GND010"
 			(at 76.2 49.276 0)
 			(hide yes)
 			(show_name no)
@@ -1473,7 +1689,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
-					(reference "GND07")
+					(reference "GND010")
 					(unit 1)
 				)
 			)
@@ -1684,7 +1900,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e013e107-8443-4d18-92ee-51d9f9498b2a")
-		(property "Reference" "C4"
+		(property "Reference" "C3"
 			(at 72.39 46.736 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1746,7 +1962,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
-					(reference "C4")
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -1763,7 +1979,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f267e7c5-c25d-4172-b96f-967e5e499d30")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR015"
 			(at 71.12 41.148 0)
 			(hide yes)
 			(show_name no)
@@ -1823,7 +2039,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
-					(reference "#PWR08")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
