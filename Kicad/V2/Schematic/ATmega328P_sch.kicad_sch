@@ -1961,6 +1961,26 @@
 	)
 	(wire
 		(pts
+			(xy 149.86 63.5) (xy 200.66 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04bc832a-566f-4016-9f23-ca12f9ecdb7b")
+	)
+	(wire
+		(pts
+			(xy 139.7 63.5) (xy 139.7 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a24e4b6-641d-4329-a670-acfd08a51a01")
+	)
+	(wire
+		(pts
 			(xy 212.09 92.71) (xy 212.09 95.25)
 		)
 		(stroke
@@ -2031,16 +2051,6 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 57.15) (xy 200.66 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "33b67f89-1428-4a09-9023-b4db2f8a5edf")
-	)
-	(wire
-		(pts
 			(xy 137.16 72.39) (xy 130.81 72.39)
 		)
 		(stroke
@@ -2068,16 +2078,6 @@
 			(type default)
 		)
 		(uuid "4671c150-29f7-4c8f-9848-3d96cccb6265")
-	)
-	(wire
-		(pts
-			(xy 139.7 74.93) (xy 139.7 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "47b2c5df-2310-49cb-9b45-6a3f4823858d")
 	)
 	(wire
 		(pts
@@ -2271,6 +2271,16 @@
 	)
 	(wire
 		(pts
+			(xy 134.62 57.15) (xy 144.78 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "843a7ec1-1ef8-40d9-95c8-d5523c177285")
+	)
+	(wire
+		(pts
 			(xy 95.25 187.96) (xy 95.25 182.88)
 		)
 		(stroke
@@ -2298,16 +2308,6 @@
 			(type default)
 		)
 		(uuid "8c340957-8042-41d6-90d3-6e92914fc0cc")
-	)
-	(wire
-		(pts
-			(xy 139.7 64.77) (xy 200.66 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "91692d11-a8af-4b78-be4b-711f878da0bd")
 	)
 	(wire
 		(pts
@@ -2639,6 +2639,26 @@
 		)
 		(uuid "fb293163-914f-4d19-bbde-f69b969a9f51")
 	)
+	(wire
+		(pts
+			(xy 149.86 57.15) (xy 200.66 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fbd75329-d999-47fc-87b3-396d3b563eca")
+	)
+	(wire
+		(pts
+			(xy 139.7 63.5) (xy 144.78 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fef0cbe3-e819-4f61-ae1c-4d80d05c0182")
+	)
 	(label "MCU_328P_RESET"
 		(at 138.43 182.88 0)
 		(effects
@@ -2700,7 +2720,7 @@
 		(uuid "a6705cd9-95f2-49d8-80c6-3dd0362c3d7f")
 	)
 	(label "SCK_BOOT_328P"
-		(at 171.45 64.77 0)
+		(at 171.45 63.5 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2753,7 +2773,7 @@
 	)
 	(hierarchical_label "LED_SCK"
 		(shape output)
-		(at 200.66 64.77 0)
+		(at 200.66 63.5 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2862,6 +2882,85 @@
 		(uuid "f614782f-31ee-4ff4-bd04-1d02ec928aa4")
 	)
 	(symbol
+		(lib_id "G-Love:R")
+		(at 147.32 63.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "106e062d-a13f-4f0d-adcf-60f46d14acd6")
+		(property "Reference" "R42"
+			(at 147.32 61.976 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "330R"
+			(at 147.32 65.278 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 147.32 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "01629830-73c5-40bc-8e92-210ca3fad92c")
+		)
+		(pin "1"
+			(uuid "45e6ed8c-a2ca-4fc7-943a-a365fbc1f32e")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/1b9234a1-5071-4fc1-93e6-8cf4c57e8659"
+					(reference "R42")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "G-Love:C")
 		(at 91.44 58.42 90)
 		(unit 1)
@@ -2968,6 +3067,85 @@
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/1b9234a1-5071-4fc1-93e6-8cf4c57e8659"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:R")
+		(at 147.32 57.15 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1b5d6f6b-7a57-4ec1-8f06-2e31e5df43b1")
+		(property "Reference" "R41"
+			(at 147.32 55.626 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "330R"
+			(at 147.32 58.928 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 147.32 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "e882f14a-6336-40da-8f64-c26154098f26")
+		)
+		(pin "1"
+			(uuid "1750283d-7772-4657-93e8-7d15f6dd188e")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/1b9234a1-5071-4fc1-93e6-8cf4c57e8659"
+					(reference "R41")
 					(unit 1)
 				)
 			)
