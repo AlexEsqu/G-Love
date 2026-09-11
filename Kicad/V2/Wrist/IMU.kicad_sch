@@ -1326,7 +1326,7 @@
 		(at 101.6 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "1e7a3166-8523-42af-9926-5c1528d4cf4f")
+		(uuid "2fb61765-d94f-48eb-88aa-96dd4e90e39b")
 	)
 	(junction
 		(at 140.97 46.99)
@@ -1507,6 +1507,16 @@
 			(type default)
 		)
 		(uuid "2850bef2-aee0-4bca-a718-fdced75c0c63")
+	)
+	(wire
+		(pts
+			(xy 101.6 49.53) (xy 105.41 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c10457d-132e-40eb-b8c4-fbfdbb93efc5")
 	)
 	(wire
 		(pts
@@ -1737,16 +1747,6 @@
 			(type default)
 		)
 		(uuid "b35d702a-20ef-4a93-a041-f72cb79fc8da")
-	)
-	(wire
-		(pts
-			(xy 101.6 49.53) (xy 105.41 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b62ca0c2-a910-4c83-86aa-ae8b805d2b70")
 	)
 	(wire
 		(pts
@@ -1985,6 +1985,12 @@
 					(unit 1)
 				)
 			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
+					(reference "U2")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2071,6 +2077,12 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/7de4e8e6-4751-4acb-b71f-e492a47c8332/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
+					(reference "GND011")
+					(unit 1)
+				)
+			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
 					(reference "GND011")
 					(unit 1)
 				)
@@ -2164,6 +2176,12 @@
 					(unit 1)
 				)
 			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
+					(reference "GND060")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2237,6 +2255,12 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/7de4e8e6-4751-4acb-b71f-e492a47c8332/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
+					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
 					(reference "#PWR011")
 					(unit 1)
 				)
@@ -2320,6 +2344,12 @@
 					(unit 1)
 				)
 			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
+					(reference "C53")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2396,6 +2426,12 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/7de4e8e6-4751-4acb-b71f-e492a47c8332/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
+					(reference "R43")
+					(unit 1)
+				)
+			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
 					(reference "R43")
 					(unit 1)
 				)
@@ -2513,6 +2549,12 @@
 					(unit 1)
 				)
 			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
+					(reference "C9")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2599,6 +2641,12 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/7de4e8e6-4751-4acb-b71f-e492a47c8332/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
+					(reference "GND09")
+					(unit 1)
+				)
+			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
 					(reference "GND09")
 					(unit 1)
 				)
@@ -2693,6 +2741,12 @@
 					(unit 1)
 				)
 			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
+					(reference "GND08")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2766,6 +2820,12 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/7de4e8e6-4751-4acb-b71f-e492a47c8332/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
+					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
 					(reference "#PWR08")
 					(unit 1)
 				)
@@ -2859,6 +2919,89 @@
 					(unit 1)
 				)
 			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
+					(reference "GND061")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:+3.3V")
+		(at 101.6 48.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "87dc4003-9c50-40ab-9f59-60030e86d31a")
+		(property "Reference" "#PWR012"
+			(at 105.41 50.038 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 101.854 45.212 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 101.6 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 101.6 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 101.6 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "523600fc-6308-4ca6-b61a-8c65dfbcccff")
+		)
+		(instances
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
+					(reference "#PWR012")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2944,6 +3087,12 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/7de4e8e6-4751-4acb-b71f-e492a47c8332/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
+					(reference "GND012")
+					(unit 1)
+				)
+			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
 					(reference "GND012")
 					(unit 1)
 				)
@@ -3061,6 +3210,12 @@
 					(unit 1)
 				)
 			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
+					(reference "C10")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3147,6 +3302,12 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/7de4e8e6-4751-4acb-b71f-e492a47c8332/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
+					(reference "GND010")
+					(unit 1)
+				)
+			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
 					(reference "GND010")
 					(unit 1)
 				)
@@ -3264,80 +3425,9 @@
 					(unit 1)
 				)
 			)
-		)
-	)
-	(symbol
-		(lib_id "G-Love:VCC")
-		(at 101.6 48.26 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "d7145076-d349-4849-8c79-680e4bc3e98f")
-		(property "Reference" "#PWR043"
-			(at 105.41 50.038 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VCC"
-			(at 101.6 45.72 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 101.6 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 101.6 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 101.6 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ed943ae7-9587-410b-a475-d5d4b7676847")
-		)
-		(instances
-			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/7de4e8e6-4751-4acb-b71f-e492a47c8332/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
-					(reference "#PWR043")
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -3421,6 +3511,12 @@
 					(unit 1)
 				)
 			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
+					(reference "R44")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3495,6 +3591,12 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/7de4e8e6-4751-4acb-b71f-e492a47c8332/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
+					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
 					(reference "#PWR09")
 					(unit 1)
 				)
@@ -3574,6 +3676,12 @@
 		(instances
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/7de4e8e6-4751-4acb-b71f-e492a47c8332/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
+					(reference "C54")
+					(unit 1)
+				)
+			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
 					(reference "C54")
 					(unit 1)
 				)
@@ -3727,6 +3835,12 @@
 					(unit 1)
 				)
 			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
+					(reference "U3")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3804,6 +3918,18 @@
 					(unit 1)
 				)
 			)
+			(project "IMU"
+				(path "/c2bcdf26-03a9-406a-b57f-9b68d229fafd"
+					(reference "#PWR010")
+					(unit 1)
+				)
+			)
 		)
 	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
 )
