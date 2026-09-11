@@ -10194,7 +10194,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "J"
-			(at -0.254 33.274 0)
+			(at -0.254 42.164 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10248,9 +10248,9 @@
 		)
 		(symbol "FPC_CONNECTOR_0_0"
 			(pin power_in line
-				(at -12.7 29.21 0)
+				(at -12.7 36.83 0)
 				(length 3.175)
-				(name "VCC"
+				(name "VCCL"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -10266,7 +10266,7 @@
 				)
 			)
 			(pin power_in line
-				(at -12.7 26.67 0)
+				(at -12.7 34.29 0)
 				(length 3.175)
 				(name "VCCL"
 					(effects
@@ -10284,9 +10284,9 @@
 				)
 			)
 			(pin power_in line
-				(at -12.7 24.13 0)
+				(at -12.7 31.75 0)
 				(length 3.175)
-				(name "VCCL"
+				(name "GND"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -10302,9 +10302,9 @@
 				)
 			)
 			(pin power_in line
-				(at -12.7 21.59 0)
+				(at -12.7 29.21 0)
 				(length 3.175)
-				(name "3.3V"
+				(name "GND"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -10319,10 +10319,10 @@
 					)
 				)
 			)
-			(pin input line
-				(at -12.7 17.78 0)
+			(pin output line
+				(at -12.7 24.13 0)
 				(length 3.175)
-				(name "LED_MOSI"
+				(name "MOSI"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -10338,245 +10338,9 @@
 				)
 			)
 			(pin output line
-				(at -12.7 11.43 0)
+				(at -12.7 21.59 0)
 				(length 3.175)
-				(name "HALL"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "7"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at -12.7 6.35 0)
-				(length 3.175)
-				(name "THUMB_FORCE"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "8"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at -12.7 3.81 0)
-				(length 3.175)
-				(name "THUMB_FLEX"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "9"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at -12.7 1.27 0)
-				(length 3.175)
-				(name "INDEX_FORCE"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "10"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at -12.7 -1.27 0)
-				(length 3.175)
-				(name "INDEX_FLEX"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "11"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin bidirectional line
-				(at -12.7 -6.35 0)
-				(length 3.175)
-				(name "IMU_SDA"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "12"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin bidirectional line
-				(at -12.7 -8.89 0)
-				(length 3.175)
-				(name "IMU_SCL"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "13"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at -12.7 -12.7 0)
-				(length 3.175)
-				(name "FORCE_MIDDLE"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "14"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at -12.7 -15.24 0)
-				(length 3.175)
-				(name "FLEX_MIDDLE"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "15"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at -12.7 -17.78 0)
-				(length 3.175)
-				(name "FORCE_RING"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "16"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at -12.7 -20.32 0)
-				(length 3.175)
-				(name "FLEX_RING"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "17"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at -12.7 -22.86 0)
-				(length 3.175)
-				(name "FORCE_LITTLE"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "18"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at -12.7 -25.4 0)
-				(length 3.175)
-				(name "FLEX_LITTLE"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "19"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(symbol "FPC_CONNECTOR_1_0"
-			(pin bidirectional line
-				(at -12.7 15.24 0)
-				(length 3.175)
-				(name "LED_SCK"
+				(name "SCK"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -10592,9 +10356,243 @@
 				)
 			)
 			(pin power_in line
-				(at -12.7 -29.21 0)
+				(at -12.7 19.05 0)
 				(length 3.175)
 				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -12.7 13.97 0)
+				(length 3.175)
+				(name "3.3V"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at -12.7 11.43 0)
+				(length 3.175)
+				(name "SDA"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -12.7 8.89 0)
+				(length 3.175)
+				(name "SCL"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -12.7 6.35 0)
+				(length 3.175)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at -12.7 1.27 0)
+				(length 3.175)
+				(name "SW_HALL"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at -12.7 -1.27 0)
+				(length 3.175)
+				(name "FSR_THUMB"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at -12.7 -3.81 0)
+				(length 3.175)
+				(name "FLEX_THUMB"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at -12.7 -6.35 0)
+				(length 3.175)
+				(name "FSR_INDEX"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at -12.7 -8.89 0)
+				(length 3.175)
+				(name "FLEX_INDEX"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at -12.7 -11.43 0)
+				(length 3.175)
+				(name "FSR_MIDDLE"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -12.7 -16.51 0)
+				(length 3.175)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "18"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at -12.7 -21.59 0)
+				(length 3.175)
+				(name "FLEX_MIDDLE"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "19"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at -12.7 -24.13 0)
+				(length 3.175)
+				(name "FORCE_RING"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -10609,11 +10607,83 @@
 					)
 				)
 			)
+			(pin output line
+				(at -12.7 -26.67 0)
+				(length 3.175)
+				(name "FLEX_RING"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "21"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at -12.7 -29.21 0)
+				(length 3.175)
+				(name "FORCE_LITTLE"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "22"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at -12.7 -31.75 0)
+				(length 3.175)
+				(name "FLEX_LITTLE"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "23"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -12.7 -36.83 0)
+				(length 3.175)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "24"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
 		)
 		(symbol "FPC_CONNECTOR_1_1"
 			(rectangle
-				(start -9.906 31.496)
-				(end 9.906 -31.242)
+				(start -10.16 39.37)
+				(end 10.16 -39.37)
 				(stroke
 					(width 0)
 					(type solid)
