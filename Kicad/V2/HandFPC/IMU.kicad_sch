@@ -860,10 +860,6 @@
 		(uuid "f7b98822-cd2e-4c8d-9e95-36217400bbb2")
 	)
 	(no_connect
-		(at 82.55 64.77)
-		(uuid "850bc1f9-b953-4065-938c-871279ad708c")
-	)
-	(no_connect
 		(at 46.99 64.77)
 		(uuid "86adecab-a28f-45e3-bfb7-728096c90053")
 	)
@@ -930,6 +926,16 @@
 			(type default)
 		)
 		(uuid "1ee25da6-ecea-4384-b227-bce665b6ac4b")
+	)
+	(wire
+		(pts
+			(xy 88.9 64.77) (xy 88.9 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22d4d354-ee12-464d-b853-e355553141db")
 	)
 	(wire
 		(pts
@@ -1060,6 +1066,16 @@
 			(type default)
 		)
 		(uuid "7b45f21d-ec31-4375-8ecb-bdadf7314ec1")
+	)
+	(wire
+		(pts
+			(xy 82.55 64.77) (xy 88.9 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "864c0f8f-ecd1-41de-95be-dd1bc03999b8")
 	)
 	(polyline
 		(pts
@@ -1611,6 +1627,85 @@
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
 					(reference "GND09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:GND")
+		(at 88.9 69.85 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "87d6daaa-2a6d-47be-94af-c819ddecd8b2")
+		(property "Reference" "GND017"
+			(at 88.9 73.406 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 88.9 73.406 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 88.9 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 88.9 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 88.9 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d2a72bd4-c89c-4175-af7d-b9eff3e57a02")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
+					(reference "GND017")
 					(unit 1)
 				)
 			)

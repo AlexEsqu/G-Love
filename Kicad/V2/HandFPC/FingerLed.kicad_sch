@@ -574,7 +574,7 @@
 	)
 	(rectangle
 		(start 80.264 178.054)
-		(end 137.414 187.96)
+		(end 119.634 187.96)
 		(stroke
 			(width 0)
 			(type default)
@@ -679,6 +679,24 @@
 			)
 		)
 		(uuid "bd78e532-103c-4d0c-98f0-d77c31371d4f")
+	)
+	(text "Just meant to hold the LED Band"
+		(exclude_from_sim no)
+		(at 139.7 188.214 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "eae472ef-c7cc-4c74-8f5a-62eeeee25157")
+	)
+	(no_connect
+		(at 132.08 181.61)
+		(uuid "c5e07290-b171-4095-87ad-fffb5cd961c0")
+	)
+	(no_connect
+		(at 132.08 184.15)
+		(uuid "ffec0725-ed44-4834-91f6-6c2534358f21")
 	)
 	(wire
 		(pts
@@ -1667,7 +1685,7 @@
 	)
 	(symbol
 		(lib_id "G-Love-Symbols:Conn_2_pins")
-		(at 143.51 182.88 180)
+		(at 125.73 182.88 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1675,10 +1693,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "2f0175df-9983-4510-b3e6-3ddb405932e4")
 		(property "Reference" "J11"
-			(at 143.51 175.26 0)
+			(at 125.73 176.276 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1688,7 +1705,7 @@
 			)
 		)
 		(property "Value" "JST_SPI_LED_Out_Little"
-			(at 143.51 177.8 0)
+			(at 132.588 178.562 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1698,7 +1715,7 @@
 			)
 		)
 		(property "Footprint" "MyGlove:FPC_JST_Conn_GH_2x1.25mm"
-			(at 143.51 182.88 0)
+			(at 125.73 182.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1709,7 +1726,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 143.51 182.88 0)
+			(at 125.73 182.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1720,7 +1737,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 143.51 182.88 0)
+			(at 125.73 182.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1991,7 +2008,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "7e01cb8e-03fc-4a2e-8ac2-7d0eceaee667")
 		(property "Reference" "J10"
 			(at 124.46 135.89 0)
@@ -2004,7 +2020,7 @@
 			)
 		)
 		(property "Value" "JST_SPI_LED_Out_Ring"
-			(at 124.46 138.43 0)
+			(at 132.08 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2157,7 +2173,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "a27ded07-6f5b-4bf0-acf3-0cb56801e5f8")
 		(property "Reference" "J9"
 			(at 124.46 96.52 0)
@@ -2170,7 +2185,7 @@
 			)
 		)
 		(property "Value" "JST_SPI_LED_Out_Major"
-			(at 124.46 99.06 0)
+			(at 132.588 98.806 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2250,7 +2265,7 @@
 			)
 		)
 		(property "Value" "5VL"
-			(at 53.34 27.432 0)
+			(at 53.34 27.178 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2326,7 +2341,7 @@
 			)
 		)
 		(property "Value" "JST_SPI_LED_Out_Thumb"
-			(at 139.446 21.844 0)
+			(at 132.588 23.876 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

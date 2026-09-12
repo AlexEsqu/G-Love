@@ -5,7 +5,7 @@
 	(uuid "b9bebc87-44da-4f3b-83dd-910a5a9b0c81")
 	(paper "A4")
 	(lib_symbols
-		(symbol "G-Love-Symbols:+5V"
+		(symbol "G-Love-Symbols:+3.3V"
 			(power global)
 			(pin_numbers
 				(hide yes)
@@ -20,7 +20,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "#PWR"
-				(at 2.54 0.6351 0)
+				(at 3.81 -1.778 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -28,18 +28,16 @@
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Value" "5V"
-				(at -1.778 1.27 0)
+			(property "Value" "+3.3V"
+				(at -0.254 2.794 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
 			(property "Footprint" ""
@@ -75,10 +73,10 @@
 					)
 				)
 			)
-			(symbol "+5V_0_1"
+			(symbol "+3.3V_0_1"
 				(polyline
 					(pts
-						(xy 0 0) (xy -1.27 -1.27)
+						(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
 					)
 					(stroke
 						(width 0)
@@ -90,7 +88,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 1.27 -1.27)
+						(xy 0 1.524) (xy 0 -0.762)
 					)
 					(stroke
 						(width 0)
@@ -101,9 +99,9 @@
 					)
 				)
 			)
-			(symbol "+5V_1_1"
+			(symbol "+3.3V_1_1"
 				(pin power_in line
-					(at 0 -2.54 90)
+					(at 0 -1.27 90)
 					(length 2.54)
 					(name ""
 						(effects
@@ -547,8 +545,8 @@
 		)
 	)
 	(symbol
-		(lib_id "G-Love-Symbols:+5V")
-		(at 31.75 21.59 0)
+		(lib_id "G-Love-Symbols:+3.3V")
+		(at 31.75 22.86 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -556,10 +554,9 @@
 		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4c747d67-435f-4b90-a617-8f3544ba9753")
-		(property "Reference" "#PWR013"
-			(at 34.29 20.9549 0)
+		(uuid "138c0439-7323-4f2e-a465-7dab558adece")
+		(property "Reference" "#PWR04"
+			(at 35.56 24.638 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -567,11 +564,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "5V"
-			(at 31.75 19.05 0)
+		(property "Value" "+3.3V"
+			(at 35.052 21.336 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -581,7 +577,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 31.75 21.59 0)
+			(at 31.75 22.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -592,7 +588,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 31.75 21.59 0)
+			(at 31.75 22.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -603,7 +599,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 31.75 21.59 0)
+			(at 31.75 22.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -614,28 +610,28 @@
 			)
 		)
 		(pin "1"
-			(uuid "97e4f990-9c39-4160-9da4-0b6d38ee6dd2")
+			(uuid "6ed97642-b6e5-457e-b746-115eb996f87c")
 		)
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/0b1bb178-9530-4748-8b07-933fe0c8d524"
-					(reference "#PWR013")
+					(reference "#PWR04")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/7a2974e5-124b-4db5-8e90-e949fd9545a7"
-					(reference "#PWR017")
+					(reference "#PWR013")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/93c35869-ca7a-4596-991e-6eeeacdf1f70"
-					(reference "#PWR019")
+					(reference "#PWR017")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/a00bc8a6-48ba-4c2b-a585-b9390a223b1c"
-					(reference "#PWR018")
+					(reference "#PWR016")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/d64adc8c-2a84-4c15-a7c4-b37086fe5b0e"
-					(reference "#PWR016")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
