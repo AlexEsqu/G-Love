@@ -652,7 +652,7 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U_1"
+			(property "Reference" "U"
 				(at 2.032 -19.05 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1349,7 +1349,7 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J_2"
+			(property "Reference" "J"
 				(at -11.43 1.9051 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3485,7 +3485,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "001f7330-2cbc-4ca4-ab57-93e2f5b5bf07")
-		(property "Reference" "J_2"
+		(property "Reference" "J2"
 			(at 46.99 122.5549 0)
 			(hide yes)
 			(show_name no)
@@ -3628,7 +3628,7 @@
 		(instances
 			(project "PowerArm"
 				(path "/ee7054af-c2c9-421b-971c-84178cc0b718/03274d87-7527-42c1-8adc-eb4fd538f9c0"
-					(reference "J_2")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -4218,93 +4218,6 @@
 			(project "PowerArm"
 				(path "/ee7054af-c2c9-421b-971c-84178cc0b718/03274d87-7527-42c1-8adc-eb4fd538f9c0"
 					(reference "flow10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "G-Love:FlowDirection")
-		(at 160.02 143.51 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "50a82e15-8625-4128-a2f5-0bc81b918558")
-		(property "Reference" "flow5"
-			(at 160.274 141.732 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 160.02 143.51 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 160.02 143.51 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 160.02 143.51 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 160.02 143.51 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Minimum quantity per command" ""
-			(at 160.02 143.51 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "PowerArm"
-				(path "/ee7054af-c2c9-421b-971c-84178cc0b718/03274d87-7527-42c1-8adc-eb4fd538f9c0"
-					(reference "flow5")
 					(unit 1)
 				)
 			)
@@ -5360,7 +5273,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "955fd61c-8f7a-4e7f-ab69-b8cf88f0237f")
-		(property "Reference" "U_1"
+		(property "Reference" "U1"
 			(at 117.7133 146.05 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5484,7 +5397,7 @@
 		(instances
 			(project "PowerArm"
 				(path "/ee7054af-c2c9-421b-971c-84178cc0b718/03274d87-7527-42c1-8adc-eb4fd538f9c0"
-					(reference "U_1")
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -5714,7 +5627,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MyGlove:PinHeader_1x04_P2.54mm_Vertical_CST816D"
 			(at 152.4 72.39 0)
 			(hide yes)
 			(show_name no)
