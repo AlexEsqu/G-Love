@@ -2679,7 +2679,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 88.9) (xy 119.38 88.9)
+			(xy 77.47 88.9) (xy 129.54 88.9)
 		)
 		(stroke
 			(width 0)
@@ -3399,24 +3399,13 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 101.6) (xy 129.54 110.49)
+			(xy 129.54 88.9) (xy 129.54 110.49)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "fd046815-4f3c-41c2-aae4-5c8bc522f162")
-	)
-	(hierarchical_label "PC_DETECT"
-		(shape output)
-		(at 119.38 88.9 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "56c34104-1026-43c1-bf61-24ee3e18f0a9")
 	)
 	(hierarchical_label "USB_UART_RX"
 		(shape output)
@@ -4015,7 +4004,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:JST 4 Pin"
 			(at 166.37 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -5075,84 +5064,6 @@
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/bda75adb-ac63-42a7-b1e7-5ba80bc60aa7"
 					(reference "R21")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "G-Love:VCC")
-		(at 129.54 100.33 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "54fd51a6-51bc-49d9-adbf-a24a1e0ac956")
-		(property "Reference" "#PWR017"
-			(at 133.35 102.108 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VCC"
-			(at 129.54 96.52 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 129.54 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 129.54 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 129.54 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "252cbf16-f02c-4682-ab6f-73839f19663c")
-		)
-		(instances
-			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/bda75adb-ac63-42a7-b1e7-5ba80bc60aa7"
-					(reference "#PWR017")
 					(unit 1)
 				)
 			)
