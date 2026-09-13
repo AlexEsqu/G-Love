@@ -2444,6 +2444,12 @@
 		(uuid "088d5e6e-e617-4fb0-a8b3-242563cc690d")
 	)
 	(junction
+		(at 115.57 107.95)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1ea20059-60c5-443b-9afd-9d47bb4f5b5b")
+	)
+	(junction
 		(at 54.61 152.4)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2514,12 +2520,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a36b52ea-cb60-4dcf-b55f-ee38f7f146b9")
-	)
-	(junction
-		(at 115.57 107.95)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "acfce175-e614-4428-ae2c-6fb1983fc3a5")
 	)
 	(junction
 		(at 73.66 125.73)
@@ -2756,6 +2756,16 @@
 			(type default)
 		)
 		(uuid "3df1cc43-709a-49ac-b7e6-ce9fa7ad9009")
+	)
+	(wire
+		(pts
+			(xy 114.3 107.95) (xy 115.57 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "408d8e3d-1006-4479-bf5e-1d78fa921993")
 	)
 	(wire
 		(pts
@@ -3319,7 +3329,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 107.95) (xy 113.03 107.95)
+			(xy 110.49 107.95) (xy 111.76 107.95)
 		)
 		(stroke
 			(width 0)
@@ -3483,7 +3493,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "001f7330-2cbc-4ca4-ab57-93e2f5b5bf07")
 		(property "Reference" "J2"
 			(at 46.99 122.5549 0)
@@ -3497,8 +3506,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "Conn_USB_Receptacle"
-			(at 46.99 123.8249 0)
+		(property "Value" "USB Connector to Computer"
+			(at 84.836 145.542 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4225,7 +4234,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:C")
-		(at 114.3 107.95 90)
+		(at 113.03 107.95 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4235,7 +4244,7 @@
 		(dnp no)
 		(uuid "5b41b5f9-bc6b-46e5-9cf4-04b6be176f0e")
 		(property "Reference" "C16"
-			(at 114.3 103.124 90)
+			(at 113.03 103.124 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4245,7 +4254,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 114.3 105.41 90)
+			(at 113.03 105.41 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4255,7 +4264,7 @@
 			)
 		)
 		(property "Footprint" "MyGlove:Capacitor_0603"
-			(at 114.3 107.95 0)
+			(at 113.03 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4266,7 +4275,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 114.3 107.95 0)
+			(at 113.03 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4277,7 +4286,7 @@
 			)
 		)
 		(property "Description" "Capacitor"
-			(at 123.444 107.95 0)
+			(at 122.174 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4288,7 +4297,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 114.3 107.95 90)
+			(at 113.03 107.95 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4299,7 +4308,7 @@
 			)
 		)
 		(property "Price" "1.44/100"
-			(at 114.3 107.95 90)
+			(at 113.03 107.95 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4310,7 +4319,7 @@
 			)
 		)
 		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C1591.html"
-			(at 114.3 107.95 90)
+			(at 113.03 107.95 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

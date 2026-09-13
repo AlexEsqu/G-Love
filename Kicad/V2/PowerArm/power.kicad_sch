@@ -2306,7 +2306,7 @@
 		(at 107.95 142.24)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "14b67485-cedc-4193-9f4f-e73f452fa3cf")
+		(uuid "2ad13aed-6cf7-4bef-a8e2-96cc9ee0f5b2")
 	)
 	(junction
 		(at 190.5 86.36)
@@ -2934,9 +2934,8 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "2414f61a-db5c-447c-88e5-78325881900e")
-		(property "Reference" "J_1"
+		(property "Reference" "J5"
 			(at 100.33 112.3949 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2947,8 +2946,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "Conn_USB_Receptacle"
-			(at 100.33 114.9349 0)
+		(property "Value" "USB Connector to Powerbank"
+			(at 139.192 135.636 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3078,7 +3077,7 @@
 		(instances
 			(project "PowerArm"
 				(path "/ee7054af-c2c9-421b-971c-84178cc0b718/bae02479-a44b-49ad-9522-9457ef0e9352"
-					(reference "J_1")
+					(reference "J5")
 					(unit 1)
 				)
 			)
