@@ -2304,58 +2304,16 @@
 		(uuid "12b23670-fb4f-4193-8fba-25db5bf19667")
 	)
 	(junction
-		(at 134.62 127)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "19f98be9-5556-4eb4-915f-78bf1dfa10ab")
-	)
-	(junction
-		(at 143.51 73.66)
+		(at 144.78 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1ed3a769-cd77-42ef-8a38-5d34050f330b")
-	)
-	(junction
-		(at 135.89 109.22)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2f2c9406-4d20-46fd-a55d-329331811d78")
-	)
-	(junction
-		(at 128.27 101.6)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "345d0664-a9cc-4be1-8c71-a84e6cb2a5fa")
-	)
-	(junction
-		(at 132.08 134.62)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "39406ca8-6e6c-4649-a3c1-ab2863d20cca")
-	)
-	(junction
-		(at 127 129.54)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3e8cc2dc-bd46-4c24-9389-74eba943c105")
 	)
 	(junction
 		(at 143.51 66.04)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "43bfe099-1cf8-48d7-a433-126ef73bbe35")
-	)
-	(junction
-		(at 130.81 104.14)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "46615f15-3044-4ffd-b58c-a56c8b3becbf")
-	)
-	(junction
-		(at 132.08 120.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "53966c8b-234d-4777-b89d-f53beae9d5eb")
 	)
 	(junction
 		(at 140.97 81.28)
@@ -2382,58 +2340,16 @@
 		(uuid "90996da2-30d5-478b-9158-afcf4b396256")
 	)
 	(junction
-		(at 129.54 132.08)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "924a83e8-1596-41d5-abbd-cd5a6d3b8bd0")
-	)
-	(junction
 		(at 87.63 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "92ca090c-5eec-423a-bc03-f855729ba0f0")
 	)
 	(junction
-		(at 138.43 149.86)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9b7f0054-4122-4608-8f79-1e30e0d5689a")
-	)
-	(junction
 		(at 80.01 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a3e8926a-0e84-46ef-a11b-0195e21e5c60")
-	)
-	(junction
-		(at 137.16 124.46)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b1916aab-cfed-477f-a3ec-e1ce353c1955")
-	)
-	(junction
-		(at 133.35 106.68)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b5a8e95e-dfe1-44a1-8bad-08615a5bdb22")
-	)
-	(junction
-		(at 142.24 111.76)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b6364a97-39af-4bdf-baa4-e3b0f7423ff1")
-	)
-	(junction
-		(at 139.7 114.3)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c92a82a1-26bf-4674-aeb9-f0daee44bf0c")
-	)
-	(junction
-		(at 138.43 140.97)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cbf690ba-d2a4-462f-a602-dd6ff169c5b5")
 	)
 	(junction
 		(at 129.54 93.98)
@@ -2481,10 +2397,6 @@
 		(at 62.23 115.57)
 		(uuid "d4268bb4-f45b-4671-a634-4a3003d5758e")
 	)
-	(no_connect
-		(at 134.62 144.78)
-		(uuid "ff074969-1764-4aab-8951-dae73f43af28")
-	)
 	(wire
 		(pts
 			(xy 125.73 125.73) (xy 123.19 125.73)
@@ -2527,6 +2439,16 @@
 	)
 	(wire
 		(pts
+			(xy 144.78 74.93) (xy 144.78 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d983679-bdf4-4797-8fb1-b8ef25b567e3")
+	)
+	(wire
+		(pts
 			(xy 125.73 132.08) (xy 125.73 133.35)
 		)
 		(stroke
@@ -2557,7 +2479,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 132.08) (xy 125.73 132.08)
+			(xy 125.73 132.08) (xy 144.78 132.08)
 		)
 		(stroke
 			(width 0)
@@ -2627,7 +2549,7 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 71.12) (xy 143.51 73.66)
+			(xy 144.78 71.12) (xy 144.78 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2644,16 +2566,6 @@
 			(type default)
 		)
 		(uuid "21ae69aa-5f35-4337-9ef1-100a8b8416c0")
-	)
-	(wire
-		(pts
-			(xy 144.78 132.08) (xy 129.54 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "23db6b2b-2d22-48a6-8f88-be281522b616")
 	)
 	(wire
 		(pts
@@ -2677,7 +2589,7 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 83.82) (xy 144.78 83.82)
+			(xy 144.78 85.09) (xy 144.78 83.82)
 		)
 		(stroke
 			(width 0)
@@ -2727,16 +2639,6 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 119.38) (xy 138.43 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "30bbbb3a-caf5-4492-91a6-89e6a12ee84d")
-	)
-	(wire
-		(pts
 			(xy 125.73 120.65) (xy 123.19 120.65)
 		)
 		(stroke
@@ -2744,16 +2646,6 @@
 			(type default)
 		)
 		(uuid "30e95524-83a4-491c-a224-879af261454e")
-	)
-	(wire
-		(pts
-			(xy 133.35 106.68) (xy 133.35 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "32f91ef1-a153-4e7b-9abb-0249e1066b29")
 	)
 	(wire
 		(pts
@@ -2774,16 +2666,6 @@
 			(type default)
 		)
 		(uuid "366fa1aa-7a1e-400e-b967-0563b46a3678")
-	)
-	(wire
-		(pts
-			(xy 135.89 109.22) (xy 135.89 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3b343cf8-2fd6-44f1-a93c-32cd4ce4b296")
 	)
 	(wire
 		(pts
@@ -2847,16 +2729,6 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 114.3) (xy 139.7 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4129ce1d-54a8-4ed9-92b9-52f98537a097")
-	)
-	(wire
-		(pts
 			(xy 36.83 118.11) (xy 43.18 118.11)
 		)
 		(stroke
@@ -2874,6 +2746,16 @@
 			(type default)
 		)
 		(uuid "461c5ed2-52cd-41bb-8cc1-c9ac275c11de")
+	)
+	(wire
+		(pts
+			(xy 144.78 120.65) (xy 144.78 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "466766af-e96c-456e-8c15-32fa24a755c7")
 	)
 	(wire
 		(pts
@@ -3037,16 +2919,6 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 134.62) (xy 132.08 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "77430bc1-9f7f-426c-a11b-f776a78b69e2")
-	)
-	(wire
-		(pts
 			(xy 144.78 93.98) (xy 129.54 93.98)
 		)
 		(stroke
@@ -3107,16 +2979,6 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 73.66) (xy 144.78 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "82b04e87-776f-4d36-903f-e9d6948fbc1e")
-	)
-	(wire
-		(pts
 			(xy 80.01 50.8) (xy 83.82 50.8)
 		)
 		(stroke
@@ -3157,16 +3019,6 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 132.08) (xy 129.54 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8c155e99-6521-4195-924f-28c2c5644b7c")
-	)
-	(wire
-		(pts
 			(xy 38.1 63.5) (xy 49.53 63.5)
 		)
 		(stroke
@@ -3174,16 +3026,6 @@
 			(type default)
 		)
 		(uuid "8cfd1846-caff-428f-8e98-708815e1937d")
-	)
-	(wire
-		(pts
-			(xy 128.27 101.6) (xy 128.27 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8d1b0aeb-7d91-4618-92da-6dab7c3f5ef2")
 	)
 	(wire
 		(pts
@@ -3197,26 +3039,6 @@
 	)
 	(wire
 		(pts
-			(xy 142.24 111.76) (xy 142.24 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8db0284c-47c3-414d-a772-bff7d938e3e3")
-	)
-	(wire
-		(pts
-			(xy 144.78 129.54) (xy 127 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8e368061-4299-4d08-96a3-95ac27ae2327")
-	)
-	(wire
-		(pts
 			(xy 62.23 133.35) (xy 80.01 133.35)
 		)
 		(stroke
@@ -3227,16 +3049,6 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 149.86) (xy 138.43 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "931913f8-d95a-4bcc-a7aa-56749b7e82fd")
-	)
-	(wire
-		(pts
 			(xy 125.73 109.22) (xy 125.73 110.49)
 		)
 		(stroke
@@ -3244,16 +3056,6 @@
 			(type default)
 		)
 		(uuid "933b2db0-54c6-4829-b197-18456922d1c8")
-	)
-	(wire
-		(pts
-			(xy 137.16 124.46) (xy 137.16 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "94bd0911-d90a-4dc3-9a33-3b3868a7afd6")
 	)
 	(wire
 		(pts
@@ -3297,7 +3099,7 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 96.52) (xy 144.78 96.52)
+			(xy 144.78 97.79) (xy 144.78 96.52)
 		)
 		(stroke
 			(width 0)
@@ -3307,27 +3109,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 119.38) (xy 144.78 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9e327402-713b-478f-9bca-7ab8c0575441")
-	)
-	(wire
-		(pts
-			(xy 134.62 127) (xy 134.62 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a10f62b3-888f-4a3c-8adb-c85da3e99c38")
-	)
-	(wire
-		(pts
-			(xy 132.08 134.62) (xy 123.19 134.62)
+			(xy 123.19 134.62) (xy 144.78 134.62)
 		)
 		(stroke
 			(width 0)
@@ -3387,26 +3169,6 @@
 	)
 	(wire
 		(pts
-			(xy 127 129.54) (xy 127 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b5453347-dace-410d-bfcd-1279fe0238eb")
-	)
-	(wire
-		(pts
-			(xy 138.43 120.65) (xy 132.08 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b621c4c8-0ada-427c-8e5e-2b71cb99190c")
-	)
-	(wire
-		(pts
 			(xy 125.73 127) (xy 125.73 125.73)
 		)
 		(stroke
@@ -3414,26 +3176,6 @@
 			(type default)
 		)
 		(uuid "b6d542a0-a803-4196-aba8-36c833351d88")
-	)
-	(wire
-		(pts
-			(xy 130.81 149.86) (xy 138.43 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b70288ee-f7f8-4bb8-a859-6e9217581c1d")
-	)
-	(wire
-		(pts
-			(xy 132.08 134.62) (xy 132.08 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b86c72db-aa0b-428d-9057-3a6bad9487c2")
 	)
 	(wire
 		(pts
@@ -3477,16 +3219,6 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 152.4) (xy 138.43 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c54a2fce-3cbd-4c73-8380-bfe05dc492a1")
-	)
-	(wire
-		(pts
 			(xy 62.23 100.33) (xy 80.01 100.33)
 		)
 		(stroke
@@ -3514,26 +3246,6 @@
 			(type default)
 		)
 		(uuid "c9cfa4fd-90c3-4efc-a564-35d2c2cda6bf")
-	)
-	(wire
-		(pts
-			(xy 144.78 71.12) (xy 143.51 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cbff8037-c61d-4814-9fcc-0df5c57a9648")
-	)
-	(wire
-		(pts
-			(xy 138.43 140.97) (xy 144.78 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ce96d3b7-68f4-4846-bfa9-20533f16a2da")
 	)
 	(wire
 		(pts
@@ -3627,7 +3339,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 129.54) (xy 125.73 129.54)
+			(xy 125.73 129.54) (xy 144.78 129.54)
 		)
 		(stroke
 			(width 0)
@@ -3724,16 +3436,6 @@
 			(type default)
 		)
 		(uuid "fe00469a-2966-4132-a7e4-301c85c9c610")
-	)
-	(wire
-		(pts
-			(xy 130.81 104.14) (xy 130.81 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ff6f87b1-902f-4d7e-97df-0b3b21f23497")
 	)
 	(hierarchical_label "ADC_Mux_Select_C"
 		(shape input)
@@ -4030,7 +3732,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:GND")
-		(at 138.43 152.4 0)
+		(at 144.78 140.97 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -4041,7 +3743,7 @@
 		(dnp no)
 		(uuid "1d5dd62c-7158-4517-a0b5-d02a64b37f8c")
 		(property "Reference" "GND014"
-			(at 138.43 155.956 0)
+			(at 144.78 144.526 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4052,7 +3754,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 140.462 156.464 0)
+			(at 146.812 145.034 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4064,7 +3766,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 138.43 152.4 0)
+			(at 144.78 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4075,7 +3777,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 138.43 152.4 0)
+			(at 144.78 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4086,7 +3788,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 138.43 152.4 0)
+			(at 144.78 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4097,7 +3799,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 138.43 152.4 0)
+			(at 144.78 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4564,7 +4266,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "G-Love:FPC_CONNECTOR_24"
 			(at 157.48 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -4680,7 +4382,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:GND")
-		(at 143.51 96.52 0)
+		(at 144.78 97.79 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -4691,7 +4393,7 @@
 		(dnp no)
 		(uuid "46083f83-f093-4efe-96c2-7574e7602b5d")
 		(property "Reference" "GND017"
-			(at 143.51 100.076 0)
+			(at 144.78 101.346 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4702,7 +4404,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 145.542 100.584 0)
+			(at 146.812 101.854 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4714,7 +4416,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 143.51 96.52 0)
+			(at 144.78 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4725,7 +4427,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 143.51 96.52 0)
+			(at 144.78 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4736,7 +4438,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 143.51 96.52 0)
+			(at 144.78 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4747,7 +4449,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 143.51 96.52 0)
+			(at 144.78 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4849,95 +4551,6 @@
 	)
 	(symbol
 		(lib_id "G-Love:TVS_ARRAY")
-		(at 130.81 147.32 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4e11e1ef-b1b5-43a3-b3ef-fd5ee8b0cd6f")
-		(property "Reference" "D4"
-			(at 128.524 150.114 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" ""
-			(at 130.81 147.32 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MyGlove:TVS_DIODE"
-			(at 130.81 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PUSB3F96.pdf"
-			(at 130.81 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 130.81 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "4"
-			(uuid "d14fe365-a5c0-48a8-9952-77b250fb8fdf")
-		)
-		(pin "5"
-			(uuid "a990c100-ea3b-4384-98f5-7bc9b8c8e0fd")
-		)
-		(pin "2"
-			(uuid "f28653a6-2bdc-488e-8836-7e624cd9f339")
-		)
-		(pin "1"
-			(uuid "f43ef055-b323-4094-be30-c383a81f44f0")
-		)
-		(pin "3"
-			(uuid "8327aae6-5541-43da-8325-8fc8aec38dc4")
-		)
-		(instances
-			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/7de4e8e6-4751-4acb-b71f-e492a47c8332"
-					(reference "D4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "G-Love:TVS_ARRAY")
 		(at 115.57 83.82 0)
 		(unit 1)
 		(body_style 1)
@@ -5026,95 +4639,6 @@
 		)
 	)
 	(symbol
-		(lib_id "G-Love:TVS_ARRAY")
-		(at 138.43 138.43 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "7842db9a-be1e-4d38-8a35-9eb6e964e83d")
-		(property "Reference" "D6"
-			(at 136.144 141.224 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" ""
-			(at 138.43 138.43 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MyGlove:TVS_DIODE"
-			(at 138.43 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PUSB3F96.pdf"
-			(at 138.43 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 138.43 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "4"
-			(uuid "1d0709e2-49ae-45aa-a7a0-36b48a938ddf")
-		)
-		(pin "5"
-			(uuid "5b66285f-cc2e-4220-9f26-1de06f9a7704")
-		)
-		(pin "2"
-			(uuid "f9a10920-ebe6-47c2-904f-8ffc8885b227")
-		)
-		(pin "1"
-			(uuid "88058d52-a9c4-40fa-bd90-0d237182c3f4")
-		)
-		(pin "3"
-			(uuid "f7a05094-ecc7-4540-bbf5-45579b18651e")
-		)
-		(instances
-			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/7de4e8e6-4751-4acb-b71f-e492a47c8332"
-					(reference "D6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "G-Love:C")
 		(at 66.04 48.26 270)
 		(mirror x)
@@ -5196,7 +4720,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:GND")
-		(at 143.51 73.66 0)
+		(at 144.78 74.93 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -5207,7 +4731,7 @@
 		(dnp no)
 		(uuid "7c4daf0e-a75e-4bd1-93a2-e4aa67baf801")
 		(property "Reference" "GND015"
-			(at 143.51 77.216 0)
+			(at 144.78 78.486 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5218,7 +4742,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 145.542 77.724 0)
+			(at 146.812 78.994 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5230,7 +4754,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 143.51 73.66 0)
+			(at 144.78 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5241,7 +4765,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 143.51 73.66 0)
+			(at 144.78 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5252,7 +4776,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 143.51 73.66 0)
+			(at 144.78 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5263,7 +4787,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 143.51 73.66 0)
+			(at 144.78 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5436,95 +4960,6 @@
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/7de4e8e6-4751-4acb-b71f-e492a47c8332"
 					(reference "#PWR012")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "G-Love:TVS_ARRAY")
-		(at 132.08 118.11 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a5ab6473-5482-49af-9831-c2ec5cb85352")
-		(property "Reference" "D5"
-			(at 129.794 120.904 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" ""
-			(at 132.08 118.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MyGlove:TVS_DIODE"
-			(at 132.08 118.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PUSB3F96.pdf"
-			(at 132.08 118.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 132.08 118.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "4"
-			(uuid "7c0ba61d-f86e-4804-83ad-be39a5319259")
-		)
-		(pin "5"
-			(uuid "4a4c4a90-b262-4d77-98fe-738a95aa2a87")
-		)
-		(pin "2"
-			(uuid "6721278b-4c27-41ee-99be-84d17b4ea9e7")
-		)
-		(pin "1"
-			(uuid "8c1b6102-1e24-4a57-9b2f-03ef305a4302")
-		)
-		(pin "3"
-			(uuid "cf40a302-d759-4fd5-ad96-067691e197bb")
-		)
-		(instances
-			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/7de4e8e6-4751-4acb-b71f-e492a47c8332"
-					(reference "D5")
 					(unit 1)
 				)
 			)
@@ -5802,7 +5237,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:GND")
-		(at 143.51 83.82 0)
+		(at 144.78 85.09 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -5813,7 +5248,7 @@
 		(dnp no)
 		(uuid "b661a677-c181-4399-879e-903ebeb7be9a")
 		(property "Reference" "GND016"
-			(at 143.51 87.376 0)
+			(at 144.78 88.646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5824,7 +5259,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 145.542 87.884 0)
+			(at 146.812 89.154 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5836,7 +5271,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 143.51 83.82 0)
+			(at 144.78 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5847,7 +5282,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 143.51 83.82 0)
+			(at 144.78 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5858,7 +5293,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 143.51 83.82 0)
+			(at 144.78 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5869,7 +5304,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 143.51 83.82 0)
+			(at 144.78 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6073,7 +5508,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:GND")
-		(at 132.08 120.65 0)
+		(at 144.78 120.65 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -6084,7 +5519,7 @@
 		(dnp no)
 		(uuid "e48d0253-88ac-4621-be43-5af25ba2b795")
 		(property "Reference" "GND013"
-			(at 132.08 124.206 0)
+			(at 144.78 124.206 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6095,7 +5530,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 134.112 124.714 0)
+			(at 146.812 124.714 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6107,7 +5542,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 132.08 120.65 0)
+			(at 144.78 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6118,7 +5553,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 132.08 120.65 0)
+			(at 144.78 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6129,7 +5564,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 132.08 120.65 0)
+			(at 144.78 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6140,7 +5575,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 132.08 120.65 0)
+			(at 144.78 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
