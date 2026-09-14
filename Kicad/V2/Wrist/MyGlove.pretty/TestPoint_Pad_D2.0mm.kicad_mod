@@ -1,4 +1,4 @@
-(footprint "TestPoint_Pad_D1.0mm"
+(footprint "TestPoint_Pad_D2.0mm"
 	(version 20260206)
 	(generator "pcbnew")
 	(generator_version "10.0")
@@ -8,7 +8,7 @@
 	(property "Reference" "REF**"
 		(at 0.5 -2 0)
 		(layer "F.SilkS")
-		(uuid "ce527403-603e-4af0-945e-6365aca2a3e4")
+		(uuid "f1501a83-d879-42da-af3e-f1b51e02c543")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -16,10 +16,10 @@
 			)
 		)
 	)
-	(property "Value" "TestPoint_Pad_D1.0mm"
+	(property "Value" "TestPoint_Pad_D2.0mm"
 		(at 0 1.55 0)
 		(layer "F.Fab")
-		(uuid "ed63b365-516e-4f30-a5ef-c73b824c59c6")
+		(uuid "d4d3f3c8-192e-4f8e-812e-b68122d6459d")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "f2eafc68-00e4-463a-999c-63ed79fefc9a")
+		(uuid "6e573c5b-c834-46bb-b3bc-03b11e58e049")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -45,7 +45,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "dd1f29fe-4de4-4ef7-9eed-b2de438824c7")
+		(uuid "eb7dc637-051e-47f2-9a30-1541748e7223")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -58,7 +58,7 @@
 	(fp_text user "${REFERENCE}"
 		(at 0 -1.45 0)
 		(layer "F.Fab")
-		(uuid "4a87071e-829c-48a2-91d9-b7cb13795f5d")
+		(uuid "b2014f9a-663e-4877-accb-b15e26da041b")
 		(effects
 			(font
 				(size 1 1)
@@ -68,9 +68,9 @@
 	)
 	(pad "1" smd circle
 		(at 0 0)
-		(size 1 1)
+		(size 2 2)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "d2cc3981-5c82-4c29-8d91-7128c4b419bd")
+		(uuid "da51cbe3-2fd5-4cc5-a3d7-5255b70ea3cc")
 	)
 	(embedded_fonts no)
 )

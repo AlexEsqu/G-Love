@@ -2088,6 +2088,12 @@
 		(uuid "6084af29-a218-41c6-95a4-ec6fe4c18b38")
 	)
 	(junction
+		(at 135.89 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6158185b-919e-4a22-9375-a238f2e5b5f6")
+	)
+	(junction
 		(at 48.26 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2110,6 +2116,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "86441aac-d613-4a4c-90a0-9a5b5050cc5e")
+	)
+	(junction
+		(at 161.29 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "928d7702-b36b-49b6-b003-b2990858e5d1")
 	)
 	(junction
 		(at 118.11 41.91)
@@ -2287,6 +2299,16 @@
 	)
 	(wire
 		(pts
+			(xy 161.29 100.33) (xy 172.72 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "300ae813-327e-4cda-89a7-024dd54e64bb")
+	)
+	(wire
+		(pts
 			(xy 137.16 60.96) (xy 137.16 72.39)
 		)
 		(stroke
@@ -2347,7 +2369,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 74.93) (xy 139.7 74.93)
+			(xy 130.81 74.93) (xy 135.89 74.93)
 		)
 		(stroke
 			(width 0)
@@ -2357,7 +2379,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 100.33) (xy 172.72 100.33)
+			(xy 130.81 100.33) (xy 161.29 100.33)
 		)
 		(stroke
 			(width 0)
@@ -2614,6 +2636,16 @@
 			(type default)
 		)
 		(uuid "8a9c2433-430c-41e4-a14b-46eaba4c437c")
+	)
+	(wire
+		(pts
+			(xy 135.89 74.93) (xy 139.7 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c29f2b4-cde6-4a56-917f-d8680f281d70")
 	)
 	(wire
 		(pts
@@ -6257,7 +6289,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MyGlove:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "MyGlove:TestPoint_Pad_D1.5mm"
 			(at 133.35 69.85 0)
 			(hide yes)
 			(show_name no)
@@ -6335,7 +6367,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MyGlove:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "MyGlove:TestPoint_Pad_D1.5mm"
 			(at 91.44 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -6413,7 +6445,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MyGlove:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "MyGlove:TestPoint_Pad_D1.5mm"
 			(at 133.35 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -8721,7 +8753,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MyGlove:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "MyGlove:TestPoint_Pad_D1.5mm"
 			(at 161.29 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -9050,6 +9082,162 @@
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/1b9234a1-5071-4fc1-93e6-8cf4c57e8659"
 					(reference "GND05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:TestPoint")
+		(at 135.89 74.93 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ea253186-e183-4d03-a030-9684d0b504a4")
+		(property "Reference" "TP9"
+			(at 138.43 74.9299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" ""
+			(at 135.89 74.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:TestPoint_Pad_D1.5mm"
+			(at 135.89 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 135.89 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 135.89 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1d56c327-e0b6-483a-86d3-e082b811fc18")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/1b9234a1-5071-4fc1-93e6-8cf4c57e8659"
+					(reference "TP9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:TestPoint")
+		(at 161.29 100.33 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f2498a89-89a4-43fc-bf12-0986fe480baa")
+		(property "Reference" "TP10"
+			(at 163.83 100.3299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" ""
+			(at 161.29 100.33 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:TestPoint_Pad_D1.25mm"
+			(at 161.29 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 161.29 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 161.29 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "258e07eb-6e91-494c-badd-d4f7f7e69dfa")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/1b9234a1-5071-4fc1-93e6-8cf4c57e8659"
+					(reference "TP10")
 					(unit 1)
 				)
 			)
