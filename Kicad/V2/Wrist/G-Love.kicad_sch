@@ -1476,16 +1476,6 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 97.79) (xy 224.79 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "328e32d3-b424-4f92-9df9-6ff595ac4e76")
-	)
-	(wire
-		(pts
 			(xy 224.79 116.84) (xy 222.25 116.84)
 		)
 		(stroke
@@ -4760,7 +4750,7 @@
 				(justify left top)
 			)
 		)
-		(pin "FingerTip_I2C_SCL" input
+		(pin "FingerTip_I2C_SCL" bidirectional
 			(at 133.35 92.71 180)
 			(uuid "f0f0effd-d5ae-44a6-bc1b-1a208d0a23b5")
 			(effects
@@ -4770,7 +4760,7 @@
 				(justify left)
 			)
 		)
-		(pin "FingerTip_I2C_SDA" input
+		(pin "FingerTip_I2C_SDA" bidirectional
 			(at 133.35 90.17 180)
 			(uuid "24e6e16b-5c4a-459a-9937-f7fa565bf1ea")
 			(effects

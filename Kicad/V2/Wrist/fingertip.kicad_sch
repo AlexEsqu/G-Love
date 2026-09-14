@@ -538,6 +538,16 @@
 	)
 	(wire
 		(pts
+			(xy 124.46 90.17) (xy 135.89 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47422185-c859-48ef-9c37-78593aa387fa")
+	)
+	(wire
+		(pts
 			(xy 130.81 83.82) (xy 130.81 87.63)
 		)
 		(stroke
@@ -548,23 +558,13 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 90.17) (xy 135.89 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "776a78d9-93e1-4b38-8a61-b95d92cf9a90")
-	)
-	(wire
-		(pts
 			(xy 124.46 92.71) (xy 135.89 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b6109dbd-5662-4de9-8aa4-8e8c07e9dbe2")
+		(uuid "7bb4f50a-2faf-4eb5-b9c3-872ea40617c5")
 	)
 	(wire
 		(pts
@@ -577,7 +577,7 @@
 		(uuid "fd003e3a-a161-4dcf-8bcd-5453126e9d10")
 	)
 	(hierarchical_label "FingerTip_I2C_SDA"
-		(shape input)
+		(shape bidirectional)
 		(at 124.46 92.71 180)
 		(effects
 			(font
@@ -588,7 +588,7 @@
 		(uuid "42267b3c-8c4c-4ad7-a51c-e1300a58dc81")
 	)
 	(hierarchical_label "FingerTip_I2C_SCL"
-		(shape input)
+		(shape bidirectional)
 		(at 124.46 90.17 180)
 		(effects
 			(font
