@@ -10,7 +10,7 @@
 		(comment 9 "v0")
 	)
 	(lib_symbols
-		(symbol "G-Love:FPC_17"
+		(symbol "G-Love:FPC_20_2561_328P"
 			(power global)
 			(exclude_from_sim no)
 			(in_bom no)
@@ -39,7 +39,7 @@
 				)
 			)
 			(property "Footprint" "MyGlove:FPC 14"
-				(at 0 0 0)
+				(at -25.4 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -192,7 +192,7 @@
 					)
 				)
 			)
-			(symbol "FPC_17_0_0"
+			(symbol "FPC_20_2561_328P_0_0"
 				(pin passive line
 					(at 10.16 31.75 180)
 					(length 2.54)
@@ -338,7 +338,7 @@
 					)
 				)
 			)
-			(symbol "FPC_17_1_0"
+			(symbol "FPC_20_2561_328P_1_0"
 				(pin passive line
 					(at 10.16 1.27 180)
 					(length 2.54)
@@ -349,7 +349,7 @@
 							)
 						)
 					)
-					(number "9"
+					(number "10"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -367,7 +367,7 @@
 							)
 						)
 					)
-					(number "10"
+					(number "11"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -385,7 +385,7 @@
 							)
 						)
 					)
-					(number "11"
+					(number "12"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -403,7 +403,7 @@
 							)
 						)
 					)
-					(number "12"
+					(number "14"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -421,7 +421,7 @@
 							)
 						)
 					)
-					(number "13"
+					(number "15"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -439,7 +439,7 @@
 							)
 						)
 					)
-					(number "14"
+					(number "16"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -457,7 +457,7 @@
 							)
 						)
 					)
-					(number "15"
+					(number "17"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -475,7 +475,7 @@
 							)
 						)
 					)
-					(number "16"
+					(number "18"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -493,7 +493,7 @@
 							)
 						)
 					)
-					(number "17"
+					(number "19"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -502,7 +502,7 @@
 					)
 				)
 			)
-			(symbol "FPC_17_1_1"
+			(symbol "FPC_20_2561_328P_1_1"
 				(rectangle
 					(start -8.89 34.29)
 					(end 7.62 -38.1)
@@ -512,6 +512,60 @@
 					)
 					(fill
 						(type background)
+					)
+				)
+				(pin passive line
+					(at 10.16 7.62 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -7.62 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -34.29 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "20"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
 					)
 				)
 			)
@@ -1199,16 +1253,16 @@
 		(uuid "2f620866-c427-49c5-8f18-a436788e22cc")
 	)
 	(junction
+		(at 86.36 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "55ab73bf-909b-4422-bfcf-28c613fc3910")
+	)
+	(junction
 		(at 217.17 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a40850a9-5972-404f-a71a-38cc87d7a7bb")
-	)
-	(junction
-		(at 82.55 80.01)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c4f7c083-b86c-4f74-87ed-362ab3656fa8")
 	)
 	(junction
 		(at 86.36 92.71)
@@ -1217,10 +1271,28 @@
 		(uuid "c5ab19a9-1d05-4472-9555-4f55db7971b7")
 	)
 	(junction
+		(at 82.55 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c85f2a39-304e-4bec-873f-ef332d105fc7")
+	)
+	(junction
 		(at 209.55 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ccf3e2c8-c6b8-40df-9836-83e83bcbde9a")
+	)
+	(junction
+		(at 86.36 146.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e026e9f9-b533-4728-a3bd-fd2653df2e22")
+	)
+	(junction
+		(at 86.36 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fc98526e-8d59-4ad0-bce9-d0eaa3cd3b6f")
 	)
 	(wire
 		(pts
@@ -1261,6 +1333,16 @@
 			(type default)
 		)
 		(uuid "0a623872-690d-41b1-9dfb-2b818ffbec20")
+	)
+	(wire
+		(pts
+			(xy 205.74 106.68) (xy 224.79 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "100c0118-0a15-4dd9-abbc-f92c623f1486")
 	)
 	(wire
 		(pts
@@ -1324,6 +1406,16 @@
 	)
 	(wire
 		(pts
+			(xy 82.55 80.01) (xy 82.55 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "235c2b15-096a-467b-aa9e-cc503f3a731f")
+	)
+	(wire
+		(pts
 			(xy 104.14 125.73) (xy 104.14 77.47)
 		)
 		(stroke
@@ -1331,6 +1423,16 @@
 			(type default)
 		)
 		(uuid "23e14daa-4158-4e20-826d-058b87001a1d")
+	)
+	(wire
+		(pts
+			(xy 82.55 146.05) (xy 86.36 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "296200a8-40b4-4dfa-be62-768750ef899c")
 	)
 	(wire
 		(pts
@@ -1421,6 +1523,16 @@
 			(type default)
 		)
 		(uuid "477a18c9-1332-4e29-ae0f-23fc26e5572b")
+	)
+	(wire
+		(pts
+			(xy 86.36 119.38) (xy 86.36 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51422959-4f46-4c9f-87d8-7ffe0e626081")
 	)
 	(wire
 		(pts
@@ -1534,7 +1646,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 95.25) (xy 86.36 92.71)
+			(xy 86.36 147.32) (xy 86.36 146.05)
 		)
 		(stroke
 			(width 0)
@@ -1574,6 +1686,16 @@
 	)
 	(wire
 		(pts
+			(xy 82.55 119.38) (xy 86.36 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e0f3792-95e8-48f3-89f6-5cfe74e24a54")
+	)
+	(wire
+		(pts
 			(xy 106.68 80.01) (xy 168.91 80.01)
 		)
 		(stroke
@@ -1584,7 +1706,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 80.01) (xy 82.55 82.55)
+			(xy 82.55 78.74) (xy 82.55 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1604,16 +1726,6 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 78.74) (xy 82.55 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "928ddb6a-1300-4d79-b3ee-2ecd97ccf8cc")
-	)
-	(wire
-		(pts
 			(xy 217.17 71.12) (xy 217.17 74.93)
 		)
 		(stroke
@@ -1621,6 +1733,16 @@
 			(type default)
 		)
 		(uuid "94223d62-7cfa-4ff3-a3ba-1542c4442933")
+	)
+	(wire
+		(pts
+			(xy 86.36 104.14) (xy 86.36 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94e3c09d-7c19-44c2-a61d-70fc6457669a")
 	)
 	(wire
 		(pts
@@ -1721,6 +1843,16 @@
 			(type default)
 		)
 		(uuid "c342bb38-090f-4a43-be54-f8bd0647cae6")
+	)
+	(wire
+		(pts
+			(xy 86.36 146.05) (xy 86.36 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c65a64e9-9296-4707-b08e-f3c75c8c0e23")
 	)
 	(wire
 		(pts
@@ -1851,6 +1983,16 @@
 			(type default)
 		)
 		(uuid "f4042d02-6f1c-4551-9d82-94e13489b432")
+	)
+	(wire
+		(pts
+			(xy 82.55 104.14) (xy 86.36 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5563f33-74b2-45ba-9e50-2315a89eebd5")
 	)
 	(wire
 		(pts
@@ -2261,7 +2403,7 @@
 	)
 	(symbol
 		(lib_id "G-Love:GND")
-		(at 86.36 95.25 0)
+		(at 86.36 147.32 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2272,7 +2414,7 @@
 		(fields_autoplaced yes)
 		(uuid "42874858-ac15-43b4-a47b-7ec95bbda1a1")
 		(property "Reference" "GND01"
-			(at 86.36 98.806 0)
+			(at 86.36 150.876 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2283,7 +2425,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 88.9 96.5199 0)
+			(at 88.9 148.5899 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2295,7 +2437,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 86.36 95.25 0)
+			(at 86.36 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2306,7 +2448,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 86.36 95.25 0)
+			(at 86.36 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2317,7 +2459,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 86.36 95.25 0)
+			(at 86.36 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2328,7 +2470,7 @@
 			)
 		)
 		(property "Minimum quantity per command" ""
-			(at 86.36 95.25 0)
+			(at 86.36 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2339,7 +2481,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 86.36 95.25 0)
+			(at 86.36 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2350,7 +2492,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 86.36 95.25 0)
+			(at 86.36 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2361,7 +2503,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 86.36 95.25 0)
+			(at 86.36 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2372,7 +2514,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 86.36 95.25 0)
+			(at 86.36 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2383,7 +2525,7 @@
 			)
 		)
 		(property "MPN" ""
-			(at 86.36 95.25 0)
+			(at 86.36 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2394,7 +2536,7 @@
 			)
 		)
 		(property "OC_FARNELL" ""
-			(at 86.36 95.25 0)
+			(at 86.36 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2405,7 +2547,7 @@
 			)
 		)
 		(property "OC_NEWARK" ""
-			(at 86.36 95.25 0)
+			(at 86.36 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2416,7 +2558,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 86.36 95.25 0)
+			(at 86.36 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2427,7 +2569,7 @@
 			)
 		)
 		(property "PROD_ID" ""
-			(at 86.36 95.25 0)
+			(at 86.36 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2438,7 +2580,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 86.36 95.25 0)
+			(at 86.36 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2449,7 +2591,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 86.36 95.25 0)
+			(at 86.36 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3428,252 +3570,6 @@
 		)
 	)
 	(symbol
-		(lib_id "G-Love:FPC_17")
-		(at 72.39 111.76 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b2fa4e40-dd53-472a-a613-8f6ce9065421")
-		(property "Reference" "J01"
-			(at 71.755 74.93 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 72.39 111.76 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MyGlove:FPC 14"
-			(at 72.39 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 72.39 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 72.39 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Availability" ""
-			(at 72.39 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 72.39 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MF" ""
-			(at 72.39 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MP" ""
-			(at 72.39 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 72.39 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "OC_FARNELL" ""
-			(at 72.39 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "OC_NEWARK" ""
-			(at 72.39 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PACKAGE" ""
-			(at 72.39 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PROD_ID" ""
-			(at 72.39 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Package" ""
-			(at 72.39 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
-			(at 72.39 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "5"
-			(uuid "f7b77b40-3729-4c66-adc1-3e0e5181c03c")
-		)
-		(pin "12"
-			(uuid "a44ed890-f346-4cc8-998f-08a8490937df")
-		)
-		(pin "9"
-			(uuid "f06c7685-bc3c-4339-934e-4f30e7e88ad1")
-		)
-		(pin "16"
-			(uuid "04560ad3-dbbf-407d-aadb-b29abeb85e7d")
-		)
-		(pin "8"
-			(uuid "91e71c00-a853-48b4-ba0a-54d2c1fb1224")
-		)
-		(pin "2"
-			(uuid "3309aea9-1bb2-47e7-8b3e-39f5f2f2daca")
-		)
-		(pin "11"
-			(uuid "9b07843e-dbeb-422e-968a-a19f532dcec0")
-		)
-		(pin "10"
-			(uuid "8d180c16-dcbe-42a3-96e2-4c40a563189f")
-		)
-		(pin "6"
-			(uuid "3493ae77-075e-4b9a-aad9-aea6b6e2cbb7")
-		)
-		(pin "14"
-			(uuid "dccd12e2-81f9-4b84-a674-64d2a1ffbcf0")
-		)
-		(pin "4"
-			(uuid "02adbd91-4cc3-43df-9fcd-43819c1a526a")
-		)
-		(pin "15"
-			(uuid "a8a4bb0f-0387-4d39-83a1-0329266806af")
-		)
-		(pin "1"
-			(uuid "918ed345-8c99-44a5-8567-2ee3f8d5c807")
-		)
-		(pin "3"
-			(uuid "a7a50859-2d22-46d9-9e7e-f73792650848")
-		)
-		(pin "7"
-			(uuid "aa42d1f5-817d-412c-8d1e-0ac2c837ffdc")
-		)
-		(pin "13"
-			(uuid "0c9245f2-8942-4908-a895-38a405c09eeb")
-		)
-		(pin "17"
-			(uuid "1747a531-2658-4a48-9962-733a5fd72af8")
-		)
-		(instances
-			(project "G-Love"
-				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
-					(reference "J01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "G-Love:PWR_FLG")
 		(at 273.05 158.75 180)
 		(unit 1)
@@ -4030,6 +3926,261 @@
 		)
 	)
 	(symbol
+		(lib_id "G-Love:FPC_20_2561_328P")
+		(at 72.39 111.76 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f029375c-1a49-4c58-91db-642bade89cc1")
+		(property "Reference" "J05"
+			(at 71.755 74.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 72.39 111.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:FPC 20_2561_328P"
+			(at 46.99 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 72.39 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 72.39 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 72.39 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 72.39 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 72.39 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 72.39 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 72.39 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OC_FARNELL" ""
+			(at 72.39 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OC_NEWARK" ""
+			(at 72.39 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 72.39 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PROD_ID" ""
+			(at 72.39 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 72.39 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 72.39 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e57fff0a-dd41-4233-971c-4dfc0f2d0d80")
+		)
+		(pin "2"
+			(uuid "1cd5539a-77df-45fd-81e7-58230d6fbca6")
+		)
+		(pin "3"
+			(uuid "f9c6f292-4db6-4e1d-939d-ab3a834dd188")
+		)
+		(pin "4"
+			(uuid "1090be99-3f72-4df7-8047-21ed01628626")
+		)
+		(pin "5"
+			(uuid "ff21a283-818d-4237-ad72-1dba09722508")
+		)
+		(pin "6"
+			(uuid "20349e7d-f327-4bef-b5c3-45194de7be5a")
+		)
+		(pin "7"
+			(uuid "f7a43a75-cd5d-4e5a-b8e6-3c2526ba630e")
+		)
+		(pin "8"
+			(uuid "96946514-19ad-44f3-be20-a5ddd058ad3f")
+		)
+		(pin "10"
+			(uuid "4ddb9ae2-0bbc-472c-9e70-df4ff1d7ae52")
+		)
+		(pin "11"
+			(uuid "a7f00277-0544-49a6-96a6-355f7bc97815")
+		)
+		(pin "12"
+			(uuid "b008fed0-4d82-4d36-a4f9-782234e42b05")
+		)
+		(pin "14"
+			(uuid "15068be0-371c-457e-a32d-31c123287a1f")
+		)
+		(pin "15"
+			(uuid "1d2aa085-92c3-412d-8dc8-314c0d9b7e27")
+		)
+		(pin "16"
+			(uuid "d0119ba6-bb46-4b76-aee0-911a94d5756f")
+		)
+		(pin "17"
+			(uuid "ffe4643c-9ee6-46d5-bbd5-96abbb7cc7cb")
+		)
+		(pin "18"
+			(uuid "9d22fea8-f050-4b42-bf89-809454a3a475")
+		)
+		(pin "19"
+			(uuid "f64b596d-9cbf-4563-89fe-67fb7c9cd47e")
+		)
+		(pin "9"
+			(uuid "b0094789-0fc7-4f61-899f-afee98ae2fe4")
+		)
+		(pin "13"
+			(uuid "3a073388-51b0-4b3e-8d16-3f4235d58016")
+		)
+		(pin "20"
+			(uuid "5a52ee7c-db26-43dc-9b7e-c3f064141c12")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159"
+					(reference "J05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "G-Love:VCCL")
 		(at 82.55 77.47 0)
 		(unit 1)
@@ -4147,16 +4298,6 @@
 				(justify left top)
 			)
 		)
-		(pin "328P_ADC_MUX_INH" output
-			(at 205.74 97.79 0)
-			(uuid "e2395836-0c6a-4661-80a2-4c4af2236154")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "328P_ADC_MUX_SELECT_A" output
 			(at 205.74 95.25 0)
 			(uuid "1a5c5487-7487-412b-a88d-de51ea045e0a")
@@ -4260,6 +4401,16 @@
 		(pin "LED_SCK" output
 			(at 205.74 113.03 0)
 			(uuid "87b67b3c-cd40-43d8-b184-a981bca35c47")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "HALL" input
+			(at 205.74 106.68 0)
+			(uuid "9c6aad59-7c37-4b1c-92dc-8b20e1d4ad76")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4482,7 +4633,7 @@
 				(justify left)
 			)
 		)
-		(pin "ADC_X_Output" input
+		(pin "ADC_X_Output" output
 			(at 224.79 101.6 180)
 			(uuid "837c1c52-846b-445d-8f1c-5d7b38fffbc6")
 			(effects
@@ -4492,7 +4643,7 @@
 				(justify left)
 			)
 		)
-		(pin "ADC_Y_Output" input
+		(pin "ADC_Y_Output" output
 			(at 224.79 104.14 180)
 			(uuid "1cc45b26-3233-4934-99a6-3dea2f1dc91e")
 			(effects
@@ -4515,16 +4666,6 @@
 		(pin "I2C_IMU_SCL" input
 			(at 224.79 83.82 180)
 			(uuid "ecf87ed2-2409-430f-8781-a24fd4f5bccf")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "ADC_Mux_Inhibit" input
-			(at 224.79 97.79 180)
-			(uuid "944a8d23-e35a-49e2-85fe-c82cbca2b76e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4555,6 +4696,16 @@
 		(pin "VCCL" input
 			(at 224.79 116.84 180)
 			(uuid "175651ec-52b7-4dae-a39b-884d83a6817c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "HALL" output
+			(at 224.79 106.68 180)
+			(uuid "3a3d442c-ac4a-4db2-8c0f-e12b88aaf840")
 			(effects
 				(font
 					(size 1.27 1.27)
