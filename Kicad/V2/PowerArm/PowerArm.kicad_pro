@@ -503,12 +503,20 @@
         "clearance": 0.3,
         "name": "PWR",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 0,
+        "priority": 1,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.5,
         "tuning_profile": "",
         "via_diameter": 0.8,
         "via_drill": 0.5
+      },
+      {
+        "diff_pair_gap": 0.01,
+        "name": "Quarz",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "tuning_profile": ""
       }
     ],
     "meta": {
@@ -532,6 +540,10 @@
       {
         "netclass": "PWR",
         "pattern": "VBUS"
+      },
+      {
+        "netclass": "Quarz",
+        "pattern": "XTAL"
       }
     ]
   },
