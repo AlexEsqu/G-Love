@@ -2076,6 +2076,12 @@
 		(uuid "5400cc5e-a62b-4810-a569-11d6199f290c")
 	)
 	(junction
+		(at 133.35 69.85)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5d2ef3c9-3ea7-4384-bbde-393a5833c2ee")
+	)
+	(junction
 		(at 104.14 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2951,7 +2957,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 69.85) (xy 134.62 69.85)
+			(xy 130.81 69.85) (xy 133.35 69.85)
 		)
 		(stroke
 			(width 0)
@@ -2968,6 +2974,16 @@
 			(type default)
 		)
 		(uuid "eab9c3df-b52c-495a-b916-362b6dc2c20e")
+	)
+	(wire
+		(pts
+			(xy 133.35 69.85) (xy 134.62 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0152e54-6a19-4ddd-b4e2-e8f1e1be557a")
 	)
 	(wire
 		(pts
@@ -6203,6 +6219,84 @@
 			(project "G-Love"
 				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/1b9234a1-5071-4fc1-93e6-8cf4c57e8659"
 					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:TestPoint")
+		(at 133.35 69.85 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9be7a72b-eda8-48fc-83c8-f082dc61f1d8")
+		(property "Reference" "TP8"
+			(at 135.89 69.8499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" ""
+			(at 133.35 69.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:TestPoint_Pad_D1.0mm"
+			(at 133.35 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 133.35 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 133.35 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e4f39968-03b5-4092-bb7c-5591be4e3680")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/1b9234a1-5071-4fc1-93e6-8cf4c57e8659"
+					(reference "TP8")
 					(unit 1)
 				)
 			)

@@ -40,8 +40,8 @@
         "other_text_upright": false,
         "pads": {
           "drill": 0.0,
-          "height": 2.2,
-          "width": 1.8
+          "height": 0.85,
+          "width": 0.3
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -76,7 +76,12 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "lib_footprint_issues|133500000|91460000|c30b4360-9aef-488e-81bf-69570ea25563|00000000-0000-0000-0000-000000000000",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -741,7 +746,7 @@
           "show": false
         }
       ],
-      "filter_string": "",
+      "filter_string": "J",
       "group_symbols": true,
       "include_excluded_from_bom": true,
       "name": "",
@@ -797,7 +802,7 @@
         "uuid": "808bc5ea-49ac-4454-ba77-8b20d01ce159"
       }
     ],
-    "used_designators": "PF1,FS_1-6,SW_1-2,R1-54,TP1-18,flow1-31,#GND1-3,D1-10,U1-14,F1,GND1-58,GND60-71,GND147,GND150,GND156,GND166-182,CD1,FB1,FSR_1-5,FSR_8-11,+5V1-22,C1-64,U_1,J1-10,PWR1-22,#FLG1-2,SW1-2,GNDA1,J_1-3,FS1-5,#PWR1-40,#PWR42-44,Y1-2",
+    "used_designators": "FB1,CD1,GND1-58,GND60-71,GND147,GND150,GND156,GND166-182,F1,U1-14,D1-10,#GND1-3,flow1-31,TP1-18,R1-54,SW_1-2,FS_1-6,PF1,Y1-2,#PWR1-40,#PWR42-44,FS1-5,J_1-3,GNDA1,SW1-2,#FLG1-2,PWR1-22,J1-10,C1-64,U_1,+5V1-22,FSR_1-5,FSR_8-11",
     "variants": []
   },
   "sheets": [
