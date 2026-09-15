@@ -256,6 +256,24 @@
 						)
 					)
 				)
+				(pin power_in line
+					(at 0 6.35 270)
+					(length 3.81)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "MP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
 			(embedded_fonts no)
 		)
@@ -445,6 +463,25 @@
 						)
 					)
 					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -6.35 -6.35 0)
+					(length 5.08)
+					(hide yes)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "MP"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -682,7 +719,7 @@
 	)
 	(text "Just meant to hold the LED Band"
 		(exclude_from_sim no)
-		(at 139.7 188.214 0)
+		(at 143.764 188.214 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1517,6 +1554,9 @@
 		(pin "4"
 			(uuid "fb3d02d8-df07-447e-9089-f65c356f4fc2")
 		)
+		(pin "MP"
+			(uuid "33b8331b-73b4-4198-a663-68d5b6a88a10")
+		)
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
@@ -1538,7 +1578,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0132aa61-5b2f-41c9-bec4-145c2f73b81d")
-		(property "Reference" "GND04"
+		(property "Reference" "GND08"
 			(at 60.96 150.876 0)
 			(hide yes)
 			(show_name no)
@@ -1599,7 +1639,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
-					(reference "GND04")
+					(reference "GND08")
 					(unit 1)
 				)
 			)
@@ -1617,7 +1657,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "069f2dff-914b-4d89-bf4f-ee5bb3c04feb")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR05"
 			(at 53.34 187.198 0)
 			(hide yes)
 			(show_name no)
@@ -1677,7 +1717,86 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
-					(reference "#PWR07")
+					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:GND")
+		(at 124.46 110.49 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2070d9c8-24f4-449f-823c-5c8953541591")
+		(property "Reference" "GND014"
+			(at 124.46 114.046 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 124.46 114.046 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 124.46 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 124.46 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dacea4f5-d6d7-4032-a3d7-08d6f8a8b964")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "GND014")
 					(unit 1)
 				)
 			)
@@ -1753,6 +1872,9 @@
 		(pin "2"
 			(uuid "7f1d560a-f4f2-45a5-8e23-e23e218c57e3")
 		)
+		(pin "MP"
+			(uuid "aa80f7e4-cea7-490c-99ce-346e750c5f80")
+		)
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
@@ -1774,7 +1896,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "53518770-bfdc-4c23-a49e-1120ebf85ca4")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR09"
 			(at 57.15 107.188 0)
 			(hide yes)
 			(show_name no)
@@ -1834,7 +1956,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
-					(reference "#PWR011")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -1852,7 +1974,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "56c24723-e5af-4d50-856c-bcc52d6813aa")
-		(property "Reference" "GND06"
+		(property "Reference" "GND010"
 			(at 63.5 70.866 0)
 			(hide yes)
 			(show_name no)
@@ -1913,7 +2035,86 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
-					(reference "GND06")
+					(reference "GND010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:GND")
+		(at 124.46 35.56 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "588e3420-7eb6-42bb-9ead-3c44946cb20c")
+		(property "Reference" "GND012"
+			(at 124.46 39.116 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 124.46 39.116 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 124.46 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 124.46 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3b8382d5-a366-4402-893f-4507b880c18f")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "GND012")
 					(unit 1)
 				)
 			)
@@ -1931,7 +2132,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "75c4a675-162f-419f-97b9-7f8f9e8a9418")
-		(property "Reference" "GND05"
+		(property "Reference" "GND09"
 			(at 63.5 35.306 0)
 			(hide yes)
 			(show_name no)
@@ -1992,7 +2193,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
-					(reference "GND05")
+					(reference "GND09")
 					(unit 1)
 				)
 			)
@@ -2068,10 +2269,92 @@
 		(pin "2"
 			(uuid "a63a6e1b-7e44-49d8-a01f-5cfb4f47db36")
 		)
+		(pin "MP"
+			(uuid "ba0d8cce-627b-48ab-8351-b6f31f85f145")
+		)
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
 					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:GND")
+		(at 124.46 71.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "850cc171-bd14-485e-ad8f-e1f87478b1be")
+		(property "Reference" "GND013"
+			(at 124.46 74.676 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 124.46 74.676 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 124.46 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 124.46 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "58a07167-c6b7-48be-9a5a-10b519cb7de0")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "GND013")
 					(unit 1)
 				)
 			)
@@ -2154,6 +2437,9 @@
 		(pin "4"
 			(uuid "23fdb1f6-5eb1-4603-a623-50193eae375d")
 		)
+		(pin "MP"
+			(uuid "cfe42034-69ea-414c-8ff5-5ee951fe5de9")
+		)
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
@@ -2233,6 +2519,9 @@
 		(pin "2"
 			(uuid "287978e6-4830-44c9-a9b5-4969d16c7db2")
 		)
+		(pin "MP"
+			(uuid "48e588c1-6973-4a2c-aa5e-8812931e1f60")
+		)
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
@@ -2253,7 +2542,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a50dcea0-c4c7-4758-978b-c40b9fc08c96")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR07"
 			(at 57.15 32.258 0)
 			(hide yes)
 			(show_name no)
@@ -2313,7 +2602,86 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
-					(reference "#PWR09")
+					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:GND")
+		(at 124.46 149.86 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b8afad44-3a28-483c-a04e-2fea83274d4e")
+		(property "Reference" "GND015"
+			(at 124.46 153.416 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 124.46 153.416 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 124.46 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 124.46 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1e02fae4-dc74-45df-b0b0-49768f307b80")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "GND015")
 					(unit 1)
 				)
 			)
@@ -2388,6 +2756,9 @@
 		)
 		(pin "2"
 			(uuid "e21db0a5-f8f4-4a0f-9ff1-e45d1fbcc1e4")
+		)
+		(pin "MP"
+			(uuid "937b6050-192b-4d76-88e7-74e1b5598189")
 		)
 		(instances
 			(project "HandFPC"
@@ -2475,10 +2846,92 @@
 		(pin "4"
 			(uuid "655fe9f3-d77b-4684-b0a3-fed9a8940241")
 		)
+		(pin "MP"
+			(uuid "a881f628-2ffc-4d95-8152-6645356a73d2")
+		)
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
 					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:GND")
+		(at 125.73 189.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "be1b5ddf-c0d6-4a50-a9db-cdada8926d4b")
+		(property "Reference" "GND016"
+			(at 125.73 192.786 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 125.73 192.786 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 125.73 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 125.73 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 125.73 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2911fb58-58bd-42a7-aa31-94fedf9cfaf1")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "GND016")
 					(unit 1)
 				)
 			)
@@ -2561,6 +3014,9 @@
 		(pin "4"
 			(uuid "39ac8e27-f778-4c97-ac62-9ae3f59c234a")
 		)
+		(pin "MP"
+			(uuid "ea412d79-a46a-4efd-8caa-26d7b8ee9736")
+		)
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
@@ -2582,7 +3038,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e2e4ba1e-6500-4b4d-96dc-4c603fd3e9d7")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR08"
 			(at 57.15 66.548 0)
 			(hide yes)
 			(show_name no)
@@ -2642,7 +3098,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
-					(reference "#PWR010")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -2660,7 +3116,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e7b63b26-a1d5-4000-8c4b-52a5d239f936")
-		(property "Reference" "GND03"
+		(property "Reference" "GND07"
 			(at 59.69 191.516 0)
 			(hide yes)
 			(show_name no)
@@ -2721,7 +3177,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
-					(reference "GND03")
+					(reference "GND07")
 					(unit 1)
 				)
 			)
@@ -2804,6 +3260,9 @@
 		(pin "4"
 			(uuid "59e6bdd2-4883-4099-bba7-9b841303a009")
 		)
+		(pin "MP"
+			(uuid "d64ea1b8-36d1-4855-b818-027f7c683774")
+		)
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
@@ -2825,7 +3284,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f4405f76-6468-4578-9f76-9193bbd5adfb")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR06"
 			(at 54.61 146.558 0)
 			(hide yes)
 			(show_name no)
@@ -2885,7 +3344,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
-					(reference "#PWR08")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -2962,6 +3421,9 @@
 		(pin "2"
 			(uuid "1e2ad759-2e7e-4410-900d-47c983a6dcd6")
 		)
+		(pin "MP"
+			(uuid "7f16580d-c16a-455a-8381-972208d20a92")
+		)
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
@@ -2983,7 +3445,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fd911764-5d2d-4d41-a202-d9d58c07ca4c")
-		(property "Reference" "GND07"
+		(property "Reference" "GND011"
 			(at 63.5 111.506 0)
 			(hide yes)
 			(show_name no)
@@ -3044,7 +3506,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
-					(reference "GND07")
+					(reference "GND011")
 					(unit 1)
 				)
 			)

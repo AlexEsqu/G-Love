@@ -452,7 +452,7 @@
 				)
 			)
 			(symbol "ICM-42688-P_I2C_1_1"
-				(pin bidirectional line
+				(pin power_in line
 					(at 17.78 1.27 180)
 					(length 3.556)
 					(name "AP_AD0"
@@ -1409,7 +1409,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4b2a34f5-316c-439a-9533-eaaf48f2d8a1")
-		(property "Reference" "GND011"
+		(property "Reference" "GND020"
 			(at 76.2 55.626 0)
 			(hide yes)
 			(show_name no)
@@ -1470,7 +1470,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
-					(reference "GND011")
+					(reference "GND020")
 					(unit 1)
 				)
 			)
@@ -1487,7 +1487,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "591785f3-0e45-4a32-85d7-8b886fe60277")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR012"
 			(at 66.04 41.148 0)
 			(hide yes)
 			(show_name no)
@@ -1547,7 +1547,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
-					(reference "#PWR014")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -1565,7 +1565,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6b125121-fc0f-460b-8702-6c9489f419c1")
-		(property "Reference" "GND09"
+		(property "Reference" "GND018"
 			(at 73.66 84.836 0)
 			(hide yes)
 			(show_name no)
@@ -1626,7 +1626,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
-					(reference "GND09")
+					(reference "GND018")
 					(unit 1)
 				)
 			)
@@ -1644,7 +1644,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "87d6daaa-2a6d-47be-94af-c819ddecd8b2")
-		(property "Reference" "GND017"
+		(property "Reference" "GND021"
 			(at 88.9 73.406 0)
 			(hide yes)
 			(show_name no)
@@ -1705,7 +1705,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
-					(reference "GND017")
+					(reference "GND021")
 					(unit 1)
 				)
 			)
@@ -1723,7 +1723,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8d0dc300-cfbe-4baf-945c-4af49cd39503")
-		(property "Reference" "GND010"
+		(property "Reference" "GND019"
 			(at 76.2 49.276 0)
 			(hide yes)
 			(show_name no)
@@ -1784,7 +1784,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
-					(reference "GND010")
+					(reference "GND019")
 					(unit 1)
 				)
 			)
@@ -1802,7 +1802,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b03516f7-1940-4258-9c28-d31fcdf4ecb7")
-		(property "Reference" "GND08"
+		(property "Reference" "GND017"
 			(at 53.34 51.816 0)
 			(hide yes)
 			(show_name no)
@@ -1863,7 +1863,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
-					(reference "GND08")
+					(reference "GND017")
 					(unit 1)
 				)
 			)
@@ -2074,7 +2074,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f267e7c5-c25d-4172-b96f-967e5e499d30")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR013"
 			(at 71.12 41.148 0)
 			(hide yes)
 			(show_name no)
@@ -2134,7 +2134,7 @@
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/f73c6c7b-472d-4c5d-b434-31d2ac317fba"
-					(reference "#PWR015")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
