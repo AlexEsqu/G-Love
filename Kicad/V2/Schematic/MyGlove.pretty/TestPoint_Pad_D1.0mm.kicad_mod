@@ -5,21 +5,21 @@
 	(layer "F.Cu")
 	(descr "SMD pad as test Point, diameter 1.0mm")
 	(tags "test point SMD pad")
-	(property "Reference" "REF**"
-		(at 0.5 -2 0)
+	(property "Reference" "TP12"
+		(at -0.025 1.85 0)
 		(layer "F.SilkS")
-		(uuid "388757af-59db-459a-b6ee-fa5fa7076323")
+		(uuid "38c5bb24-8df3-44e2-af9e-35560544228b")
 		(effects
 			(font
-				(size 1.2 1.2)
+				(size 1 1)
 				(thickness 0.15)
 			)
 		)
 	)
-	(property "Value" "TestPoint_Pad_D1.0mm"
+	(property "Value" "~"
 		(at 0 1.55 0)
 		(layer "F.Fab")
-		(uuid "3d6e2fd3-0c66-4700-9831-0394f1269fb2")
+		(uuid "c9d23a65-1f66-41b3-86f3-1ad1469c3c3f")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "95d46d24-a5ae-47f8-9881-fde718c4cf3b")
+		(uuid "0adba167-a5bb-4103-8339-899d2105c20f")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -45,7 +45,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "8230396e-3880-47ad-b771-b55736eef39a")
+		(uuid "b2b4e869-22e2-4d39-8cbb-3e0fb4508b41")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -53,7 +53,8 @@
 			)
 		)
 	)
-	(attr exclude_from_pos_files exclude_from_bom)
+	(sheetname "/ATMega2561/")
+	(sheetfile "ATMega2561.kicad_sch")
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_circle
 		(center 0 0)
@@ -64,7 +65,7 @@
 		)
 		(fill no)
 		(layer "F.SilkS")
-		(uuid "adaabeac-733a-45b4-bb31-89cb2982ec62")
+		(uuid "2db74aaa-5747-4a2a-8dd5-cbda22bae19a")
 	)
 	(fp_circle
 		(center 0 0)
@@ -75,12 +76,12 @@
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "3cf24420-3e0b-4990-8189-d91db716c14e")
+		(uuid "4064b673-61c1-4e6f-959d-6e65d60c0d5a")
 	)
 	(fp_text user "${REFERENCE}"
 		(at 0 -1.45 0)
 		(layer "F.Fab")
-		(uuid "3982e71a-0db4-4cfb-8d5e-07df7ec2a6bb")
+		(uuid "f94ae8c4-78e4-414a-aa0b-3dad283760a2")
 		(effects
 			(font
 				(size 1 1)
@@ -88,17 +89,22 @@
 			)
 		)
 	)
-	(pad "" smd circle
-		(at 0 0)
-		(size 1.02 1.02)
-		(layers "F.Mask" "F.Paste")
-		(uuid "00a811b6-7d1d-4cf1-858c-7768c503065a")
-	)
 	(pad "1" smd circle
 		(at 0 0)
-		(size 1.32 1.32)
-		(layers "F.Cu")
-		(uuid "b4244eed-b249-41b7-b6e7-c6901dca19d8")
+		(size 1 1)
+		(layers "F.Cu" "F.Mask")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges no)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "11743e80-ebb1-417a-a9de-164691cf307c")
 	)
 	(embedded_fonts no)
 )

@@ -11399,7 +11399,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "J2"
-			(at 0.508 -9.906 0)
+			(at 0.508 4.572 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11455,7 +11455,7 @@
 		(symbol "Conn_4_pins_2_PWR_0_1"
 			(rectangle
 				(start -2.54 3.048)
-				(end 2.54 -8.128)
+				(end 2.54 -8.89)
 				(stroke
 					(width 0)
 					(type default)
@@ -11583,9 +11583,8 @@
 				)
 			)
 			(pin power_in line
-				(at -6.35 -6.35 0)
-				(length 5.08)
-				(hide yes)
+				(at 1.27 -12.7 90)
+				(length 3.81)
 				(name ""
 					(effects
 						(font
@@ -11593,7 +11592,7 @@
 						)
 					)
 				)
-				(number "MP"
+				(number "5"
 					(effects
 						(font
 							(size 1.27 1.27)
