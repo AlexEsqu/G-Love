@@ -3,12 +3,12 @@ F_CPU    = 16000000UL
 DEVICE1   = atmega328p
 BAUDRATE1 = 115200
 PORT1     = /dev/ttyACM0
-CODEDIR1  = Code_atmega328P
+CODEDIR1  = srcs/main
 
 DEVICE2   = atmega2560
 BAUDRATE2 = 115200
 PORT2     = /dev/ttyACM1
-CODEDIR2  = Code_atmega2560
+CODEDIR2  = srcs/main
 
 NAME     = main
 
@@ -20,19 +20,22 @@ HEX2     = ${NAME}_mega.hex
 CC       = avr-gcc
 OBJCOPY  = avr-objcopy
 
-LIBDIR   = lib
+LIBDIR   = srcs/lib
 
 SRCS1    = $(CODEDIR1)/main.c \
-           $(LIBDIR)/adc.c \
-           $(LIBDIR)/i2c.c \
-           $(LIBDIR)/spi.c \
-           $(LIBDIR)/uart.c
+			$(CODEDIR1)/atm328p.c \
+        	$(LIBDIR)/adc.c \
+        	$(LIBDIR)/i2c.c \
+        	$(LIBDIR)/spi.c \
+        	$(LIBDIR)/uart.c \
+			srcs/muxSelect/mux.c
 
 SRCS2    = $(CODEDIR2)/main.c \
-           $(LIBDIR)/adc.c \
-           $(LIBDIR)/i2c.c \
-           $(LIBDIR)/spi.c \
-           $(LIBDIR)/uart.c
+			$(CODEDIR2)/atm2560.c \
+        	$(LIBDIR)/adc.c \
+        	$(LIBDIR)/i2c.c \
+        	$(LIBDIR)/spi.c \
+        	$(LIBDIR)/uart.c
 
 OBJS1    = $(SRCS1:.c=_uno.o)
 OBJS2    = $(SRCS2:.c=_mega.o)

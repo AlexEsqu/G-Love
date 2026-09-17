@@ -1,4 +1,4 @@
-#include "../includes/main.h"
+#include "../../includes/main.h"
 
 //UART0
 void uart0_init(unsigned long baudrate) {

@@ -1,4 +1,4 @@
-#include "../includes/main.h"
+#include "../../includes/main.h"
 
 void adc_init() {
 	// DATASHEET PAGE 258 SECTION 24.9.2 //NOTE1
