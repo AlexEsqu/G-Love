@@ -5,7 +5,7 @@
       "Application": "Pcbnew",
       "Version": "10.0.2"
     },
-    "CreationDate": "2026-09-18T18:58:37+02:00"
+    "CreationDate": "2026-09-18T19:38:27+02:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
@@ -41,6 +41,16 @@
     {
       "Path": "HandFPC-B_Cu.gbl",
       "FileFunction": "Copper,L2,Bot",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "HandFPC-F_Adhesive.gta",
+      "FileFunction": "Glue,Top",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "HandFPC-B_Adhesive.gba",
+      "FileFunction": "Glue,Bot",
       "FilePolarity": "Positive"
     },
     {

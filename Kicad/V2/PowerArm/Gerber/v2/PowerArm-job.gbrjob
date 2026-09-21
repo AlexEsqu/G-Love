@@ -5,21 +5,21 @@
       "Application": "Pcbnew",
       "Version": "10.0.2"
     },
-    "CreationDate": "2026-09-18T18:58:37+02:00"
+    "CreationDate": "2026-09-16T19:35:23+02:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
-      "Name": "HandFPC",
-      "GUID": "48616e64-4650-4432-9e6b-696361645f70",
+      "Name": "PowerArm",
+      "GUID": "506f7765-7241-4726-9d2e-6b696361645f",
       "Revision": "rev?"
     },
     "Size": {
-      "X": 144.7425,
-      "Y": 200.1557
+      "X": 60.175,
+      "Y": 79.175
     },
     "LayerNumber": 2,
-    "BoardThickness": 0.115,
-    "Finish": "ENIG"
+    "BoardThickness": 1.6,
+    "Finish": "None"
   },
   "DesignRules": [
     {
@@ -34,53 +34,48 @@
   ],
   "FilesAttributes": [
     {
-      "Path": "HandFPC-F_Cu.gtl",
+      "Path": "PowerArm-F_Cu.gtl",
       "FileFunction": "Copper,L1,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "HandFPC-B_Cu.gbl",
+      "Path": "PowerArm-B_Cu.gbl",
       "FileFunction": "Copper,L2,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "HandFPC-F_Paste.gtp",
+      "Path": "PowerArm-F_Paste.gtp",
       "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "HandFPC-B_Paste.gbp",
+      "Path": "PowerArm-B_Paste.gbp",
       "FileFunction": "SolderPaste,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "HandFPC-F_Silkscreen.gto",
+      "Path": "PowerArm-F_Silkscreen.gto",
       "FileFunction": "Legend,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "HandFPC-B_Silkscreen.gbo",
+      "Path": "PowerArm-B_Silkscreen.gbo",
       "FileFunction": "Legend,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "HandFPC-F_Mask.gts",
+      "Path": "PowerArm-F_Mask.gts",
       "FileFunction": "SolderMask,Top",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "HandFPC-B_Mask.gbs",
+      "Path": "PowerArm-B_Mask.gbs",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "HandFPC-Edge_Cuts.gm1",
+      "Path": "PowerArm-Edge_Cuts.gm1",
       "FileFunction": "Profile",
-      "FilePolarity": "Positive"
-    },
-    {
-      "Path": "HandFPC-User_1.gbr",
-      "FileFunction": "Other,User",
       "FilePolarity": "Positive"
     }
   ],
@@ -96,9 +91,8 @@
     },
     {
       "Type": "SolderMask",
-      "Color": "R255G255B0",
+      "Color": "Green",
       "Thickness": 0.01,
-      "Material": "Dry Film",
       "Name": "Top Solder Mask"
     },
     {
@@ -108,9 +102,9 @@
     },
     {
       "Type": "Dielectric",
-      "Color": "R205G130B0",
-      "Thickness": 0.025,
-      "Material": "Polyimide",
+      "Color": "R109G116B75",
+      "Thickness": 1.51,
+      "Material": "FR4",
       "Name": "F.Cu/B.Cu",
       "Notes": "Type: dielectric layer 1 (from F.Cu to B.Cu)"
     },
@@ -121,9 +115,8 @@
     },
     {
       "Type": "SolderMask",
-      "Color": "R255G153B0",
+      "Color": "Green",
       "Thickness": 0.01,
-      "Material": "Dry Film",
       "Name": "Bottom Solder Mask"
     },
     {
