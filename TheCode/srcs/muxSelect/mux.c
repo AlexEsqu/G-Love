@@ -1,13 +1,12 @@
 #include "mux.h"
 #include "../../includes/main.h"
+#include <cstdint>
+#include <stdint.h>
 
 
-
-const float seuilInclinaisonX = 3.0;
-const float seuilInclinaisonY = 3.0;
-const float seuilInclinaisonZ = 3.0;
-
-void selectChannel(int channel) {
+//Channel function used for multiplexer CD4067: 4 select pins and 16 channels
+void selectChannel(int channel)
+{
 	if (channel & 1)
 		PORTD |= (1 << S0);
 	else
@@ -29,7 +28,8 @@ void selectChannel(int channel) {
 		PORTD &= ~(1 << S3);
 }
 
-int readChannel(int channel) {
+int readChannel(int channel)
+{
 	selectChannel(channel);
 	_delay_ms(50);
 	sensorState[channel] = ft_adc_read_10bit();
@@ -71,20 +71,71 @@ t_rgb_color hsvToRgb(uint16_t h, uint8_t s, uint8_t v)
     return (t_rgb_color){r, g, b};
 }
 
+void selectMuxChannel(uint8_t channel)
+{
+	if (channel & 1)
+		PORTC |= (1 << PIN_SEL_C);
+	else
+		PORTC &= ~(1 << PIN_SEL_C);
+
+	if (channel & 2)
+		PORTC |= (1 << PIN_SEL_B);
+	else
+		PORTC &= ~(1 << PIN_SEL_B);
+
+	if (channel & 4)
+		PORTC |= (1 << PIN_SEL_A);
+	else	
+		PORTC &= ~(1 << PIN_SEL_A);
+}
+
+int readMuxChannel(uint8_t channel, uint8_t adcPin)
+{
+	selectMuxChannel(channel);
+	_delay_ms(50);
+	
+	sensorState[channel] = ft_adc_read_10bit();
+
+	uart0_printstr("channel:");
+	uart0_print_10bit(channel);
+	uart0_printstr(" value:");
+	uart0_print_10bit(sensorState[channel]);
+	uart0_printstr("\n");
+	return sensorState[channel];
+}
+
+void readAllMuxChannels(int max) {
+	for (int i = 0; i < max && i < 8; i++)
+	{
+		readMuxChannel(i, PIN_ADC_X);
+		readMuxChannel(i, PIN_ADC_Y);
+	}
+}
+
 void mux_setup()
 {
-	// init selector pins
-	DDRD |= (1 << S0);
-	DDRD |= (1 << S1);
-	DDRD |= (1 << S2);
-	DDRD |= (1 << S3);
+	#ifdef PROTO
+		// init selector pins
+		DDRD |= (1 << S0);
+		DDRD |= (1 << S1);
+		DDRD |= (1 << S2);
+		DDRD |= (1 << S3);
 
-	DDRD |= (1 << EN);
-	PORTD &= ~(1 << EN);
+		DDRD |= (1 << EN);
+		PORTD &= ~(1 << EN);
 
-	//sig is our read pin (A0 on Uno corresponds to PC0 / Channel 0)
-	DDRC &= ~(1 << 0);
-	PORTC &= ~(1 << 0);
+		//sig is our read pin (A0 on Uno corresponds to PC0 / Channel 0)
+		DDRC &= ~(1 << 0);
+		PORTC &= ~(1 << 0);
+	#else
+		//to redo and check
+		DDRC |= (1 << PIN_SEL_A);
+		DDRC |= (1 << PIN_SEL_B);
+		DDRC |= (1 << PIN_SEL_C);
+
+		DDRC &= ~(1 << PIN_ADC_X);
+		DDRC &= ~(1 << PIN_ADC_Y);
+	#endif
 }
 
 void mux_loop() 
