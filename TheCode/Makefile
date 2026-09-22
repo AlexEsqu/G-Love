@@ -28,7 +28,8 @@ SRCS1    = $(CODEDIR1)/main.c \
         	$(LIBDIR)/i2c.c \
         	$(LIBDIR)/spi.c \
         	$(LIBDIR)/uart.c \
-			srcs/muxSelect/mux.c
+			srcs/muxSelect/mux.c \
+			srcs/ledStrip/led.c
 
 SRCS2    = $(CODEDIR2)/main.c \
 			$(CODEDIR2)/atm2560.c \

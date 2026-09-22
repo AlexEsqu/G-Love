@@ -30,6 +30,7 @@ typedef struct s_rgb_color
 void		adc_init();
 uint8_t		ft_adc_read();
 uint16_t 	ft_adc_read_10bit();
+uint16_t    ft_adc_read_channel(uint8_t channel);
 
 // i2c.c
 void 		i2c_init(void);

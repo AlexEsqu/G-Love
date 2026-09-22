@@ -3,14 +3,6 @@
 
 #include "../../includes/main.h"
 
-// Définition des broche pour les LED
-#define NUM_LEDS 144
-#define CLOCK_PIN 13 // Fil CI connecté sur la broche 13
-#define DATA_PIN 11  // Fil DI connecté sur la broche 11
-
-t_rgb_color colors[NUM_LEDS];
-#define brightness 1
-
 #ifdef PROTO
 	// define multiplexer selector pins for arduino uno
 	#define S0 (2)
@@ -30,20 +22,16 @@ t_rgb_color colors[NUM_LEDS];
 	#define PIN_ADC_Y (6) // 19 (ADC6)
 #endif
 
-int sensorState[16];
-
+extern int sensorForce[5];
+extern int sensorFlex[5];
+#define MAX_CHANNEL 8
 
 // CD4097 multiplexer: 4select and 16channel
 void	selectChannel(int channel);
 int		readChannel(int channel);
 void	readAllChannels(int max);
 
-
-t_rgb_color hsvToRgb(uint16_t h, uint8_t s, uint8_t v);
-
-
 void	mux_setup();
 void	mux_loop();
 
-
- #endif
+#endif

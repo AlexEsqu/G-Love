@@ -1,9 +1,12 @@
 #include "mux.h"
 #include "../../includes/main.h"
-#include <cstdint>
+#include "../ledStrip/led.h"
 #include <stdint.h>
 
+int sensorForce[5];
+int sensorFlex[5];
 
+#ifdef PROTO
 //Channel function used for multiplexer CD4067: 4 select pins and 16 channels
 void selectChannel(int channel)
 {
@@ -48,29 +51,9 @@ void readAllChannels(int max) {
 		readChannel(i);
 	}
 }
+#endif
 
-/* Converts a color from HSV to RGB.
- * h is hue, as a number between 0 and 360.
- * s is the saturation, as a number between 0 and 255.
- * v is the value, as a number between 0 and 255. */
-t_rgb_color hsvToRgb(uint16_t h, uint8_t s, uint8_t v)
-{
-    uint8_t f = (h % 60) * 255 / 60;
-    uint8_t p = (255 - s) * (uint16_t)v / 255;
-    uint8_t q = (255 - f * (uint16_t)s / 255) * (uint16_t)v / 255;
-    uint8_t t = (255 - (255 - f) * (uint16_t)s / 255) * (uint16_t)v / 255;
-    uint8_t r = 0, g = 0, b = 0;
-    switch((h / 60) % 6){
-        case 0: r = v; g = t; b = p; break;
-        case 1: r = q; g = v; b = p; break;
-        case 2: r = p; g = v; b = t; break;
-        case 3: r = p; g = q; b = v; break;
-        case 4: r = t; g = p; b = v; break;
-        case 5: r = v; g = p; b = q; break;
-    }
-    return (t_rgb_color){r, g, b};
-}
-
+#ifndef PROTO
 void selectMuxChannel(uint8_t channel)
 {
 	if (channel & 1)
@@ -93,24 +76,38 @@ int readMuxChannel(uint8_t channel, uint8_t adcPin)
 {
 	selectMuxChannel(channel);
 	_delay_ms(50);
-	
-	sensorState[channel] = ft_adc_read_10bit();
 
 	uart0_printstr("channel:");
 	uart0_print_10bit(channel);
 	uart0_printstr(" value:");
-	uart0_print_10bit(sensorState[channel]);
-	uart0_printstr("\n");
-	return sensorState[channel];
+	if (adcPin == 6)
+	{
+		sensorForce[channel] = ft_adc_read_channel(adcPin);
+	
+		uart0_print_10bit(sensorForce[channel]);
+		uart0_printstr("\n");
+		return sensorForce[channel];
+	}
+	else 
+	{
+		sensorFlex[channel] = ft_adc_read_channel(adcPin);
+		
+		uart0_print_10bit(sensorFlex[channel]);
+		uart0_printstr("\n");
+		return sensorFlex[channel];
+	}
+	return (-1);
 }
 
 void readAllMuxChannels(int max) {
-	for (int i = 0; i < max && i < 8; i++)
+	for (int i = 0; i < max && i < MAX_CHANNEL; i++)
 	{
 		readMuxChannel(i, PIN_ADC_X);
 		readMuxChannel(i, PIN_ADC_Y);
 	}
 }
+#endif
+
 
 void mux_setup()
 {
@@ -133,6 +130,7 @@ void mux_setup()
 		DDRC |= (1 << PIN_SEL_B);
 		DDRC |= (1 << PIN_SEL_C);
 
+		
 		DDRC &= ~(1 << PIN_ADC_X);
 		DDRC &= ~(1 << PIN_ADC_Y);
 	#endif
@@ -140,13 +138,13 @@ void mux_setup()
 
 void mux_loop() 
 {
-	// read adc pin with multiplexer
+	#ifdef PROTO
+		// read adc pin with multiplexer
 		readAllChannels(2);
+	#else
+		readAllMuxChannels(5);
+	#endif
 
-		//led strip
-		for (uint8_t i = 0; i < NUM_LEDS; i++)
-		{
-			colors[i] = hsvToRgb(255, 255, 255); 
-		}
-		spi_send_color(colors, NUM_LEDS, brightness);
+	//led strip
+	led_spi();
 }
