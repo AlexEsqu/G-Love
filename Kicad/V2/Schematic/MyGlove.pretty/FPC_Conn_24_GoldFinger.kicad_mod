@@ -8,7 +8,7 @@
 		(unlocked yes)
 		(layer "F.SilkS")
 		(hide yes)
-		(uuid "9aa7b935-8e03-4e8e-837e-669c8ef536b8")
+		(uuid "083cd245-7e47-4a6f-b959-05ef8660f7c5")
 		(effects
 			(font
 				(size 1 1)
@@ -20,7 +20,7 @@
 		(at 0 11.5 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "a405812e-a40f-485d-999a-83ed56ac2872")
+		(uuid "84bed528-b4f2-4478-ba74-cfc8dc16891c")
 		(effects
 			(font
 				(size 1 1)
@@ -33,7 +33,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "96c41451-3389-47d7-b726-bc7406212462")
+		(uuid "ebd1679d-bffa-49bd-83f8-d078e90427ed")
 		(effects
 			(font
 				(size 1 1)
@@ -46,7 +46,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "b48fd525-7cf8-49e2-b49c-b22ee17dc393")
+		(uuid "3b88c973-5ae6-40d8-91a2-5bf3f2fa570d")
 		(effects
 			(font
 				(size 1 1)
@@ -54,18 +54,18 @@
 			)
 		)
 	)
-	(attr smd)
+	(attr smd allow_soldermask_bridges)
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_rect
-		(start -5.89 0.29)
-		(end 6.26 5.15)
+		(start -5.89 0.35)
+		(end 6.26 4.61)
 		(stroke
 			(width 0)
 			(type solid)
 		)
 		(fill yes)
 		(layer "F.Mask")
-		(uuid "041222f4-8605-496c-9653-dd54893c6938")
+		(uuid "917bb8ba-3d68-41d7-849f-7a0967c724ff")
 	)
 	(fp_circle
 		(center 5.94 5.21)
@@ -76,7 +76,7 @@
 		)
 		(fill yes)
 		(layer "F.SilkS")
-		(uuid "5265ecaf-4a0e-4541-8b8b-799d71fe39cf")
+		(uuid "e007347d-ff0e-4fb0-b1f4-056153fbad7f")
 	)
 	(fp_line
 		(start -6.06 0.25)
@@ -86,7 +86,7 @@
 			(type default)
 		)
 		(layer "F.Fab")
-		(uuid "ea44c1d6-471c-4ae4-85d1-e520253d8701")
+		(uuid "1dcee765-1227-4fd5-a788-3e6a74db3c9a")
 	)
 	(fp_line
 		(start -6.06 0.25)
@@ -96,7 +96,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "464ce8b0-5d90-451b-b142-18596e17e4f6")
+		(uuid "d2fd482e-dba2-4154-93a5-36c91df71c27")
 	)
 	(fp_line
 		(start 6.44 0.25)
@@ -106,7 +106,7 @@
 			(type default)
 		)
 		(layer "F.Fab")
-		(uuid "427284f5-bd61-4c04-9547-a6fd5b1c0482")
+		(uuid "3b3b1d01-0f79-4150-99a7-40c996f9cdb4")
 	)
 	(fp_rect
 		(start -5.99 0.29)
@@ -117,13 +117,13 @@
 		)
 		(fill yes)
 		(layer "User.1")
-		(uuid "16c634ef-ad49-4958-851b-626f58919f81")
+		(uuid "f4db2501-1ee3-43b9-a70c-a612f3b4fc26")
 	)
 	(fp_text user "${REFERENCE}"
 		(at 0 9 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "a60415ac-cc2d-4217-acf7-0b011dd3a995")
+		(uuid "b2137a5a-fe3f-4e4b-955d-6b255baa0410")
 		(effects
 			(font
 				(size 1 1)
@@ -135,7 +135,7 @@
 		(at -3.68 8.03 0)
 		(unlocked yes)
 		(layer "User.1")
-		(uuid "f5aba14f-f0b6-4709-9de4-8ea53a7bcb55")
+		(uuid "891a4837-8536-4d63-b7d6-94b094f96a97")
 		(effects
 			(font
 				(size 1 1)
@@ -151,7 +151,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "e15b65d8-2d93-4e78-9633-e3d73e5591f5")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "c821a656-54fb-415c-8ad1-b4c5227f9af5")
 	)
 	(pad "2" smd roundrect
 		(at 5.44 2.69 180)
@@ -160,7 +171,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "06ff984b-5ac0-4a47-82d3-46aab9bb6875")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "3bbc60cb-25ca-4039-a192-94b39fe10efc")
 	)
 	(pad "3" smd roundrect
 		(at 4.94 2.69 180)
@@ -169,7 +191,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "176b18b7-2340-4cf2-b4b1-318f7fd73ce3")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "a28a9e7d-e67a-4268-bcd5-ae82aa1aaf00")
 	)
 	(pad "4" smd roundrect
 		(at 4.44 2.69 180)
@@ -178,7 +211,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "0087d39d-1d89-4711-ab49-0d320ef7f7c7")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "38f9261e-0e8b-44e3-b7b2-f4921a1cf58c")
 	)
 	(pad "5" smd roundrect
 		(at 3.94 2.69 180)
@@ -187,7 +231,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "37ec6d3e-93d1-412d-a820-3d1315cd63b1")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "66c1f660-2757-43df-8f30-4c966c50cbb7")
 	)
 	(pad "6" smd roundrect
 		(at 3.44 2.69 180)
@@ -196,7 +251,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "7969cbfc-a4f1-4649-9a20-0d3a15798745")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "d6074dd7-8e17-41e4-b476-cb4715cf2b01")
 	)
 	(pad "7" smd roundrect
 		(at 2.94 2.69 180)
@@ -205,7 +271,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "71729fe6-3c08-4f04-ae0a-1b9aa24dfe93")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "c289eacc-52b5-4edf-b8c7-7bde74f631cb")
 	)
 	(pad "8" smd roundrect
 		(at 2.44 2.69 180)
@@ -214,7 +291,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "5a1f5fe8-b4f8-4147-814d-443134250bbf")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "3516a8cf-70a4-43f1-ae70-c313ecbc5f98")
 	)
 	(pad "9" smd roundrect
 		(at 1.94 2.69 180)
@@ -223,7 +311,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "ba7bd1e5-37f3-414b-bf39-a5bcf8725746")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "9ba3a0f0-861a-4de6-8679-cab378338a32")
 	)
 	(pad "10" smd roundrect
 		(at 1.44 2.69 180)
@@ -232,7 +331,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "c5f56b74-9c4b-4b02-adae-972901fe8854")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "89a807cf-1b06-48e5-bbac-d9a69d82e189")
 	)
 	(pad "11" smd roundrect
 		(at 0.94 2.69 180)
@@ -241,7 +351,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "6ca2b2af-80a7-46ae-beee-8fa4610008a2")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "8018d69a-e96c-42ac-a56b-3cefaf68af7d")
 	)
 	(pad "12" smd roundrect
 		(at 0.44 2.69 180)
@@ -250,7 +371,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "02a6d77f-6825-4109-88b4-e6bf50ae4975")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "6095dae3-5ab9-4d7d-a31a-16afe8d24925")
 	)
 	(pad "13" smd roundrect
 		(at -0.06 2.69 180)
@@ -259,7 +391,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "903c42dc-90da-41c6-94ca-87eee1fbcfd5")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "97e81e1f-28a3-4a77-9419-506ded2b74fd")
 	)
 	(pad "14" smd roundrect
 		(at -0.56 2.69 180)
@@ -268,7 +411,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "22cec74e-7652-4ab2-9f67-215a384ca742")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "0976115e-3224-432c-b55d-f62e46452d48")
 	)
 	(pad "15" smd roundrect
 		(at -1.06 2.69 180)
@@ -277,7 +431,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "61ba8669-99ad-4ced-98a8-721127b61db0")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "b1317fcb-ccba-4816-9b89-2e6fcb49b863")
 	)
 	(pad "16" smd roundrect
 		(at -1.56 2.69 180)
@@ -286,7 +451,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "9b0aae3a-ce18-42d6-b8b4-9ad7956ff3d1")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "34444fb9-6999-446f-9a93-a4948d571adc")
 	)
 	(pad "17" smd roundrect
 		(at -2.06 2.69 180)
@@ -295,7 +471,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "f47842f9-692c-49df-bd4a-474a1322767b")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "b0d7c67c-14c2-4ecd-acd5-198a7df48e48")
 	)
 	(pad "18" smd roundrect
 		(at -2.56 2.69 180)
@@ -304,7 +491,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "04061bce-16d2-48b9-a974-93022f633b21")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "1b183ffa-2bae-4d4b-b891-0bf726f01213")
 	)
 	(pad "19" smd roundrect
 		(at -3.06 2.69 180)
@@ -313,7 +511,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "15b12ce8-321d-4a8b-924e-dc6edeab0d66")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "5cc5d0d4-f22a-47cb-aa99-0118d72420bc")
 	)
 	(pad "20" smd roundrect
 		(at -3.56 2.69 180)
@@ -322,7 +531,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "491d2a08-b97f-4ebc-bb0a-eee3aa0d553c")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "711babbc-1da7-499a-9248-f3cb90674631")
 	)
 	(pad "21" smd roundrect
 		(at -4.06 2.69 180)
@@ -331,7 +551,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "a69e9afa-4506-41d9-8719-ec15687338c2")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "a1cc754f-a9b2-4a0a-b2ce-e81e8345a8b7")
 	)
 	(pad "22" smd roundrect
 		(at -4.56 2.69 180)
@@ -340,7 +571,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "a455fc88-57c8-470c-9fc1-104ab3ee32a2")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "20d04edd-2099-46b7-8e44-3bf70cc54e85")
 	)
 	(pad "23" smd roundrect
 		(at -5.06 2.69 180)
@@ -349,7 +591,18 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "6c6b4965-40c2-4271-bc41-1b17693e05f4")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges yes)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "bad59743-1e58-4288-a4f1-0350af290d4e")
 	)
 	(pad "24" smd roundrect
 		(at -5.56 2.69 180)
@@ -358,24 +611,35 @@
 		(roundrect_rratio 0.25)
 		(clearance 0.15)
 		(zone_connect 2)
-		(uuid "a68df875-e496-4318-9ba5-d7954add6898")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges no)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "8670294d-2675-4d78-8db3-59cbe7b21f95")
 	)
 	(group ""
-		(uuid "dfb9b60a-02f4-4d40-bb8a-0335fd05541a")
-		(members "0087d39d-1d89-4711-ab49-0d320ef7f7c7" "02a6d77f-6825-4109-88b4-e6bf50ae4975"
-			"04061bce-16d2-48b9-a974-93022f633b21" "06ff984b-5ac0-4a47-82d3-46aab9bb6875"
-			"15b12ce8-321d-4a8b-924e-dc6edeab0d66" "176b18b7-2340-4cf2-b4b1-318f7fd73ce3"
-			"22cec74e-7652-4ab2-9f67-215a384ca742" "37ec6d3e-93d1-412d-a820-3d1315cd63b1"
-			"427284f5-bd61-4c04-9547-a6fd5b1c0482" "464ce8b0-5d90-451b-b142-18596e17e4f6"
-			"491d2a08-b97f-4ebc-bb0a-eee3aa0d553c" "5265ecaf-4a0e-4541-8b8b-799d71fe39cf"
-			"5a1f5fe8-b4f8-4147-814d-443134250bbf" "61ba8669-99ad-4ced-98a8-721127b61db0"
-			"6c6b4965-40c2-4271-bc41-1b17693e05f4" "6ca2b2af-80a7-46ae-beee-8fa4610008a2"
-			"71729fe6-3c08-4f04-ae0a-1b9aa24dfe93" "7969cbfc-a4f1-4649-9a20-0d3a15798745"
-			"903c42dc-90da-41c6-94ca-87eee1fbcfd5" "9b0aae3a-ce18-42d6-b8b4-9ad7956ff3d1"
-			"a455fc88-57c8-470c-9fc1-104ab3ee32a2" "a68df875-e496-4318-9ba5-d7954add6898"
-			"a69e9afa-4506-41d9-8719-ec15687338c2" "ba7bd1e5-37f3-414b-bf39-a5bcf8725746"
-			"c5f56b74-9c4b-4b02-adae-972901fe8854" "e15b65d8-2d93-4e78-9633-e3d73e5591f5"
-			"ea44c1d6-471c-4ae4-85d1-e520253d8701" "f47842f9-692c-49df-bd4a-474a1322767b"
+		(uuid "7fda623c-fa4a-4e8c-9914-0bcc2652ac3b")
+		(members "0976115e-3224-432c-b55d-f62e46452d48" "1b183ffa-2bae-4d4b-b891-0bf726f01213"
+			"1dcee765-1227-4fd5-a788-3e6a74db3c9a" "20d04edd-2099-46b7-8e44-3bf70cc54e85"
+			"34444fb9-6999-446f-9a93-a4948d571adc" "3516a8cf-70a4-43f1-ae70-c313ecbc5f98"
+			"38f9261e-0e8b-44e3-b7b2-f4921a1cf58c" "3b3b1d01-0f79-4150-99a7-40c996f9cdb4"
+			"3bbc60cb-25ca-4039-a192-94b39fe10efc" "5cc5d0d4-f22a-47cb-aa99-0118d72420bc"
+			"6095dae3-5ab9-4d7d-a31a-16afe8d24925" "66c1f660-2757-43df-8f30-4c966c50cbb7"
+			"711babbc-1da7-499a-9248-f3cb90674631" "8018d69a-e96c-42ac-a56b-3cefaf68af7d"
+			"8670294d-2675-4d78-8db3-59cbe7b21f95" "89a807cf-1b06-48e5-bbac-d9a69d82e189"
+			"97e81e1f-28a3-4a77-9419-506ded2b74fd" "9ba3a0f0-861a-4de6-8679-cab378338a32"
+			"a1cc754f-a9b2-4a0a-b2ce-e81e8345a8b7" "a28a9e7d-e67a-4268-bcd5-ae82aa1aaf00"
+			"b0d7c67c-14c2-4ecd-acd5-198a7df48e48" "b1317fcb-ccba-4816-9b89-2e6fcb49b863"
+			"bad59743-1e58-4288-a4f1-0350af290d4e" "c289eacc-52b5-4edf-b8c7-7bde74f631cb"
+			"c821a656-54fb-415c-8ad1-b4c5227f9af5" "d2fd482e-dba2-4154-93a5-36c91df71c27"
+			"d6074dd7-8e17-41e4-b476-cb4715cf2b01" "e007347d-ff0e-4fb0-b1f4-056153fbad7f"
 		)
 	)
 	(embedded_fonts no)
