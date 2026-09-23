@@ -50,6 +50,17 @@ void uart0_print_10bit(uint32_t c) {
 	uart0_tx('0' + (c % 10));
 }
 
+void uart0_send_data(const uint8_t *data, size_t len)
+{
+    if (!data || len == 0)
+        return;
+
+    while (len--)
+    {
+        uart0_tx(*data++);
+    }
+}
+
 #ifdef __AVR_ATmega2560__
 
 //UART1
