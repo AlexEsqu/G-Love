@@ -4,6 +4,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <stdint.h>
+#include <stddef.h>
 
 #if defined(__AVR_ATmega2560__)
     #define SPI_DDR   DDRB
@@ -32,6 +33,10 @@ uint8_t		ft_adc_read();
 uint16_t 	ft_adc_read_10bit();
 uint16_t    ft_adc_read_channel(uint8_t channel);
 
+//crc.c
+uint8_t     crc8_compute(const uint8_t *data, size_t len);
+uint16_t    crc16_compute(const uint8_t *data, size_t len);
+
 // i2c.c
 void 		i2c_init(void);
 void 		i2c_status(void);
@@ -55,6 +60,7 @@ void 		uart0_tx(char c);
 char 		uart0_rx(void);
 void 		uart0_printstr(const char *str);
 void 		uart0_print_10bit(uint32_t c);
+void        uart0_send_data(const uint8_t *data, size_t len);
 
 void 		uart1_init(unsigned long baudrate);
 void 		uart1_tx(char c);

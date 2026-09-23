@@ -28,6 +28,7 @@ SRCS1    = $(CODEDIR1)/main.c \
         	$(LIBDIR)/i2c.c \
         	$(LIBDIR)/spi.c \
         	$(LIBDIR)/uart.c \
+			$(LIBDIR)/crc.c \
 			srcs/muxSelect/mux.c \
 			srcs/ledStrip/led.c
 

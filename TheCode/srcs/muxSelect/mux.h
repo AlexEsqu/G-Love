@@ -22,8 +22,6 @@
 	#define PIN_ADC_Y (6) // 19 (ADC6)
 #endif
 
-extern int sensorForce[5];
-extern int sensorFlex[5];
 #define MAX_CHANNEL 8
 
 // CD4097 multiplexer: 4select and 16channel

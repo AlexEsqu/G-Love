@@ -1,10 +1,8 @@
+#include <stdint.h>
 #include "mux.h"
 #include "../../includes/main.h"
-#include "../ledStrip/led.h"
-#include <stdint.h>
+#include "../main/atm328p.h"
 
-int sensorForce[5];
-int sensorFlex[5];
 
 #ifdef PROTO
 //Channel function used for multiplexer CD4067: 4 select pins and 16 channels
@@ -82,19 +80,19 @@ int readMuxChannel(uint8_t channel, uint8_t adcPin)
 	uart0_printstr(" value:");
 	if (adcPin == 6)
 	{
-		sensorForce[channel] = ft_adc_read_channel(adcPin);
+		g_sensor.sensorForce[channel] = ft_adc_read_channel(adcPin);
 	
-		uart0_print_10bit(sensorForce[channel]);
+		uart0_print_10bit(g_sensor.sensorForce[channel]);
 		uart0_printstr("\n");
-		return sensorForce[channel];
+		return g_sensor.sensorForce[channel];
 	}
 	else 
 	{
-		sensorFlex[channel] = ft_adc_read_channel(adcPin);
+		g_sensor.sensorFlex[channel] = ft_adc_read_channel(adcPin);
 		
-		uart0_print_10bit(sensorFlex[channel]);
+		uart0_print_10bit(g_sensor.sensorFlex[channel]);
 		uart0_printstr("\n");
-		return sensorFlex[channel];
+		return g_sensor.sensorFlex[channel];
 	}
 	return (-1);
 }
@@ -144,7 +142,4 @@ void mux_loop()
 	#else
 		readAllMuxChannels(5);
 	#endif
-
-	//led strip
-	led_spi();
 }
