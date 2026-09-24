@@ -5,6 +5,7 @@
 #include <util/delay.h>
 #include <stdint.h>
 #include <stddef.h>
+#include "../srcs/ledStrip/led.h"
 
 #if defined(__AVR_ATmega2560__)
     #define SPI_DDR   DDRB

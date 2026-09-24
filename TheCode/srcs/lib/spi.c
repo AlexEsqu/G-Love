@@ -11,7 +11,6 @@ void spi_init()
     SPCR = (1 << SPE) | (1 << MSTR) | (1 << SPR0);
 }
 
-
 void spi_send_data(char data)
 {
     //Start transmission

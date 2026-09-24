@@ -1,7 +1,9 @@
 #include "../../includes/main.h"
+#include <avr/interrupt.h>
 
-//UART0
-void uart0_init(unsigned long baudrate) {
+// UART0
+void uart0_init(unsigned long baudrate)
+{
     // Double speed mode for reduced baud rate error at 115200 baud
     UCSR0A = (1 << U2X0);
 
@@ -9,13 +11,14 @@ void uart0_init(unsigned long baudrate) {
     UBRR0 = (F_CPU / (8UL * baudrate)) - 1UL;
 
     // Enable Transmitter and Receiver
-    UCSR0B = (1 << TXEN0) | (1 << RXEN0);
+    UCSR0B = (1 << TXEN0) | (1 << RXEN0) | (1 << RXCIE0);
 
-    //8 data bits, 1 stop bit, no parity
+    // 8 data bits, 1 stop bit, no parity
     UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);
 }
 
-void uart0_tx(char c) {
+void uart0_tx(char c)
+{
     // Wait for transmit empty
     while (!(UCSR0A & (1 << UDRE0)))
     {
@@ -23,7 +26,8 @@ void uart0_tx(char c) {
     UDR0 = c;
 }
 
-char uart0_rx(void) {
+char uart0_rx(void)
+{
     // Wait for data
     while (!(UCSR0A & (1 << RXC0)))
     {
@@ -31,23 +35,24 @@ char uart0_rx(void) {
     return UDR0;
 }
 
-void uart0_printstr(const char *str) {
+void uart0_printstr(const char *str)
+{
+    if (!str)
+        return;
 
-	while (*str != '\0')
-	{
-		uart0_tx(*str);
-		str++;
-	}
-
+    while (*str)
+        uart0_tx(*str++);
 }
 
-void uart0_print_10bit(uint32_t c) {
-	if (c == 0)
-		uart0_tx('0');
-	if (c > 10) {
-		uart0_print_10bit(c / 10);
-	}
-	uart0_tx('0' + (c % 10));
+void uart0_print_10bit(uint32_t c)
+{
+    if (c == 0)
+        uart0_tx('0');
+    if (c > 10)
+    {
+        uart0_print_10bit(c / 10);
+    }
+    uart0_tx('0' + (c % 10));
 }
 
 void uart0_send_data(const uint8_t *data, size_t len)
@@ -63,8 +68,9 @@ void uart0_send_data(const uint8_t *data, size_t len)
 
 #ifdef __AVR_ATmega2560__
 
-//UART1
-void uart1_init(unsigned long baudrate) {
+// UART1
+void uart1_init(unsigned long baudrate)
+{
     // Double speed mode
     UCSR1A = (1 << U2X1);
 
@@ -78,7 +84,8 @@ void uart1_init(unsigned long baudrate) {
     UCSR1C = (1 << UCSZ11) | (1 << UCSZ10);
 }
 
-void uart1_tx(char c) {
+void uart1_tx(char c)
+{
     // Wait for transmit empty
     while (!(UCSR1A & (1 << UDRE1)))
     {
@@ -86,7 +93,8 @@ void uart1_tx(char c) {
     UDR1 = c;
 }
 
-char uart1_rx(void) {
+char uart1_rx(void)
+{
     // Wait for data receive
     while (!(UCSR1A & (1 << RXC1)))
     {
@@ -94,38 +102,56 @@ char uart1_rx(void) {
     return UDR1;
 }
 
-void uart1_printstr(const char *str) {
+void uart1_printstr(const char *str)
+{
 
-	while (*str != '\0')
-	{
-		uart0_tx(*str);
-		str++;
-	}
-
+    while (*str != '\0')
+    {
+        uart0_tx(*str);
+        str++;
+    }
 }
 
-void uart1_print_10bit(uint32_t c) {
-	if (c == 0)
-		uart0_tx('0');
-	if (c > 10) {
-		uart0_print_10bit(c / 10);
-	}
-	uart0_tx('0' + (c % 10));
+void uart1_print_10bit(uint32_t c)
+{
+    if (c == 0)
+        uart0_tx('0');
+    if (c > 10)
+    {
+        uart0_print_10bit(c / 10);
+    }
+    uart0_tx('0' + (c % 10));
 }
 
-uint8_t uart1_available(void) {
-	return (UCSR1A & (1 << RXC1));
+uint8_t uart1_available(void)
+{
+    return (UCSR1A & (1 << RXC1));
 }
 #endif
 
+uint8_t ft_hex(uint8_t val)
+{
+    char hex[] = "0123456789ABCDEF";
 
-uint8_t ft_hex(uint8_t val) {
-	char hex[] = "0123456789ABCDEF";
-	
-	return hex[val];
+    return hex[val];
 }
 
-void ft_uart_print_hex(uint8_t c) {
-	uart0_tx(ft_hex(c / 16));
-	uart0_tx(ft_hex(c % 16));
+void ft_uart_print_hex(uint8_t c)
+{
+    uart0_tx(ft_hex(c / 16));
+    uart0_tx(ft_hex(c % 16));
 }
+
+/** USART Receive Complete interrupt service routine
+ * Triggered when a new byte is received and stored in UDR0 (RXC0 flag set)*/
+#if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
+ISR(USART_RX_vect)
+{
+
+    trigger_pulse(255, 0, 0, 255, 10); // Déclenche une impulsion test : Rouge=255, Vert=200, Bleu=0, Vitesse=128 (0.5 LED/frame), Longueur=10
+    char recu = UDR0; // La lecture de UDR0 valide la réception et remet RXC0 à 0
+    
+    // Exemple : Renvoyer immédiatement le caractère reçu pour tester (Écho)
+    uart0_tx(recu); 
+}
+#endif

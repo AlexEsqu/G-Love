@@ -2,12 +2,12 @@ F_CPU    = 16000000UL
 
 DEVICE1   = atmega328p
 BAUDRATE1 = 115200
-PORT1     = /dev/ttyACM0
+PORT1     ?= /dev/ttyUSB0
 CODEDIR1  = srcs/main
 
 DEVICE2   = atmega2560
 BAUDRATE2 = 115200
-PORT2     = /dev/ttyACM1
+PORT2     ?= /dev/ttyUSB1
 CODEDIR2  = srcs/main
 
 NAME     = main
@@ -19,6 +19,10 @@ HEX2     = ${NAME}_mega.hex
 
 CC       = avr-gcc
 OBJCOPY  = avr-objcopy
+
+OBJDIR   = objets
+OBJDIR1  = $(OBJDIR)/uno
+OBJDIR2  = $(OBJDIR)/mega
 
 LIBDIR   = srcs/lib
 
@@ -39,44 +43,51 @@ SRCS2    = $(CODEDIR2)/main.c \
         	$(LIBDIR)/spi.c \
         	$(LIBDIR)/uart.c
 
-OBJS1    = $(SRCS1:.c=_uno.o)
-OBJS2    = $(SRCS2:.c=_mega.o)
+OBJS1    = $(SRCS1:%.c=$(OBJDIR1)/%_uno.o)
+OBJS2    = $(SRCS2:%.c=$(OBJDIR2)/%_mega.o)
 
 # for UNO / atmega328P
-%_uno.o: %.c
+$(OBJDIR1)/%_uno.o: %.c
+	@mkdir -p $(dir $@)
 	${CC} -Os -mmcu=${DEVICE1} -DF_CPU=${F_CPU} -c $< -o $@
 
 # for MEGA / atmega2560
-%_mega.o: %.c
+$(OBJDIR2)/%_mega.o: %.c
+	@mkdir -p $(dir $@)
 	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} -c $< -o $@
 
-all: uno mega
+all: ${BIN1} ${BIN2}
 
-unoarduino: ${OBJS1}
-	${CC} -Os -mmcu=${DEVICE1} -DF_CPU=${F_CPU} -DPROTO=1 ${OBJS1} -o ${BIN1}
-	${OBJCOPY} -O ihex ${BIN1} ${HEX1}
-	avrdude -p ${DEVICE1} -c arduino -P ${PORT1} -b ${BAUDRATE1} -D -v -U flash:w:${HEX1}:i
-
-uno: ${OBJS1}
+${BIN1}: ${OBJS1}
 	${CC} -Os -mmcu=${DEVICE1} -DF_CPU=${F_CPU} ${OBJS1} -o ${BIN1}
 	${OBJCOPY} -O ihex ${BIN1} ${HEX1}
-	avrdude -p ${DEVICE1} -c arduino -P ${PORT1} -b ${BAUDRATE1} -D -v -U flash:w:${HEX1}:i
 
-mega: ${OBJS2}
+${BIN2}: ${OBJS2}
 	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${OBJS2} -o ${BIN2}
 	${OBJCOPY} -O ihex ${BIN2} ${HEX2}
+
+uno: all ${HEX1}
+	avrdude -p ${DEVICE1} -c arduino -P ${PORT1} -b ${BAUDRATE1} -D -v -U flash:w:${HEX1}:i
+
+mega: all ${HEX2}
 	avrdude -p ${DEVICE2} -c wiring -P ${PORT2} -b ${BAUDRATE2} -D -v -U flash:w:${HEX2}:i
 
-megaarduino: ${OBJS2}
-	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} -DPROTO=1 ${OBJS2} -o ${BIN2}
-	${OBJCOPY} -O ihex ${BIN2} ${HEX2}
-	avrdude -p ${DEVICE2} -c wiring -P ${PORT2} -b ${BAUDRATE2} -D -v -U flash:w:${HEX2}:i
+both: uno mega
+
+screen:
+	screen ${PORT1} ${BAUDRATE1}
+
+screen-mega:
+	screen ${PORT2} ${BAUDRATE2}
+
+screen-uno: screen
 
 clean:
 	rm -f ${BIN1} ${HEX1} ${BIN2} ${HEX2} ${OBJS1} ${OBJS2}
+	rm -rf $(OBJDIR)
 
 fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re uno mega
+.PHONY: all clean fclean re uno mega both screen screen-uno screen-mega
