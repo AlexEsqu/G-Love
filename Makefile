@@ -7,7 +7,7 @@ CODEDIR1  = Code_atmega328P
 
 DEVICE2   = atmega2560
 BAUDRATE2 = 115200
-PORT2     = /dev/ttyACM1
+PORT2     = /dev/ttyACM0
 CODEDIR2  = Code_atmega2560
 
 NAME     = main
@@ -56,6 +56,9 @@ mega: ${OBJS2}
 	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${OBJS2} -o ${BIN2}
 	${OBJCOPY} -O ihex ${BIN2} ${HEX2}
 	avrdude -p ${DEVICE2} -c wiring -P ${PORT2} -b ${BAUDRATE2} -D -v -U flash:w:${HEX2}:i
+
+mega_screen:	mega
+				screen ${PORT2} ${BAUDRATE2}
 
 clean:
 	rm -f ${BIN1} ${HEX1} ${BIN2} ${HEX2} ${OBJS1} ${OBJS2}

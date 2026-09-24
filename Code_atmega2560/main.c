@@ -1,6 +1,7 @@
 #include "../includes/config_atm2560.h"
 #include "../includes/main.h"
 
+
 void setup() {
   // uart_init
   uart0_init(BAUDRATE);
@@ -13,6 +14,8 @@ void setup() {
 
   // i2c init
   i2c_init();
+
+  spi_init();
 }
 
 int main(void) {
@@ -49,41 +52,41 @@ int main(void) {
         uart0_printstr("action: ");
         uart0_print_10bit(action);
         if (action == 1)
-          uart0_printstr("swipe up\n");
+          uart0_printstr("swipe up\r\n");
         else if (action == 2)
-          uart0_printstr("swipe down\n");
+          uart0_printstr("swipe down\r\n");
         else if (action == 3)
-          uart0_printstr("swipe right\n");
+          uart0_printstr("swipe right\r\n");
         else if (action == 4)
-          uart0_printstr("swipe left\n");
+          uart0_printstr("swipe left\r\n");
         else if (action == 0)
-          uart0_printstr("tap\n");
+          uart0_printstr("tap\r\n");
         else
-          uart0_printstr("autre action\n");
+          uart0_printstr("autre action\r\n");
         uart0_printstr("Toucher detecte ! X: ");
         uart0_print_10bit(x);
         uart0_printstr(" | Y: ");
         uart0_print_10bit(y);
-        uart0_printstr("\n");
+        uart0_printstr("\r\n");
       }
     }
-    
-    if (uart1_available() > 0)
-    {
-      char c = uart1_rx();
-      if (c == '\n')
-      {
-        buf[i] = '\0';
-        uart0_printstr(buf);
-        uart0_printstr("\n");
-        i = 0;
-      }
-      else
-      {
-        buf[i] = c;
-        i++;
-      }
-    }
+
+    // if (uart1_available() > 0)
+    // {
+    //   char c = uart1_rx();
+    //   if (c == '\n')
+    //   {
+    //     buf[i] = '\0';
+    //     uart0_printstr(buf);
+    //     uart0_printstr("\r\n");
+    //     i = 0;
+    //   }
+    //   else
+    //   {
+    //     buf[i] = c;
+    //     i++;
+    //   }
+    // }
   }
   return 0;
 }
