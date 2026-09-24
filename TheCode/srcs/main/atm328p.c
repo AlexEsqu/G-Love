@@ -21,14 +21,16 @@ int main_ATM328P()
 	setup();
 
 	while (1) {
-		mux_loop(); //multiplexer read
-
+		mux_loop(); // multiplexer read
+		
+		//imu_loop(); // todo
+		
 		led_spi(); //led strip
 
 		g_sensor.magic = SENSOR_PACKET_MAGIC; // magic number
 
 		//calculate crc value and stored in struct
-		g_sensor.crc16 = crc16_compute((uint8_t*)&g_sensor.sensorForce[0],	
+		g_sensor.crc16 = crc16_compute((uint8_t*)&g_sensor.magic,	
 							sizeof(g_sensor) - 2);
 		
 		//send to atm2561 through uart0

@@ -61,6 +61,10 @@ void uart0_send_data(const uint8_t *data, size_t len)
     }
 }
 
+uint8_t uart0_available(void) {
+	return (UCSR0A & (1 << RXC0));
+}
+
 #ifdef __AVR_ATmega2560__
 
 //UART1
@@ -72,7 +76,7 @@ void uart1_init(unsigned long baudrate) {
     UBRR1 = (F_CPU / (8UL * baudrate)) - 1UL;
 
     // Enable Transmitter and Receiver
-    UCSR1B = (1 << TXEN1) | (1 << RXEN1);
+    UCSR1B = (1<<RXCIE0) | (1 << TXEN1) | (1 << RXEN1);
 
     // 8 data bits, 1 stop bit, no parity
     UCSR1C = (1 << UCSZ11) | (1 << UCSZ10);

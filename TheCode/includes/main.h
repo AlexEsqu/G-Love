@@ -27,6 +27,20 @@ typedef struct s_rgb_color
     uint8_t blue;
 } t_rgb_color;
 
+#define SENSOR_PACKET_MAGIC 0xA5
+
+typedef struct s_sensor_data
+{
+    uint8_t magic; //magic number to detect start of packet
+    uint16_t sensorForce[5]; //fsr
+    uint16_t sensorFlex[5]; //fsr
+    int16_t  accel[3]; //imu
+    int16_t  gyro[3]; //imu
+    uint16_t crc16; // crc to protect and check data authenticity
+} t_sensor_data;
+
+extern t_sensor_data g_sensor;
+
 //adc.c
 void		adc_init();
 uint8_t		ft_adc_read();
@@ -61,6 +75,7 @@ char 		uart0_rx(void);
 void 		uart0_printstr(const char *str);
 void 		uart0_print_10bit(uint32_t c);
 void        uart0_send_data(const uint8_t *data, size_t len);
+uint8_t     uart0_available(void);
 
 void 		uart1_init(unsigned long baudrate);
 void 		uart1_tx(char c);

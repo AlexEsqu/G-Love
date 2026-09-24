@@ -37,7 +37,8 @@ SRCS2    = $(CODEDIR2)/main.c \
         	$(LIBDIR)/adc.c \
         	$(LIBDIR)/i2c.c \
         	$(LIBDIR)/spi.c \
-        	$(LIBDIR)/uart.c
+        	$(LIBDIR)/uart.c  \
+			$(LIBDIR)/crc.c 
 
 OBJS1    = $(SRCS1:.c=_uno.o)
 OBJS2    = $(SRCS2:.c=_mega.o)
