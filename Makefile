@@ -29,6 +29,9 @@ SRCS1    = $(CODEDIR1)/main.c \
            $(LIBDIR)/uart.c
 
 SRCS2    = $(CODEDIR2)/main.c \
+			$(CODEDIR2)/display.c \
+			$(CODEDIR2)/tactile.c \
+			$(CODEDIR2)/bitshift.c \
            $(LIBDIR)/adc.c \
            $(LIBDIR)/i2c.c \
            $(LIBDIR)/spi.c \

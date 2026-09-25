@@ -12,7 +12,7 @@ void spi_init()
 }
 
 
-void spi_send_data(char data)
+uint8_t spi_send_data(uint8_t data)
 {
     //Start transmission
     SPDR = data;
@@ -21,6 +21,8 @@ void spi_send_data(char data)
     while (!(SPSR & (1<<SPIF)))
     {
     }
+
+	return SPDR;
 }
 
 void spi_start_frame()

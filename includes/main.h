@@ -41,10 +41,10 @@ void 		i2c_read(void);
 
 
 //spi.c
-void        spi_init();
-void        spi_send_data(char data);
-void        spi_send_color(t_rgb_color *colors,
-                uint16_t number, uint16_t brightness);
+void		spi_init();
+uint8_t		spi_send_data(uint8_t data);
+void		spi_send_color(t_rgb_color *colors,
+				uint16_t number, uint16_t brightness);
 
 // uart.c
 void 		uart0_init(unsigned long baudrate);
