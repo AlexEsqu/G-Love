@@ -21,13 +21,6 @@
     int main_ATM328P();
 #endif
 
-typedef struct s_rgb_color
-{
-    uint8_t red;
-    uint8_t green;
-    uint8_t blue;
-} t_rgb_color;
-
 //adc.c
 void		adc_init();
 uint8_t		ft_adc_read();
@@ -52,7 +45,7 @@ void 		i2c_read(void);
 //spi.c
 void        spi_init();
 void        spi_send_data(char data);
-void        spi_send_color(t_rgb_color *colors,
+void        spi_send_color(rgb_color_t *colors,
                 uint16_t number, uint16_t brightness);
 
 // uart.c

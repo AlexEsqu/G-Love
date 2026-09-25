@@ -147,11 +147,31 @@ void ft_uart_print_hex(uint8_t c)
 #if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
 ISR(USART_RX_vect)
 {
-
-    trigger_pulse(255, 0, 0, 255, 10); // Déclenche une impulsion test : Rouge=255, Vert=200, Bleu=0, Vitesse=128 (0.5 LED/frame), Longueur=10
-    char recu = UDR0; // La lecture de UDR0 valide la réception et remet RXC0 à 0
+    // Read the received byte from UDR0 to clear the RXC0 flag
+    char recu = UDR0; // Read the received byte from UDR0 to clear the RXC0 flag
     
-    // Exemple : Renvoyer immédiatement le caractère reçu pour tester (Écho)
-    uart0_tx(recu); 
+    // Echo the received byte back to the sender
+    uart0_tx(recu);
+
+    switch (recu)
+    {
+    case '1':
+        trigger_pulse(THUMB, 255, 0, 0, 100, 10);
+        break;
+    case '2':
+        trigger_pulse(INDEX, 0, 255, 0, 100, 10);
+        break;
+    case '3':
+        trigger_pulse(MIDDLE, 0, 0, 255, 100, 10);
+        break;
+    case '4':
+        trigger_pulse(RING, 255, 255, 0, 100, 10);
+        break;
+    case '5':
+        trigger_pulse(PINKY, 255, 0, 255, 100, 10);
+        break;
+    default:
+        break;
+    }
 }
 #endif

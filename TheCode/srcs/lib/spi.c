@@ -38,7 +38,7 @@ void spi_end_frame()
     }
 }
 
-void spi_send_color(t_rgb_color *colors, uint16_t number, uint16_t brightness)
+void spi_send_color(rgb_color_t *colors, uint16_t number, uint16_t brightness)
 {
     spi_start_frame();
 
