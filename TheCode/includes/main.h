@@ -29,7 +29,7 @@ typedef struct s_rgb_color
 
 #define SENSOR_PACKET_MAGIC 0xA5
 
-typedef struct s_sensor_data
+typedef struct __attribute__((packed)) s_sensor_data
 {
     uint8_t magic; //magic number to detect start of packet
     uint16_t sensorForce[5]; //fsr

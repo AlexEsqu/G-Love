@@ -30,12 +30,11 @@ int main_ATM328P()
 		g_sensor.magic = SENSOR_PACKET_MAGIC; // magic number
 
 		//calculate crc value and stored in struct
-		g_sensor.crc16 = crc16_compute((uint8_t*)&g_sensor.magic,	
-							sizeof(g_sensor) - 2);
+		g_sensor.crc16 = crc16_compute((const uint8_t*)&g_sensor,	
+							offsetof(t_sensor_data, crc16));
 		
-		//send to atm2561 through uart0
-		uart0_send_data((uint8_t*)&g_sensor.magic, sizeof(g_sensor));
-		uart0_tx(0x00);
+		//send to atm2560 through uart0
+		uart0_send_data((const uint8_t*)&g_sensor, sizeof(g_sensor));
 
 		_delay_ms(50);
 	}

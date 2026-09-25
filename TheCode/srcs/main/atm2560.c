@@ -16,9 +16,11 @@ ISR(USART1_RX_vect)
 	uint8_t data_byte = UDR1;
 	uint8_t next_index = (g_rx_index + 1) % RX_BUFFER_SIZE;
 
-	g_rx_buff[g_rx_index] = data_byte;
-	g_rx_index = next_index;
-	
+	if (next_index != g_rx_pos)
+	{
+		g_rx_buff[g_rx_index] = data_byte;
+		g_rx_index = next_index;
+	}
 }
 
 bool get_next_byte(uint8_t *byte)
@@ -47,6 +49,7 @@ bool process_packet(uint8_t *byte, t_sensor_data *packet)
 	{
 		if (*byte == SENSOR_PACKET_MAGIC)
 		{
+			buf[0] = *byte;
 			index = 1;
 			flag = 1; //magic number detected = start process packet
 		}
@@ -58,14 +61,17 @@ bool process_packet(uint8_t *byte, t_sensor_data *packet)
 
 		if (index == sizeof(t_sensor_data))
 		{
-			uint16_t crc16_test = crc16_compute((uint8_t*)&buf,
-									sizeof(t_sensor_data) - 2);
-			uint16_t crc16_received = buf[sizeof(t_sensor_data) - 2];
+			flag = 0;
+			index = 0;
+
+			uint16_t crc16_test = crc16_compute((const uint8_t*)buf,
+									offsetof(t_sensor_data, crc16));
+			uint16_t crc16_received = (uint16_t)buf[sizeof(t_sensor_data) - 2] |
+									((uint16_t)buf[sizeof(t_sensor_data) - 1] << 8);
 
 			if (crc16_test == crc16_received) //crc is validated
 			{
-				flag = 0;
-				memcpy(&g_packet, packet, sizeof(*packet)); 
+				memcpy(packet, buf, sizeof(t_sensor_data)); 
 				return (true);
 			}
 		}
@@ -94,16 +100,14 @@ int main_ATM2560()
 {
 	setup();
 
-	uint8_t buf[100];
-	int i = 0;
-
 	uint8_t byte;
 	t_sensor_data packet; //packet from atm328P
-	t_sensor_data_to_pc packet_to_pc; //packet to send to pc
+	uint16_t touch_x = 0;
+	uint16_t touch_y = 0;
+	uint8_t touch_action = 0;
 
 	while (1)
 	{
-		// uart0_printstr("test\n");
 		if (PIND & (1 << PIND7))
 		{
 
@@ -129,6 +133,11 @@ int main_ATM2560()
 
 			if (points > 0)
 			{
+				touch_x = (uint16_t)x;
+				touch_y = (uint16_t)y;
+				touch_action = action;
+
+				/*
 				uart0_printstr("action: ");
 				uart0_print_10bit(action);
 				if (action == 1)
@@ -143,11 +152,12 @@ int main_ATM2560()
 					uart0_printstr("tap\n");
 				else
 					uart0_printstr("autre action\n");
-			uart0_printstr("Toucher detecte ! X: ");
-			uart0_print_10bit(x);
-			uart0_printstr(" | Y: ");
-			uart0_print_10bit(y);
-			uart0_printstr("\n");
+				uart0_printstr("Toucher detecte ! X: ");
+				uart0_print_10bit(x);
+				uart0_printstr(" | Y: ");
+				uart0_print_10bit(y);
+				uart0_printstr("\n");
+				*/
 			}
 		}
 
@@ -156,6 +166,20 @@ int main_ATM2560()
 			if (process_packet(&byte, &packet))
 			{
 				//complete packet with touch, crc and send
+				g_packet.magic = SENSOR_PACKET_MAGIC2;
+				memcpy(g_packet.sensorForce, packet.sensorForce, sizeof(packet.sensorForce));
+				memcpy(g_packet.sensorFlex, packet.sensorFlex, sizeof(packet.sensorFlex));
+				memcpy(g_packet.accel, packet.accel, sizeof(packet.accel));
+				memcpy(g_packet.gyro, packet.gyro, sizeof(packet.gyro));
+
+				g_packet.screen_x = touch_x;
+				g_packet.screen_y = touch_y;
+				g_packet.screen_action = touch_action;
+
+				g_packet.crc16 = crc16_compute((const uint8_t *)&g_packet,
+									offsetof(t_sensor_data_to_pc, crc16));
+
+				uart0_send_data((const uint8_t *)&g_packet, sizeof(g_packet));
 			}
 		}
 

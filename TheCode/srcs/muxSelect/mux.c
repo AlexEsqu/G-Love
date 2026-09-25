@@ -35,11 +35,12 @@ int readChannel(int channel)
 	_delay_ms(50);
 	sensorState[channel] = ft_adc_read_10bit();
 
-	uart0_printstr("channel:");
-	uart0_print_10bit(channel);
-	uart0_printstr(" value:");
-	uart0_print_10bit(sensorState[channel]);
-	uart0_printstr("\n");
+	//uart0_printstr("channel:");
+	//uart0_print_10bit(channel);
+	//uart0_printstr(" value:");
+	//uart0_print_10bit(sensorState[channel]);
+	//uart0_printstr("\n");
+
 	return sensorState[channel];
 }
 
@@ -75,23 +76,24 @@ int readMuxChannel(uint8_t channel, uint8_t adcPin)
 	selectMuxChannel(channel);
 	_delay_ms(50);
 
-	uart0_printstr("channel:");
-	uart0_print_10bit(channel);
-	uart0_printstr(" value:");
+
+	//uart0_printstr("channel:");
+	//uart0_print_10bit(channel);
+	//uart0_printstr(" value:");
 	if (adcPin == 6)
 	{
 		g_sensor.sensorForce[channel] = ft_adc_read_channel(adcPin);
-	
-		uart0_print_10bit(g_sensor.sensorForce[channel]);
-		uart0_printstr("\n");
+
+		//uart0_print_10bit(g_sensor.sensorForce[channel]);
+		//uart0_printstr("\n");
 		return g_sensor.sensorForce[channel];
 	}
 	else 
 	{
 		g_sensor.sensorFlex[channel] = ft_adc_read_channel(adcPin);
-		
-		uart0_print_10bit(g_sensor.sensorFlex[channel]);
-		uart0_printstr("\n");
+
+		//uart0_print_10bit(g_sensor.sensorFlex[channel]);
+		//uart0_printstr("\n");
 		return g_sensor.sensorFlex[channel];
 	}
 	return (-1);
