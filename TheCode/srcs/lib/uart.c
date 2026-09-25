@@ -76,7 +76,7 @@ void uart1_init(unsigned long baudrate) {
     UBRR1 = (F_CPU / (8UL * baudrate)) - 1UL;
 
     // Enable Transmitter and Receiver
-    UCSR1B = (1<<RXCIE0) | (1 << TXEN1) | (1 << RXEN1);
+    UCSR1B = (1 << RXCIE1) | (1 << TXEN1) | (1 << RXEN1);
 
     // 8 data bits, 1 stop bit, no parity
     UCSR1C = (1 << UCSZ11) | (1 << UCSZ10);
@@ -102,7 +102,7 @@ void uart1_printstr(const char *str) {
 
 	while (*str != '\0')
 	{
-		uart0_tx(*str);
+		uart1_tx(*str);
 		str++;
 	}
 
@@ -110,11 +110,11 @@ void uart1_printstr(const char *str) {
 
 void uart1_print_10bit(uint32_t c) {
 	if (c == 0)
-		uart0_tx('0');
+		uart1_tx('0');
 	if (c > 10) {
-		uart0_print_10bit(c / 10);
+		uart1_print_10bit(c / 10);
 	}
-	uart0_tx('0' + (c % 10));
+	uart1_tx('0' + (c % 10));
 }
 
 uint8_t uart1_available(void) {
