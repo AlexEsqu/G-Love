@@ -1,14 +1,19 @@
-F_CPU    = 16000000UL
+F_CPU    = 8000000UL
 
-DEVICE1   = atmega328p
-BAUDRATE1 = 115200
-PORT1     ?= /dev/ttyUSB0
+DEVICE1   = m328p
+BAUDRATE1 = 19200
+PORT1     ?= /dev/cu.usbmodem101
 CODEDIR1  = srcs/main
 
 DEVICE2   = atmega2560
 BAUDRATE2 = 115200
 PORT2     ?= /dev/ttyUSB1
 CODEDIR2  = srcs/main
+
+# Configuration Arduino as ISP
+ISP_PORT     ?= /dev/ttyACM0
+ISP_BAUD     ?= 19200
+
 
 NAME     = main
 
@@ -68,10 +73,16 @@ ${BIN2}: ${OBJS2}
 	${OBJCOPY} -O ihex ${BIN2} ${HEX2}
 
 uno: all ${HEX1}
-	avrdude -p ${DEVICE1} -c arduino -P ${PORT1} -b ${BAUDRATE1} -D -v -U flash:w:${HEX1}:i
+	avrdude -c stk500v1 -p ${DEVICE1} -P ${PORT1} -b ${BAUDRATE1} -D -v -U flash:w:${HEX1}:i
 
 mega: all ${HEX2}
 	avrdude -p ${DEVICE2} -c wiring -P ${PORT2} -b ${BAUDRATE2} -D -v -U flash:w:${HEX2}:i
+
+unoisp: ${OBJS1}
+	${CC} -Os -mmcu=${DEVICE1} -DF_CPU=${F_CPU} ${OBJS1} -o ${BIN1}
+	${OBJCOPY} -O ihex ${BIN1} ${HEX1}
+	avrdude -p ${DEVICE1} -c stk500v1 -P ${ISP_PORT} -b ${ISP_BAUD} -v -U flash:w:${HEX1}:i
+
 
 both: uno mega
 

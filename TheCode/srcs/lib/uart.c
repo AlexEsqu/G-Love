@@ -71,17 +71,12 @@ void uart0_send_data(const uint8_t *data, size_t len)
 // UART1
 void uart1_init(unsigned long baudrate)
 {
-    // Double speed mode
-    UCSR1A = (1 << U2X1);
+    UCSR0A = 0;
+    UBRR0H = 0;
+    UBRR0L = 1;
 
-    // Set Baud Rate Register
-    UBRR1 = (F_CPU / (8UL * baudrate)) - 1UL;
-
-    // Enable Transmitter and Receiver
-    UCSR1B = (1 << TXEN1) | (1 << RXEN1);
-
-    // 8 data bits, 1 stop bit, no parity
-    UCSR1C = (1 << UCSZ11) | (1 << UCSZ10);
+    UCSR0B = (1 << RXEN0) | (1 << TXEN0) | (1 << RXCIE0);
+    UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);
 }
 
 void uart1_tx(char c)
@@ -155,19 +150,19 @@ ISR(USART_RX_vect)
 
     switch (recu)
     {
-    case '1':
+    case 'a':
         trigger_pulse(THUMB, 255, 0, 0, 100, 10);
         break;
-    case '2':
+    case 'b':
         trigger_pulse(INDEX, 0, 255, 0, 100, 10);
         break;
-    case '3':
+    case 'c':
         trigger_pulse(MIDDLE, 0, 0, 255, 100, 10);
         break;
-    case '4':
+    case 'd':
         trigger_pulse(RING, 255, 255, 0, 100, 10);
         break;
-    case '5':
+    case 'e':
         trigger_pulse(PINKY, 255, 0, 255, 100, 10);
         break;
     default:
