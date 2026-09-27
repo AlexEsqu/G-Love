@@ -81,7 +81,8 @@ void        update_and_render_pulses(void);
 void        trigger_pulse(uint8_t finger, uint8_t r, uint8_t g, uint8_t b, uint16_t speed_fp, uint8_t length);
 void        fade_strip_to_black(uint8_t fade_factor);
 void        led_effect(uint8_t finger, uint8_t effect);
-void        strip_flush(void);
+bool        strip_flush(void);
+bool        strip_is_busy(void);
 rgb_color_t hsvToRgb(uint16_t h, uint8_t s, uint8_t v);
 uint8_t     qadd8(uint8_t a, uint8_t b);
 

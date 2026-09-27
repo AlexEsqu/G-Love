@@ -49,6 +49,10 @@ void fade_strip_to_black(uint8_t fade_factor) { // fade_factor from 0 to 255 (e.
 
 // Calculation and rendering
 void update_and_render_pulses(void) {
+    if (strip_is_busy()) {
+        return;
+    }
+
     // Slightly fade the trail left by previous frames
     fade_strip_to_black(215); // The lower the number, the faster the trail disappears
 

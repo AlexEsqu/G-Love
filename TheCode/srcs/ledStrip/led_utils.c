@@ -1,10 +1,13 @@
 #include "led.h"
 #include "../../includes/main.h"
+#include <avr/interrupt.h>
 
 strip_buffer_t strip;
 
-rgb_color_t colors[NUM_LEDS];
 const uint16_t TOTAL_BYTES = sizeof(strip_buffer_t);
+static uint8_t spi_buffer[sizeof(strip_buffer_t)];
+static volatile uint16_t spi_index;
+static volatile bool spi_busy;
 
 // Unique initialisation of the fixed values of the LED buffer (start, end, and header of the LEDs)
 void strip_init(uint8_t brightness)
@@ -23,16 +26,40 @@ void strip_init(uint8_t brightness)
     for (uint8_t i = 0; i < END_FRAME_BYTES; i++) strip.end[i] = 0x00;
 }
 
-// Raw send of the entire buffer over SPI
-void strip_flush(void)
+bool strip_flush(void)
 {
-    uint8_t *ptr = (uint8_t *)&strip;
-    uint16_t count = TOTAL_BYTES;
-    
-    while (count--)
+    if (spi_busy)
     {
-        SPDR = *ptr++;
-        while (!(SPSR & (1 << SPIF)));
+        return false;
+    }
+
+    for (uint16_t i = 0; i < TOTAL_BYTES; i++)
+    {
+        spi_buffer[i] = ((uint8_t *)&strip)[i];
+    }
+
+    spi_index = 1;
+    spi_busy = true;
+    SPCR |= (1 << SPIE);
+    SPDR = spi_buffer[0];
+    return true;
+}
+
+bool strip_is_busy(void)
+{
+    return spi_busy;
+}
+
+ISR(SPI_STC_vect)
+{
+    if (spi_index < TOTAL_BYTES)
+    {
+        SPDR = spi_buffer[spi_index++];
+    }
+    else
+    {
+        SPCR &= ~(1 << SPIE);
+        spi_busy = false;
     }
 }
 
@@ -58,7 +85,7 @@ rgb_color_t hsvToRgb(uint16_t h, uint8_t s, uint8_t v)
     return (rgb_color_t){r, g, b};
 }
 
-// Fast 8-bit saturating addition
+// Fast 8-bit saturating addition (caps the value at uint8_t max instead of overflow)
 uint8_t qadd8(uint8_t a, uint8_t b)
 {
     uint16_t res = (uint16_t)a + b;
