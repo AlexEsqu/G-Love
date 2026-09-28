@@ -20,7 +20,7 @@ void	gc9a01_send_init_sequence()
 	gc9a01_send_command(GC9A01_SLEEP_OUT);
 	_delay_ms(120);
 
-	gc9a01_send_command(GC9A01_COLMOD);
+	gc9a01_send_command(GC9A01_SET_COL_ADDR);
 	gc9a01_send_parameter(0x05);
 
 	gc9a01_send_command(GC9A01_DISPLAY_ON);
@@ -208,8 +208,7 @@ void	gc9a01_send_init_sequence()
 
     // Internal registers
 
-    gc9a01_send_command(0xED);
-
+    gc9a01_send_command(GC9A01_MAGIC_ED);
     gc9a01_send_parameter(0x1B);
     gc9a01_send_parameter(0x0B);
 
@@ -380,9 +379,9 @@ void	gc9a01_init()
 	set_pin_as_output(&SCREEN_DDR, SCREEN_RST);
 
 	// pullup external pin to "1111" for 4-line serial interface - p.48
-	set_pin_up(&SCREEN_PORT, SCREEN_SS);
-	set_pin_up(&SCREEN_PORT, SCREEN_RST);
-	set_pin_up(&SCREEN_PORT, SCREEN_DC);
+	set_pin_high(&SCREEN_PORT, SCREEN_SS);
+	set_pin_high(&SCREEN_PORT, SCREEN_RST);
+	set_pin_high(&SCREEN_PORT, SCREEN_DC);
 
 	gc9a01_send_init_sequence();
 }
@@ -394,17 +393,17 @@ void	gc9a01_send_command(GC9A01_cmd_t cmd)
 
 	spi_send_data(cmd);
 
-	set_pin_up(&SCREEN_PORT, SCREEN_SS);
+	set_pin_high(&SCREEN_PORT, SCREEN_SS);
 }
 
 void	gc9a01_send_parameter(uint8_t param)
 {
-	set_pin_up(&SCREEN_PORT, SCREEN_DC);
+	set_pin_high(&SCREEN_PORT, SCREEN_DC);
 	set_pin_low(&SCREEN_PORT, SCREEN_SS);
 
 	spi_send_data(param);
 
-	set_pin_up(&SCREEN_PORT, SCREEN_SS);
+	set_pin_high(&SCREEN_PORT, SCREEN_SS);
 }
 
 void	gc9a01_set_display_size(uint16_t left, uint16_t top, uint16_t right, uint16_t bottom)
@@ -429,7 +428,7 @@ void gc9a01_fill_screen(uint32_t rgb)
 
 	gc9a01_send_command(GC9A01_MEM_WRITE);
 
-	set_pin_up(&SCREEN_PORT, SCREEN_DC);
+	set_pin_high(&SCREEN_PORT, SCREEN_DC);
 	set_pin_low(&SCREEN_PORT, SCREEN_SS);
 
 	uint8_t	red = rgb >> 16;
@@ -452,7 +451,7 @@ void gc9a01_fill_screen(uint32_t rgb)
 		spi_send_data(low);
 	}
 
-	set_pin_up(&SCREEN_PORT, SCREEN_SS);
+	set_pin_high(&SCREEN_PORT, SCREEN_SS);
 
 	gc9a01_send_command(GC9A01_DISPLAY_ON);
 }

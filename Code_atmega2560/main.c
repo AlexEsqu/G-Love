@@ -18,8 +18,8 @@ void setup()
 int main(void) {
 
 	setup();
-	char buf[100];
-	int i = 0;
+
+	int mode = 0;
 
 	while (1)
 	{
@@ -49,15 +49,15 @@ int main(void) {
 			if (points > 0) {
 				uart0_printstr("action: ");
 				uart0_print_10bit(action);
-				if (action == 1)
+				if (action == TFT_UP)
 					uart0_printstr("swipe up\r\n");
-				else if (action == 2)
+				else if (action == TFT_DOWN)
 					uart0_printstr("swipe down\r\n");
-				else if (action == 3)
+				else if (action == TFT_RIGHT)
 					uart0_printstr("swipe right\r\n");
-				else if (action == 4)
+				else if (action == TFT_LEFT)
 					uart0_printstr("swipe left\r\n");
-				else if (action == 0)
+				else if (action == TFT_TAP)
 					uart0_printstr("tap\r\n");
 				else
 					uart0_printstr("autre action\r\n");
@@ -66,6 +66,17 @@ int main(void) {
 				uart0_printstr(" | Y: ");
 				uart0_print_10bit(y);
 				uart0_printstr("\r\n");
+			}
+
+			if (action != mode)
+			{
+				mode = action;
+				if (mode == TFT_LEFT)
+					gc9a01_fill_screen(0x008000);
+				if (mode == TFT_RIGHT)
+					gc9a01_fill_screen(0x800000);
+				if (mode == TFT_UP)
+					gc9a01_fill_screen(0x000900);
 			}
 		}
 	}
