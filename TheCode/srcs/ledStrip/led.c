@@ -10,10 +10,10 @@ const finger_leds_t finger_leds_map[FINGER_COUNT + 1] = {
     [MIDDLE] = { .start = THUMB_LED_SIZE + INDEX_LED_SIZE, .size = MIDDLE_LED_SIZE },
     [RING] = { .start = THUMB_LED_SIZE + INDEX_LED_SIZE + MIDDLE_LED_SIZE, .size = RING_LED_SIZE },
     [PINKY] = { .start = THUMB_LED_SIZE + INDEX_LED_SIZE + MIDDLE_LED_SIZE + RING_LED_SIZE, .size = PINKY_LED_SIZE },
-    [FINGER_COUNT] = { .start = 0, .size = NUM_LEDS } // Optional: Represents the entire hand
+    [FINGER_COUNT] = { .start = 0, .size = NUM_LEDS } // All leds for init/testing purposes
 };
 
-// Trigger with fixed-point speed (e.g., speed_fp = 200 for ~0.78 LED/frame)
+// Trigger with fixed-point speed (speed_fp = speed * 256) and length in number of LEDs
 void trigger_pulse(uint8_t finger, uint8_t r, uint8_t g, uint8_t b, uint16_t speed_fp, uint8_t length) {
     if (finger > FINGER_COUNT) {
         return;
@@ -79,38 +79,34 @@ void update_and_render_pulses(void) {
     strip_flush();
 }
 
+// Trigger a pulse on a specific finger with given color, speed, and length
 void led_effect(uint8_t finger, uint8_t effect)
 {
     if (finger >= FINGER_COUNT) {
         return;
     }
 
-    finger_leds_t range = g_finger_leds[finger];
-
     switch (finger)
     {
         case THUMB:
-            // Apply effect to thumb LEDs
+            trigger_pulse(THUMB, 255, 0, 0, 100, 10);
             break;
         case INDEX:
-            // Apply effect to index LEDs
+            trigger_pulse(INDEX, 0, 255, 0, 100, 10);
             break;
         case MIDDLE:
-            // Apply effect to middle LEDs
+            trigger_pulse(MIDDLE, 0, 0, 255, 100, 10);
             break;
         case RING:
-            // Apply effect to ring LEDs
+            trigger_pulse(RING, 255, 255, 0, 100, 10);
             break;
         case PINKY:
-            // Apply effect to pinky LEDs
+            trigger_pulse(PINKY, 255, 0, 255, 100, 10);
             break;
         default:
             return;
             break;
     }
-
-    (void)range;
-    (void)effect;
 }
 
 void led_spi()

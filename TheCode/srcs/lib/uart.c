@@ -145,7 +145,7 @@ void ft_uart_print_hex(uint8_t c)
 /** USART Receive Complete interrupt service routine
  * Triggered when a new byte is received and stored in UDR0 (RXC0 flag set)*/
 #if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
-ISR(USART_RX_vect)
+void USART_RX_vect(void) __attribute__ ((signal, __used__, externally_visible))
 {
     // Read the received byte from UDR0 to clear the RXC0 flag
     char recu = UDR0; // Read the received byte from UDR0 to clear the RXC0 flag

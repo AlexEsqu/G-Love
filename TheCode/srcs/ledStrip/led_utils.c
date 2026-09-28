@@ -2,6 +2,7 @@
 #include "../../includes/main.h"
 #include <avr/interrupt.h>
 
+// Static array of finger LED ranges
 strip_buffer_t strip;
 
 const uint16_t TOTAL_BYTES = sizeof(strip_buffer_t);
@@ -26,6 +27,7 @@ void strip_init(uint8_t brightness)
     for (uint8_t i = 0; i < END_FRAME_BYTES; i++) strip.end[i] = 0x00;
 }
 
+// Copy the current strip buffer to the SPI buffer and start the SPI transfer
 bool strip_flush(void)
 {
     if (spi_busy)
@@ -50,7 +52,10 @@ bool strip_is_busy(void)
     return spi_busy;
 }
 
-ISR(SPI_STC_vect)
+// SPI Serial Transfer Complete interrupt service routine
+// Triggered when a byte has been transmitted and the next byte can be sent
+// If all bytes have been sent, the SPI interrupt is disabled and the busy flag is cleared
+void SPI_STC_vect(void) __attribute__ ((signal, __used__, externally_visible)) 
 {
     if (spi_index < TOTAL_BYTES)
     {

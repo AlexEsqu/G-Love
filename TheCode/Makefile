@@ -2,7 +2,7 @@ F_CPU    = 16000000UL
 
 DEVICE1   = atmega328p
 BAUDRATE1 = 115200
-PORT1     ?= /dev/ttyUSB0
+PORT1     ?= /dev/ttyACM0
 CODEDIR1  = srcs/main
 
 DEVICE2   = atmega2560
@@ -68,7 +68,7 @@ ${BIN2}: ${OBJS2}
 	${OBJCOPY} -O ihex ${BIN2} ${HEX2}
 
 uno: all ${HEX1}
-	avrdude -p ${DEVICE1} -c arduino -P ${PORT1} -b ${BAUDRATE1} -D -v -U flash:w:${HEX1}:i
+	avrdude -p ${DEVICE1} -c stk500v1 -P ${PORT1} -b ${BAUDRATE1} -D -v -U flash:w:${HEX1}:i
 
 mega: all ${HEX2}
 	avrdude -p ${DEVICE2} -c wiring -P ${PORT2} -b ${BAUDRATE2} -D -v -U flash:w:${HEX2}:i
