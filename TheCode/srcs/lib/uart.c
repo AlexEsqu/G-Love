@@ -145,7 +145,7 @@ void ft_uart_print_hex(uint8_t c)
 /** USART Receive Complete interrupt service routine
  * Triggered when a new byte is received and stored in UDR0 (RXC0 flag set)*/
 #if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
-void USART_RX_vect(void) __attribute__ ((signal, __used__, externally_visible))
+__attribute__ ((signal, __used__, externally_visible)) void USART_RX_vect(void) 
 {
     // Read the received byte from UDR0 to clear the RXC0 flag
     char recu = UDR0; // Read the received byte from UDR0 to clear the RXC0 flag
@@ -153,25 +153,6 @@ void USART_RX_vect(void) __attribute__ ((signal, __used__, externally_visible))
     // Echo the received byte back to the sender
     uart0_tx(recu);
 
-    switch (recu)
-    {
-    case '1':
-        trigger_pulse(THUMB, 255, 0, 0, 100, 10);
-        break;
-    case '2':
-        trigger_pulse(INDEX, 0, 255, 0, 100, 10);
-        break;
-    case '3':
-        trigger_pulse(MIDDLE, 0, 0, 255, 100, 10);
-        break;
-    case '4':
-        trigger_pulse(RING, 255, 255, 0, 100, 10);
-        break;
-    case '5':
-        trigger_pulse(PINKY, 255, 0, 255, 100, 10);
-        break;
-    default:
-        break;
-    }
+    led_effect(recu - 48, 0); // Trigger LED effect on THUMB when a byte is received
 }
 #endif

@@ -55,7 +55,7 @@ bool strip_is_busy(void)
 // SPI Serial Transfer Complete interrupt service routine
 // Triggered when a byte has been transmitted and the next byte can be sent
 // If all bytes have been sent, the SPI interrupt is disabled and the busy flag is cleared
-void SPI_STC_vect(void) __attribute__ ((signal, __used__, externally_visible)) 
+__attribute__ ((signal, __used__, externally_visible)) void SPI_STC_vect(void) 
 {
     if (spi_index < TOTAL_BYTES)
     {

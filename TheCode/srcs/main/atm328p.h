@@ -7,7 +7,7 @@
 #define F_CPU 16000000UL
 #endif
 
-#define BAUDRATE 115200
+#define BAUDRATE 19200
 
 
 #define SENSOR_PACKET_MAGIC 0xA55A

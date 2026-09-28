@@ -89,19 +89,19 @@ void led_effect(uint8_t finger, uint8_t effect)
     switch (finger)
     {
         case THUMB:
-            trigger_pulse(THUMB, 255, 0, 0, 100, 10);
+            trigger_pulse(THUMB, 255, 0, 0, 255, 10);
             break;
         case INDEX:
-            trigger_pulse(INDEX, 0, 255, 0, 100, 10);
+            trigger_pulse(INDEX, 0, 255, 0, 255, 10);
             break;
         case MIDDLE:
-            trigger_pulse(MIDDLE, 0, 0, 255, 100, 10);
+            trigger_pulse(MIDDLE, 0, 0, 255, 255, 10);
             break;
         case RING:
-            trigger_pulse(RING, 255, 255, 0, 100, 10);
+            trigger_pulse(RING, 255, 255, 0, 255, 10);
             break;
         case PINKY:
-            trigger_pulse(PINKY, 255, 0, 255, 100, 10);
+            trigger_pulse(PINKY, 255, 0, 255, 255, 10);
             break;
         default:
             return;
