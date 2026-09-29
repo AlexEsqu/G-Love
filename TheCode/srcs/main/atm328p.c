@@ -36,6 +36,6 @@ int main_ATM328P()
 		//send to atm2560 through uart0
 		uart0_send_data((const uint8_t*)&g_sensor, sizeof(g_sensor));
 
-		_delay_ms(50);
+		_delay_ms(20);
 	}
 }

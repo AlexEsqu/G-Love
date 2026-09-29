@@ -47,17 +47,32 @@ bool process_packet(uint8_t *byte, t_sensor_data *packet)
 
 	if (flag == 0)
 	{
-		if (*byte == SENSOR_PACKET_MAGIC)
+		if (*byte == (uint8_t)(SENSOR_PACKET_MAGIC & 0xFF))
 		{
 			buf[0] = *byte;
-			index = 1;
-			flag = 1; //magic number detected = start process packet
+			flag = 1;
+		}
+	}
+	else if (flag == 1)
+	{
+		if (*byte == (uint8_t)((SENSOR_PACKET_MAGIC >> 8) & 0xFF))
+		{
+			buf[1] = *byte;
+			index = 2;
+			flag = 2; // magic number found
+		}
+		else if (*byte == (uint8_t)(SENSOR_PACKET_MAGIC & 0xFF))
+		{
+			buf[0] = *byte; // reset
+		}
+		else
+		{
+			flag = 0;
 		}
 	}
 	else
 	{
-		buf[index] = *byte;
-		index++;
+		buf[index++] = *byte;
 
 		if (index == sizeof(t_sensor_data))
 		{

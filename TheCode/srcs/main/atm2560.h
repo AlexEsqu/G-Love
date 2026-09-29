@@ -25,7 +25,7 @@
 
 
 
-#define RX_BUFFER_SIZE 64
+#define RX_BUFFER_SIZE 128
 #define SENSOR_PACKET_MAGIC2 0xA55A
 
 typedef struct __attribute__((packed)) s_sensor_data_to_pc

@@ -1,7 +1,6 @@
 #include <stdint.h>
 #include "mux.h"
 #include "../../includes/main.h"
-#include "../main/atm328p.h"
 
 
 #ifdef PROTO
@@ -32,7 +31,7 @@ void selectChannel(int channel)
 int readChannel(int channel)
 {
 	selectChannel(channel);
-	_delay_ms(50);
+	_delay_us(20);
 	sensorState[channel] = ft_adc_read_10bit();
 
 	//uart0_printstr("channel:");
@@ -74,7 +73,7 @@ void selectMuxChannel(uint8_t channel)
 int readMuxChannel(uint8_t channel, uint8_t adcPin)
 {
 	selectMuxChannel(channel);
-	_delay_ms(50);
+	_delay_us(20);
 
 
 	//uart0_printstr("channel:");
