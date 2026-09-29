@@ -51,6 +51,9 @@ uint16_t    ft_adc_read_channel(uint8_t channel);
 uint8_t     crc8_compute(const uint8_t *data, size_t len);
 uint16_t    crc16_compute(const uint8_t *data, size_t len);
 
+
+#define I2C_TIMEOUT 10000U
+
 // i2c.c
 void 		i2c_init(void);
 void 		i2c_status(void);
