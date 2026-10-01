@@ -65,7 +65,7 @@ uint8_t uart0_available(void) {
 	return (UCSR0A & (1 << RXC0));
 }
 
-#ifdef __AVR_ATmega2560__
+#if defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__)
 
 //UART1
 void uart1_init(unsigned long baudrate) {

@@ -6,7 +6,7 @@
 #include <stdint.h>
 #include <stddef.h>
 
-#if defined(__AVR_ATmega2560__)
+#if defined(__AVR_ATmega2560__) || (__AVR_ATmega2561__)
     #define SPI_DDR   DDRB
     #define SPI_MOSI  DDB2
     #define SPI_SCK   DDB1
