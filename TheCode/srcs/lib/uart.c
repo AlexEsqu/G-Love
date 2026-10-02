@@ -1,12 +1,13 @@
 #include "../../includes/main.h"
+#include "../main/atm2560.h"
 
 //UART0
 void uart0_init(unsigned long baudrate) {
+    // Set Baud Rate Register
+    UBRR0 = MYUBRR;
+
     // Double speed mode for reduced baud rate error at 115200 baud
     UCSR0A = (1 << U2X0);
-
-    // Set Baud Rate Register
-    UBRR0 = (F_CPU / (8UL * baudrate)) - 1UL;
 
     // Enable Transmitter and Receiver
     UCSR0B = (1 << TXEN0) | (1 << RXEN0);
@@ -73,7 +74,7 @@ void uart1_init(unsigned long baudrate) {
     UCSR1A = (1 << U2X1);
 
     // Set Baud Rate Register
-    UBRR1 = (F_CPU / (8UL * baudrate)) - 1UL;
+    UBRR1 = MYUBRR;
 
     // Enable Transmitter and Receiver
     UCSR1B = (1 << RXCIE1) | (1 << TXEN1) | (1 << RXEN1);

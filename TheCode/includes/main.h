@@ -3,6 +3,7 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
+#include <avr/wdt.h> 
 #include <stdint.h>
 #include <stddef.h>
 

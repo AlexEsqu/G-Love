@@ -7,8 +7,11 @@
 #define F_CPU 16000000UL
 #endif
 
-#define MYUBRR F_CPU/16/BAUD-1
-#define BAUDRATE 115200
+//#define MYUBRR F_CPU/16/BAUD-1
+//#define BAUDRATE 115200
+
+#define BAUDRATE 57600UL
+#define MYUBRR ((F_CPU + BAUDRATE * 4) / (BAUDRATE * 8) - 1) 
 
 // define screen port
 #define TFT_CS 10

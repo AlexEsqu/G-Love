@@ -12,7 +12,8 @@ PORT2     = /dev/cu.wchusbserial110
 CODEDIR2  = srcs/main
 
 NAME     = main
-NAME_BRIDGE   = bridge
+NAME_BRIDGE = bridge
+NAME_TEST 	= test
 
 BIN1     = ${NAME}_uno.bin
 HEX1     = ${NAME}_uno.hex
@@ -21,6 +22,9 @@ HEX2     = ${NAME}_mega.hex
 
 BIN_BOOT = ${NAME_BRIDGE}_mega.bin
 HEX_BOOT = ${NAME_BRIDGE}_mega.hex
+
+BIN_TEST = ${NAME_TEST}_mega.bin
+HEX_TEST = ${NAME_TEST}_mega.hex
 
 CC       = avr-gcc
 OBJCOPY  = avr-objcopy
@@ -48,9 +52,12 @@ SRCS2    = $(CODEDIR2)/main.c \
 
 SRC_BOOT1 = srcs/boot/bridge_atm2561.c
 
-OBJS1    = $(SRCS1:.c=_uno.o)
-OBJS2    = $(SRCS2:.c=_mega.o)
-OBJS_BOOT1	 = $(SRC_BOOT1:.c=_mega.o)
+SRC_TEST = srcs/testing/uart_test.c
+
+OBJS1      = $(SRCS1:.c=_uno.o)
+OBJS2      = $(SRCS2:.c=_mega.o)
+OBJS_BOOT1 = $(SRC_BOOT1:.c=_mega.o)
+OBJS_TEST  = $(SRC_TEST:.c=_mega.o)
 
 # for UNO / atmega328P
 %_uno.o: %.c
@@ -85,10 +92,19 @@ megaarduino: ${OBJS2}
 bridge: ${OBJS_BOOT1}
 	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${OBJS_BOOT1} -o ${BIN_BOOT}
 	${OBJCOPY} -O ihex ${BIN_BOOT} ${HEX_BOOT}
-	avrdude -p ${DEVICE2} -c urclock -P ${PORT2} -b ${BAUDRATE2} -D -F -v -U flash:w:${HEX_BOOT}:i
+	avrdude -p ${DEVICE2} -c urclock -P ${PORT2} -b ${BAUDRATE2} -v -U flash:w:${HEX_BOOT}:i
+
+uarttest: ${OBJS_TEST}
+	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${OBJS_TEST} -o ${BIN_TEST}
+	${OBJCOPY} -O ihex ${BIN_TEST} ${HEX_TEST}
+	avrdude -p ${DEVICE2} -c urclock -P ${PORT2} -b ${BAUDRATE2} -v -U flash:w:${HEX_TEST}:i
 
 clean:
-	rm -f ${BIN1} ${HEX1} ${BIN2} ${HEX2} ${HEX_BOOT} ${BIN_BOOT} ${OBJS1} ${OBJS2} ${OBJS_BOOT1}
+	rm -f ${BIN1} ${HEX1}${OBJS1} \
+			${BIN2} ${HEX2} ${OBJS2} \
+			${HEX_BOOT} ${BIN_BOOT} ${OBJS_BOOT1} \
+			${HEX_TEST} ${BIN_TEST} ${OBJS_TEST}
+			 
 
 fclean: clean
 
