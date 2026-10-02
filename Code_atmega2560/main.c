@@ -11,7 +11,7 @@ void setup()
 	cst816d_init();
 	gc9a01_init();
 
-	gc9a01_fill_screen(0x800000);
+	gc9a01_fill_screen(RGB565_YELLOW);
 
 }
 
@@ -23,7 +23,6 @@ int main(void) {
 
 	while (1)
 	{
-		// gc9a01_fill_screen(0xFF0000);
 		if (received_data_from_cst816d())
 		{
 			i2c_start();
@@ -43,8 +42,8 @@ int main(void) {
 
 			i2c_stop();
 
-			int x = ((x_high & 0x0F) << 8) | x_low;
-			int y = ((y_high & 0x0F) << 8) | y_low;
+			int x = x_low;
+			int y = y_low;
 
 			if (points > 0) {
 				uart0_printstr("action: ");
@@ -68,15 +67,19 @@ int main(void) {
 				uart0_printstr("\r\n");
 			}
 
-			if (action != mode)
+			if (action == TFT_TAP)
+			{
+				gc9a01_send_square(x_low, y_low, RGB565_BLACK, 10);
+			}
+			else if (action != mode)
 			{
 				mode = action;
 				if (mode == TFT_LEFT)
-					gc9a01_fill_screen(0x008000);
+					gc9a01_fill_screen(RGB565_YELLOW);
 				if (mode == TFT_RIGHT)
-					gc9a01_fill_screen(0x800000);
+					gc9a01_fill_screen(RGB565_CYAN);
 				if (mode == TFT_UP)
-					gc9a01_fill_screen(0x000900);
+					gc9a01_fill_screen(RGB565_MAGENTA);
 			}
 		}
 	}
