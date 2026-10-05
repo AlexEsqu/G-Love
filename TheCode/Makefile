@@ -52,7 +52,8 @@ SRCS2    = $(CODEDIR2)/main.c \
 
 SRC_BOOT1 = srcs/boot/bridge_atm2561.c
 
-SRC_TEST = srcs/testing/uart_test.c
+SRC_TEST = srcs/testing/uart_test.c \
+			srcs/lib/uart.c
 
 OBJS1      = $(SRCS1:.c=_uno.o)
 OBJS2      = $(SRCS2:.c=_mega.o)
@@ -100,7 +101,7 @@ uarttest: ${OBJS_TEST}
 	avrdude -p ${DEVICE2} -c urclock -P ${PORT2} -b ${BAUDRATE2} -v -U flash:w:${HEX_TEST}:i
 
 clean:
-	rm -f ${BIN1} ${HEX1}${OBJS1} \
+	rm -f ${BIN1} ${HEX1} ${OBJS1} \
 			${BIN2} ${HEX2} ${OBJS2} \
 			${HEX_BOOT} ${BIN_BOOT} ${OBJS_BOOT1} \
 			${HEX_TEST} ${BIN_TEST} ${OBJS_TEST}

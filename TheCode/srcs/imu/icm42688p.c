@@ -21,3 +21,8 @@ actiavte gyro and accel
 
 wait 45ms
 */
+
+void ICM42688_init()
+{
+
+}
