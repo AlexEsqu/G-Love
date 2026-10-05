@@ -91,10 +91,11 @@ GC9A01A RST	   ─────┤ PB5		  │
 /*		DISPLAY COMMANDS		*/
 /********************************/
 
-
-
 #define TFT_WIDTH 240UL
 #define TFT_HEIGHT 240UL
+#define TFT_PIXEL_COUNT 57600UL
+
+#define TOUCH_DEBOUNCE_TIME 50
 
 enum {
 	TFT_TAP,

@@ -21,7 +21,7 @@ const gc9a01_sequence_t gc9a01_init_sequence[] =
 		.delay_ms = 0,
 	},
 	{
-		.cmd = GC9A01_MAGIC_EB,
+		.cmd = 0xEB,
 		.args = (const uint8_t[]){ 0x14 },
 		.args_size = 1,
 		.delay_ms = 0,
@@ -39,116 +39,97 @@ const gc9a01_sequence_t gc9a01_init_sequence[] =
 		.delay_ms = 0,
 	},
 	{
-		.cmd = GC9A01_MAGIC_EB,
+		.cmd = 0xEB,
 		.args = (const uint8_t[]){ 0x14 },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
 	{
-		.cmd = GC9A01_MAGIC_84,
+		.cmd = 0x84,
 		.args = (const uint8_t[]){ 0x40 },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
 	{
-		.cmd = GC9A01_MAGIC_85,
+		.cmd = 0x85,
 		.args = (const uint8_t[]){ 0xFF },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
 	{
-		.cmd = GC9A01_MAGIC_86,
-		.args = (const uint8_t[]){ 0xFF },
-		.args_size = 1,
-		.delay_ms = 0,
-	},
-
-	{
-		.cmd = GC9A01_MAGIC_87,
+		.cmd = 0x86,
 		.args = (const uint8_t[]){ 0xFF },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
 
 	{
-		.cmd = GC9A01_MAGIC_88,
+		.cmd = 0x87,
+		.args = (const uint8_t[]){ 0xFF },
+		.args_size = 1,
+		.delay_ms = 0,
+	},
+	{
+		.cmd = 0x88,
 		.args = (const uint8_t[]){ 0x0A },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
-
 	{
-		.cmd = GC9A01_MAGIC_89,
+		.cmd = 0x89,
 		.args = (const uint8_t[]){ 0x21 },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
-
 	{
-		.cmd = GC9A01_MAGIC_8A,
+		.cmd = 0x8A,
 		.args = (const uint8_t[]){ 0x00 },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
 
 	{
-		.cmd = GC9A01_MAGIC_8B,
+		.cmd = 0x8B,
 		.args = (const uint8_t[]){ 0x80 },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
-
 	{
-		.cmd = GC9A01_MAGIC_8C,
+		.cmd = 0x8C,
 		.args = (const uint8_t[]){ 0x01 },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
-
 	{
-		.cmd = GC9A01_MAGIC_8D,
+		.cmd = 0x8D,
 		.args = (const uint8_t[]){ 0x01 },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
-
 	{
-		.cmd = GC9A01_MAGIC_8E,
+		.cmd = 0x8E,
 		.args = (const uint8_t[]){ 0xFF },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
-
 	{
-		.cmd = GC9A01_MAGIC_8F,
+		.cmd = 0x8F,
 		.args = (const uint8_t[]){ 0xFF },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
-
-
-	/* Display function control */
-
 	{
 		.cmd = 0xB6,
 		.args = (const uint8_t[]){ 0x00, 0x20 },
 		.args_size = 2,
 		.delay_ms = 0,
 	},
-
-
-	/* Memory access control */
-
 	{
 		.cmd = GC9A01_MEM_ACCESS_CTL,
 		.args = (const uint8_t[]){ 0x08 },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
-
-
-	/* Pixel format */
-
 	{
 		.cmd = GC9A01_SET_PIX_FORMAT,
 		.args = (const uint8_t[]){ 0x05 },
@@ -156,37 +137,28 @@ const gc9a01_sequence_t gc9a01_init_sequence[] =
 		.delay_ms = 0,
 	},
 
-
-	/* Internal register */
-
 	{
-		.cmd = GC9A01_MAGIC_90,
+		.cmd = 0x90,
 		.args = (const uint8_t[]){
 			0x08, 0x08, 0x08, 0x08
 		},
 		.args_size = 4,
 		.delay_ms = 0,
 	},
-
 	{
 		.cmd = 0xBD,
 		.args = (const uint8_t[]){ 0x06 },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
-
 	{
 		.cmd = 0xBC,
 		.args = (const uint8_t[]){ 0x00 },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
-
-
-	/* Internal register */
-
 	{
-		.cmd = GC9A01_MAGIC_FF,
+		.cmd = 0xFF,
 		.args = (const uint8_t[]){
 			0x60, 0x01, 0x04
 		},
@@ -194,23 +166,18 @@ const gc9a01_sequence_t gc9a01_init_sequence[] =
 		.delay_ms = 0,
 	},
 
-
-	/* Power control */
-
 	{
 		.cmd = GC9A01_POWER2,
 		.args = (const uint8_t[]){ 0x13 },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
-
 	{
 		.cmd = GC9A01_POWER3,
 		.args = (const uint8_t[]){ 0x13 },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
-
 	{
 		.cmd = GC9A01_POWER4,
 		.args = (const uint8_t[]){ 0x22 },
@@ -224,17 +191,12 @@ const gc9a01_sequence_t gc9a01_init_sequence[] =
 		.args_size = 1,
 		.delay_ms = 0,
 	},
-
-
-	/* Internal timing */
-
 	{
 		.cmd = 0xE1,
 		.args = (const uint8_t[]){ 0x10, 0x0E },
 		.args_size = 2,
 		.delay_ms = 0,
 	},
-
 	{
 		.cmd = 0xDF,
 		.args = (const uint8_t[]){
@@ -243,9 +205,6 @@ const gc9a01_sequence_t gc9a01_init_sequence[] =
 		.args_size = 3,
 		.delay_ms = 0,
 	},
-
-
-	/* Positive gamma */
 
 	{
 		.cmd = GC9A01_GAMMA1,
@@ -280,19 +239,17 @@ const gc9a01_sequence_t gc9a01_init_sequence[] =
 		.delay_ms = 0,
 	},
 	{
-		.cmd = GC9A01_MAGIC_ED,
+		.cmd = 0xED,
 		.args = (const uint8_t[]){ 0x1B, 0x0B },
 		.args_size = 2,
 		.delay_ms = 0,
 	},
-
 	{
 		.cmd = 0xAE,
 		.args = (const uint8_t[]){ 0x77 },
 		.args_size = 1,
 		.delay_ms = 0,
 	},
-
 	{
 		.cmd = 0xCD,
 		.args = (const uint8_t[]){ 0x63 },
@@ -300,7 +257,7 @@ const gc9a01_sequence_t gc9a01_init_sequence[] =
 		.delay_ms = 0,
 	},
 	{
-		.cmd = GC9A01_MAGIC_70,
+		.cmd = 0x70,
 		.args = (const uint8_t[]){
 			0x07, 0x07, 0x04, 0x0E, 0x0F,
 			0x09, 0x07, 0x08, 0x03
@@ -360,7 +317,7 @@ const gc9a01_sequence_t gc9a01_init_sequence[] =
 		.delay_ms = 0,
 	},
 	{
-		.cmd = GC9A01_MAGIC_74,
+		.cmd = 0x74,
 		.args = (const uint8_t[]){
 			0x10, 0x85, 0x80, 0x00,
 			0x00, 0x4E, 0x00
@@ -369,7 +326,7 @@ const gc9a01_sequence_t gc9a01_init_sequence[] =
 		.delay_ms = 0,
 	},
 	{
-		.cmd = GC9A01_MAGIC_98,
+		.cmd = 0x98,
 		.args = (const uint8_t[]){ 0x3E, 0x07 },
 		.args_size = 2,
 		.delay_ms = 0,
@@ -437,19 +394,6 @@ void	gc9a01_send_parameter(uint8_t param)
 
 	set_pin_high(&SCREEN_PORT, SCREEN_SS);
 }
-
-// void	gc9a01_send_parameters(const uint8_t* param_start, uint8_t param_byte_count)
-// {
-// 	set_pin_high(&SCREEN_PORT, SCREEN_DC);
-// 	set_pin_low(&SCREEN_PORT, SCREEN_SS);
-
-// 	for (uint8_t i = param_byte_count - 1; i >= 0; i--)
-// 	{
-// 		spi_send_data(param_start[i]);
-// 	}
-
-// 	set_pin_high(&SCREEN_PORT, SCREEN_SS);
-// }
 
 void	gc9a01_execute_sequence(const gc9a01_sequence_t* sequence)
 {

@@ -49,16 +49,16 @@
 	X(GC9A01_POWER3,				0xC4)		\
 	X(GC9A01_POWER4,				0xC9)		\
 												\
-	/* ---- IDENTIFICATION ---- */				\
+	/* -- IDENTIFICATION -- */					\
 	X(GC9A01_RD_ID1,				0xDA)		\
 	X(GC9A01_RD_ID2,				0xDB)		\
 	X(GC9A01_RD_ID3,				0xDC)		\
 												\
-	/* ---- TIMING ---- */						\
+	/* ---- TIMING -------- */					\
 	X(GC9A01_FRAMERATE,				0xE8)		\
 	X(GC9A01_SPI2DATA,				0xE9)		\
 												\
-	/* ---- WEIRD ---- */						\
+	/* ---- WEIRD -------- */					\
 	X(GC9A01_INREGEN2,				0xEF)		\
 	X(GC9A01_GAMMA1,				0xF0)		\
 	X(GC9A01_GAMMA2,				0xF1)		\
@@ -66,27 +66,6 @@
 	X(GC9A01_GAMMA4,				0xF3)		\
 	X(GC9A01_IFACE,					0xF6)		\
 	X(GC9A01_INREGEN1,				0xFE)		\
-												\
-	/* ---- PROPRIETARY MYSTERY ---- */			\
-	X(GC9A01_MAGIC_70,				0x70)		\
-    X(GC9A01_MAGIC_74,				0x74)		\
-    X(GC9A01_MAGIC_84,				0x84)		\
-    X(GC9A01_MAGIC_85,				0x85)		\
-    X(GC9A01_MAGIC_86,				0x86)		\
-    X(GC9A01_MAGIC_87,				0x87)		\
-    X(GC9A01_MAGIC_88,				0x88)		\
-    X(GC9A01_MAGIC_89,				0x89)		\
-    X(GC9A01_MAGIC_8A,				0x8A)		\
-    X(GC9A01_MAGIC_8B,				0x8B)		\
-    X(GC9A01_MAGIC_8C,				0x8C)		\
-    X(GC9A01_MAGIC_8D,				0x8D)		\
-    X(GC9A01_MAGIC_8E,				0x8E)		\
-    X(GC9A01_MAGIC_8F,				0x8F)		\
-    X(GC9A01_MAGIC_90,				0x90)		\
-    X(GC9A01_MAGIC_98,				0x98)		\
-    X(GC9A01_MAGIC_EB,				0xEB)		\
-    X(GC9A01_MAGIC_ED,				0xED)		\
-    X(GC9A01_MAGIC_FF,				0xFF)
 
 #define GC9A01_ENUM(name, hexcode) name = hexcode,
 
