@@ -2,7 +2,6 @@
 #define CONFIG_ATM2560_H
 
 #include <avr/io.h>
-#include "../includes/gc9a01_sequences.h"
 
 #ifndef F_CPU
 #define F_CPU 16000000UL
@@ -80,68 +79,7 @@ GC9A01A RST	   ─────┤ PB5		  │
 					└─────────────┘
 */
 
-/************************/
-/*		ADDRESSES		*/
-/************************/
-
-#define I2C_ADDR_CST816D 0x15 // tactile chip driver on the touchscreen
-#define SPI_ADDR_GC9A91 0x2C // display chip driver on the touchscreen
-
-/********************************/
-/*		DISPLAY COMMANDS		*/
-/********************************/
-
-#define TFT_WIDTH 240UL
-#define TFT_HEIGHT 240UL
-#define TFT_PIXEL_COUNT 57600UL
-
-#define TOUCH_DEBOUNCE_TIME 50
-
-enum {
-	TFT_TAP,
-	TFT_LEFT,
-	TFT_UP,
-	TFT_RIGHT,
-	TFT_DOWN,
-};
-
-typedef enum {
-
-	RGB565_BLACK	= 0x0000,
-	RGB565_WHITE	= 0xFFFF,
-
-	RGB565_RED		= 0xF800,
-	RGB565_GREEN	= 0x07E0,
-	RGB565_BLUE		= 0x001F,
-
-	RGB565_YELLOW	= 0xFFE0,
-	RGB565_CYAN		= 0x07FF,
-	RGB565_MAGENTA	= 0xF81F,
-
-	RGB565_ORANGE	= 0xFD20,
-	RGB565_PURPLE	= 0x780F,
-	RGB565_PINK		= 0xF81F,
-	RGB565_BROWN	= 0xA145,
-	RGB565_GRAY		= 0x8410,
-	RGB565_GOLD		= 0xFEA0,
-	RGB565_NAVY		= 0x000F,
-
-} gc9a01_color_t;
 
 
-void	gc9a01_init();
-void	gc9a01_send_command(gc9a01_cmd_t cmd);
-void	gc9a01_send_parameter(uint8_t param);
-void	gc9a01_fill_screen(uint16_t rgb565);
-void	gc9a01_execute_sequence(const gc9a01_sequence_t* sequence);
-void	gc9a01_send_pixel(uint8_t x, uint8_t y, uint16_t rgb256);
-
-void	cst816d_init();
-int		received_data_from_cst816d();
-
-void	set_pin_as_input(volatile uint8_t* reg, uint8_t pin);
-void	set_pin_as_output(volatile uint8_t* reg, uint8_t pin);
-void	set_pin_high(volatile uint8_t* reg, uint8_t pin);
-void	set_pin_low(volatile uint8_t* reg, uint8_t pin);
 
 #endif

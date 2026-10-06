@@ -4,6 +4,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <stdint.h>
+#include "../Code/includes/touchscreen.h"
 
 #if defined(__AVR_ATmega2560__)
     #define SPI_DDR   DDRB

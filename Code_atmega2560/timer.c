@@ -15,28 +15,32 @@
 // ICNC4	ICES4	-----	WGM43	WGM42	CS42	CS41	CS40
 //		0		0		0		0		0		1		0		0
 
+#define TOUCH_DEBOUNCE_TIME 50
+
 // Initialize timer1 to debounce tactile
-void touch_timer_init()
+void	touch_timer_init()
 {
     // Initialize the timer (by default but in case previous set)
     TCNT4 = 0;
     TCCR4A = 0;
     TCCR4B = 0;
 
-    // Set the wavelength generation mode in the two control registers
-	// Leaving prescaler to 0, will be set when the timer will be launched
+    // Set wavelength generation mode in two control registers
     TCCR4A = 0b01000000;
-    TCCR4B = 0b00000000;
+    TCCR4B = 0b00000100;
 }
 
+// disallow interrupts on pin PCINT 6
 void	disableTouchInterrupt()
 {
-	// disallow interrupts on pin PCINT 6
 	PCMSK0 &= ~(1 << PCINT6);
 }
 
 void	enableTouchInterrupt()
 {
+	// allow interrupts in general
+	SREG |= (1 << 7);
+
 	// allow interrupts on pins PCINT 7 to 0
 	PCIFR |= (1 << PCIF0);
 
@@ -47,6 +51,8 @@ void	enableTouchInterrupt()
 // Launch fast timer to check the touch press actually was a touch
 void	launchTouchDebounce()
 {
+	uart0_printstr("registred");
+
 	disableTouchInterrupt();
 
 	// set COMA value to when debounce is over
@@ -69,13 +75,13 @@ void	stopTouchDebounce()
 void	concludeTouchDebounce()
 {
 	// if button is not still pressed, was probably faulty
-	if (!received_data_from_cst816d())
-	{
-		stopTouchDebounce();
-		return;
-	}
+	// if (!received_data_from_cst816d())
+	// {
+	// 	stopTouchDebounce();
+	// 	return;
+	// }
 
-	registerTouch();
+	onTouch();
 	stopTouchDebounce();
 }
 
