@@ -1,0 +1,3053 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "c9602f47-7bad-43c0-9188-5c67e76234ba")
+	(paper "A4")
+	(lib_symbols
+		(symbol "G-Love-Symbols:5VL"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR035"
+				(at 3.81 -1.778 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "5VL"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "5VL_0_1"
+				(polyline
+					(pts
+						(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.524) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "5VL_1_1"
+				(pin power_in line
+					(at 0 -1.27 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "G-Love-Symbols:Conn_2_pins"
+			(pin_names
+				(offset 1.27)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J2"
+				(at 3.556 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "SPI_LED"
+				(at 7.366 -0.7621 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_2_pins_0_1"
+				(rectangle
+					(start -2.54 3.048)
+					(end 2.54 -2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -2.54 1.778)
+					(end -0.762 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -2.54 -0.762)
+					(end -0.762 -1.778)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Conn_2_pins_1_1"
+				(pin bidirectional line
+					(at -6.35 1.27 0)
+					(length 5.08)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -6.35 -1.27 0)
+					(length 5.08)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "G-Love-Symbols:Conn_4_pins_2_PWR"
+			(pin_names
+				(offset 1.27)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J2"
+				(at 0.508 -9.906 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_4_pins_2_PWR_0_1"
+				(rectangle
+					(start -2.54 3.048)
+					(end 2.54 -8.128)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -2.54 1.778)
+					(end -0.762 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -2.54 -0.762)
+					(end -0.762 -1.778)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -2.54 -3.302)
+					(end -0.762 -4.318)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -2.54 -5.842)
+					(end -0.762 -6.858)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Conn_4_pins_2_PWR_1_1"
+				(pin bidirectional line
+					(at -6.35 1.27 0)
+					(length 5.08)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -6.35 -1.27 0)
+					(length 5.08)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -6.35 -3.81 0)
+					(length 5.08)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -6.35 -6.35 0)
+					(length 5.08)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "G-Love-Symbols:GND"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "GND"
+				(at 0 -3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.016 -1.27) (xy 0 -2.54) (xy -1.016 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(rectangle
+		(start 81.026 137.16)
+		(end 119.38 147.066)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "191cfded-b207-4405-800c-98726a723e2e")
+	)
+	(rectangle
+		(start 80.264 178.054)
+		(end 119.634 187.96)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "26d516f8-2ba3-46bd-aa97-8e30d90aff35")
+	)
+	(rectangle
+		(start 81.026 57.15)
+		(end 119.38 67.056)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "956e795e-8c7e-461b-a214-6e26e6203366")
+	)
+	(rectangle
+		(start 81.026 21.844)
+		(end 119.38 31.75)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "af91b5fa-446a-4f8c-b546-1ec84da3e20a")
+	)
+	(rectangle
+		(start 81.026 98.044)
+		(end 119.38 107.95)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "cfa70b6c-90af-4140-be23-6d536aa8b544")
+	)
+	(text "Bandeau LED"
+		(exclude_from_sim no)
+		(at 100.584 103.632 0)
+		(effects
+			(font
+				(size 1.778 1.778)
+				(thickness 0.3556)
+				(bold yes)
+			)
+		)
+		(uuid "4952818a-796a-49fe-8c31-4e5403ebc549")
+	)
+	(text "Bandeau LED"
+		(exclude_from_sim no)
+		(at 102.108 183.388 0)
+		(effects
+			(font
+				(size 1.778 1.778)
+				(thickness 0.3556)
+				(bold yes)
+			)
+		)
+		(uuid "5ea14d8b-25fa-4f21-b099-ce1c675ea262")
+	)
+	(text "Bandeau LED"
+		(exclude_from_sim no)
+		(at 100.584 27.432 0)
+		(effects
+			(font
+				(size 1.778 1.778)
+				(thickness 0.3556)
+				(bold yes)
+			)
+		)
+		(uuid "7c8332f6-83af-4fb2-8955-a5dd6a6ab21d")
+	)
+	(text "Bandeau LED"
+		(exclude_from_sim no)
+		(at 100.584 62.738 0)
+		(effects
+			(font
+				(size 1.778 1.778)
+				(thickness 0.3556)
+				(bold yes)
+			)
+		)
+		(uuid "9f1b684b-ab67-4c40-8342-613daecdf2c0")
+	)
+	(text "Bandeau LED"
+		(exclude_from_sim no)
+		(at 100.584 142.748 0)
+		(effects
+			(font
+				(size 1.778 1.778)
+				(thickness 0.3556)
+				(bold yes)
+			)
+		)
+		(uuid "bd78e532-103c-4d0c-98f0-d77c31371d4f")
+	)
+	(text "Just meant to hold the LED Band"
+		(exclude_from_sim no)
+		(at 139.7 188.214 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "eae472ef-c7cc-4c74-8f5a-62eeeee25157")
+	)
+	(no_connect
+		(at 132.08 181.61)
+		(uuid "c5e07290-b171-4095-87ad-fffb5cd961c0")
+	)
+	(no_connect
+		(at 132.08 184.15)
+		(uuid "ffec0725-ed44-4834-91f6-6c2534358f21")
+	)
+	(wire
+		(pts
+			(xy 33.02 22.86) (xy 69.85 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0152a4fc-7f0c-425a-9c93-838b209839cb")
+	)
+	(wire
+		(pts
+			(xy 67.31 140.97) (xy 58.42 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0218dfc7-9c6f-4395-85fb-1bf1614c1e9d")
+	)
+	(wire
+		(pts
+			(xy 53.34 68.58) (xy 53.34 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02b634a7-98b9-402c-ae5b-9e495a73edf3")
+	)
+	(wire
+		(pts
+			(xy 57.15 181.61) (xy 57.15 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09930715-2e22-43fa-8537-6754edf07255")
+	)
+	(wire
+		(pts
+			(xy 55.88 148.59) (xy 55.88 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0aae9354-cf45-4a3c-9962-13cdd988db5a")
+	)
+	(wire
+		(pts
+			(xy 59.69 186.69) (xy 66.04 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b294375-09a5-475d-9d75-15c68e34ab9e")
+	)
+	(wire
+		(pts
+			(xy 58.42 27.94) (xy 69.85 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1094e1da-f26c-48a3-8a72-40294715d66e")
+	)
+	(wire
+		(pts
+			(xy 53.34 33.02) (xy 53.34 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15ad14ab-e2f5-40e7-aa9a-ab7d14169aec")
+	)
+	(wire
+		(pts
+			(xy 58.42 130.81) (xy 135.89 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d1af32e-2c89-4bf6-8fcc-5e623083b640")
+	)
+	(wire
+		(pts
+			(xy 63.5 107.95) (xy 63.5 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f227950-f1cc-4162-aa08-16692a7bc04f")
+	)
+	(wire
+		(pts
+			(xy 135.89 66.04) (xy 130.81 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "206fe824-2864-4793-bfec-389557df5b0e")
+	)
+	(wire
+		(pts
+			(xy 138.43 133.35) (xy 60.96 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2089ceab-b699-489d-af62-ed20aab42ff6")
+	)
+	(wire
+		(pts
+			(xy 63.5 93.98) (xy 138.43 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "257f3772-df62-4716-bd65-1424865af163")
+	)
+	(wire
+		(pts
+			(xy 59.69 173.99) (xy 59.69 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2799abc3-1fa2-40b0-99ab-92ebf02a32f2")
+	)
+	(wire
+		(pts
+			(xy 57.15 171.45) (xy 135.89 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "285b35b5-5c94-4b0f-846b-1fc9fa52ffa1")
+	)
+	(wire
+		(pts
+			(xy 135.89 144.78) (xy 130.81 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28fa4600-0798-494b-a85c-6ddea13db3a1")
+	)
+	(wire
+		(pts
+			(xy 54.61 184.15) (xy 66.04 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b2a5ab5-c7a7-4704-9b87-d4eddeea8966")
+	)
+	(wire
+		(pts
+			(xy 60.96 101.6) (xy 60.96 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36d76fa0-0499-4e98-95f1-f23616bcad2e")
+	)
+	(wire
+		(pts
+			(xy 60.96 52.07) (xy 135.89 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "377202bc-e7f9-4b86-b143-d5eb17466751")
+	)
+	(wire
+		(pts
+			(xy 135.89 105.41) (xy 130.81 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "378e93a5-ff2a-4fb0-a0f9-a50db873c656")
+	)
+	(wire
+		(pts
+			(xy 53.34 68.58) (xy 58.42 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38d19766-2e3e-48d9-bd7b-6f6ad9dd1398")
+	)
+	(wire
+		(pts
+			(xy 63.5 30.48) (xy 69.85 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ac71a29-d4e9-4d4b-85e6-bd3c0209c358")
+	)
+	(wire
+		(pts
+			(xy 135.89 130.81) (xy 135.89 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45e56d27-9cd6-43bb-9053-a4d44afa4726")
+	)
+	(wire
+		(pts
+			(xy 63.5 93.98) (xy 63.5 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c8891e4-d2e7-44cb-8728-20308aaa0442")
+	)
+	(wire
+		(pts
+			(xy 49.53 189.23) (xy 54.61 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ed2c49c-3ac8-4b8d-8194-9d2c301d5d9f")
+	)
+	(wire
+		(pts
+			(xy 53.34 33.02) (xy 58.42 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "535ea391-15b4-4e96-9c4e-15694c1e3e0d")
+	)
+	(wire
+		(pts
+			(xy 60.96 133.35) (xy 60.96 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "589d2ec4-d1f1-4ca4-9f83-929a216e3b7c")
+	)
+	(wire
+		(pts
+			(xy 53.34 109.22) (xy 53.34 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58fef2c4-e19c-47d2-9103-dc3cbc470691")
+	)
+	(wire
+		(pts
+			(xy 130.81 63.5) (xy 138.43 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5aaf83ef-20f4-4a16-af12-9ac6561d0b47")
+	)
+	(wire
+		(pts
+			(xy 135.89 52.07) (xy 135.89 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ac7ef32-1aa9-435b-ad2f-71c98698969c")
+	)
+	(wire
+		(pts
+			(xy 63.5 54.61) (xy 63.5 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c245db1-86ba-44cb-b472-9b41d3d3b631")
+	)
+	(wire
+		(pts
+			(xy 58.42 140.97) (xy 58.42 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d5b95e2-bad2-4ac0-a859-7e65b2ff9a82")
+	)
+	(wire
+		(pts
+			(xy 59.69 179.07) (xy 66.04 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "628f1df3-25b9-4005-938b-4c3969f00623")
+	)
+	(wire
+		(pts
+			(xy 58.42 63.5) (xy 69.85 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67156c47-2d79-4a09-ba6b-53c1255972ab")
+	)
+	(wire
+		(pts
+			(xy 53.34 109.22) (xy 58.42 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67c13a3f-5952-4d15-b33f-75721f272dd7")
+	)
+	(wire
+		(pts
+			(xy 63.5 67.31) (xy 63.5 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "706f8ac6-f607-41c8-8e87-858baa036766")
+	)
+	(wire
+		(pts
+			(xy 130.81 27.94) (xy 138.43 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7508e3a2-3a06-4a8d-9dab-84e4871b97ec")
+	)
+	(wire
+		(pts
+			(xy 58.42 104.14) (xy 69.85 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7696086d-d3aa-4972-84ad-d10da45c731a")
+	)
+	(wire
+		(pts
+			(xy 135.89 171.45) (xy 135.89 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7841fb54-2d4c-4c6e-984c-033080b4168f")
+	)
+	(wire
+		(pts
+			(xy 33.02 25.4) (xy 69.85 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79afddad-2325-49a9-a7fb-5234272e9fcb")
+	)
+	(wire
+		(pts
+			(xy 63.5 99.06) (xy 69.85 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c078c13-1a4b-44a6-a431-235a7ea47379")
+	)
+	(wire
+		(pts
+			(xy 60.96 60.96) (xy 60.96 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f5d6c31-3e97-49ef-a33b-995a3beacbd0")
+	)
+	(wire
+		(pts
+			(xy 130.81 102.87) (xy 138.43 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83d1d565-bdce-4ff8-b25d-7990841ea948")
+	)
+	(wire
+		(pts
+			(xy 135.89 30.48) (xy 130.81 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87ff1f68-4a5b-4b05-9727-711000022ee2")
+	)
+	(wire
+		(pts
+			(xy 60.96 147.32) (xy 60.96 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89440438-89df-49fe-84e3-09776812295f")
+	)
+	(wire
+		(pts
+			(xy 69.85 60.96) (xy 60.96 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8961f2c2-3abd-4cbc-8842-1464c7c173a6")
+	)
+	(wire
+		(pts
+			(xy 130.81 142.24) (xy 138.43 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8cf8ae8b-4eba-4171-8583-346728356208")
+	)
+	(wire
+		(pts
+			(xy 63.5 31.75) (xy 63.5 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9423440f-e937-477b-a928-8f77cca98272")
+	)
+	(wire
+		(pts
+			(xy 138.43 54.61) (xy 63.5 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97fd3ced-0b0a-4295-9ba7-d4e09fdeec18")
+	)
+	(wire
+		(pts
+			(xy 138.43 27.94) (xy 138.43 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b80fbf3-3866-4ac1-9d76-13f779cb069d")
+	)
+	(wire
+		(pts
+			(xy 138.43 63.5) (xy 138.43 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a449794f-3b59-4f3e-9929-2969903ed195")
+	)
+	(wire
+		(pts
+			(xy 69.85 101.6) (xy 60.96 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae249e8c-403e-438b-b0f1-8a35a9b2f4df")
+	)
+	(wire
+		(pts
+			(xy 63.5 66.04) (xy 69.85 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af85fb6c-866b-408c-972c-d33138f9addb")
+	)
+	(wire
+		(pts
+			(xy 138.43 142.24) (xy 138.43 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5bdeaf8-2f01-40c4-a24c-93755a9d9887")
+	)
+	(wire
+		(pts
+			(xy 54.61 189.23) (xy 54.61 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b822895f-cac6-4886-9de7-e1dd7ad5a571")
+	)
+	(wire
+		(pts
+			(xy 58.42 68.58) (xy 58.42 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be32d446-b780-4846-a8b0-44b5fb560ffb")
+	)
+	(wire
+		(pts
+			(xy 50.8 148.59) (xy 55.88 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be53c32e-fff5-4a78-9bf9-3c502386a3b1")
+	)
+	(wire
+		(pts
+			(xy 60.96 146.05) (xy 67.31 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c3a984f9-958d-417d-9f38-39a7edaf57f0")
+	)
+	(wire
+		(pts
+			(xy 138.43 173.99) (xy 59.69 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8dc8bf9-b912-41ef-aca4-cea5424846ba")
+	)
+	(wire
+		(pts
+			(xy 138.43 102.87) (xy 138.43 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d34dd5f0-3ac0-4620-b572-0127ce21c8bf")
+	)
+	(wire
+		(pts
+			(xy 60.96 138.43) (xy 67.31 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df0ed4f0-6165-4352-ad67-cc5c7ac7177b")
+	)
+	(wire
+		(pts
+			(xy 59.69 186.69) (xy 59.69 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df64040d-7f33-493a-9b55-1d0a582b25ca")
+	)
+	(wire
+		(pts
+			(xy 58.42 109.22) (xy 58.42 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfc63f27-6d47-44c3-861d-3d54a933576b")
+	)
+	(wire
+		(pts
+			(xy 58.42 33.02) (xy 58.42 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e0047feb-6e00-402a-ba99-02bd781e5769")
+	)
+	(wire
+		(pts
+			(xy 50.8 148.59) (xy 50.8 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e0c17c0d-43c4-4c76-872b-b0cb0eb0eee9")
+	)
+	(wire
+		(pts
+			(xy 63.5 58.42) (xy 69.85 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea5578d4-d906-477b-be59-575ff174c439")
+	)
+	(wire
+		(pts
+			(xy 135.89 91.44) (xy 135.89 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1ca7106-0c9c-4106-955e-5b0bb35e80c5")
+	)
+	(wire
+		(pts
+			(xy 60.96 91.44) (xy 135.89 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3f94bc8-7290-4b4a-88ec-14577cd881b8")
+	)
+	(wire
+		(pts
+			(xy 63.5 106.68) (xy 69.85 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f54170bb-18f3-4420-93f3-05edfacbe8fa")
+	)
+	(wire
+		(pts
+			(xy 49.53 189.23) (xy 49.53 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f9224f9d-5e8d-41bd-83dc-933ea9db352b")
+	)
+	(wire
+		(pts
+			(xy 55.88 143.51) (xy 67.31 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f9586f0e-a3d2-42ce-a7c0-13c42476704e")
+	)
+	(wire
+		(pts
+			(xy 66.04 181.61) (xy 57.15 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa6b8b22-ebec-45db-8a44-bc665103295d")
+	)
+	(hierarchical_label "LED_MOSI"
+		(shape input)
+		(at 33.02 22.86 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "95f989c5-72e9-4dd5-8567-77932a0e89a5")
+	)
+	(hierarchical_label "LED_SCK"
+		(shape input)
+		(at 33.02 25.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e22ae711-d865-4d0a-9ea3-ff5db9f9f9f4")
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:Conn_4_pins_2_PWR")
+		(at 76.2 100.33 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "003e2eb5-dfeb-49a8-9473-306586322da3")
+		(property "Reference" "J6"
+			(at 70.104 113.792 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "JST_LED_SPI_In_Major"
+			(at 78.232 110.236 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:FPC_JST_Conn_GH_4x1.25mm"
+			(at 76.2 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "5612ec4c-e747-445c-886e-cb3b5a734e5e")
+		)
+		(pin "1"
+			(uuid "d2f2e55b-91f1-46cd-9fbb-0a22f731c0ae")
+		)
+		(pin "3"
+			(uuid "ec45f6dd-69cd-4c52-a222-cf1c1ac69a0c")
+		)
+		(pin "4"
+			(uuid "fb3d02d8-df07-447e-9089-f65c356f4fc2")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:GND")
+		(at 60.96 147.32 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0132aa61-5b2f-41c9-bec4-145c2f73b81d")
+		(property "Reference" "GND04"
+			(at 60.96 150.876 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 60.96 150.876 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 60.96 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 60.96 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "38c2c734-e04d-4a48-aa35-dcd3cc6b8c71")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "GND04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:5VL")
+		(at 49.53 185.42 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "069f2dff-914b-4d89-bf4f-ee5bb3c04feb")
+		(property "Reference" "#PWR07"
+			(at 53.34 187.198 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5VL"
+			(at 49.53 181.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 49.53 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e1c61f62-c361-4963-977b-0b2b26224333")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:Conn_2_pins")
+		(at 125.73 182.88 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2f0175df-9983-4510-b3e6-3ddb405932e4")
+		(property "Reference" "J11"
+			(at 125.73 176.276 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "JST_SPI_LED_Out_Little"
+			(at 132.588 178.562 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:FPC_JST_Conn_GH_2x1.25mm"
+			(at 125.73 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 125.73 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 125.73 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "09d45385-cc92-4bed-94e1-5a9411eb04f4")
+		)
+		(pin "2"
+			(uuid "7f1d560a-f4f2-45a5-8e23-e23e218c57e3")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:5VL")
+		(at 53.34 105.41 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "53518770-bfdc-4c23-a49e-1120ebf85ca4")
+		(property "Reference" "#PWR011"
+			(at 57.15 107.188 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5VL"
+			(at 53.34 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 53.34 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 53.34 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3f30647e-eef5-469b-ac36-3f8b03934fcd")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:GND")
+		(at 63.5 67.31 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "56c24723-e5af-4d50-856c-bcc52d6813aa")
+		(property "Reference" "GND06"
+			(at 63.5 70.866 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 63.5 70.866 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 63.5 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 63.5 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 63.5 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e928fa7b-da58-417f-97fd-cf0ce6e537d7")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "GND06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:GND")
+		(at 63.5 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "75c4a675-162f-419f-97b9-7f8f9e8a9418")
+		(property "Reference" "GND05"
+			(at 63.5 35.306 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 63.5 35.306 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 63.5 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 63.5 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 63.5 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b6cc5934-fc6e-4072-836e-8638ed39d54d")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "GND05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:Conn_2_pins")
+		(at 124.46 143.51 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7e01cb8e-03fc-4a2e-8ac2-7d0eceaee667")
+		(property "Reference" "J10"
+			(at 124.46 135.89 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "JST_SPI_LED_Out_Ring"
+			(at 132.08 138.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:FPC_JST_Conn_GH_2x1.25mm"
+			(at 124.46 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 124.46 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d8d1d822-23dd-4204-95cb-abf2917dbb67")
+		)
+		(pin "2"
+			(uuid "a63a6e1b-7e44-49d8-a01f-5cfb4f47db36")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:Conn_4_pins_2_PWR")
+		(at 76.2 59.69 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8cbc8b8c-9ce5-4696-872f-b3166b5d297f")
+		(property "Reference" "J5"
+			(at 76.2 69.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "JST_LED_SPI_In_Index"
+			(at 78.232 72.136 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:FPC_JST_Conn_GH_4x1.25mm"
+			(at 76.2 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "84fd46f5-6080-491e-9861-c8939b846107")
+		)
+		(pin "1"
+			(uuid "98c7b442-31a6-4ba4-860a-d3d67d4ebdf5")
+		)
+		(pin "3"
+			(uuid "f99c9a9e-db6f-481d-abd4-f08ce36dc61e")
+		)
+		(pin "4"
+			(uuid "23fdb1f6-5eb1-4603-a623-50193eae375d")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:Conn_2_pins")
+		(at 124.46 104.14 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a27ded07-6f5b-4bf0-acf3-0cb56801e5f8")
+		(property "Reference" "J9"
+			(at 124.46 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "JST_SPI_LED_Out_Major"
+			(at 132.588 98.806 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:FPC_JST_Conn_GH_2x1.25mm"
+			(at 124.46 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 124.46 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1cbb2a0f-2168-4741-b942-ec1d616066ee")
+		)
+		(pin "2"
+			(uuid "287978e6-4830-44c9-a9b5-4969d16c7db2")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:5VL")
+		(at 53.34 30.48 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a50dcea0-c4c7-4758-978b-c40b9fc08c96")
+		(property "Reference" "#PWR09"
+			(at 57.15 32.258 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5VL"
+			(at 53.34 27.178 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 53.34 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 53.34 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2d395c67-52e9-44ff-940a-8bf06fb9e6c9")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:Conn_2_pins")
+		(at 124.46 29.21 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ba389566-39d8-4941-8201-ed6c3a485727")
+		(property "Reference" "J7"
+			(at 124.46 21.59 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "JST_SPI_LED_Out_Thumb"
+			(at 132.588 23.876 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:FPC_JST_Conn_GH_2x1.25mm"
+			(at 124.46 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 124.46 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c42df921-95a3-41a7-a0e4-666ecd68e317")
+		)
+		(pin "2"
+			(uuid "e21db0a5-f8f4-4a0f-9ff1-e45d1fbcc1e4")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:Conn_4_pins_2_PWR")
+		(at 73.66 139.7 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bc2c0ef2-a80d-4b8e-bcde-2b50f2d3c3ed")
+		(property "Reference" "J3"
+			(at 69.342 152.654 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "JST_LED_SPI_In_Ring"
+			(at 75.946 149.352 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:FPC_JST_Conn_GH_4x1.25mm"
+			(at 73.66 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 73.66 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 73.66 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "ab024680-dbb7-4cba-8066-166b679b2f18")
+		)
+		(pin "1"
+			(uuid "91989cf9-9700-4527-bd61-20d844485791")
+		)
+		(pin "3"
+			(uuid "07bcddb0-018c-4d24-bcfe-c94ed5790284")
+		)
+		(pin "4"
+			(uuid "655fe9f3-d77b-4684-b0a3-fed9a8940241")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:Conn_4_pins_2_PWR")
+		(at 72.39 180.34 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c4b632ef-96e4-443d-9afc-17fe89741ac1")
+		(property "Reference" "J2"
+			(at 68.326 192.786 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "JST_LED_SPI_In_Little"
+			(at 74.93 190.246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:FPC_JST_Conn_GH_4x1.25mm"
+			(at 72.39 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 72.39 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 72.39 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "af5f07a1-16b0-47f4-96a9-b1a0abb2c06d")
+		)
+		(pin "1"
+			(uuid "64bc4008-3025-4c72-bf9f-e63b7b5bd1be")
+		)
+		(pin "3"
+			(uuid "31475fe9-17ac-4a22-b1bf-39304ea2eb40")
+		)
+		(pin "4"
+			(uuid "39ac8e27-f778-4c97-ac62-9ae3f59c234a")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:5VL")
+		(at 53.34 64.77 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e2e4ba1e-6500-4b4d-96dc-4c603fd3e9d7")
+		(property "Reference" "#PWR010"
+			(at 57.15 66.548 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5VL"
+			(at 53.34 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 53.34 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 53.34 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f6fec133-de4a-4b3e-bb3e-2e545b261fbc")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:GND")
+		(at 59.69 187.96 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e7b63b26-a1d5-4000-8c4b-52a5d239f936")
+		(property "Reference" "GND03"
+			(at 59.69 191.516 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 59.69 191.516 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 59.69 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 59.69 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 59.69 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0bb4d70e-0cf7-4de2-9e22-afdd21c00a13")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "GND03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:Conn_4_pins_2_PWR")
+		(at 76.2 24.13 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "eea4c06b-3582-4df5-81a9-2c85628d32bd")
+		(property "Reference" "J4"
+			(at 71.12 37.846 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "JST_LED_SPI_In_Thumb"
+			(at 78.232 34.798 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:FPC_JST_Conn_GH_4x1.25mm"
+			(at 76.2 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "7afb7602-b282-42a0-8244-e4c144fbe619")
+		)
+		(pin "1"
+			(uuid "8dc1335f-874c-4569-b39b-68d3a0558190")
+		)
+		(pin "3"
+			(uuid "4c295da5-e33e-4a3c-bf6f-fd89e2edef59")
+		)
+		(pin "4"
+			(uuid "59e6bdd2-4883-4099-bba7-9b841303a009")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:5VL")
+		(at 50.8 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f4405f76-6468-4578-9f76-9193bbd5adfb")
+		(property "Reference" "#PWR08"
+			(at 54.61 146.558 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5VL"
+			(at 50.8 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 50.8 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cc43ed77-6db0-4490-bf4d-a412eb6ffcb6")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:Conn_2_pins")
+		(at 124.46 64.77 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fa150c77-adf2-4058-a16a-b4675e0e99d5")
+		(property "Reference" "J8"
+			(at 124.46 57.15 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "JST_SPI_LED_Out_Index"
+			(at 124.46 59.69 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:FPC_JST_Conn_GH_2x1.25mm"
+			(at 124.46 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 124.46 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "08d526be-054e-4dfa-b5da-31238c2c55d4")
+		)
+		(pin "2"
+			(uuid "1e2ad759-2e7e-4410-900d-47c983a6dcd6")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:GND")
+		(at 63.5 107.95 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fd911764-5d2d-4d41-a202-d9d58c07ca4c")
+		(property "Reference" "GND07"
+			(at 63.5 111.506 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 63.5 111.506 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 63.5 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 63.5 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 63.5 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "de7fc272-af84-4a16-97b4-8ed8bf6401f8")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/95a8bf46-724b-4901-a442-91c90ef5c923"
+					(reference "GND07")
+					(unit 1)
+				)
+			)
+		)
+	)
+)
