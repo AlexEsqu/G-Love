@@ -1,6 +1,5 @@
 #include "../includes/config_atm2560.h"
 #include "../includes/main.h"
-#include "../includes/gc9a01_sequences.h"
 
 // Using the display driver chip GC9A01
 // Set up in Serial Interface Protocol (SPI)
@@ -372,7 +371,7 @@ void	gc9a01_init()
 	set_pin_high(&SCREEN_PORT, SCREEN_RST);
 	set_pin_high(&SCREEN_PORT, SCREEN_DC);
 
-	gc9a01_execute_sequence(&gc9a01_init_sequence[0]);
+	// gc9a01_execute_sequence(&gc9a01_init_sequence[0]);
 }
 
 void	gc9a01_send_command(gc9a01_cmd_t cmd)
@@ -415,12 +414,6 @@ void	gc9a01_execute_sequence(const gc9a01_sequence_t* sequence)
 
 void	gc9a01_set_display_size(uint16_t left, uint16_t top, uint16_t right, uint16_t bottom)
 {
-	if (left < 0)
-		left = 0;
-
-	if (top < 0)
-		top = 0;
-
 	gc9a01_send_command(GC9A01_SET_COL_ADDR);
 	gc9a01_send_parameter(left >> 8);
 	gc9a01_send_parameter(left & 0xFF);
