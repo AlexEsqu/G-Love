@@ -439,7 +439,7 @@ void	gc9a01_send_init_sequence()
 
 
     // Pixel format
-    // 0x05 = RGB565, 16 bits/pixel
+    // 0x05 = RGB 16 bits/pixel
 
     gc9a01_send_command(0x3A);
     gc9a01_send_parameter(0x05);
@@ -696,12 +696,10 @@ void	gc9a01_send_init_sequence()
 
     gc9a01_send_command(0x21);
 
-
     // Sleep Out
 
     gc9a01_send_command(0x11);
     _delay_ms(120);
-
 
     // Display ON
 
@@ -811,6 +809,28 @@ void	gc9a01_send_square(uint8_t x, uint8_t y, uint16_t rgb256, uint16_t width)
 
 void gc9a01_fill_screen(uint16_t rgb565)
 {
+	gc9a01_set_display_size(0, 0, TFT_WIDTH - 1, TFT_HEIGHT - 1);
+
+	gc9a01_send_command(GC9A01_MEM_WRITE);
+
+	set_pin_high(&SCREEN_PORT, SCREEN_DC);
+	set_pin_low(&SCREEN_PORT, SCREEN_SS);
+
+	uint32_t size = TFT_PIXEL_COUNT;
+
+	for (uint32_t i = 0; i < size; i++)
+	{
+		spi_send_data(rgb565 >> 8);
+		spi_send_data(rgb565 & 0xFF);
+	}
+
+	set_pin_high(&SCREEN_PORT, SCREEN_SS);
+
+	gc9a01_send_command(GC9A01_DISPLAY_ON);
+}
+
+void gc9a01_display_homescreen()
+{
 	gc9a01_set_display_size(0, 0, TFT_WIDTH, TFT_HEIGHT);
 
 	gc9a01_send_command(GC9A01_MEM_WRITE);
@@ -818,15 +838,24 @@ void gc9a01_fill_screen(uint16_t rgb565)
 	set_pin_high(&SCREEN_PORT, SCREEN_DC);
 	set_pin_low(&SCREEN_PORT, SCREEN_SS);
 
-    uint8_t high = rgb565 >> 8;
-    uint8_t low  = rgb565 & 0xFF;
+	// uint32_t row = 0;
+	// uint32_t columm = 0;
 
-	uint32_t size = TFT_WIDTH * TFT_HEIGHT;
-
-	for (uint32_t i = 0; i < size; i++)
+	for (uint16_t row = 0; row < TFT_HEIGHT; row++)
 	{
-		spi_send_data(high);
-		spi_send_data(low);
+		for (uint16_t column = 0; column < TFT_WIDTH; column++)
+		{
+			if (column == 100 || column == 200)
+			{
+				spi_send_data(RGB16_RED >> 8);
+				spi_send_data(RGB16_RED & 0xFF);
+			}
+			else
+			{
+				spi_send_data(RGB16_BLUE >> 8);
+				spi_send_data(RGB16_BLUE & 0xFF);
+			}
+		}
 	}
 
 	set_pin_high(&SCREEN_PORT, SCREEN_SS);

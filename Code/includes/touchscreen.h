@@ -49,24 +49,24 @@ enum {
 
 typedef enum {
 
-	RGB565_BLACK	= 0x0000,
-	RGB565_WHITE	= 0xFFFF,
+	RGB16_BLACK		= 0x0000,
+	RGB16_WHITE		= 0xFFFF,
 
-	RGB565_RED		= 0xF800,
-	RGB565_GREEN	= 0x07E0,
-	RGB565_BLUE		= 0x001F,
+	RGB16_RED		= 0xF800,
+	RGB16_GREEN		= 0x07E0,
+	RGB16_BLUE		= 0x001F,
 
-	RGB565_YELLOW	= 0xFFE0,
-	RGB565_CYAN		= 0x07FF,
-	RGB565_MAGENTA	= 0xF81F,
+	RGB16_YELLOW	= 0xFFE0,
+	RGB16_CYAN		= 0x07FF,
+	RGB16_MAGENTA	= 0xF81F,
 
-	RGB565_ORANGE	= 0xFD20,
-	RGB565_PURPLE	= 0x780F,
-	RGB565_PINK		= 0xF81F,
-	RGB565_BROWN	= 0xA145,
-	RGB565_GRAY		= 0x8410,
-	RGB565_GOLD		= 0xFEA0,
-	RGB565_NAVY		= 0x000F,
+	RGB16_ORANGE	= 0xFD20,
+	RGB16_PURPLE	= 0x780F,
+	RGB16_PINK		= 0xF81F,
+	RGB16_BROWN		= 0xA145,
+	RGB16_GRAY		= 0x8410,
+	RGB16_GOLD		= 0xFEA0,
+	RGB16_NAVY		= 0x000F,
 
 } gc9a01_color_t;
 
@@ -154,6 +154,7 @@ void	gc9a01_fill_screen(uint16_t rgb565);
 void	gc9a01_execute_sequence(const gc9a01_sequence_t* sequence);
 void	gc9a01_send_pixel(uint8_t x, uint8_t y, uint16_t rgb256);
 void	gc9a01_send_square(uint8_t x, uint8_t y, uint16_t rgb256, uint16_t width);
+void	gc9a01_display_homescreen();
 
 void	cst816d_init();
 int		received_data_from_cst816d();

@@ -15,7 +15,7 @@ void setup()
 	gc9a01_send_init_sequence();
 	uart0_printstr("Initializing done\n\r");
 
-	gc9a01_fill_screen(RGB565_YELLOW);
+	gc9a01_fill_screen(RGB565_BLUE);
 
 	// touch_timer_init();
 	// enableTouchInterrupt();
@@ -28,7 +28,7 @@ int main(void)
 	setup();
 	while (1)
 	{
-		// uart0_printstr("hello\n");
+		gc9a01_display_homescreen();
 	}
 	return 0;
 }
