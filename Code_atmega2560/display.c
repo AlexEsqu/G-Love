@@ -831,7 +831,7 @@ void gc9a01_fill_screen(uint16_t rgb565)
 
 void gc9a01_display_homescreen()
 {
-	gc9a01_set_display_size(0, 0, TFT_WIDTH, TFT_HEIGHT);
+	gc9a01_set_display_size(0, 0, TFT_WIDTH - 1, TFT_HEIGHT - 1);
 
 	gc9a01_send_command(GC9A01_MEM_WRITE);
 
@@ -845,7 +845,10 @@ void gc9a01_display_homescreen()
 	{
 		for (uint16_t column = 0; column < TFT_WIDTH; column++)
 		{
-			if (column == 100 || column == 200)
+			int16_t x = column - 120;
+			int16_t y = row - 120;
+
+			if (x > -10 && x < 10 && y > -10 && y < 10)
 			{
 				spi_send_data(RGB16_RED >> 8);
 				spi_send_data(RGB16_RED & 0xFF);
