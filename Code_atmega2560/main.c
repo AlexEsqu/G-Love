@@ -21,6 +21,7 @@ void setup()
 	enableTouchInterrupt();
 
 	gc9a01_display_homescreen();
+	gc9a01_send_stamp(95, 95);
 }
 
 int g_touchscreen_mode = 0;

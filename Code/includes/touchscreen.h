@@ -8,6 +8,7 @@
 #define TFT_WIDTH 240UL
 #define TFT_HEIGHT 240UL
 #define TFT_PIXEL_COUNT 57600UL
+#define TFT_CHUNK_COUNT 14400UL
 #define TFT_FRAME 12500UL
 
 #define SLIDE_UP 0x01
@@ -146,8 +147,6 @@ typedef enum {
 
 #undef GC9A01_ENUM
 
-
-
 void	gc9a01_init();
 void	gc9a01_send_command(gc9a01_cmd_t cmd);
 void	gc9a01_send_parameter(uint8_t param);
@@ -156,6 +155,7 @@ void	gc9a01_execute_sequence(const gc9a01_sequence_t* sequence);
 void	gc9a01_send_pixel(uint8_t x, uint8_t y, uint16_t rgb256);
 void	gc9a01_send_square(uint8_t x, uint8_t y, uint16_t rgb256, uint16_t width);
 void	gc9a01_display_homescreen();
+void	gc9a01_send_stamp(uint8_t x, uint8_t y);
 
 void	cst816d_init();
 int		received_data_from_cst816d();

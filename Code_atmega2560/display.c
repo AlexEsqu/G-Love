@@ -1,5 +1,8 @@
 #include "../includes/config_atm2560.h"
 #include "../includes/main.h"
+#include "./random.h"
+#include "./hand100.h"
+#include "./homescreen.h"
 
 // Using the display driver chip GC9A01
 // Set up in Serial Interface Protocol (SPI)
@@ -355,6 +358,56 @@ const gc9a01_sequence_t gc9a01_init_sequence[] =
 		.delay_ms = 20,
 	},
 };
+
+// Getting 240bit pointers for reaching into deep flash memory
+// equivalent to GET_FAR_ADDRESS(var)
+// See https://forum.arduino.cc/t/compile-array-larger-than-65k/408878/12
+#define ft_get_far_address(var)			\
+({										\
+	uint_farptr_t	address;			\
+	__asm__ __volatile__ (				\
+		"ldi %A0, lo8(%1)"	"\n\t"		\
+		"ldi %B0, hi8(%1)"	"\n\t"		\
+		"ldi %C0, hh8(%1)"	"\n\t"		\
+		"clr %D0"			"\n\t"		\
+		: "=d" (address)				\
+		: "p"  (&(var))					\
+	);									\
+	address;							\
+})
+
+// Reads into flash memory further than the basic 64kB
+// Extends 16bit pointer in memory with RAMPZ register to 24bit addressing
+uint8_t		ft_read_byte_far(uint32_t far_address)
+{
+	uint8_t	result;
+
+	// Copies last third of address (%C1) into RAMPZ register
+	// 		 first third of address (%A1) in Z register low
+	// 		 second third of address (%B1) in Z register high
+	// Extended Load Program Memory (extends 16bit mem pointer to 24 bit Z + RAMPZ)
+	// equivalent to _SFR_IO_ADDR(sfr) to skip address of registers in data address
+    __asm__ __volatile__ (		\
+		"out %2, %C1"	"\n\t"	\
+		"mov r30, %A1"	"\n\t"	\
+		"mov r31, %B1"	"\n\t"	\
+		"elpm %0, Z"	"\n\t"	\
+		: "=r" (result)			\
+		: "r" (far_address), "I" (0x1B)	\
+		: "r30", "r31"	\
+	);
+
+	return result;
+}
+
+uint16_t	ft_read_16bit_far(uint_farptr_t far_address)
+{
+	uint8_t	low = ft_read_byte_far(far_address);
+	uint8_t	high = ft_read_byte_far(far_address + 1);
+
+	return (((uint16_t)high << 8) | low);
+}
+
 
 void	gc9a01_send_init_sequence()
 {
@@ -794,17 +847,15 @@ void	gc9a01_send_square(uint8_t x, uint8_t y, uint16_t rgb256, uint16_t width)
 
 	set_pin_high(&SCREEN_PORT, SCREEN_DC);
 	set_pin_low(&SCREEN_PORT, SCREEN_SS);
-	uint8_t high = rgb256 >> 8;
-    uint8_t low  = rgb256 & 0xFF;
-	uint32_t size = width * width * 4;
+	uint8_t		high = rgb256 >> 8;
+	uint8_t		low  = rgb256 & 0xFF;
+	uint32_t	size = width * width * 4;
 	for (uint32_t i = 0; i < size; i++)
 	{
 		spi_send_data(high);
 		spi_send_data(low);
 	}
 	set_pin_high(&SCREEN_PORT, SCREEN_SS);
-
-	// gc9a01_send_command(GC9A01_DISPLAY_ON);
 }
 
 void gc9a01_fill_screen(uint16_t rgb565)
@@ -854,16 +905,13 @@ void gc9a01_display_homescreen()
 	set_pin_high(&SCREEN_PORT, SCREEN_DC);
 	set_pin_low(&SCREEN_PORT, SCREEN_SS);
 
-	// uint32_t row = 0;
-	// uint32_t columm = 0;
-
 	for (uint16_t row = 0; row < TFT_HEIGHT; row++)
 	{
 		for (uint16_t column = 0; column < TFT_WIDTH; column++)
 		{
 			int16_t x = column - 120;
 			int16_t y = row - 120;
-			uint16_t color = RGB16_WHITE;
+			uint16_t color = RGB16_BLACK;
 
 
 			if (x < 0 && y < 0)
@@ -892,6 +940,76 @@ void gc9a01_display_homescreen()
 
 	gc9a01_send_command(GC9A01_DISPLAY_ON);
 }
+
+void	gc9a01_send_stamp(uint8_t x, uint8_t y)
+{
+	uint32_t	address_of_stamp_deep_in_flash = ft_get_far_address(hand100_1);
+	gc9a01_set_display_size(x, y, x + 99, y + 99);
+
+	gc9a01_send_command(GC9A01_MEM_WRITE);
+
+	set_pin_high(&SCREEN_PORT, SCREEN_DC);
+	set_pin_low(&SCREEN_PORT, SCREEN_SS);
+	for (uint32_t i = 0; i < 10000UL; i++)
+	{
+		uint32_t	current_pixel_address = address_of_stamp_deep_in_flash + (i * 2);
+		uint16_t	pixel_color = ft_read_16bit_far(current_pixel_address);
+		spi_send_data(pixel_color >> 8);
+		spi_send_data(pixel_color & 0xFF);
+	}
+	set_pin_high(&SCREEN_PORT, SCREEN_SS);
+}
+
+
+// void gc9a01_display_homescreen()
+// {
+// 	gc9a01_set_display_size(0, 0, TFT_WIDTH, TFT_HEIGHT);
+
+// 	gc9a01_send_command(GC9A01_MEM_WRITE);
+
+// 	set_pin_high(&SCREEN_PORT, SCREEN_DC);
+// 	set_pin_low(&SCREEN_PORT, SCREEN_SS);
+
+// 	uint32_t	address_of_homescreen_deep_in_flash = ft_get_far_address(homescreen_1);
+// 	for (uint32_t i = 0; i < TFT_CHUNK_COUNT; i++)
+// 	{
+// 		uint16_t pixel_color = ft_read_16bit_far(address_of_homescreen_deep_in_flash);
+// 		spi_send_data(pixel_color >> 8);
+// 		spi_send_data(pixel_color & 0xFF);
+// 		address_of_homescreen_deep_in_flash += 2;
+// 	}
+
+// 	address_of_homescreen_deep_in_flash = ft_get_far_address(homescreen_2);
+// 	for (uint32_t i = 0; i < TFT_CHUNK_COUNT; i++)
+// 	{
+// 		uint16_t pixel_color = ft_read_16bit_far(address_of_homescreen_deep_in_flash);
+// 		spi_send_data(pixel_color >> 8);
+// 		spi_send_data(pixel_color & 0xFF);
+// 		address_of_homescreen_deep_in_flash += 2;
+// 	}
+
+// 	address_of_homescreen_deep_in_flash = ft_get_far_address(homescreen_3);
+// 	for (uint32_t i = 0; i < TFT_CHUNK_COUNT; i++)
+// 	{
+// 		uint32_t	current_pixel_address = address_of_homescreen_deep_in_flash + (i * 2);
+// 		uint16_t	pixel_color = ft_read_16bit_far(current_pixel_address);
+// 		spi_send_data(pixel_color >> 8);
+// 		spi_send_data(pixel_color & 0xFF);
+// 	}
+
+// 	address_of_homescreen_deep_in_flash = ft_get_far_address(homescreen_4);
+// 	for (uint32_t i = 0; i < TFT_CHUNK_COUNT; i++)
+// 	{
+// 		uint32_t	current_pixel_address = address_of_homescreen_deep_in_flash + (i * 2);
+// 		uint16_t	pixel_color = ft_read_16bit_far(current_pixel_address);
+// 		spi_send_data(pixel_color >> 8);
+// 		spi_send_data(pixel_color & 0xFF);
+// 	}
+
+// 	set_pin_high(&SCREEN_PORT, SCREEN_SS);
+
+// 	gc9a01_send_command(GC9A01_DISPLAY_ON);
+// }
 
 
 
