@@ -66,16 +66,16 @@ void	onTouch()
 
 	if (action == TFT_TAP)
 	{
-		gc9a01_send_square(x_low, y_low, RGB565_BLACK, 10);
+		gc9a01_send_square(x_low, y_low, RGB16_BLACK, 10);
 	}
 	else if (action != g_touchscreen_mode)
 	{
 		g_touchscreen_mode = action;
 		if (g_touchscreen_mode == TFT_LEFT)
-			gc9a01_fill_screen(RGB565_YELLOW);
+			gc9a01_fill_screen(RGB16_YELLOW);
 		if (g_touchscreen_mode == TFT_RIGHT)
-			gc9a01_fill_screen(RGB565_CYAN);
+			gc9a01_fill_screen(RGB16_CYAN);
 		if (g_touchscreen_mode == TFT_UP)
-			gc9a01_fill_screen(RGB565_MAGENTA);
+			gc9a01_fill_screen(RGB16_MAGENTA);
 	}
 }

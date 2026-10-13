@@ -829,6 +829,22 @@ void gc9a01_fill_screen(uint16_t rgb565)
 	gc9a01_send_command(GC9A01_DISPLAY_ON);
 }
 
+
+int	is_circle(int16_t x, int16_t y)
+{
+	return (x * x + y * y) > TFT_FRAME;
+}
+
+int	is_spoke(int16_t x, int16_t y)
+{
+	return ((y > -2 && y < 2) || (x > -2 && x < 2));
+}
+
+int	is_frame(int16_t x, int16_t y)
+{
+	return is_circle(x, y) || is_spoke(x, y);
+}
+
 void gc9a01_display_homescreen()
 {
 	gc9a01_set_display_size(0, 0, TFT_WIDTH - 1, TFT_HEIGHT - 1);
@@ -847,17 +863,28 @@ void gc9a01_display_homescreen()
 		{
 			int16_t x = column - 120;
 			int16_t y = row - 120;
+			uint16_t color = RGB16_WHITE;
 
-			if (x > -10 && x < 10 && y > -10 && y < 10)
+
+			if (x < 0 && y < 0)
 			{
-				spi_send_data(RGB16_RED >> 8);
-				spi_send_data(RGB16_RED & 0xFF);
+				color = RGB16_PURPLE;
 			}
-			else
+			else if (x >= 0 && y < 0)
 			{
-				spi_send_data(RGB16_BLUE >> 8);
-				spi_send_data(RGB16_BLUE & 0xFF);
+				color = RGB16_GRAY;
 			}
+			else if (x < 0 && y >= 0)
+			{
+				color = RGB16_NAVY;
+			}
+			if (is_frame(x, y))
+			{
+				color = RGB16_GREEN;
+			}
+
+			spi_send_data(color >> 8);
+			spi_send_data(color & 0xFF);
 		}
 	}
 

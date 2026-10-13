@@ -8,6 +8,7 @@
 #define TFT_WIDTH 240UL
 #define TFT_HEIGHT 240UL
 #define TFT_PIXEL_COUNT 57600UL
+#define TFT_FRAME 12500UL
 
 #define SLIDE_UP 0x01
 #define SLIDE_DOWN 0x02
