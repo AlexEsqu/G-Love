@@ -2,6 +2,9 @@
 #define TOUCHSCREEN_H
 
 #include <stdint.h>
+#include <avr/pgmspace.h>
+
+
 
 #define TOUCH_ADDR_CST816D 0x15
 #define DISPLAY_ADDR_GC9A91 0x2C
@@ -40,6 +43,21 @@ typedef struct gc9a01_pixel {
 	uint8_t		y;
 	uint16_t	rgb256;
 } gc9a01_pixel_t;
+
+typedef struct {
+	uint8_t width;
+	uint8_t height;
+	uint32_t total_pixels;
+	uint16_t palette[16];
+	const uint8_t* pixels;
+} packed_image_t;
+
+typedef struct {
+	const packed_image_t*	image1;
+	const packed_image_t*	image2;
+} packed_animation_t;
+
+#include "images/hand.h"
 
 enum {
 	TFT_TAP,
@@ -152,11 +170,13 @@ void	gc9a01_send_command(gc9a01_cmd_t cmd);
 void	gc9a01_send_parameter(uint8_t param);
 void	gc9a01_fill_screen(uint16_t rgb565);
 void	gc9a01_execute_sequence(const gc9a01_sequence_t* sequence);
+void	gc9a01_send_init_sequence();
 void	gc9a01_send_pixel(uint8_t x, uint8_t y, uint16_t rgb256);
 void	gc9a01_send_square(uint8_t x, uint8_t y, uint16_t rgb256, uint16_t width);
 void	gc9a01_display_homescreen();
-void	gc9a01_send_stamp(uint8_t x, uint8_t y);
-void	gc9a01_send_stamp2(uint8_t x, uint8_t y);
+// void	gc9a01_send_stamp(uint8_t x, uint8_t y);
+// void	gc9a01_send_stamp2(uint8_t x, uint8_t y);
+void	gc9a01_send_image(uint8_t x, uint8_t y, const packed_image_t* image);
 
 void	cst816d_init();
 int		received_data_from_cst816d();

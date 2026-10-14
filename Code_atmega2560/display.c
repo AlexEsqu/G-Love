@@ -1,9 +1,5 @@
 #include "../includes/config_atm2560.h"
 #include "../includes/main.h"
-// #include "./random.h"
-// #include "./hand100.h"
-#include "./hand.h"
-// #include "./homescreen.h"
 
 // Using the display driver chip GC9A01
 // Set up in Serial Interface Protocol (SPI)
@@ -940,97 +936,81 @@ void gc9a01_display_homescreen()
 	// gc9a01_send_command(GC9A01_DISPLAY_ON);
 }
 
-void	gc9a01_send_stamp(uint8_t x, uint8_t y)
-{
-	uint32_t	address_of_stamp_deep_in_flash = ft_get_far_address(hand_1);
-	gc9a01_set_display_size(x, y, x + 49, y + 49);
-
-	gc9a01_send_command(GC9A01_MEM_WRITE);
-
-	set_pin_high(&SCREEN_PORT, SCREEN_DC);
-	set_pin_low(&SCREEN_PORT, SCREEN_SS);
-	for (uint32_t i = 0; i < 2500UL; i++)
-	{
-		uint32_t	current_pixel_address = address_of_stamp_deep_in_flash + (i * 2);
-		uint16_t	pixel_color = ft_read_16bit_far(current_pixel_address);
-		// uint16_t	pixel_color = hand_1[i];
-		spi_send_data(pixel_color >> 8);
-		spi_send_data(pixel_color & 0xFF);
-	}
-	set_pin_high(&SCREEN_PORT, SCREEN_SS);
-}
-
-void	gc9a01_send_stamp2(uint8_t x, uint8_t y)
-{
-	uint32_t	address_of_stamp_deep_in_flash = ft_get_far_address(hand_2);
-	gc9a01_set_display_size(x, y, x + 49, y + 49);
-
-	gc9a01_send_command(GC9A01_MEM_WRITE);
-
-	set_pin_high(&SCREEN_PORT, SCREEN_DC);
-	set_pin_low(&SCREEN_PORT, SCREEN_SS);
-	for (uint32_t i = 0; i < 2500UL; i++)
-	{
-		uint32_t	current_pixel_address = address_of_stamp_deep_in_flash + (i * 2);
-		uint16_t	pixel_color = ft_read_16bit_far(current_pixel_address);
-		// uint16_t	pixel_color = hand_1[i];
-		spi_send_data(pixel_color >> 8);
-		spi_send_data(pixel_color & 0xFF);
-	}
-	set_pin_high(&SCREEN_PORT, SCREEN_SS);
-}
-
-
-
-// void gc9a01_display_homescreen()
+// void	gc9a01_send_stamp(uint8_t x, uint8_t y)
 // {
-// 	gc9a01_set_display_size(0, 0, TFT_WIDTH, TFT_HEIGHT);
+// 	uint32_t	address_of_stamp_deep_in_flash = ft_get_far_address(hand_1);
+// 	gc9a01_set_display_size(x, y, x + 49, y + 49);
 
 // 	gc9a01_send_command(GC9A01_MEM_WRITE);
 
 // 	set_pin_high(&SCREEN_PORT, SCREEN_DC);
 // 	set_pin_low(&SCREEN_PORT, SCREEN_SS);
-
-// 	uint32_t	address_of_homescreen_deep_in_flash = ft_get_far_address(homescreen_1);
-// 	for (uint32_t i = 0; i < TFT_CHUNK_COUNT; i++)
+// 	for (uint32_t i = 0; i < 2500UL; i++)
 // 	{
-// 		uint16_t pixel_color = ft_read_16bit_far(address_of_homescreen_deep_in_flash);
-// 		spi_send_data(pixel_color >> 8);
-// 		spi_send_data(pixel_color & 0xFF);
-// 		address_of_homescreen_deep_in_flash += 2;
-// 	}
-
-// 	address_of_homescreen_deep_in_flash = ft_get_far_address(homescreen_2);
-// 	for (uint32_t i = 0; i < TFT_CHUNK_COUNT; i++)
-// 	{
-// 		uint16_t pixel_color = ft_read_16bit_far(address_of_homescreen_deep_in_flash);
-// 		spi_send_data(pixel_color >> 8);
-// 		spi_send_data(pixel_color & 0xFF);
-// 		address_of_homescreen_deep_in_flash += 2;
-// 	}
-
-// 	address_of_homescreen_deep_in_flash = ft_get_far_address(homescreen_3);
-// 	for (uint32_t i = 0; i < TFT_CHUNK_COUNT; i++)
-// 	{
-// 		uint32_t	current_pixel_address = address_of_homescreen_deep_in_flash + (i * 2);
+// 		uint32_t	current_pixel_address = address_of_stamp_deep_in_flash + (i * 2);
 // 		uint16_t	pixel_color = ft_read_16bit_far(current_pixel_address);
+// 		// uint16_t	pixel_color = hand_1[i];
 // 		spi_send_data(pixel_color >> 8);
 // 		spi_send_data(pixel_color & 0xFF);
 // 	}
-
-// 	address_of_homescreen_deep_in_flash = ft_get_far_address(homescreen_4);
-// 	for (uint32_t i = 0; i < TFT_CHUNK_COUNT; i++)
-// 	{
-// 		uint32_t	current_pixel_address = address_of_homescreen_deep_in_flash + (i * 2);
-// 		uint16_t	pixel_color = ft_read_16bit_far(current_pixel_address);
-// 		spi_send_data(pixel_color >> 8);
-// 		spi_send_data(pixel_color & 0xFF);
-// 	}
-
 // 	set_pin_high(&SCREEN_PORT, SCREEN_SS);
-
-// 	gc9a01_send_command(GC9A01_DISPLAY_ON);
 // }
+
+// void	gc9a01_send_stamp2(uint8_t x, uint8_t y)
+// {
+// 	uint32_t	address_of_stamp_deep_in_flash = ft_get_far_address(hand_2);
+// 	gc9a01_set_display_size(x, y, x + 49, y + 49);
+
+// 	gc9a01_send_command(GC9A01_MEM_WRITE);
+
+// 	set_pin_high(&SCREEN_PORT, SCREEN_DC);
+// 	set_pin_low(&SCREEN_PORT, SCREEN_SS);
+// 	for (uint32_t i = 0; i < 2500UL; i++)
+// 	{
+// 		uint32_t	current_pixel_address = address_of_stamp_deep_in_flash + (i * 2);
+// 		uint16_t	pixel_color = ft_read_16bit_far(current_pixel_address);
+// 		// uint16_t	pixel_color = hand_1[i];
+// 		spi_send_data(pixel_color >> 8);
+// 		spi_send_data(pixel_color & 0xFF);
+// 	}
+// 	set_pin_high(&SCREEN_PORT, SCREEN_SS);
+// }
+
+void	gc9a01_send_image(uint8_t x, uint8_t y, const packed_image_t* image)
+{
+	const uint8_t	width = pgm_read_byte(image->width);
+	const uint8_t	height = pgm_read_byte(image->height);
+	const uint32_t	total_pixels = pgm_read_word(image->total_pixels); // could overflow but we're all adult here
+	const uint16_t	transparent_color = pgm_read_word(image->palette[0]);
+	uart0_printstr("sending image:");
+	uart0_print_10bit(width);
+	uart0_printstr(" ");
+	uart0_print_10bit(height);
+	uart0_printstr(" with total pixel: ");
+	uart0_print_10bit(total_pixels);
+	uart0_printstr("\r\n");
+
+	gc9a01_set_display_size(x, y, x + width, y + height);
+
+	gc9a01_send_command(GC9A01_MEM_WRITE);
+	set_pin_high(&SCREEN_PORT, SCREEN_DC);
+	set_pin_low(&SCREEN_PORT, SCREEN_SS);
+	for (uint32_t i = 0; i < total_pixels; i += i + 2)
+	{
+		uint8_t	byte = pgm_read_byte(&image->pixels[y * ((width + 1) >> 1) + (x >> 1)]);
+		for (int j = 0; j < 2; j++)
+		{
+			uint8_t	nibble = (j & 1) ? (byte & 0x0F) : (byte >> 4);
+			if (nibble != transparent_color)
+			{
+				uint16_t	color = pgm_read_word(&image->palette[nibble]); // could be optimized by initializing at startup
+				spi_send_data(color >> 8);
+				spi_send_data(color & 0xFF);
+			}
+		}
+	}
+	set_pin_high(&SCREEN_PORT, SCREEN_SS);
+}
 
 
 

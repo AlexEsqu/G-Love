@@ -19,11 +19,7 @@ void setup()
 	touch_timer_init();
 	enableTouchInterrupt();
 
-	// gc9a01_display_homescreen();
-	gc9a01_fill_screen(RGB16_BLACK);
-	gc9a01_send_stamp(95, 95);
-	_delay_ms(50);
-	gc9a01_send_stamp2(95, 95);
+	gc9a01_display_homescreen();
 }
 
 int g_touchscreen_mode = 0;
@@ -33,7 +29,10 @@ int main(void)
 	setup();
 	while (1)
 	{
-		;
+		gc9a01_send_image(95, 95, &hand1);
+		_delay_ms(100);
+		gc9a01_send_image(95, 95, &hand2);
+		_delay_ms(100);
 	}
 	return 0;
 }
