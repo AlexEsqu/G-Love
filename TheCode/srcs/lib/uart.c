@@ -1,6 +1,32 @@
 #include "../../includes/main.h"
 #include "../main/atm2560.h"
 
+void uart_init_test(void)
+{
+    UBRR0  = MYUBRR;
+    UCSR0A |= (1 << U2X0);
+    UCSR0B |= (1 << RXEN0) | (1 << TXEN0);
+    UCSR0C |= (1 << UCSZ01) | (1 << UCSZ00);
+
+    i2c_init();
+    i2c_scan();
+
+	while(1)
+	{
+		if (UCSR0A & (1 << RXC0)) {
+			char c = UDR0;
+			uart0_tx('[');
+			uart0_tx(c);
+			uart0_tx(']');
+			if (c == '\r')  
+				uart0_printstr("\r\n");
+			if (c == 's')
+				i2c_scan();
+		}
+		_delay_ms(1);
+	}
+}
+
 //UART0
 void uart0_init(unsigned long baudrate) {
     // Set Baud Rate Register

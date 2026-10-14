@@ -3,26 +3,22 @@
 volatile uint16_t g_state = 0;
 
 void i2c_init(void) {
-  /*
-          DATASHEET PAGE 222
-          TWBR = Value of the TWI Bit Rate Register
-          PrescalerValue = Value of the prescale // datasheet page241 table22-7
+  // Pull-up intern pour SDA et SCL
+  // #if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
+  //   PORTC |= (1 << PORTC4) | (1 << PORTC5); // PC4=SDA, PC5=SCL
+  // #elif defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__)
+  //   PORTD |= (1 << PORTD1) | (1 << PORTD0); // PD1=SDA, PD0=SCL
+  // #endif
 
-          SCL frequency = CPU Clock frequency / (16 + 2(TWBR) * PrescalerValue)
-     //datasheet page222 400.000 = 16.000.000 / (16 + 2(TWBR) * PrescalerValue);
-          (16 + 2(TWBR) * PrescalerValue) = 40
-          TWBR = 40-16 / 2 / PrescalerValue
-          TWBR = 12 / PrescalerValue
-  */
+  // 100 kHz F_CPU = 8 MHz:
+  // SCL = 8MHz / (16 + 2 * TWBR * Prescaler) => TWBR = (80 - 16)/2 = 32
+  TWBR = 32;
 
-  // datasheet page 239	section 22.9.1
-  TWBR |= 12; // for scl = 400k
-
-  // datasheet page 240	section 22.9.3
-  TWSR &= ~((1 << TWPS1) | (1 << TWPS0)); // set prescaler to 1? ;
+  // Prescaler = 1
+  TWSR &= ~((1 << TWPS1) | (1 << TWPS0));
 
   // datasheet page 226	section 22.7.1  and 22.7.3
-  //  TWCR |= (1 << TWEN);
+  TWCR |= (1 << TWEN);
   // TWEN must be set to enable the 2-wire Serial Interface
   // TWEN must be written to one to enable the TWI
 }
@@ -116,7 +112,14 @@ void i2c_start(void) {
   i2c_status();
 }
 
-void i2c_stop(void) { TWCR |= (1 << TWINT) | (1 << TWEN) | (1 << TWSTO); }
+void i2c_stop(void) {
+  uint16_t timeout = I2C_TIMEOUT;
+
+  TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWSTO);
+  while ((TWCR & (1 << TWSTO)) && --timeout)
+  {
+  }
+}
 
 /*
 DATASHEET PAGE 224
@@ -181,3 +184,41 @@ uint8_t i2c_read_nack(void) {
 
 // Read the next 7 bytes to get the data and display it
 void i2c_read(void) {}
+
+void i2c_scan(void) {
+  uint8_t count = 0;
+
+  uart0_printstr("\r\nI2C Scan:\r\n");
+
+  for (uint8_t addr = 1; addr < 127; addr++) {
+    i2c_start();
+
+    // Check if START / Repeated START was sent
+    if ((TWSR & 0xF8) != 0x08 && (TWSR & 0xF8) != 0x10) {
+      i2c_stop();
+      continue;
+    }
+
+    // Write address + write bit (SLA+W)
+    i2c_write((addr << 1) | 0);
+
+    // 0x18 = SLA+W transmitted, ACK received
+    if ((TWSR & 0xF8) == 0x18) {
+      uart0_printstr("Found device at: 0x");
+      ft_uart_print_hex(addr);
+      uart0_printstr("\r\n");
+      count++;
+    }
+
+    i2c_stop();
+    _delay_us(50);
+  }
+
+  if (count == 0) {
+    uart0_printstr("No I2C devices found\r\n");
+  } else {
+    uart0_printstr("Scan done, nbr device found: ");
+    uart0_print_10bit(count);
+    uart0_printstr("\r\n");
+  }
+}

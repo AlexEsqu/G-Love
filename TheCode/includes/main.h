@@ -64,6 +64,7 @@ void 		i2c_write(unsigned char data);
 uint8_t 	i2c_read_ack(void);
 uint8_t 	i2c_read_nack(void);
 void 		i2c_read(void);
+void 		i2c_scan(void);
 
 
 //spi.c
@@ -87,6 +88,9 @@ char 		uart1_rx(void);
 void 		uart1_printstr(const char *str);
 void 		uart1_print_10bit(uint32_t c);
 uint8_t 	uart1_available(void);
+
+void        uart_init_test(void);
+
 
 uint8_t		ft_hex(uint8_t val);
 void 		ft_uart_print_hex(uint8_t c);

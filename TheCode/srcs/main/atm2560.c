@@ -125,7 +125,6 @@ int main_ATM2560()
 	{
 		if (PIND & (1 << PIND7))
 		{
-
 			i2c_start();
 			i2c_write(I2C_ADDR_CST816D << 1 | 0);
 			i2c_write(0x01);
@@ -151,28 +150,6 @@ int main_ATM2560()
 				touch_x = (uint16_t)x;
 				touch_y = (uint16_t)y;
 				touch_action = action;
-
-				/*
-				uart0_printstr("action: ");
-				uart0_print_10bit(action);
-				if (action == 1)
-					uart0_printstr("swipe up\n");
-				else if (action == 2)
-					uart0_printstr("swipe down\n");
-				else if (action == 3)
-					uart0_printstr("swipe right\n");
-				else if (action == 4)
-					uart0_printstr("swipe left\n");
-				else if (action == 0)
-					uart0_printstr("tap\n");
-				else
-					uart0_printstr("autre action\n");
-				uart0_printstr("Toucher detecte ! X: ");
-				uart0_print_10bit(x);
-				uart0_printstr(" | Y: ");
-				uart0_print_10bit(y);
-				uart0_printstr("\n");
-				*/
 			}
 		}
 
@@ -197,24 +174,6 @@ int main_ATM2560()
 				uart0_send_data((const uint8_t *)&g_packet, sizeof(g_packet));
 			}
 		}
-
-/*
-		if (uart1_available() > 0)
-		{
-		char c = uart1_rx();
-		if (c == '\n') {
-			buf[i] = '\0';
-			uart0_printstr(buf);
-			uart0_printstr("\n");
-			i = 0;
-		}
-		else
-		{
-			buf[i] = c;
-			i++;
-		}
-		}
-*/
 	}
 	return 0;
 }
