@@ -7,7 +7,6 @@ void setup()
 	uart1_init(BAUDRATE);
 	i2c_init();
 	spi_init();
-
 	cst816d_init();
 	gc9a01_init();
 
@@ -15,13 +14,16 @@ void setup()
 	gc9a01_send_init_sequence();
 	uart0_printstr("Initializing done\n\r");
 
-	gc9a01_fill_screen(RGB16_BLUE);
+	// gc9a01_fill_screen(RGB16_BLUE);
 
 	touch_timer_init();
 	enableTouchInterrupt();
 
-	gc9a01_display_homescreen();
+	// gc9a01_display_homescreen();
+	gc9a01_fill_screen(RGB16_BLACK);
 	gc9a01_send_stamp(95, 95);
+	_delay_ms(50);
+	gc9a01_send_stamp2(95, 95);
 }
 
 int g_touchscreen_mode = 0;

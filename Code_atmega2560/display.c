@@ -1,8 +1,9 @@
 #include "../includes/config_atm2560.h"
 #include "../includes/main.h"
-#include "./random.h"
-#include "./hand100.h"
-#include "./homescreen.h"
+// #include "./random.h"
+// #include "./hand100.h"
+#include "./hand.h"
+// #include "./homescreen.h"
 
 // Using the display driver chip GC9A01
 // Set up in Serial Interface Protocol (SPI)
@@ -876,8 +877,6 @@ void gc9a01_fill_screen(uint16_t rgb565)
 	}
 
 	set_pin_high(&SCREEN_PORT, SCREEN_SS);
-
-	gc9a01_send_command(GC9A01_DISPLAY_ON);
 }
 
 
@@ -938,27 +937,49 @@ void gc9a01_display_homescreen()
 
 	set_pin_high(&SCREEN_PORT, SCREEN_SS);
 
-	gc9a01_send_command(GC9A01_DISPLAY_ON);
+	// gc9a01_send_command(GC9A01_DISPLAY_ON);
 }
 
 void	gc9a01_send_stamp(uint8_t x, uint8_t y)
 {
-	uint32_t	address_of_stamp_deep_in_flash = ft_get_far_address(hand100_1);
-	gc9a01_set_display_size(x, y, x + 99, y + 99);
+	uint32_t	address_of_stamp_deep_in_flash = ft_get_far_address(hand_1);
+	gc9a01_set_display_size(x, y, x + 49, y + 49);
 
 	gc9a01_send_command(GC9A01_MEM_WRITE);
 
 	set_pin_high(&SCREEN_PORT, SCREEN_DC);
 	set_pin_low(&SCREEN_PORT, SCREEN_SS);
-	for (uint32_t i = 0; i < 10000UL; i++)
+	for (uint32_t i = 0; i < 2500UL; i++)
 	{
 		uint32_t	current_pixel_address = address_of_stamp_deep_in_flash + (i * 2);
 		uint16_t	pixel_color = ft_read_16bit_far(current_pixel_address);
+		// uint16_t	pixel_color = hand_1[i];
 		spi_send_data(pixel_color >> 8);
 		spi_send_data(pixel_color & 0xFF);
 	}
 	set_pin_high(&SCREEN_PORT, SCREEN_SS);
 }
+
+void	gc9a01_send_stamp2(uint8_t x, uint8_t y)
+{
+	uint32_t	address_of_stamp_deep_in_flash = ft_get_far_address(hand_2);
+	gc9a01_set_display_size(x, y, x + 49, y + 49);
+
+	gc9a01_send_command(GC9A01_MEM_WRITE);
+
+	set_pin_high(&SCREEN_PORT, SCREEN_DC);
+	set_pin_low(&SCREEN_PORT, SCREEN_SS);
+	for (uint32_t i = 0; i < 2500UL; i++)
+	{
+		uint32_t	current_pixel_address = address_of_stamp_deep_in_flash + (i * 2);
+		uint16_t	pixel_color = ft_read_16bit_far(current_pixel_address);
+		// uint16_t	pixel_color = hand_1[i];
+		spi_send_data(pixel_color >> 8);
+		spi_send_data(pixel_color & 0xFF);
+	}
+	set_pin_high(&SCREEN_PORT, SCREEN_SS);
+}
+
 
 
 // void gc9a01_display_homescreen()
