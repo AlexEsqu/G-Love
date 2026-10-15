@@ -1,4 +1,4 @@
-#include "../includes/config_atm2560.h"
+#include "main.h"
 
 void	set_pin_as_input(volatile uint8_t* reg, uint8_t pin)
 {

@@ -22,6 +22,8 @@ OBJCOPY  = avr-objcopy
 
 LIBDIR   = lib
 
+INCDIR   = includes
+
 SRCS1    = $(CODEDIR1)/main.c \
            $(LIBDIR)/adc.c \
            $(LIBDIR)/i2c.c \
@@ -29,13 +31,15 @@ SRCS1    = $(CODEDIR1)/main.c \
            $(LIBDIR)/uart.c
 
 SRCS2    = $(CODEDIR2)/main.c \
-           $(CODEDIR2)/display.c \
-           $(CODEDIR2)/tactile.c \
-           $(CODEDIR2)/bitshift.c \
-		   $(CODEDIR2)/timer.c \
            $(LIBDIR)/i2c.c \
            $(LIBDIR)/spi.c \
-           $(LIBDIR)/uart.c
+           $(LIBDIR)/display.c \
+           $(LIBDIR)/gc9a01.c \
+           $(LIBDIR)/tactile.c \
+           $(LIBDIR)/timer.c \
+           $(LIBDIR)/readability.c \
+		   $(LIBDIR)/uart.c
+#            $(LIBDIR)/pgm.c
 
 OBJS1    = $(SRCS1:.c=_uno.o)
 OBJS2    = $(SRCS2:.c=_mega.o)
@@ -46,7 +50,7 @@ OBJS2    = $(SRCS2:.c=_mega.o)
 
 # for MEGA / atmega2560
 %_mega.o: %.c
-	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} -c $< -o $@
+	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} -I ${INCDIR} -c $< -o $@
 
 all: uno mega
 

@@ -5,7 +5,6 @@
 #include <avr/pgmspace.h>
 
 
-
 #define TOUCH_ADDR_CST816D 0x15
 #define DISPLAY_ADDR_GC9A91 0x2C
 #define TFT_WIDTH 240UL
@@ -30,7 +29,6 @@ typedef struct touchscreen_data_s {
 
 typedef struct gc9a01_sequence gc9a01_sequence_t;
 
-// Command and arguments bytes with minimum delay
 struct gc9a01_sequence {
 	const uint8_t				cmd;
 	const uint8_t*				args;
@@ -45,6 +43,8 @@ typedef struct gc9a01_pixel {
 } gc9a01_pixel_t;
 
 typedef struct {
+	uint8_t	row;
+	uint8_t col;
 	uint8_t width;
 	uint8_t height;
 	uint32_t total_pixels;
@@ -53,9 +53,9 @@ typedef struct {
 } packed_image_t;
 
 typedef struct {
-	const packed_image_t*	image1;
-	const packed_image_t*	image2;
-} packed_animation_t;
+	const packed_image_t* const*	frames[2];
+	uint16_t (*get_background_color)(uint16_t, uint16_t);
+} tft_screen_info_t;
 
 #include "images/hand.h"
 
@@ -68,7 +68,6 @@ enum {
 };
 
 typedef enum {
-
 	RGB16_BLACK		= 0x0000,
 	RGB16_WHITE		= 0xFFFF,
 
@@ -90,7 +89,17 @@ typedef enum {
 
 } gc9a01_color_t;
 
-extern int g_touchscreen_mode;
+typedef enum {
+	TFT_STATE_HOMESCREEN,	// no mode selected
+	TFT_STATE_COLORSCREEN,	// Select LEDs color on touchscreen
+	TFT_STATE_IMUSCREEN,	// IMU calibration and data read
+	TFT_STATE_FLEXSCREEN,	// Flex sensor affect LEDs
+	TFT_STATE_COMMSCREEN,	// Select output mode
+}	tft_state_t;
+
+
+extern tft_state_t g_touchscreen_mode;
+extern uint8_t g_animation_frame;
 
 // see https://www.buydisplay.com/download/ic/GC9A01A.pdf p.90 - 94
 #define GC9A01_COMMANDS(X)						\
@@ -170,13 +179,14 @@ void	gc9a01_send_command(gc9a01_cmd_t cmd);
 void	gc9a01_send_parameter(uint8_t param);
 void	gc9a01_fill_screen(uint16_t rgb565);
 void	gc9a01_execute_sequence(const gc9a01_sequence_t* sequence);
+void	gc9a01_start_parameter_sequence();
+void	gc9a01_end_parameter_sequence();
 void	gc9a01_send_init_sequence();
 void	gc9a01_send_pixel(uint8_t x, uint8_t y, uint16_t rgb256);
 void	gc9a01_send_square(uint8_t x, uint8_t y, uint16_t rgb256, uint16_t width);
 void	gc9a01_display_homescreen();
-// void	gc9a01_send_stamp(uint8_t x, uint8_t y);
-// void	gc9a01_send_stamp2(uint8_t x, uint8_t y);
 void	gc9a01_send_image(uint8_t x, uint8_t y, const packed_image_t* image);
+void	gc9a01_set_display_size(uint16_t left, uint16_t top, uint16_t right, uint16_t bottom);
 
 void	cst816d_init();
 int		received_data_from_cst816d();
@@ -193,7 +203,9 @@ void	touch_timer_init();
 void	enableTouchInterrupt();
 
 
+#define GC9A01_INIT_SEQUENCE_LEN 50
 
+extern const gc9a01_sequence_t gc9a01_init_sequence[GC9A01_INIT_SEQUENCE_LEN];
 
 
 #endif

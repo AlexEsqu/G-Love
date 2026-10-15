@@ -4,13 +4,14 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <stdint.h>
-#include "../Code/includes/touchscreen.h"
+#include "./touchscreen.h"
 
 #if defined(__AVR_ATmega2560__)
     #define SPI_DDR   DDRB
     #define SPI_MOSI  DDB2
     #define SPI_SCK   DDB1
     #define SPI_SS    DDB0
+	#include "config_atm2560.h"
 #elif defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
     #define SPI_DDR   DDRB
     #define SPI_MOSI  DDB3
@@ -63,5 +64,11 @@ uint8_t 	uart1_available(void);
 
 uint8_t		ft_hex(uint8_t val);
 void 		ft_uart_print_hex(uint8_t c);
+
+// readability
+void	set_pin_as_input(volatile uint8_t* reg, uint8_t pin);
+void	set_pin_as_output(volatile uint8_t* reg, uint8_t pin);
+void	set_pin_high(volatile uint8_t* reg, uint8_t pin);
+void	set_pin_low(volatile uint8_t* reg, uint8_t pin);
 
 #endif

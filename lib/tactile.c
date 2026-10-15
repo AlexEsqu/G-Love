@@ -1,5 +1,5 @@
-#include "../includes/config_atm2560.h"
-#include "../includes/main.h"
+#include "config_atm2560.h"
+#include "main.h"
 
 int	received_data_from_cst816d()
 {

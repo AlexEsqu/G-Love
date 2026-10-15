@@ -1,4 +1,4 @@
-#include "../includes/config_atm2560.h"
+#include "main.h"
 
 // ATmega 2560/2561 datasheet p.154 & 156
 
