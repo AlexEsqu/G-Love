@@ -13,6 +13,20 @@ typedef struct s_rgb_color
     uint8_t blue;
 } t_rgb_color;
 
+#define SENSOR_PACKET_MAGIC 0xA55A
+
+typedef struct __attribute__((packed)) s_sensor_data
+{
+    uint16_t magic; //magic number to detect start of packet
+    uint16_t sensorForce[5]; //fsr
+    uint16_t sensorFlex[5]; //fsr
+    int16_t  accel[3]; //imu
+    int16_t  gyro[3]; //imu
+    uint16_t crc16; // crc to protect and check data authenticity
+} t_sensor_data;
+
+extern t_sensor_data g_sensor;
+
 
 // Globals
 extern tft_state_t	g_touchscreen_mode;
@@ -24,6 +38,14 @@ extern uint8_t		g_touch_debounce;
 void		adc_init();
 uint8_t		ft_adc_read();
 uint16_t	ft_adc_read_10bit();
+uint16_t    ft_adc_read_channel(uint8_t channel);
+
+//crc.c
+uint8_t     crc8_compute(const uint8_t *data, size_t len);
+uint16_t    crc16_compute(const uint8_t *data, size_t len);
+
+
+#define I2C_TIMEOUT 10000U
 
 // i2c.c
 void		i2c_init(void);
@@ -48,6 +70,8 @@ void 		uart0_tx(char c);
 char 		uart0_rx(void);
 void 		uart0_printstr(const char *str);
 void 		uart0_print_10bit(uint32_t c);
+void        uart0_send_data(const uint8_t *data, size_t len);
+uint8_t     uart0_available(void);
 
 void 		uart1_init(unsigned long baudrate);
 void 		uart1_tx(char c);

@@ -1,4 +1,4 @@
-#include "../includes/main.h"
+#include "../../includes/main.h"
 
 //UART0
 void uart0_init(unsigned long baudrate) {
@@ -50,7 +50,22 @@ void uart0_print_10bit(uint32_t c) {
 	uart0_tx('0' + (c % 10));
 }
 
-#ifdef __AVR_ATmega2560__
+void uart0_send_data(const uint8_t *data, size_t len)
+{
+    if (!data || len == 0)
+        return;
+
+    while (len--)
+    {
+        uart0_tx(*data++);
+    }
+}
+
+uint8_t uart0_available(void) {
+	return (UCSR0A & (1 << RXC0));
+}
+
+#if defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__)
 
 //UART1
 void uart1_init(unsigned long baudrate) {
@@ -61,7 +76,7 @@ void uart1_init(unsigned long baudrate) {
     UBRR1 = (F_CPU / (8UL * baudrate)) - 1UL;
 
     // Enable Transmitter and Receiver
-    UCSR1B = (1 << TXEN1) | (1 << RXEN1);
+    UCSR1B = (1 << RXCIE1) | (1 << TXEN1) | (1 << RXEN1);
 
     // 8 data bits, 1 stop bit, no parity
     UCSR1C = (1 << UCSZ11) | (1 << UCSZ10);
@@ -87,7 +102,7 @@ void uart1_printstr(const char *str) {
 
 	while (*str != '\0')
 	{
-		uart0_tx(*str);
+		uart1_tx(*str);
 		str++;
 	}
 
@@ -95,11 +110,11 @@ void uart1_printstr(const char *str) {
 
 void uart1_print_10bit(uint32_t c) {
 	if (c == 0)
-		uart0_tx('0');
+		uart1_tx('0');
 	if (c > 10) {
-		uart0_print_10bit(c / 10);
+		uart1_print_10bit(c / 10);
 	}
-	uart0_tx('0' + (c % 10));
+	uart1_tx('0' + (c % 10));
 }
 
 uint8_t uart1_available(void) {

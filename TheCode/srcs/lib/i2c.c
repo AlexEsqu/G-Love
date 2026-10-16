@@ -1,4 +1,4 @@
-#include "../includes/main.h"
+#include "../../includes/main.h"
 
 volatile uint16_t g_state = 0;
 
@@ -97,18 +97,24 @@ void i2c_status(void)
 	//ft_print_status();
 }
 
-void i2c_start(void)
-{
-	// DATAHSSET PAGE 239 SECTION 22.9.2 //note1
-	// TWINT: interrupt flag
-	// TWSTA: start condition bit
-	// TWEN: enable bit
-	TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
+void i2c_start(void) {
+  uint16_t timeout = I2C_TIMEOUT;
 
-	while (!(TWCR & (1 << TWINT)))
-	{
-		;
-	}
+  // DATAHSSET PAGE 239 SECTION 22.9.2 //note1
+  // TWINT: interrupt flag
+  // TWSTA: start condition bit
+  // TWEN: enable bit
+  TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
+
+  while (!(TWCR & (1 << TWINT)) && --timeout)
+  {
+  }
+
+  if (!timeout)
+  {
+    g_state = 0xFF;
+    return;
+  }
 
 	i2c_status();
 }
@@ -125,33 +131,55 @@ specific value must be written to TWCR, instructing the TWI hardware to transmit
 the data packet present in TWDR.
 */
 void i2c_write(unsigned char data) {
-	TWDR = data;
-	TWCR = (1 << TWINT) | (1 << TWEN);
+  uint16_t timeout = I2C_TIMEOUT;
 
-	while (!(TWCR & (1 << TWINT)))
-	{
-		;
-	}
+  TWDR = data;
+  TWCR = (1 << TWINT) | (1 << TWEN);
+
+  while (!(TWCR & (1 << TWINT)) && --timeout)
+  {
+  }
+
+  if (!timeout)
+  {
+    g_state = 0xFF;
+    return;
+  }
 
 	i2c_status();
 }
 
 uint8_t i2c_read_ack(void) {
-	TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWEA);
+  uint16_t timeout = I2C_TIMEOUT;
 
-	while (!(TWCR & (1 << TWINT)))
-	{
-		;
-	}
+  TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWEA);
+  while (!(TWCR & (1 << TWINT)) && --timeout)
+  {
+  }
+
+  if (!timeout)
+  {
+    g_state = 0xFF;
+    return 0;
+  }
 
 	i2c_status();
 	return TWDR;
 }
 
 uint8_t i2c_read_nack(void) {
-	TWCR = (1 << TWINT) | (1 << TWEN);
-	while (!(TWCR & (1 << TWINT))) {
-	}
+  uint16_t timeout = I2C_TIMEOUT;
+
+  TWCR = (1 << TWINT) | (1 << TWEN);
+  while (!(TWCR & (1 << TWINT)) && --timeout)
+  {
+  }
+
+  if (!timeout)
+  {
+    g_state = 0xFF;
+    return 0;
+  }
 
 	i2c_status();
 	return TWDR;

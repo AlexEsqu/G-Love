@@ -1,4 +1,4 @@
-#include "../includes/main.h"
+#include "../../includes/main.h"
 
 void adc_init() {
 	// DATASHEET PAGE 258 SECTION 24.9.2 //NOTE1
@@ -48,6 +48,18 @@ uint16_t ft_adc_read_10bit() {
 	return ADC;
 }
 
+uint16_t ft_adc_read_channel(uint8_t channel) {
+	//channel: which mux channel to read
+	ADMUX = (ADMUX & 0xF0) | (channel & 0x0F);
+
+	ADCSRA |= (1 << ADSC);
+
+	while (ADCSRA & (1 << ADSC))
+	{
+	}
+
+	return ADCH;
+}
 
 //NOTE1
 /*
