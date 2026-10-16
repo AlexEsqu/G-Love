@@ -26,6 +26,9 @@ typedef struct s_rgb_color
     uint8_t blue;
 } t_rgb_color;
 
+extern tft_state_t g_touchscreen_mode;
+extern uint8_t g_animation_frame;
+
 //adc.c
 void		adc_init();
 uint8_t		ft_adc_read();

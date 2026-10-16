@@ -68,6 +68,7 @@ enum {
 };
 
 typedef enum {
+	RGB16_TRANS		= 0x0001,
 	RGB16_BLACK		= 0x0000,
 	RGB16_WHITE		= 0xFFFF,
 
@@ -96,10 +97,6 @@ typedef enum {
 	TFT_STATE_FLEXSCREEN,	// Flex sensor affect LEDs
 	TFT_STATE_COMMSCREEN,	// Select output mode
 }	tft_state_t;
-
-
-extern tft_state_t g_touchscreen_mode;
-extern uint8_t g_animation_frame;
 
 // see https://www.buydisplay.com/download/ic/GC9A01A.pdf p.90 - 94
 #define GC9A01_COMMANDS(X)						\
@@ -184,7 +181,7 @@ void	gc9a01_end_parameter_sequence();
 void	gc9a01_send_init_sequence();
 void	gc9a01_send_pixel(uint8_t x, uint8_t y, uint16_t rgb256);
 void	gc9a01_send_square(uint8_t x, uint8_t y, uint16_t rgb256, uint16_t width);
-void	gc9a01_display_homescreen();
+void	gc9a01_display_screen();
 void	gc9a01_send_image(uint8_t x, uint8_t y, const packed_image_t* image);
 void	gc9a01_set_display_size(uint16_t left, uint16_t top, uint16_t right, uint16_t bottom);
 
