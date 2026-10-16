@@ -6,19 +6,6 @@
 #include <stdint.h>
 #include "./touchscreen.h"
 
-#if defined(__AVR_ATmega2560__)
-    #define SPI_DDR   DDRB
-    #define SPI_MOSI  DDB2
-    #define SPI_SCK   DDB1
-    #define SPI_SS    DDB0
-	#include "config_atm2560.h"
-#elif defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
-    #define SPI_DDR   DDRB
-    #define SPI_MOSI  DDB3
-    #define SPI_SCK   DDB5
-    #define SPI_SS    DDB2
-#endif
-
 typedef struct s_rgb_color
 {
     uint8_t red;
