@@ -58,7 +58,10 @@ SRCS2    = $(CODEDIR2)/main.c \
 			$(LIBDIR)/crc.c \
 			srcs/display/gc9a01.c \
 			srcs/display/display.c \
-			srcs/display/tactile.c
+			srcs/display/tactile.c \
+			srcs/display/screens/imuscreen.c \
+			srcs/display/screens/colorscreen.c \
+			srcs/display/screens/homescreen.c
 
 SRC_BOOT1 = srcs/boot/bridge_atm2561.c
 

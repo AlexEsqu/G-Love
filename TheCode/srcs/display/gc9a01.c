@@ -143,6 +143,28 @@ void gc9a01_fill_screen(uint16_t rgb565)
 	gc9a01_end_parameter_sequence();
 }
 
+void	gc9a01_send_image(uint8_t x, uint8_t y, const packed_image_t* image)
+{
+	const uint8_t	stride = (image->width + 1) >> 1;
+
+	gc9a01_set_display_size(x, y, x + image->width - 1, y + image->height - 1);
+
+	gc9a01_send_command(GC9A01_MEM_WRITE);
+	gc9a01_start_parameter_sequence();
+	for (uint8_t row = 0; row < image->height; row++)
+	{
+		for (uint8_t col = 0; col < image->width; col++)
+		{
+			uint8_t byte = pgm_read_byte_far(image->pixels + (uint16_t)row * stride + (col >> 1));
+			uint8_t nibble = (col & 1) ? (byte & 0x0F) : (byte >> 4);
+			uint16_t color = (nibble == 0) ? get_color_from_colorscreen(row - 120, col - 120) : image->palette[nibble];
+			spi_send_data(color >> 8);
+			spi_send_data(color & 0xFF);
+		}
+	}
+	gc9a01_end_parameter_sequence();
+}
+
 
 // Constructor serie of instruction to initialize the GC9A01 driver
 // Took me hours to realize it was necessary

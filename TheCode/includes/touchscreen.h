@@ -206,6 +206,14 @@ void	touchscreen_read(touchscreen_data_t *data);
 void	touch_timer_init();
 void	enableTouchInterrupt();
 
+// SCREENS
+uint16_t	get_color_from_colorscreen(uint16_t row, uint16_t col);
+void		print_colorscreen_text(void);
+uint16_t	get_color_from_homescreen(uint16_t row, uint16_t col);
+void		print_homescreen_text(void);
+void		print_imuscreen_text(void);
+
+
 
 #define GC9A01_INIT_SEQUENCE_LEN 51
 
