@@ -92,12 +92,44 @@ uint16_t	get_color_from_colorscreen(uint16_t row, uint16_t col)
 	return (hue_to_565((uint8_t)((col + row) >> 1)));
 }
 
+void		print_homescreen_text(void)
+{
+	putstr_screen(75, 30, "Home", RGB16_BLUE, FONT_SIZE_BIG);
+}
+
+void		print_colorscreen_text(void)
+{
+	putstr_screen(20, 80, "Color", RGB16_BLUE, FONT_SIZE_MID);
+	putstr_screen(20, 100, "picker", RGB16_BLUE, FONT_SIZE_MID);
+	putstr_screen(20, 120, "mode", RGB16_BLUE, FONT_SIZE_MID);
+}
+
 const tft_screen_info_t g_screens[5] = {
-	[TFT_STATE_HOMESCREEN]  = { .frames = { &hand1, &hand2 }, .get_background_color = get_color_from_homescreen },
-	[TFT_STATE_COLORSCREEN] = { .frames = { &hand1, &hand2 }, .get_background_color = get_color_from_colorscreen },
-	[TFT_STATE_IMUSCREEN] = { .frames = { &hand1, &hand2 }, .get_background_color = get_color_from_colorscreen },
-	[TFT_STATE_FLEXSCREEN] = { .frames = { &hand1, &hand2 }, .get_background_color = get_color_from_colorscreen },
-	[TFT_STATE_COMMSCREEN] = { .frames = { &hand1, &hand2 }, .get_background_color = get_color_from_colorscreen },
+	[TFT_STATE_HOMESCREEN] = {
+			.frames = { &hand1, &hand2 },
+			.get_background_color = get_color_from_homescreen,
+			.print_screen_text = print_homescreen_text,
+	},
+	[TFT_STATE_COLORSCREEN] = {
+		.frames = { &hand1, &hand2 },
+		.get_background_color = get_color_from_colorscreen,
+		.print_screen_text = print_colorscreen_text
+	},
+	[TFT_STATE_IMUSCREEN] = {
+		.frames = { &hand1, &hand2 },
+		.get_background_color = get_color_from_colorscreen,
+		.print_screen_text = print_homescreen_text
+	},
+	[TFT_STATE_FLEXSCREEN] = {
+		.frames = { &hand1, &hand2 },
+		.get_background_color = get_color_from_colorscreen,
+		.print_screen_text = print_homescreen_text
+	},
+	[TFT_STATE_COMMSCREEN] = {
+		.frames = { &hand1, &hand2 },
+		.get_background_color = get_color_from_colorscreen,
+		.print_screen_text = print_homescreen_text
+	},
 };
 
 uint16_t	get_color_from_image_or_background(const uint16_t row, const uint16_t column)
@@ -160,7 +192,6 @@ void	refresh_screen()
 	{
 		display_screen();
 		last_mode = g_touchscreen_mode;
-		return;
 	}
 	else
 	{
@@ -171,6 +202,7 @@ void	refresh_screen()
 			last_frame = g_animation_frame;
 		}
 	}
+	g_screens[g_touchscreen_mode].print_screen_text();
 }
 
 void	gc9a01_send_image(uint8_t x, uint8_t y, const packed_image_t* image)
@@ -195,44 +227,13 @@ void	gc9a01_send_image(uint8_t x, uint8_t y, const packed_image_t* image)
 	gc9a01_end_parameter_sequence();
 }
 
-void putstr_screen(uint16_t x, uint16_t y, const char *str, uint16_t fg_color)
+void putstr_screen(uint16_t x, uint16_t y, const char *str, uint16_t font_color, tft_font_size_t font_size )
 {
-	while (*str)
-	{
-		char c = *str++;
-		if (c < g_default_font.first_char || c > g_default_font.last_char)
-			c = '?';
-
-		uint16_t byte_offset = (c - g_default_font.first_char) * g_default_font.width;
-
-		gc9a01_set_display_size(x, y, x + g_default_font.width - 1, y + g_default_font.height - 1);
-
-		gc9a01_send_command(GC9A01_MEM_WRITE);
-		gc9a01_start_parameter_sequence();
-		for (uint8_t row = 0; row < g_default_font.height; row++)
-		{
-			for (uint8_t col = 0; col < g_default_font.width; col++)
-			{
-				uint8_t line_byte = pgm_read_byte_far(g_default_font.bitmap + byte_offset + col);
-				uint16_t color = (line_byte & (1 << row))
-					? fg_color
-					: g_screens[g_touchscreen_mode].get_background_color(x + row, y + col);
-				spi_send_data(color >> 8);
-				spi_send_data(color & 0xFF);
-			}
-		}
-		gc9a01_end_parameter_sequence();
-
-		x += g_default_font.width;
-	}
-}
-
-void putstr_screen_big(uint16_t x, uint16_t y, const char *str, uint16_t fg_color)
-{
-	// uint16_t	original_x = x;
-
-	uint8_t		target_width = g_default_font.width * 2;
-	uint8_t		target_height = g_default_font.height * 2;
+	uint8_t		target_width = g_default_font.width * font_size;
+	uint8_t		target_height = g_default_font.height * font_size;
+	uint8_t		multiplier = font_size == FONT_SIZE_SMALL ? 0
+			: font_size == FONT_SIZE_MID ? 1
+			: 2;
 
 	while (*str)
 	{
@@ -248,14 +249,14 @@ void putstr_screen_big(uint16_t x, uint16_t y, const char *str, uint16_t fg_colo
 		gc9a01_start_parameter_sequence();
 		for (uint8_t target_row = 0; target_row < target_height; target_row++)
 		{
-			uint8_t font_row = target_row >> 1;
+			uint8_t font_row = target_row >> multiplier;
 
 			for (uint8_t target_col = 0; target_col < target_width; target_col++)
 			{
-				uint8_t font_col = target_col >> 1;
+				uint8_t font_col = target_col >> multiplier;
 				uint8_t line_byte = pgm_read_byte_far(g_default_font.bitmap + byte_offset + font_col);
 				uint16_t color = (line_byte & (1 << font_row))
-					? fg_color
+					? font_color
 					: g_screens[g_touchscreen_mode].get_background_color(y + target_row, x + target_col);
 
 				spi_send_data(color >> 8);

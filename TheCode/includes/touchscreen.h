@@ -52,8 +52,9 @@ typedef struct {
 } packed_image_t;
 
 typedef struct {
-	const packed_image_t* frames[2];
-	uint16_t (*get_background_color)(uint16_t, uint16_t);
+	const packed_image_t*	frames[2];
+	uint16_t				(*get_background_color)(uint16_t, uint16_t);
+	void					(*print_screen_text)(void);
 } tft_screen_info_t;
 
 #include "images/hand.h"
@@ -171,6 +172,13 @@ typedef enum {
 
 #undef GC9A01_ENUM
 
+typedef enum {
+	FONT_SIZE_SMALL = 1,
+	FONT_SIZE_MID = 2,
+	FONT_SIZE_BIG = 4,
+} tft_font_size_t ;
+
+
 void	gc9a01_init();
 void	gc9a01_send_command(gc9a01_cmd_t cmd);
 void	gc9a01_send_parameter(uint8_t param);
@@ -186,8 +194,7 @@ void	gc9a01_set_display_size(uint16_t left, uint16_t top, uint16_t right, uint16
 
 void	display_screen();
 void	refresh_screen();
-void	putstr_screen(uint16_t x, uint16_t y, const char *str, uint16_t fg_color);
-void	putstr_screen_big(uint16_t x, uint16_t y, const char *str, uint16_t fg_color);
+void	putstr_screen(uint16_t x, uint16_t y, const char *str, uint16_t font_color, tft_font_size_t font_size);
 
 
 void	cst816d_init();

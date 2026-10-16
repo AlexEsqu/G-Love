@@ -134,9 +134,6 @@ int main_ATM2560()
 	while (1)
 	{
 		refresh_screen();
-		putstr_screen_big(150, 40, "hello", RGB16_BLACK);
-		putstr_screen_big(90, 70, "world", RGB16_PINK);
-		putstr_screen(90, 50, "hello", RGB16_GRAY);
 
 		while (get_next_byte(&byte))
 		{
