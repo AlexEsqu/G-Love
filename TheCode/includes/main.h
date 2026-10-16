@@ -3,7 +3,7 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
-#include <avr/wdt.h> 
+#include <avr/wdt.h>
 #include <stdint.h>
 #include <stddef.h>
 
@@ -81,6 +81,8 @@ void 		uart0_printstr(const char *str);
 void 		uart0_print_10bit(uint32_t c);
 void        uart0_send_data(const uint8_t *data, size_t len);
 uint8_t     uart0_available(void);
+void 		uart0_print_int(int32_t num);
+void uart0_print_float(float num);
 
 void 		uart1_init(unsigned long baudrate);
 void 		uart1_tx(char c);

@@ -86,7 +86,7 @@ bool process_packet(uint8_t *byte, t_sensor_data *packet)
 
 			if (crc16_test == crc16_received) //crc is validated
 			{
-				memcpy(packet, buf, sizeof(t_sensor_data)); 
+				memcpy(packet, buf, sizeof(t_sensor_data));
 				return (true);
 			}
 		}
@@ -98,7 +98,7 @@ void setup()
 {
 	// i2c init
 	i2c_init();
-  
+
 	// uart_init
 	uart0_init(BAUDRATE);
 	uart1_init(BAUDRATE);

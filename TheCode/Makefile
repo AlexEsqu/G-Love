@@ -2,13 +2,13 @@ F_CPU    = 8000000UL
 
 DEVICE1   = atmega328p
 BAUDRATE1 = 57600
-PORT1     = /dev/cu.wchusbserial110
+PORT1     = /dev/ttyUSB0
 #PORT1     = /dev/cu.usbmodem101
 CODEDIR1  = srcs/main
 
 DEVICE2   = atmega2561
 BAUDRATE2 = 57600
-PORT2     = /dev/cu.wchusbserial110
+PORT2     = /dev/ttyUSB0
 CODEDIR2  = srcs/main
 
 NAME     = main
@@ -48,12 +48,13 @@ SRCS2    = $(CODEDIR2)/main.c \
         	$(LIBDIR)/i2c.c \
         	$(LIBDIR)/spi.c \
         	$(LIBDIR)/uart.c  \
-			$(LIBDIR)/crc.c 
+			$(LIBDIR)/crc.c
 
 SRC_BOOT1 = srcs/boot/bridge_atm2561.c
 
 SRC_TEST = srcs/testing/uart_test.c \
-			srcs/lib/uart.c
+			srcs/lib/uart.c \
+        	$(LIBDIR)/i2c.c \
 
 OBJS1      = $(SRCS1:.c=_uno.o)
 OBJS2      = $(SRCS2:.c=_mega.o)
@@ -105,7 +106,7 @@ clean:
 			${BIN2} ${HEX2} ${OBJS2} \
 			${HEX_BOOT} ${BIN_BOOT} ${OBJS_BOOT1} \
 			${HEX_TEST} ${BIN_TEST} ${OBJS_TEST}
-			 
+
 
 fclean: clean
 

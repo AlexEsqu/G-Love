@@ -68,6 +68,34 @@ void uart0_printstr(const char *str) {
 
 }
 
+void uart0_print_int(int32_t num) {
+	if (num < 0) {
+		uart0_tx('-');
+		num = -num;
+	}
+	uart0_print_10bit(num);
+}
+
+void uart0_print_float(float num) {
+	if (num < 0) {
+		uart0_tx('-');
+		num = -num;
+	}
+	int32_t intPart = (int32_t)num;
+	float fracPart = num - intPart;
+
+	uart0_print_10bit(intPart);
+	uart0_tx('.');
+
+	// Print fractional part with 3 decimal places
+	for (int i = 0; i < 3; i++) {
+		fracPart *= 10;
+		int digit = (int)fracPart;
+		uart0_tx('0' + digit);
+		fracPart -= digit;
+	}
+}
+
 void uart0_print_10bit(uint32_t c) {
 	if (c == 0)
 		uart0_tx('0');

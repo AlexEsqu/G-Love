@@ -3,11 +3,11 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <stdint.h>
-#include <avr/wdt.h> 
+#include <avr/wdt.h>
 #include "../../includes/main.h"
 
 #define BAUDRATE 57600UL
-#define MYUBRR ((F_CPU + BAUDRATE * 4) / (BAUDRATE * 8) - 1)   
+#define MYUBRR ((F_CPU + BAUDRATE * 4) / (BAUDRATE * 8) - 1)
 
 void uart_init(void)
 {
