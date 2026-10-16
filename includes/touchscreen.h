@@ -53,7 +53,7 @@ typedef struct {
 } packed_image_t;
 
 typedef struct {
-	const packed_image_t* const*	frames[2];
+	const packed_image_t* frames[2];
 	uint16_t (*get_background_color)(uint16_t, uint16_t);
 } tft_screen_info_t;
 
@@ -184,6 +184,8 @@ void	gc9a01_send_square(uint8_t x, uint8_t y, uint16_t rgb256, uint16_t width);
 void	gc9a01_display_screen();
 void	gc9a01_send_image(uint8_t x, uint8_t y, const packed_image_t* image);
 void	gc9a01_set_display_size(uint16_t left, uint16_t top, uint16_t right, uint16_t bottom);
+
+void	refresh_screen();
 
 void	cst816d_init();
 int		received_data_from_cst816d();

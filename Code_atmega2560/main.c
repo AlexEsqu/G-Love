@@ -27,11 +27,11 @@ int main(void)
 	while (1)
 	{
 		g_animation_frame = 0;
-		gc9a01_display_screen();
-		_delay_ms(100);
+		refresh_screen();
+		_delay_ms(10);
 		g_animation_frame = 1;
-		gc9a01_display_screen();
-		_delay_ms(100);
+		refresh_screen();
+		_delay_ms(10);
 	}
 	return 0;
 }

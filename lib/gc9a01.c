@@ -1,4 +1,4 @@
-#include "touchscreen.h"
+#include "main.h"
 #include "config_atm2560.h"
 
 // Using the display driver chip GC9A01

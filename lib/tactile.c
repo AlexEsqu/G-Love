@@ -39,21 +39,25 @@ void	onTouch()
 
 	i2c_stop();
 
+	// voiding probably bad reading cuz further than surface of TFT
+	(void)x_high;
+	(void)y_high;
+	
 	int x = x_low;
 	int y = y_low;
 
 	if (points > 0) {
 		uart0_printstr("action: ");
 		uart0_print_10bit(action);
-		if (action == TFT_UP)
+		if (action == (uint8_t)TFT_UP)
 			uart0_printstr("swipe up\r\n");
-		else if (action == TFT_DOWN)
+		else if (action == (uint8_t)TFT_DOWN)
 			uart0_printstr("swipe down\r\n");
-		else if (action == TFT_RIGHT)
+		else if (action == (uint8_t)TFT_RIGHT)
 			uart0_printstr("swipe right\r\n");
-		else if (action == TFT_LEFT)
+		else if (action == (uint8_t)TFT_LEFT)
 			uart0_printstr("swipe left\r\n");
-		else if (action == TFT_TAP)
+		else if (action == (uint8_t)TFT_TAP)
 			uart0_printstr("tap\r\n");
 		else
 			uart0_printstr("autre action\r\n");
@@ -71,11 +75,11 @@ void	onTouch()
 	else if (action != g_touchscreen_mode)
 	{
 		g_touchscreen_mode = action;
-		if (g_touchscreen_mode == TFT_LEFT)
+		if (g_touchscreen_mode == (uint8_t)TFT_LEFT)
 			gc9a01_fill_screen(RGB16_YELLOW);
-		if (g_touchscreen_mode == TFT_RIGHT)
+		if (g_touchscreen_mode == (uint8_t)TFT_RIGHT)
 			gc9a01_fill_screen(RGB16_CYAN);
-		if (g_touchscreen_mode == TFT_UP)
+		if (g_touchscreen_mode == (uint8_t)TFT_UP)
 			gc9a01_fill_screen(RGB16_MAGENTA);
 	}
 }

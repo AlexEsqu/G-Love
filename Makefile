@@ -17,7 +17,7 @@ HEX1     = ${NAME}_uno.hex
 BIN2     = ${NAME}_mega.bin
 HEX2     = ${NAME}_mega.hex
 
-CC       = avr-gcc
+CC       = avr-gcc -Wextra -Werror -Wall
 OBJCOPY  = avr-objcopy
 
 LIBDIR   = lib

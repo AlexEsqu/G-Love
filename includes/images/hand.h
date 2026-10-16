@@ -244,9 +244,9 @@ static const packed_image_t hand2 = {
     hand2_data
 };
 
-static const packed_image_t *const handwide_animation[2] = {
-	&hand1,
-	&hand2,
-};
+// const packed_image_t* handwide_animation[2] = {
+// 	&hand1,
+// 	&hand2,
+// };
 
 #endif

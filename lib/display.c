@@ -3,7 +3,7 @@
 
 int	is_circle(int16_t x, int16_t y)
 {
-	return (x * x + y * y) > TFT_FRAME;
+	return (x * x + y * y) > (int32_t)TFT_FRAME;
 }
 
 int	is_spoke(int16_t x, int16_t y)
@@ -68,7 +68,7 @@ static uint16_t hue_to_565(uint8_t hue)
 	}
 }
 
-uint16_t get_image_color(const packed_image_t *image, uint16_t column, uint16_t row)
+uint16_t get_image_color(const packed_image_t *image, uint16_t row, uint16_t column)
 {
 	if (column < image->col || row < image->row)
 		return RGB16_TRANS;
@@ -87,34 +87,33 @@ uint16_t get_image_color(const packed_image_t *image, uint16_t column, uint16_t 
 	return (image->palette[nibble]);
 }
 
-uint16_t	get_color_from_colorscreen(uint16_t col, uint16_t row)
+uint16_t	get_color_from_colorscreen(uint16_t row, uint16_t col)
 {
 	return (hue_to_565((uint8_t)((col + row) >> 1)));
 }
 
-const tft_screen_info_t screens[5] = {
-	[TFT_STATE_HOMESCREEN]  = { .frames = handwide_animation, .get_background_color = get_color_from_homescreen },
-	[TFT_STATE_COLORSCREEN] = { .frames = handwide_animation, .get_background_color = get_color_from_colorscreen },
-	[TFT_STATE_IMUSCREEN] = { .frames = handwide_animation, .get_background_color = get_color_from_colorscreen },
-	[TFT_STATE_FLEXSCREEN] = { .frames = handwide_animation, .get_background_color = get_color_from_colorscreen },
-	[TFT_STATE_COMMSCREEN] = { .frames = handwide_animation, .get_background_color = get_color_from_colorscreen },
+const tft_screen_info_t g_screens[5] = {
+	[TFT_STATE_HOMESCREEN]  = { .frames = { &hand1, &hand2 }, .get_background_color = get_color_from_homescreen },
+	[TFT_STATE_COLORSCREEN] = { .frames = { &hand1, &hand2 }, .get_background_color = get_color_from_colorscreen },
+	[TFT_STATE_IMUSCREEN] = { .frames = { &hand1, &hand2 }, .get_background_color = get_color_from_colorscreen },
+	[TFT_STATE_FLEXSCREEN] = { .frames = { &hand1, &hand2 }, .get_background_color = get_color_from_colorscreen },
+	[TFT_STATE_COMMSCREEN] = { .frames = { &hand1, &hand2 }, .get_background_color = get_color_from_colorscreen },
 };
 
-uint16_t	get_color_from_image_or_background(const uint16_t column, const uint16_t row)
+uint16_t	get_color_from_image_or_background(const uint16_t row, const uint16_t column)
 {
-	const tft_screen_info_t	*screen = &screens[g_touchscreen_mode];
+	const tft_screen_info_t	*screen = &g_screens[g_touchscreen_mode];
 	uint16_t	color;
 
 	if (screen->frames[0])
 	{
-		color = get_image_color(handwide_animation[g_animation_frame], column, row);
+		color = get_image_color(screen->frames[g_animation_frame], row, column);
 		if (color != RGB16_TRANS)
 			return color;
 		else if (screen->get_background_color)
-			return screen->get_background_color(column, row);
-		else
-			return RGB16_CYAN;
+			return screen->get_background_color(row, column);
 	}
+	return RGB16_CYAN;
 }
 
 void gc9a01_display_screen()
@@ -127,7 +126,7 @@ void gc9a01_display_screen()
 	{
 		for (uint16_t column = 0; column < TFT_WIDTH; column++)
 		{
-			uint16_t color = get_color_from_image_or_background(column, row);
+			uint16_t color = get_color_from_image_or_background(row, column);
 			spi_send_data(color >> 8);
 			spi_send_data(color & 0xFF);
 		}
@@ -135,24 +134,49 @@ void gc9a01_display_screen()
 	gc9a01_end_parameter_sequence();
 }
 
-void	gc9a01_send_image(uint8_t x, uint8_t y, const packed_image_t* image)
+void	refresh_image(const packed_image_t* image)
 {
-	const uint8_t	width = image->width;
-	const uint8_t	height = image->height;
-	const uint8_t	stride = (width + 1) >> 1;
-	const uint32_t	total_pixels = image->total_pixels; // could overflow but we're all adult here
-	const uint16_t	transparent_color = image->palette[0];
-	const uint_farptr_t addr = pgm_get_far_address(hand1_data);
+	// const uint8_t	stride = (image->width + 1) >> 1;
 
-	gc9a01_set_display_size(x, y, x + width - 1, y + height - 1);
+	gc9a01_set_display_size(image->row, image->col,
+		image->row + image->width - 1, image->col + image->height - 1);
 
 	gc9a01_send_command(GC9A01_MEM_WRITE);
 	gc9a01_start_parameter_sequence();
-	for (uint8_t row = 0; row < height; row++)
+	for (uint8_t row = 0; row < image->height; row++)
 	{
-		for (uint8_t col = 0; col < width; col++)
+		for (uint8_t col = 0; col < image->width; col++)
 		{
-			uint8_t byte = pgm_read_byte_far(addr + (uint16_t)row * stride + (col >> 1));
+			uint16_t color = get_color_from_image_or_background(image->row + row, image->col + col);
+			spi_send_data(color >> 8);
+			spi_send_data(color & 0xFF);
+		}
+	}
+	gc9a01_end_parameter_sequence();
+}
+
+void	refresh_screen()
+{
+	if (g_screens[g_touchscreen_mode].frames[0])
+	{
+		uart1_printstr("updating image");
+		refresh_image(g_screens[g_touchscreen_mode].frames[g_animation_frame]);
+	}
+}
+
+void	gc9a01_send_image(uint8_t x, uint8_t y, const packed_image_t* image)
+{
+	const uint8_t	stride = (image->width + 1) >> 1;
+
+	gc9a01_set_display_size(x, y, x + image->width - 1, y + image->height - 1);
+
+	gc9a01_send_command(GC9A01_MEM_WRITE);
+	gc9a01_start_parameter_sequence();
+	for (uint8_t row = 0; row < image->height; row++)
+	{
+		for (uint8_t col = 0; col < image->width; col++)
+		{
+			uint8_t byte = pgm_read_byte_far(image->pixels + (uint16_t)row * stride + (col >> 1));
 			uint8_t nibble = (col & 1) ? (byte & 0x0F) : (byte >> 4);
 			uint16_t color = (nibble == 0) ? get_color_from_colorscreen(row - 120, col - 120) : image->palette[nibble];
 			spi_send_data(color >> 8);
