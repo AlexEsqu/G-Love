@@ -53,7 +53,8 @@ SRCS2    = $(CODEDIR2)/main.c \
 SRC_BOOT1 = srcs/boot/bridge_atm2561.c
 
 SRC_TEST = srcs/testing/uart_test.c \
-			srcs/lib/uart.c
+			srcs/lib/uart.c \
+			srcs/lib/i2c.c
 
 OBJS1      = $(SRCS1:.c=_uno.o)
 OBJS2      = $(SRCS2:.c=_mega.o)
@@ -111,4 +112,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re uno mega
+.PHONY: all clean fclean re uno mega bridge uarttest
