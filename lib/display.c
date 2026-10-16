@@ -11,17 +11,17 @@ int	is_spoke(int16_t x, int16_t y)
 	return ((y > -2 && y < 2) || (x > -2 && x < 2));
 }
 
-int	is_frame(uint16_t col, uint16_t row)
+int	is_frame( uint16_t row, uint16_t col)
 {
 	int16_t	y = (int16_t)col - 120;
 	int16_t	x = (int16_t)row - 120;
 	return is_circle(x, y) || is_spoke(x, y);
 }
 
-uint16_t	get_color_from_homescreen(uint16_t col, uint16_t row)
+uint16_t	get_color_from_homescreen(uint16_t row, uint16_t col)
 {
 	uint16_t color = RGB16_BLACK;
-	if (is_frame(col, row))
+	if (is_frame(row, col))
 	{
 		color = RGB16_GREEN;
 	}
@@ -215,7 +215,7 @@ void putstr_screen(uint16_t x, uint16_t y, const char *str, uint16_t fg_color)
 			for (uint8_t col = 0; col < g_default_font.width; col++)
 			{
 				uint8_t line_byte = pgm_read_byte_far(g_default_font.bitmap + byte_offset + col);
-				uint16_t color = (line_byte & (1 << row)) ? fg_color : g_screens[g_touchscreen_mode].get_background_color(y + col, x + row);
+				uint16_t color = (line_byte & (1 << row)) ? fg_color : g_screens[g_touchscreen_mode].get_background_color(x + row, y + col);
 				spi_send_data(color >> 8);
 				spi_send_data(color & 0xFF);
 			}
@@ -228,15 +228,18 @@ void putstr_screen(uint16_t x, uint16_t y, const char *str, uint16_t fg_color)
 
 void putstr_screen_big(uint16_t x, uint16_t y, const char *str, uint16_t fg_color)
 {
+	// uint16_t	original_x = x;
+
+	uint8_t		target_width = g_default_font.width * 2;
+	uint8_t		target_height = g_default_font.height * 2;
+
 	while (*str)
 	{
 		char c = *str++;
 		if (c < g_default_font.first_char || c > g_default_font.last_char)
 			c = '?';
 
-		uint16_t byte_offset = (c - g_default_font.first_char) * g_default_font.width;
-		uint8_t target_width = g_default_font.width * 2;
-		uint8_t target_height = g_default_font.height * 2;
+		uint16_t	byte_offset = (c - g_default_font.first_char) * g_default_font.width;
 
 		gc9a01_set_display_size(x, y, x + target_width - 1, y + target_height - 1);
 
@@ -250,7 +253,7 @@ void putstr_screen_big(uint16_t x, uint16_t y, const char *str, uint16_t fg_colo
 			{
 				uint8_t font_col = target_col >> 1;
 				uint8_t line_byte = pgm_read_byte_far(g_default_font.bitmap + byte_offset + font_col);
-				uint16_t color = (line_byte & (1 << font_row)) ? fg_color : g_screens[g_touchscreen_mode].get_background_color(y + target_col, x + target_row);
+				uint16_t color = (line_byte & (1 << font_row)) ? fg_color : g_screens[g_touchscreen_mode].get_background_color(y + font_row, x + font_col);
 
 				spi_send_data(color >> 8);
 				spi_send_data(color & 0xFF);

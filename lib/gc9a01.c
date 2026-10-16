@@ -452,9 +452,12 @@ const gc9a01_sequence_t gc9a01_init_sequence[GC9A01_INIT_SEQUENCE_LEN] =
 		.args_size = 0,
 		.delay_ms = 20,
 	},
+	// Ensure normal memory addressing
+	// had some surprises with mirrored screens on occasion
+	// - see GC9A01 datasheet p.127
 	{
 		.cmd = GC9A01_MEM_ACCESS_CTL,
-		.args = (const uint8_t[]){ 0x48 },
+		.args = (const uint8_t[]){ 0b000000 },
 		.args_size = 0,
 		.delay_ms = 20,
 	},
