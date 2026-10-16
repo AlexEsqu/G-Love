@@ -17,17 +17,31 @@
 
 #define TOUCH_DEBOUNCE_TIME 50
 
-// Initialize timer1 to debounce tactile
+uint8_t		g_touch_debounce = 0;
+uint16_t	g_ms_counter = 0;
+
+// 16 MHz / 256 * 0.010
+#define TICKS_10MS   625u
+// 16 MHz / 256 * 0.5
+#define TICKS_500MS  31250u
+
+// Initialize timer1 to ping comA every 10ms and comB every 0.5s
 void	touch_timer_init()
 {
-    // Initialize the timer (by default but in case previous set)
-    TCNT4 = 0;
-    TCCR4A = 0;
-    TCCR4B = 0;
+	// Initialize the timer (by default but in case previous set)
+	TCNT1 = 0;
+	TCCR1A = 0;
+	TCCR1B = 0;
+	OCR1B  = TICKS_10MS;
 
-    // Set wavelength generation mode in two control registers
-    TCCR4A = 0b01000000;
-    TCCR4B = 0b00000100;
+	// Set wavelength generation mode in two control registers
+	TIFR1  = (1 << OCF1A) | (1 << OCF1B);
+
+	// enable B compare interrupts for ms counting
+	TIMSK1 = (1 << OCIE1B);
+
+	// Launch Prescaler
+	TCCR1B = (1 << CS12);
 }
 
 // disallow interrupts on pin PCINT 6
@@ -51,24 +65,27 @@ void	enableTouchInterrupt()
 // Launch fast timer to check the touch press actually was a touch
 void	launchTouchDebounce()
 {
-	uart0_printstr("registred");
-
 	disableTouchInterrupt();
+
+	uart0_printstr("registred");
+	g_touch_debounce = 1;
 
 	// set COMA value to when debounce is over
 	// should wrap on overflow
-	OCR4A = TCNT4 + TOUCH_DEBOUNCE_TIME;
+	OCR1A = TCNT1 + TOUCH_DEBOUNCE_TIME;
 
 	// enable COMA interrupt on timer
-	TIMSK4 |= (1 << OCIE4A);
+	TIMSK1 |= (1 << OCIE1A);
 }
 
 void	stopTouchDebounce()
 {
-	enableTouchInterrupt();
+	g_touch_debounce = 0;
 
 	// remove COMA interrupt on timer
-	TIMSK4 &= ~(1 << OCIE4A);
+	TIMSK1 &= ~(1 << OCIE1A);
+
+	enableTouchInterrupt();
 }
 
 
@@ -86,13 +103,19 @@ void	concludeTouchDebounce()
 }
 
 
-// ON TOUCH
-// Set on interrupt function of PCINT6 / OC1B on pin D12
-// (set to be the touch interrupt in the current wiring)
-// Matching vector #19 per datasheet Table 14-1 p. 101-102
+// ON 10 MILISECOND
+// Matching vector #44 per datasheet Table 14-1 p. 101-102
 void __attribute__((signal)) TIMER1_COMPB_vect (void)
 {
-	launchTouchDebounce();
+	// should wrap
+	OCR4B += TICKS_10MS;
+
+	g_ms_counter += 10;
+	g_animation_frame = g_animation_frame ? 0 : 1;
+	// refresh_screen();
+
+	if (g_ms_counter > 150)
+		g_touchscreen_mode = TFT_STATE_COLORSCREEN;
 }
 
 // FEW MILISECONDS AFTER TOUCH

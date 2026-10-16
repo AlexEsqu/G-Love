@@ -26,23 +26,27 @@ typedef struct s_rgb_color
     uint8_t blue;
 } t_rgb_color;
 
-extern tft_state_t g_touchscreen_mode;
-extern uint8_t g_animation_frame;
+
+// Globals
+extern tft_state_t	g_touchscreen_mode;
+extern uint8_t		g_animation_frame;
+extern uint16_t		g_ms_counter;
+extern uint8_t		g_touch_debounce;
 
 //adc.c
 void		adc_init();
 uint8_t		ft_adc_read();
-uint16_t 	ft_adc_read_10bit();
+uint16_t	ft_adc_read_10bit();
 
 // i2c.c
-void 		i2c_init(void);
-void 		i2c_status(void);
-void 		i2c_start(void);
-void 		i2c_stop(void);
-void 		i2c_write(unsigned char data);
-uint8_t 	i2c_read_ack(void);
-uint8_t 	i2c_read_nack(void);
-void 		i2c_read(void);
+void		i2c_init(void);
+void		i2c_status(void);
+void		i2c_start(void);
+void		i2c_stop(void);
+void		i2c_write(unsigned char data);
+uint8_t		i2c_read_ack(void);
+uint8_t		i2c_read_nack(void);
+void		i2c_read(void);
 
 
 //spi.c

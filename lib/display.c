@@ -136,8 +136,6 @@ void gc9a01_display_screen()
 
 void	refresh_image(const packed_image_t* image)
 {
-	// const uint8_t	stride = (image->width + 1) >> 1;
-
 	gc9a01_set_display_size(image->row, image->col,
 		image->row + image->width - 1, image->col + image->height - 1);
 
@@ -157,10 +155,21 @@ void	refresh_image(const packed_image_t* image)
 
 void	refresh_screen()
 {
-	if (g_screens[g_touchscreen_mode].frames[0])
+	static uint8_t	last_mode = TFT_STATE_HOMESCREEN;
+	if (last_mode != g_touchscreen_mode)
 	{
-		uart1_printstr("updating image");
-		refresh_image(g_screens[g_touchscreen_mode].frames[g_animation_frame]);
+		gc9a01_display_screen();
+		last_mode = g_touchscreen_mode;
+		return;
+	}
+	else
+	{
+		static uint8_t	last_frame = 0;
+		if ((last_frame != g_animation_frame) && g_screens[g_touchscreen_mode].frames[0])
+		{
+			refresh_image(g_screens[g_touchscreen_mode].frames[g_animation_frame]);
+			last_frame = g_animation_frame;
+		}
 	}
 }
 
