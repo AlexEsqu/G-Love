@@ -1,5 +1,5 @@
 #include "atm2560.h"
-#include "../../includes/main.h"
+#include "main.h"
 #include <avr/interrupt.h>
 #include <stdint.h>
 #include <stdbool.h>
@@ -10,6 +10,8 @@ t_sensor_data_to_pc g_packet = {0};
 static volatile uint8_t g_rx_buff[RX_BUFFER_SIZE];
 static volatile uint8_t g_rx_index = 0; //index used for writing in buffer
 static volatile uint8_t g_rx_pos = 0; //pos for reading buffer
+tft_state_t		g_touchscreen_mode = TFT_STATE_HOMESCREEN;
+uint8_t			g_animation_frame = 0;
 
 ISR(USART1_RX_vect)
 {
@@ -86,7 +88,7 @@ bool process_packet(uint8_t *byte, t_sensor_data *packet)
 
 			if (crc16_test == crc16_received) //crc is validated
 			{
-				memcpy(packet, buf, sizeof(t_sensor_data)); 
+				memcpy(packet, buf, sizeof(t_sensor_data));
 				return (true);
 			}
 		}
@@ -98,123 +100,66 @@ void setup()
 {
 	// i2c init
 	i2c_init();
-  
+
 	// uart_init
 	uart0_init(BAUDRATE);
 	uart1_init(BAUDRATE);
 
-	sei();
+	cst816d_init();
+	gc9a01_init();
+	touch_timer_init();
+	enableTouchInterrupt();
 
 	// pin 7 en input
 	DDRD &= ~(1 << DDD7);
 	// pullup
 	PORTD |= (1 << PORTD7);
+
+	gc9a01_fill_screen(RGB16_BLUE);
+	display_screen();
+	putstr_screen(0, 20, "hello", RGB16_GRAY);
 }
 
 int main_ATM2560()
 {
+	uart0_printstr("hello");
 	setup();
 
-	uint8_t byte;
-	t_sensor_data packet; //packet from atm328P
-	uint16_t touch_x = 0;
-	uint16_t touch_y = 0;
-	uint8_t touch_action = 0;
+	// uint8_t byte;
+	// t_sensor_data packet; //packet from atm328P
+	// uint16_t touch_x = 0;
+	// uint16_t touch_y = 0;
+	// uint8_t touch_action = 0;
 
 	while (1)
 	{
-		if (PIND & (1 << PIND7))
-		{
+		refresh_screen();
+		putstr_screen_big(150, 40, "hello", RGB16_BLACK);
+		putstr_screen_big(90, 70, "world", RGB16_PINK);
 
-			i2c_start();
-			i2c_write(I2C_ADDR_CST816D << 1 | 0);
-			i2c_write(0x01);
-			// i2c_read_ack();
+		uart0_printstr("hello");
 
-			i2c_start();
-			i2c_write((I2C_ADDR_CST816D << 1) | 1);
+		// while (get_next_byte(&byte))
+		// {
+		// 	if (process_packet(&byte, &packet))
+		// 	{
+		// 		//complete packet with touch, crc and send
+		// 		g_packet.magic = SENSOR_PACKET_MAGIC2;
+		// 		memcpy(g_packet.sensorForce, packet.sensorForce, sizeof(packet.sensorForce));
+		// 		memcpy(g_packet.sensorFlex, packet.sensorFlex, sizeof(packet.sensorFlex));
+		// 		memcpy(g_packet.accel, packet.accel, sizeof(packet.accel));
+		// 		memcpy(g_packet.gyro, packet.gyro, sizeof(packet.gyro));
 
-			uint8_t action = i2c_read_ack();
-			uint8_t points = i2c_read_ack();
-			uint8_t x_high = i2c_read_ack();
-			uint8_t x_low = i2c_read_ack();
-			uint8_t y_high = i2c_read_ack();
-			uint8_t y_low = i2c_read_nack();
+		// 		g_packet.screen_x = touch_x;
+		// 		g_packet.screen_y = touch_y;
+		// 		g_packet.screen_action = touch_action;
 
-			i2c_stop();
+		// 		g_packet.crc16 = crc16_compute((const uint8_t *)&g_packet,
+		// 							offsetof(t_sensor_data_to_pc, crc16));
 
-			int x = ((x_high & 0x0F) << 8) | x_low;
-			int y = ((y_high & 0x0F) << 8) | y_low;
-
-			if (points > 0)
-			{
-				touch_x = (uint16_t)x;
-				touch_y = (uint16_t)y;
-				touch_action = action;
-
-				/*
-				uart0_printstr("action: ");
-				uart0_print_10bit(action);
-				if (action == 1)
-					uart0_printstr("swipe up\n");
-				else if (action == 2)
-					uart0_printstr("swipe down\n");
-				else if (action == 3)
-					uart0_printstr("swipe right\n");
-				else if (action == 4)
-					uart0_printstr("swipe left\n");
-				else if (action == 0)
-					uart0_printstr("tap\n");
-				else
-					uart0_printstr("autre action\n");
-				uart0_printstr("Toucher detecte ! X: ");
-				uart0_print_10bit(x);
-				uart0_printstr(" | Y: ");
-				uart0_print_10bit(y);
-				uart0_printstr("\n");
-				*/
-			}
-		}
-
-		while (get_next_byte(&byte))
-		{
-			if (process_packet(&byte, &packet))
-			{
-				//complete packet with touch, crc and send
-				g_packet.magic = SENSOR_PACKET_MAGIC2;
-				memcpy(g_packet.sensorForce, packet.sensorForce, sizeof(packet.sensorForce));
-				memcpy(g_packet.sensorFlex, packet.sensorFlex, sizeof(packet.sensorFlex));
-				memcpy(g_packet.accel, packet.accel, sizeof(packet.accel));
-				memcpy(g_packet.gyro, packet.gyro, sizeof(packet.gyro));
-
-				g_packet.screen_x = touch_x;
-				g_packet.screen_y = touch_y;
-				g_packet.screen_action = touch_action;
-
-				g_packet.crc16 = crc16_compute((const uint8_t *)&g_packet,
-									offsetof(t_sensor_data_to_pc, crc16));
-
-				uart0_send_data((const uint8_t *)&g_packet, sizeof(g_packet));
-			}
-		}
-
-/*
-		if (uart1_available() > 0)
-		{
-		char c = uart1_rx();
-		if (c == '\n') {
-			buf[i] = '\0';
-			uart0_printstr(buf);
-			uart0_printstr("\n");
-			i = 0;
-		}
-		else
-		{
-			buf[i] = c;
-			i++;
-		}
-		}
-*/
+		// 		uart0_send_data((const uint8_t *)&g_packet, sizeof(g_packet));
+		// 	}
+		// }
 	}
 	return 0;
 }

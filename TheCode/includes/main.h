@@ -4,7 +4,25 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <stdint.h>
-#include "./touchscreen.h"
+#include <stddef.h>
+
+#if defined(__AVR_ATmega2560__)  || defined(__AVR_ATmega2561__)
+    #define SPI_DDR   DDRB
+    #define SPI_MOSI  DDB2
+    #define SPI_SCK   DDB1
+    #define SPI_SS    DDB0
+#elif defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
+    #define SPI_DDR   DDRB
+    #define SPI_MOSI  DDB3
+    #define SPI_SCK   DDB5
+    #define SPI_SS    DDB2
+#endif
+
+int main_ATM2560();
+int main_ATM328P();
+
+
+#include "touchscreen.h"
 
 typedef struct s_rgb_color
 {
@@ -25,10 +43,8 @@ typedef struct __attribute__((packed)) s_sensor_data
     uint16_t crc16; // crc to protect and check data authenticity
 } t_sensor_data;
 
-extern t_sensor_data g_sensor;
-
-
 // Globals
+extern t_sensor_data g_sensor;
 extern tft_state_t	g_touchscreen_mode;
 extern uint8_t		g_animation_frame;
 extern uint16_t		g_ms_counter;
@@ -44,10 +60,9 @@ uint16_t    ft_adc_read_channel(uint8_t channel);
 uint8_t     crc8_compute(const uint8_t *data, size_t len);
 uint16_t    crc16_compute(const uint8_t *data, size_t len);
 
-
+// i2c.c
 #define I2C_TIMEOUT 10000U
 
-// i2c.c
 void		i2c_init(void);
 void		i2c_status(void);
 void		i2c_start(void);

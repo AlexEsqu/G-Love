@@ -3,13 +3,19 @@ F_CPU    = 8000000UL
 DEVICE1   = atmega328p
 BAUDRATE1 = 57600
 PORT1     = /dev/cu.wchusbserial110
-#PORT1     = /dev/cu.usbmodem101
+#PORT1     = /dev/cu.usbmodem101 /dev/cu.wchusbserial110
 CODEDIR1  = srcs/main
 
 DEVICE2   = atmega2561
 BAUDRATE2 = 57600
 PORT2     = /dev/cu.wchusbserial110
 CODEDIR2  = srcs/main
+
+DEVICE3   = atmega2560
+BAUDRATE3 = 115200
+PORT3     = /dev/ttyACM0
+CODEDIR2  = srcs/main
+ALT_F_CPU    = 16000000UL
 
 NAME     = main
 NAME_BRIDGE   = bridge
@@ -18,14 +24,17 @@ BIN1     = ${NAME}_uno.bin
 HEX1     = ${NAME}_uno.hex
 BIN2     = ${NAME}_mega.bin
 HEX2     = ${NAME}_mega.hex
+BIN3     = ${NAME}_arduinomega.bin
+HEX3     = ${NAME}_arduinomega.hex
 
 BIN_BOOT = ${NAME_BRIDGE}_mega.bin
 HEX_BOOT = ${NAME_BRIDGE}_mega.hex
 
-CC       = avr-gcc
+CC       = avr-gcc -Wextra -Werror -Wall
 OBJCOPY  = avr-objcopy
 
 LIBDIR   = srcs/lib
+INCDIR   = includes
 
 SRCS1    = $(CODEDIR1)/main.c \
 			$(CODEDIR1)/atm328p.c \
@@ -44,21 +53,32 @@ SRCS2    = $(CODEDIR2)/main.c \
         	$(LIBDIR)/i2c.c \
         	$(LIBDIR)/spi.c \
         	$(LIBDIR)/uart.c  \
-			$(LIBDIR)/crc.c 
+			$(LIBDIR)/gc9a01.c \
+			$(LIBDIR)/display.c \
+			$(LIBDIR)/timer.c \
+			$(LIBDIR)/readability.c \
+			$(LIBDIR)/tactile.c \
+			$(LIBDIR)/crc.c
 
 SRC_BOOT1 = srcs/boot/bridge_atm2561.c
 
 OBJS1    = $(SRCS1:.c=_uno.o)
 OBJS2    = $(SRCS2:.c=_mega.o)
+OBJS3    = $(SRCS2:.c=_arduinomega.o)
 OBJS_BOOT1	 = $(SRC_BOOT1:.c=_mega.o)
 
 # for UNO / atmega328P
 %_uno.o: %.c
-	${CC} -Os -mmcu=${DEVICE1} -DF_CPU=${F_CPU} -c $< -o $@
+	${CC} -Os -mmcu=${DEVICE1} -DF_CPU=${F_CPU} -I${INCDIR} -c $< -o $@
+
+# for atmega2561
+%_mega.o: %.c
+	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} -I${INCDIR} -c $< -o $@
 
 # for MEGA / atmega2560
-%_mega.o: %.c
-	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} -c $< -o $@
+%_arduinomega.o: %.c
+	${CC} -Os -mmcu=${DEVICE3} -DF_CPU=${ALT_F_CPU} -I${INCDIR} -c $< -o $@
+
 
 all: uno mega
 
@@ -75,12 +95,15 @@ uno: ${OBJS1}
 mega: ${OBJS2}
 	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${OBJS2} -o ${BIN2}
 	${OBJCOPY} -O ihex ${BIN2} ${HEX2}
-	avrdude -p ${DEVICE2} -c urclock -P ${PORT2} -b ${BAUDRATE2} -v -U flash:w:${HEX2}:i
-
-megaarduino: ${OBJS2}
-	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} -DPROTO=1 ${OBJS2} -o ${BIN2}
-	${OBJCOPY} -O ihex ${BIN2} ${HEX2}
 	avrdude -p ${DEVICE2} -c wiring -P ${PORT2} -b ${BAUDRATE2} -D -v -U flash:w:${HEX2}:i
+
+megaarduino: ${OBJS3}
+	${CC} -Os -mmcu=${DEVICE3} -DF_CPU=${ALT_F_CPU} ${OBJS3} -o ${BIN3}
+	${OBJCOPY} -O ihex ${BIN3} ${HEX3}
+	avrdude -p ${DEVICE3} -c wiring -P ${PORT3} -b ${BAUDRATE3} -D -v -U flash:w:${HEX3}:i
+
+mega_screen:	megaarduino
+				screen ${PORT3} ${BAUDRATE3}
 
 bridge: ${OBJS_BOOT1}
 	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${OBJS_BOOT1} -o ${BIN_BOOT}

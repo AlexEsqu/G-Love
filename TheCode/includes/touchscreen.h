@@ -4,7 +4,6 @@
 #include <stdint.h>
 #include <avr/pgmspace.h>
 
-
 #define TOUCH_ADDR_CST816D 0x15
 #define DISPLAY_ADDR_GC9A91 0x2C
 #define TFT_WIDTH 240UL
@@ -196,11 +195,6 @@ int		received_data_from_cst816d();
 void	onTouch();
 
 void	touchscreen_read(touchscreen_data_t *data);
-
-void	set_pin_as_input(volatile uint8_t* reg, uint8_t pin);
-void	set_pin_as_output(volatile uint8_t* reg, uint8_t pin);
-void	set_pin_high(volatile uint8_t* reg, uint8_t pin);
-void	set_pin_low(volatile uint8_t* reg, uint8_t pin);
 
 void	touch_timer_init();
 void	enableTouchInterrupt();

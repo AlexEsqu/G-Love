@@ -1,4 +1,4 @@
-#include "config_atm2560.h"
+#include "atm2560.h"
 #include "main.h"
 
 int	received_data_from_cst816d()
@@ -42,7 +42,7 @@ void	onTouch()
 	// voiding probably bad reading cuz further than surface of TFT
 	(void)x_high;
 	(void)y_high;
-	
+
 	int x = x_low;
 	int y = y_low;
 
