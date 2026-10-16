@@ -1,7 +1,7 @@
 #include "../includes/config_atm2560.h"
 #include "../includes/main.h"
 
-tft_state_t g_touchscreen_mode = TFT_STATE_HOMESCREEN;
+tft_state_t g_touchscreen_mode = TFT_STATE_COLORSCREEN;
 uint8_t g_animation_frame = 0;
 
 void setup()
@@ -26,11 +26,12 @@ int main(void)
 	setup();
 	while (1)
 	{
-		// gc9a01_send_image(95, 95, &hand1);
-		// _delay_ms(100);
-		// gc9a01_send_image(95, 95, &hand2);
-		// _delay_ms(100);
-		;
+		g_animation_frame = 0;
+		gc9a01_display_screen();
+		_delay_ms(100);
+		g_animation_frame = 1;
+		gc9a01_display_screen();
+		_delay_ms(100);
 	}
 	return 0;
 }

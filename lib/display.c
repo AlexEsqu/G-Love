@@ -107,7 +107,7 @@ uint16_t	get_color_from_image_or_background(const uint16_t column, const uint16_
 
 	if (screen->frames[0])
 	{
-		color = get_image_color(handwide_animation[0], column, row);
+		color = get_image_color(handwide_animation[g_animation_frame], column, row);
 		if (color != RGB16_TRANS)
 			return color;
 		else if (screen->get_background_color)
@@ -143,7 +143,7 @@ void	gc9a01_send_image(uint8_t x, uint8_t y, const packed_image_t* image)
 	const uint32_t	total_pixels = image->total_pixels; // could overflow but we're all adult here
 	const uint16_t	transparent_color = image->palette[0];
 	const uint_farptr_t addr = pgm_get_far_address(hand1_data);
-	
+
 	gc9a01_set_display_size(x, y, x + width - 1, y + height - 1);
 
 	gc9a01_send_command(GC9A01_MEM_WRITE);
