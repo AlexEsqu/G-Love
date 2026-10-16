@@ -105,6 +105,7 @@ void setup()
 	uart0_init(BAUDRATE);
 	uart1_init(BAUDRATE);
 
+	spi_init();
 	cst816d_init();
 	gc9a01_init();
 	touch_timer_init();
@@ -122,7 +123,6 @@ void setup()
 
 int main_ATM2560()
 {
-	uart0_printstr("hello");
 	setup();
 
 	// uint8_t byte;
@@ -136,8 +136,6 @@ int main_ATM2560()
 		refresh_screen();
 		putstr_screen_big(150, 40, "hello", RGB16_BLACK);
 		putstr_screen_big(90, 70, "world", RGB16_PINK);
-
-		uart0_printstr("hello");
 
 		// while (get_next_byte(&byte))
 		// {
