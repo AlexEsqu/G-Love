@@ -79,6 +79,8 @@ void	gc9a01_init()
 	{
 		gc9a01_execute_sequence(&gc9a01_init_sequence[i]);
 	}
+
+	_delay_ms(120);
 }
 
 void	gc9a01_set_display_size(uint16_t left, uint16_t top, uint16_t right, uint16_t bottom)
@@ -140,6 +142,7 @@ void gc9a01_fill_screen(uint16_t rgb565)
 	}
 	gc9a01_end_parameter_sequence();
 }
+
 
 // Constructor serie of instruction to initialize the GC9A01 driver
 // Took me hours to realize it was necessary
@@ -446,6 +449,12 @@ const gc9a01_sequence_t gc9a01_init_sequence[GC9A01_INIT_SEQUENCE_LEN] =
 	{
 		.cmd = GC9A01_DISPLAY_ON,
 		.args = 0x00,
+		.args_size = 0,
+		.delay_ms = 20,
+	},
+	{
+		.cmd = GC9A01_MEM_ACCESS_CTL,
+		.args = (const uint8_t[]){ 0x48 },
 		.args_size = 0,
 		.delay_ms = 20,
 	},

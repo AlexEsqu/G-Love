@@ -58,6 +58,7 @@ typedef struct {
 } tft_screen_info_t;
 
 #include "images/hand.h"
+#include "images/font.h"
 
 enum {
 	TFT_TAP,
@@ -181,11 +182,14 @@ void	gc9a01_end_parameter_sequence();
 void	gc9a01_send_init_sequence();
 void	gc9a01_send_pixel(uint8_t x, uint8_t y, uint16_t rgb256);
 void	gc9a01_send_square(uint8_t x, uint8_t y, uint16_t rgb256, uint16_t width);
-void	gc9a01_display_screen();
 void	gc9a01_send_image(uint8_t x, uint8_t y, const packed_image_t* image);
 void	gc9a01_set_display_size(uint16_t left, uint16_t top, uint16_t right, uint16_t bottom);
 
+void	display_screen();
 void	refresh_screen();
+void	putstr_screen(uint16_t x, uint16_t y, const char *str, uint16_t fg_color);
+void	putstr_screen_big(uint16_t x, uint16_t y, const char *str, uint16_t fg_color);
+
 
 void	cst816d_init();
 int		received_data_from_cst816d();
@@ -202,7 +206,7 @@ void	touch_timer_init();
 void	enableTouchInterrupt();
 
 
-#define GC9A01_INIT_SEQUENCE_LEN 50
+#define GC9A01_INIT_SEQUENCE_LEN 51
 
 extern const gc9a01_sequence_t gc9a01_init_sequence[GC9A01_INIT_SEQUENCE_LEN];
 

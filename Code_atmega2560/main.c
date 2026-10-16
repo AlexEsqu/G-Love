@@ -17,8 +17,9 @@ void setup()
 	enableTouchInterrupt();
 
 	gc9a01_fill_screen(RGB16_BLUE);
-	gc9a01_display_screen();
+	display_screen();
 	// gc9a01_send_image(95, 95, &hand1);
+	putstr_screen(0, 20, "hello", RGB16_GRAY);
 }
 
 int main(void)
@@ -27,6 +28,8 @@ int main(void)
 	while (1)
 	{
 		refresh_screen();
+		putstr_screen_big(150, 40, "hello", RGB16_BLACK);
+		putstr_screen_big(90, 70, "world", RGB16_PINK);
 	}
 	return 0;
 }
