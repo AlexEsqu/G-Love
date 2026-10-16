@@ -53,12 +53,12 @@ SRCS2    = $(CODEDIR2)/main.c \
         	$(LIBDIR)/i2c.c \
         	$(LIBDIR)/spi.c \
         	$(LIBDIR)/uart.c  \
-			$(LIBDIR)/gc9a01.c \
-			$(LIBDIR)/display.c \
 			$(LIBDIR)/timer.c \
 			$(LIBDIR)/readability.c \
-			$(LIBDIR)/tactile.c \
-			$(LIBDIR)/crc.c
+			$(LIBDIR)/crc.c \
+			srcs/display/gc9a01.c \
+			srcs/display/display.c \
+			srcs/display/tactile.c
 
 SRC_BOOT1 = srcs/boot/bridge_atm2561.c
 

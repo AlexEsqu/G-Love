@@ -199,7 +199,6 @@ void putstr_screen(uint16_t x, uint16_t y, const char *str, uint16_t fg_color)
 {
 	while (*str)
 	{
-		uart0_printstr(str);
 		char c = *str++;
 		if (c < g_default_font.first_char || c > g_default_font.last_char)
 			c = '?';
@@ -215,14 +214,16 @@ void putstr_screen(uint16_t x, uint16_t y, const char *str, uint16_t fg_color)
 			for (uint8_t col = 0; col < g_default_font.width; col++)
 			{
 				uint8_t line_byte = pgm_read_byte_far(g_default_font.bitmap + byte_offset + col);
-				uint16_t color = (line_byte & (1 << row)) ? fg_color : g_screens[g_touchscreen_mode].get_background_color(x + row, y + col);
+				uint16_t color = (line_byte & (1 << row))
+					? fg_color
+					: g_screens[g_touchscreen_mode].get_background_color(x + row, y + col);
 				spi_send_data(color >> 8);
 				spi_send_data(color & 0xFF);
 			}
 		}
 		gc9a01_end_parameter_sequence();
 
-		x -= g_default_font.width;
+		x += g_default_font.width;
 	}
 }
 
@@ -253,7 +254,9 @@ void putstr_screen_big(uint16_t x, uint16_t y, const char *str, uint16_t fg_colo
 			{
 				uint8_t font_col = target_col >> 1;
 				uint8_t line_byte = pgm_read_byte_far(g_default_font.bitmap + byte_offset + font_col);
-				uint16_t color = (line_byte & (1 << font_row)) ? fg_color : g_screens[g_touchscreen_mode].get_background_color(y + font_row, x + font_col);
+				uint16_t color = (line_byte & (1 << font_row))
+					? fg_color
+					: g_screens[g_touchscreen_mode].get_background_color(y + target_row, x + target_col);
 
 				spi_send_data(color >> 8);
 				spi_send_data(color & 0xFF);
