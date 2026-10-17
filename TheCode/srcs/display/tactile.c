@@ -93,7 +93,7 @@ void	navigate_touchscreen()
 			break;
 	}
 
-	display_screen();
+	refresh_screen();
 }
 
 void	update_touch_info(uint16_t x, uint16_t y, uint16_t action)
@@ -108,7 +108,7 @@ void	update_touch_info(uint16_t x, uint16_t y, uint16_t action)
 	g_last_touch.last_action = last_action;
 	g_last_touch.has_displayed = 0;
 
-	if (action != last_action)
+	if (action != last_action && action != TFT_ACTION_TAP)
 		navigate_touchscreen();
 }
 
