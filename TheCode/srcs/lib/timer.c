@@ -112,10 +112,6 @@ void __attribute__((signal)) TIMER1_COMPB_vect (void)
 
 	g_ms_counter += 10;
 	g_animation_frame = g_animation_frame ? 0 : 1;
-	// refresh_screen();
-
-	if (g_ms_counter > 150)
-		g_touchscreen_mode = TFT_STATE_COLORSCREEN;
 }
 
 // FEW MILISECONDS AFTER TOUCH

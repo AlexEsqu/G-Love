@@ -43,21 +43,21 @@ void	onTouch()
 	(void)x_high;
 	(void)y_high;
 
-	int x = x_low;
-	int y = y_low;
+	uint16_t x = x_low;
+	uint16_t y = y_low;
 
 	if (points > 0) {
 		uart0_printstr("action: ");
 		uart0_print_10bit(action);
-		if (action == (uint8_t)TFT_UP)
+		if (action == (uint8_t)TFT_ACTION_UP)
 			uart0_printstr("swipe up\r\n");
-		else if (action == (uint8_t)TFT_DOWN)
+		else if (action == (uint8_t)TFT_ACTION_DOWN)
 			uart0_printstr("swipe down\r\n");
-		else if (action == (uint8_t)TFT_RIGHT)
+		else if (action == (uint8_t)TFT_ACTION_RIGHT)
 			uart0_printstr("swipe right\r\n");
-		else if (action == (uint8_t)TFT_LEFT)
+		else if (action == (uint8_t)TFT_ACTION_LEFT)
 			uart0_printstr("swipe left\r\n");
-		else if (action == (uint8_t)TFT_TAP)
+		else if (action == (uint8_t)TFT_ACTION_TAP)
 			uart0_printstr("tap\r\n");
 		else
 			uart0_printstr("autre action\r\n");
@@ -68,18 +68,31 @@ void	onTouch()
 		uart0_printstr("\r\n");
 	}
 
-	if (action == TFT_TAP)
+	if (action == TFT_ACTION_TAP)
 	{
-		gc9a01_send_square(x_low, y_low, RGB16_BLACK, 10);
+		uint16_t pointer = 180;
+		pointer = putstr_screen(pointer, 100, "x: ", RGB16_WHITE, FONT_SIZE_SMALL);
+		pointer = putint_screen(pointer, 100, x, RGB16_WHITE, FONT_SIZE_SMALL);
+		putstr_screen(pointer, 100, "  ", RGB16_WHITE, FONT_SIZE_SMALL);
+		pointer = putstr_screen(180, 110, "y: ", RGB16_WHITE, FONT_SIZE_SMALL);
+		pointer = putint_screen(pointer, 110, y, RGB16_WHITE, FONT_SIZE_SMALL);
+		putstr_screen(pointer, 110, "  ", RGB16_WHITE, FONT_SIZE_SMALL);
+		if (g_touchscreen_mode == TFT_STATE_COLORSCREEN)
+		{
+			pointer = putstr_screen(170, 120, "rgb: 0x", RGB16_WHITE, FONT_SIZE_SMALL);
+			pointer = puthex_screen(pointer, 120, get_color_from_colorscreen(x, y), RGB16_WHITE, FONT_SIZE_SMALL);
+			putstr_screen(pointer, 120, "  ", RGB16_WHITE, FONT_SIZE_SMALL);
+		}
+
 	}
-	else if (action != g_touchscreen_mode)
+	else if (action != g_touchscreen_action)
 	{
-		g_touchscreen_mode = action;
-		if (g_touchscreen_mode == (uint8_t)TFT_LEFT)
-			gc9a01_fill_screen(RGB16_YELLOW);
-		if (g_touchscreen_mode == (uint8_t)TFT_RIGHT)
-			gc9a01_fill_screen(RGB16_CYAN);
-		if (g_touchscreen_mode == (uint8_t)TFT_UP)
+		g_touchscreen_action = action;
+		if (g_touchscreen_action == (uint8_t)TFT_ACTION_LEFT)
+			g_touchscreen_mode = TFT_STATE_HOMESCREEN;
+		if (g_touchscreen_action == (uint8_t)TFT_ACTION_RIGHT)
+			g_touchscreen_mode = TFT_STATE_COLORSCREEN;
+		if (g_touchscreen_action == (uint8_t)TFT_ACTION_UP)
 			gc9a01_fill_screen(RGB16_MAGENTA);
 	}
 }

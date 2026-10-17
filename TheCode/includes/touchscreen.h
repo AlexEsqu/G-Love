@@ -61,13 +61,14 @@ typedef struct {
 #include "images/hand.h"
 #include "images/font.h"
 
-enum {
-	TFT_TAP,
-	TFT_LEFT,
-	TFT_UP,
-	TFT_RIGHT,
-	TFT_DOWN,
-};
+typedef enum {
+	TFT_ACTION_TAP,
+	TFT_ACTION_LEFT,
+	TFT_ACTION_UP,
+	TFT_ACTION_RIGHT,
+	TFT_ACTION_DOWN,
+	TFT_ACTION_NONE,
+} tft_action_t ;
 
 typedef enum {
 	RGB16_TRANS		= 0x0001,
@@ -195,8 +196,11 @@ void	gc9a01_set_display_size(uint16_t left, uint16_t top, uint16_t right, uint16
 
 void	display_screen();
 void	refresh_screen();
-void	putstr_screen(uint16_t x, uint16_t y, const char *str, uint16_t font_color, tft_font_size_t font_size);
-
+uint16_t	putchar_screen(uint16_t x, uint16_t y, char c, uint16_t font_color, tft_font_size_t font_size);
+uint16_t	putstr_screen(uint16_t x, uint16_t y, const char *str, uint16_t font_color, tft_font_size_t font_size);
+uint16_t	putfloat_screen(uint16_t x, uint16_t y, float nbr, uint16_t font_color, tft_font_size_t font_size);
+uint16_t	putint_screen(uint16_t x, uint16_t y, int32_t nbr, uint16_t font_color, tft_font_size_t font_size);
+uint16_t	puthex_screen(uint16_t x, uint16_t y, uint16_t nbr, uint16_t font_color, tft_font_size_t font_size);
 
 void	cst816d_init();
 int		received_data_from_cst816d();
@@ -217,6 +221,9 @@ void		print_imuscreen_text(void);
 
 
 #define GC9A01_INIT_SEQUENCE_LEN 51
+
+
+
 
 extern const gc9a01_sequence_t gc9a01_init_sequence[GC9A01_INIT_SEQUENCE_LEN];
 

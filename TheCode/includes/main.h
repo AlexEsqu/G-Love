@@ -49,6 +49,7 @@ extern tft_state_t	g_touchscreen_mode;
 extern uint8_t		g_animation_frame;
 extern uint16_t		g_ms_counter;
 extern uint8_t		g_touch_debounce;
+extern tft_action_t	g_touchscreen_action;
 
 //adc.c
 void		adc_init();

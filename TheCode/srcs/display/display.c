@@ -1,7 +1,6 @@
 #include "touchscreen.h"
 #include "main.h"
 
-
 const tft_screen_info_t g_screens[5] = {
 	[TFT_STATE_HOMESCREEN] = {
 		.frames = { &hand1, &hand2 },
@@ -132,46 +131,113 @@ void	refresh_screen()
 	g_screens[g_touchscreen_mode].print_screen_text();
 }
 
-void putstr_screen(uint16_t x, uint16_t y, const char *str, uint16_t font_color, tft_font_size_t font_size )
+
+uint16_t	putchar_screen(uint16_t x, uint16_t y, char c, uint16_t font_color, tft_font_size_t font_size)
 {
+	uint16_t	byte_offset = (c - g_default_font.first_char) * g_default_font.width;
 	uint8_t		target_width = g_default_font.width * font_size;
 	uint8_t		target_height = g_default_font.height * font_size;
 	uint8_t		multiplier = font_size == FONT_SIZE_SMALL ? 0
 			: font_size == FONT_SIZE_MID ? 1
 			: 2;
 
+	gc9a01_set_display_size(x, y, x + target_width - 1, y + target_height - 1);
+
+	gc9a01_send_command(GC9A01_MEM_WRITE);
+	gc9a01_start_parameter_sequence();
+	for (uint8_t target_row = 0; target_row < target_height; target_row++)
+	{
+		uint8_t font_row = target_row >> multiplier;
+
+		for (uint8_t target_col = 0; target_col < target_width; target_col++)
+		{
+			uint8_t font_col = target_col >> multiplier;
+			uint8_t line_byte = pgm_read_byte_far(g_default_font.bitmap + byte_offset + font_col);
+			uint16_t color = (line_byte & (1 << font_row))
+				? font_color
+				: get_color_from_image_or_background(y + target_row, x + target_col);
+
+			spi_send_data(color >> 8);
+			spi_send_data(color & 0xFF);
+		}
+	}
+	gc9a01_end_parameter_sequence();
+	x += target_width;
+
+	return (x);
+}
+
+uint16_t	putstr_screen(uint16_t x, uint16_t y, const char *str, uint16_t font_color, tft_font_size_t font_size)
+{
 	while (*str)
 	{
 		char c = *str++;
 		if (c < g_default_font.first_char || c > g_default_font.last_char)
 			c = '?';
 
-		uint16_t	byte_offset = (c - g_default_font.first_char) * g_default_font.width;
-
-		gc9a01_set_display_size(x, y, x + target_width - 1, y + target_height - 1);
-
-		gc9a01_send_command(GC9A01_MEM_WRITE);
-		gc9a01_start_parameter_sequence();
-		for (uint8_t target_row = 0; target_row < target_height; target_row++)
-		{
-			uint8_t font_row = target_row >> multiplier;
-
-			for (uint8_t target_col = 0; target_col < target_width; target_col++)
-			{
-				uint8_t font_col = target_col >> multiplier;
-				uint8_t line_byte = pgm_read_byte_far(g_default_font.bitmap + byte_offset + font_col);
-				uint16_t color = (line_byte & (1 << font_row))
-					? font_color
-					: get_color_from_image_or_background(y + target_row, x + target_col);
-
-				spi_send_data(color >> 8);
-				spi_send_data(color & 0xFF);
-			}
-		}
-		gc9a01_end_parameter_sequence();
-
-		x += target_width;
+		x = putchar_screen(x, y, c, font_color, font_size);
 	}
+
+	return x;
 }
 
+
+
+uint16_t	puthex_screen(uint16_t x, uint16_t y, uint16_t nbr, uint16_t font_color, tft_font_size_t font_size)
+{
+	const char*	hex_base = "0123456789ABCDEF";
+
+	if (nbr > 15)
+	{
+		x = puthex_screen(x, y, nbr / 16, font_color, font_size);
+	}
+	x = putchar_screen(x, y, hex_base[nbr % 16], font_color, font_size);
+
+	return x;
+}
+
+
+uint16_t	putint_screen(uint16_t x, uint16_t y, int32_t nbr, uint16_t font_color, tft_font_size_t font_size)
+{
+	if (nbr == INT32_MIN)
+	{
+		return putstr_screen(x, y, "-2147483648", font_color, font_size);
+	}
+
+	if (nbr < 0)
+	{
+		x = putchar_screen(x, y, '-', font_color, font_size);
+		nbr = -nbr;
+	}
+
+	if (nbr > 9)
+	{
+		x = putint_screen(x, y, nbr / 10, font_color, font_size);
+	}
+	x = putchar_screen(x, y, (nbr % 10) + '0', font_color, font_size);
+
+	return x;
+}
+
+uint16_t	putfloat_screen(uint16_t x, uint16_t y, float nbr, uint16_t font_color, tft_font_size_t font_size)
+{
+	if (nbr < 0)
+	{
+		x = putchar_screen(x, y, '-', font_color, font_size);
+		nbr = -nbr;
+	}
+
+	uint32_t	integer_part = (uint32_t)nbr;
+	x = putint_screen(x, y, integer_part, font_color, font_size);
+
+	x = putchar_screen(x, y, '.', font_color, font_size);
+
+	uint32_t	two_first_decimal = (nbr - integer_part) * 100;
+	if (two_first_decimal < 10)
+		x = putchar_screen(x, y, '0', font_color, font_size);
+
+	x = putint_screen(x, y, two_first_decimal, font_color, font_size);
+
+	return x;
+}
 
