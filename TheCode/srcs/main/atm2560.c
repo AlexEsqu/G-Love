@@ -10,9 +10,19 @@ t_sensor_data_to_pc g_packet = {0};
 static volatile uint8_t g_rx_buff[RX_BUFFER_SIZE];
 static volatile uint8_t g_rx_index = 0; //index used for writing in buffer
 static volatile uint8_t g_rx_pos = 0; //pos for reading buffer
-tft_state_t		g_touchscreen_mode = TFT_STATE_HOMESCREEN;
-tft_action_t	g_touchscreen_action = TFT_ACTION_NONE;
-uint8_t			g_animation_frame = 0;
+
+
+tft_state_t			g_touchscreen_mode = TFT_STATE_HOMESCREEN;
+uint8_t				g_animation_frame = 0;
+tft_touch_info_t	g_last_touch = {
+	.x = 0,
+	.y = 0,
+	.action = TFT_ACTION_NONE,
+	.last_action = TFT_ACTION_NONE,
+	.rgb565 = 0x00,
+	.rgb888 = 0x0000,
+	.has_displayed = 0,
+};
 
 ISR(USART1_RX_vect)
 {

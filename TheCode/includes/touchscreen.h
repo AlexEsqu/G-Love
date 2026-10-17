@@ -58,9 +58,6 @@ typedef struct {
 	void					(*print_screen_text)(void);
 } tft_screen_info_t;
 
-#include "images/hand.h"
-#include "images/font.h"
-
 typedef enum {
 	TFT_ACTION_TAP,
 	TFT_ACTION_LEFT,
@@ -70,10 +67,25 @@ typedef enum {
 	TFT_ACTION_NONE,
 } tft_action_t ;
 
+typedef struct {
+	uint16_t		x;
+	uint16_t		y;
+	tft_action_t	action;
+	tft_action_t	last_action;
+	uint16_t		rgb565;
+	uint32_t		rgb888;
+	uint8_t			has_displayed;
+} tft_touch_info_t;
+
+#include "images/hand.h"
+#include "images/font.h"
+
+
 typedef enum {
 	RGB16_TRANS		= 0x0001,
 	RGB16_BLACK		= 0x0000,
 	RGB16_WHITE		= 0xFFFF,
+
 
 	RGB16_RED		= 0xF800,
 	RGB16_GREEN		= 0x07E0,
@@ -194,13 +206,17 @@ void	gc9a01_send_square(uint8_t x, uint8_t y, uint16_t rgb256, uint16_t width);
 void	gc9a01_send_image(uint8_t x, uint8_t y, const packed_image_t* image);
 void	gc9a01_set_display_size(uint16_t left, uint16_t top, uint16_t right, uint16_t bottom);
 
-void	display_screen();
-void	refresh_screen();
+uint32_t	rgb565_to_rgb888(uint16_t rgb565);
+
+void		display_screen();
+void		refresh_screen();
+int			is_screen_frame(int16_t x, int16_t y);
 uint16_t	putchar_screen(uint16_t x, uint16_t y, char c, uint16_t font_color, tft_font_size_t font_size);
 uint16_t	putstr_screen(uint16_t x, uint16_t y, const char *str, uint16_t font_color, tft_font_size_t font_size);
 uint16_t	putfloat_screen(uint16_t x, uint16_t y, float nbr, uint16_t font_color, tft_font_size_t font_size);
 uint16_t	putint_screen(uint16_t x, uint16_t y, int32_t nbr, uint16_t font_color, tft_font_size_t font_size);
-uint16_t	puthex_screen(uint16_t x, uint16_t y, uint16_t nbr, uint16_t font_color, tft_font_size_t font_size);
+uint16_t	puthex_screen(uint16_t x, uint16_t y, uint32_t nbr, uint16_t font_color, tft_font_size_t font_size);
+void	print_touch_info(tft_touch_info_t* touch_info);
 
 void	cst816d_init();
 int		received_data_from_cst816d();
@@ -216,6 +232,7 @@ uint16_t	get_color_from_colorscreen(uint16_t row, uint16_t col);
 void		print_colorscreen_text(void);
 uint16_t	get_color_from_homescreen(uint16_t row, uint16_t col);
 void		print_homescreen_text(void);
+uint16_t	get_color_from_imuscreen(uint16_t row, uint16_t col);
 void		print_imuscreen_text(void);
 
 

@@ -9,15 +9,15 @@ const tft_screen_info_t g_screens[5] = {
 		.print_screen_text = print_homescreen_text,
 	},
 	[TFT_STATE_COLORSCREEN] = {
-		.frames = { &hand1, &hand2 },
-		.frame_count = 2,
+		.frames = { NULL },
+		.frame_count = 0,
 		.get_background_color = get_color_from_colorscreen,
 		.print_screen_text = print_colorscreen_text
 	},
 	[TFT_STATE_IMUSCREEN] = {
-		.frames = { &hand1, &hand2 },
-		.frame_count = 2,
-		.get_background_color = get_color_from_colorscreen,
+		.frames = { NULL },
+		.frame_count = 0,
+		.get_background_color = get_color_from_imuscreen,
 		.print_screen_text = print_imuscreen_text
 	},
 	[TFT_STATE_FLEXSCREEN] = {
@@ -59,13 +59,17 @@ uint16_t	get_color_from_image_or_background(const uint16_t row, const uint16_t c
 	const tft_screen_info_t	*screen = &g_screens[g_touchscreen_mode];
 	uint16_t	color;
 
-	if (screen->frames[0])
+	if (screen->frame_count && screen->frame_count >= g_animation_frame)
 	{
 		color = get_image_color(screen->frames[g_animation_frame], row, column);
 		if (color != RGB16_TRANS)
 			return color;
-		else if (screen->get_background_color)
+		else
 			return screen->get_background_color(row, column);
+	}
+	else if (screen->get_background_color)
+	{
+		return screen->get_background_color(row, column);
 	}
 	return RGB16_CYAN;
 }
@@ -114,20 +118,32 @@ void	refresh_image(const packed_image_t* image)
 void	refresh_screen()
 {
 	static uint8_t	last_mode = TFT_STATE_HOMESCREEN;
+	static uint32_t	last_full_refresh = 0;
+
 	if (last_mode != g_touchscreen_mode)
 	{
 		display_screen();
 		last_mode = g_touchscreen_mode;
 	}
-	else if (g_screens[g_touchscreen_mode].frames)
+	// if there are frames
+	else if (g_screens[g_touchscreen_mode].frame_count >= g_animation_frame)
 	{
 		static uint8_t	last_frame = 0;
-		if ((last_frame != g_animation_frame) && g_animation_frame < g_screens[g_touchscreen_mode].frame_count)
+		if ((last_frame != g_animation_frame))
 		{
 			refresh_image(g_screens[g_touchscreen_mode].frames[g_animation_frame]);
 			last_frame = g_animation_frame;
 		}
 	}
+
+	// full refresh once in a while to remove bad pixels accumulating
+	if (last_full_refresh < 10000)
+		last_full_refresh++;
+	else
+	{
+		display_screen();
+	}
+
 	g_screens[g_touchscreen_mode].print_screen_text();
 }
 
@@ -181,9 +197,13 @@ uint16_t	putstr_screen(uint16_t x, uint16_t y, const char *str, uint16_t font_co
 	return x;
 }
 
+int	is_screen_frame(int16_t x, int16_t y)
+{
+	return (x * x + y * y) > (int32_t)TFT_FRAME;
+}
 
 
-uint16_t	puthex_screen(uint16_t x, uint16_t y, uint16_t nbr, uint16_t font_color, tft_font_size_t font_size)
+uint16_t	puthex_screen(uint16_t x, uint16_t y, uint32_t nbr, uint16_t font_color, tft_font_size_t font_size)
 {
 	const char*	hex_base = "0123456789ABCDEF";
 

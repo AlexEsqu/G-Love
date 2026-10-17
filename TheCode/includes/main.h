@@ -44,12 +44,12 @@ typedef struct __attribute__((packed)) s_sensor_data
 } t_sensor_data;
 
 // Globals
-extern t_sensor_data g_sensor;
-extern tft_state_t	g_touchscreen_mode;
-extern uint8_t		g_animation_frame;
-extern uint16_t		g_ms_counter;
-extern uint8_t		g_touch_debounce;
-extern tft_action_t	g_touchscreen_action;
+extern t_sensor_data 		g_sensor;
+extern tft_state_t			g_touchscreen_mode;
+extern uint8_t				g_animation_frame;
+extern uint16_t				g_ms_counter;
+extern uint8_t				g_touch_debounce;
+extern tft_touch_info_t		g_last_touch;
 
 //adc.c
 void		adc_init();
