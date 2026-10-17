@@ -13,6 +13,29 @@ const finger_leds_t finger_leds_map[FINGER_COUNT + 1] = {
     [FINGER_COUNT] = { .start = 0, .size = NUM_LEDS } // All leds for init/testing purposes
 };
 
+// Convert a distance from the center to the physical strip index on the left.
+static uint8_t left_pulse_led(uint8_t finger, uint8_t distance) {
+    finger_leds_t range = finger_leds_map[finger];
+    uint8_t half = range.size / 2;
+
+    return range.start + half - 1 - distance;
+}
+
+// Convert a distance from the center to the physical strip index on the right.
+static uint8_t right_pulse_led(uint8_t finger, uint8_t distance) {
+    finger_leds_t range = finger_leds_map[finger];
+    uint8_t half = range.size / 2;
+
+    return range.start + half + distance;
+}
+
+static void render_pulse_led(uint8_t led,
+                             uint8_t r, uint8_t g, uint8_t b) {
+    strip.leds[led].red = qadd8(strip.leds[led].red, r);
+    strip.leds[led].green = qadd8(strip.leds[led].green, g);
+    strip.leds[led].blue = qadd8(strip.leds[led].blue, b);
+}
+
 // Trigger with fixed-point speed (speed_fp = speed * 256) and length in number of LEDs
 void trigger_pulse(uint8_t finger, uint8_t r, uint8_t g, uint8_t b, uint16_t speed_fp, uint8_t length) {
     if (finger > FINGER_COUNT) {
@@ -24,9 +47,10 @@ void trigger_pulse(uint8_t finger, uint8_t r, uint8_t g, uint8_t b, uint16_t spe
 
     for (uint8_t i = 0; i < MAX_PULSES; i++) {
         if (!pulses[i].active) {
-            pulses[i].start_pos = range.start;
-            pulses[i].end_pos = range.start + range.size;
-            pulses[i].pos_fixed = (uint16_t)range.start << 8;
+            pulses[i].start_pos = 0;
+            pulses[i].end_pos = range.size / 2;
+            pulses[i].pos_fixed = 0;
+            pulses[i].finger = finger;
             pulses[i].speed = speed_fp;
             pulses[i].length = bounded_length;
             pulses[i].r = r;
@@ -64,10 +88,13 @@ void update_and_render_pulses(void) {
         int16_t head = pulses[i].pos_fixed >> 8;
 
         if (head >= pulses[i].start_pos && head < pulses[i].end_pos) {
-            // Bright comet head deposited onto the strip
-            strip.leds[head].red   = qadd8(strip.leds[head].red,   pulses[i].r);
-            strip.leds[head].green = qadd8(strip.leds[head].green, pulses[i].g);
-            strip.leds[head].blue  = qadd8(strip.leds[head].blue,  pulses[i].b);
+            uint8_t half = finger_leds_map[pulses[i].finger].size / 2;
+
+            // Two synchronized heads move away from the finger center.
+            render_pulse_led(left_pulse_led(pulses[i].finger, head),
+                             pulses[i].r, pulses[i].g, pulses[i].b);
+            render_pulse_led(right_pulse_led(pulses[i].finger, head),
+                             pulses[i].r, pulses[i].g, pulses[i].b);
         }
 
         // End of run

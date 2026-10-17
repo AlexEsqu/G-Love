@@ -65,6 +65,7 @@ typedef struct __attribute__((packed)) {
 typedef struct {
     uint8_t start_pos; // Starting position of the pulse
     uint8_t end_pos;   // Ending position of the pulse
+    uint8_t finger;    // Finger whose visual LED order is used
     uint16_t pos_fixed; // Position * 256
     uint16_t speed;     // Speed * 256
     uint8_t length;     // Number of LEDs
