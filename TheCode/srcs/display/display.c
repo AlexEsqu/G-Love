@@ -4,27 +4,32 @@
 
 const tft_screen_info_t g_screens[5] = {
 	[TFT_STATE_HOMESCREEN] = {
-			.frames = { &hand1, &hand2 },
-			.get_background_color = get_color_from_homescreen,
-			.print_screen_text = print_homescreen_text,
+		.frames = { &hand1, &hand2 },
+		.frame_count = 2,
+		.get_background_color = get_color_from_homescreen,
+		.print_screen_text = print_homescreen_text,
 	},
 	[TFT_STATE_COLORSCREEN] = {
 		.frames = { &hand1, &hand2 },
+		.frame_count = 2,
 		.get_background_color = get_color_from_colorscreen,
 		.print_screen_text = print_colorscreen_text
 	},
 	[TFT_STATE_IMUSCREEN] = {
 		.frames = { &hand1, &hand2 },
+		.frame_count = 2,
 		.get_background_color = get_color_from_colorscreen,
 		.print_screen_text = print_imuscreen_text
 	},
 	[TFT_STATE_FLEXSCREEN] = {
 		.frames = { &hand1, &hand2 },
+		.frame_count = 2,
 		.get_background_color = get_color_from_colorscreen,
 		.print_screen_text = print_homescreen_text
 	},
 	[TFT_STATE_COMMSCREEN] = {
 		.frames = { &hand1, &hand2 },
+		.frame_count = 2,
 		.get_background_color = get_color_from_colorscreen,
 		.print_screen_text = print_homescreen_text
 	},
@@ -86,8 +91,12 @@ void	display_screen()
 
 void	refresh_image(const packed_image_t* image)
 {
-	gc9a01_set_display_size(image->row, image->col,
-		image->row + image->width - 1, image->col + image->height - 1);
+	gc9a01_set_display_size(
+        image->col,
+        image->row,
+        image->col + image->width - 1,
+        image->row + image->height - 1
+    );
 
 	gc9a01_send_command(GC9A01_MEM_WRITE);
 	gc9a01_start_parameter_sequence();
@@ -111,10 +120,10 @@ void	refresh_screen()
 		display_screen();
 		last_mode = g_touchscreen_mode;
 	}
-	else
+	else if (g_screens[g_touchscreen_mode].frames)
 	{
 		static uint8_t	last_frame = 0;
-		if ((last_frame != g_animation_frame) && g_screens[g_touchscreen_mode].frames[0])
+		if ((last_frame != g_animation_frame) && g_animation_frame < g_screens[g_touchscreen_mode].frame_count)
 		{
 			refresh_image(g_screens[g_touchscreen_mode].frames[g_animation_frame]);
 			last_frame = g_animation_frame;

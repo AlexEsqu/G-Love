@@ -56,6 +56,7 @@ extern t_sensor_data_to_pc g_packet;
 #define TFT_MOSI		51
 #define TFT_MISO		50
 #define TFT_RST			11
+
 #define TFT_DC			10
 
 // On ATMEGA 2560

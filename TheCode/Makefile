@@ -114,7 +114,7 @@ bridge: ${OBJS_BOOT1}
 	avrdude -p ${DEVICE2} -c urclock -P ${PORT2} -b ${BAUDRATE2} -D -F -v -U flash:w:${HEX_BOOT}:i
 
 clean:
-	rm -f ${BIN1} ${HEX1} ${BIN2} ${HEX2} ${HEX_BOOT} ${BIN_BOOT} ${OBJS1} ${OBJS2} ${OBJS_BOOT1}
+	rm -f ${BIN1} ${HEX1} ${BIN2} ${HEX2} ${HEX_BOOT} ${BIN_BOOT} ${OBJS1} ${OBJS2} ${OBJS3} ${OBJS_BOOT1}
 
 fclean: clean
 

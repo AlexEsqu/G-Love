@@ -110,8 +110,8 @@ static const uint8_t hand1_data[4100]  __attribute__((section(".image_data"))) =
 };
 
 static const packed_image_t hand1 = {
-	120,
-	80,
+	70,
+	90,
     IMAGE_HAND1_WIDTH,
     IMAGE_HAND1_HEIGHT,
     8200UL,
@@ -232,8 +232,8 @@ static const uint8_t hand2_data[4100]  __attribute__((section(".image_data"))) =
 #define IMAGE_HAND2_TRANSPARENT 0
 
 static const packed_image_t hand2 = {
-	120,
-	80,
+	70,
+	90,
     IMAGE_HAND2_WIDTH,
     IMAGE_HAND2_HEIGHT,
     8200UL,

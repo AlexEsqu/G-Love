@@ -53,6 +53,7 @@ typedef struct {
 
 typedef struct {
 	const packed_image_t*	frames[2];
+	const uint8_t			frame_count;
 	uint16_t				(*get_background_color)(uint16_t, uint16_t);
 	void					(*print_screen_text)(void);
 } tft_screen_info_t;
@@ -218,6 +219,5 @@ void		print_imuscreen_text(void);
 #define GC9A01_INIT_SEQUENCE_LEN 51
 
 extern const gc9a01_sequence_t gc9a01_init_sequence[GC9A01_INIT_SEQUENCE_LEN];
-
 
 #endif

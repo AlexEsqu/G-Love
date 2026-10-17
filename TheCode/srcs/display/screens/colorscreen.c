@@ -40,6 +40,6 @@ void		print_colorscreen_text(void)
 	putstr_screen(20, 100, "picker", RGB16_BLUE, FONT_SIZE_MID);
 	putstr_screen(20, 120, "mode", RGB16_BLUE, FONT_SIZE_MID);
 
-	putstr_screen(90, 200, "swipe left", RGB16_BLUE, FONT_SIZE_SMALL);
+	putstr_screen(100, 200, "swipe left", RGB16_BLUE, FONT_SIZE_SMALL);
 	putstr_screen(70, 210, "to go back to menu", RGB16_BLUE, FONT_SIZE_SMALL);
 }
