@@ -46,7 +46,7 @@ uint16_t get_image_color(const packed_image_t *image, uint16_t row, uint16_t col
 		return RGB16_TRANS;
 
 	uint8_t stride = (image->width + 1) >> 1;
-	uint8_t byte = pgm_read_byte_far(image->pixels + (uint32_t)local_row * stride + (local_column >> 1));
+	uint8_t byte = pgm_read_byte_far((uintptr_t)(image->pixels + (uint32_t)local_row * stride + (local_column >> 1)));
 	uint8_t nibble = (local_column & 1) ? (byte & 0x0F) : (byte >> 4);
 
 	if (nibble == 0)
@@ -168,7 +168,7 @@ uint16_t	putchar_screen(uint16_t x, uint16_t y, char c, uint16_t font_color, tft
 		for (uint8_t target_col = 0; target_col < target_width; target_col++)
 		{
 			uint8_t font_col = target_col >> multiplier;
-			uint8_t line_byte = pgm_read_byte_far(g_default_font.bitmap + byte_offset + font_col);
+			uint8_t line_byte = pgm_read_byte_far((uintptr_t)(g_default_font.bitmap + byte_offset + font_col));
 			uint16_t color = (line_byte & (1 << font_row))
 				? font_color
 				: get_color_from_image_or_background(y + target_row, x + target_col);

@@ -1,4 +1,4 @@
-#include "atm2560.h"
+#include "../../includes/main.h"
 #include "main.h"
 #include <avr/interrupt.h>
 #include <stdint.h>
@@ -110,25 +110,27 @@ bool process_packet(uint8_t *byte, t_sensor_data *packet)
 void setup()
 {
 	// i2c init
-	i2c_init();
+	// i2c_init();
 
 	// uart_init
-	uart0_init(BAUDRATE);
-	uart1_init(BAUDRATE);
+	uart0_init();
+	uart1_init();
+	uart0_printstr("coucou1\n");
 
-	spi_init();
-	cst816d_init();
-	gc9a01_init();
-	touch_timer_init();
-	enableTouchInterrupt();
+// 	spi_init();
+// 	cst816d_init();
+// 	gc9a01_init();
+// 	uart0_printstr("coucou2\n");
+// 	touch_timer_init();
+// 	enableTouchInterrupt();
+// uart0_printstr("coucou3\n");
+// 	// pin 7 en input
+// 	DDRD &= ~(1 << DDD7);
+// 	// pullup
+// 	PORTD |= (1 << PORTD7);
 
-	// pin 7 en input
-	DDRD &= ~(1 << DDD7);
-	// pullup
-	PORTD |= (1 << PORTD7);
-
-	gc9a01_fill_screen(RGB16_BLUE);
-	display_screen();
+// 	gc9a01_fill_screen(RGB16_BLUE);
+// 	display_screen();
 
 }
 
@@ -136,38 +138,39 @@ int main_ATM2560()
 {
 	setup();
 
-	uint8_t byte;
-	t_sensor_data packet; //packet from atm328P
-	uint16_t touch_x = 0;
-	uint16_t touch_y = 0;
-	uint8_t touch_action = 0;
+	// uint8_t byte;
+	// t_sensor_data packet; //packet from atm328P
+	// uint16_t touch_x = 0;
+	// uint16_t touch_y = 0;
+	// uint8_t touch_action = 0;
 
 	while (1)
 	{
-		refresh_screen();
-		onTouch();
+		uart0_printstr("coucou\n");
+		// refresh_screen();
+		// onTouch();
 
-		while (get_next_byte(&byte))
-		{
-			if (process_packet(&byte, &packet))
-			{
-				//complete packet with touch, crc and send
-				g_packet.magic = SENSOR_PACKET_MAGIC2;
-				memcpy(g_packet.sensorForce, packet.sensorForce, sizeof(packet.sensorForce));
-				memcpy(g_packet.sensorFlex, packet.sensorFlex, sizeof(packet.sensorFlex));
-				memcpy(g_packet.accel, packet.accel, sizeof(packet.accel));
-				memcpy(g_packet.gyro, packet.gyro, sizeof(packet.gyro));
+		// while (get_next_byte(&byte))
+		// {
+		// 	if (process_packet(&byte, &packet))
+		// 	{
+		// 		//complete packet with touch, crc and send
+		// 		g_packet.magic = SENSOR_PACKET_MAGIC2;
+		// 		memcpy(g_packet.sensorForce, packet.sensorForce, sizeof(packet.sensorForce));
+		// 		memcpy(g_packet.sensorFlex, packet.sensorFlex, sizeof(packet.sensorFlex));
+		// 		memcpy(g_packet.accel, packet.accel, sizeof(packet.accel));
+		// 		memcpy(g_packet.gyro, packet.gyro, sizeof(packet.gyro));
 
-				g_packet.screen_x = touch_x;
-				g_packet.screen_y = touch_y;
-				g_packet.screen_action = touch_action;
+		// 		g_packet.screen_x = touch_x;
+		// 		g_packet.screen_y = touch_y;
+		// 		g_packet.screen_action = touch_action;
 
-				g_packet.crc16 = crc16_compute((const uint8_t *)&g_packet,
-									offsetof(t_sensor_data_to_pc, crc16));
+		// 		g_packet.crc16 = crc16_compute((const uint8_t *)&g_packet,
+		// 							offsetof(t_sensor_data_to_pc, crc16));
 
-				uart0_send_data((const uint8_t *)&g_packet, sizeof(g_packet));
-			}
-		}
+		// 		uart0_send_data((const uint8_t *)&g_packet, sizeof(g_packet));
+		// 	}
+		// }
 	}
 	return 0;
 }

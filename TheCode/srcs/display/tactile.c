@@ -1,4 +1,3 @@
-#include "atm2560.h"
 #include "main.h"
 
 int	received_data_from_cst816d()
@@ -147,6 +146,11 @@ void	onTouch()
 	uint16_t x = x_low;
 	uint16_t y = y_low;
 
+	
+
 	if (points > 0)
+	{
 		update_touch_info(x, y, action);
+		debug_touch_info();
+	}
 }

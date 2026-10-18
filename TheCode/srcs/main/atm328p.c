@@ -1,5 +1,4 @@
 #include <stdint.h>
-#include "atm328p.h"
 #include "../../includes/main.h"
 #include "../muxSelect/mux.h"
 #include "../ledStrip/led.h"
@@ -11,7 +10,7 @@ void setup()
 	i2c_init();
 	adc_init();
 	spi_init();
-	uart0_init(BAUDRATE);
+	uart0_init();
 
 	mux_setup();
 }

@@ -6,16 +6,24 @@
 #include <stdint.h>
 #include <stddef.h>
 
-#if defined(__AVR_ATmega2560__)  || defined(__AVR_ATmega2561__)
+#if defined(__AVR_ATmega2560__)
     #define SPI_DDR   DDRB
     #define SPI_MOSI  DDB2
     #define SPI_SCK   DDB1
     #define SPI_SS    DDB0
+    #include "atm2560.h"
 #elif defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
     #define SPI_DDR   DDRB
     #define SPI_MOSI  DDB3
     #define SPI_SCK   DDB5
     #define SPI_SS    DDB2
+    #include "atm328p.h"
+#elif defined(__AVR_ATmega2561__)
+    #define SPI_DDR   DDRB
+    #define SPI_MOSI  DDB2
+    #define SPI_SCK   DDB1
+    #define SPI_SS    DDB0
+    #include "atm2561.h"
 #endif
 
 int main_ATM2560();
@@ -81,7 +89,7 @@ void		spi_send_color(t_rgb_color *colors,
 				uint16_t number, uint16_t brightness);
 
 // uart.c
-void 		uart0_init(unsigned long baudrate);
+void 		uart0_init();
 void 		uart0_tx(char c);
 char 		uart0_rx(void);
 void 		uart0_printstr(const char *str);
@@ -89,7 +97,7 @@ void 		uart0_print_10bit(uint32_t c);
 void        uart0_send_data(const uint8_t *data, size_t len);
 uint8_t     uart0_available(void);
 
-void 		uart1_init(unsigned long baudrate);
+void 		uart1_init();
 void 		uart1_tx(char c);
 char 		uart1_rx(void);
 void 		uart1_printstr(const char *str);

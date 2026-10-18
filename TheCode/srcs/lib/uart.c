@@ -1,12 +1,12 @@
 #include "../../includes/main.h"
 
 //UART0
-void uart0_init(unsigned long baudrate) {
+void uart0_init() {
     // Double speed mode for reduced baud rate error at 115200 baud
     UCSR0A = (1 << U2X0);
 
     // Set Baud Rate Register
-    UBRR0 = (F_CPU / (8UL * baudrate)) - 1UL;
+    UBRR0 = MYUBRR;
 
     // Enable Transmitter and Receiver
     UCSR0B = (1 << TXEN0) | (1 << RXEN0);
@@ -68,12 +68,12 @@ uint8_t uart0_available(void) {
 #if defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__)
 
 //UART1
-void uart1_init(unsigned long baudrate) {
+void uart1_init() {
     // Double speed mode
     UCSR1A = (1 << U2X1);
 
     // Set Baud Rate Register
-    UBRR1 = (F_CPU / (8UL * baudrate)) - 1UL;
+    UBRR1 = MYUBRR;
 
     // Enable Transmitter and Receiver
     UCSR1B = (1 << RXCIE1) | (1 << TXEN1) | (1 << RXEN1);
