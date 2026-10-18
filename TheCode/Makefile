@@ -33,7 +33,7 @@ HEX_BOOT = ${NAME_BRIDGE}_mega.hex
 BIN_TEST = ${NAME_TEST}_mega.bin
 HEX_TEST = ${NAME_TEST}_mega.hex
 
-CC       = avr-gcc -Wextra -Werror -Wall
+CC       = avr-gcc -Wextra -Werror -Wall -o2
 OBJCOPY  = avr-objcopy
 
 OBJDIR   = objets
