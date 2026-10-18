@@ -113,11 +113,6 @@ void setup()
 
 int main_ATM2560()
 {
-	#ifdef DMX_BREATHING
-		dmx_init();
-		while (1)
-			dmx_breathing_loop();
-	#else
 	setup();
 
 	uint8_t byte;
@@ -180,6 +175,5 @@ int main_ATM2560()
 			}
 		}
 	}
-	#endif
 	return 0;
 }
