@@ -56,7 +56,7 @@ void	enableTouchInterrupt()
 	SREG |= (1 << 7);
 
 	// allow interrupts on pins PCINT 7 to 0
-	PCIFR |= (1 << PCIF0);
+	PCICR |= (1 << PCIF0);
 
 	// set interrupts specifically on pin PCINT 6
 	PCMSK0 |= (1 << PCINT6);
@@ -112,7 +112,12 @@ void __attribute__((signal)) TIMER1_COMPB_vect (void)
 // Set on interrupt function of timer2 on COMA
 // (set to be no wired interrupt in the current setup)
 // Matching vector #43 per datasheet Table 14-1 p. 101-102
-void __attribute__((signal)) TIMER4_COMPA_vect (void)
+void __attribute__((signal)) TIMER1_COMPA_vect (void)
 {
 	concludeTouchDebounce();
+}
+
+void __attribute__((signal)) PCINT0_vect (void)
+{
+	launchTouchDebounce();
 }
