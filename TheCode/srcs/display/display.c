@@ -7,30 +7,35 @@ const tft_screen_info_t g_screens[5] = {
 		.frame_count = 2,
 		.get_background_color = get_color_from_homescreen,
 		.print_screen_text = print_homescreen_text,
+		.on_touch_action = on_touch_on_homescreen,
 	},
 	[TFT_STATE_COLORSCREEN] = {
 		.frames = { NULL },
 		.frame_count = 0,
 		.get_background_color = get_color_from_colorscreen,
-		.print_screen_text = print_colorscreen_text
+		.print_screen_text = print_colorscreen_text,
+		.on_touch_action = on_touch_on_colorscreen
 	},
 	[TFT_STATE_IMUSCREEN] = {
 		.frames = { NULL },
 		.frame_count = 0,
 		.get_background_color = get_color_from_imuscreen,
-		.print_screen_text = print_imuscreen_text
+		.print_screen_text = print_imuscreen_text,
+		.on_touch_action = on_touch_on_homescreen
 	},
 	[TFT_STATE_FLEXSCREEN] = {
 		.frames = { &hand1, &hand2 },
 		.frame_count = 2,
-		.get_background_color = get_color_from_colorscreen,
-		.print_screen_text = print_homescreen_text
+		.get_background_color = get_color_from_flexscreen,
+		.print_screen_text = print_flexscreen_text,
+		.on_touch_action = on_touch_on_homescreen
 	},
 	[TFT_STATE_COMMSCREEN] = {
 		.frames = { &hand1, &hand2 },
 		.frame_count = 2,
-		.get_background_color = get_color_from_colorscreen,
-		.print_screen_text = print_homescreen_text
+		.get_background_color = get_color_from_comscreen,
+		.print_screen_text = print_comscreen_text,
+		.on_touch_action = on_touch_on_comscreen
 	},
 };
 

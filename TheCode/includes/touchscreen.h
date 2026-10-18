@@ -56,6 +56,7 @@ typedef struct {
 	const uint8_t			frame_count;
 	uint16_t				(*get_background_color)(uint16_t, uint16_t);
 	void					(*print_screen_text)(void);
+	void					(*on_touch_action)(void);
 } tft_screen_info_t;
 
 typedef enum {
@@ -228,12 +229,21 @@ void	touch_timer_init();
 void	enableTouchInterrupt();
 
 // SCREENS
+extern const tft_screen_info_t g_screens[5];
+
 uint16_t	get_color_from_colorscreen(uint16_t row, uint16_t col);
 void		print_colorscreen_text(void);
+void		on_touch_on_colorscreen();
 uint16_t	get_color_from_homescreen(uint16_t row, uint16_t col);
 void		print_homescreen_text(void);
+void		on_touch_on_homescreen(void);
 uint16_t	get_color_from_imuscreen(uint16_t row, uint16_t col);
 void		print_imuscreen_text(void);
+uint16_t	get_color_from_flexscreen(uint16_t row, uint16_t col);
+void		print_flexscreen_text(void);
+uint16_t	get_color_from_comscreen(uint16_t row, uint16_t col);
+void		print_comscreen_text(void);
+void		on_touch_on_comscreen();
 
 
 

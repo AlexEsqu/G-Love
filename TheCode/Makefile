@@ -61,6 +61,8 @@ SRCS2    = $(CODEDIR2)/main.c \
 			srcs/display/tactile.c \
 			srcs/display/screens/imuscreen.c \
 			srcs/display/screens/colorscreen.c \
+			srcs/display/screens/flexscreen.c \
+			srcs/display/screens/comscreen.c \
 			srcs/display/screens/homescreen.c
 
 SRC_BOOT1 = srcs/boot/bridge_atm2561.c

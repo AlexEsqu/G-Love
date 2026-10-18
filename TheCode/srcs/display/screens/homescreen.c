@@ -43,4 +43,9 @@ void		print_homescreen_text(void)
 }
 
 
+void		on_touch_on_homescreen()
+{
+
+}
+
 

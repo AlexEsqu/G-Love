@@ -20,25 +20,6 @@ void	cst816d_init()
 	// set_pin_as_output(&TOUCH_GPIO_DDR, TOUCH_RST_PIN);
 }
 
-tft_action_t	match_touch_action(uint16_t action)
-{
-	switch (action)
-	{
-		case (uint8_t)TFT_ACTION_TAP:
-			return (TFT_ACTION_TAP);
-		case (uint8_t)TFT_ACTION_LEFT:
-			return (TFT_ACTION_LEFT);
-		case (uint8_t)TFT_ACTION_UP:
-			return (TFT_ACTION_UP);
-		case (uint8_t)TFT_ACTION_RIGHT:
-			return (TFT_ACTION_RIGHT);
-		case (uint8_t)TFT_ACTION_DOWN:
-			return (TFT_ACTION_DOWN);
-		default:
-			return (TFT_ACTION_NONE);
-	}
-}
-
 void	debug_touch_info()
 {
 	uart0_printstr("action: ");
@@ -64,35 +45,39 @@ void	debug_touch_info()
 
 void	navigate_touchscreen()
 {
-	switch (g_last_touch.action)
-	{
-		// why can't I iterate on enums grrrm
-		// horrible for now, required sanity check
-		case TFT_ACTION_UP:
-			if (g_touchscreen_mode == TFT_STATE_COMMSCREEN
-				|| g_touchscreen_mode == TFT_STATE_HOMESCREEN)
-				g_touchscreen_mode = TFT_STATE_COLORSCREEN;
-			else if (g_touchscreen_mode == TFT_STATE_FLEXSCREEN)
-				g_touchscreen_mode = TFT_STATE_COMMSCREEN;
-			else if (g_touchscreen_mode == TFT_STATE_IMUSCREEN)
-				g_touchscreen_mode = TFT_STATE_FLEXSCREEN;
-			else
-				g_touchscreen_mode = TFT_STATE_IMUSCREEN;
-			break;
-		case TFT_ACTION_DOWN:
-			if (g_touchscreen_mode == TFT_STATE_COLORSCREEN
-				|| g_touchscreen_mode == TFT_STATE_HOMESCREEN)
-				g_touchscreen_mode = TFT_STATE_COMMSCREEN;
-			else if (g_touchscreen_mode == TFT_STATE_COMMSCREEN)
-				g_touchscreen_mode = TFT_STATE_FLEXSCREEN;
-			else if (g_touchscreen_mode == TFT_STATE_IMUSCREEN)
-				g_touchscreen_mode = TFT_STATE_COLORSCREEN;
-			break;
-		default:
-			g_touchscreen_mode = TFT_STATE_HOMESCREEN;
-			break;
-	}
+	static const tft_state_t SCREEN_SEQUENCE[] = {
+		TFT_STATE_HOMESCREEN,
+		TFT_STATE_COLORSCREEN,
+		TFT_STATE_COMMSCREEN,
+		TFT_STATE_FLEXSCREEN,
+		TFT_STATE_IMUSCREEN
+	};
+	static const uint8_t NUM_SCREENS = sizeof(SCREEN_SEQUENCE) / sizeof(SCREEN_SEQUENCE[0]);
 
+	int current_index = 0;
+    for (int i = 0; i < NUM_SCREENS; i++) {
+        if (SCREEN_SEQUENCE[i] == g_touchscreen_mode) {
+            current_index = i;
+            break;
+        }
+    }
+
+    switch (g_last_touch.action)
+    {
+        case TFT_ACTION_UP:
+            current_index = (current_index - 1 + NUM_SCREENS) % NUM_SCREENS;
+            break;
+
+        case TFT_ACTION_DOWN:
+            current_index = (current_index + 1) % NUM_SCREENS;
+            break;
+
+        default:
+            current_index = 0;
+            break;
+    }
+
+    g_touchscreen_mode = SCREEN_SEQUENCE[current_index];
 	refresh_screen();
 }
 
@@ -104,11 +89,13 @@ void	update_touch_info(uint16_t x, uint16_t y, uint16_t action)
 	g_last_touch.y = y;
 	g_last_touch.rgb565 = get_color_from_colorscreen(y, x);
 	g_last_touch.rgb888 = rgb565_to_rgb888(g_last_touch.rgb565);
-	g_last_touch.action = match_touch_action(action);
+	g_last_touch.action = (uint8_t)action;
 	g_last_touch.last_action = last_action;
 	g_last_touch.has_displayed = 0;
 
-	if (action != last_action && action != TFT_ACTION_TAP)
+	if (action == TFT_ACTION_TAP)
+		g_screens[g_touchscreen_mode].on_touch_action();
+	else if (action != last_action && action != TFT_ACTION_TAP)
 		navigate_touchscreen();
 }
 
