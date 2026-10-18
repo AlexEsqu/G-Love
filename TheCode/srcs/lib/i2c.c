@@ -17,77 +17,79 @@ void i2c_init(void) {
   // Prescaler = 1
   TWSR &= ~((1 << TWPS1) | (1 << TWPS0));
 
-  // datasheet page 226	section 22.7.1  and 22.7.3
-  TWCR |= (1 << TWEN);
-  // TWEN must be set to enable the 2-wire Serial Interface
-  // TWEN must be written to one to enable the TWI
+	// datasheet page 226	section 22.7.1	and 22.7.3
+	//	TWCR |= (1 << TWEN);
+	// TWEN must be set to enable the 2-wire Serial Interface
+	// TWEN must be written to one to enable the TWI
 }
 
-void ft_print_status(void) {
-  uart0_printstr("Status code: 0x");
-  ft_uart_print_hex(g_state);
-  uart0_printstr(" : ");
+void ft_print_status(void)
+{
+	uart0_printstr("Status code: 0x");
+	ft_uart_print_hex(g_state);
+	uart0_printstr(" : ");
 
-  switch (g_state) {
-  case 0x08:
-    uart0_printstr("START condition transmitted");
-    break;
-  case 0x10:
-    uart0_printstr("Repeated START transmitted");
-    break;
+	switch (g_state) {
+	case 0x08:
+		uart0_printstr("START condition transmitted");
+		break;
+	case 0x10:
+		uart0_printstr("Repeated START transmitted");
+		break;
 
-  case 0x18:
-    uart0_printstr("SLA+W transmitted, ACK received");
-    break;
+	case 0x18:
+		uart0_printstr("SLA+W transmitted, ACK received");
+		break;
 
-  case 0x20:
-    uart0_printstr("SLA+W transmitted, NACK received");
-    break;
+	case 0x20:
+		uart0_printstr("SLA+W transmitted, NACK received");
+		break;
 
-  case 0x28:
-    uart0_printstr("Data byte transmitted, ACK received");
-    break;
+	case 0x28:
+		uart0_printstr("Data byte transmitted, ACK received");
+		break;
 
-  case 0x30:
-    uart0_printstr("Data byte transmitted, NACK received");
-    break;
+	case 0x30:
+		uart0_printstr("Data byte transmitted, NACK received");
+		break;
 
-  case 0x40:
-    uart0_printstr("SLA+R transmitted, ACK received");
-    break;
+	case 0x40:
+		uart0_printstr("SLA+R transmitted, ACK received");
+		break;
 
-  case 0x48:
-    uart0_printstr("SLA+R transmitted, NACK received");
-    break;
+	case 0x48:
+		uart0_printstr("SLA+R transmitted, NACK received");
+		break;
 
-  case 0x50:
-    uart0_printstr("Data byte received, ACK returned");
-    break;
+	case 0x50:
+		uart0_printstr("Data byte received, ACK returned");
+		break;
 
-  case 0x58:
-    uart0_printstr("Data byte received, NACK returned");
-    break;
+	case 0x58:
+		uart0_printstr("Data byte received, NACK returned");
+		break;
 
-  case 0x38:
-    uart0_printstr("Arbitration lost");
-    break;
+	case 0x38:
+		uart0_printstr("Arbitration lost");
+		break;
 
-  case 0x00:
-    uart0_printstr("Bus error (Illegal START/STOP)");
-    break;
+	case 0x00:
+		uart0_printstr("Bus error (Illegal START/STOP)");
+		break;
 
-  default:
-    uart0_printstr("Unknown status");
-    break;
-  }
-  uart0_printstr("\r\n");
+	default:
+		uart0_printstr("Unknown status");
+		break;
+	}
+	uart0_printstr("\r\n");
 }
 
-void i2c_status(void) {
-  // DATASHEET PAGE 240 SECTION 22.9.3
-  // get status code with a mask to hide prescaler bit
-  g_state = TWSR & 0xF8;
-  //ft_print_status();
+void i2c_status(void)
+{
+	// DATASHEET PAGE 240 SECTION 22.9.3
+	// get status code with a mask to hide prescaler bit
+	g_state = TWSR & 0xF8;
+	//ft_print_status();
 }
 
 void i2c_start(void) {
@@ -109,7 +111,7 @@ void i2c_start(void) {
     return;
   }
 
-  i2c_status();
+	i2c_status();
 }
 
 void i2c_stop(void) {
@@ -143,7 +145,7 @@ void i2c_write(unsigned char data) {
     return;
   }
 
-  i2c_status();
+	i2c_status();
 }
 
 uint8_t i2c_read_ack(void) {
@@ -160,8 +162,8 @@ uint8_t i2c_read_ack(void) {
     return 0;
   }
 
-  i2c_status();
-  return TWDR;
+	i2c_status();
+	return TWDR;
 }
 
 uint8_t i2c_read_nack(void) {
@@ -178,12 +180,13 @@ uint8_t i2c_read_nack(void) {
     return 0;
   }
 
-  i2c_status();
-  return TWDR;
+	i2c_status();
+	return TWDR;
 }
 
 // Read the next 7 bytes to get the data and display it
 void i2c_read(void) {}
+
 
 void i2c_scan(void) {
   uint8_t count = 0;

@@ -1,4 +1,4 @@
-#include "../../includes/main.h"
+#include "main.h"
 #include <stdint.h>
 
 
@@ -11,7 +11,8 @@ void spi_init()
     SPCR = (1 << SPE) | (1 << MSTR) | (1 << SPR0) | (1 << SPIE); // Enable SPI interrupt
 }
 
-void spi_send_data(char data)
+
+uint8_t spi_send_data(uint8_t data)
 {
     //Start transmission
     SPDR = data;
@@ -20,6 +21,8 @@ void spi_send_data(char data)
     while (!(SPSR & (1<<SPIF)))
     {
     }
+
+	return SPDR;
 }
 
 void spi_start_frame()

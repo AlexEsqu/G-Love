@@ -1,5 +1,5 @@
 #include "atm2560.h"
-#include "../../includes/main.h"
+#include "main.h"
 #include <avr/interrupt.h>
 #include <stdint.h>
 #include <stdbool.h>
@@ -10,6 +10,19 @@ t_sensor_data_to_pc g_packet = {0};
 static volatile uint8_t g_rx_buff[RX_BUFFER_SIZE];
 static volatile uint8_t g_rx_index = 0; //index used for writing in buffer
 static volatile uint8_t g_rx_pos = 0; //pos for reading buffer
+
+
+tft_state_t			g_touchscreen_mode = TFT_STATE_HOMESCREEN;
+uint8_t				g_animation_frame = 0;
+tft_touch_info_t	g_last_touch = {
+	.x = 0,
+	.y = 0,
+	.action = TFT_ACTION_NONE,
+	.last_action = TFT_ACTION_NONE,
+	.rgb565 = 0x00,
+	.rgb888 = 0x0000,
+	.has_displayed = 0,
+};
 
 ISR(USART1_RX_vect)
 {
@@ -86,7 +99,7 @@ bool process_packet(uint8_t *byte, t_sensor_data *packet)
 
 			if (crc16_test == crc16_received) //crc is validated
 			{
-				memcpy(packet, buf, sizeof(t_sensor_data)); 
+				memcpy(packet, buf, sizeof(t_sensor_data));
 				return (true);
 			}
 		}
@@ -98,17 +111,25 @@ void setup()
 {
 	// i2c init
 	i2c_init();
-  
+
 	// uart_init
 	uart0_init(BAUDRATE);
 	uart1_init(BAUDRATE);
 
-	sei();
+	spi_init();
+	cst816d_init();
+	gc9a01_init();
+	touch_timer_init();
+	enableTouchInterrupt();
 
 	// pin 7 en input
 	DDRD &= ~(1 << DDD7);
 	// pullup
 	PORTD |= (1 << PORTD7);
+
+	gc9a01_fill_screen(RGB16_BLUE);
+	display_screen();
+
 }
 
 int main_ATM2560()
@@ -123,35 +144,8 @@ int main_ATM2560()
 
 	while (1)
 	{
-		if (PIND & (1 << PIND7))
-		{
-			i2c_start();
-			i2c_write(I2C_ADDR_CST816D << 1 | 0);
-			i2c_write(0x01);
-			// i2c_read_ack();
-
-			i2c_start();
-			i2c_write((I2C_ADDR_CST816D << 1) | 1);
-
-			uint8_t action = i2c_read_ack();
-			uint8_t points = i2c_read_ack();
-			uint8_t x_high = i2c_read_ack();
-			uint8_t x_low = i2c_read_ack();
-			uint8_t y_high = i2c_read_ack();
-			uint8_t y_low = i2c_read_nack();
-
-			i2c_stop();
-
-			int x = ((x_high & 0x0F) << 8) | x_low;
-			int y = ((y_high & 0x0F) << 8) | y_low;
-
-			if (points > 0)
-			{
-				touch_x = (uint16_t)x;
-				touch_y = (uint16_t)y;
-				touch_action = action;
-			}
-		}
+		refresh_screen();
+		onTouch();
 
 		while (get_next_byte(&byte))
 		{
