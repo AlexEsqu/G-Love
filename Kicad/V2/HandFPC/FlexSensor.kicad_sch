@@ -5,7 +5,123 @@
 	(uuid "b9bebc87-44da-4f3b-83dd-910a5a9b0c81")
 	(paper "A4")
 	(lib_symbols
-		(symbol "G-Love:FS"
+		(symbol "G-Love-Symbols:+3.3V"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 3.81 -1.778 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+3.3V"
+				(at -0.254 2.794 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+3.3V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.524) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+3.3V_1_1"
+				(pin power_in line
+					(at 0 -1.27 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "G-Love-Symbols:FS"
 			(pin_numbers
 				(hide yes)
 			)
@@ -136,122 +252,6 @@
 						)
 					)
 					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "G-Love:VCC"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom no)
-			(on_board no)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR04"
-				(at 3.81 -1.778 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "VCC"
-				(at 0 2.286 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "VCC_0_1"
-				(polyline
-					(pts
-						(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.524) (xy 0 -0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "VCC_1_1"
-				(pin power_in line
-					(at 0 -1.27 90)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -401,7 +401,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8dc632f5-e30f-4f2f-97ba-16d70647b0d0")
+		(uuid "996e3870-265d-431b-bb1b-aad2491fb8c4")
 	)
 	(polyline
 		(pts
@@ -545,113 +545,7 @@
 		)
 	)
 	(symbol
-		(lib_id "G-Love:FS")
-		(at 31.75 30.48 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "74cefccd-4541-4ff3-9343-e27d4fa1a646")
-		(property "Reference" "FS_2"
-			(at 27.178 30.226 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 31.75 30.48 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MyGlove:PinHeader_1x02_P2.54mm_Vertical"
-			(at 31.75 30.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://cdn.sparkfun.com/assets/8/e/7/a/0/flex22.pdf"
-			(at 40.132 26.924 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Flex Sensor Resistor"
-			(at 37.084 28.956 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Minimum quantity per command" ""
-			(at 31.75 30.48 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "fa21f697-d25d-4143-8994-5a42910e5e91")
-		)
-		(pin "1"
-			(uuid "956cd3f5-b3f0-4895-b9f9-0091a4515776")
-		)
-		(instances
-			(project "HandFPC"
-				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/0b1bb178-9530-4748-8b07-933fe0c8d524"
-					(reference "FS_2")
-					(unit 1)
-				)
-				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/7a2974e5-124b-4db5-8e90-e949fd9545a7"
-					(reference "FS_1")
-					(unit 1)
-				)
-				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/93c35869-ca7a-4596-991e-6eeeacdf1f70"
-					(reference "FS_1")
-					(unit 1)
-				)
-				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/a00bc8a6-48ba-4c2b-a585-b9390a223b1c"
-					(reference "FS_1")
-					(unit 1)
-				)
-				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/d64adc8c-2a84-4c15-a7c4-b37086fe5b0e"
-					(reference "FS_1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "G-Love:VCC")
+		(lib_id "G-Love-Symbols:+3.3V")
 		(at 31.75 22.86 0)
 		(unit 1)
 		(body_style 1)
@@ -660,9 +554,8 @@
 		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c8ccee22-fdfa-4ffe-84fe-39b27a81a0ab")
-		(property "Reference" "#PWR013"
+		(uuid "138c0439-7323-4f2e-a465-7dab558adece")
+		(property "Reference" "#PWR04"
 			(at 35.56 24.638 0)
 			(hide yes)
 			(show_name no)
@@ -673,8 +566,8 @@
 				)
 			)
 		)
-		(property "Value" "VCC"
-			(at 31.75 19.05 0)
+		(property "Value" "+3.3V"
+			(at 35.052 21.336 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -717,28 +610,125 @@
 			)
 		)
 		(pin "1"
-			(uuid "bd42ba35-ab70-4475-853c-6c4f526064b0")
+			(uuid "6ed97642-b6e5-457e-b746-115eb996f87c")
 		)
 		(instances
 			(project "HandFPC"
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/0b1bb178-9530-4748-8b07-933fe0c8d524"
-					(reference "#PWR013")
+					(reference "#PWR04")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/7a2974e5-124b-4db5-8e90-e949fd9545a7"
-					(reference "#PWR012")
+					(reference "#PWR013")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/93c35869-ca7a-4596-991e-6eeeacdf1f70"
-					(reference "#PWR012")
+					(reference "#PWR017")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/a00bc8a6-48ba-4c2b-a585-b9390a223b1c"
-					(reference "#PWR012")
+					(reference "#PWR016")
 					(unit 1)
 				)
 				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/d64adc8c-2a84-4c15-a7c4-b37086fe5b0e"
-					(reference "#PWR012")
+					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love-Symbols:FS")
+		(at 31.75 30.48 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "51bacb00-4be1-4a4a-80d1-f81333dab11d")
+		(property "Reference" "FS1"
+			(at 35.56 30.4799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" ""
+			(at 31.75 30.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:FPC_FS"
+			(at 31.75 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://cdn.sparkfun.com/assets/8/e/7/a/0/flex22.pdf"
+			(at 40.132 26.924 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Flex Sensor Resistor"
+			(at 37.084 28.956 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "6e009318-ec9e-463d-a66a-191b2bed01c0")
+		)
+		(pin "1"
+			(uuid "3cce620b-0d28-455f-bb55-cc5420b95d71")
+		)
+		(instances
+			(project "HandFPC"
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/0b1bb178-9530-4748-8b07-933fe0c8d524"
+					(reference "FS1")
+					(unit 1)
+				)
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/7a2974e5-124b-4db5-8e90-e949fd9545a7"
+					(reference "FS3")
+					(unit 1)
+				)
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/93c35869-ca7a-4596-991e-6eeeacdf1f70"
+					(reference "FS5")
+					(unit 1)
+				)
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/a00bc8a6-48ba-4c2b-a585-b9390a223b1c"
+					(reference "FS4")
+					(unit 1)
+				)
+				(path "/7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db/d64adc8c-2a84-4c15-a7c4-b37086fe5b0e"
+					(reference "FS2")
 					(unit 1)
 				)
 			)

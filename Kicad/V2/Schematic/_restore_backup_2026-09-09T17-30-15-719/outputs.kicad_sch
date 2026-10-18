@@ -1,0 +1,508 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "c0c6533b-9637-414c-8d88-8e91fa4fed42")
+	(paper "A4")
+	(lib_symbols
+		(symbol "G-Love:FlowDirection"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "flow"
+				(at -0.254 -1.778 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "FlowDirection_0_1"
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 0 0.762) (xy 0 -0.762) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(wire
+		(pts
+			(xy 241.3 55.88) (xy 252.73 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31c9f97d-783f-4b9e-bb0a-bd9411f5e5e9")
+	)
+	(wire
+		(pts
+			(xy 241.3 68.58) (xy 252.73 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f8411b3-f1b3-4ceb-acb0-8cacc4d0103c")
+	)
+	(wire
+		(pts
+			(xy 241.3 99.06) (xy 252.73 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d5e42863-03a8-4fd0-b131-ce565f2b6af3")
+	)
+	(wire
+		(pts
+			(xy 241.3 92.71) (xy 252.73 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e051c686-d6a7-4584-a727-9db1f6d4b989")
+	)
+	(wire
+		(pts
+			(xy 241.3 64.77) (xy 252.73 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb495b71-4d62-43e8-943d-cb4e6f72195a")
+	)
+	(hierarchical_label "UART_MUX_SEL_B"
+		(shape input)
+		(at 252.73 68.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2aff0bc9-09e7-49c7-94ed-5e48c2132ddb")
+	)
+	(hierarchical_label "2561_UART_RX"
+		(shape output)
+		(at 252.73 92.71 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "37d29c4b-d329-413a-88a0-0916a6f68a2d")
+	)
+	(hierarchical_label "CH340_UART_DTR"
+		(shape input)
+		(at 252.73 55.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "388ed874-75bf-422d-a490-d86ce2905354")
+	)
+	(hierarchical_label "UART_MUX_SEL_A"
+		(shape input)
+		(at 252.73 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a766f665-f2fe-489b-ac0a-739185ea984b")
+	)
+	(hierarchical_label "2561_UART_TX"
+		(shape input)
+		(at 252.73 99.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "da57b369-f2a8-48d9-ba5c-73e5ed03e783")
+	)
+	(symbol
+		(lib_id "G-Love:FlowDirection")
+		(at 246.38 99.06 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "34cc106f-0c02-4951-8515-a9fa0aff7555")
+		(property "Reference" "flow7"
+			(at 246.126 100.838 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 246.38 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 246.38 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 246.38 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 246.38 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a"
+					(reference "flow7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:FlowDirection")
+		(at 247.65 92.71 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c613d318-d17c-4c85-914c-11f9d7512aec")
+		(property "Reference" "flow8"
+			(at 247.904 90.932 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 247.65 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 247.65 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 247.65 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 247.65 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 247.65 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a"
+					(reference "flow8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet
+		(at 200.66 40.64)
+		(size 40.64 114.3)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "4989b515-8901-47ca-ab95-4d280b30f712")
+		(property "Sheetname" "Data"
+			(at 200.66 39.9284 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "switch.kicad_sch"
+			(at 200.66 155.5246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "USB_UART_RX" output
+			(at 241.3 92.71 0)
+			(uuid "2aeee68c-6ac7-4eae-8d08-ec749464c3ce")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USB_UART_TX" input
+			(at 241.3 99.06 0)
+			(uuid "2b035f26-d6ef-424d-9249-64826fb541d8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "UD+" input
+			(at 200.66 69.85 180)
+			(uuid "5471925b-93bc-4f20-8482-a8666944b776")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "UD-" output
+			(at 200.66 66.04 180)
+			(uuid "46472cd8-7b5b-4242-a120-14212e513c57")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SBU1" bidirectional
+			(at 200.66 80.01 180)
+			(uuid "60dfcd45-b81a-4946-b9f0-aad1ea3ddd9a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SBU2" bidirectional
+			(at 200.66 83.82 180)
+			(uuid "4ebc0406-ebdb-4611-abd6-c295cc9ce9d5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "UART_MUX_SEL_A" input
+			(at 241.3 64.77 0)
+			(uuid "025368ca-e95e-413c-8eae-0d60e5db568d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "UART_MUX_SEL_B" input
+			(at 241.3 68.58 0)
+			(uuid "6e4c2558-f08e-433d-8ef0-457aece6a9ff")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CH340_UART_DTR" input
+			(at 241.3 55.88 0)
+			(uuid "5638a799-ea93-44d6-8ba2-3d1db05fb000")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/0d387f9d-76d6-4b6a-aded-93bcda75ef5a"
+					(page "20")
+				)
+			)
+		)
+	)
+)

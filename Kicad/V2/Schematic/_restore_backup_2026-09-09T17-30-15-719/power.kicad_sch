@@ -1,0 +1,5871 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "991b2d89-d1b3-4e43-9293-04fddfa3a7ba")
+	(paper "A4")
+	(lib_symbols
+		(symbol "G-Love:+3.3V"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 3.81 -1.778 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+3.3V"
+				(at -0.254 2.794 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+3.3V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.524) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+3.3V_1_1"
+				(pin power_in line
+					(at 0 -1.27 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "G-Love:5VL"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR035"
+				(at 3.81 -1.778 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "5VL"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "5VL_0_1"
+				(polyline
+					(pts
+						(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.524) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "5VL_1_1"
+				(pin power_in line
+					(at 0 -1.27 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "G-Love:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 1.778 -3.048 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Capacitor"
+				(at 0 -9.144 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -0.762 -0.254) (xy 0.762 -0.254)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 -1.016) (xy 0.254 -1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.254) (xy -0.762 0.254)
+					)
+					(stroke
+						(width 0.381)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 1.27 270)
+					(length 1.016)
+					(name ""
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -1.27 90)
+					(length 1.016)
+					(name ""
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "G-Love:C_Electrolytic"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at -5.334 1.778 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" ""
+				(at -3.556 -11.938 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "MyGlove:Capacitor_Electrolytic"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Polarized capacitor, small US symbol"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Minimum quantity per command" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Price" "0.33/10"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "SUPPLIER" "https://www.lcsc.com/product-detail/C19666.html"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "CP_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_Electrolytic_0_1"
+				(polyline
+					(pts
+						(xy -1.524 0.508) (xy 1.524 0.508)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 1.524) (xy -0.762 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 1.27) (xy -1.016 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.524 -0.762)
+					(mid 0 -0.3734)
+					(end 1.524 -0.762)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_Electrolytic_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 2.032)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 2.032)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "G-Love:GND"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "GND"
+				(at 0 -3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.016 -1.27) (xy 0 -2.54) (xy -1.016 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "G-Love:J_USB_RECEPTACLE_PASSIVE"
+			(pin_names
+				(offset 1.27)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at -11.43 1.9051 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Value" "Conn_USB_Receptacle"
+				(at -11.43 -0.6349 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Footprint" "MyGlove:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ApplicationNotes/ApplicationNotes/00001953A.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "USB C Connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Minimum quantity per command" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Price" "1.69/5"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "SUPPLIER" "https://www.lcsc.com/product-detail/C49261591.html"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "J_USB_RECEPTACLE_PASSIVE_0_1"
+				(rectangle
+					(start -10.414 20.32)
+					(end 10.16 -19.05)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center -2.794 8.763)
+					(radius 0.635)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -11.938) (xy -2.032 -4.318)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.524 11.938) (xy -0.254 14.478) (xy 1.016 11.938) (xy -1.524 11.938)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -0.762 -4.318)
+					(end 0.508 -11.938)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.254 5.588) (xy 2.286 8.128) (xy 2.286 9.398)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.254 4.318) (xy -2.794 6.858) (xy -2.794 8.128)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -0.254 1.778)
+					(radius 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.254 1.778) (xy -0.254 11.938)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -0.762 -4.318)
+					(mid -0.127 -3.6857)
+					(end 0.508 -4.318)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -0.762 -4.318)
+					(mid -0.127 -3.6857)
+					(end 0.508 -4.318)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(arc
+					(start -2.032 -4.318)
+					(mid -0.127 -2.4213)
+					(end 1.778 -4.318)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.778 -11.938)
+					(mid -0.127 -13.8347)
+					(end -2.032 -11.938)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0.508 -11.938)
+					(mid -0.127 -12.5703)
+					(end -0.762 -11.938)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0.508 -11.938)
+					(mid -0.127 -12.5703)
+					(end -0.762 -11.938)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 1.651 9.398)
+					(end 2.921 10.668)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.778 -4.318) (xy 1.778 -11.938)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "J_USB_RECEPTACLE_PASSIVE_1_1"
+				(pin passive line
+					(at -3.81 -21.59 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -6.35 22.86 270)
+					(length 2.54)
+					(name "VBUS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "A4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 15.24 180)
+					(length 2.54)
+					(name "CC1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "A5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 5.08 180)
+					(length 2.54)
+					(name "D-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "A6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -1.27 180)
+					(length 2.54)
+					(name "D+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "A7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -11.43 180)
+					(length 2.54)
+					(name "SBU1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "A8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -6.35 22.86 270)
+					(length 2.54)
+					(hide yes)
+					(name "VBUS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "A9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -3.81 -21.59 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "A12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -3.81 -21.59 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "B1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -6.35 22.86 270)
+					(length 2.54)
+					(hide yes)
+					(name "VBUS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "B4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 11.43 180)
+					(length 2.54)
+					(name "CC2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "B5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -3.81 180)
+					(length 2.54)
+					(name "D+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "B6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 2.54 180)
+					(length 2.54)
+					(name "D-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "B7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -15.24 180)
+					(length 2.54)
+					(name "SBU2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "B8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -6.35 22.86 270)
+					(length 2.54)
+					(hide yes)
+					(name "VBUS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "B9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -3.81 -21.59 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "B12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at -7.62 -21.59 90)
+					(length 2.54)
+					(name "SHIELD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "SH"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "G-Love:LDO"
+			(pin_numbers
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 0 6.096 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "AMS1117"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "MyGlove:AMS1117"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "régulateur de tension"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Minimum quantity per command" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Price" "0.91"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "SUPPLIER" "https://www.lcsc.com/product-detail/C6186.html"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "LDO_0_0"
+				(pin power_in line
+					(at 0 -6.35 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "Vout"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "Vin"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "LDO_1_1"
+				(rectangle
+					(start -7.62 2.54)
+					(end 7.62 -3.81)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "G-Love:LED_Indicator"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at -1.524 -2.286 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at -1.524 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "LED_Indicator_0_0"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 1.27)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "LED_Indicator_1_0"
+				(pin passive line
+					(at 2.54 0 180)
+					(length 1.27)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "LED_Indicator_1_1"
+				(polyline
+					(pts
+						(xy -0.508 1.016) (xy 0.254 2.286)
+					)
+					(stroke
+						(width 0.0762)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.762) (xy 0.762 2.032)
+					)
+					(stroke
+						(width 0.0762)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 2.286) (xy -0.254 2.032)
+					)
+					(stroke
+						(width 0.0762)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 2.286) (xy 0.254 1.778)
+					)
+					(stroke
+						(width 0.0762)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.032) (xy 0.254 1.778)
+					)
+					(stroke
+						(width 0.0762)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.032) (xy 0.762 1.524)
+					)
+					(stroke
+						(width 0.0762)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.016) (xy 1.27 -1.016)
+					)
+					(stroke
+						(width 0.381)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 1.016) (xy -1.27 -1.016) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "G-Love:PWR_FLG"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "PWR"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PWR_FLG"
+				(at -0.254 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PWR_FLG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "G-Love:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 0 -1.778 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.27 0.635)
+					(end 1.27 -0.635)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "G-Love:RAW"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 3.81 -1.778 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "RAW"
+				(at 0 2.794 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "RAW_0_1"
+				(polyline
+					(pts
+						(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.524) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "RAW_1_1"
+				(pin power_in line
+					(at 0 -1.27 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "G-Love:VCC"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR04"
+				(at 3.81 -1.778 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "VCC"
+				(at 0 2.286 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "VCC_0_1"
+				(polyline
+					(pts
+						(xy -0.762 0) (xy 0 1.524) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.524) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "VCC_1_1"
+				(pin power_in line
+					(at 0 -1.27 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(rectangle
+		(start 25.4 29.21)
+		(end 96.52 86.36)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "44e74123-3188-423e-8664-a1dd9b9b8104")
+	)
+	(rectangle
+		(start 24.13 96.52)
+		(end 161.29 190.5)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "5e126b40-8a81-47fb-becb-630dbb792dde")
+	)
+	(text "Alimentation LEDs"
+		(exclude_from_sim no)
+		(at 38.608 32.512 0)
+		(effects
+			(font
+				(size 1.778 1.778)
+				(thickness 0.3556)
+				(bold yes)
+			)
+		)
+		(uuid "44de86d4-cc71-414a-a0c8-ef92c4e73e7e")
+	)
+	(text "Alimentation PCB"
+		(exclude_from_sim no)
+		(at 38.862 99.822 0)
+		(effects
+			(font
+				(size 1.778 1.778)
+				(thickness 0.3556)
+				(bold yes)
+			)
+		)
+		(uuid "5e1c3488-2b24-4893-b56e-7f0bb97e0ec7")
+	)
+	(text "Noise reduction"
+		(exclude_from_sim no)
+		(at 51.562 175.768 90)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+		)
+		(uuid "b728b953-125f-4f64-8890-2b08fd183d3b")
+	)
+	(text "LDO Sortie 3.3V"
+		(exclude_from_sim no)
+		(at 126.238 133.858 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "f8be2827-2373-4a2b-a7ae-2a6980b6bc1c")
+	)
+	(junction
+		(at 48.26 58.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "018c5444-f412-4f9b-a364-9adb76d7ea2a")
+	)
+	(junction
+		(at 137.16 143.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0d24c3d0-b691-4893-b41f-badd2f6e30d2")
+	)
+	(junction
+		(at 60.96 58.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "153c1c84-256c-435b-abf8-dc9cbdc4a616")
+	)
+	(junction
+		(at 73.66 58.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "28aa2fa4-3872-41da-8f7f-0e6cc4a3099d")
+	)
+	(junction
+		(at 125.73 151.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "308a915e-1c6d-4921-9763-c820e68385c7")
+	)
+	(junction
+		(at 92.71 129.54)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6d9299db-6747-4e5b-a2be-52a300ba0bbc")
+	)
+	(junction
+		(at 60.96 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "78d8515c-f66f-454f-9eed-5636805195a3")
+	)
+	(junction
+		(at 63.5 171.45)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9859319a-0859-49ee-b7ab-fce499d1c2a1")
+	)
+	(junction
+		(at 144.78 143.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a626365c-8995-4c42-8e6a-12ad5e2cc54c")
+	)
+	(junction
+		(at 137.16 151.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "acaec5aa-38d7-4ec4-8def-44458887f2b2")
+	)
+	(junction
+		(at 53.34 171.45)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c6de8891-7321-422d-b1ee-bfb98b5f8192")
+	)
+	(junction
+		(at 113.03 143.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e2f977f0-ef5d-4f11-8276-742098ac9574")
+	)
+	(junction
+		(at 60.96 116.84)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "edb60927-b6b4-4d66-acaa-245004577d64")
+	)
+	(junction
+		(at 63.5 179.07)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f42484ea-660e-4c99-a63f-e05c873ed702")
+	)
+	(no_connect
+		(at 80.01 158.75)
+		(uuid "2783cbee-4d7f-4bf3-9197-7e4ce7c765d8")
+	)
+	(no_connect
+		(at 80.01 138.43)
+		(uuid "43901d40-651e-4d45-825a-c3cbc951cb70")
+	)
+	(no_connect
+		(at 80.01 140.97)
+		(uuid "6a72fef9-91b7-4484-afa0-54cfa535f89a")
+	)
+	(no_connect
+		(at 80.01 147.32)
+		(uuid "b4d3b3a0-f09a-4860-b365-633f0d32c98a")
+	)
+	(no_connect
+		(at 80.01 144.78)
+		(uuid "d87b5563-ba0a-4ce3-af93-8d572d9567ff")
+	)
+	(no_connect
+		(at 80.01 154.94)
+		(uuid "e093ce74-6bbb-420b-8795-f3be16c23e2c")
+	)
+	(wire
+		(pts
+			(xy 80.01 132.08) (xy 82.55 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00eabbb5-93be-42fc-91d6-6cc200ab77c7")
+	)
+	(wire
+		(pts
+			(xy 60.96 58.42) (xy 73.66 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01514525-f774-43da-9981-ddac4f7f91fd")
+	)
+	(wire
+		(pts
+			(xy 59.69 179.07) (xy 63.5 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b749aab-2144-45ec-9af5-e3880565c05e")
+	)
+	(wire
+		(pts
+			(xy 137.16 146.05) (xy 137.16 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12fecade-d438-47d2-a388-ddaec78b6d17")
+	)
+	(wire
+		(pts
+			(xy 92.71 129.54) (xy 92.71 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "138fb40f-73db-42b6-b0d0-93400c02958f")
+	)
+	(wire
+		(pts
+			(xy 60.96 110.49) (xy 60.96 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19bd1e50-a7e1-4212-b088-1be50e229aee")
+	)
+	(wire
+		(pts
+			(xy 92.71 128.27) (xy 92.71 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d6869bd-d9c7-4437-90a3-0cc26c61a3b6")
+	)
+	(wire
+		(pts
+			(xy 53.34 171.45) (xy 53.34 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "234e990e-27c4-4d07-b46d-f126828b17d0")
+	)
+	(wire
+		(pts
+			(xy 60.96 171.45) (xy 63.5 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d638ed5-b95c-40a4-8a5d-4593059e83a1")
+	)
+	(wire
+		(pts
+			(xy 137.16 143.51) (xy 144.78 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d912040-0f64-49d0-a3cf-99ec28f86400")
+	)
+	(wire
+		(pts
+			(xy 125.73 152.4) (xy 125.73 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bfd161f-04a3-4695-aaae-482d4ff60a2f")
+	)
+	(wire
+		(pts
+			(xy 38.1 121.92) (xy 38.1 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c55e0a6-272e-4ad5-8917-fe83fa5b64f5")
+	)
+	(wire
+		(pts
+			(xy 80.01 128.27) (xy 82.55 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "414c6744-f3de-41e7-a562-49b9932c1e1f")
+	)
+	(wire
+		(pts
+			(xy 144.78 148.59) (xy 144.78 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "423d386d-2b9a-41b8-b351-8d038cff29e8")
+	)
+	(wire
+		(pts
+			(xy 73.66 58.42) (xy 81.28 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "439ecca3-89d0-4ec3-852b-5e5f5fa9b95f")
+	)
+	(wire
+		(pts
+			(xy 135.89 143.51) (xy 137.16 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "457b246e-5b89-4e4d-a21c-db6bdffc89ef")
+	)
+	(wire
+		(pts
+			(xy 137.16 151.13) (xy 125.73 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47c3d1de-dfd1-4a52-9302-a0f122cba50e")
+	)
+	(wire
+		(pts
+			(xy 113.03 143.51) (xy 115.57 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5480a68d-413c-4dd3-a16f-caf83de9abc6")
+	)
+	(wire
+		(pts
+			(xy 113.03 143.51) (xy 113.03 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63d36ff3-20c0-419d-a0dc-01765684378f")
+	)
+	(wire
+		(pts
+			(xy 73.66 66.04) (xy 73.66 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "658599ae-4ec6-4351-852c-38189ddadef2")
+	)
+	(wire
+		(pts
+			(xy 113.03 113.03) (xy 60.96 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6624dd11-66c3-4dc6-925d-66283193d65b")
+	)
+	(wire
+		(pts
+			(xy 87.63 128.27) (xy 92.71 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "666dac53-a1ca-473d-b5d6-eadb26b98631")
+	)
+	(wire
+		(pts
+			(xy 113.03 151.13) (xy 125.73 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "673c5561-186e-4007-8db1-7d5e23a1613a")
+	)
+	(wire
+		(pts
+			(xy 48.26 58.42) (xy 48.26 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67afab39-4e86-44d3-bb11-fe40d38f552f")
+	)
+	(wire
+		(pts
+			(xy 53.34 179.07) (xy 57.15 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67b289d7-a569-4cc4-a289-d028559f2b22")
+	)
+	(wire
+		(pts
+			(xy 113.03 148.59) (xy 113.03 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "694acea4-6007-4f56-abd4-a1aedbfcff26")
+	)
+	(wire
+		(pts
+			(xy 73.66 58.42) (xy 73.66 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d9301f7-ab17-4687-8104-4ea79102f5dd")
+	)
+	(wire
+		(pts
+			(xy 63.5 171.45) (xy 63.5 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d9bb458-c099-4177-a6ba-a27942f60f36")
+	)
+	(wire
+		(pts
+			(xy 144.78 146.05) (xy 144.78 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71a63090-cbb5-40d6-a63a-c5e455edbef1")
+	)
+	(wire
+		(pts
+			(xy 81.28 52.07) (xy 81.28 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71e28179-b631-400a-8a27-101d0b306587")
+	)
+	(wire
+		(pts
+			(xy 48.26 58.42) (xy 60.96 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75a6b6cd-a78d-49c7-8f0c-69f7a062e85c")
+	)
+	(wire
+		(pts
+			(xy 60.96 64.77) (xy 60.96 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87accab3-4f48-4765-8948-c9681da9be92")
+	)
+	(wire
+		(pts
+			(xy 60.96 58.42) (xy 60.96 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89267075-3a8e-4c6f-991b-6ccabe3a1824")
+	)
+	(wire
+		(pts
+			(xy 87.63 132.08) (xy 92.71 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "991c0c6a-4361-40ae-b745-bd1aec469f76")
+	)
+	(wire
+		(pts
+			(xy 125.73 151.13) (xy 125.73 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "996f2650-8491-41e4-81ad-0b6f782080d2")
+	)
+	(wire
+		(pts
+			(xy 60.96 113.03) (xy 38.1 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ecdb4bd-045a-4e27-89a7-279aed2ba6ec")
+	)
+	(wire
+		(pts
+			(xy 63.5 179.07) (xy 63.5 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a416cfce-bf14-451b-b1fd-0fd5122c6711")
+	)
+	(wire
+		(pts
+			(xy 113.03 143.51) (xy 113.03 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab406653-57d6-417a-a580-556397afdc10")
+	)
+	(wire
+		(pts
+			(xy 53.34 165.1) (xy 59.69 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b73c8c24-d6eb-42a6-a93c-a018ace6f24e")
+	)
+	(wire
+		(pts
+			(xy 144.78 151.13) (xy 137.16 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba42972a-b21c-48bc-bc5e-53c707f43c8b")
+	)
+	(wire
+		(pts
+			(xy 38.1 113.03) (xy 38.1 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c34cf31d-4fe8-4aee-a15a-f67ad5282114")
+	)
+	(wire
+		(pts
+			(xy 92.71 129.54) (xy 95.25 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d1193514-3010-4576-bfbf-6edb6d09fdd0")
+	)
+	(wire
+		(pts
+			(xy 137.16 148.59) (xy 137.16 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d1452bb4-6961-4c4b-90d9-2eee1c9cbf00")
+	)
+	(wire
+		(pts
+			(xy 144.78 135.89) (xy 144.78 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2a81b6c-b94d-40b9-803e-65c01aa8a9b8")
+	)
+	(wire
+		(pts
+			(xy 53.34 171.45) (xy 55.88 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddf4793d-1354-4c9d-9953-b76d43bc2e98")
+	)
+	(wire
+		(pts
+			(xy 39.37 58.42) (xy 48.26 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfa663ec-3ac3-410d-82d8-bee400b44e39")
+	)
+	(wire
+		(pts
+			(xy 53.34 116.84) (xy 60.96 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb86b749-ebfb-41e6-bb09-b6b4e02afb71")
+	)
+	(wire
+		(pts
+			(xy 53.34 165.1) (xy 53.34 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5194871-7094-4029-b3ed-f6424c0fabc6")
+	)
+	(wire
+		(pts
+			(xy 63.5 165.1) (xy 63.5 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5523928-41b5-47ff-aca5-d4f612c3f08c")
+	)
+	(wire
+		(pts
+			(xy 60.96 113.03) (xy 60.96 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f994678f-73b8-4a4b-badb-276e3336eeb5")
+	)
+	(wire
+		(pts
+			(xy 48.26 64.77) (xy 48.26 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc737bf2-a68f-43cf-b689-f16d2a384605")
+	)
+	(wire
+		(pts
+			(xy 39.37 53.34) (xy 39.37 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe81c5dd-4672-414e-beb9-ca0f1d971464")
+	)
+	(symbol
+		(lib_id "G-Love:C")
+		(at 60.96 63.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1ce0bb31-0dae-4c7f-8d6d-f2355320a5ab")
+		(property "Reference" "C31"
+			(at 62.23 61.976 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 65.532 64.008 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:Capacitor_0603"
+			(at 60.96 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Capacitor"
+			(at 60.96 72.644 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 60.96 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "1.44/100"
+			(at 60.96 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C1591.html"
+			(at 60.96 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "95c55c69-4313-4c14-9d3a-4716b1fb6b67")
+		)
+		(pin "2"
+			(uuid "ad794f74-343d-4ab5-8bc6-0fa8c3b2d83e")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "C31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:5VL")
+		(at 81.28 50.8 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1f883af7-6ba9-4e2b-8120-742c580c3f2b")
+		(property "Reference" "#PWR023"
+			(at 85.09 52.578 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5VL"
+			(at 81.28 46.99 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 81.28 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 81.28 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 81.28 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "aad4ac5b-8063-4e09-964a-5b9c9ef23414")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:C")
+		(at 137.16 147.32 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "29c1f075-675d-438c-a9c8-e4c5fd0e9858")
+		(property "Reference" "C33"
+			(at 138.43 147.574 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10uF"
+			(at 140.716 149.352 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:Capacitor_0603"
+			(at 137.16 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 137.16 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Capacitor"
+			(at 137.16 156.464 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 137.16 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "2.17/20"
+			(at 137.16 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C15850.html"
+			(at 137.16 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4fa70024-d398-4a8f-a869-717fdc8a4c24")
+		)
+		(pin "2"
+			(uuid "120b00e3-9edd-47c5-976d-8b11605791a7")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "C33")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:GND")
+		(at 125.73 152.4 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "40d0a710-4ecc-49da-a432-2ed9e1a0f8d5")
+		(property "Reference" "GND035"
+			(at 125.73 155.956 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 125.73 155.956 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 125.73 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 125.73 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 125.73 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 125.73 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "eddd88be-49a2-43f6-8379-617758157fc2")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "GND035")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:R")
+		(at 58.42 171.45 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4438d25d-536c-4e46-b181-fcac86fa3328")
+		(property "Reference" "R22"
+			(at 58.42 167.64 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1M"
+			(at 58.42 169.672 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:Resistor_0603"
+			(at 58.42 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 58.42 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 58.42 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 58.42 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "0.25/100"
+			(at 58.42 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C2907003.html"
+			(at 58.42 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "08da977f-6191-4e8d-8e4b-cb9472667fb9")
+		)
+		(pin "1"
+			(uuid "9581e874-cc16-4a53-b549-347dc0f3c265")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "R22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:GND")
+		(at 53.34 121.92 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6991f029-3d23-4813-a4c4-7bf754154f60")
+		(property "Reference" "GND030"
+			(at 53.34 125.476 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 53.34 125.476 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 53.34 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 53.34 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 53.34 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2741422e-0260-4fca-a14a-d0f8e942b0b1")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "GND030")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:C_Electrolytic")
+		(at 53.34 119.38 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6d5ca459-56df-48ba-9dd4-033ed7a829ec")
+		(property "Reference" "C29"
+			(at 55.372 119.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "4.7uF"
+			(at 53.848 121.158 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MyGlove:Capacitor_Electrolytic"
+			(at 53.34 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Polarized capacitor, small US symbol"
+			(at 53.34 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 53.34 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "0.33/10"
+			(at 53.34 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C19666.html"
+			(at 53.34 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "73192a6d-8d95-4a09-bd5d-489418ffe746")
+		)
+		(pin "2"
+			(uuid "8087c383-f48c-43ee-b0e9-c88b601d8a8c")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "C29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:R")
+		(at 73.66 63.5 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6f1be0a1-a754-4aee-93df-b1d0153601d3")
+		(property "Reference" "R23"
+			(at 74.93 63.4999 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10kΩ"
+			(at 76.962 65.532 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:Resistor_0603"
+			(at 73.66 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 73.66 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 73.66 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 73.66 63.5 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "0.74/100"
+			(at 73.66 63.5 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C844918.html"
+			(at 73.66 63.5 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "d95d4d26-2c5f-4e95-8588-d09c759f94f3")
+		)
+		(pin "1"
+			(uuid "2dbf7dd7-7f06-4d7b-a58c-869c9c391e69")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "R23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:C")
+		(at 58.42 179.07 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "76620e27-641a-4b0b-a799-00fe1dc3e84a")
+		(property "Reference" "C30"
+			(at 58.42 175.26 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10n"
+			(at 58.674 177.038 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:Capacitor_0603"
+			(at 58.42 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 58.42 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Capacitor"
+			(at 67.564 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 58.42 179.07 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "0.7/100"
+			(at 58.42 179.07 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C60133.html"
+			(at 58.42 179.07 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "842917e2-cb50-4f9a-b3d6-a62c74eb5821")
+		)
+		(pin "2"
+			(uuid "7674a8c6-ad04-41e5-9d97-d8062b9df8c6")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "C30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:VCC")
+		(at 60.96 109.22 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8195e662-878b-43d8-83fb-5259dce92de1")
+		(property "Reference" "#PWR022"
+			(at 64.77 110.998 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 60.96 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 60.96 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 60.96 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3342179d-0288-421e-bca7-ab301ed83b4f")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "#PWR022")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:J_USB_RECEPTACLE_PASSIVE")
+		(at 67.31 143.51 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8fa53710-999c-4ebf-9262-db51d0607f33")
+		(property "Reference" "J6"
+			(at 55.88 141.6049 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Conn_USB_Receptacle"
+			(at 55.88 144.1449 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "MyGlove:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
+			(at 67.31 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ApplicationNotes/ApplicationNotes/00001953A.pdf"
+			(at 67.31 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "USB C Connector"
+			(at 67.31 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 67.31 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "1.69/5"
+			(at 67.31 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C49261591.html"
+			(at 67.31 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "A8"
+			(uuid "e8497eb7-ae19-4b46-8fbd-ff9650d0e705")
+		)
+		(pin "A1"
+			(uuid "1d3c5bec-28a7-4798-b759-73dedb1990a5")
+		)
+		(pin "B8"
+			(uuid "0aa864b2-77fe-4f06-88e0-7a407c8ea914")
+		)
+		(pin "A9"
+			(uuid "e61fb76f-f986-4f6a-8410-1f652742988a")
+		)
+		(pin "A4"
+			(uuid "b2ab543c-12cc-40ad-b2ef-b47e9143e0eb")
+		)
+		(pin "A5"
+			(uuid "e184469b-c17c-4638-a145-9ef672293a2f")
+		)
+		(pin "B1"
+			(uuid "6479c4b6-c236-4617-9449-9e01f0d77fbd")
+		)
+		(pin "B9"
+			(uuid "4ff7896f-95ef-49a5-8cda-f8ccfd626597")
+		)
+		(pin "B7"
+			(uuid "daf0d5aa-3562-4401-9cea-fdb434f71aef")
+		)
+		(pin "A12"
+			(uuid "67cc69c8-c859-452c-af3d-a24e1a0fc21a")
+		)
+		(pin "A6"
+			(uuid "b4ce9bde-3e8f-4b9c-8c51-b09c454cc365")
+		)
+		(pin "B4"
+			(uuid "ccc66dfa-7965-4ce4-adad-14866077fd6c")
+		)
+		(pin "SH"
+			(uuid "8d3fe191-9143-4d00-be8e-18dfcea016db")
+		)
+		(pin "B5"
+			(uuid "8f878389-d771-4040-8240-a933e0396895")
+		)
+		(pin "A7"
+			(uuid "415086a3-ad41-4341-96ba-b3425e62a6a5")
+		)
+		(pin "B6"
+			(uuid "2c94b610-1da9-4d10-a5c4-1b32ff79d61f")
+		)
+		(pin "B12"
+			(uuid "ce3ab53a-7a40-40a7-b9f9-caa295f3c73c")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:GND")
+		(at 95.25 129.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9412746a-e7a7-4951-aa28-ccf583d9416a")
+		(property "Reference" "GND034"
+			(at 95.25 133.096 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 95.25 133.096 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 95.25 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 95.25 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 95.25 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 95.25 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "96362aad-dce6-4b3f-9d51-fd8046d28dd2")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "GND034")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:+3.3V")
+		(at 144.78 134.62 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a54deab9-5535-4605-97ed-ed3648a6bc47")
+		(property "Reference" "#PWR024"
+			(at 148.59 136.398 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 144.78 130.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 144.78 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 144.78 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 144.78 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "66663ebf-4c41-45d3-a53e-db19063838b1")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:RAW")
+		(at 39.37 52.07 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a580dafd-9559-44ef-ab9f-1a25362b4f11")
+		(property "Reference" "#PWR021"
+			(at 43.18 53.848 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "RAW"
+			(at 39.37 48.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 39.37 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1d285b4a-37bb-41aa-b5cd-81b1a4615fd4")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "#PWR021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:GND")
+		(at 60.96 68.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "af31c6d9-5960-4553-8ee8-cb7befcc7cd1")
+		(property "Reference" "GND031"
+			(at 60.96 72.136 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 60.96 72.136 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 60.96 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 60.96 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 60.96 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bc4922b0-397b-412c-927c-db08045282ec")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "GND031")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:GND")
+		(at 38.1 129.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b16231f0-1e12-441b-875a-9d4bbf4993b7")
+		(property "Reference" "GND028"
+			(at 38.1 133.096 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 38.1 133.096 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 38.1 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 38.1 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 38.1 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 38.1 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "032a2664-76b0-4c73-9140-6b9fbbe17d5a")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "GND028")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:C")
+		(at 113.03 147.32 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b4cc00f2-dc90-43b6-b2ab-1368c306892d")
+		(property "Reference" "C32"
+			(at 107.95 147.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 109.728 149.098 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:Capacitor_0603"
+			(at 113.03 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 113.03 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Capacitor"
+			(at 113.03 156.464 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 113.03 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "1.44/100"
+			(at 113.03 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C1591.html"
+			(at 113.03 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "14238136-4951-4568-a660-f5cc88ecda6a")
+		)
+		(pin "1"
+			(uuid "67a6fdc6-abf6-48dd-8e80-6104796544cd")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "C32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:C")
+		(at 48.26 63.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b83cc28c-3661-4d11-81c9-056f205847f1")
+		(property "Reference" "C28"
+			(at 49.53 61.976 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1uF"
+			(at 51.562 64.008 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:Capacitor_0603"
+			(at 48.26 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.26 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Capacitor"
+			(at 48.26 72.644 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 48.26 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "4.39/50"
+			(at 48.26 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C15849.html"
+			(at 48.26 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f7b91112-ebbc-4df1-bf0d-a7df37fe53e7")
+		)
+		(pin "2"
+			(uuid "e3ab6fec-2ab1-4748-b397-3ffd06341406")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "C28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:GND")
+		(at 48.26 68.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b8ce5191-71fa-491f-846d-d6ff62876a7a")
+		(property "Reference" "GND029"
+			(at 48.26 72.136 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 48.26 72.136 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 48.26 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.26 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 48.26 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 48.26 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "af9810b6-a8cf-483e-bca0-d070593b5063")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "GND029")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:PWR_FLG")
+		(at 271.78 156.21 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bccfb398-0be1-4964-b168-5e6af1eb52a4")
+		(property "Reference" "PWR02"
+			(at 271.78 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLG"
+			(at 274.32 157.4799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 271.78 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 271.78 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 271.78 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "40525223-bf4d-4b7b-8881-5abc38b88db3")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:R")
+		(at 38.1 127 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c930afd6-3b27-445b-b0d3-fc20d655e51a")
+		(property "Reference" "R21"
+			(at 39.37 126.9999 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "1k"
+			(at 40.894 128.524 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:Resistor_0603"
+			(at 38.1 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 38.1 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 38.1 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6fc0f112-f90f-483c-8025-dd1ef6201545")
+		)
+		(pin "2"
+			(uuid "73287238-d762-48b6-80a7-5b54b5f05528")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:GND")
+		(at 63.5 185.42 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d04c8266-c9f3-47b5-a51a-cd6afd03656f")
+		(property "Reference" "GND032"
+			(at 63.5 188.976 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 63.5 188.976 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 63.5 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 63.5 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 63.5 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 63.5 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "25d16643-3c41-4bdf-8229-4861c5991c6d")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "GND032")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:VCC")
+		(at 271.78 154.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d7a754d4-d42e-4760-b59a-aabf00e80703")
+		(property "Reference" "#PWR026"
+			(at 275.59 156.718 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 271.78 151.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 271.78 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 271.78 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 271.78 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e05f0843-afcb-498f-bd3d-02c09f89413d")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:PWR_FLG")
+		(at 271.78 144.78 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e06671bb-bd56-4d1c-9467-69bce8d7e08c")
+		(property "Reference" "PWR01"
+			(at 271.78 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLG"
+			(at 274.32 146.0499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 271.78 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 271.78 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 271.78 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a4ee447c-0814-436d-b97f-b8b4a4b96484")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:C")
+		(at 144.78 147.32 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e19d04fd-afca-46c7-b3e6-688a30a73c81")
+		(property "Reference" "C34"
+			(at 146.05 147.574 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 148.336 149.352 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:Capacitor_0603"
+			(at 144.78 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 144.78 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Capacitor"
+			(at 144.78 156.464 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 144.78 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "1.44/100"
+			(at 144.78 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C1591.html"
+			(at 144.78 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8aff9763-21e0-4ad8-a07c-d9beacfa239c")
+		)
+		(pin "2"
+			(uuid "2b859b99-57ec-4e1c-937f-07bc9ca5810c")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "C34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:GND")
+		(at 73.66 69.85 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e867b5cc-ea94-4546-8439-0acf76c2a762")
+		(property "Reference" "GND033"
+			(at 73.66 73.406 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 73.66 73.406 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 73.66 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 73.66 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 73.66 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 73.66 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1a8a16f8-f977-465f-a5f2-79802e33e8ac")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "GND033")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:RAW")
+		(at 271.78 143.51 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f5bab4c2-5172-4cde-b894-62fb8fea0086")
+		(property "Reference" "#PWR025"
+			(at 275.59 145.288 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "RAW"
+			(at 271.78 139.7 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 271.78 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 271.78 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 271.78 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ceb091db-00ff-4bc3-ac2a-e069d25c3fe2")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "#PWR025")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:LED_Indicator")
+		(at 38.1 119.38 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f90b3158-539b-41fc-b494-9a1ba10a9e18")
+		(property "Reference" "D6"
+			(at 40.894 119.38 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RED"
+			(at 42.164 121.666 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:LED"
+			(at 38.1 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 38.1 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 38.1 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "2d0efc0f-a9a9-45cf-97fa-44bfec49341d")
+		)
+		(pin "1"
+			(uuid "a7d2e8d3-b6b5-457d-b6e5-0a36713c2764")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "D6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:R")
+		(at 85.09 132.08 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f90cce2b-1e74-437f-b075-11b53bb5c353")
+		(property "Reference" "R25"
+			(at 83.058 130.556 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 89.154 131.064 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:Resistor_0603"
+			(at 85.09 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 85.09 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 85.09 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 85.09 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "0.26/100"
+			(at 85.09 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C2907044.html"
+			(at 85.09 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6dd59fd8-a6ba-488d-a00d-57a4f4def25b")
+		)
+		(pin "2"
+			(uuid "474b6501-d7cb-497f-8634-7069258871e1")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "R25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:R")
+		(at 85.09 128.27 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fe0d3e64-5f46-4163-acff-a8125f19f25b")
+		(property "Reference" "R24"
+			(at 82.804 126.746 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 88.9 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:Resistor_0603"
+			(at 85.09 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 85.09 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 85.09 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 85.09 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "0.26/100"
+			(at 85.09 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C2907044.html"
+			(at 85.09 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4a07a2c2-7843-4868-8312-18567163450b")
+		)
+		(pin "2"
+			(uuid "a8284ab1-6d20-4f95-b953-4d6e5bfbf434")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "R24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "G-Love:LDO")
+		(at 125.73 143.51 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ff245b31-d0b5-4398-9eb7-7109bc08edf7")
+		(property "Reference" "U8"
+			(at 125.73 135.89 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AMS1117"
+			(at 125.73 138.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MyGlove:AMS1117"
+			(at 125.73 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 125.73 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "régulateur de tension"
+			(at 125.73 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum quantity per command" ""
+			(at 125.73 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "0.91"
+			(at 125.73 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER" "https://www.lcsc.com/product-detail/C6186.html"
+			(at 125.73 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5efb135d-dfe1-451e-b6e3-ba998bd8251c")
+		)
+		(pin "3"
+			(uuid "d41eba3f-dcb8-439d-aef7-14e247eb7a11")
+		)
+		(pin "2"
+			(uuid "6e328c35-1125-4179-9c4c-698edc0fd503")
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80a592e7-665b-4325-94d6-8f1cd59e94c8"
+					(reference "U8")
+					(unit 1)
+				)
+			)
+		)
+	)
+)

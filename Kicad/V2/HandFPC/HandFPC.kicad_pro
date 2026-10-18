@@ -53,13 +53,13 @@
           "border_display_style": 2,
           "border_hatch_pitch": 0.5,
           "corner_radius": 0.0,
-          "corner_smoothing": 0,
-          "fill_mode": 0,
-          "hatch_gap": 1.5,
-          "hatch_orientation": 0.0,
+          "corner_smoothing": 2,
+          "fill_mode": 1,
+          "hatch_gap": 0.5,
+          "hatch_orientation": 45.0,
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
-          "hatch_thickness": 1.0,
+          "hatch_thickness": 0.5,
           "min_clearance": 0.5,
           "min_island_area": 10.0,
           "min_thickness": 0.25,
@@ -140,12 +140,12 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.0,
+        "min_clearance": 0.2,
         "min_connection": 0.0,
         "min_copper_edge_clearance": 0.5,
         "min_groove_width": 0.0,
         "min_hole_clearance": 0.25,
-        "min_hole_to_hole": 0.25,
+        "min_hole_to_hole": 0.5,
         "min_microvia_diameter": 0.2,
         "min_microvia_drill": 0.1,
         "min_resolved_spokes": 2,
@@ -153,7 +153,7 @@
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.2,
+        "min_track_width": 0.3,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.5,
         "solder_mask_to_copper_clearance": 0.0,
@@ -231,7 +231,7 @@
         }
       },
       "via_dimensions": [],
-      "zones_allow_external_fillets": false
+      "zones_allow_external_fillets": true
     },
     "ipc2581": {
       "bom_rev": "",
@@ -484,7 +484,9 @@
     }
   },
   "libraries": {
-    "pinned_footprint_libs": [],
+    "pinned_footprint_libs": [
+      "MyGlove"
+    ],
     "pinned_symbol_libs": [
       "G-Love-Symbols"
     ]
@@ -650,7 +652,7 @@
         "uuid": "7221f3d8-f3bc-4a50-a6fd-69c2d8ca27db"
       }
     ],
-    "used_designators": "J1,+5.5V1,#PWR6,#PWR10-11,#PWR14-15,#PWR18-19,GND7",
+    "used_designators": "J11",
     "variants": []
   },
   "sheets": [
