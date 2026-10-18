@@ -96,7 +96,7 @@ uno: ${OBJS1}
 	avrdude -p ${DEVICE1} -c urclock -P ${PORT1} -b ${BAUDRATE1} -x delay=1500 -v -U flash:w:${HEX1}:i
 
 mega: ${OBJS2}
-	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${OBJS2} -o ${BIN2}
+	${CC} -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${OBJS2} -o ${BIN2}
 	${OBJCOPY} -O ihex ${BIN2} ${HEX2}
 	avrdude -p ${DEVICE2} -c urclock -P ${PORT2} -b ${BAUDRATE2} -D -v -U flash:w:${HEX2}:i
 

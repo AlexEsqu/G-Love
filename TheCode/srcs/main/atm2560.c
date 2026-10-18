@@ -1,4 +1,3 @@
-#include "../../includes/main.h"
 #include "main.h"
 #include <avr/interrupt.h>
 #include <stdint.h>
@@ -110,27 +109,27 @@ bool process_packet(uint8_t *byte, t_sensor_data *packet)
 void setup()
 {
 	// i2c init
-	// i2c_init();
+	i2c_init();
 
 	// uart_init
 	uart0_init();
 	uart1_init();
 	uart0_printstr("coucou1\n");
 
-// 	spi_init();
-// 	cst816d_init();
-// 	gc9a01_init();
-// 	uart0_printstr("coucou2\n");
-// 	touch_timer_init();
-// 	enableTouchInterrupt();
-// uart0_printstr("coucou3\n");
-// 	// pin 7 en input
-// 	DDRD &= ~(1 << DDD7);
-// 	// pullup
-// 	PORTD |= (1 << PORTD7);
+	spi_init();
+	cst816d_init();
+	gc9a01_init();
+	uart0_printstr("coucou2\n");
+	touch_timer_init();
+	enableTouchInterrupt();
+uart0_printstr("coucou3\n");
+	// pin 7 en input
+	DDRD &= ~(1 << DDD7);
+	// pullup
+	PORTD |= (1 << PORTD7);
 
-// 	gc9a01_fill_screen(RGB16_BLUE);
-// 	display_screen();
+	gc9a01_fill_screen(RGB16_BLUE);
+	display_screen();
 
 }
 
@@ -147,8 +146,9 @@ int main_ATM2560()
 	while (1)
 	{
 		uart0_printstr("coucou\n");
-		// refresh_screen();
-		// onTouch();
+		uart1_printstr("coucou\n");
+		refresh_screen();
+		onTouch();
 
 		// while (get_next_byte(&byte))
 		// {
@@ -171,6 +171,7 @@ int main_ATM2560()
 		// 		uart0_send_data((const uint8_t *)&g_packet, sizeof(g_packet));
 		// 	}
 		// }
+		_delay_ms(20);
 	}
 	return 0;
 }
