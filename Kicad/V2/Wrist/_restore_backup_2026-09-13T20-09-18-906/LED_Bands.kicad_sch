@@ -1,0 +1,491 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "05232aae-1e10-4cd7-bfed-e99fa0da275d")
+	(paper "A4")
+	(lib_symbols)
+	(text "LED band - RGB lights on each finger\n"
+		(exclude_from_sim no)
+		(at 76.454 46.99 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c76766c0-ca46-4c5d-840a-457c453b1474")
+	)
+	(no_connect
+		(at 215.9 53.34)
+		(uuid "67a37c4b-336c-4ae2-96c3-6a0b21cd9a4d")
+	)
+	(no_connect
+		(at 215.9 55.88)
+		(uuid "d63a3980-f6b6-4b52-9f25-6d2dd2d36ff4")
+	)
+	(wire
+		(pts
+			(xy 111.76 53.34) (xy 114.3 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0060ea0c-a1f9-46ed-8eb5-01a8cc9623d6")
+	)
+	(wire
+		(pts
+			(xy 146.05 55.88) (xy 148.59 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24f33f0e-eb60-4431-9bd2-c981c6cb5c39")
+	)
+	(wire
+		(pts
+			(xy 180.34 55.88) (xy 184.15 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68f30950-8cab-4247-a43c-735b6187d752")
+	)
+	(wire
+		(pts
+			(xy 50.8 55.88) (xy 80.01 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75026179-f2ef-4c09-8952-894e6ce50e1a")
+	)
+	(wire
+		(pts
+			(xy 180.34 53.34) (xy 184.15 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9023d9ab-e137-4592-b9b4-b5c5be63e0d7")
+	)
+	(wire
+		(pts
+			(xy 50.8 53.34) (xy 80.01 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7770809-54fb-42bc-9833-6e0becf5e122")
+	)
+	(wire
+		(pts
+			(xy 146.05 53.34) (xy 148.59 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfb0466c-4b7c-47af-8b2f-9429e0825d4f")
+	)
+	(wire
+		(pts
+			(xy 111.76 55.88) (xy 114.3 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5533a1a-ff68-4b4d-90b6-d9b6fa1cfa00")
+	)
+	(hierarchical_label "LED_SPI_CKL"
+		(shape input)
+		(at 50.8 55.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5986b059-40e9-45f9-8f89-f0c04e50123c")
+	)
+	(hierarchical_label "LED_SPI_DAT"
+		(shape input)
+		(at 50.8 53.34 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "87729142-ab89-4656-a502-9deb285b788c")
+	)
+	(rule_area
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(polyline
+			(pts
+				(xy 34.29 44.831) (xy 233.68 44.45) (xy 233.68 61.468) (xy 34.29 61.849)
+			)
+			(stroke
+				(width 0)
+				(type dash)
+			)
+			(fill
+				(type none)
+			)
+			(uuid "cd4d788c-e3f6-4ae3-8ac7-a8dfd3d0bcec")
+		)
+	)
+	(sheet
+		(at 148.59 51.562)
+		(size 31.75 6.096)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "27c125d2-0495-4d4a-a4da-6961c81f3232")
+		(property "Sheetname" "SK9822x15_Ring"
+			(at 148.59 50.8504 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "SK9822x15.kicad_sch"
+			(at 148.59 58.2426 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "CLK_OUTPUT" input
+			(at 180.34 55.88 0)
+			(uuid "48b08091-795e-442d-b1ed-2f16a2c426bc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "DATA_OUTPUT" input
+			(at 180.34 53.34 0)
+			(uuid "7439e63d-7d53-4234-86f4-725028c3b5d8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CLK_INPUT" input
+			(at 148.59 55.88 180)
+			(uuid "f9259355-0f03-423e-b57f-8daae30d6be5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "DATA_INPUT" input
+			(at 148.59 53.34 180)
+			(uuid "61e3dd70-e4e5-4a4a-a39d-60f38f1eea99")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c"
+					(page "34")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 80.01 51.562)
+		(size 31.75 6.096)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "508c8d26-610d-4395-9434-749869aaa3fc")
+		(property "Sheetname" "SK9822x15_Index"
+			(at 80.01 50.8504 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "SK9822x15_O.kicad_sch"
+			(at 80.01 58.2426 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "CLK_OUTPUT" input
+			(at 111.76 55.88 0)
+			(uuid "9fd073e1-8d00-41f5-8bcb-4db812b48e9e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "DATA_OUTPUT" input
+			(at 111.76 53.34 0)
+			(uuid "498eee45-ff93-43f4-9a9e-940ac42e6f66")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CLK_INPUT" input
+			(at 80.01 55.88 180)
+			(uuid "f881fa2a-da5d-441a-8c46-8d08646079c7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "DATA_INPUT" input
+			(at 80.01 53.34 180)
+			(uuid "7bcbed85-5813-4e1f-8840-bd133dfe6f8d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c"
+					(page "16")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 114.3 51.562)
+		(size 31.75 6.096)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "9730839e-7cf8-4bb0-89ed-e6ff80729323")
+		(property "Sheetname" "SK9822x15_Middle"
+			(at 114.3 50.8504 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "SK9822x15.kicad_sch"
+			(at 114.3 58.2426 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "CLK_OUTPUT" input
+			(at 146.05 55.88 0)
+			(uuid "f35d332c-5996-4502-8dfa-f3b7af2e30a2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "DATA_OUTPUT" input
+			(at 146.05 53.34 0)
+			(uuid "1adab9e9-3f72-4d0e-be29-afcf496c67aa")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CLK_INPUT" input
+			(at 114.3 55.88 180)
+			(uuid "74ab9b2d-8cb8-4164-b319-875c9797fecf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "DATA_INPUT" input
+			(at 114.3 53.34 180)
+			(uuid "aa2bdf8b-c627-4700-b2a9-5eed90b83c7a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c"
+					(page "28")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 184.15 51.308)
+		(size 31.75 6.35)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "9c376b41-f2ee-4fc8-ab7c-f0dde4d7f9f4")
+		(property "Sheetname" "SK9822x15_Little"
+			(at 184.15 50.5964 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "SK9822x15.kicad_sch"
+			(at 184.15 58.2426 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "CLK_OUTPUT" input
+			(at 215.9 55.88 0)
+			(uuid "7256df5f-1c36-4e9b-9709-c2440a466e8c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "DATA_OUTPUT" input
+			(at 215.9 53.34 0)
+			(uuid "db07d078-bf6b-4d6e-a3b6-bf3d5b202e40")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CLK_INPUT" input
+			(at 184.15 55.88 180)
+			(uuid "7c35f08d-bbe3-4b84-aaa1-306686351774")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "DATA_INPUT" input
+			(at 184.15 53.34 180)
+			(uuid "d12b7edf-0e2b-44c2-850e-aa435593c1f7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "G-Love"
+				(path "/808bc5ea-49ac-4454-ba77-8b20d01ce159/80069e6d-e99d-4fb8-a6cc-8c9cf1821a0c"
+					(page "22")
+				)
+			)
+		)
+	)
+)
