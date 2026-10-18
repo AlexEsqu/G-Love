@@ -94,7 +94,7 @@ void	update_touch_info(uint16_t x, uint16_t y, uint16_t action)
 
 	if (action == TFT_ACTION_TAP)
 		g_screens[g_touchscreen_mode].on_touch_action();
-	else if (action != last_action && action != TFT_ACTION_TAP)
+	else if (action != last_action)
 		navigate_touchscreen();
 }
 

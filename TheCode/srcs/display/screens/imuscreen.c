@@ -18,15 +18,6 @@ uint16_t get_color_from_imuscreen(uint16_t row, uint16_t col)
 	int16_t y = (int16_t)col - 120;
 	int16_t x = (int16_t)row - 120;
 
-	// if (is_center_circle(x, y, 20))
-	// 	return RGB16_GOLD;
-
-	if (is_screen_frame(x, y))
-		return RGB16_GRAY;
-
-	// if (is_diagonal_spoke(row, col))
-	// 	return RGB16_BLACK;
-
 	int16_t abs_x = x < 0 ? -x : x;
 	int16_t abs_y = y < 0 ? -y : y;
 
