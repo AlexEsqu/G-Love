@@ -57,7 +57,6 @@ uint16_t	get_color_from_homescreen(uint16_t row, uint16_t col)
 
 void		print_homescreen_text(void)
 {
-	// putstr_screen(75, 30, "Home", RGB16_WHITE, FONT_SIZE_BIG);
 	putstr_screen(40, 105, "Com Mode", RGB16_WHITE, FONT_SIZE_SMALL);
 	putstr_screen(150, 105, "IMU Mode", RGB16_WHITE, FONT_SIZE_SMALL);
 	putstr_screen(40, 130, "Flex Mode", RGB16_WHITE, FONT_SIZE_SMALL);

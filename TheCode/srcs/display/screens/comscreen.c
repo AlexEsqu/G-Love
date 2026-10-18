@@ -27,11 +27,8 @@ void		print_comscreen_text(void)
 	putstr_screen(20, 100, "picker", RGB16_BLUE, FONT_SIZE_MID);
 	putstr_screen(20, 120, "mode", RGB16_BLUE, FONT_SIZE_MID);
 
-	putstr_screen(100, 200, "swipe left", RGB16_WHITE, FONT_SIZE_SMALL);
-	putstr_screen(70, 210, "to go back to menu", RGB16_WHITE, FONT_SIZE_SMALL);
-
 	print_touch_info(&g_last_touch);
-	// print_color_touch_info(&g_last_touch);
+	print_nav_info(RGB16_BLACK);
 }
 
 void		on_touch_on_comscreen()

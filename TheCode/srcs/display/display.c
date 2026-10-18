@@ -21,14 +21,14 @@ const tft_screen_info_t g_screens[5] = {
 		.frame_count = 0,
 		.get_background_color = get_color_from_imuscreen,
 		.print_screen_text = print_imuscreen_text,
-		.on_touch_action = on_touch_on_homescreen
+		.on_touch_action = on_touch_on_imuscreen
 	},
 	[TFT_STATE_FLEXSCREEN] = {
 		.frames = { &hand1, &hand2 },
 		.frame_count = 2,
 		.get_background_color = get_color_from_flexscreen,
 		.print_screen_text = print_flexscreen_text,
-		.on_touch_action = on_touch_on_homescreen
+		.on_touch_action = on_touch_on_flexscreen,
 	},
 	[TFT_STATE_COMMSCREEN] = {
 		.frames = { &hand1, &hand2 },
@@ -264,5 +264,12 @@ uint16_t	putfloat_screen(uint16_t x, uint16_t y, float nbr, uint16_t font_color,
 	x = putint_screen(x, y, two_first_decimal, font_color, font_size);
 
 	return x;
+}
+
+void		print_nav_info(uint16_t color)
+{
+	putstr_screen(105, 200, "swipe", color, FONT_SIZE_SMALL);
+	putstr_screen(90, 210, "to go back", color, FONT_SIZE_SMALL);
+	putstr_screen(100, 220, "to menu", color, FONT_SIZE_SMALL);
 }
 

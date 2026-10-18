@@ -91,12 +91,6 @@ void	stopTouchDebounce()
 
 void	concludeTouchDebounce()
 {
-	// if button is not still pressed, was probably faulty
-	// if (!received_data_from_cst816d())
-	// {
-	// 	stopTouchDebounce();
-	// 	return;
-	// }
 
 	onTouch();
 	stopTouchDebounce();
