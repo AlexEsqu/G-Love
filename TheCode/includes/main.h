@@ -7,6 +7,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include "../srcs/ledStrip/led.h"
+#include "../srcs/DMX/dmx.h"
 
 #if defined(__AVR_ATmega2560__) || (__AVR_ATmega2561__)
     #define SPI_DDR   DDRB

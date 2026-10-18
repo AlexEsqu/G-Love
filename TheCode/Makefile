@@ -49,6 +49,7 @@ SRCS1    = $(CODEDIR1)/main.c \
 
 SRCS2    = $(CODEDIR2)/main.c \
 			$(CODEDIR2)/atm2560.c \
+			srcs/DMX/dmx.c \
         	$(LIBDIR)/adc.c \
         	$(LIBDIR)/i2c.c \
         	$(LIBDIR)/spi.c \
@@ -74,7 +75,7 @@ $(OBJDIR1)/%_uno.o: %.c
 # for MEGA / atmega2560
 $(OBJDIR2)/%_mega.o: %.c
 	@mkdir -p $(dir $@)
-	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} -c $< -o $@
+	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} -DDMX_BREATHING -c $< -o $@
 
 all: ${BIN1} ${BIN2}
 
@@ -83,7 +84,7 @@ ${BIN1}: ${OBJS1}
 	${OBJCOPY} -O ihex ${BIN1} ${HEX1}
 
 ${BIN2}: ${OBJS2}
-	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${OBJS2} -o ${BIN2}
+	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} -DDMX_BREATHING ${OBJS2} -o ${BIN2}
 	${OBJCOPY} -O ihex ${BIN2} ${HEX2}
 
 uno: all ${HEX1}
