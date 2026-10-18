@@ -100,14 +100,14 @@ void	update_touch_info(uint16_t x, uint16_t y, uint16_t action)
 
 void	print_touch_info(tft_touch_info_t* touch_info)
 {
-	putstr_screen(180, 90, "Touch", RGB16_WHITE, FONT_SIZE_SMALL);
+	putstr_screen(180, 60, "Touch", RGB16_WHITE, FONT_SIZE_SMALL);
 	uint16_t pointer = 180;
-	pointer = putstr_screen(pointer, 100, "x: ", RGB16_WHITE, FONT_SIZE_SMALL);
-	pointer = putint_screen(pointer, 100, touch_info->x, RGB16_WHITE, FONT_SIZE_SMALL);
-	putstr_screen(pointer, 100, "  ", RGB16_WHITE, FONT_SIZE_SMALL);
-	pointer = putstr_screen(180, 110, "y: ", RGB16_WHITE, FONT_SIZE_SMALL);
-	pointer = putint_screen(pointer, 110, touch_info->y, RGB16_WHITE, FONT_SIZE_SMALL);
-	putstr_screen(pointer, 110, "  ", RGB16_WHITE, FONT_SIZE_SMALL);
+	pointer = putstr_screen(pointer, 70, "x: ", RGB16_WHITE, FONT_SIZE_SMALL);
+	pointer = putint_screen(pointer, 70, touch_info->x, RGB16_WHITE, FONT_SIZE_SMALL);
+	putstr_screen(pointer, 70, "  ", RGB16_WHITE, FONT_SIZE_SMALL);
+	pointer = putstr_screen(180, 80, "y: ", RGB16_WHITE, FONT_SIZE_SMALL);
+	pointer = putint_screen(pointer, 80, touch_info->y, RGB16_WHITE, FONT_SIZE_SMALL);
+	putstr_screen(pointer, 80, "  ", RGB16_WHITE, FONT_SIZE_SMALL);
 }
 
 void	onTouch()

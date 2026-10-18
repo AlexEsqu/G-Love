@@ -3,8 +3,8 @@
 
 const tft_screen_info_t g_screens[5] = {
 	[TFT_STATE_HOMESCREEN] = {
-		.frames = { &hand1, &hand2 },
-		.frame_count = 2,
+		.frames = { NULL },
+		.frame_count = 0,
 		.get_background_color = get_color_from_homescreen,
 		.print_screen_text = print_homescreen_text,
 		.on_touch_action = on_touch_on_homescreen,
