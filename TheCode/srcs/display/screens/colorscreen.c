@@ -56,32 +56,78 @@ static uint16_t hsv_to_565(uint8_t hue, uint8_t sat)
 // 	}
 // }
 
+// Approximating a square root without floats
+static uint8_t fast_isqrt(uint16_t val)
+{
+	uint16_t result = 0;
+	uint16_t bit = 1 << 14;
+	while (bit > val) bit >>= 2;
+	while (bit != 0)
+	{
+		if (val >= result + bit)
+		{
+			val -= result + bit;
+			result = (result >> 1) + bit;
+		}
+		else
+		{
+			result >>= 1;
+		}
+		bit >>= 2;
+	}
+
+	return (uint8_t)result;
+}
+
+// Approximating angles on 240
+static uint8_t fast_atan2_to_hue(int8_t y, int8_t x)
+{
+	if (x == 0 && y == 0)
+		return 0;
+
+	int32_t abs_x = x < 0 ? -x : x;
+	int32_t abs_y = y < 0 ? -y : y;
+	int32_t ratio = (abs_x + abs_y == 0) ? 0
+		: (abs_y * 60) / (abs_x + abs_y);
+
+	uint8_t hue = 0;
+	if (x >= 0 && y >= 0)
+		hue = ratio;
+	else if (x < 0 && y >= 0)
+		hue = 120 - ratio;
+	else if (x < 0 && y < 0)
+		hue = 120 + ratio;
+	else
+		hue = 240 - ratio;
+
+	if (hue >= 240)
+		hue -= 240;
+
+	return hue;
+}
+
 uint16_t	get_color_from_colorscreen(uint16_t row, uint16_t col)
 {
-    int dx = (int)col - 120;
-    int dy = (int)row - 120;
+	int8_t x = (int8_t)((int16_t)col - 120);
+	int8_t y = (int8_t)((int16_t)row - 120);
 
-    int dist_sq = (dx * dx) + (dy * dy);
+	int16_t dist_sq = (int16_t)(x * x) + (int16_t)(y * y);
 
-    if (dist_sq > (120 * 120)) {
-        return 0x0000;
-    }
+	// out of bound
+	if (dist_sq > 14400)
+		return RGB16_BLACK;
 
-    float r = sqrtf((float)dist_sq);
-    uint8_t sat = (uint8_t)(r * 255.0f / 120.0f);
+	uint16_t r = fast_isqrt(dist_sq);
+	uint8_t sat = (uint8_t)(((uint16_t)r * 255UL) / 120);
 
-    float angle = atan2f((float)dy, (float)dx);
-    if (angle < 0.0f) {
-        angle += 2.0f * 3.14159265f;
-    }
+	uint8_t hue = fast_atan2_to_hue(y, x);
 
-    uint8_t hue = (uint8_t)(angle * (240.0f / (2.0f * 3.14159265f)));
-
-    return hsv_to_565(hue, sat);
+	return hsv_to_565(hue, sat);
 }
 
 void		print_color_touch_info(tft_touch_info_t* touch_info)
 {
+	putstr_screen(180, 110, "Color", RGB16_WHITE, FONT_SIZE_SMALL);
 	uint8_t	pointer = putstr_screen(180, 120, "r: ", RGB16_WHITE, FONT_SIZE_SMALL);
 	pointer = putstr_screen(pointer, 120, "0x", RGB16_WHITE, FONT_SIZE_SMALL);
 	pointer = puthex_screen(pointer, 120, (touch_info->rgb888 >> 11) & 0x1F, RGB16_WHITE, FONT_SIZE_SMALL);
@@ -93,15 +139,15 @@ void		print_color_touch_info(tft_touch_info_t* touch_info)
 	pointer = puthex_screen(pointer, 140, (touch_info->rgb888 & 0x1F), RGB16_WHITE, FONT_SIZE_SMALL);
 }
 
+
+
 void		print_colorscreen_text(void)
 {
-	putstr_screen(20, 80, "Color", RGB16_BLUE, FONT_SIZE_MID);
-	putstr_screen(20, 100, "picker", RGB16_BLUE, FONT_SIZE_MID);
-	putstr_screen(20, 120, "mode", RGB16_BLUE, FONT_SIZE_MID);
+	putstr_screen(20, 80, "Color", RGB16_BLACK, FONT_SIZE_MID);
+	putstr_screen(20, 100, "picker", RGB16_BLACK, FONT_SIZE_MID);
+	putstr_screen(20, 120, "mode", RGB16_BLACK, FONT_SIZE_MID);
 
-	putstr_screen(100, 200, "swipe left", RGB16_WHITE, FONT_SIZE_SMALL);
-	putstr_screen(70, 210, "to go back to menu", RGB16_WHITE, FONT_SIZE_SMALL);
-
+	print_nav_info(RGB16_BLACK);
 	print_touch_info(&g_last_touch);
 	print_color_touch_info(&g_last_touch);
 }

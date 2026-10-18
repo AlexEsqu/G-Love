@@ -239,11 +239,15 @@ void		print_homescreen_text(void);
 void		on_touch_on_homescreen(void);
 uint16_t	get_color_from_imuscreen(uint16_t row, uint16_t col);
 void		print_imuscreen_text(void);
+void		on_touch_on_imuscreen();
 uint16_t	get_color_from_flexscreen(uint16_t row, uint16_t col);
 void		print_flexscreen_text(void);
+void		on_touch_on_flexscreen();
 uint16_t	get_color_from_comscreen(uint16_t row, uint16_t col);
 void		print_comscreen_text(void);
 void		on_touch_on_comscreen();
+
+void		print_nav_info(uint16_t color);
 
 #define GC9A01_INIT_SEQUENCE_LEN 51
 

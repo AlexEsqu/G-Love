@@ -44,39 +44,7 @@ void	debug_touch_info()
 
 void	navigate_touchscreen()
 {
-	static const tft_state_t SCREEN_SEQUENCE[] = {
-		TFT_STATE_HOMESCREEN,
-		TFT_STATE_COLORSCREEN,
-		TFT_STATE_COMMSCREEN,
-		TFT_STATE_FLEXSCREEN,
-		TFT_STATE_IMUSCREEN
-	};
-	static const uint8_t NUM_SCREENS = sizeof(SCREEN_SEQUENCE) / sizeof(SCREEN_SEQUENCE[0]);
-
-	int current_index = 0;
-    for (int i = 0; i < NUM_SCREENS; i++) {
-        if (SCREEN_SEQUENCE[i] == g_touchscreen_mode) {
-            current_index = i;
-            break;
-        }
-    }
-
-    switch (g_last_touch.action)
-    {
-        case TFT_ACTION_UP:
-            current_index = (current_index - 1 + NUM_SCREENS) % NUM_SCREENS;
-            break;
-
-        case TFT_ACTION_DOWN:
-            current_index = (current_index + 1) % NUM_SCREENS;
-            break;
-
-        default:
-            current_index = 0;
-            break;
-    }
-
-    g_touchscreen_mode = SCREEN_SEQUENCE[current_index];
+	g_touchscreen_mode = TFT_STATE_HOMESCREEN;
 	refresh_screen();
 }
 
@@ -94,20 +62,20 @@ void	update_touch_info(uint16_t x, uint16_t y, uint16_t action)
 
 	if (action == TFT_ACTION_TAP)
 		g_screens[g_touchscreen_mode].on_touch_action();
-	else if (action != last_action && action != TFT_ACTION_TAP)
+	else if (action != last_action)
 		navigate_touchscreen();
 }
 
 void	print_touch_info(tft_touch_info_t* touch_info)
 {
-	putstr_screen(180, 90, "Touch", RGB16_WHITE, FONT_SIZE_SMALL);
+	putstr_screen(180, 60, "Touch", RGB16_WHITE, FONT_SIZE_SMALL);
 	uint16_t pointer = 180;
-	pointer = putstr_screen(pointer, 100, "x: ", RGB16_WHITE, FONT_SIZE_SMALL);
-	pointer = putint_screen(pointer, 100, touch_info->x, RGB16_WHITE, FONT_SIZE_SMALL);
-	putstr_screen(pointer, 100, "  ", RGB16_WHITE, FONT_SIZE_SMALL);
-	pointer = putstr_screen(180, 110, "y: ", RGB16_WHITE, FONT_SIZE_SMALL);
-	pointer = putint_screen(pointer, 110, touch_info->y, RGB16_WHITE, FONT_SIZE_SMALL);
-	putstr_screen(pointer, 110, "  ", RGB16_WHITE, FONT_SIZE_SMALL);
+	pointer = putstr_screen(pointer, 70, "x: ", RGB16_WHITE, FONT_SIZE_SMALL);
+	pointer = putint_screen(pointer, 70, touch_info->x, RGB16_WHITE, FONT_SIZE_SMALL);
+	putstr_screen(pointer, 70, "  ", RGB16_WHITE, FONT_SIZE_SMALL);
+	pointer = putstr_screen(180, 80, "y: ", RGB16_WHITE, FONT_SIZE_SMALL);
+	pointer = putint_screen(pointer, 80, touch_info->y, RGB16_WHITE, FONT_SIZE_SMALL);
+	putstr_screen(pointer, 80, "  ", RGB16_WHITE, FONT_SIZE_SMALL);
 }
 
 void	onTouch()
