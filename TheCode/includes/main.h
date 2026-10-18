@@ -79,7 +79,7 @@ void 		i2c_scan(void);
 
 //spi.c
 void		spi_init();
-uint8_t		spi_send_data(uint8_t data);
+uint8_t 	spi_send_data(uint8_t data);
 void		spi_send_color(rgb_color_t *colors,
 				uint16_t number, uint16_t brightness);
 

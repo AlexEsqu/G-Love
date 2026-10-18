@@ -7,21 +7,12 @@
 #define F_CPU 16000000UL
 #endif
 
-#define MYUBRR F_CPU/16/BAUD-1
 #define BAUDRATE 115200
+#define MYUBRR F_CPU / 16 / BAUDRATE -1
 
-// // define screen port
-// #define TFT_CS 10
-// #define TFT_DC 8
-// #define TFT_RST 9
-
-// #define TFT_MOSI 51
-// #define TFT_MISO 50
-// #define TFT_SCK 52
 
 // define tactile port
 #define I2C_ADDR_CST816D 0x15 // addresse du tactile
-#define TOUCH_INT 7
 
 #define RX_BUFFER_SIZE 128
 #define SENSOR_PACKET_MAGIC2 0xA55A
@@ -56,7 +47,6 @@ extern t_sensor_data_to_pc g_packet;
 #define TFT_MOSI		51
 #define TFT_MISO		50
 #define TFT_RST			11
-
 #define TFT_DC			10
 
 // On ATMEGA 2560

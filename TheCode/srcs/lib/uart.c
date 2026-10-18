@@ -1,5 +1,4 @@
-#include "../../includes/main.h"
-#include "../main/atm2560.h"
+#include "main.h"
 
 void uart_init_test(void)
 {

@@ -1,4 +1,3 @@
-#include "atm2560.h"
 #include "main.h"
 #include <avr/interrupt.h>
 #include <stdint.h>
@@ -135,38 +134,38 @@ int main_ATM2560()
 {
 	setup();
 
-	// uint8_t byte;
-	// t_sensor_data packet; //packet from atm328P
-	// uint16_t touch_x = 0;
-	// uint16_t touch_y = 0;
-	// uint8_t touch_action = 0;
+	uint8_t byte;
+	t_sensor_data packet; //packet from atm328P
+	uint16_t touch_x = 0;
+	uint16_t touch_y = 0;
+	uint8_t touch_action = 0;
 
 	while (1)
 	{
 		refresh_screen();
 		onTouch();
 
-		// while (get_next_byte(&byte))
-		// {
-		// 	if (process_packet(&byte, &packet))
-		// 	{
-		// 		//complete packet with touch, crc and send
-		// 		g_packet.magic = SENSOR_PACKET_MAGIC2;
-		// 		memcpy(g_packet.sensorForce, packet.sensorForce, sizeof(packet.sensorForce));
-		// 		memcpy(g_packet.sensorFlex, packet.sensorFlex, sizeof(packet.sensorFlex));
-		// 		memcpy(g_packet.accel, packet.accel, sizeof(packet.accel));
-		// 		memcpy(g_packet.gyro, packet.gyro, sizeof(packet.gyro));
+		while (get_next_byte(&byte))
+		{
+			if (process_packet(&byte, &packet))
+			{
+				//complete packet with touch, crc and send
+				g_packet.magic = SENSOR_PACKET_MAGIC2;
+				memcpy(g_packet.sensorForce, packet.sensorForce, sizeof(packet.sensorForce));
+				memcpy(g_packet.sensorFlex, packet.sensorFlex, sizeof(packet.sensorFlex));
+				memcpy(g_packet.accel, packet.accel, sizeof(packet.accel));
+				memcpy(g_packet.gyro, packet.gyro, sizeof(packet.gyro));
 
-		// 		g_packet.screen_x = touch_x;
-		// 		g_packet.screen_y = touch_y;
-		// 		g_packet.screen_action = touch_action;
+				g_packet.screen_x = touch_x;
+				g_packet.screen_y = touch_y;
+				g_packet.screen_action = touch_action;
 
-		// 		g_packet.crc16 = crc16_compute((const uint8_t *)&g_packet,
-		// 							offsetof(t_sensor_data_to_pc, crc16));
+				g_packet.crc16 = crc16_compute((const uint8_t *)&g_packet,
+									offsetof(t_sensor_data_to_pc, crc16));
 
-		// 		uart0_send_data((const uint8_t *)&g_packet, sizeof(g_packet));
-		// 	}
-		// }
+				uart0_send_data((const uint8_t *)&g_packet, sizeof(g_packet));
+			}
+		}
 	}
 	return 0;
 }

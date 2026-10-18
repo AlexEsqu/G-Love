@@ -194,18 +194,18 @@ typedef enum {
 } tft_font_size_t ;
 
 
-void	gc9a01_init();
-void	gc9a01_send_command(gc9a01_cmd_t cmd);
-void	gc9a01_send_parameter(uint8_t param);
-void	gc9a01_fill_screen(uint16_t rgb565);
-void	gc9a01_execute_sequence(const gc9a01_sequence_t* sequence);
-void	gc9a01_start_parameter_sequence();
-void	gc9a01_end_parameter_sequence();
-void	gc9a01_send_init_sequence();
-void	gc9a01_send_pixel(uint8_t x, uint8_t y, uint16_t rgb256);
-void	gc9a01_send_square(uint8_t x, uint8_t y, uint16_t rgb256, uint16_t width);
-void	gc9a01_send_image(uint8_t x, uint8_t y, const packed_image_t* image);
-void	gc9a01_set_display_size(uint16_t left, uint16_t top, uint16_t right, uint16_t bottom);
+void		gc9a01_init();
+void		gc9a01_send_command(gc9a01_cmd_t cmd);
+void		gc9a01_send_parameter(uint8_t param);
+void		gc9a01_fill_screen(uint16_t rgb565);
+void		gc9a01_execute_sequence(const gc9a01_sequence_t* sequence);
+void		gc9a01_start_parameter_sequence();
+void		gc9a01_end_parameter_sequence();
+void		gc9a01_send_init_sequence();
+void		gc9a01_send_pixel(uint8_t x, uint8_t y, uint16_t rgb256);
+void		gc9a01_send_square(uint8_t x, uint8_t y, uint16_t rgb256, uint16_t width);
+void		gc9a01_send_image(uint8_t x, uint8_t y, const packed_image_t* image);
+void		gc9a01_set_display_size(uint16_t left, uint16_t top, uint16_t right, uint16_t bottom);
 
 uint32_t	rgb565_to_rgb888(uint16_t rgb565);
 
@@ -217,7 +217,7 @@ uint16_t	putstr_screen(uint16_t x, uint16_t y, const char *str, uint16_t font_co
 uint16_t	putfloat_screen(uint16_t x, uint16_t y, float nbr, uint16_t font_color, tft_font_size_t font_size);
 uint16_t	putint_screen(uint16_t x, uint16_t y, int32_t nbr, uint16_t font_color, tft_font_size_t font_size);
 uint16_t	puthex_screen(uint16_t x, uint16_t y, uint32_t nbr, uint16_t font_color, tft_font_size_t font_size);
-void	print_touch_info(tft_touch_info_t* touch_info);
+void		print_touch_info(tft_touch_info_t* touch_info);
 
 void	cst816d_init();
 int		received_data_from_cst816d();
@@ -245,12 +245,7 @@ uint16_t	get_color_from_comscreen(uint16_t row, uint16_t col);
 void		print_comscreen_text(void);
 void		on_touch_on_comscreen();
 
-
-
 #define GC9A01_INIT_SEQUENCE_LEN 51
-
-
-
 
 extern const gc9a01_sequence_t gc9a01_init_sequence[GC9A01_INIT_SEQUENCE_LEN];
 

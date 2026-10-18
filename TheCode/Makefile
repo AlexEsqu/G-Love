@@ -36,7 +36,7 @@ HEX_TEST = ${NAME_TEST}_mega.hex
 CC       = avr-gcc -Wextra -Werror -Wall -o2
 OBJCOPY  = avr-objcopy
 
-OBJDIR   = objets
+OBJDIR   = objects
 OBJDIR1  = $(OBJDIR)/uno
 OBJDIR2  = $(OBJDIR)/mega
 OBJDIR3  = $(OBJDIR)/megaarduino

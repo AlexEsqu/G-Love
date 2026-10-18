@@ -1,4 +1,3 @@
-#include "atm2560.h"
 #include "main.h"
 
 int	received_data_from_cst816d()

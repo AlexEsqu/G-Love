@@ -1,5 +1,5 @@
-#ifndef CONFIG_ATM2560_H
-#define CONFIG_ATM2560_H
+#ifndef CONFIG_ATM2561_H
+#define CONFIG_ATM2561_H
 
 #include <stdint.h>
 
@@ -12,7 +12,6 @@
 
 // define tactile port
 #define I2C_ADDR_CST816D 0x15 // addresse du tactile
-#define TOUCH_INT 7
 
 #define RX_BUFFER_SIZE 128
 #define SENSOR_PACKET_MAGIC2 0xA55A

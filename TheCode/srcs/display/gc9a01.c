@@ -1,5 +1,4 @@
 #include "main.h"
-#include "atm2560.h"
 
 // Using the display driver chip GC9A01
 // Set up in Serial Interface Protocol (SPI)
@@ -76,7 +75,7 @@ void	gc9a01_init()
 	set_pin_high(&SCREEN_PORT, SCREEN_RST);
 	set_pin_high(&SCREEN_PORT, SCREEN_DC);
 
-	gc9a01_send_init_sequence();
+	// gc9a01_send_init_sequence();
 	for (uint8_t i = 0; i < GC9A01_INIT_SEQUENCE_LEN; i++)
 	{
 		gc9a01_execute_sequence(&gc9a01_init_sequence[i]);
@@ -134,7 +133,6 @@ void gc9a01_fill_screen(uint16_t rgb565)
 	gc9a01_set_display_size(0, 0, TFT_WIDTH - 1, TFT_HEIGHT - 1);
 
 	gc9a01_send_command(GC9A01_MEM_WRITE);
-
 	gc9a01_start_parameter_sequence();
 	uint32_t size = TFT_PIXEL_COUNT;
 	for (uint32_t i = 0; i < size; i++)
