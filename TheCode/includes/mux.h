@@ -1,7 +1,7 @@
 #ifndef MUX_H
  #define MUX_H
 
-#include "../../includes/main.h"
+#include "main.h"
 
 #ifdef PROTO
 	// define multiplexer selector pins for arduino uno

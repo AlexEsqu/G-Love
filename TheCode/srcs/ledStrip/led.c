@@ -88,7 +88,6 @@ void update_and_render_pulses(void) {
         int16_t head = pulses[i].pos_fixed >> 8;
 
         if (head >= pulses[i].start_pos && head < pulses[i].end_pos) {
-            uint8_t half = finger_leds_map[pulses[i].finger].size / 2;
 
             // Two synchronized heads move away from the finger center.
             render_pulse_led(left_pulse_led(pulses[i].finger, head),
@@ -106,8 +105,8 @@ void update_and_render_pulses(void) {
     strip_flush();
 }
 
-// Trigger a pulse on a specific finger with given color, speed, and length
-void led_effect(uint8_t finger, uint8_t effect)
+// Trigger a pulse on a specific finger with given color
+void led_effect(uint8_t finger, uint8_t color[3])
 {
     if (finger >= FINGER_COUNT) {
         return;
@@ -116,19 +115,19 @@ void led_effect(uint8_t finger, uint8_t effect)
     switch (finger)
     {
         case THUMB:
-            trigger_pulse(THUMB, 255, 0, 0, 255, 10);
+            trigger_pulse(THUMB, color[0], color[1], color[2], 255, 10);
             break;
         case INDEX:
-            trigger_pulse(INDEX, 0, 255, 0, 255, 10);
+            trigger_pulse(INDEX, color[0], color[1], color[2], 255, 10);
             break;
         case MIDDLE:
-            trigger_pulse(MIDDLE, 0, 0, 255, 255, 10);
+            trigger_pulse(MIDDLE, color[0], color[1], color[2], 255, 10);
             break;
         case RING:
-            trigger_pulse(RING, 255, 255, 0, 255, 10);
+            trigger_pulse(RING, color[0], color[1], color[2], 255, 10);
             break;
         case PINKY:
-            trigger_pulse(PINKY, 255, 0, 255, 255, 10);
+            trigger_pulse(PINKY, color[0], color[1], color[2], 255, 10);
             break;
         default:
             return;

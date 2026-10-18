@@ -1,5 +1,6 @@
 #include "touchscreen.h"
 #include "main.h"
+#include "math.h"
 
 static uint16_t rgb_to_565(uint8_t r, uint8_t g, uint8_t b)
 {

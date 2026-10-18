@@ -1,7 +1,7 @@
 #ifndef ICM42688P_H
  #define ICM42688P_H
 
-#include "../../includes/main.h"
+#include "main.h"
 
 #define ICM_ADDR 0x68
 #define ICM_ADDR_VDD 0x69
