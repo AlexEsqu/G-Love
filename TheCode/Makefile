@@ -14,7 +14,6 @@ CODEDIR2  = srcs/main
 DEVICE3   = atmega2560
 BAUDRATE3 = 115200
 PORT3     = /dev/ttyACM0
-CODEDIR2  = srcs/main
 ALT_F_CPU    = 16000000UL
 
 NAME     = main
@@ -83,7 +82,7 @@ SRC_TEST = srcs/testing/uart_test.c \
 
 OBJS1      = $(SRCS1:%.c=$(OBJDIR1)/%_uno.o)
 OBJS2      = $(SRCS2:%.c=$(OBJDIR2)/%_mega.o)
-OBJS3    = $(SRCS2:.c=$(OBJDIR3)/%_arduinomega.o)
+OBJS3	   = $(SRCS2:%.c=$(OBJDIR3)/%_arduinomega.o)
 OBJS_BOOT1 = $(SRC_BOOT1:%.c=$(OBJDIR2)/%_mega.o)
 OBJS_TEST  = $(SRC_TEST:%.c=$(OBJDIR2)/%_mega.o)
 
@@ -117,7 +116,7 @@ ${BIN2}: ${OBJS2}
 mega: ${OBJS2}
 	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} -DPROTO=1 ${OBJS2} -o ${BIN2}
 	${OBJCOPY} -O ihex ${BIN2} ${HEX2}
-	avrdude -p ${DEVICE2} -c wiring -P ${PORT2} -b ${BAUDRATE2} -D -v -U flash:w:${HEX2}:i
+	avrdude -p ${DEVICE2} -c urclock -P ${PORT2} -b ${BAUDRATE2} -D -v -U flash:w:${HEX2}:i
 
 megaarduino: ${OBJS3}
 	${CC} -Os -mmcu=${DEVICE3} -DF_CPU=${ALT_F_CPU} ${OBJS3} -o ${BIN3}

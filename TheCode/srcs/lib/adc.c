@@ -1,4 +1,4 @@
-#include "../../includes/main.h"
+#include "main.h"
 
 void adc_init() {
 	// DATASHEET PAGE 258 SECTION 24.9.2 //NOTE1
@@ -13,7 +13,7 @@ void adc_init() {
 
 	//DATASHEET PAGE 257 SECTION 24.9.1  table 24-3//NOTE3
 	//ADMUX |= (1 << REFS1) | (1 << REFS0); //internal 1.1V Voltage Reference with external capacitor at AREF pin
-	
+
 
 	//DATASHEET PAGE 257 SECTION 24.9.1 //NOTE3
 	ADMUX |= (1 << REFS0); //AVCC with external capacitor at AREF pin
@@ -21,7 +21,7 @@ void adc_init() {
 
 	//DATASHEET PAGE 259 SECTION 24.9.3 //NOTE4
 	// ADMUX |= (1 << ADLAR); //ADCH and ADCL:	When an ADC conversion is complete, the result is found in these two registers
-	
+
 	ADCSRA |= (1 << ADSC);
 	while ((ADCSRA & (1 << ADSC)))
 	{

@@ -1,6 +1,6 @@
 #include <stdint.h>
 #include "icm42688p.h"
-#include "../../includes/main.h"
+#include "main.h"
 
 /*
 STEPS:

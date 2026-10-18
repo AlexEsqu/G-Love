@@ -18,7 +18,7 @@ void uart_init_test(void)
 			uart0_tx('[');
 			uart0_tx(c);
 			uart0_tx(']');
-			if (c == '\r')  
+			if (c == '\r')
 				uart0_printstr("\r\n");
 			if (c == 's')
 				i2c_scan();
@@ -30,7 +30,7 @@ void uart_init_test(void)
 //UART0
 void uart0_init(unsigned long baudrate) {
     // Set Baud Rate Register
-    UBRR0 = MYUBRR;
+    UBRR0 = ((F_CPU + baudrate * 4) / (baudrate * 8) - 1);
 
     // Double speed mode for reduced baud rate error at 115200 baud
     UCSR0A = (1 << U2X0);
@@ -104,7 +104,7 @@ void uart1_init(unsigned long baudrate)
     UCSR1A = (1 << U2X1);
 
     // Set Baud Rate Register
-    UBRR1 = MYUBRR;
+    UBRR1 = ((F_CPU + baudrate * 4) / (baudrate * 8) - 1);
 
     // Enable Transmitter and Receiver
     UCSR1B = (1 << RXCIE1) | (1 << TXEN1) | (1 << RXEN1);

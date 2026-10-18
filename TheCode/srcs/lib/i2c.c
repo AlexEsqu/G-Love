@@ -1,4 +1,4 @@
-#include "../../includes/main.h"
+#include "main.h"
 
 volatile uint16_t g_state = 0;
 

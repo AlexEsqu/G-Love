@@ -1,5 +1,5 @@
 #include "led.h"
-#include "../../includes/main.h"
+#include "main.h"
 #include <avr/interrupt.h>
 
 // Static array of finger LED ranges
@@ -14,7 +14,7 @@ static volatile bool spi_busy;
 void strip_init(uint8_t brightness)
 {
     for (uint8_t i = 0; i < 4; i++) strip.start[i] = 0x00;
-    
+
     uint8_t hdr = 0xE0 | (brightness & 0x1F);
     for (uint16_t i = 0; i < NUM_LEDS; i++)
     {
@@ -55,7 +55,7 @@ bool strip_is_busy(void)
 // SPI Serial Transfer Complete interrupt service routine
 // Triggered when a byte has been transmitted and the next byte can be sent
 // If all bytes have been sent, the SPI interrupt is disabled and the busy flag is cleared
-__attribute__ ((signal, __used__, externally_visible)) void SPI_STC_vect(void) 
+__attribute__ ((signal, __used__, externally_visible)) void SPI_STC_vect(void)
 {
     if (spi_index < TOTAL_BYTES)
     {

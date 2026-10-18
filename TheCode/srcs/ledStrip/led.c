@@ -1,5 +1,5 @@
 #include "led.h"
-#include "../../includes/main.h"
+#include "main.h"
 
 static pulse_t pulses[MAX_PULSES];
 
@@ -145,9 +145,9 @@ void led_spi()
 	// {
 	// 	colors[i] = hsvToRgb(color_cycle + 360 * i / NUM_LEDS,
     //                             255,
-    //                                 (luminosity_cycle < 180) ? luminosity_cycle * 255 / 200 : (360 - luminosity_cycle) * 255 / 200); 
+    //                                 (luminosity_cycle < 180) ? luminosity_cycle * 255 / 200 : (360 - luminosity_cycle) * 255 / 200);
 	// }
-    
+
 	// spi_send_color(colors, NUM_LEDS, 1);
 
     // color_cycle += LED_COLOR_SPEED;

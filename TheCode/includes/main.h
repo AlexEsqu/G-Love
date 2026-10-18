@@ -6,32 +6,32 @@
 #include <avr/wdt.h>
 #include <stdint.h>
 #include <stddef.h>
-#include "../srcs/ledStrip/led.h"
+#include "led.h"
 
-#if defined(__AVR_ATmega2560__)  || defined(__AVR_ATmega2561__)
+#if defined(__AVR_ATmega2560__)
     #define SPI_DDR   DDRB
     #define SPI_MOSI  DDB2
     #define SPI_SCK   DDB1
     #define SPI_SS    DDB0
+	#include "atm2560.h"
+#elif defined(__AVR_ATmega2561__)
+    #define SPI_DDR   DDRB
+    #define SPI_MOSI  DDB2
+    #define SPI_SCK   DDB1
+    #define SPI_SS    DDB0
+	#include "atm2561.h"
 #elif defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
     #define SPI_DDR   DDRB
     #define SPI_MOSI  DDB3
     #define SPI_SCK   DDB5
     #define SPI_SS    DDB2
+	#include "atm328p.h"
 #endif
 
 int main_ATM2560();
 int main_ATM328P();
 
-
 #include "touchscreen.h"
-
-typedef struct s_rgb_color
-{
-    uint8_t red;
-    uint8_t green;
-    uint8_t blue;
-} t_rgb_color;
 
 #define SENSOR_PACKET_MAGIC 0xA55A
 
@@ -80,7 +80,7 @@ void 		i2c_scan(void);
 //spi.c
 void		spi_init();
 uint8_t		spi_send_data(uint8_t data);
-void		spi_send_color(t_rgb_color *colors,
+void		spi_send_color(rgb_color_t *colors,
 				uint16_t number, uint16_t brightness);
 
 // uart.c
