@@ -8,10 +8,12 @@ t_sensor_data g_sensor = {0};
 
 void setup()
 {
+
+	SREG |= (1 << 7); // Active manuellement le bit d'interruption globale (Bit I)
 	i2c_init();
 	adc_init();
-	spi_init();
 	uart0_init(BAUDRATE);
+    spi_init();
 
 	mux_setup();
 }

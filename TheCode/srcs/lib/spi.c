@@ -8,9 +8,8 @@ void spi_init()
     SPI_DDR |= (1 << SPI_MOSI) | (1 << SPI_SCK) | (1 << SPI_SS);
 
     // Enable SPI, Master, set clock rate fck/16
-    SPCR = (1 << SPE) | (1 << MSTR) | (1 << SPR0);
+    SPCR = (1 << SPE) | (1 << MSTR) | (1 << SPR0) | (1 << SPIE); // Enable SPI interrupt
 }
-
 
 void spi_send_data(char data)
 {
@@ -39,7 +38,7 @@ void spi_end_frame()
     }
 }
 
-void spi_send_color(t_rgb_color *colors, uint16_t number, uint16_t brightness)
+void spi_send_color(rgb_color_t *colors, uint16_t number, uint16_t brightness)
 {
     spi_start_frame();
 

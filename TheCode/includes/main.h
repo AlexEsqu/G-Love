@@ -6,6 +6,7 @@
 #include <avr/wdt.h> 
 #include <stdint.h>
 #include <stddef.h>
+#include "../srcs/ledStrip/led.h"
 
 #if defined(__AVR_ATmega2560__) || (__AVR_ATmega2561__)
     #define SPI_DDR   DDRB
@@ -41,7 +42,6 @@ typedef struct __attribute__((packed)) s_sensor_data
 } t_sensor_data;
 
 extern t_sensor_data g_sensor;
-
 //adc.c
 void		adc_init();
 uint8_t		ft_adc_read();
@@ -70,7 +70,7 @@ void 		i2c_scan(void);
 //spi.c
 void        spi_init();
 void        spi_send_data(char data);
-void        spi_send_color(t_rgb_color *colors,
+void        spi_send_color(rgb_color_t *colors,
                 uint16_t number, uint16_t brightness);
 
 // uart.c
