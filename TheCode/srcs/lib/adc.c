@@ -58,7 +58,7 @@ uint16_t ft_adc_read_channel(uint8_t channel) {
 	{
 	}
 
-	return ADCH;
+	return ADC;
 }
 
 //NOTE1

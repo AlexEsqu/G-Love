@@ -34,7 +34,7 @@ typedef struct s_finger_leds {
 #define PINKY_LED_SIZE 14
 
 // LED strip configuration
-#define NUM_LEDS (THUMB_LED_SIZE + INDEX_LED_SIZE + MIDDLE_LED_SIZE + RING_LED_SIZE + PINKY_LED_SIZE)
+#define NUM_LEDS 50
 #define END_FRAME_BYTES ((NUM_LEDS + 15) / 16)
 #define MAX_PULSES 20
 

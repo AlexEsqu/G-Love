@@ -140,15 +140,13 @@ void led_spi()
 {
     // static uint16_t color_cycle = 0;
     // static uint16_t luminosity_cycle = 0;
+    rgb_color_t colors[NUM_LEDS];
 
-    // for (uint16_t i = 0; i < NUM_LEDS; i++)
-	// {
-	// 	colors[i] = hsvToRgb(color_cycle + 360 * i / NUM_LEDS,
-    //                             255,
-    //                                 (luminosity_cycle < 180) ? luminosity_cycle * 255 / 200 : (360 - luminosity_cycle) * 255 / 200); 
-	// }
-    
-	// spi_send_color(colors, NUM_LEDS, 1);
+    for (uint16_t i = 0; i < NUM_LEDS; i++)
+	{
+		colors[i] = hsvToRgb(192, 255, 255);
+    }
+	spi_send_color(colors, NUM_LEDS, 1);
 
     // color_cycle += LED_COLOR_SPEED;
     // if (color_cycle >= 360) {
@@ -159,15 +157,15 @@ void led_spi()
     // if (luminosity_cycle >= 360) {
     //     luminosity_cycle = 0;
     // }
-    static bool initialized = false;
-    if (!initialized) {
-        strip_init(BRIGHTNESS); // Global brightness ~50% (15/31)
+    // static bool initialized = false;
+    // if (!initialized) {
+    //     strip_init(BRIGHTNESS); // Global brightness ~50% (15/31)
 
-        // Trigger a test pulse on thumb LEDs.
-        trigger_pulse(FINGER_COUNT, 255, 255, 255, 255, 14);
+    //     // Trigger a test pulse on thumb LEDs.
+    //     trigger_pulse(FINGER_COUNT, 255, 255, 255, 255, 14);
 
-        initialized = true;
-    }
+    //     initialized = true;
+    // }
 
-    update_and_render_pulses();
+    // update_and_render_pulses();
 }
