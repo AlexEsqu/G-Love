@@ -103,7 +103,7 @@ void setup()
 	uart0_init(BAUDRATE);
 	uart1_init(BAUDRATE);
 
-	sei();
+	SREG |= (1 << SREG_I);
 
 	// pin 7 en input
 	DDRD &= ~(1 << DDD7);
