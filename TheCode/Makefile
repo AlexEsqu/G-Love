@@ -3,7 +3,6 @@ F_CPU    = 8000000UL
 DEVICE1   = atmega328p
 BAUDRATE1 = 57600
 PORT1     = /dev/cu.wchusbserial110
-#PORT1     = /dev/cu.usbmodem101 /dev/cu.wchusbserial110
 CODEDIR1  = srcs/main
 
 DEVICE2   = atmega2561
@@ -160,9 +159,11 @@ uarttest: ${OBJS_TEST}
 	avrdude -p ${DEVICE2} -c urclock -P ${PORT2} -b ${BAUDRATE2} -v -U flash:w:${HEX_TEST}:i
 
 clean:
-	rm -f ${BIN1} ${HEX1} ${BIN2} ${HEX2} ${BIN3} ${HEX3} \
-		${BIN_BOOT} ${HEX_BOOT} ${BIN_TEST} ${HEX_TEST}
-	rm -rf ${OBJDIR}
+	rm -f ${BIN1} ${HEX1} ${OBJS1} \
+			${BIN2} ${HEX2} ${OBJS2} \
+			${HEX_BOOT} ${BIN_BOOT} ${OBJS_BOOT1} \
+			${HEX_TEST} ${BIN_TEST} ${OBJS_TEST}
+
 
 fclean: clean
 

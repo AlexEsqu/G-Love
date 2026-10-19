@@ -39,8 +39,8 @@ typedef struct __attribute__((packed)) s_sensor_data
     uint16_t magic; //magic number to detect start of packet
     uint16_t sensorForce[5]; //fsr
     uint16_t sensorFlex[5]; //fsr
-    int16_t  accel[3]; //imu
-    int16_t  gyro[3]; //imu
+    float    accel[3]; //imu
+    float    gyro[3]; //imu
     uint16_t crc16; // crc to protect and check data authenticity
 } t_sensor_data;
 
@@ -84,13 +84,15 @@ void		spi_send_color(rgb_color_t *colors,
 				uint16_t number, uint16_t brightness);
 
 // uart.c
-void 		uart0_init(unsigned long baudrate);
+void 		uart0_init();
 void 		uart0_tx(char c);
 char 		uart0_rx(void);
 void 		uart0_printstr(const char *str);
 void 		uart0_print_10bit(uint32_t c);
 void        uart0_send_data(const uint8_t *data, size_t len);
 uint8_t     uart0_available(void);
+void 		uart0_print_int(int32_t num);
+void        uart0_print_float(float num);
 
 void 		uart1_init(unsigned long baudrate);
 void 		uart1_tx(char c);

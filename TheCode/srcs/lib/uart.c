@@ -27,9 +27,9 @@ void uart_init_test(void)
 }
 
 //UART0
-void uart0_init(unsigned long baudrate) {
+void uart0_init() {
     // Set Baud Rate Register
-    UBRR0 = ((F_CPU + baudrate * 4) / (baudrate * 8) - 1);
+    UBRR0 = MYUBRR;
 
     // Double speed mode for reduced baud rate error at 115200 baud
     UCSR0A = (1 << U2X0);
@@ -74,15 +74,41 @@ void uart0_printstr(const char *str)
         uart0_tx(*str++);
 }
 
-void uart0_print_10bit(uint32_t c)
-{
-    if (c == 0)
-        uart0_tx('0');
-    if (c > 10)
-    {
-        uart0_print_10bit(c / 10);
-    }
-    uart0_tx('0' + (c % 10));
+void uart0_print_int(int32_t num) {
+	if (num < 0) {
+		uart0_tx('-');
+		num = -num;
+	}
+	uart0_print_10bit(num);
+}
+
+void uart0_print_float(float num) {
+	if (num < 0) {
+		uart0_tx('-');
+		num = -num;
+	}
+	int32_t intPart = (int32_t)num;
+	float fracPart = num - intPart;
+
+	uart0_print_10bit(intPart);
+	uart0_tx('.');
+
+	// Print fractional part with 3 decimal places
+	for (int i = 0; i < 3; i++) {
+		fracPart *= 10;
+		int digit = (int)fracPart;
+		uart0_tx('0' + digit);
+		fracPart -= digit;
+	}
+}
+
+void uart0_print_10bit(uint32_t c) {
+	if (c == 0)
+		uart0_tx('0');
+	if (c > 10) {
+		uart0_print_10bit(c / 10);
+	}
+	uart0_tx('0' + (c % 10));
 }
 
 void uart0_send_data(const uint8_t *data, size_t len)

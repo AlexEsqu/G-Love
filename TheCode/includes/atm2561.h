@@ -7,7 +7,7 @@
 #define F_CPU 8000000UL
 #endif
 
-#define BAUDRATE 38400
+#define BAUDRATE 57600UL
 #define MYUBRR ((F_CPU + BAUDRATE * 4) / (BAUDRATE * 8) - 1)
 
 // define tactile port
@@ -21,8 +21,8 @@ typedef struct __attribute__((packed)) s_sensor_data_to_pc
     uint16_t	magic; //magic number to detect start of packet
     uint16_t	sensorForce[5]; //fsr
     uint16_t	sensorFlex[5]; //fsr
-    int16_t 	accel[3]; //imu
-    int16_t		gyro[3]; //imu
+    float 	    accel[3]; //imu
+    float		gyro[3]; //imu
     uint16_t	screen_x; //touchscreen x cordinate
     uint16_t	screen_y; //touchscreen y cordinate
     uint8_t		screen_action; //touchscreen: action= swipe left, swipe right, press etc...
