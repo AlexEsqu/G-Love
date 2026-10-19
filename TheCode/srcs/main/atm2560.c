@@ -16,8 +16,8 @@ uint8_t				g_animation_frame = 0;
 tft_touch_info_t	g_last_touch = {
 	.x = 0,
 	.y = 0,
-	.action = TFT_ACTION_NONE,
-	.last_action = TFT_ACTION_NONE,
+	.action = TFT_ACTION_TAP,
+	.last_action = TFT_ACTION_TAP,
 	.rgb565 = 0x00,
 	.rgb888 = 0x0000,
 	.is_pending = 0,
@@ -99,7 +99,7 @@ bool process_packet(uint8_t *byte, t_sensor_data *packet)
 
 			if (crc16_test == crc16_received) //crc is validated
 			{
-				ft_memcpy(packet, buf, sizeof(t_sensor_data)); 
+				ft_memcpy(packet, buf, sizeof(t_sensor_data));
 				return (true);
 			}
 		}
