@@ -1,6 +1,12 @@
 #include "touchscreen.h"
 #include "main.h"
 
+// current touchscreen mode, changes logic of the LEDs and info sent / displayed
+tft_state_t			g_touchscreen_mode = TFT_STATE_HOMESCREEN;
+
+// timing for animations
+uint8_t				g_animation_frame = 0;
+
 const tft_screen_info_t g_screens[5] = {
 	[TFT_STATE_HOMESCREEN] = {
 		.frames = { NULL },

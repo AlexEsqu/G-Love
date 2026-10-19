@@ -40,16 +40,7 @@ int main_ATM328P();
 
 #define I2C_ADDR_CST816D 0x15 // tactile driver address
 
-// Globals
-#if defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__)
-extern tft_state_t			g_touchscreen_mode;
-extern uint8_t				g_animation_frame;
-extern uint16_t				g_ms_counter;
-extern uint8_t				g_touch_debounce;
-#elif defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
-extern t_sensor_data		g_sensor;
-extern uint8_t				g_len_packet;
-#endif
+
 extern volatile uint16_t	g_i2C_state;
 //adc.c
 void		adc_init();

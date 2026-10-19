@@ -23,6 +23,7 @@ typedef struct __attribute__((packed)) s_glove_directive
 	uint16_t	magic; //magic number to detect start of packet
 	uint8_t		current_mode;
 	uint32_t	current_color;
+	uint8_t		request_reset_imu;
 	uint16_t	crc16; // crc to protect and check data authenticity
 } glove_directive_t;
 
