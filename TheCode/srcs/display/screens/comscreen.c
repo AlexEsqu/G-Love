@@ -15,26 +15,6 @@ static int is_comframe(uint16_t row, uint16_t col)
 	return is_x_spoke(row, col);
 }
 
-static inline int is_in_top_quarter(uint16_t row, uint16_t col)
-{
-	return (row < col && (row + col) < 240);
-}
-
-static inline int is_in_right_quarter(uint16_t row, uint16_t col)
-{
-	return (row < col && (row + col) > 240);
-}
-
-static inline int is_in_bottom_quarter(uint16_t row, uint16_t col)
-{
-	return (row > col && (row + col) > 240);
-}
-
-static inline int is_in_left_quarter(uint16_t row, uint16_t col)
-{
-	return (row > col && (row + col) < 240);
-}
-
 uint16_t get_color_from_comscreen(uint16_t row, uint16_t col)
 {
 	uint16_t color = RGB16_BLACK;
@@ -43,19 +23,19 @@ uint16_t get_color_from_comscreen(uint16_t row, uint16_t col)
 	{
 		color = RGB16_BLACK;
 	}
-	else if (is_in_top_quarter(row, col))
+	else if (is_top_quarter_of_screen(row, col))
 	{
 		return(is_in_mask(row, col, &comscreen_image) ? RGB16_LAPIS_CORE : RGB16_LAPIS_SHADOW);
 	}
-	else if (is_in_right_quarter(row, col))
+	else if (is_right_quarter_of_screen(row, col))
 	{
 		return(is_in_mask(row, col, &comscreen_image) ? RGB16_DEEP_CYAN : RGB16_ABYSS_SHADOW);
 	}
-	else if (is_in_bottom_quarter(row, col))
+	else if (is_bottom_quarter_of_screen(row, col))
 	{
 		return(is_in_mask(row, col, &comscreen_image) ? RGB16_GLACIER_DEEP : RGB16_COBALT_DARK);
 	}
-	else if (is_in_left_quarter(row, col))
+	else if (is_left_quarter_of_screen(row, col))
 	{
 		return(is_in_mask(row, col, &comscreen_image) ? RGB16_FROST_LIGHT : RGB16_GLACIER_DEEP);
 	}

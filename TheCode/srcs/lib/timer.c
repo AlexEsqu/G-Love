@@ -99,7 +99,7 @@ void	concludeTouchDebounce()
 void __attribute__((signal)) TIMER1_COMPB_vect (void)
 {
 	// should wrap
-	OCR4B += TICKS_10MS;
+	OCR1B += TICKS_10MS;
 
 	g_ms_counter += 10;
 	g_animation_frame = g_animation_frame ? 0 : 1;

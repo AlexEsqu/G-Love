@@ -41,7 +41,7 @@ const tft_screen_info_t g_screens[5] = {
 
 uint8_t	is_in_mask(uint16_t row, uint16_t col, const very_packed_image_t* image)
 {
-	if (row > image->height || col > image->width)
+	if (row >= image->height || col >= image->width)
 		return 0;
 
 	uint16_t stride = ((uint16_t)image->width + 7) >> 3;

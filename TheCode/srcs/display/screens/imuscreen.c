@@ -1,7 +1,6 @@
 #include "touchscreen.h"
 #include "main.h"
 
-
 uint16_t get_color_from_imuscreen(uint16_t row, uint16_t col)
 {
 	int16_t y = (int16_t)col - 120;
@@ -30,15 +29,23 @@ void		print_imuscreen_text(void)
 	putstr_screen(20, 110, "Fly", RGB16_BLACK, FONT_SIZE_MID);
 	putstr_screen(20, 130, "mode", RGB16_BLACK, FONT_SIZE_MID);
 
-	putstr_screen(75, 20, "Click up here to", RGB16_GOLD, FONT_SIZE_SMALL);
-	putstr_screen(65, 30, "Calibrate", RGB16_GOLD, FONT_SIZE_MID);
+	putstr_screen(70, 20, "Click up here to", RGB16_GOLD, FONT_SIZE_SMALL);
+	putstr_screen(67, 30, "Calibrate", RGB16_GOLD, FONT_SIZE_MID);
 
-	// print_touch_info(&g_last_touch);
 	print_imu_info();
 	print_nav_info(RGB16_GOLD);
 }
 
 void		on_touch_on_imuscreen()
 {
+	uint16_t	row = g_last_touch.y;
+	uint16_t	col = g_last_touch.x;
+
+	if (is_top_quarter_of_screen(row, col))
+	{
+		; // TO-DO: plug cmd here for calibration
+		// gc9a01_send_square(col, row, RGB16_BIO_GLOW, 4); // for sanity, to remove
+	}
+
 	print_imu_info();
 }

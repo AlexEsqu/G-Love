@@ -29,7 +29,7 @@ static const flex_finger_area_t g_finger_areas[FLEX_FINGER_COUNT] =
 };
 
 // plug into fsr values
-static uint8_t g_finger_red[FLEX_FINGER_COUNT] = { 255, 20, 0, 255, 0 };
+// static uint8_t g_finger_red[FLEX_FINGER_COUNT] = { 255, 20, 0, 255, 0 };
 
 static int8_t get_finger_index(uint16_t row, uint16_t col)
 {
@@ -69,24 +69,24 @@ static uint8_t get_finger_red_level(uint8_t finger, uint16_t row, uint16_t col)
 	}
 
 	if (length == 0)
-		return g_finger_red[finger];
+		return g_sensor.sensorFlex[finger];
 
 	uint16_t gradient_length = (length + 2) / 2;
 	if (finger != FLEX_THUMB)
 	{
 		uint16_t red_length = length - gradient_length;
 		if (position <= red_length)
-			return g_finger_red[finger];
+			return g_sensor.sensorFlex[finger];
 		position -= red_length;
-		return (uint8_t)(((uint16_t)g_finger_red[finger]
+		return (uint8_t)(((uint16_t)g_sensor.sensorFlex[finger]
 			* (gradient_length - position)) / gradient_length);
 	}
 	if (position >= gradient_length)
 	{
-		return g_finger_red[finger];
+		return g_sensor.sensorFlex[finger];
 	}
 
-	return (uint8_t)(((uint16_t)g_finger_red[finger] * position)
+	return (uint8_t)(((uint16_t)g_sensor.sensorFlex[finger] * position)
 		/ gradient_length);
 }
 
