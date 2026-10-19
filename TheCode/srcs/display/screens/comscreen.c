@@ -67,15 +67,44 @@ uint16_t get_color_from_comscreen(uint16_t row, uint16_t col)
 void		print_comscreen_text(void)
 {
 	putstr_screen(20, 80, "Com", RGB16_BLACK, FONT_SIZE_MID);
-	putstr_screen(20, 100, "picker", RGB16_BLACK, FONT_SIZE_MID);
-	putstr_screen(20, 120, "mode", RGB16_BLACK, FONT_SIZE_MID);
+	putstr_screen(20, 100, "mode", RGB16_BLACK, FONT_SIZE_MID);
 
+	putstr_screen(20, 130, "Currently:", RGB16_BLACK, FONT_SIZE_SMALL);
+	// gotta plug it here for debug
+	putstr_screen(20, 140, "Debug", RGB16_BLACK, FONT_SIZE_SMALL);
+
+	putstr_screen(85, 15, "To a", RGB16_LAPIS_CORE, FONT_SIZE_SMALL);
+	putstr_screen(75, 25, "computer", RGB16_LAPIS_CORE, FONT_SIZE_SMALL);
+
+	putstr_screen(205, 145, "To", RGB16_DEEP_CYAN, FONT_SIZE_SMALL);
+	putstr_screen(180, 155, "another", RGB16_DEEP_CYAN, FONT_SIZE_SMALL);
+	putstr_screen(185, 165, "G-Love", RGB16_DEEP_CYAN, FONT_SIZE_SMALL);
+
+	putstr_screen(140, 190, "To the", RGB16_GLACIER_DEEP, FONT_SIZE_SMALL);
+	putstr_screen(142, 200, "STAGE", RGB16_GLACIER_DEEP, FONT_SIZE_SMALL);
 	// print_touch_info(&g_last_touch);
 	// print_nav_info(RGB16_BLACK);
 }
 
 void		on_touch_on_comscreen()
 {
-	// print_color_touch_info(&g_last_touch);
-	// gc9a01_send_square(30, 160, g_last_touch.rgb565, 10);
+	// uint16_t	row = g_last_touch.x;
+	// uint16_t	col = g_last_touch.y;
+
+	// if (is_in_top_quarter(row, col))
+	// {
+
+	// }
+	// else if (is_in_right_quarter(row, col))
+	// {
+
+	// }
+	// else if (is_in_bottom_quarter(row, col))
+	// {
+
+	// }
+	// else if (is_in_left_quarter(row, col))
+	// {
+
+	// }
 }
