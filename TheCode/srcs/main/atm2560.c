@@ -3,7 +3,6 @@
 #include <avr/interrupt.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include <string.h>
 
 t_sensor_data_to_pc g_packet = {0};
 
@@ -11,7 +10,8 @@ static volatile uint8_t g_rx_buff[RX_BUFFER_SIZE];
 static volatile uint8_t g_rx_index = 0; //index used for writing in buffer
 static volatile uint8_t g_rx_pos = 0; //pos for reading buffer
 
-ISR(USART1_RX_vect)
+__attribute__((signal, used))
+void USART1_RX_vect(void)
 {
 	uint8_t data_byte = UDR1;
 	uint8_t next_index = (g_rx_index + 1) % RX_BUFFER_SIZE;
@@ -86,7 +86,7 @@ bool process_packet(uint8_t *byte, t_sensor_data *packet)
 
 			if (crc16_test == crc16_received) //crc is validated
 			{
-				memcpy(packet, buf, sizeof(t_sensor_data)); 
+				ft_memcpy(packet, buf, sizeof(t_sensor_data)); 
 				return (true);
 			}
 		}
@@ -123,46 +123,16 @@ int main_ATM2560()
 
 	while (1)
 	{
-		if (PIND & (1 << PIND7))
-		{
-			i2c_start();
-			i2c_write(I2C_ADDR_CST816D << 1 | 0);
-			i2c_write(0x01);
-			// i2c_read_ack();
-
-			i2c_start();
-			i2c_write((I2C_ADDR_CST816D << 1) | 1);
-
-			uint8_t action = i2c_read_ack();
-			uint8_t points = i2c_read_ack();
-			uint8_t x_high = i2c_read_ack();
-			uint8_t x_low = i2c_read_ack();
-			uint8_t y_high = i2c_read_ack();
-			uint8_t y_low = i2c_read_nack();
-
-			i2c_stop();
-
-			int x = ((x_high & 0x0F) << 8) | x_low;
-			int y = ((y_high & 0x0F) << 8) | y_low;
-
-			if (points > 0)
-			{
-				touch_x = (uint16_t)x;
-				touch_y = (uint16_t)y;
-				touch_action = action;
-			}
-		}
-
 		while (get_next_byte(&byte))
 		{
 			if (process_packet(&byte, &packet))
 			{
 				//complete packet with touch, crc and send
 				g_packet.magic = SENSOR_PACKET_MAGIC2;
-				memcpy(g_packet.sensorForce, packet.sensorForce, sizeof(packet.sensorForce));
-				memcpy(g_packet.sensorFlex, packet.sensorFlex, sizeof(packet.sensorFlex));
-				memcpy(g_packet.accel, packet.accel, sizeof(packet.accel));
-				memcpy(g_packet.gyro, packet.gyro, sizeof(packet.gyro));
+				ft_memcpy(g_packet.sensorForce, packet.sensorForce, sizeof(packet.sensorForce));
+				ft_memcpy(g_packet.sensorFlex, packet.sensorFlex, sizeof(packet.sensorFlex));
+				ft_memcpy(g_packet.accel, packet.accel, sizeof(packet.accel));
+				ft_memcpy(g_packet.gyro, packet.gyro, sizeof(packet.gyro));
 
 				g_packet.screen_x = touch_x;
 				g_packet.screen_y = touch_y;

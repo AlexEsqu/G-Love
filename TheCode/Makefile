@@ -53,7 +53,8 @@ SRCS2    = $(CODEDIR2)/main.c \
         	$(LIBDIR)/i2c.c \
         	$(LIBDIR)/spi.c \
         	$(LIBDIR)/uart.c  \
-			$(LIBDIR)/crc.c 
+			$(LIBDIR)/crc.c \
+			$(LIBDIR)/utils.c
 
 SRC_BOOT1 = srcs/boot/bridge_atm2561.c
 
