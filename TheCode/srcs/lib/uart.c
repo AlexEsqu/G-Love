@@ -129,13 +129,13 @@ uint8_t uart0_available(void) {
 #if defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__)
 
 // UART1
-void uart1_init(unsigned long baudrate)
+void uart1_init()
 {
     // Double speed mode
     UCSR1A = (1 << U2X1);
 
     // Set Baud Rate Register
-    UBRR1 = ((F_CPU + baudrate * 4) / (baudrate * 8) - 1);
+    UBRR1 = MYUBRR;
 
     // Enable Transmitter and Receiver
     UCSR1B = (1 << RXCIE1) | (1 << TXEN1) | (1 << RXEN1);

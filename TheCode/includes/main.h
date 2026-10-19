@@ -94,7 +94,7 @@ uint8_t     uart0_available(void);
 void 		uart0_print_int(int32_t num);
 void        uart0_print_float(float num);
 
-void 		uart1_init(unsigned long baudrate);
+void 		uart1_init();
 void 		uart1_tx(char c);
 char 		uart1_rx(void);
 void 		uart1_printstr(const char *str);

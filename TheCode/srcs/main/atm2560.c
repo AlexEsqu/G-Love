@@ -112,8 +112,8 @@ void setup()
 	i2c_init();
 
 	// uart_init
-	uart0_init(BAUDRATE);
-	uart1_init(BAUDRATE);
+	uart0_init();
+	uart1_init();
 
 	spi_init();
 	cst816d_init();
