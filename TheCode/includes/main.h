@@ -3,7 +3,6 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
-#include <avr/wdt.h>
 #include <stdint.h>
 #include <stddef.h>
 #include "led.h"
@@ -110,5 +109,12 @@ void	set_pin_as_input(volatile uint8_t* reg, uint8_t pin);
 void	set_pin_as_output(volatile uint8_t* reg, uint8_t pin);
 void	set_pin_high(volatile uint8_t* reg, uint8_t pin);
 void	set_pin_low(volatile uint8_t* reg, uint8_t pin);
+
+#endif
+// watchdog.c
+void        watchdog_disable(void);
+
+//utils.c
+void ft_memcpy(void *dest, const void *src, size_t n);
 
 #endif

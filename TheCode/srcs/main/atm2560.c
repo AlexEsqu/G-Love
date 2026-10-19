@@ -2,7 +2,6 @@
 #include <avr/interrupt.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include <string.h>
 
 t_sensor_data_to_pc g_packet = {0};
 
@@ -23,7 +22,8 @@ tft_touch_info_t	g_last_touch = {
 	.is_pending = 0,
 };
 
-ISR(USART1_RX_vect)
+__attribute__((signal, used))
+void USART1_RX_vect(void)
 {
 	uint8_t data_byte = UDR1;
 	uint8_t next_index = (g_rx_index + 1) % RX_BUFFER_SIZE;
@@ -98,7 +98,7 @@ bool process_packet(uint8_t *byte, t_sensor_data *packet)
 
 			if (crc16_test == crc16_received) //crc is validated
 			{
-				memcpy(packet, buf, sizeof(t_sensor_data));
+				ft_memcpy(packet, buf, sizeof(t_sensor_data)); 
 				return (true);
 			}
 		}
@@ -155,10 +155,10 @@ int main_ATM2560()
 			{
 				//complete packet with touch, crc and send
 				g_packet.magic = SENSOR_PACKET_MAGIC2;
-				memcpy(g_packet.sensorForce, packet.sensorForce, sizeof(packet.sensorForce));
-				memcpy(g_packet.sensorFlex, packet.sensorFlex, sizeof(packet.sensorFlex));
-				memcpy(g_packet.accel, packet.accel, sizeof(packet.accel));
-				memcpy(g_packet.gyro, packet.gyro, sizeof(packet.gyro));
+				ft_memcpy(g_packet.sensorForce, packet.sensorForce, sizeof(packet.sensorForce));
+				ft_memcpy(g_packet.sensorFlex, packet.sensorFlex, sizeof(packet.sensorFlex));
+				ft_memcpy(g_packet.accel, packet.accel, sizeof(packet.accel));
+				ft_memcpy(g_packet.gyro, packet.gyro, sizeof(packet.gyro));
 
 				g_packet.screen_x = touch_x;
 				g_packet.screen_y = touch_y;

@@ -35,7 +35,13 @@ void uart0_init(unsigned long baudrate) {
     UCSR0A = (1 << U2X0);
 
     // Enable Transmitter and Receiver
-    UCSR0B = (1 << TXEN0) | (1 << RXEN0) | (1 << RXCIE0);
+    UCSR0B = (1 << TXEN0) | (1 << RXEN0);
+
+    // Receive interrupt only on the 328P
+    // On the 2561 there is no USART0_RX_vect
+    #if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
+    UCSR0B |= (1 << RXCIE0);
+    #endif
 
     // 8 data bits, 1 stop bit, no parity
     UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);

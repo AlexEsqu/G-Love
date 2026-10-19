@@ -2,8 +2,7 @@
 
 int main()
 {
-	MCUSR = 0;
-    wdt_disable();
+	watchdog_disable();
 
 	// differente flag when compiling with avrgcc depending of mcu
 	#if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
