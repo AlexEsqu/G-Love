@@ -135,11 +135,34 @@ void led_effect(uint8_t finger, uint8_t color[3])
     }
 }
 
+// color chosen on the touchscreen, used instead of the color wheel once set
+static bool        g_use_chosen_color = false;
+static rgb_color_t g_chosen_color = {0, 0, 0};
+
+// set the color of the whole strip (RGB888: 0xRRGGBB, from the touchscreen)
+void led_set_color(uint32_t rgb888)
+{
+    g_chosen_color.red = (rgb888 >> 16) & 0xFF;
+    g_chosen_color.green = (rgb888 >> 8) & 0xFF;
+    g_chosen_color.blue = rgb888 & 0xFF;
+    g_use_chosen_color = true;
+}
+
 void led_spi()
 {
     static uint16_t color_cycle = 0; // hue of the first LED, kept between calls
     rgb_color_t colors[NUM_LEDS];
 
+    // a color was chosen on the touchscreen: the whole strip in that color
+    if (g_use_chosen_color)
+    {
+        for (uint16_t i = 0; i < NUM_LEDS; i++)
+            colors[i] = g_chosen_color;
+        spi_send_color(colors, NUM_LEDS, BRIGHTNESS);
+        return;
+    }
+
+    // otherwise: automatic color wheel
     for (uint16_t i = 0; i < NUM_LEDS; i++)
     {
         uint16_t hue = (color_cycle + (uint16_t)(180UL * i / NUM_LEDS)) % 180;

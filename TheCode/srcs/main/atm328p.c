@@ -67,6 +67,11 @@ static void process_directive(const glove_directive_t *directive, t_imu *imu_con
 	// mode and color, kept for the LEDs
 	g_directive = *directive;
 
+	// a tap on the color screen: the LEDs take the chosen color
+	// (directives sent from the other screens only carry the mode)
+	if (directive->current_mode == GLOVE_MODE_COLORSCREEN)
+		led_set_color(directive->current_color);
+
 	// IMU calibration asked on the IMU screen:
 	// reset + configuration + gyro bias again (imu_reset alone would erase the configuration)
 	if (directive->command == GLOVE_CMD_IMU_RESET)

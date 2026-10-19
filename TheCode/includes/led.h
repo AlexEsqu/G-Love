@@ -85,6 +85,7 @@ void        led_effect(uint8_t finger, uint8_t color[3]);
 bool        strip_flush(void);
 bool        strip_is_busy(void);
 rgb_color_t hsvToRgb(uint16_t h, uint8_t s, uint8_t v);
+void        led_set_color(uint32_t rgb888);
 uint8_t     qadd8(uint8_t a, uint8_t b);
 
 #endif

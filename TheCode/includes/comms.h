@@ -22,6 +22,10 @@ typedef struct __attribute__((packed)) s_sensor_data
 #define GLOVE_CMD_NONE			0
 #define GLOVE_CMD_IMU_RESET		1	// reset and calibrate the IMU again (glove must not move)
 
+// glove_directive_t.current_mode of the color screen
+// must stay equal to TFT_STATE_COLORSCREEN in touchscreen.h
+#define GLOVE_MODE_COLORSCREEN	1
+
 // atm2561 -> atm328P
 typedef struct __attribute__((packed)) s_glove_directive
 {
