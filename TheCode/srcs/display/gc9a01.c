@@ -119,7 +119,8 @@ void	gc9a01_send_square(uint8_t x, uint8_t y, uint16_t rgb256, uint16_t width)
 	gc9a01_send_command(GC9A01_MEM_WRITE);
 
 	gc9a01_start_parameter_sequence();
-	uint32_t	size = width * width * 4;
+	uint32_t side = 2u * width + 1u;
+	uint32_t size = side * side;
 	for (uint32_t i = 0; i < size; i++)
 	{
 		spi_send_data(rgb256 >> 8);

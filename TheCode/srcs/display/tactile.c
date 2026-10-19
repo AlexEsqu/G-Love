@@ -57,7 +57,7 @@ void	update_touch_info(uint16_t x, uint16_t y, uint16_t action)
 	g_last_touch.rgb565 = get_color_from_colorscreen(y, x);
 	g_last_touch.action = (uint8_t)action;
 	g_last_touch.last_action = last_action;
-	g_last_touch.has_displayed = 0;
+	g_last_touch.is_pending = 0;
 
 	if (action == TFT_ACTION_TAP)
 		g_screens[g_touchscreen_mode].on_touch_action();

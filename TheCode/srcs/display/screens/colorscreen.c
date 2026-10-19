@@ -17,15 +17,39 @@ static uint16_t hsv_to_565(uint8_t hue, uint8_t sat)
 
 	switch (section)
 	{
-		case 0: r = 255; g = rise; b = 0;   break;
-		case 1: r = fall; g = 255; b = 0;   break;
-		case 2: r = 0;   g = 255; b = rise; break;
-		case 3: r = 0;   g = fall; b = 255; break;
-		case 4: r = rise; g = 0;   b = 255; break;
-		default:r = 255; g = 0;   b = fall; break;
+		case 0:
+			r = 255;
+			g = rise;
+			b = 0;
+			break;
+		case 1:
+			r = fall;
+			g = 255;
+			b = 0;
+			break;
+		case 2:
+			r = 0;
+			g = 255;
+			b = rise;
+			break;
+		case 3:
+			r = 0;
+			g = fall;
+			b = 255;
+			break;
+		case 4:
+			r = rise;
+			g = 0;
+			b = 255;
+			break;
+		default:
+			r = 255;
+			g = 0;
+			b = fall;
+			break;
 	}
 
-	// Blend base hue with white at the center
+	// blend base hue with white at the center
 	r = 255 - (((uint16_t)(255 - r) * sat) / 255);
 	g = 255 - (((uint16_t)(255 - g) * sat) / 255);
 	b = 255 - (((uint16_t)(255 - b) * sat) / 255);
@@ -135,5 +159,6 @@ void		print_colorscreen_text(void)
 void		on_touch_on_colorscreen()
 {
 	print_color_touch_info(&g_last_touch);
+	gc9a01_send_square(30, 155, RGB16_BLACK, 12);
 	gc9a01_send_square(30, 155, g_last_touch.rgb565, 10);
 }
