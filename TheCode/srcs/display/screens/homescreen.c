@@ -45,7 +45,7 @@ uint16_t	get_color_from_homescreen(uint16_t row, uint16_t col)
 	}
 	else if (is_in_top_right_quarter(row, col))
 	{
-		return(is_in_mask(row, col, &homescreen_image) ? RGB16_GOLD: RGB16_ORANGE);
+		return(is_in_mask(row, col, &homescreen_image) ? RGB16_CYBER_GOLD: RGB16_PUMPKIN);
 	}
 	else if (is_in_bottom_right_quarter(row, col))
 	{
