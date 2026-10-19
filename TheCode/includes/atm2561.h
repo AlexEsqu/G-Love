@@ -7,7 +7,7 @@
 #define F_CPU 8000000UL
 #endif
 
-#define BAUDRATE 38400
+#define BAUDRATE 57600UL
 #define MYUBRR ((F_CPU + BAUDRATE * 4) / (BAUDRATE * 8) - 1)
 
 

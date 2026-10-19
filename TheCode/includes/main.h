@@ -73,15 +73,17 @@ void		spi_send_color(rgb_color_t *colors,
 				uint16_t number, uint16_t brightness);
 
 // uart.c
-void 		uart0_init(unsigned long baudrate);
+void 		uart0_init();
 void 		uart0_tx(char c);
 char 		uart0_rx(void);
 void 		uart0_printstr(const char *str);
 void 		uart0_print_10bit(uint32_t c);
 void        uart0_send_data(const uint8_t *data, size_t len);
 uint8_t     uart0_available(void);
+void 		uart0_print_int(int32_t num);
+void        uart0_print_float(float num);
 
-void 		uart1_init(unsigned long baudrate);
+void 		uart1_init();
 void 		uart1_tx(char c);
 char 		uart1_rx(void);
 void 		uart1_printstr(const char *str);
