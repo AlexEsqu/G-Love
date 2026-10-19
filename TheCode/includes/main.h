@@ -95,4 +95,7 @@ void        uart_init_test(void);
 uint8_t		ft_hex(uint8_t val);
 void 		ft_uart_print_hex(uint8_t c);
 
+//utils.c
+void ft_memcpy(void *dest, const void *src, size_t n);
+
 #endif

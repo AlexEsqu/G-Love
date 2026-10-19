@@ -45,7 +45,8 @@ SRCS1    = $(CODEDIR1)/main.c \
 			srcs/muxSelect/mux.c \
 			srcs/ledStrip/led.c \
 			srcs/ledStrip/led_utils.c \
-			srcs/imu/icm42688p.c
+			srcs/imu/icm42688p.c \
+			$(LIBDIR)/utils.c
 
 SRCS2    = $(CODEDIR2)/main.c \
 			$(CODEDIR2)/atm2560.c \
