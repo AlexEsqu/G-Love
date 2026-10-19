@@ -96,13 +96,39 @@ void	display_screen()
 
 	gc9a01_send_command(GC9A01_MEM_WRITE);
 	gc9a01_start_parameter_sequence();
-	for (uint16_t row = 0; row < TFT_HEIGHT; row++)
+	if (g_touchscreen_mode == TFT_STATE_COLORSCREEN)
 	{
-		for (uint16_t column = 0; column < TFT_WIDTH; column++)
+		static uint16_t block_colors[TFT_WIDTH / 4];
+		for (uint16_t row = 0; row < TFT_HEIGHT; row += 4)
 		{
-			uint16_t color = get_color_from_image_or_background(row, column);
-			spi_send_data(color >> 8);
-			spi_send_data(color & 0xFF);
+			for (uint16_t column = 0; column < TFT_WIDTH; column += 4)
+			{
+				block_colors[column >> 2] = get_color_from_colorscreen_fast(row, column);
+			}
+			for (uint8_t block_row = 0; block_row < 4; block_row++)
+			{
+				for (uint16_t column = 0; column < TFT_WIDTH; column += 4)
+				{
+					uint16_t color = block_colors[column >> 2];
+					for (uint8_t block_column = 0; block_column < 4; block_column++)
+					{
+						spi_send_data(color >> 8);
+						spi_send_data(color & 0xFF);
+					}
+				}
+			}
+		}
+	}
+	else
+	{
+		for (uint16_t row = 0; row < TFT_HEIGHT; row++)
+		{
+			for (uint16_t column = 0; column < TFT_WIDTH; column++)
+			{
+				uint16_t color = get_color_from_image_or_background(row, column);
+				spi_send_data(color >> 8);
+				spi_send_data(color & 0xFF);
+			}
 		}
 	}
 	gc9a01_end_parameter_sequence();
@@ -284,4 +310,3 @@ void		print_nav_info(uint16_t color)
 	putstr_screen(90, 210, "to go back", color, FONT_SIZE_SMALL);
 	putstr_screen(100, 220, "to menu", color, FONT_SIZE_SMALL);
 }
-

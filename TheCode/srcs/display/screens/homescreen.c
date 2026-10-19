@@ -35,24 +35,23 @@ static inline int	is_in_bottom_left_quarter(uint16_t row, uint16_t col)
 
 uint16_t	get_color_from_homescreen(uint16_t row, uint16_t col)
 {
-	uint16_t color = RGB16_ALIVE_AMBER;
 	if (is_homeframe(row, col))
 	{
-		color = RGB16_BLACK;
+		return(RGB16_BLACK);
 	}
 	else if (is_in_top_left_quarter(row, col))
 	{
-		color = RGB16_PLASMA_BURN;
+		return(is_in_mask(row, col, &homescreen_image) ? RGB16_ALIVE_AMBER : RGB16_PLASMA_BURN);
 	}
 	else if (is_in_top_right_quarter(row, col))
 	{
-		color = RGB16_FOREST_FLOOR;
+		return(is_in_mask(row, col, &homescreen_image) ? RGB16_ALIVE_AMBER : RGB16_PLASMA_BURN);
 	}
 	else if (is_in_bottom_right_quarter(row, col))
 	{
-		color = RGB16_CYBER_SAPPHIRE;
+		return(is_in_mask(row, col, &homescreen_image) ? RGB16_ALIVE_AMBER : RGB16_PLASMA_BURN);
 	}
-	return color;
+	return(is_in_mask(row, col, &homescreen_image) ? RGB16_ALIVE_AMBER : RGB16_PLASMA_BURN);
 }
 
 void		print_homescreen_text(void)
