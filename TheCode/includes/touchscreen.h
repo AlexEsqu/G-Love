@@ -287,6 +287,15 @@ void	cst816d_init();
 int		received_data_from_cst816d();
 void	onTouch();
 
+uint8_t	is_top_quarter_of_screen(uint16_t row, uint16_t col);
+uint8_t is_right_quarter_of_screen(uint16_t row, uint16_t col);
+uint8_t is_bottom_quarter_of_screen(uint16_t row, uint16_t col);
+uint8_t is_left_quarter_of_screen(uint16_t row, uint16_t col);
+uint8_t	is_in_top_left_of_screen(uint16_t row, uint16_t col);
+uint8_t	is_in_top_right_of_screen(uint16_t row, uint16_t col);
+uint8_t	is_in_bottom_left_of_screen(uint16_t row, uint16_t col);
+uint8_t	is_in_bottom_right_of_screen(uint16_t row, uint16_t col);
+
 void	touchscreen_read(touchscreen_data_t *data);
 
 void	touch_timer_init();

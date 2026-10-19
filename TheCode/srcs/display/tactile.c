@@ -16,6 +16,46 @@ void	cst816d_init()
 	set_pin_high(&TOUCH_GPIO_PORT, TOUCH_INT_PIN);
 }
 
+inline uint8_t	is_right_quarter_of_screen(uint16_t row, uint16_t col)
+{
+	return (row < col && (row + col) > 240);
+}
+
+inline uint8_t	is_bottom_quarter_of_screen(uint16_t row, uint16_t col)
+{
+	return (row > col && (row + col) > 240);
+}
+
+inline uint8_t	is_left_quarter_of_screen(uint16_t row, uint16_t col)
+{
+	return (row > col && (row + col) < 240);
+}
+
+inline uint8_t	is_top_quarter_of_screen(uint16_t row, uint16_t col)
+{
+	return (row < col && (row + col) < 240);
+}
+
+inline uint8_t	is_in_top_left_of_screen(uint16_t row, uint16_t col)
+{
+	return (col < 120 && row < 120);
+}
+
+inline uint8_t	is_in_top_right_of_screen(uint16_t row, uint16_t col)
+{
+	return (col >= 120 && row < 120);
+}
+
+inline uint8_t	is_in_bottom_right_of_screen(uint16_t row, uint16_t col)
+{
+	return (col < 120 && row >= 120);
+}
+
+inline uint8_t	is_in_bottom_left_of_screen(uint16_t row, uint16_t col)
+{
+	return (col >= 120 && row >= 120);
+}
+
 void	debug_touch_info()
 {
 	uart0_printstr("action: ");
