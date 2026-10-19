@@ -12,6 +12,13 @@ uint8_t				g_animation_frame = 0;
 
 void setup()
 {
+	// reset 328p
+	PORTC &= ~(1 << PORTC0);
+	DDRC  |=  (1 << DDC0);
+	_delay_ms(20);
+	DDRC  &= ~(1 << DDC0);
+	_delay_ms(50);
+
 	// i2c init
 	i2c_init();
 
@@ -22,9 +29,13 @@ void setup()
 	spi_init();
 	cst816d_init();
 	gc9a01_init();
+	
 	touch_timer_init();
 	enableTouchInterrupt();
+
 	display_screen();
+
+	SREG |= (1 << 7);
 }
 
 int main_ATM2560()

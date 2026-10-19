@@ -9,7 +9,7 @@ int main(void)
 {
     watchdog_disable();
 
-    uart0_init(BAUDRATE);
+    uart0_init();
 
     while(1)
     {

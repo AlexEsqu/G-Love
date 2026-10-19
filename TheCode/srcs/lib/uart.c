@@ -1,4 +1,53 @@
 #include "main.h"
+#include <avr/io.h>
+
+volatile char to_send[sizeof(t_sensor_data)];
+volatile uint8_t tx_index = 0;
+volatile uint8_t tx_busy = 0; // Protège le tampon pendant une émission
+
+// // Interruption de Réception (RX) - Vecteur 18 (USART_RX_vect)
+// __attribute__((signal, used)) void __vector_18(void)
+// {   
+//     // On lit UDR0 TOUT DE SUITE pour vider le matériel et éviter un débordement
+//     uint8_t received_char = UDR0; 
+
+//     // On ne traite la donnée que si l'envoi précédent est totalement achevé
+//     if (!tx_busy) 
+//     {
+//         to_send[0] = '[';
+//         to_send[1] = received_char;
+//         to_send[2] = ']';
+
+//         tx_busy = 1;
+//         tx_index = 0; // On commence par l'index 0 ('[')
+
+//         // CRUCIAL : On active l'interruption "Registre de données vide" (UDRIE0)
+//         // Cela va forcer le microcontrôleur à sauter immédiatement dans le __vector_20
+//         UCSR0B |= (1 << UDRIE0);
+//     }
+// }
+
+#if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
+// Interruption de Registre de Données Vide - Vecteur 19 (USART_UDRE_vect sur atmega328p)
+__attribute__((signal, used)) void __vector_19(void)
+{   
+    if (tx_index < g_len_packet)
+    {
+        // Écriture DIRECTE et instantanée dans le registre matériel (pas de fonction bloquante !)
+        UDR0 = ((const uint8_t *)&g_sensor)[tx_index];
+        tx_index++;
+    }
+    else
+    {
+        // Une fois les caractères chargés, on COUPE cette interruption.
+        UCSR0B &= ~(1 << UDRIE0);
+        
+        // On libère le tampon pour la prochaine réception
+        tx_busy = 0;
+        tx_index = 0;
+    }
+}
+#endif
 
 void uart_init_test(void)
 {
@@ -56,14 +105,14 @@ void uart0_tx(char c)
     UDR0 = c;
 }
 
-char uart0_rx(void)
-{
-    // Wait for data
-    while (!(UCSR0A & (1 << RXC0)))
-    {
-    }
-    return UDR0;
-}
+// char uart0_rx(void)
+// {
+//     // Wait for data
+//     // while (!(UCSR0A & (1 << RXC0)))
+//     // {
+//     // }
+//     return UDR0;
+// }
 
 void uart0_printstr(const char *str)
 {
@@ -210,17 +259,17 @@ void ft_uart_print_hex(uint8_t c)
     uart0_tx(ft_hex(c % 16));
 }
 
-/** USART Receive Complete interrupt service routine
- * Triggered when a new byte is received and stored in UDR0 (RXC0 flag set)*/
-#if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
-__attribute__ ((signal, __used__, externally_visible)) void USART_RX_vect(void)
-{
-    // Read the received byte from UDR0 to clear the RXC0 flag
-    char recu = UDR0; // Read the received byte from UDR0 to clear the RXC0 flag
+// /** USART Receive Complete interrupt service routine
+//  * Triggered when a new byte is received and stored in UDR0 (RXC0 flag set)*/
+// #if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
+// __attribute__ ((signal, __used__, externally_visible)) void USART_RX_vect(void)
+// {
+//     // Read the received byte from UDR0 to clear the RXC0 flag
+//     char recu = UDR0; // Read the received byte from UDR0 to clear the RXC0 flag
 
-    // Echo the received byte back to the sender
-    uart0_tx(recu);
+//     // Echo the received byte back to the sender
+//     uart0_tx(recu);
 
-    led_effect(recu - 48, 0); // Trigger LED effect on THUMB when a byte is received
-}
-#endif
+//     led_effect(recu - 48, 0); // Trigger LED effect on THUMB when a byte is received
+// }
+// #endif

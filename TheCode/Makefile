@@ -17,7 +17,7 @@ ALT_F_CPU    = 16000000UL
 
 # speed of the firmware UART (BAUDRATE in includes/atm2561.h and atm328p.h),
 # BAUDRATE1/2 above are only the bootloader speed used by avrdude
-SERIAL_BAUD = 38400
+SERIAL_BAUD = 57600
 
 NAME     = main
 NAME_BRIDGE = bridge
