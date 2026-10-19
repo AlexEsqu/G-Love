@@ -1,0 +1,47 @@
+#ifndef COMM_H
+#define COMM_H
+
+#define SENSOR_PACKET_MAGIC_SENSOR_FROM_328 0xA55A
+#define SENSOR_PACKET_MAGIC_ALL_DATA_FROM_2561 0xA55A
+#define SENSOR_PACKET_MAGIC_DIRECTIVE_TO_328 0xA55A
+
+typedef struct __attribute__((packed)) s_sensor_data_to_pc
+{
+    uint16_t			magic; //magic number to detect start of packet
+    uint16_t			sensorForce[5]; //fsr
+    uint16_t			sensorFlex[5]; //fsr
+    int16_t 			accel[3]; //imu
+    int16_t				gyro[3]; //imu
+    uint16_t			screen_y; //touchscreen y cordinate
+    uint16_t			screen_x; //touchscreen x cordinate
+    uint8_t				screen_action; //touchscreen: action= swipe left, swipe right, press etc...
+	uint16_t			crc16; // crc to protect and check data authenticity
+} t_sensor_data_to_pc;
+
+typedef struct __attribute__((packed)) s_sensor_data
+{
+    uint16_t magic; //magic number to detect start of packet
+    uint16_t sensorForce[5]; //fsr
+    uint16_t sensorFlex[5]; //fsr
+    int16_t  accel[3]; //imu
+    int16_t  gyro[3]; //imu
+    uint16_t crc16; // crc to protect and check data authenticity
+} t_sensor_data;
+
+typedef struct __attribute__((packed)) s_glove_directive
+{
+	uint16_t	magic; //magic number to detect start of packet
+	uint8_t		current_mode;
+	uint32_t	current_color;
+	uint16_t	crc16; // crc to protect and check data authenticity
+} glove_directive_t;
+
+extern glove_directive_t	g_love_directive;
+extern t_sensor_data_to_pc	g_packet_to_export;
+
+void	update_sensor_data();
+void	send_g_love_directive();
+bool	process_packet(uint8_t *byte, t_sensor_data *packet);
+bool	get_next_byte(uint8_t *byte);
+
+#endif

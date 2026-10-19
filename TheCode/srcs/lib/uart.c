@@ -136,6 +136,17 @@ char uart1_rx(void)
     return UDR1;
 }
 
+void uart1_send_data(const uint8_t *data, size_t len)
+{
+    if (!data || len == 0)
+        return;
+
+    while (len--)
+    {
+        uart1_tx(*data++);
+    }
+}
+
 void uart1_printstr(const char *str) {
 
 	while (*str != '\0')

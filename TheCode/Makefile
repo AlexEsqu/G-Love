@@ -79,6 +79,7 @@ SRCS2    = $(CODEDIR2)/main.c \
 			srcs/display/screens/flexscreen.c \
 			srcs/display/screens/comscreen.c \
 			srcs/display/screens/homescreen.c \
+			srcs/comms/comms.c \
 			$(LIBDIR)/utils.c \
 			$(LIBDIR)/watchdog.c
 

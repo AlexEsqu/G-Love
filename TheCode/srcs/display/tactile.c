@@ -110,6 +110,11 @@ void	update_touch_info(uint16_t x, uint16_t y, uint16_t action)
 		g_screens[g_touchscreen_mode].on_touch_action();
 	else if (action != last_action)
 		navigate_touchscreen();
+
+	g_packet_to_export.screen_x = x;
+	g_packet_to_export.screen_y = y;
+	g_packet_to_export.screen_action = action;
+	send_g_love_directive();
 }
 
 void	print_touch_info(tft_touch_info_t* touch_info)
