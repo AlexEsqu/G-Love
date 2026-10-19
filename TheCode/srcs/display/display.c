@@ -24,8 +24,8 @@ const tft_screen_info_t g_screens[5] = {
 		.on_touch_action = on_touch_on_imuscreen
 	},
 	[TFT_STATE_FLEXSCREEN] = {
-		.frames = { &hand1, &hand2 },
-		.frame_count = 2,
+		.frames = { NULL },
+		.frame_count = 0,
 		.get_background_color = get_color_from_flexscreen,
 		.print_screen_text = print_flexscreen_text,
 		.on_touch_action = on_touch_on_flexscreen,
@@ -39,6 +39,17 @@ const tft_screen_info_t g_screens[5] = {
 	},
 };
 
+uint8_t	is_in_mask(uint16_t row, uint16_t col, const very_packed_image_t* image)
+{
+	if (row > image->height || col > image->width)
+		return 0;
+
+	uint16_t stride = ((uint16_t)image->width + 7) >> 3;
+	uint32_t offset = (uint32_t)row * stride + (col >> 3);
+	uint8_t byte = pgm_read_byte_far((uintptr_t)image->pixels + offset);
+
+	return (byte & (uint8_t)(0x80 >> (col & 7))) ? 1 : 0;
+}
 
 uint16_t get_image_color(const packed_image_t *image, uint16_t row, uint16_t column)
 {
@@ -125,12 +136,22 @@ void	refresh_screen()
 	static uint8_t	last_mode = TFT_STATE_HOMESCREEN;
 	static uint32_t	last_full_refresh = 0;
 
+	// full refresh once in a while to remove bad pixels accumulating
+	if (last_full_refresh < 1000000UL)
+		last_full_refresh++;
+	else
+	{
+		last_full_refresh = 0;
+		display_screen();
+		g_screens[g_touchscreen_mode].print_screen_text();
+		return;
+	}
+
 	if (last_mode != g_touchscreen_mode)
 	{
 		display_screen();
 		last_mode = g_touchscreen_mode;
 	}
-	// if there are frames
 	else if (g_screens[g_touchscreen_mode].frame_count >= g_animation_frame)
 	{
 		static uint8_t	last_frame = 0;
@@ -140,15 +161,6 @@ void	refresh_screen()
 			last_frame = g_animation_frame;
 		}
 	}
-
-	// full refresh once in a while to remove bad pixels accumulating
-	if (last_full_refresh < 10000)
-		last_full_refresh++;
-	else
-	{
-		display_screen();
-	}
-
 	g_screens[g_touchscreen_mode].print_screen_text();
 }
 

@@ -1,6 +1,7 @@
 /*
- * png2h4 - convert a PNG into a 4-bit-per-pixel C header (one nibble per pixel)
- *          with a 16-entry palette: index 0 = transparent, indices 1..15 = colors.
+ * png2h4 - convert a PNG into a packed C header.
+ *          The default is 4 bits per pixel with a 16-entry palette; -m 1
+ *          emits a two-color, one-bit-per-pixel monochrome image.
  *
  * Self-contained: includes its own PNG/zlib decoder (no libpng needed).
  * Supported PNGs: all color types (gray, RGB, palette, gray+alpha, RGBA),
@@ -13,11 +14,13 @@
  * otherwise the image is quantized to 15 colors with median cut. Colors are
  * sorted dark -> light into indices 1..15.
  *
- * Packing: 2 pixels per byte, left pixel in the HIGH nibble. Each row is padded
- * to a whole byte (stride = (width + 1) / 2).
+ * Packing: 4 bpp uses 2 pixels per byte, left pixel in the HIGH nibble.
+ * 1 bpp uses 8 pixels per byte, left pixel in the HIGH bit. Each row is
+ * padded to a whole byte.
  *
- * Output: a shared image4_t typedef (guarded by IMAGE4_T_DEFINED, so several
- * generated headers can be included together) and one instance per image:
+ * Output: a shared image4_t typedef for 4 bpp (or image1_t for 1 bpp),
+ * guarded so several generated headers can be included together, and one
+ * instance per image:
  *     typedef struct {
  *         uint16_t width, height;
  *         uint32_t total_pixels;
@@ -26,8 +29,10 @@
  *     } image4_t;
  *
  * Build:  gcc -O2 -Wall -o png2h4 png2h4.c
- * Usage:  png2h4 [-n name] [-p] [-a alpha_threshold] [-t RRGGBB] in.png [out.h]
+ * Usage:  png2h4 [-m 1|4] [-n name] [-p] [-a alpha_threshold] [-b threshold]
+ *                 [-t RRGGBB] in.png [out.h]
  *           -p  place data in AVR PROGMEM
+ *           -b  grayscale threshold for 1 bpp output (default 128)
  */
 #include <ctype.h>
 #include <stdint.h>
@@ -465,23 +470,36 @@ static uint16_t rgb565(rgb_t c) { return (uint16_t)(((c.r & 0xF8) << 8) | ((c.g 
 
 static void usage(const char *a0)
 {
-    fprintf(stderr, "Usage: %s [-n name] [-p] [-a alpha_threshold] [-t RRGGBB] in.png [out.h]\n"
+    fprintf(stderr, "Usage: %s [-m 1|4] [-n name] [-p] [-a alpha_threshold] [-b threshold] [-t RRGGBB] in.png [out.h]\n"
+                    "  -m  output format: 4 (default, palette) or 1 (monochrome)\n"
                     "  -n  C identifier base name (default: image)\n"
                     "  -p  place data in AVR PROGMEM\n"
                     "  -a  alpha below this (0-255) is transparent (default 128)\n"
+                    "  -b  luminance threshold for 1 bpp output (default 128)\n"
                     "  -t  color key (RRGGBB) treated as transparent\n", a0);
 }
 
 int main(int argc, char **argv)
 {
     const char *name = "image", *in = NULL, *out = NULL;
-    int progmem = 0, athr = 128, have_key = 0;
+    int progmem = 0, athr = 128, bthr = 128, mode = 4, have_key = 0;
     rgb_t key = {0, 0, 0};
 
     for (int i = 1; i < argc; i++) {
-        if (!strcmp(argv[i], "-n") && i + 1 < argc) name = argv[++i];
+        if (!strcmp(argv[i], "-m") && i + 1 < argc) {
+            mode = atoi(argv[++i]);
+            if (mode != 1 && mode != 4) { usage(argv[0]); return 1; }
+        }
+        else if (!strcmp(argv[i], "-n") && i + 1 < argc) name = argv[++i];
         else if (!strcmp(argv[i], "-p")) progmem = 1;
-        else if (!strcmp(argv[i], "-a") && i + 1 < argc) athr = atoi(argv[++i]);
+        else if (!strcmp(argv[i], "-a") && i + 1 < argc) {
+            athr = atoi(argv[++i]);
+            if (athr < 0 || athr > 255) { usage(argv[0]); return 1; }
+        }
+        else if (!strcmp(argv[i], "-b") && i + 1 < argc) {
+            bthr = atoi(argv[++i]);
+            if (bthr < 0 || bthr > 255) { usage(argv[0]); return 1; }
+        }
         else if (!strcmp(argv[i], "-t") && i + 1 < argc) {
             const char *s = argv[++i];
             unsigned v;
@@ -510,6 +528,57 @@ int main(int argc, char **argv)
                 (have_key && px[i].r == key.r && px[i].g == key.g && px[i].b == key.b);
         opaque[i] = !t;
         if (!t) op[nop++] = (rgb_t){px[i].r, px[i].g, px[i].b};
+    }
+
+    if (mode == 1) {
+        size_t stride = ((size_t)w + 7) / 8, nbytes = stride * (size_t)h;
+        uint8_t *packed = calloc(nbytes, 1);
+        if (!packed) { fprintf(stderr, "out of memory\n"); free(px); free(opaque); free(op); return 1; }
+        for (int y = 0; y < h; y++) {
+            for (int x = 0; x < w; x++) {
+                size_t i = (size_t)y * (size_t)w + (size_t)x;
+                int l = luma((rgb_t){px[i].r, px[i].g, px[i].b}) / 256;
+                if (opaque[i] && l >= bthr)
+                    packed[(size_t)y * stride + (size_t)x / 8] |= (uint8_t)(0x80 >> (x & 7));
+            }
+        }
+
+        char id[128], up[128];
+        snprintf(id, sizeof id, "%s", name);
+        for (char *s = id; *s; s++) if (!isalnum((unsigned char)*s)) *s = '_';
+        size_t k = 0;
+        for (; id[k]; k++) up[k] = (char)toupper((unsigned char)id[k]);
+        up[k] = '\0';
+
+        FILE *f = out ? fopen(out, "w") : stdout;
+        if (!f) { fprintf(stderr, "Cannot write %s\n", out); free(px); free(opaque); free(op); free(packed); return 1; }
+        const char *attr = progmem ? " PROGMEM" : "";
+        fprintf(f, "/* Generated by png2h4 - %dx%d, 1 bpp, %zu bytes.\n"
+                   " * Monochrome luminance threshold: %d. Left pixel is the high bit. */\n",
+                w, h, nbytes, bthr);
+        fprintf(f, "#ifndef %s_H\n#define %s_H\n\n#include <stdint.h>\n", up, up);
+        if (progmem) fprintf(f, "#include <avr/pgmspace.h>\n");
+        fprintf(f, "\n#ifndef IMAGE1_T_DEFINED\n#define IMAGE1_T_DEFINED\n"
+                   "typedef struct {\n"
+                   "    uint16_t width;\n"
+                   "    uint16_t height;\n"
+                   "    uint32_t total_pixels;\n"
+                   "    uint16_t palette[2];       /* RGB565: [0] black, [1] white */\n"
+                   "    const uint8_t *pixels;      /* 1 bpp, MSB first, rows padded to bytes */\n"
+                   "} image1_t;\n#endif\n");
+        fprintf(f, "\n#define %s_WIDTH %d\n#define %s_HEIGHT %d\n#define %s_STRIDE %zu\n\n",
+                up, w, up, h, up, stride);
+        fprintf(f, "static const uint8_t %s_data[%zu]%s = {\n    ", id, nbytes, attr);
+        for (size_t i = 0; i < nbytes; i++) {
+            fprintf(f, "0x%02X%s", packed[i], i + 1 < nbytes ? ((i + 1) % stride == 0 ? ",\n    " : ", ") : "");
+        }
+        fprintf(f, "\n};\n\nstatic const image1_t %s%s = {\n"
+                   "    %s_WIDTH, %s_HEIGHT, %zuUL, { 0x0000, 0xFFFF }, %s_data\n"
+                   "};\n\n#endif /* %s_H */\n", id, attr, up, up, total, id, up);
+        if (out) fclose(f);
+        fprintf(stderr, "%dx%d -> %zu bytes, 1 bpp\n", w, h, nbytes);
+        free(px); free(opaque); free(op); free(packed);
+        return 0;
     }
 
     /* exact palette if <= 15 distinct opaque colors, otherwise median cut */

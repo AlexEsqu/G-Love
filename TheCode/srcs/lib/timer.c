@@ -66,8 +66,6 @@ void	enableTouchInterrupt()
 void	launchTouchDebounce()
 {
 	disableTouchInterrupt();
-
-	uart0_printstr("registred");
 	g_touch_debounce = 1;
 
 	// set COMA value to when debounce is over
@@ -91,7 +89,6 @@ void	stopTouchDebounce()
 
 void	concludeTouchDebounce()
 {
-
 	onTouch();
 	stopTouchDebounce();
 }

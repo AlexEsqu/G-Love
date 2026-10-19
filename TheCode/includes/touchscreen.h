@@ -52,6 +52,13 @@ typedef struct {
 } packed_image_t;
 
 typedef struct {
+	uint16_t width;
+	uint16_t height;
+	uint32_t total_pixels;
+	const uint8_t* pixels;
+} very_packed_image_t;
+
+typedef struct {
 	const packed_image_t*	frames[2];
 	const uint8_t			frame_count;
 	uint16_t				(*get_background_color)(uint16_t, uint16_t);
@@ -80,6 +87,7 @@ typedef struct {
 
 #include "images/hand.h"
 #include "images/font.h"
+#include "images/flexscreen.h"
 
 
 typedef enum {
@@ -212,6 +220,7 @@ uint32_t	rgb565_to_rgb888(uint16_t rgb565);
 void		display_screen();
 void		refresh_screen();
 int			is_screen_frame(int16_t x, int16_t y);
+uint8_t		is_in_mask(uint16_t row, uint16_t col, const very_packed_image_t* image);
 uint16_t	putchar_screen(uint16_t x, uint16_t y, char c, uint16_t font_color, tft_font_size_t font_size);
 uint16_t	putstr_screen(uint16_t x, uint16_t y, const char *str, uint16_t font_color, tft_font_size_t font_size);
 uint16_t	putfloat_screen(uint16_t x, uint16_t y, float nbr, uint16_t font_color, tft_font_size_t font_size);

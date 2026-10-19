@@ -55,7 +55,6 @@ void	update_touch_info(uint16_t x, uint16_t y, uint16_t action)
 	g_last_touch.x = x;
 	g_last_touch.y = y;
 	g_last_touch.rgb565 = get_color_from_colorscreen(y, x);
-	g_last_touch.rgb888 = rgb565_to_rgb888(g_last_touch.rgb565);
 	g_last_touch.action = (uint8_t)action;
 	g_last_touch.last_action = last_action;
 	g_last_touch.has_displayed = 0;

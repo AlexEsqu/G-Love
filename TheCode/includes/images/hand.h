@@ -1,8 +1,6 @@
 #ifndef IMAGE_HAND_H
 #define IMAGE_HAND_H
 
-#define IMAGE_HAND1_WIDTH       82
-#define IMAGE_HAND1_HEIGHT      100
 #define IMAGE_HAND1_STRIDE      41
 #define IMAGE_HAND1_TRANSPARENT 0
 
@@ -112,8 +110,8 @@ static const uint8_t hand1_data[4100]  __attribute__((section(".image_data"))) =
 static const packed_image_t hand1 = {
 	70,
 	90,
-    IMAGE_HAND1_WIDTH,
-    IMAGE_HAND1_HEIGHT,
+    82,
+    100,
     8200UL,
     {
         0x0000, 0x54C1, 0x54E1, 0xED22, 0x0000, 0x0000, 0x0000, 0x0000,
@@ -226,16 +224,14 @@ static const uint8_t hand2_data[4100]  __attribute__((section(".image_data"))) =
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x22, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 };
 
-#define IMAGE_HAND2_WIDTH       82
-#define IMAGE_HAND2_HEIGHT      100
 #define IMAGE_HAND2_STRIDE      41
 #define IMAGE_HAND2_TRANSPARENT 0
 
 static const packed_image_t hand2 = {
 	70,
 	90,
-    IMAGE_HAND2_WIDTH,
-    IMAGE_HAND2_HEIGHT,
+    82,
+    100,
     8200UL,
     {
         0x0000, 0x54C1, 0x54C1, 0x54C1, 0x54E1, 0x54C1, 0x54C1, 0x5CE1,
