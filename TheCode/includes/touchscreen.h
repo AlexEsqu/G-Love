@@ -12,13 +12,16 @@
 #define TFT_CHUNK_COUNT 14400UL
 #define TFT_FRAME 12500UL
 
-#define SLIDE_UP 0x01
-#define SLIDE_DOWN 0x02
-#define SLIDE_LEFT 0x03
-#define SLIDE_RIGHT 0x04
-#define SINGLE_CLICK 0x05
-#define DOUBLE_CLICK 0x0B
-#define LONG_PRESS 0x0C
+typedef enum {
+	TFT_ACTION_NONE = 0x00,
+	TFT_ACTION_UP = 0x01,
+	TFT_ACTION_DOWN = 0x02,
+	TFT_ACTION_LEFT = 0x03,
+	TFT_ACTION_RIGHT = 0x04,
+	TFT_ACTION_SINGLE_TAP = 0x05,
+	TFT_ACTION_DOUBLE_TAP = 0x0B,
+	TFT_ACTION_LONG_TAP = 0x0C,
+} tft_action_t ;
 
 typedef struct touchscreen_data_s {
     uint16_t x;
@@ -65,15 +68,6 @@ typedef struct {
 	void					(*print_screen_text)(void);
 	void					(*on_touch_action)(void);
 } tft_screen_info_t;
-
-typedef enum {
-	TFT_ACTION_TAP,
-	TFT_ACTION_LEFT,
-	TFT_ACTION_UP,
-	TFT_ACTION_RIGHT,
-	TFT_ACTION_DOWN,
-	TFT_ACTION_NONE,
-} tft_action_t ;
 
 typedef struct {
 	uint16_t		x;

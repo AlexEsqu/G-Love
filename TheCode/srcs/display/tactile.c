@@ -75,7 +75,7 @@ void	debug_touch_info()
 		uart0_printstr("swipe right\r\n");
 	else if (g_last_touch.action == TFT_ACTION_LEFT)
 		uart0_printstr("swipe left\r\n");
-	else if (g_last_touch.action == TFT_ACTION_TAP)
+	else if (g_last_touch.action == TFT_ACTION_SINGLE_TAP)
 		uart0_printstr("tap\r\n");
 	else
 		uart0_printstr("autre action\r\n");
@@ -103,7 +103,9 @@ void	update_touch_info(uint16_t x, uint16_t y, uint16_t action)
 	g_last_touch.last_action = last_action;
 	g_last_touch.is_pending = 0;
 
-	if (action == TFT_ACTION_TAP)
+	if (action == TFT_ACTION_SINGLE_TAP
+		|| action == TFT_ACTION_DOUBLE_TAP
+		|| action == TFT_ACTION_LONG_TAP)
 		g_screens[g_touchscreen_mode].on_touch_action();
 	else if (action != last_action)
 		navigate_touchscreen();
