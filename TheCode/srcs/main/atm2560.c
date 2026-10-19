@@ -24,13 +24,6 @@ void setup()
 	gc9a01_init();
 	touch_timer_init();
 	enableTouchInterrupt();
-
-	// pin 7 en input
-	DDRD &= ~(1 << DDD7);
-	// pullup
-	PORTD |= (1 << PORTD7);
-
-	gc9a01_fill_screen(RGB16_BLUE);
 	display_screen();
 }
 
