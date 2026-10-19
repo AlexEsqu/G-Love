@@ -12,12 +12,16 @@
     #define SPI_SCK   DDB1
     #define SPI_SS    DDB0
 	#include "atm2560.h"
+	#include "touchscreen.h"
+	#include "comms.h"
 #elif defined(__AVR_ATmega2561__)
     #define SPI_DDR   DDRB
     #define SPI_MOSI  DDB2
     #define SPI_SCK   DDB1
     #define SPI_SS    DDB0
 	#include "atm2561.h"
+	#include "touchscreen.h"
+	#include "comms.h"
 #elif defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
     #define SPI_DDR   DDRB
     #define SPI_MOSI  DDB3
@@ -29,8 +33,7 @@
 int main_ATM2560();
 int main_ATM328P();
 
-#include "touchscreen.h"
-#include "comms.h"
+
 #include "led.h"
 
 #define I2C_ADDR_CST816D 0x15 // tactile driver address
