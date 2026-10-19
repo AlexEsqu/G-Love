@@ -155,8 +155,9 @@ void	onTouch()
 	(void)x_high;
 	(void)y_high;
 
-	uint16_t x = x_low;
-	uint16_t y = y_low;
+	// reversing cuz we be rotating screen from assumed position
+	uint16_t x = 239 - x_low;
+	uint16_t y = 239 - y_low;
 
 	if (points > 0)
 		update_touch_info(x, y, action);

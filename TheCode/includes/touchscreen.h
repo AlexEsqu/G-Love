@@ -300,7 +300,7 @@ void		on_touch_on_comscreen();
 
 void		print_nav_info(uint16_t color);
 
-#define GC9A01_INIT_SEQUENCE_LEN 51
+#define GC9A01_INIT_SEQUENCE_LEN 54
 
 extern const gc9a01_sequence_t gc9a01_init_sequence[GC9A01_INIT_SEQUENCE_LEN];
 
