@@ -41,17 +41,17 @@ uint16_t	get_color_from_homescreen(uint16_t row, uint16_t col)
 	}
 	else if (is_in_top_left_quarter(row, col))
 	{
-		return(is_in_mask(row, col, &homescreen_image) ? RGB16_ALIVE_AMBER : RGB16_PLASMA_BURN);
+		return(is_in_mask(row, col, &homescreen_image) ? RGB16_LAPIS_CORE : RGB16_LAPIS_SHADOW);
 	}
 	else if (is_in_top_right_quarter(row, col))
 	{
-		return(is_in_mask(row, col, &homescreen_image) ? RGB16_ALIVE_AMBER : RGB16_PLASMA_BURN);
+		return(is_in_mask(row, col, &homescreen_image) ? RGB16_GOLD: RGB16_ORANGE);
 	}
 	else if (is_in_bottom_right_quarter(row, col))
 	{
-		return(is_in_mask(row, col, &homescreen_image) ? RGB16_ALIVE_AMBER : RGB16_PLASMA_BURN);
+		return(is_in_mask(row, col, &homescreen_image) ? RGB16_FLAME_CORE : RGB16_EMBER_GLOW);
 	}
-	return(is_in_mask(row, col, &homescreen_image) ? RGB16_ALIVE_AMBER : RGB16_PLASMA_BURN);
+	return(is_in_mask(row, col, &homescreen_image) ? RGB16_LASER_ORCHID : RGB16_CYBER_PULSE);
 }
 
 void		print_homescreen_text(void)
@@ -61,9 +61,8 @@ void		print_homescreen_text(void)
 	putstr_screen(40, 130, "Flex Mode", RGB16_WHITE, FONT_SIZE_SMALL);
 	putstr_screen(150, 130, "Color Mode", RGB16_WHITE, FONT_SIZE_SMALL);
 
-	print_touch_info(&g_last_touch);
+	// print_touch_info(&g_last_touch);
 }
-
 
 void		on_touch_on_homescreen()
 {

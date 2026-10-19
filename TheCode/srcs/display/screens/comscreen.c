@@ -12,9 +12,7 @@ static int is_x_spoke(uint16_t row, uint16_t col)
 
 static int is_comframe(uint16_t row, uint16_t col)
 {
-	int16_t y = (int16_t)col - 120;
-	int16_t x = (int16_t)row - 120;
-	return is_screen_frame(x, y) || is_x_spoke(row, col);
+	return is_x_spoke(row, col);
 }
 
 static inline int is_in_top_quarter(uint16_t row, uint16_t col)
@@ -43,7 +41,7 @@ uint16_t get_color_from_comscreen(uint16_t row, uint16_t col)
 
 	if (is_comframe(row, col))
 	{
-		color = RGB16_GREEN; // X-spokes and outer border
+		color = RGB16_BLACK; // X-spokes and outer border
 	}
 	else if (is_in_top_quarter(row, col))
 	{
