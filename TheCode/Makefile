@@ -16,6 +16,10 @@ BAUDRATE3 = 115200
 PORT3     = /dev/ttyACM0
 ALT_F_CPU    = 16000000UL
 
+# speed of the firmware UART (BAUDRATE in includes/atm2561.h and atm328p.h),
+# BAUDRATE1/2 above are only the bootloader speed used by avrdude
+SERIAL_BAUD = 38400
+
 NAME     = main
 NAME_BRIDGE = bridge
 NAME_TEST 	= test
@@ -33,7 +37,7 @@ HEX_BOOT = ${NAME_BRIDGE}_mega.hex
 BIN_TEST = ${NAME_TEST}_mega.bin
 HEX_TEST = ${NAME_TEST}_mega.hex
 
-CC       = avr-gcc -Wextra -Werror -Wall -o2
+CC       = avr-gcc -Wextra -Werror -Wall -MMD -MP
 OBJCOPY  = avr-objcopy
 
 OBJDIR   = objects
@@ -74,22 +78,26 @@ SRCS2    = $(CODEDIR2)/main.c \
 			srcs/display/screens/colorscreen.c \
 			srcs/display/screens/flexscreen.c \
 			srcs/display/screens/comscreen.c \
-			srcs/display/screens/homescreen.c
-			$(LIBDIR)/crc.c \
+			srcs/display/screens/homescreen.c \
 			$(LIBDIR)/utils.c \
 			$(LIBDIR)/watchdog.c
 
-SRC_BOOT1 = srcs/boot/bridge_atm2561.c
+SRC_BOOT1 = srcs/boot/bridge_atm2561.c \
+			srcs/lib/watchdog.c
 
 SRC_TEST = srcs/testing/uart_test.c \
 			srcs/lib/uart.c \
-			srcs/lib/i2c.c
+			srcs/lib/i2c.c \
+			srcs/lib/watchdog.c
 
 OBJS1      = $(SRCS1:%.c=$(OBJDIR1)/%_uno.o)
 OBJS2      = $(SRCS2:%.c=$(OBJDIR2)/%_mega.o)
 OBJS3	   = $(SRCS2:%.c=$(OBJDIR3)/%_arduinomega.o)
 OBJS_BOOT1 = $(SRC_BOOT1:%.c=$(OBJDIR2)/%_mega.o)
 OBJS_TEST  = $(SRC_TEST:%.c=$(OBJDIR2)/%_mega.o)
+
+DEPS       = $(OBJS1:.o=.d) $(OBJS2:.o=.d) $(OBJS3:.o=.d) $(OBJS_BOOT1:.o=.d) $(OBJS_TEST:.o=.d)
+-include $(DEPS)
 
 # for UNO / atmega328P
 $(OBJDIR1)/%_uno.o: %.c
@@ -116,12 +124,14 @@ ${BIN1}: ${OBJS1}
 ${BIN2}: ${OBJS2}
 	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${OBJS2} -o ${BIN2}
 	${OBJCOPY} -O ihex ${BIN2} ${HEX2}
-	avrdude -p ${DEVICE2} -c urclock -P ${PORT2} -b ${BAUDRATE2} -v -U flash:w:${HEX2}:i
 
-mega: ${OBJS2}
-	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} -DPROTO=1 ${OBJS2} -o ${BIN2}
-	${OBJCOPY} -O ihex ${BIN2} ${HEX2}
-	avrdude -p ${DEVICE2} -c urclock -P ${PORT2} -b ${BAUDRATE2} -D -v -U flash:w:${HEX2}:i
+# flash the atm328P (through the bridge: make bridge first)
+uno: ${BIN1}
+	avrdude -p ${DEVICE1} -c urclock -P ${PORT1} -b ${BAUDRATE1} -x delay=1500 -v -U flash:w:${HEX1}:i
+
+# flash the atm2561
+mega: ${BIN2}
+	avrdude -p ${DEVICE2} -c urclock -P ${PORT2} -b ${BAUDRATE2} -v -U flash:w:${HEX2}:i
 
 megaarduino: ${OBJS3}
 	${CC} -Os -mmcu=${DEVICE3} -DF_CPU=${ALT_F_CPU} ${OBJS3} -o ${BIN3}
@@ -130,6 +140,14 @@ megaarduino: ${OBJS3}
 
 mega_screen:	megaarduino
 				screen ${PORT3} ${BAUDRATE3}
+
+# read the PC port
+screen:
+	screen ${PORT2} ${SERIAL_BAUD}
+
+# read the PC port in hexadecimal (binary packets)
+hexdump:
+	(stty ${SERIAL_BAUD} raw -echo; hexdump -C) < ${PORT2}
 
 bridge: ${OBJS_BOOT1}
 	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${OBJS_BOOT1} -o ${BIN_BOOT}
@@ -142,10 +160,12 @@ uarttest: ${OBJS_TEST}
 	avrdude -p ${DEVICE2} -c urclock -P ${PORT2} -b ${BAUDRATE2} -v -U flash:w:${HEX_TEST}:i
 
 clean:
-	rm -f ${BIN1} ${HEX1} ${BIN2} ${BIN3} ${HEX2} ${HEX3} ${HEX_BOOT} ${BIN_BOOT} ${OBJS1} ${OBJS2} ${OBJ3} ${OBJS_BOOT1}
+	rm -f ${BIN1} ${HEX1} ${BIN2} ${HEX2} ${BIN3} ${HEX3} \
+		${BIN_BOOT} ${HEX_BOOT} ${BIN_TEST} ${HEX_TEST}
+	rm -rf ${OBJDIR}
 
 fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re uno mega
+.PHONY: all clean fclean re uno mega megaarduino mega_screen bridge uarttest screen hexdump

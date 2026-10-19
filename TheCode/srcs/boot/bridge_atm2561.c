@@ -3,7 +3,9 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <stdint.h>
-#include <avr/wdt.h>
+
+// watchdog.c (main.h is not included: its BAUDRATE would replace the 57600 below)
+void watchdog_disable(void);
 
 #define BAUDRATE      57600UL
 #define MYUBRR  ((F_CPU + BAUDRATE * 4) / (BAUDRATE * 8) - 1)
@@ -35,8 +37,7 @@ void trigger_reset_328p(void) {
 }
 
 int main(void) {
-    MCUSR = 0;
-    wdt_disable();
+    watchdog_disable();
     
     uart_bridge_init();
     trigger_reset_328p(); // restart atm328p

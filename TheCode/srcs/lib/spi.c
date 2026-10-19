@@ -8,12 +8,10 @@ void spi_init()
     SPI_DDR |= (1 << SPI_MOSI) | (1 << SPI_SCK) | (1 << SPI_SS);
 
     // Enable SPI, Master, set clock rate fck/16
+    // No SPIE here: spi_send_data() waits for SPIF, the SPI ISR would clear it
+    // and spi_send_data() would wait forever (328P stuck in led_spi()).
+    // strip_flush() enables SPIE itself for interrupt-driven LED transfers.
     SPCR = (1 << SPE) | (1 << MSTR) | (1 << SPR0);
-
-	// Enable SPI interrupt on ATMEGA 328 ONLY (otherwise fucks touchscreen cmd)
-	#if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
-		SPCR |= (1 << SPIE);
-	#endif
 }
 
 uint8_t spi_send_data(uint8_t data)
