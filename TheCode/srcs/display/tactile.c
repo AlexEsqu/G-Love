@@ -66,23 +66,23 @@ inline uint8_t	is_in_bottom_left_of_screen(uint16_t row, uint16_t col)
 void	debug_touch_info()
 {
 	uart0_printstr("action: ");
-	uart0_print_10bit(g_last_touch.action);
-	if (g_last_touch.action == TFT_ACTION_UP)
+	uart0_print_10bit(g_packet_to_export.last_touch.action);
+	if (g_packet_to_export.last_touch.action == TFT_ACTION_UP)
 		uart0_printstr("swipe up\r\n");
-	else if (g_last_touch.action == TFT_ACTION_DOWN)
+	else if (g_packet_to_export.last_touch.action == TFT_ACTION_DOWN)
 		uart0_printstr("swipe down\r\n");
-	else if (g_last_touch.action == TFT_ACTION_RIGHT)
+	else if (g_packet_to_export.last_touch.action == TFT_ACTION_RIGHT)
 		uart0_printstr("swipe right\r\n");
-	else if (g_last_touch.action == TFT_ACTION_LEFT)
+	else if (g_packet_to_export.last_touch.action == TFT_ACTION_LEFT)
 		uart0_printstr("swipe left\r\n");
-	else if (g_last_touch.action == TFT_ACTION_SINGLE_TAP)
+	else if (g_packet_to_export.last_touch.action == TFT_ACTION_SINGLE_TAP)
 		uart0_printstr("tap\r\n");
 	else
 		uart0_printstr("autre action\r\n");
 	uart0_printstr("Toucher detecte ! X: ");
-	uart0_print_10bit(g_last_touch.x);
+	uart0_print_10bit(g_packet_to_export.last_touch.x);
 	uart0_printstr(" | Y: ");
-	uart0_print_10bit(g_last_touch.y);
+	uart0_print_10bit(g_packet_to_export.last_touch.y);
 	uart0_printstr("\r\n");
 }
 
@@ -94,14 +94,13 @@ void	navigate_touchscreen()
 
 void	update_touch_info(uint16_t x, uint16_t y, uint16_t action)
 {
-	uint8_t	last_action = g_last_touch.last_action;
-
-	g_last_touch.x = x;
-	g_last_touch.y = y;
-	g_last_touch.rgb565 = get_color_from_colorscreen(y, x);
-	g_last_touch.action = (uint8_t)action;
-	g_last_touch.last_action = last_action;
-	g_last_touch.is_pending = 0;
+	uint8_t	last_action = g_packet_to_export.last_touch.action;
+	g_packet_to_export.last_touch.x = x;
+	g_packet_to_export.last_touch.y = y;
+	g_packet_to_export.last_touch.rgb565 = get_color_from_colorscreen(y, x);
+	g_packet_to_export.last_touch.action = (uint8_t)action;
+	g_packet_to_export.last_touch.last_action = last_action;
+	g_packet_to_export.last_touch.is_pending = 0;
 
 	if (action == TFT_ACTION_SINGLE_TAP
 		|| action == TFT_ACTION_DOUBLE_TAP
@@ -110,11 +109,8 @@ void	update_touch_info(uint16_t x, uint16_t y, uint16_t action)
 		g_screens[g_touchscreen_mode].on_touch_action();
 	else if (action != last_action)
 		navigate_touchscreen();
-
-	g_packet_to_export.screen_x = x;
-	g_packet_to_export.screen_y = y;
-	g_packet_to_export.screen_action = action;
 	send_g_love_directive();
+
 }
 
 void	print_touch_info(tft_touch_info_t* touch_info)

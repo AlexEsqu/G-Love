@@ -62,14 +62,14 @@ void		print_comscreen_text(void)
 
 	putstr_screen(140, 190, "To the", RGB16_GLACIER_DEEP, FONT_SIZE_SMALL);
 	putstr_screen(142, 200, "STAGE", RGB16_GLACIER_DEEP, FONT_SIZE_SMALL);
-	// print_touch_info(&g_last_touch);
+	// print_touch_info(&g_packet_to_export.last_touch);
 	// print_nav_info(RGB16_BLACK);
 }
 
 void		on_touch_on_comscreen()
 {
-	// uint16_t	row = g_last_touch.x;
-	// uint16_t	col = g_last_touch.y;
+	// uint16_t	row = g_packet_to_export.last_touch.x;
+	// uint16_t	col = g_packet_to_export.last_touch.y;
 
 	// if (is_in_top_quarter(row, col))
 	// {

@@ -38,8 +38,8 @@ void		print_imuscreen_text(void)
 
 void		on_touch_on_imuscreen()
 {
-	uint16_t	row = g_last_touch.y;
-	uint16_t	col = g_last_touch.x;
+	uint16_t	row = g_packet_to_export.last_touch.y;
+	uint16_t	col = g_packet_to_export.last_touch.x;
 
 	if (is_top_quarter_of_screen(row, col))
 	{

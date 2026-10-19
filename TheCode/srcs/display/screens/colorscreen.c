@@ -158,13 +158,13 @@ void		print_colorscreen_text(void)
 	putstr_screen(20, 120, "mode", RGB16_BLACK, FONT_SIZE_MID);
 
 	print_nav_info(RGB16_BLACK);
-	print_touch_info(&g_last_touch);
-	print_color_touch_info(&g_last_touch);
+	print_touch_info(&g_packet_to_export.last_touch);
+	print_color_touch_info(&g_packet_to_export.last_touch);
 }
 
 void		on_touch_on_colorscreen()
 {
-	print_color_touch_info(&g_last_touch);
+	print_color_touch_info(&g_packet_to_export.last_touch);
 	gc9a01_send_square(30, 155, RGB16_BLACK, 12);
-	gc9a01_send_square(30, 155, g_last_touch.rgb565, 10);
+	gc9a01_send_square(30, 155, g_packet_to_export.last_touch.rgb565, 10);
 }

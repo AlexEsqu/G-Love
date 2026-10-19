@@ -61,13 +61,13 @@ void		print_homescreen_text(void)
 	putstr_screen(40, 130, "Flex Mode", RGB16_WHITE, FONT_SIZE_SMALL);
 	putstr_screen(150, 130, "Color Mode", RGB16_WHITE, FONT_SIZE_SMALL);
 
-	// print_touch_info(&g_last_touch);
+	// print_touch_info(&g_packet_to_export.last_touch);
 }
 
 void		on_touch_on_homescreen()
 {
-	uint16_t	row = g_last_touch.x;
-	uint16_t	col = g_last_touch.y;
+	uint16_t	row = g_packet_to_export.last_touch.x;
+	uint16_t	col = g_packet_to_export.last_touch.y;
 
 	if (is_in_top_left_quarter(row, col))
 	{

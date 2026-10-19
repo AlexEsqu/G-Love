@@ -116,7 +116,7 @@ void		print_flexscreen_text(void)
 	putstr_screen(20, 100, "mode", RGB16_WHITE, FONT_SIZE_MID);
 
 	print_nav_info_flex(RGB16_WHITE);
-	// print_touch_info(&g_last_touch);
+	// print_touch_info(&g_packet_to_export.last_touch);
 }
 
 void		on_touch_on_flexscreen()

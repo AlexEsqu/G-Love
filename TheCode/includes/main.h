@@ -5,7 +5,6 @@
 #include <util/delay.h>
 #include <stdint.h>
 #include <stddef.h>
-#include "led.h"
 
 #if defined(__AVR_ATmega2560__)
     #define SPI_DDR   DDRB
@@ -32,13 +31,12 @@ int main_ATM328P();
 
 #include "touchscreen.h"
 #include "comms.h"
+#include "led.h"
 
 #define I2C_ADDR_CST816D 0x15 // tactile driver address
-#define RX_BUFFER_SIZE 128
 
 // Globals
 extern tft_state_t			g_touchscreen_mode;
-extern tft_touch_info_t		g_last_touch;
 extern uint8_t				g_animation_frame;
 extern uint16_t				g_ms_counter;
 extern uint8_t				g_touch_debounce;

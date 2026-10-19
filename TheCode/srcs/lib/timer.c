@@ -89,7 +89,7 @@ void	stopTouchDebounce()
 
 void	concludeTouchDebounce()
 {
-	g_last_touch.is_pending = 1;
+	g_packet_to_export.last_touch.is_pending = 1;
 	stopTouchDebounce();
 }
 

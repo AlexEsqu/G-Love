@@ -1,6 +1,8 @@
 #ifndef COMM_H
 #define COMM_H
 
+#include <stdbool.h>
+
 #define SENSOR_PACKET_MAGIC_SENSOR_FROM_328 0xA55A
 #define SENSOR_PACKET_MAGIC_ALL_DATA_FROM_2561 0xA55A
 #define SENSOR_PACKET_MAGIC_DIRECTIVE_TO_328 0xA55A
@@ -12,9 +14,8 @@ typedef struct __attribute__((packed)) s_sensor_data_to_pc
     uint16_t			sensorFlex[5]; //fsr
     int16_t 			accel[3]; //imu
     int16_t				gyro[3]; //imu
-    uint16_t			screen_y; //touchscreen y cordinate
-    uint16_t			screen_x; //touchscreen x cordinate
-    uint8_t				screen_action; //touchscreen: action= swipe left, swipe right, press etc...
+	tft_touch_info_t	last_touch;
+	tft_state_t			touchscreen_state;
 	uint16_t			crc16; // crc to protect and check data authenticity
 } t_sensor_data_to_pc;
 

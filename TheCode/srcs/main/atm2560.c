@@ -9,9 +9,6 @@ tft_state_t			g_touchscreen_mode = TFT_STATE_HOMESCREEN;
 // timing for animations
 uint8_t				g_animation_frame = 0;
 
-// stores last touch action for internal use
-tft_touch_info_t	g_last_touch = {0};
-
 
 void setup()
 {
@@ -45,9 +42,9 @@ int main_ATM2560()
 
 	while (1)
 	{
-		if (g_last_touch.is_pending)
+		if (g_packet_to_export.last_touch.is_pending)
 		{
-			g_last_touch.is_pending = 0;
+			g_packet_to_export.last_touch.is_pending = 0;
 			onTouch();
 		}
 		refresh_screen();

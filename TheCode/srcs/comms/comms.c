@@ -1,5 +1,6 @@
 #include "main.h"
 
+#define RX_BUFFER_SIZE 128
 
 static volatile uint8_t g_rx_buff[RX_BUFFER_SIZE];
 
@@ -116,11 +117,6 @@ void	update_sensor_data(uint8_t* byte)
 		ft_memcpy(g_packet_to_export.sensorFlex, packet_from_sensors.sensorFlex, sizeof(packet_from_sensors.sensorFlex));
 		ft_memcpy(g_packet_to_export.accel, packet_from_sensors.accel, sizeof(packet_from_sensors.accel));
 		ft_memcpy(g_packet_to_export.gyro, packet_from_sensors.gyro, sizeof(packet_from_sensors.gyro));
-
-		//complete packet from 328 with touch, crc
-		g_packet_to_export.screen_x = g_last_touch.x;
-		g_packet_to_export.screen_y = g_last_touch.y;
-		g_packet_to_export.screen_action = g_last_touch.last_action;
 		g_packet_to_export.crc16 = crc16_compute((const uint8_t *)&g_packet_to_export,
 							offsetof(t_sensor_data_to_pc, crc16));
 
@@ -131,7 +127,7 @@ void	update_sensor_data(uint8_t* byte)
 void	package_g_love_directive(glove_directive_t* glove_directive)
 {
 	glove_directive->magic = SENSOR_PACKET_MAGIC_DIRECTIVE_TO_328;
-	glove_directive->current_color = rgb565_to_rgb888(g_last_touch.rgb565);
+	glove_directive->current_color = rgb565_to_rgb888(g_packet_to_export.last_touch.rgb565);
 	glove_directive->current_mode = g_touchscreen_mode;
 	glove_directive->crc16 = crc16_compute((const uint8_t *)glove_directive,
 									offsetof(glove_directive_t, crc16));
