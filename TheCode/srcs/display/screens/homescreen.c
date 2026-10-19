@@ -41,17 +41,17 @@ uint16_t	get_color_from_homescreen(uint16_t row, uint16_t col)
 	}
 	else if (is_in_top_left_quarter(row, col))
 	{
-		return(is_in_mask(row, col, &homescreen_image) ? RGB16_LAPIS_CORE : RGB16_LAPIS_SHADOW);
+		return(is_in_mask(row, col, &homescreen_image) ? RGB16_LAPIS_CORE :  RGB16_LAPIS_SHADOW);
 	}
 	else if (is_in_top_right_quarter(row, col))
 	{
-		return(is_in_mask(row, col, &homescreen_image) ? RGB16_CYBER_GOLD: RGB16_PUMPKIN);
+		return(is_in_mask(row, col, &homescreen_image) ? RGB16_SOFT_YELLOW : RGB16_ALIVE_AMBER);
 	}
 	else if (is_in_bottom_right_quarter(row, col))
 	{
 		return(is_in_mask(row, col, &homescreen_image) ? RGB16_FLAME_CORE : RGB16_EMBER_GLOW);
 	}
-	return(is_in_mask(row, col, &homescreen_image) ? RGB16_LASER_ORCHID : RGB16_CYBER_PULSE);
+	return(is_in_mask(row, col, &homescreen_image) ? RGB16_LASER_ORCHID : RGB16_DUSK_VIOLET);
 }
 
 void		print_homescreen_text(void)

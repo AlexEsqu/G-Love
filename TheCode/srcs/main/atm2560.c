@@ -5,6 +5,7 @@
 #include <string.h>
 
 t_sensor_data_to_pc g_packet = {0};
+t_sensor_data g_sensor = {0};
 
 static volatile uint8_t g_rx_buff[RX_BUFFER_SIZE];
 static volatile uint8_t g_rx_index = 0; //index used for writing in buffer
@@ -153,6 +154,8 @@ int main_ATM2560()
 		{
 			if (process_packet(&byte, &packet))
 			{
+				g_sensor = packet;
+
 				//complete packet with touch, crc and send
 				g_packet.magic = SENSOR_PACKET_MAGIC2;
 				memcpy(g_packet.sensorForce, packet.sensorForce, sizeof(packet.sensorForce));
