@@ -100,6 +100,8 @@ void	update_sensor_data(uint8_t* byte)
 		ft_memcpy(g_packet_to_export.sensorFlex, packet_from_sensors.sensorFlex, sizeof(packet_from_sensors.sensorFlex));
 		ft_memcpy(g_packet_to_export.accel, packet_from_sensors.accel, sizeof(packet_from_sensors.accel));
 		ft_memcpy(g_packet_to_export.gyro, packet_from_sensors.gyro, sizeof(packet_from_sensors.gyro));
+		// current screen, so the PC knows which screen is displayed
+		g_packet_to_export.touchscreen_state = g_touchscreen_mode;
 		g_packet_to_export.crc16 = crc16_compute((const uint8_t *)&g_packet_to_export,
 							offsetof(t_sensor_data_to_pc, crc16));
 
