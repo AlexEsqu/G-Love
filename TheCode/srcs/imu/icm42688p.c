@@ -29,6 +29,13 @@ t_imu *imu_conf_create(void)
     imu->gyro_config0.reg = GYRO_CONFIG0;
     imu->gyro_config0.value = 0x00;
 
+    // no gyro bias until imu_calibrate_gyro() measured it (malloc does not clear memory)
+    for (uint8_t i = 0; i < 3; i++)
+    {
+        imu->sample.accel[i] = 0.0f;
+        imu->sample.gyro[i] = 0.0f;
+    }
+
     return imu;
 }
 
@@ -208,15 +215,19 @@ static int imu_set_filters(t_imu *imu, uint8_t gyro_filter_enabled, uint8_t acce
 
 static int imu_calibrate_gyro(t_imu *imu)
 {
-    uint32_t sum_x = 0, sum_y = 0, sum_z = 0;
+    // signed sums: the gyro values are negative half of the time
+    int32_t sum_x = 0, sum_y = 0, sum_z = 0;
     int i;
 
     if (!imu)
         return -1;
 
-    // temporarily set gyro to lower range to improve bias estimation
-    if (imu_set_gyro_fs(imu, 0x00) < 0)  // 250 dps
-        return -1;
+    // the bias is measured with the same range as the readings
+    // (a bias measured with another range would be in other units)
+
+    // the gyro needs 45 ms to start after PWR_MGMT0 (datasheet): before that
+    // its registers read -32768 (0x8000), one such sample shifts the bias by ~330
+    _delay_ms(50);
 
     for (i = 0; i < 100; i++)
     {
@@ -230,21 +241,17 @@ static int imu_calibrate_gyro(t_imu *imu)
         gz = (int16_t)(((uint16_t)imu_read_reg(imu, GYRO_DATA_Z1) << 8) |
                        imu_read_reg(imu, GYRO_DATA_Z0));
 
-        sum_x += (uint32_t)(gx & 0xFFFF);
-        sum_y += (uint32_t)(gy & 0xFFFF);
-        sum_z += (uint32_t)(gz & 0xFFFF);
+        sum_x += gx;
+        sum_y += gy;
+        sum_z += gz;
 
         _delay_ms(1);
     }
 
-    // store bias estimate in fields if you have them
-    imu->sample.gyro[0] = (float)(sum_x / 100.0f);
-    imu->sample.gyro[1] = (float)(sum_y / 100.0f);
-    imu->sample.gyro[2] = (float)(sum_z / 100.0f);
-
-    // restore full scale range
-    if (imu_set_gyro_fs(imu, 0x03) < 0)  // 2000 dps
-        return -1;
+    // gyro bias = average value at rest, removed from every reading in imu_get_raw_data()
+    imu->sample.gyro[0] = sum_x / 100.0f;
+    imu->sample.gyro[1] = sum_y / 100.0f;
+    imu->sample.gyro[2] = sum_z / 100.0f;
 
     return 1;
 }
@@ -282,27 +289,31 @@ int ICM42688_init(t_imu *imu)
     return 1;
 }
 
+// read 2 registers (high byte first) as a signed 16 bit value
+static int16_t imu_read_int16(t_imu *imu, uint8_t reg_high, uint8_t reg_low)
+{
+	return (int16_t)(((uint16_t)imu_read_reg(imu, reg_high) << 8) | imu_read_reg(imu, reg_low));
+}
+
+/*
+	accel and gyro, signed raw values (-32768..32767),
+	the gyro bias measured by imu_calibrate_gyro() is removed
+*/
 int imu_get_raw_data(t_imu *imu, t_imu_data *data)
 {
 	if (!imu || !data)
 		return -1;
 
 	// read raw accel registers
-	data->accel[0] = (float)(((uint16_t)imu_read_reg(imu, ACCEL_DATA_X1) << 8) |
-							 imu_read_reg(imu, ACCEL_DATA_X0));
+	data->accel[0] = imu_read_int16(imu, ACCEL_DATA_X1, ACCEL_DATA_X0);
+	data->accel[1] = imu_read_int16(imu, ACCEL_DATA_Y1, ACCEL_DATA_Y0);
+	data->accel[2] = imu_read_int16(imu, ACCEL_DATA_Z1, ACCEL_DATA_Z0);
 
-	data->accel[1] = (float)(((uint16_t)imu_read_reg(imu, ACCEL_DATA_Y1) << 8) |
-							 imu_read_reg(imu, ACCEL_DATA_Y0));
-	data->accel[2] = (float)(((uint16_t)imu_read_reg(imu, ACCEL_DATA_Z1) << 8) |
-							 imu_read_reg(imu, ACCEL_DATA_Z0));
-
-	// read raw gyro registers
-	data->gyro[0] = (float)(((uint16_t)imu_read_reg(imu, GYRO_DATA_X1) << 8) |
-							imu_read_reg(imu, GYRO_DATA_X0));
-	data->gyro[1] = (float)(((uint16_t)imu_read_reg(imu, GYRO_DATA_Y1) << 8) |
-							imu_read_reg(imu, GYRO_DATA_Y0));
-	data->gyro[2] = (float)(((uint16_t)imu_read_reg(imu, GYRO_DATA_Z1) << 8) |
-							imu_read_reg(imu, GYRO_DATA_Z0));
+	// read raw gyro registers, minus the bias
+	data->gyro[0] = imu_read_int16(imu, GYRO_DATA_X1, GYRO_DATA_X0) - imu->sample.gyro[0];
+	data->gyro[1] = imu_read_int16(imu, GYRO_DATA_Y1, GYRO_DATA_Y0) - imu->sample.gyro[1];
+	data->gyro[2] = imu_read_int16(imu, GYRO_DATA_Z1, GYRO_DATA_Z0) - imu->sample.gyro[2];
 
 	return 1;
 }
+

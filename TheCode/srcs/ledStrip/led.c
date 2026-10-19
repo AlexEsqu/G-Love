@@ -150,7 +150,7 @@ void led_set_color(uint32_t rgb888)
 
 void led_spi()
 {
-    static uint16_t color_cycle = 0; // hue of the first LED, kept between calls
+    // static uint16_t color_cycle = 0; // hue of the first LED, kept between calls
     rgb_color_t colors[NUM_LEDS];
 
     // a color was chosen on the touchscreen: the whole strip in that color
@@ -162,18 +162,18 @@ void led_spi()
         return;
     }
 
-    // otherwise: automatic color wheel
-    for (uint16_t i = 0; i < NUM_LEDS; i++)
-    {
-        uint16_t hue = (color_cycle + (uint16_t)(180UL * i / NUM_LEDS)) % 180;
+    // // otherwise: automatic color wheel
+    // for (uint16_t i = 0; i < NUM_LEDS; i++)
+    // {
+    //     uint16_t hue = (color_cycle + (uint16_t)(180UL * i / NUM_LEDS)) % 180;
 
-        colors[i] = hsvToRgb(hue, 255, 255);
-    }
-    spi_send_color(colors, NUM_LEDS, BRIGHTNESS);
+    //     colors[i] = hsvToRgb(hue, 255, 255);
+    // }
+    // spi_send_color(colors, NUM_LEDS, BRIGHTNESS);
 
-    color_cycle += LED_COLOR_SPEED;
-    if (color_cycle >= 180)
-        color_cycle -= 180;
+    // color_cycle += LED_COLOR_SPEED;
+    // if (color_cycle >= 180)
+    //     color_cycle -= 180;
 
     // pulses effect instead of the wheel:
 

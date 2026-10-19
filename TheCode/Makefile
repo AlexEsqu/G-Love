@@ -36,7 +36,10 @@ HEX_BOOT = ${NAME_BRIDGE}_mega.hex
 BIN_TEST = ${NAME_TEST}_mega.bin
 HEX_TEST = ${NAME_TEST}_mega.hex
 
-CC       = avr-gcc -Wextra -Werror -Wall -MMD -MP
+# -ffunction-sections -fdata-sections: each function / variable in its own section,
+# so that --gc-sections (LDFLAGS) can remove the ones never used (saves RAM and flash)
+CC       = avr-gcc -Wextra -Werror -Wall -MMD -MP -ffunction-sections -fdata-sections
+LDFLAGS  = -Wl,--gc-sections
 OBJCOPY  = avr-objcopy
 
 OBJDIR   = objects
@@ -118,11 +121,11 @@ $(OBJDIR3)/%_arduinomega.o: %.c
 all: ${BIN1} ${BIN2}
 
 ${BIN1}: ${OBJS1}
-	${CC} -Os -mmcu=${DEVICE1} -DF_CPU=${F_CPU} ${OBJS1} -o ${BIN1}
+	${CC} -Os -mmcu=${DEVICE1} -DF_CPU=${F_CPU} ${LDFLAGS} ${OBJS1} -o ${BIN1}
 	${OBJCOPY} -O ihex ${BIN1} ${HEX1}
 
 ${BIN2}: ${OBJS2}
-	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${OBJS2} -o ${BIN2}
+	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${LDFLAGS} ${OBJS2} -o ${BIN2}
 	${OBJCOPY} -O ihex ${BIN2} ${HEX2}
 
 # flash the atm328P (through the bridge: make bridge first)
@@ -134,7 +137,7 @@ mega: ${BIN2}
 	avrdude -p ${DEVICE2} -c urclock -P ${PORT2} -b ${BAUDRATE2} -v -U flash:w:${HEX2}:i
 
 megaarduino: ${OBJS3}
-	${CC} -Os -mmcu=${DEVICE3} -DF_CPU=${ALT_F_CPU} ${OBJS3} -o ${BIN3}
+	${CC} -Os -mmcu=${DEVICE3} -DF_CPU=${ALT_F_CPU} ${LDFLAGS} ${OBJS3} -o ${BIN3}
 	${OBJCOPY} -O ihex ${BIN3} ${HEX3}
 	avrdude -p ${DEVICE3} -c wiring -P ${PORT3} -b ${BAUDRATE3} -D -v -U flash:w:${HEX3}:i
 
@@ -150,12 +153,12 @@ hexdump:
 	(stty ${SERIAL_BAUD} raw -echo; hexdump -C) < ${PORT2}
 
 bridge: ${OBJS_BOOT1}
-	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${OBJS_BOOT1} -o ${BIN_BOOT}
+	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${LDFLAGS} ${OBJS_BOOT1} -o ${BIN_BOOT}
 	${OBJCOPY} -O ihex ${BIN_BOOT} ${HEX_BOOT}
 	avrdude -p ${DEVICE2} -c urclock -P ${PORT2} -b ${BAUDRATE2} -v -U flash:w:${HEX_BOOT}:i
 
 uarttest: ${OBJS_TEST}
-	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${OBJS_TEST} -o ${BIN_TEST}
+	${CC} -Os -mmcu=${DEVICE2} -DF_CPU=${F_CPU} ${LDFLAGS} ${OBJS_TEST} -o ${BIN_TEST}
 	${OBJCOPY} -O ihex ${BIN_TEST} ${HEX_TEST}
 	avrdude -p ${DEVICE2} -c urclock -P ${PORT2} -b ${BAUDRATE2} -v -U flash:w:${HEX_TEST}:i
 

@@ -109,15 +109,14 @@ int main_ATM328P()
 
 		//imu loop;
 		imu_get_raw_data(imu_conf, imu_data);
-		// // copy the IMU values (float) into the packet sent to the atm2561
-		// // imu_get_raw_data gives the register value without its sign (0..65535):
-		// // (uint16_t) then (int16_t) gives back the signed value (-32768..32767)
+		// copy the IMU values into the packet sent to the atm2561
+		// (signed raw values, gyro bias already removed by imu_get_raw_data)
 		if (imu_data)
 		{
 			for (uint8_t i = 0; i < 3; i++)
 			{
-				g_sensor.accel[i] = (float)(int16_t)(uint16_t)imu_data->accel[i];
-				g_sensor.gyro[i] = (float)(int16_t)(uint16_t)imu_data->gyro[i];
+				g_sensor.accel[i] = (int16_t)imu_data->accel[i];
+				g_sensor.gyro[i] = (int16_t)imu_data->gyro[i];
 			}
 		}
 

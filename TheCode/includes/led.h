@@ -9,7 +9,7 @@
 #define CLOCK_PIN 13 // Fil CI connecté sur la broche 13
 #define DATA_PIN 11  // Fil DI connecté sur la broche 11
 
-#define BRIGHTNESS 4
+#define BRIGHTNESS 1
 #define LED_COLOR_SPEED 4
 #define LED_LUMINOSITY_SPEED 1
 
@@ -33,8 +33,18 @@ typedef struct s_finger_leds {
 #define RING_LED_SIZE 18
 #define PINKY_LED_SIZE 14
 
+// FSR (pressure) -> LEDs: raw ADC values 0..1023 from the multiplexer (g_sensor.sensorForce)
+#define FSR_MIN 30      // below: no pressure (FSR at rest reads ~0..10, plus noise)
+#define FSR_MAX 900     // above: full pressure, all the LEDs of the finger are lit
+// multiplexer channel of the FSR of each finger (sensorForce[channel]), in finger order
+#define FSR_CHANNEL_THUMB  0
+#define FSR_CHANNEL_INDEX  1
+#define FSR_CHANNEL_MIDDLE 2
+#define FSR_CHANNEL_RING   3
+#define FSR_CHANNEL_PINKY  4
+
 // LED strip configuration
-#define NUM_LEDS 50
+#define NUM_LEDS 120
 #define END_FRAME_BYTES ((NUM_LEDS + 15) / 16)
 #define MAX_PULSES 20
 
