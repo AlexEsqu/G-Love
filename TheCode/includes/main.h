@@ -51,6 +51,7 @@ extern uint8_t				g_animation_frame;
 extern uint16_t				g_ms_counter;
 extern uint8_t				g_touch_debounce;
 extern tft_touch_info_t		g_last_touch;
+extern volatile uint16_t	g_state;		// last I2C status (i2c.c)
 
 //adc.c
 void		adc_init();
@@ -105,15 +106,15 @@ uint8_t		ft_hex(uint8_t val);
 void 		ft_uart_print_hex(uint8_t c);
 
 // readability
-void	set_pin_as_input(volatile uint8_t* reg, uint8_t pin);
-void	set_pin_as_output(volatile uint8_t* reg, uint8_t pin);
-void	set_pin_high(volatile uint8_t* reg, uint8_t pin);
-void	set_pin_low(volatile uint8_t* reg, uint8_t pin);
+void	    set_pin_as_input(volatile uint8_t* reg, uint8_t pin);
+void	    set_pin_as_output(volatile uint8_t* reg, uint8_t pin);
+void	    set_pin_high(volatile uint8_t* reg, uint8_t pin);
+void	    set_pin_low(volatile uint8_t* reg, uint8_t pin);
 
 // watchdog.c
 void        watchdog_disable(void);
 
 //utils.c
-void ft_memcpy(void *dest, const void *src, size_t n);
+void        ft_memcpy(void *dest, const void *src, size_t n);
 
 #endif

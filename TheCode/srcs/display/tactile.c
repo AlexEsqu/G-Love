@@ -14,6 +14,13 @@ void	cst816d_init()
 	// Set INT as input with its active-low pull-up.
 	set_pin_as_input(&TOUCH_GPIO_DDR, TOUCH_INT_PIN);
 	set_pin_high(&TOUCH_GPIO_PORT, TOUCH_INT_PIN);
+
+	// Set RESET as output, reset pulse: low 10 ms, then high,
+	set_pin_as_output(&TOUCH_GPIO_DDR, TOUCH_RST_PIN);
+	set_pin_low(&TOUCH_GPIO_PORT, TOUCH_RST_PIN);
+	_delay_ms(10);
+	set_pin_high(&TOUCH_GPIO_PORT, TOUCH_RST_PIN);
+	_delay_ms(50);
 }
 
 void	debug_touch_info()
@@ -78,10 +85,20 @@ void	onTouch()
 {
 	i2c_start();
 	i2c_write(TOUCH_ADDR_CST816D << 1 | 0);
+	if (g_state != 0x18) // SLA+W not acknowledged: CST816D not answering
+	{
+		i2c_stop();
+		return;
+	}
 	i2c_write(0x01);
 
 	i2c_start();
 	i2c_write((TOUCH_ADDR_CST816D << 1) | 1);
+	if (g_state != 0x40) // SLA+R not acknowledged
+	{
+		i2c_stop();
+		return;
+	}
 	uint8_t action = i2c_read_ack();
 	uint8_t points = i2c_read_ack();
 	uint8_t x_high = i2c_read_ack();
