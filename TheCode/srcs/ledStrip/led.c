@@ -135,9 +135,11 @@ void led_effect(uint8_t finger, uint8_t color[3])
     }
 }
 
-// color chosen on the touchscreen, used instead of the color wheel once set
-static bool        g_use_chosen_color = false;
-static rgb_color_t g_chosen_color = {0, 0, 0};
+// color of the pulses: the one chosen in Color mode, LED_DEFAULT_COLOR until then
+// (kept when leaving Color mode, until another color is chosen)
+static rgb_color_t g_chosen_color = {
+    (LED_DEFAULT_COLOR >> 16) & 0xFF, (LED_DEFAULT_COLOR >> 8) & 0xFF, LED_DEFAULT_COLOR & 0xFF
+};
 
 // set the color of the whole strip (RGB888: 0xRRGGBB, from the touchscreen)
 void led_set_color(uint32_t rgb888)
@@ -145,43 +147,102 @@ void led_set_color(uint32_t rgb888)
     g_chosen_color.red = (rgb888 >> 16) & 0xFF;
     g_chosen_color.green = (rgb888 >> 8) & 0xFF;
     g_chosen_color.blue = rgb888 & 0xFF;
-    g_use_chosen_color = true;
 }
 
-void led_spi()
-{
-    // static uint16_t color_cycle = 0; // hue of the first LED, kept between calls
-    rgb_color_t colors[NUM_LEDS];
+// multiplexer channel of each finger (led.h), same channel for its FSR and its flex sensor
+static const uint8_t g_finger_channel[FINGER_COUNT] = {
+    FSR_CHANNEL_THUMB, FSR_CHANNEL_INDEX, FSR_CHANNEL_MIDDLE, FSR_CHANNEL_RING, FSR_CHANNEL_PINKY
+};
 
-    // a color was chosen on the touchscreen: the whole strip in that color
-    if (g_use_chosen_color)
+
+// one sensor that can start pulses
+typedef struct s_sensor_trigger
+{
+    uint16_t baseline;  // value at rest, measured at boot
+    uint16_t smoothed;  // value without noise
+    bool     armed;     // ready for a new pulse (went back under the OFF threshold)
+    uint8_t  repeat;    // frames left before the next pulse while still pressed
+} sensor_trigger_t;
+
+static sensor_trigger_t g_fsr_trigger[FINGER_COUNT];
+static sensor_trigger_t g_flex_trigger[FINGER_COUNT];
+
+/*
+    Returns true when a pulse must start:
+      - the sensor moved away from its rest value by more than "on" -> pulse
+      - still more than "on" -> a new pulse every PULSE_REPEAT_FRAMES
+      - back under "off"     -> ready for the next press (hysteresis: no pulse
+                                storm when the value hesitates around "on")
+    The difference is taken both ways: works whether the value goes up or down.
+*/
+static bool sensor_trigger_update(sensor_trigger_t *trigger, uint16_t raw,
+                                  uint16_t on, uint16_t off, bool measuring_rest)
+{
+    // smoothing: 3/4 old value + 1/4 new one
+    trigger->smoothed = (trigger->smoothed * 3 + raw) / 4;
+
+    if (measuring_rest)
     {
-        for (uint16_t i = 0; i < NUM_LEDS; i++)
-            colors[i] = g_chosen_color;
-        spi_send_color(colors, NUM_LEDS, BRIGHTNESS);
-        return;
+        trigger->baseline = trigger->smoothed;
+        trigger->armed = true;
+        return (false);
     }
 
-    // // otherwise: automatic color wheel
-    // for (uint16_t i = 0; i < NUM_LEDS; i++)
-    // {
-    //     uint16_t hue = (color_cycle + (uint16_t)(180UL * i / NUM_LEDS)) % 180;
+    uint16_t delta = (trigger->smoothed > trigger->baseline)
+        ? trigger->smoothed - trigger->baseline
+        : trigger->baseline - trigger->smoothed;
 
-    //     colors[i] = hsvToRgb(hue, 255, 255);
-    // }
-    // spi_send_color(colors, NUM_LEDS, BRIGHTNESS);
-
-    // color_cycle += LED_COLOR_SPEED;
-    // if (color_cycle >= 180)
-    //     color_cycle -= 180;
-
-    // pulses effect instead of the wheel:
-
-    // static bool initialized = false;
-    // if (!initialized) {
-    //     strip_init(BRIGHTNESS);
-    //     trigger_pulse(FINGER_COUNT, 255, 255, 255, 255, 14);
-    //     initialized = true;
-    // }
-    // update_and_render_pulses();
+    if (delta >= on)
+    {
+        if (trigger->armed || --trigger->repeat == 0)
+        {
+            trigger->armed = false;
+            trigger->repeat = PULSE_REPEAT_FRAMES;
+            return (true);
+        }
+    }
+    else if (delta < off)
+        trigger->armed = true;
+    return (false);
 }
+
+/*
+    LEDs: pulses started by the sensors of each finger.
+    FSR pressed or finger bent -> pulse in the color chosen in Color mode
+    (LED_DEFAULT_COLOR until a color is chosen). The pulses spread from the middle of the
+    finger to its ends (update_and_render_pulses), the strip is sent by
+    the SPI interrupt (strip_flush) without blocking the loop.
+*/
+void led_spi()
+{
+    static bool    initialized = false;
+    static uint8_t frames = 0;  // frames since boot, to measure the rest values
+
+    if (!initialized)
+    {
+        strip_init(BRIGHTNESS);
+        initialized = true;
+    }
+
+    bool measuring_rest = (frames < BASELINE_FRAMES);
+    if (measuring_rest)
+        frames++;
+
+    for (uint8_t finger = 0; finger < FINGER_COUNT; finger++)
+    {
+        uint8_t channel = g_finger_channel[finger];
+        rgb_color_t color = g_chosen_color;
+
+        // FSR pressed or finger bent: a pulse in the chosen color
+        if (sensor_trigger_update(&g_fsr_trigger[finger], g_sensor.sensorForce[channel],
+                FSR_PULSE_ON, FSR_PULSE_OFF, measuring_rest))
+            trigger_pulse(finger, color.red, color.green, color.blue, PULSE_SPEED, 0);
+
+        if (sensor_trigger_update(&g_flex_trigger[finger], g_sensor.sensorFlex[channel],
+                FLEX_PULSE_ON, FLEX_PULSE_OFF, measuring_rest))
+            trigger_pulse(finger, color.red, color.green, color.blue, PULSE_SPEED, 0);
+    }
+
+    update_and_render_pulses();
+}
+

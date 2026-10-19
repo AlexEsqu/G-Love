@@ -27,11 +27,11 @@ typedef struct s_finger_leds {
     uint8_t size;
 } finger_leds_t;
 
-#define THUMB_LED_SIZE 14
-#define INDEX_LED_SIZE 18
-#define MIDDLE_LED_SIZE 20
-#define RING_LED_SIZE 18
-#define PINKY_LED_SIZE 14
+#define THUMB_LED_SIZE 20
+#define INDEX_LED_SIZE 30
+#define MIDDLE_LED_SIZE 30
+#define RING_LED_SIZE 30
+#define PINKY_LED_SIZE 20
 
 // FSR (pressure) -> LEDs: raw ADC values 0..1023 from the multiplexer (g_sensor.sensorForce)
 #define FSR_MIN 30      // below: no pressure (FSR at rest reads ~0..10, plus noise)
@@ -42,6 +42,18 @@ typedef struct s_finger_leds {
 #define FSR_CHANNEL_MIDDLE 2
 #define FSR_CHANNEL_RING   3
 #define FSR_CHANNEL_PINKY  4
+
+// Pulse color until a color is chosen in Color mode (RGB888 0xRRGGBB)
+#define LED_DEFAULT_COLOR    0xFFFFFF   // white
+
+// Pulses triggered by the sensors: difference from the value at rest (raw ADC 0..1023)
+#define FSR_PULSE_ON         150    // pressure difference above this: pulse
+#define FSR_PULSE_OFF         80    // must go back under this before the next pulse
+#define FLEX_PULSE_ON        120    // bend difference above this: pulse
+#define FLEX_PULSE_OFF        60
+#define PULSE_REPEAT_FRAMES   12    // still pressed / bent: a new pulse every N frames (~0.4 s)
+#define PULSE_SPEED          255    // 8.8 fixed point: 256 = 1 LED per frame
+#define BASELINE_FRAMES       16    // frames at boot to measure the value at rest (hand relaxed)
 
 // LED strip configuration
 #define NUM_LEDS 130
