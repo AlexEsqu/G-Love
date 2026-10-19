@@ -29,8 +29,7 @@ uint16_t get_color_from_comscreen(uint16_t row, uint16_t col)
 	}
 	else if (is_right_quarter_of_screen(row, col))
 	{
-		//return(is_in_mask(row, col, &comscreen_image) ? RGB16_DEEP_CYAN : RGB16_ABYSS_SHADOW);
-		return(is_in_mask(row, col, &comscreen_image) ? RGB16_RED : RGB16_GLACIER_DEEP);
+		return(is_in_mask(row, col, &comscreen_image) ? RGB16_DEEP_CYAN : RGB16_ABYSS_SHADOW);
 	}
 	else if (is_bottom_quarter_of_screen(row, col))
 	{
