@@ -108,6 +108,13 @@ bool process_packet(uint8_t *byte, t_sensor_data *packet)
 
 void setup()
 {
+	// reset 328p
+	PORTC &= ~(1 << PORTC0);
+	DDRC  |=  (1 << DDC0);
+	_delay_ms(20);
+	DDRC  &= ~(1 << DDC0);
+	_delay_ms(50);
+
 	// i2c init
 	i2c_init();
 
@@ -118,16 +125,14 @@ void setup()
 	spi_init();
 	cst816d_init();
 	gc9a01_init();
+	
 	touch_timer_init();
 	enableTouchInterrupt();
 
-	// pin 7 en input
-	DDRD &= ~(1 << DDD7);
-	// pullup
-	PORTD |= (1 << PORTD7);
-
 	gc9a01_fill_screen(RGB16_BLUE);
 	display_screen();
+
+	SREG |= (1 << 7);
 }
 
 int main_ATM2560()
