@@ -69,24 +69,24 @@ static uint8_t get_finger_red_level(uint8_t finger, uint16_t row, uint16_t col)
 	}
 
 	if (length == 0)
-		return g_sensor.sensorFlex[finger];
+		return g_packet_to_export.sensorFlex[finger];
 
 	uint16_t gradient_length = (length + 2) / 2;
 	if (finger != FLEX_THUMB)
 	{
 		uint16_t red_length = length - gradient_length;
 		if (position <= red_length)
-			return g_sensor.sensorFlex[finger];
+			return g_packet_to_export.sensorFlex[finger];
 		position -= red_length;
-		return (uint8_t)(((uint16_t)g_sensor.sensorFlex[finger]
+		return (uint8_t)(((uint16_t)g_packet_to_export.sensorFlex[finger]
 			* (gradient_length - position)) / gradient_length);
 	}
 	if (position >= gradient_length)
 	{
-		return g_sensor.sensorFlex[finger];
+		return g_packet_to_export.sensorFlex[finger];
 	}
 
-	return (uint8_t)(((uint16_t)g_sensor.sensorFlex[finger] * position)
+	return (uint8_t)(((uint16_t)g_packet_to_export.sensorFlex[finger] * position)
 		/ gradient_length);
 }
 

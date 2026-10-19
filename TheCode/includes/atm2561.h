@@ -10,26 +10,7 @@
 #define BAUDRATE 38400
 #define MYUBRR ((F_CPU + BAUDRATE * 4) / (BAUDRATE * 8) - 1)
 
-// define tactile port
-#define I2C_ADDR_CST816D 0x15 // addresse du tactile
 
-#define RX_BUFFER_SIZE 128
-#define SENSOR_PACKET_MAGIC2 0xA55A
-
-typedef struct __attribute__((packed)) s_sensor_data_to_pc
-{
-    uint16_t	magic; //magic number to detect start of packet
-    uint16_t	sensorForce[5]; //fsr
-    uint16_t	sensorFlex[5]; //fsr
-    int16_t 	accel[3]; //imu
-    int16_t		gyro[3]; //imu
-    uint16_t	screen_x; //touchscreen x cordinate
-    uint16_t	screen_y; //touchscreen y cordinate
-    uint8_t		screen_action; //touchscreen: action= swipe left, swipe right, press etc...
-    uint16_t	crc16; // crc to protect and check data authenticity
-} t_sensor_data_to_pc;
-
-extern t_sensor_data_to_pc g_packet;
 
 // To convert from Arduino Mega to ATMEGA 2560, see:
 // https://devboards.info/boards/arduino-mega2560-rev3

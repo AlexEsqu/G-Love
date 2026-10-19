@@ -94,7 +94,7 @@ void	navigate_touchscreen()
 
 void	update_touch_info(uint16_t x, uint16_t y, uint16_t action)
 {
-	uint8_t	last_action = g_last_touch.action;
+	uint8_t	last_action = g_last_touch.last_action;
 
 	g_last_touch.x = x;
 	g_last_touch.y = y;
@@ -128,7 +128,7 @@ void	onTouch()
 {
 	i2c_start();
 	i2c_write(TOUCH_ADDR_CST816D << 1 | 0);
-	if (g_state != 0x18) // SLA+W not acknowledged: CST816D not answering
+	if (g_i2C_state != 0x18) // SLA+W not acknowledged: CST816D not answering
 	{
 		i2c_stop();
 		return;
@@ -137,7 +137,7 @@ void	onTouch()
 
 	i2c_start();
 	i2c_write((TOUCH_ADDR_CST816D << 1) | 1);
-	if (g_state != 0x40) // SLA+R not acknowledged
+	if (g_i2C_state != 0x40) // SLA+R not acknowledged
 	{
 		i2c_stop();
 		return;

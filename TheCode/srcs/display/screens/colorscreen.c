@@ -137,16 +137,18 @@ uint16_t	get_color_from_colorscreen_fast(uint16_t row, uint16_t col)
 
 void		print_color_touch_info(tft_touch_info_t* touch_info)
 {
+	uint32_t	full_color = rgb565_to_rgb888(touch_info->rgb565);
+
 	putstr_screen(180, 110, "Color", RGB16_WHITE, FONT_SIZE_SMALL);
 	uint8_t	pointer = putstr_screen(180, 120, "r: ", RGB16_WHITE, FONT_SIZE_SMALL);
 	pointer = putstr_screen(pointer, 120, "0x", RGB16_WHITE, FONT_SIZE_SMALL);
-	pointer = puthex_screen(pointer, 120, (touch_info->rgb888 >> 11) & 0x1F, RGB16_WHITE, FONT_SIZE_SMALL);
+	pointer = puthex_screen(pointer, 120, (full_color >> 11) & 0x1F, RGB16_WHITE, FONT_SIZE_SMALL);
 	pointer = putstr_screen(180, 130, "b: ", RGB16_WHITE, FONT_SIZE_SMALL);
 	pointer = putstr_screen(pointer, 130, "0x", RGB16_WHITE, FONT_SIZE_SMALL);
-	pointer = puthex_screen(pointer, 130, (touch_info->rgb888 >> 5) & 0x3F, RGB16_WHITE, FONT_SIZE_SMALL);
+	pointer = puthex_screen(pointer, 130, (full_color >> 5) & 0x3F, RGB16_WHITE, FONT_SIZE_SMALL);
 	pointer = putstr_screen(180, 140, "g: ", RGB16_WHITE, FONT_SIZE_SMALL);
 	pointer = putstr_screen(pointer, 140, "0x", RGB16_WHITE, FONT_SIZE_SMALL);
-	pointer = puthex_screen(pointer, 140, (touch_info->rgb888 & 0x1F), RGB16_WHITE, FONT_SIZE_SMALL);
+	pointer = puthex_screen(pointer, 140, (full_color & 0x1F), RGB16_WHITE, FONT_SIZE_SMALL);
 }
 
 void		print_colorscreen_text(void)

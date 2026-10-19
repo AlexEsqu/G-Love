@@ -28,7 +28,7 @@ int main_ATM328P()
 
 		led_spi(); //led strip
 
-		g_sensor.magic = SENSOR_PACKET_MAGIC; // magic number
+		g_sensor.magic = SENSOR_PACKET_MAGIC_FROM_328; // magic number
 
 		//calculate crc value and stored in struct
 		g_sensor.crc16 = crc16_compute((const uint8_t*)&g_sensor,

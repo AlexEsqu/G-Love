@@ -23,11 +23,14 @@ typedef enum {
 	TFT_ACTION_LONG_TAP = 0x0C,
 } tft_action_t ;
 
-typedef struct touchscreen_data_s {
-    uint16_t x;
-    uint16_t y;
-    uint8_t gesture;
-} touchscreen_data_t;
+typedef struct {
+	uint16_t		x;
+	uint16_t		y;
+	tft_action_t	action;
+	tft_action_t	last_action;
+	uint16_t		rgb565;
+	uint8_t			is_pending;
+} tft_touch_info_t;
 
 typedef struct gc9a01_sequence gc9a01_sequence_t;
 
@@ -37,12 +40,6 @@ struct gc9a01_sequence {
 	const uint8_t				args_size;
 	const uint32_t				delay_ms;
 };
-
-typedef struct gc9a01_pixel {
-	uint8_t		x;
-	uint8_t		y;
-	uint16_t	rgb256;
-} gc9a01_pixel_t;
 
 typedef struct {
 	uint8_t	row;
@@ -69,28 +66,16 @@ typedef struct {
 	void					(*on_touch_action)(void);
 } tft_screen_info_t;
 
-typedef struct {
-	uint16_t		x;
-	uint16_t		y;
-	tft_action_t	action;
-	tft_action_t	last_action;
-	uint16_t		rgb565;
-	uint32_t		rgb888;
-	uint8_t			is_pending;
-} tft_touch_info_t;
-
 #include "images/hand.h"
 #include "images/font.h"
 #include "images/flexscreen.h"
 #include "images/homescreen.h"
 #include "images/comscreen.h"
 
-
 typedef enum {
 	RGB16_TRANS		= 0x0001,
 	RGB16_BLACK		= 0x0000,
 	RGB16_WHITE		= 0xFFFF,
-
 
 	RGB16_RED		= 0xF800,
 	RGB16_GREEN		= 0x07E0,
@@ -289,8 +274,6 @@ uint8_t	is_in_top_left_of_screen(uint16_t row, uint16_t col);
 uint8_t	is_in_top_right_of_screen(uint16_t row, uint16_t col);
 uint8_t	is_in_bottom_left_of_screen(uint16_t row, uint16_t col);
 uint8_t	is_in_bottom_right_of_screen(uint16_t row, uint16_t col);
-
-void	touchscreen_read(touchscreen_data_t *data);
 
 void	touch_timer_init();
 void	enableTouchInterrupt();

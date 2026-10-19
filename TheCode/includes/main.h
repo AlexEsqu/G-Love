@@ -32,7 +32,25 @@ int main_ATM328P();
 
 #include "touchscreen.h"
 
-#define SENSOR_PACKET_MAGIC 0xA55A
+#define SENSOR_PACKET_MAGIC_FROM_328 0xA55A
+#define SENSOR_PACKET_MAGIC_FROM_2561 0xA55A
+#define I2C_ADDR_CST816D 0x15 // tactile driver address
+#define RX_BUFFER_SIZE 128
+
+typedef struct __attribute__((packed)) s_sensor_data_to_pc
+{
+    uint16_t			magic; //magic number to detect start of packet
+    uint16_t			sensorForce[5]; //fsr
+    uint16_t			sensorFlex[5]; //fsr
+    int16_t 			accel[3]; //imu
+    int16_t				gyro[3]; //imu
+    uint16_t			screen_y; //touchscreen y cordinate
+    uint16_t			screen_x; //touchscreen x cordinate
+    uint8_t				screen_action; //touchscreen: action= swipe left, swipe right, press etc...
+	uint16_t			crc16; // crc to protect and check data authenticity
+} t_sensor_data_to_pc;
+
+extern t_sensor_data_to_pc	g_packet_to_export;
 
 typedef struct __attribute__((packed)) s_sensor_data
 {
@@ -45,13 +63,12 @@ typedef struct __attribute__((packed)) s_sensor_data
 } t_sensor_data;
 
 // Globals
-extern t_sensor_data 		g_sensor;
 extern tft_state_t			g_touchscreen_mode;
+extern tft_touch_info_t		g_last_touch;
 extern uint8_t				g_animation_frame;
 extern uint16_t				g_ms_counter;
 extern uint8_t				g_touch_debounce;
-extern tft_touch_info_t		g_last_touch;
-extern volatile uint16_t	g_state;		// last I2C status (i2c.c)
+extern volatile uint16_t	g_i2C_state;		// last I2C status (i2c.c)
 
 //adc.c
 void		adc_init();

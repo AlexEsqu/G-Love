@@ -1,6 +1,6 @@
 #include "main.h"
 
-volatile uint16_t g_state = 0;
+volatile uint16_t g_i2C_state = 0;
 
 void i2c_init(void) {
   // Pull-up intern pour SDA et SCL
@@ -26,10 +26,10 @@ void i2c_init(void) {
 void ft_print_status(void)
 {
 	uart0_printstr("Status code: 0x");
-	ft_uart_print_hex(g_state);
+	ft_uart_print_hex(g_i2C_state);
 	uart0_printstr(" : ");
 
-	switch (g_state) {
+	switch (g_i2C_state) {
 	case 0x08:
 		uart0_printstr("START condition transmitted");
 		break;
@@ -88,7 +88,7 @@ void i2c_status(void)
 {
 	// DATASHEET PAGE 240 SECTION 22.9.3
 	// get status code with a mask to hide prescaler bit
-	g_state = TWSR & 0xF8;
+	g_i2C_state = TWSR & 0xF8;
 	//ft_print_status();
 }
 
@@ -107,7 +107,7 @@ void i2c_start(void) {
 
   if (!timeout)
   {
-    g_state = 0xFF;
+    g_i2C_state = 0xFF;
     return;
   }
 
@@ -141,7 +141,7 @@ void i2c_write(unsigned char data) {
 
   if (!timeout)
   {
-    g_state = 0xFF;
+    g_i2C_state = 0xFF;
     return;
   }
 
@@ -158,7 +158,7 @@ uint8_t i2c_read_ack(void) {
 
   if (!timeout)
   {
-    g_state = 0xFF;
+    g_i2C_state = 0xFF;
     return 0;
   }
 
@@ -176,7 +176,7 @@ uint8_t i2c_read_nack(void) {
 
   if (!timeout)
   {
-    g_state = 0xFF;
+    g_i2C_state = 0xFF;
     return 0;
   }
 
