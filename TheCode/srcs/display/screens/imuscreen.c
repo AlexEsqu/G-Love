@@ -17,10 +17,10 @@ uint16_t get_color_from_imuscreen(uint16_t row, uint16_t col)
 void		print_imu_info()
 {
 	putstr_screen(180, 100, "Position", RGB16_BLACK, FONT_SIZE_SMALL);
-	uint8_t	pointer = putstr_screen(180, 110, "x: ", RGB16_BLACK, FONT_SIZE_SMALL);
-	pointer = putint_screen(pointer, 110, 15, RGB16_BLACK, FONT_SIZE_SMALL);
-	pointer = putstr_screen(180, 120, "y: ", RGB16_BLACK, FONT_SIZE_SMALL);
-	pointer = putint_screen(pointer, 120, 130, RGB16_BLACK, FONT_SIZE_SMALL);
+	uint8_t	pointer = putstr_screen(180, 110, "Gyro: ", RGB16_BLACK, FONT_SIZE_SMALL);
+	pointer = putint_screen(pointer, 110, g_packet_to_export.gyro[0], RGB16_BLACK, FONT_SIZE_SMALL);
+	pointer = putstr_screen(180, 120, "Accel: ", RGB16_BLACK, FONT_SIZE_SMALL);
+	pointer = putint_screen(pointer, 120,  g_packet_to_export.accel[0], RGB16_BLACK, FONT_SIZE_SMALL);
 }
 
 void		print_imuscreen_text(void)
@@ -30,7 +30,7 @@ void		print_imuscreen_text(void)
 	putstr_screen(20, 130, "mode", RGB16_BLACK, FONT_SIZE_MID);
 
 	putstr_screen(70, 20, "Click up here to", RGB16_GOLD, FONT_SIZE_SMALL);
-	putstr_screen(67, 30, "Calibrate", RGB16_GOLD, FONT_SIZE_MID);
+	putstr_screen(55, 30, " Calibrate  ", RGB16_GOLD, FONT_SIZE_MID);
 
 	print_imu_info();
 	print_nav_info(RGB16_GOLD);
@@ -43,8 +43,9 @@ void		on_touch_on_imuscreen()
 
 	if (is_top_quarter_of_screen(row, col))
 	{
-		; // TO-DO: plug cmd here for calibration
-		// gc9a01_send_square(col, row, RGB16_BIO_GLOW, 4); // for sanity, to remove
+		g_love_directive.request_reset_imu = 1;
+		putstr_screen(55, 30, "Calibrating", RGB16_GOLD, FONT_SIZE_MID);
+		send_g_love_directive();
 	}
 
 	print_imu_info();

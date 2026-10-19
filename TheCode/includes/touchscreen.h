@@ -12,6 +12,8 @@
 #define TFT_CHUNK_COUNT 14400UL
 #define TFT_FRAME 12500UL
 
+
+
 typedef enum {
 	TFT_ACTION_TAP = 0x00,
 	TFT_ACTION_UP = 0x01,
@@ -155,6 +157,9 @@ typedef enum {
 	TFT_STATE_FLEXSCREEN,	// Flex sensor affect LEDs
 	TFT_STATE_COMMSCREEN,	// Select output mode
 }	tft_state_t;
+
+extern tft_state_t			g_touchscreen_mode;
+extern uint8_t				g_animation_frame;
 
 // see https://www.buydisplay.com/download/ic/GC9A01A.pdf p.90 - 94
 #define GC9A01_COMMANDS(X)						\

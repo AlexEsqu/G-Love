@@ -10,6 +10,10 @@
 #define BAUDRATE 115200
 #define MYUBRR F_CPU / 16 / BAUDRATE -1
 
+// Globals
+extern uint16_t				g_ms_counter;
+extern uint8_t				g_touch_debounce;
+
 // To convert from Arduino Mega to ATMEGA 2560, see:
 // https://devboards.info/boards/arduino-mega2560-rev3
 

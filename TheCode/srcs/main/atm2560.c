@@ -3,13 +3,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-// current touchscreen mode, changes logic of the LEDs and info sent / displayed
-tft_state_t			g_touchscreen_mode = TFT_STATE_HOMESCREEN;
-
-// timing for animations
-uint8_t				g_animation_frame = 0;
-
-
 void setup()
 {
 	// protocols
@@ -24,6 +17,7 @@ void setup()
 
 	// enable interrupts and timers
 	milisecond_timer_init();
+	enableInterrupts();
 	enableTouchInterrupt();
 
 	display_screen();

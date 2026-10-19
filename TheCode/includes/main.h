@@ -38,11 +38,7 @@ int main_ATM328P();
 
 #define I2C_ADDR_CST816D 0x15 // tactile driver address
 
-// Globals
-extern tft_state_t			g_touchscreen_mode;
-extern uint8_t				g_animation_frame;
-extern uint16_t				g_ms_counter;
-extern uint8_t				g_touch_debounce;
+
 extern volatile uint16_t	g_i2C_state;
 
 //adc.c
