@@ -3,7 +3,6 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
-#include <avr/wdt.h> 
 #include <stdint.h>
 #include <stddef.h>
 #include "../srcs/ledStrip/led.h"
@@ -94,6 +93,9 @@ void        uart_init_test(void);
 
 uint8_t		ft_hex(uint8_t val);
 void 		ft_uart_print_hex(uint8_t c);
+
+// watchdog.c
+void        watchdog_disable(void);
 
 //utils.c
 void ft_memcpy(void *dest, const void *src, size_t n);
