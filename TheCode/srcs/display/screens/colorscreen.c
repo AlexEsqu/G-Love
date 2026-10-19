@@ -108,21 +108,25 @@ static uint8_t fast_atan2_to_hue(int8_t y, int8_t x)
 	return hue;
 }
 
+#define COLOR_WHEEL_CENTER 120
+#define COLOR_WHEEL_RADIUS 120
+
 uint16_t	get_color_from_colorscreen(uint16_t row, uint16_t col)
 {
-	int8_t x = (int8_t)((int16_t)col - 120);
-	int8_t y = (int8_t)((int16_t)row - 120);
+	int8_t x = (int8_t)((int16_t)col - COLOR_WHEEL_CENTER);
+	int8_t y = (int8_t)((int16_t)row - COLOR_WHEEL_CENTER);
 
 	int16_t dist_sq = (int16_t)(x * x) + (int16_t)(y * y);
+	// if (dist_sq >= COLOR_WHEEL_RADIUS * COLOR_WHEEL_RADIUS)
+	// 	return RGB16_BLACK;
 
 	uint16_t r = fast_isqrt(dist_sq);
-	uint8_t sat = (uint8_t)(((uint16_t)r * 255UL) / 120);
+	uint8_t sat = (uint8_t)(((uint16_t)r * 255UL) / COLOR_WHEEL_RADIUS);
 
 	uint8_t hue = fast_atan2_to_hue(y, x);
 
 	return hsv_to_565(hue, sat);
 }
-
 uint16_t	get_color_from_colorscreen_fast(uint16_t row, uint16_t col)
 {
 	uint16_t sample_row = row + 2 < TFT_HEIGHT ? row + 2 : row;
