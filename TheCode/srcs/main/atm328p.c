@@ -2,7 +2,7 @@
 #include "main.h"
 #include "mux.h"
 #include "led.h"
-#include "../imu/icm42688p.h"
+#include "icm42688p.h"
 
 t_sensor_data g_sensor = {0};
 

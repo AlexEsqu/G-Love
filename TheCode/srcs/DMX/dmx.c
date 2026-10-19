@@ -1,5 +1,5 @@
 #include "dmx.h"
-#include "../../includes/main.h"
+#include "main.h"
 #include <avr/interrupt.h>
 
 #define DMX_TX_BIT PE1

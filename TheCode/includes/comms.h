@@ -18,6 +18,8 @@ typedef struct __attribute__((packed)) s_sensor_data
     uint16_t crc16; // crc to protect and check data authenticity
 } t_sensor_data;
 
+extern t_sensor_data g_sensor;
+
 typedef struct __attribute__((packed)) s_glove_directive
 {
 	uint16_t	magic; //magic number to detect start of packet
