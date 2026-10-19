@@ -54,25 +54,40 @@ static uint16_t blend_blue_with_red(uint8_t red_level)
 static uint8_t get_finger_red_level(uint8_t finger, uint16_t row, uint16_t col)
 {
 	const flex_finger_area_t *area = &g_finger_areas[finger];
-
-	uint16_t height = area->row_max - area->row_min;
-	if (height == 0)
-		return g_finger_red[finger];
+	uint16_t position;
+	uint16_t length;
 
 	if (finger == FLEX_THUMB)
 	{
-		uint16_t width = 205 - 135;
-		uint16_t distance_from_palm = area->col_max - col;
-		return (uint8_t)(((uint16_t)g_finger_red[finger]
-		* distance_from_palm) / width);
+		position = area->col_max - col;
+		length = area->col_max - area->col_min;
 	}
 	else
 	{
-		uint16_t height = area->row_max - area->row_min;
-		uint16_t distance_from_bottom = area->row_max - row;
-		return (uint8_t)(((uint16_t)g_finger_red[finger]
-		* distance_from_bottom) / height);
+		position = row - area->row_min;
+		length = area->row_max - area->row_min;
 	}
+
+	if (length == 0)
+		return g_finger_red[finger];
+
+	uint16_t gradient_length = (length + 2) / 2;
+	if (finger != FLEX_THUMB)
+	{
+		uint16_t red_length = length - gradient_length;
+		if (position <= red_length)
+			return g_finger_red[finger];
+		position -= red_length;
+		return (uint8_t)(((uint16_t)g_finger_red[finger]
+			* (gradient_length - position)) / gradient_length);
+	}
+	if (position >= gradient_length)
+	{
+		return g_finger_red[finger];
+	}
+
+	return (uint8_t)(((uint16_t)g_finger_red[finger] * position)
+		/ gradient_length);
 }
 
 
