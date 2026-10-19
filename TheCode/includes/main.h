@@ -52,6 +52,7 @@ extern uint8_t				g_animation_frame;
 extern uint16_t				g_ms_counter;
 extern uint8_t				g_touch_debounce;
 extern tft_touch_info_t		g_last_touch;
+extern volatile uint16_t	g_state;
 
 //adc.c
 void		adc_init();

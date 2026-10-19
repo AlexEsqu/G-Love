@@ -15,8 +15,12 @@ void	cst816d_init()
 	set_pin_as_input(&TOUCH_GPIO_DDR, TOUCH_INT_PIN);
 	set_pin_high(&TOUCH_GPIO_PORT, TOUCH_INT_PIN);
 
-	// // Set RESET as output
-	// set_pin_as_output(&TOUCH_GPIO_DDR, TOUCH_RST_PIN);
+	// Set RESET as output, reset pulse: low 10 ms, then high,
+	set_pin_as_output(&TOUCH_GPIO_DDR, TOUCH_RST_PIN);
+	set_pin_low(&TOUCH_GPIO_PORT, TOUCH_RST_PIN);
+	_delay_ms(10);
+	set_pin_high(&TOUCH_GPIO_PORT, TOUCH_RST_PIN);
+	_delay_ms(50);
 }
 
 void	debug_touch_info()
@@ -82,10 +86,20 @@ void	onTouch()
 {
 	i2c_start();
 	i2c_write(TOUCH_ADDR_CST816D << 1 | 0);
+	if (g_state != 0x18) // SLA+W not acknowledged: CST816D not answering
+	{
+		i2c_stop();
+		return;
+	}
 	i2c_write(0x01);
 
 	i2c_start();
 	i2c_write((TOUCH_ADDR_CST816D << 1) | 1);
+	if (g_state != 0x40) // SLA+R not acknowledged
+	{
+		i2c_stop();
+		return;
+	}
 	uint8_t action = i2c_read_ack();
 	uint8_t points = i2c_read_ack();
 	uint8_t x_high = i2c_read_ack();
@@ -101,6 +115,17 @@ void	onTouch()
 	uint16_t x = x_low;
 	uint16_t y = y_low;
 
-	if (points > 0)
+	// debug
+	uart0_printstr("CST816D gesture 0x");
+	ft_uart_print_hex(action);
+	uart0_printstr(" points ");
+	ft_uart_print_hex(points);
+	uart0_printstr(" x 0x");
+	ft_uart_print_hex(x_low);
+	uart0_printstr(" y 0x");
+	ft_uart_print_hex(y_low);
+	uart0_printstr("\r\n");
+
+	if (points > 0 || action != 0)
 		update_touch_info(x, y, action);
 }

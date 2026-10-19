@@ -155,7 +155,7 @@ void	gc9a01_send_image(uint8_t x, uint8_t y, const packed_image_t* image)
 	{
 		for (uint8_t col = 0; col < image->width; col++)
 		{
-			uint8_t byte = pgm_read_byte_far(image->pixels + (uint16_t)row * stride + (col >> 1));
+			uint8_t byte = pgm_read_byte_far((uintptr_t)(image->pixels + (uint16_t)row * stride + (col >> 1)));
 			uint8_t nibble = (col & 1) ? (byte & 0x0F) : (byte >> 4);
 			uint16_t color = (nibble == 0) ? get_color_from_colorscreen(row - 120, col - 120) : image->palette[nibble];
 			spi_send_data(color >> 8);

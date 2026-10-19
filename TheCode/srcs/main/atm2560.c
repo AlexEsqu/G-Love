@@ -143,7 +143,7 @@ int main_ATM2560()
 	while (1)
 	{
 		refresh_screen();
-		// onTouch();
+		onTouch();
 
 		while (get_next_byte(&byte))
 		{
