@@ -26,7 +26,7 @@ uint16_t	g_ms_counter = 0;
 #define TICKS_500MS  31250u
 
 // Initialize timer1 to ping comA every 10ms and comB every 0.5s
-void	touch_timer_init()
+void	milisecond_timer_init()
 {
 	// Initialize the timer (by default but in case previous set)
 	TCNT1 = 0;
@@ -50,11 +50,14 @@ void	disableTouchInterrupt()
 	PCMSK0 &= ~(1 << PCINT6);
 }
 
+// sei(), allows interrupts in general
+void	enableInterrupts()
+{
+	SREG |= (1 << 7);
+}
+
 void	enableTouchInterrupt()
 {
-	// allow interrupts in general
-	SREG |= (1 << 7);
-
 	// allow interrupts on pins PCINT 7 to 0
 	PCICR |= (1 << PCIF0);
 

@@ -275,7 +275,9 @@ uint8_t	is_in_top_right_of_screen(uint16_t row, uint16_t col);
 uint8_t	is_in_bottom_left_of_screen(uint16_t row, uint16_t col);
 uint8_t	is_in_bottom_right_of_screen(uint16_t row, uint16_t col);
 
-void	touch_timer_init();
+
+void	milisecond_timer_init();
+void	enableInterrupts();
 void	enableTouchInterrupt();
 
 // SCREENS

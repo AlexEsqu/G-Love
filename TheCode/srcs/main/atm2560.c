@@ -12,26 +12,27 @@ uint8_t				g_animation_frame = 0;
 
 void setup()
 {
-	// i2c init
+	// protocols
 	i2c_init();
-
-	// uart_init
 	uart0_init();
 	uart1_init();
-
 	spi_init();
+
+	// driver specific sequences
 	cst816d_init();
 	gc9a01_init();
-	touch_timer_init();
+
+	// enable interrupts and timers
+	milisecond_timer_init();
 	enableTouchInterrupt();
+
 	display_screen();
 }
 
 int main_ATM2560()
 {
 	setup();
-
-	uint8_t			byte;
+	uint8_t		byte;
 
 	while (1)
 	{

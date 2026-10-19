@@ -112,7 +112,7 @@ t_imu_data *imu_data_create(void);
 int ICM42688_init(t_imu *imu);
 int imu_get_raw_data(t_imu *imu, t_imu_data *data);
 
-#endif
+
 #define ICM_ADDR                    0x68u
 
 /* Common registers */
@@ -158,3 +158,6 @@ int imu_get_raw_data(t_imu *imu, t_imu_data *data);
 /* Placeholder static config registers (add datasheet values if needed) */
 #define GYRO_CONFIG_STATIC2         0x00u
 #define ACCEL_CONFIG_STATIC2        0x00u
+
+
+#endif
