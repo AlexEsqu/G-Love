@@ -1,15 +1,5 @@
 #include "main.h"
 
-#define RX_BUFFER_SIZE 128
-
-static volatile uint8_t g_rx_buff[RX_BUFFER_SIZE];
-
-//index used for writing in buffer
-static volatile uint8_t g_rx_index = 0;
-
-//pos for reading buffer
-static volatile uint8_t g_rx_pos = 0;
-
 // all possible exportable data, meant for BMX or Computer
 t_sensor_data_to_pc	g_packet_to_export = {0};
 
@@ -22,28 +12,18 @@ glove_directive_t	g_love_directive = {0};
 // tracks which UART output is currently used
 comm_output_e		g_current_uart_output = OUTPUT_UART_TO_SERIAL;
 
+/*
+	Byte received from the 328P: the packet is decoded right here, in the
+	interrupt, and forwarded to the PC. So packets keep flowing even when
+	the main loop is busy for seconds with the screen (SPI) or touch (I2C).
+	Costs ~1 ms once per packet (2 CRCs), the 328P pauses 20 ms between them.
+*/
 __attribute__((signal, used))
 void USART1_RX_vect(void)
 {
-	uint8_t data_byte = UDR1;
-	uint8_t next_index = (g_rx_index + 1) % RX_BUFFER_SIZE;
+	uint8_t byte = UDR1; // reading UDR1 clears the interrupt
 
-	if (next_index != g_rx_pos)
-	{
-		g_rx_buff[g_rx_index] = data_byte;
-		g_rx_index = next_index;
-	}
-}
-
-bool	get_next_byte(uint8_t *byte)
-{
-	if (g_rx_index == g_rx_pos) // buf has nothing to read
-	{
-		return (false);
-	}
-	*byte = g_rx_buff[g_rx_pos];
-	g_rx_pos = (g_rx_pos + 1) % RX_BUFFER_SIZE;
-	return (true);
+	update_sensor_data(&byte);
 }
 
 /*
@@ -123,6 +103,7 @@ void	update_sensor_data(uint8_t* byte)
 		g_packet_to_export.crc16 = crc16_compute((const uint8_t *)&g_packet_to_export,
 							offsetof(t_sensor_data_to_pc, crc16));
 
+		// queued, sent in the background (dropped if the PC link is still busy)
 		uart0_send_data((const uint8_t *)&g_packet_to_export, sizeof(g_packet_to_export));
 	}
 }

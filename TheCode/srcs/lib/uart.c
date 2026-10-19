@@ -1,117 +1,184 @@
 #include "main.h"
 #include <avr/io.h>
 
+/*
+	INTERRUPT DRIVEN UART (non blocking)
 
-// // Interruption de Réception (RX) - Vecteur 18 (USART_RX_vect)
-// __attribute__((signal, used)) void __vector_18(void)
-// {   
-//     // On lit UDR0 TOUT DE SUITE pour vider le matériel et éviter un débordement
-//     uint8_t received_char = UDR0; 
+	The main loop is often busy for a long time (screen over SPI, touch
+	over I2C), so the UART must work in the background:
 
-//     // On ne traite la donnée que si l'envoi précédent est totalement achevé
-//     if (!tx_busy) 
-//     {
-//         to_send[0] = '[';
-//         to_send[1] = received_char;
-//         to_send[2] = ']';
+	TX: uartN_send_data() / uartN_tx() only copy the bytes into a ring
+	    buffer and enable the "data register empty" interrupt (UDRIEn).
+	    The interrupt sends the next byte each time the UART is ready,
+	    and disables itself when the buffer is empty.
 
-//         tx_busy = 1;
-//         tx_index = 0; // On commence par l'index 0 ('[')
+	RX: the "receive complete" interrupt (RXCIEn) stores each byte in a
+	    ring buffer as soon as it arrives, uart0_read() takes them out.
+	    (on the 2561, UART1 RX is handled in comms.c: packets from the
+	    328P are decoded directly in the interrupt)
 
-//         // CRUCIAL : On active l'interruption "Registre de données vide" (UDRIE0)
-//         // Cela va forcer le microcontrôleur à sauter immédiatement dans le __vector_20
-//         UCSR0B |= (1 << UDRIE0);
-//     }
-// }
+	Ring buffer: head = next free slot (written by the producer)
+	             tail = next byte to read (written by the consumer)
+	             empty when head == tail, full when head + 1 == tail
+	Sizes are powers of 2, so "& (SIZE - 1)" wraps the index around.
+*/
 
 #if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
-volatile uint8_t tx_index = 0;
-volatile uint8_t tx_busy = 0; // Protège le tampon pendant une émission
-// Interruption de Registre de Données Vide - Vecteur 19 (USART_UDRE_vect sur atmega328p)
-__attribute__((signal, used)) void __vector_19(void)
-{   
-    if (tx_index < g_len_packet)
-    {
-        // Écriture DIRECTE et instantanée dans le registre matériel (pas de fonction bloquante !)
-        UDR0 = ((const uint8_t *)&g_sensor)[tx_index];
-        tx_index++;
-    }
-    else
-    {
-        // Une fois les caractères chargés, on COUPE cette interruption.
-        UCSR0B &= ~(1 << UDRIE0);
-        
-        // On libère le tampon pour la prochaine réception
-        tx_busy = 0;
-        tx_index = 0;
-    }
-}
+	// the 328P has only one UART, named without number in avr/io.h
+	# define UART0_RX_VECTOR	USART_RX_vect
+	# define UART0_UDRE_VECTOR	USART_UDRE_vect
+	# define UART0_TX_SIZE		64		// one packet to the 2561
+#else
+	# define UART0_RX_VECTOR	USART0_RX_vect
+	# define UART0_UDRE_VECTOR	USART0_UDRE_vect
+	# define UART0_TX_SIZE		128		// two packets to the PC
 #endif
+#define UART0_RX_SIZE			32
+#define UART1_TX_SIZE			32		// directives to the 328P
 
-void uart_init_test(void)
+typedef struct s_ring
 {
-    UBRR0  = MYUBRR;
-    UCSR0A |= (1 << U2X0);
-    UCSR0B |= (1 << RXEN0) | (1 << TXEN0);
-    UCSR0C |= (1 << UCSZ01) | (1 << UCSZ00);
+	volatile uint8_t	*buf;
+	uint8_t				mask;	// size - 1
+	volatile uint8_t	head;
+	volatile uint8_t	tail;
+}	t_ring;
 
-    i2c_init();
-    i2c_scan();
+static volatile uint8_t	g_uart0_tx_buf[UART0_TX_SIZE];
+static volatile uint8_t	g_uart0_rx_buf[UART0_RX_SIZE];
+static t_ring			g_uart0_tx = {g_uart0_tx_buf, UART0_TX_SIZE - 1, 0, 0};
+static t_ring			g_uart0_rx = {g_uart0_rx_buf, UART0_RX_SIZE - 1, 0, 0};
 
-	while(1)
+// free slots in the buffer (one slot always stays empty: full != empty)
+static uint8_t ring_free(const t_ring *ring)
+{
+	return (ring->mask - ((uint8_t)(ring->head - ring->tail) & ring->mask));
+}
+
+static uint8_t ring_used(const t_ring *ring)
+{
+	return ((uint8_t)(ring->head - ring->tail) & ring->mask);
+}
+
+// must be called with interrupts disabled or from the only producer
+static void ring_push(t_ring *ring, uint8_t byte)
+{
+	ring->buf[ring->head] = byte;
+	ring->head = (ring->head + 1) & ring->mask;
+}
+
+static bool ring_pop(t_ring *ring, uint8_t *byte)
+{
+	if (ring->head == ring->tail)
+		return (false);
+	*byte = ring->buf[ring->tail];
+	ring->tail = (ring->tail + 1) & ring->mask;
+	return (true);
+}
+
+/*
+	Queue len bytes, all or nothing: if there is not enough room, nothing
+	is queued and false is returned (a half packet would be lost anyway).
+	Interrupts are disabled while copying: the main loop and an interrupt
+	(comms.c) can both send on the same UART.
+*/
+static bool ring_send(t_ring *ring, volatile uint8_t *ucsrb, uint8_t udrie,
+						const uint8_t *data, size_t len)
+{
+	uint8_t	sreg_backup;
+	bool	ok = false;
+
+	if (!data || len == 0)
+		return (false);
+
+	sreg_backup = SREG;
+	SREG &= ~(1 << SREG_I);
+	if (len <= ring_free(ring))
 	{
-		if (UCSR0A & (1 << RXC0)) {
-			char c = UDR0;
-			uart0_tx('[');
-			uart0_tx(c);
-			uart0_tx(']');
-			if (c == '\r')
-				uart0_printstr("\r\n");
-			if (c == 's')
-				i2c_scan();
-		}
-		_delay_ms(1);
+		for (size_t i = 0; i < len; i++)
+			ring_push(ring, data[i]);
+		// start sending in the background
+		*ucsrb |= (1 << udrie);
+		ok = true;
+	}
+	SREG = sreg_backup;
+	return (ok);
+}
+
+/*
+	One character (text, debug): waits only while the buffer is full.
+	If interrupts are disabled (called from an interrupt), the buffer can
+	not empty itself: the character is dropped instead of freezing the MCU.
+*/
+static void ring_send_char(t_ring *ring, volatile uint8_t *ucsrb, uint8_t udrie, char c)
+{
+	while (!ring_send(ring, ucsrb, udrie, (const uint8_t *)&c, 1))
+	{
+		if (!(SREG & (1 << SREG_I)))
+			return;
 	}
 }
 
 //UART0
-void uart0_init() {
+void uart0_init()
+{
     // Set Baud Rate Register
     UBRR0 = MYUBRR;
 
-    // Double speed mode for reduced baud rate error at 115200 baud
+    // Double speed mode for reduced baud rate error
     UCSR0A = (1 << U2X0);
 
-    // Enable Transmitter and Receiver
-    UCSR0B = (1 << TXEN0) | (1 << RXEN0);
-
-    // Receive interrupt only on the 328P
-    // On the 2561 there is no USART0_RX_vect
-    #if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
-    UCSR0B |= (1 << RXCIE0);
-    #endif
+    // Enable Transmitter, Receiver and the receive interrupt
+    // (the send interrupt UDRIE0 is enabled only when there is data to send)
+    UCSR0B = (1 << TXEN0) | (1 << RXEN0) | (1 << RXCIE0);
 
     // 8 data bits, 1 stop bit, no parity
     UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);
 }
 
-void uart0_tx(char c)
+// UART0 ready for the next byte
+__attribute__((signal, used))
+void UART0_UDRE_VECTOR(void)
 {
-    // Wait for transmit empty
-    while (!(UCSR0A & (1 << UDRE0)))
-    {
-    }
-    UDR0 = c;
+	uint8_t byte;
+
+	if (ring_pop(&g_uart0_tx, &byte))
+		UDR0 = byte;
+	else
+		UCSR0B &= ~(1 << UDRIE0); // nothing left: stop this interrupt
 }
 
-// char uart0_rx(void)
-// {
-//     // Wait for data
-//     // while (!(UCSR0A & (1 << RXC0)))
-//     // {
-//     // }
-//     return UDR0;
-// }
+// UART0 received a byte
+__attribute__((signal, used))
+void UART0_RX_VECTOR(void)
+{
+	uint8_t byte = UDR0; // reading UDR0 clears the interrupt
+
+	if (ring_free(&g_uart0_rx))
+		ring_push(&g_uart0_rx, byte);
+}
+
+void uart0_tx(char c)
+{
+	ring_send_char(&g_uart0_tx, &UCSR0B, UDRIE0, c);
+}
+
+bool uart0_send_data(const uint8_t *data, size_t len)
+{
+	return (ring_send(&g_uart0_tx, &UCSR0B, UDRIE0, data, len));
+}
+
+// number of received bytes waiting to be read
+uint8_t uart0_available(void)
+{
+	return (ring_used(&g_uart0_rx));
+}
+
+// take one received byte, false if there is none (never waits)
+bool uart0_read(uint8_t *byte)
+{
+	return (ring_pop(&g_uart0_rx, byte));
+}
 
 void uart0_printstr(const char *str)
 {
@@ -159,22 +226,35 @@ void uart0_print_10bit(uint32_t c) {
 	uart0_tx('0' + (c % 10));
 }
 
-void uart0_send_data(const uint8_t *data, size_t len)
+void uart_init_test(void)
 {
-    if (!data || len == 0)
-        return;
+	uint8_t c;
 
-    while (len--)
-    {
-        uart0_tx(*data++);
-    }
-}
+	uart0_init();
+	SREG |= (1 << SREG_I); // the UART works with interrupts
 
-uint8_t uart0_available(void) {
-	return (UCSR0A & (1 << RXC0));
+	i2c_init();
+	i2c_scan();
+
+	while(1)
+	{
+		if (uart0_read(&c))
+		{
+			uart0_tx('[');
+			uart0_tx(c);
+			uart0_tx(']');
+			if (c == '\r')
+				uart0_printstr("\r\n");
+			if (c == 's')
+				i2c_scan();
+		}
+	}
 }
 
 #if defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__)
+
+static volatile uint8_t	g_uart1_tx_buf[UART1_TX_SIZE];
+static t_ring			g_uart1_tx = {g_uart1_tx_buf, UART1_TX_SIZE - 1, 0, 0};
 
 // UART1
 void uart1_init()
@@ -185,40 +265,33 @@ void uart1_init()
     // Set Baud Rate Register
     UBRR1 = MYUBRR;
 
-    // Enable Transmitter and Receiver
+    // Enable Transmitter, Receiver and the receive interrupt (USART1_RX_vect in comms.c)
     UCSR1B = (1 << RXCIE1) | (1 << TXEN1) | (1 << RXEN1);
 
     // 8 data bits, 1 stop bit, no parity
     UCSR1C = (1 << UCSZ11) | (1 << UCSZ10);
 }
 
+// UART1 ready for the next byte
+__attribute__((signal, used))
+void USART1_UDRE_vect(void)
+{
+	uint8_t byte;
+
+	if (ring_pop(&g_uart1_tx, &byte))
+		UDR1 = byte;
+	else
+		UCSR1B &= ~(1 << UDRIE1);
+}
+
 void uart1_tx(char c)
 {
-    // Wait for transmit empty
-    while (!(UCSR1A & (1 << UDRE1)))
-    {
-    }
-    UDR1 = c;
+	ring_send_char(&g_uart1_tx, &UCSR1B, UDRIE1, c);
 }
 
-char uart1_rx(void)
+bool uart1_send_data(const uint8_t *data, size_t len)
 {
-    // Wait for data receive
-    while (!(UCSR1A & (1 << RXC1)))
-    {
-    }
-    return UDR1;
-}
-
-void uart1_send_data(const uint8_t *data, size_t len)
-{
-    if (!data || len == 0)
-        return;
-
-    while (len--)
-    {
-        uart1_tx(*data++);
-    }
+	return (ring_send(&g_uart1_tx, &UCSR1B, UDRIE1, data, len));
 }
 
 void uart1_printstr(const char *str) {
@@ -238,11 +311,6 @@ void uart1_print_10bit(uint32_t c) {
 	}
 	uart1_tx('0' + (c % 10));
 }
-
-uint8_t uart1_available(void)
-{
-    return (UCSR1A & (1 << RXC1));
-}
 #endif
 
 uint8_t ft_hex(uint8_t val)
@@ -257,18 +325,3 @@ void ft_uart_print_hex(uint8_t c)
     uart0_tx(ft_hex(c / 16));
     uart0_tx(ft_hex(c % 16));
 }
-
-// /** USART Receive Complete interrupt service routine
-//  * Triggered when a new byte is received and stored in UDR0 (RXC0 flag set)*/
-// #if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
-// __attribute__ ((signal, __used__, externally_visible)) void USART_RX_vect(void)
-// {
-//     // Read the received byte from UDR0 to clear the RXC0 flag
-//     char recu = UDR0; // Read the received byte from UDR0 to clear the RXC0 flag
-
-//     // Echo the received byte back to the sender
-//     uart0_tx(recu);
-
-//     led_effect(recu - 48, 0); // Trigger LED effect on THUMB when a byte is received
-// }
-// #endif

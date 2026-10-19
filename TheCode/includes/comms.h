@@ -53,7 +53,6 @@ extern comm_output_e		g_current_uart_output;
 void	update_sensor_data(uint8_t *byte);
 void	send_g_love_directive();
 bool	process_packet(uint8_t *byte, t_sensor_data *packet);
-bool	get_next_byte(uint8_t *byte);
 
 #endif
 

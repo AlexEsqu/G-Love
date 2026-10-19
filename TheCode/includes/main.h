@@ -5,6 +5,7 @@
 #include <util/delay.h>
 #include <stdint.h>
 #include <stddef.h>
+#include <stdbool.h>
 
 #if defined(__AVR_ATmega2560__)
     #define SPI_DDR   DDRB
@@ -80,24 +81,22 @@ uint8_t 	spi_send_data(uint8_t data);
 void		spi_send_color(rgb_color_t *colors,
 				uint16_t number, uint16_t brightness);
 
-// uart.c
+// uart.c (interrupt driven: sending and receiving never wait, see uart.c)
 void 		uart0_init();
 void 		uart0_tx(char c);
-char 		uart0_rx(void);
+bool        uart0_send_data(const uint8_t *data, size_t len);
+uint8_t     uart0_available(void);
+bool        uart0_read(uint8_t *byte);
 void 		uart0_printstr(const char *str);
 void 		uart0_print_10bit(uint32_t c);
-void        uart0_send_data(const uint8_t *data, size_t len);
-uint8_t     uart0_available(void);
 void 		uart0_print_int(int32_t num);
 void        uart0_print_float(float num);
 
 void 		uart1_init();
 void 		uart1_tx(char c);
-char 		uart1_rx(void);
+bool        uart1_send_data(const uint8_t *data, size_t len);
 void 		uart1_printstr(const char *str);
 void 		uart1_print_10bit(uint32_t c);
-void        uart1_send_data(const uint8_t *data, size_t len);
-uint8_t 	uart1_available(void);
 
 void        uart_init_test(void);
 

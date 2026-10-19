@@ -42,8 +42,7 @@ int main_ATM2560()
 {
 	setup();
 
-	uint8_t			byte;
-
+	// packets from the 328P are handled by the UART1 interrupt (comms.c)
 	while (1)
 	{
 		if (g_packet_to_export.last_touch.is_pending)
@@ -52,11 +51,6 @@ int main_ATM2560()
 			onTouch();
 		}
 		refresh_screen();
-
-		while (get_next_byte(&byte))
-		{
-			update_sensor_data(&byte);
-		}
 	}
 	return 0;
 }

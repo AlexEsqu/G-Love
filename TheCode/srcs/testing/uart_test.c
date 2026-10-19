@@ -10,11 +10,13 @@ int main(void)
     watchdog_disable();
 
     uart0_init();
+    SREG |= (1 << SREG_I); // the UART works with interrupts
 
     while(1)
     {
-        if (UCSR0A & (1 << RXC0)) {
-            char c = UDR0;
+        uint8_t c;
+
+        if (uart0_read(&c)) {
             uart0_tx('[');
             uart0_tx(c);
             uart0_tx(']');
