@@ -1,9 +1,6 @@
 #include "main.h"
 #include <avr/io.h>
 
-volatile char to_send[sizeof(t_sensor_data)];
-volatile uint8_t tx_index = 0;
-volatile uint8_t tx_busy = 0; // Protège le tampon pendant une émission
 
 // // Interruption de Réception (RX) - Vecteur 18 (USART_RX_vect)
 // __attribute__((signal, used)) void __vector_18(void)
@@ -28,6 +25,8 @@ volatile uint8_t tx_busy = 0; // Protège le tampon pendant une émission
 // }
 
 #if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
+volatile uint8_t tx_index = 0;
+volatile uint8_t tx_busy = 0; // Protège le tampon pendant une émission
 // Interruption de Registre de Données Vide - Vecteur 19 (USART_UDRE_vect sur atmega328p)
 __attribute__((signal, used)) void __vector_19(void)
 {   
