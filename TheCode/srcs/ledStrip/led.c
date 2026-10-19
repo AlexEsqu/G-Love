@@ -137,42 +137,28 @@ void led_effect(uint8_t finger, uint8_t color[3])
 
 void led_spi()
 {
-    // static uint16_t color_cycle = 0;
-    // static uint16_t luminosity_cycle = 0;
+    static uint16_t color_cycle = 0; // hue of the first LED, kept between calls
     rgb_color_t colors[NUM_LEDS];
 
-    // for (uint16_t i = 0; i < NUM_LEDS; i++)
-	// {
-	// 	colors[i] = hsvToRgb(color_cycle + 360 * i / NUM_LEDS,
-    //                             255,
-    //                                 (luminosity_cycle < 180) ? luminosity_cycle * 255 / 200 : (360 - luminosity_cycle) * 255 / 200);
-	// }
-
-	// spi_send_color(colors, NUM_LEDS, 1);
     for (uint16_t i = 0; i < NUM_LEDS; i++)
-	{
-		colors[i] = hsvToRgb(192, 255, 255);
+    {
+        uint16_t hue = (color_cycle + (uint16_t)(360UL * i / NUM_LEDS)) % 360;
+
+        colors[i] = hsvToRgb(hue, 255, 255);
     }
-	spi_send_color(colors, NUM_LEDS, 1);
+    spi_send_color(colors, NUM_LEDS, BRIGHTNESS);
 
-    // color_cycle += LED_COLOR_SPEED;
-    // if (color_cycle >= 360) {
-    //     color_cycle = 0;
-    // }
+    color_cycle += LED_COLOR_SPEED;
+    if (color_cycle >= 360)
+        color_cycle -= 360;
 
-    // luminosity_cycle += LED_LUMINOSITY_SPEED;
-    // if (luminosity_cycle >= 360) {
-    //     luminosity_cycle = 0;
-    // }
+    // pulses effect instead of the wheel:
+
     // static bool initialized = false;
     // if (!initialized) {
-    //     strip_init(BRIGHTNESS); // Global brightness ~50% (15/31)
-
-    //     // Trigger a test pulse on thumb LEDs.
+    //     strip_init(BRIGHTNESS);
     //     trigger_pulse(FINGER_COUNT, 255, 255, 255, 255, 14);
-
     //     initialized = true;
     // }
-
     // update_and_render_pulses();
 }
