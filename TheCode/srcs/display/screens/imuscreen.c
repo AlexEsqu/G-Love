@@ -36,8 +36,13 @@ void		print_imuscreen_text(void)
 	print_nav_info(RGB16_GOLD);
 }
 
+// the touchscreen reports the finger every few ms while it is down:
+// without this delay, one press would start the calibration again and again
+#define IMU_CALIBRATION_COOLDOWN 2000	// in g_ms_counter units (~4 s at 8 MHz)
+
 void		on_touch_on_imuscreen()
 {
+	static uint16_t	last_calibration = 0;
 	uint16_t	row = g_packet_to_export.last_touch.y;
 	uint16_t	col = g_packet_to_export.last_touch.x;
 
@@ -47,6 +52,20 @@ void		on_touch_on_imuscreen()
 		putstr_screen(55, 30, "Calibrating", RGB16_GOLD, FONT_SIZE_MID);
 		send_g_love_directive();
 		g_love_directive.request_reset_imu = 0;
+		if ((uint16_t)(g_ms_counter - last_calibration) > IMU_CALIBRATION_COOLDOWN)
+		{
+			// ask the 328P to reset and calibrate the IMU (sent by send_g_love_directive)
+			g_love_directive.command = GLOVE_CMD_IMU_RESET;
+			last_calibration = g_ms_counter;
+
+			// sign under the finger: green = touch detected, calibration started
+			gc9a01_send_square(col, row, RGB16_GREEN, 6);
+		}
+		else
+		{
+			// orange = touch detected, ignored
+			gc9a01_send_square(col, row, RGB16_ORANGE, 6);
+		}
 	}
 
 	print_imu_info();

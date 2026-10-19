@@ -164,6 +164,9 @@ void		print_colorscreen_text(void)
 
 void		on_touch_on_colorscreen()
 {
+	// color chosen for the LEDs, sent to the 328P by send_g_love_directive()
+	g_love_directive.current_color = rgb565_to_rgb888(g_packet_to_export.last_touch.rgb565);
+
 	print_color_touch_info(&g_packet_to_export.last_touch);
 	gc9a01_send_square(30, 155, RGB16_BLACK, 12);
 	gc9a01_send_square(30, 155, g_packet_to_export.last_touch.rgb565, 10);

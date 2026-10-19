@@ -100,6 +100,8 @@ void	update_sensor_data(uint8_t* byte)
 		ft_memcpy(g_packet_to_export.sensorFlex, packet_from_sensors.sensorFlex, sizeof(packet_from_sensors.sensorFlex));
 		ft_memcpy(g_packet_to_export.accel, packet_from_sensors.accel, sizeof(packet_from_sensors.accel));
 		ft_memcpy(g_packet_to_export.gyro, packet_from_sensors.gyro, sizeof(packet_from_sensors.gyro));
+		// current screen, so the PC knows which screen is displayed
+		g_packet_to_export.touchscreen_state = g_touchscreen_mode;
 		g_packet_to_export.crc16 = crc16_compute((const uint8_t *)&g_packet_to_export,
 							offsetof(t_sensor_data_to_pc, crc16));
 
@@ -111,8 +113,10 @@ void	update_sensor_data(uint8_t* byte)
 void	package_g_love_directive(glove_directive_t* glove_directive)
 {
 	glove_directive->magic = SENSOR_PACKET_MAGIC_DIRECTIVE_TO_328;
-	glove_directive->current_color = rgb565_to_rgb888(g_packet_to_export.last_touch.rgb565);
+	// color chosen on the color screen (on_touch_on_colorscreen), RGB888 0xRRGGBB
+	glove_directive->current_color = g_love_directive.current_color;
 	glove_directive->current_mode = g_touchscreen_mode;
+	glove_directive->command = g_love_directive.command;
 	glove_directive->crc16 = crc16_compute((const uint8_t *)glove_directive,
 									offsetof(glove_directive_t, crc16));
 }
@@ -121,5 +125,6 @@ void	send_g_love_directive()
 {
 	glove_directive_t glove_directive = {0};
 	package_g_love_directive(&glove_directive);
-	uart1_send_data((const uint8_t *)&glove_directive, sizeof(glove_directive_t));
+	if (uart1_send_data((const uint8_t *)&glove_directive, sizeof(glove_directive_t)))
+		g_love_directive.command = GLOVE_CMD_NONE; // command sent once
 }

@@ -257,6 +257,8 @@ void		gc9a01_set_display_size(uint16_t left, uint16_t top, uint16_t right, uint1
 uint32_t	rgb565_to_rgb888(uint16_t rgb565);
 
 void		display_screen();
+extern uint8_t	g_screen_redraw_count;
+uint16_t	get_color_from_image_or_background(const uint16_t row, const uint16_t column);
 void		refresh_screen();
 int			is_screen_frame(int16_t x, int16_t y);
 uint8_t		is_in_mask(uint16_t row, uint16_t col, const very_packed_image_t* image);
