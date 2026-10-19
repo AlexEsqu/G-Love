@@ -62,29 +62,26 @@ void		print_comscreen_text(void)
 
 	putstr_screen(140, 190, "To the", RGB16_GLACIER_DEEP, FONT_SIZE_SMALL);
 	putstr_screen(142, 200, "STAGE", RGB16_GLACIER_DEEP, FONT_SIZE_SMALL);
-	// print_touch_info(&g_packet_to_export.last_touch);
-	// print_nav_info(RGB16_BLACK);
 }
 
 void		on_touch_on_comscreen()
 {
-	// uint16_t	row = g_packet_to_export.last_touch.x;
-	// uint16_t	col = g_packet_to_export.last_touch.y;
+	uint16_t	row = g_packet_to_export.last_touch.x;
+	uint16_t	col = g_packet_to_export.last_touch.y;
+	uint8_t		old_output = g_current_uart_output;
 
-	// if (is_in_top_quarter(row, col))
-	// {
-
-	// }
-	// else if (is_in_right_quarter(row, col))
-	// {
-
-	// }
-	// else if (is_in_bottom_quarter(row, col))
-	// {
-
-	// }
-	// else if (is_in_left_quarter(row, col))
-	// {
-
-	// }
+	if (is_top_quarter_of_screen(row, col))
+	{
+		g_current_uart_output = OUTPUT_UART_TO_SERIAL;
+	}
+	else if (is_right_quarter_of_screen(row, col))
+	{
+		g_current_uart_output = OUTPUT_UART_TO_JST;
+	}
+	else if (is_bottom_quarter_of_screen(row, col))
+	{
+		g_current_uart_output = OUTPUT_TO_BMX;
+	}
+	if (g_current_uart_output != old_output)
+		display_screen();
 }

@@ -19,6 +19,9 @@ t_sensor_data		g_sensor_packet_from_wrist = {0};
 // orders LEDs by giving mode and color
 glove_directive_t	g_love_directive = {0};
 
+// tracks which UART output is currently used
+comm_output_e		g_current_uart_output = OUTPUT_UART_TO_SERIAL;
+
 __attribute__((signal, used))
 void USART1_RX_vect(void)
 {

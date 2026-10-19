@@ -37,8 +37,15 @@ typedef struct __attribute__((packed)) s_glove_directive
 	uint16_t	crc16; // crc to protect and check data authenticity
 } glove_directive_t;
 
+typedef enum {
+	OUTPUT_UART_TO_SERIAL = 0,
+	OUTPUT_UART_TO_JST = 1,
+	OUTPUT_TO_BMX = 2
+} comm_output_e ;
+
 extern glove_directive_t	g_love_directive;
 extern t_sensor_data_to_pc	g_packet_to_export;
+extern comm_output_e		g_current_uart_output;
 
 void	update_sensor_data();
 void	send_g_love_directive();
