@@ -10,7 +10,7 @@ static int	is_homeframe( uint16_t row, uint16_t col)
 {
 	int16_t	y = (int16_t)col - 120;
 	int16_t	x = (int16_t)row - 120;
-	return is_screen_frame(x, y) || is_spoke(x, y);
+	return is_spoke(x, y);
 }
 
 static inline int	is_in_top_left_quarter(uint16_t row, uint16_t col)
@@ -35,22 +35,22 @@ static inline int	is_in_bottom_left_quarter(uint16_t row, uint16_t col)
 
 uint16_t	get_color_from_homescreen(uint16_t row, uint16_t col)
 {
-	uint16_t color = RGB16_BLACK;
+	uint16_t color = RGB16_ALIVE_AMBER;
 	if (is_homeframe(row, col))
 	{
-		color = RGB16_GREEN;
+		color = RGB16_BLACK;
 	}
 	else if (is_in_top_left_quarter(row, col))
 	{
-		color = RGB16_GOLD;
+		color = RGB16_PLASMA_BURN;
 	}
 	else if (is_in_top_right_quarter(row, col))
 	{
-		color = RGB16_GRAY;
+		color = RGB16_FOREST_FLOOR;
 	}
 	else if (is_in_bottom_right_quarter(row, col))
 	{
-		color = RGB16_NAVY;
+		color = RGB16_CYBER_SAPPHIRE;
 	}
 	return color;
 }

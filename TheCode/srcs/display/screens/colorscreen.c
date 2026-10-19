@@ -9,52 +9,30 @@ static uint16_t rgb_to_565(uint8_t r, uint8_t g, uint8_t b)
 
 static uint16_t hsv_to_565(uint8_t hue, uint8_t sat)
 {
-    uint8_t section = hue / 40;
-    uint8_t rise = (uint8_t)((hue % 40) * 255 / 40);
-    uint8_t fall = 255 - rise;
+	uint8_t section = hue / 40;
+	uint8_t rise = (uint8_t)((hue % 40) * 255 / 40);
+	uint8_t fall = 255 - rise;
 
-    uint8_t r, g, b;
+	uint8_t r, g, b;
 
-    switch (section)
-    {
-        case 0: r = 255; g = rise; b = 0;   break;
-        case 1: r = fall; g = 255; b = 0;   break;
-        case 2: r = 0;   g = 255; b = rise; break;
-        case 3: r = 0;   g = fall; b = 255; break;
-        case 4: r = rise; g = 0;   b = 255; break;
-        default:r = 255; g = 0;   b = fall; break;
-    }
+	switch (section)
+	{
+		case 0: r = 255; g = rise; b = 0;   break;
+		case 1: r = fall; g = 255; b = 0;   break;
+		case 2: r = 0;   g = 255; b = rise; break;
+		case 3: r = 0;   g = fall; b = 255; break;
+		case 4: r = rise; g = 0;   b = 255; break;
+		default:r = 255; g = 0;   b = fall; break;
+	}
 
-    // Blend base hue with white at the center
-    r = 255 - (((uint16_t)(255 - r) * sat) / 255);
-    g = 255 - (((uint16_t)(255 - g) * sat) / 255);
-    b = 255 - (((uint16_t)(255 - b) * sat) / 255);
+	// Blend base hue with white at the center
+	r = 255 - (((uint16_t)(255 - r) * sat) / 255);
+	g = 255 - (((uint16_t)(255 - g) * sat) / 255);
+	b = 255 - (((uint16_t)(255 - b) * sat) / 255);
 
-    return rgb_to_565(r, g, b);
+	return rgb_to_565(r, g, b);
 }
 
-// static uint16_t hue_to_565(uint8_t hue)
-// {
-// 	uint8_t section = hue / 40;
-// 	uint8_t rise = (uint8_t)((hue % 40) * 255 / 40);
-// 	uint8_t fall = 255 - rise;
-
-// 	switch (section)
-// 	{
-// 		case 0:
-// 			return rgb_to_565(255, rise, 0);
-// 		case 1:
-// 			return rgb_to_565(fall, 255, 0);
-// 		case 2:
-// 			return rgb_to_565(0, 255, rise);
-// 		case 3:
-// 			return rgb_to_565(0, fall, 255);
-// 		case 4:
-// 			return rgb_to_565(rise, 0, 255);
-// 		default:
-// 			return rgb_to_565(255, 0, fall);
-// 	}
-// }
 
 // Approximating a square root without floats
 static uint8_t fast_isqrt(uint16_t val)
@@ -138,8 +116,6 @@ void		print_color_touch_info(tft_touch_info_t* touch_info)
 	pointer = putstr_screen(pointer, 140, "0x", RGB16_WHITE, FONT_SIZE_SMALL);
 	pointer = puthex_screen(pointer, 140, (touch_info->rgb888 & 0x1F), RGB16_WHITE, FONT_SIZE_SMALL);
 }
-
-
 
 void		print_colorscreen_text(void)
 {
