@@ -13,5 +13,6 @@ uint8_t dmx_is_idle(void);
 uint8_t dmx_set_channel(uint16_t channel, uint8_t value);
 uint8_t dmx_send_frame(void);
 void dmx_breathing_loop(void);
+void dmx_uart_data_empty(void);
 
 #endif

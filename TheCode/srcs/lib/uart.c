@@ -1,5 +1,8 @@
 #include "main.h"
 #include <avr/io.h>
+#if defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__)
+# include "dmx.h"
+#endif
 
 /*
 	INTERRUPT DRIVEN UART (non blocking)
@@ -142,6 +145,13 @@ void UART0_UDRE_VECTOR(void)
 {
 	uint8_t byte;
 
+#if defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__)
+	if (g_current_uart_output == OUTPUT_TO_DMX)
+	{
+		dmx_uart_data_empty();
+		return;
+	}
+#endif
 	if (ring_pop(&g_uart0_tx, &byte))
 		UDR0 = byte;
 	else

@@ -70,6 +70,7 @@ SRCS2    = $(CODEDIR2)/main.c \
 			$(LIBDIR)/timer.c \
 			$(LIBDIR)/readability.c \
 			$(LIBDIR)/crc.c \
+			srcs/DMX/dmx.c \
 			srcs/display/gc9a01.c \
 			srcs/display/display.c \
 			srcs/display/tactile.c \

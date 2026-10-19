@@ -1,6 +1,6 @@
 #include "main.h"
 
-// all possible exportable data, meant for BMX or Computer
+// all possible exportable data, meant for DMX or Computer
 t_sensor_data_to_pc	g_packet_to_export = {0};
 
 // sensor data receivd from the 328P on the wrist

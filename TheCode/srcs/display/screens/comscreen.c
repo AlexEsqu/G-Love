@@ -1,5 +1,6 @@
 #include "touchscreen.h"
 #include "main.h"
+#include "dmx.h"
 
 
 static int is_x_spoke(uint16_t row, uint16_t col)
@@ -50,13 +51,13 @@ void		print_comscreen_text(void)
 	{
 		"Laptop / USB ",
 		"G-Love / JST ",
-		"Scene / BMX  ",
+		"Scene / DMX  ",
 		"Debug        "
 	};
 
 	const uint16_t	serial_light_color = g_current_uart_output == OUTPUT_UART_TO_SERIAL ? RGB16_WHITE : RGB16_LAPIS_CORE;
 	const uint16_t	jst_light_color = g_current_uart_output == OUTPUT_UART_TO_JST ? RGB16_WHITE : RGB16_DEEP_CYAN;
-	const uint16_t	bmx_light_color = g_current_uart_output == OUTPUT_TO_BMX ? RGB16_WHITE : RGB16_GLACIER_DEEP;
+	const uint16_t	dmx_light_color = g_current_uart_output == OUTPUT_TO_DMX ? RGB16_WHITE : RGB16_GLACIER_DEEP;
 
 	putstr_screen(15, 80, "Com", RGB16_BLACK, FONT_SIZE_MID);
 	putstr_screen(12, 100, "mode", RGB16_BLACK, FONT_SIZE_MID);
@@ -71,8 +72,8 @@ void		print_comscreen_text(void)
 	putstr_screen(180, 155, "another", jst_light_color, FONT_SIZE_SMALL);
 	putstr_screen(185, 165, "G-Love", jst_light_color, FONT_SIZE_SMALL);
 
-	putstr_screen(140, 190, "To the", bmx_light_color, FONT_SIZE_SMALL);
-	putstr_screen(142, 200, "STAGE", bmx_light_color, FONT_SIZE_SMALL);
+	putstr_screen(140, 190, "To the", dmx_light_color, FONT_SIZE_SMALL);
+	putstr_screen(142, 200, "STAGE", dmx_light_color, FONT_SIZE_SMALL);
 }
 
 void		on_touch_on_comscreen()
@@ -91,8 +92,17 @@ void		on_touch_on_comscreen()
 	}
 	else if (is_bottom_quarter_of_screen(row, col))
 	{
-		g_current_uart_output = OUTPUT_TO_BMX;
+		g_current_uart_output = OUTPUT_TO_DMX;
 	}
 	if (g_current_uart_output != old_output)
+	{
+		if (old_output == OUTPUT_TO_DMX)
+		{
+			dmx_disable();
+			uart0_init();
+		}
+		if (g_current_uart_output == OUTPUT_TO_DMX)
+			dmx_init();
 		refresh_screen();
+	}
 }

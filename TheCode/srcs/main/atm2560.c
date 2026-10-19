@@ -1,4 +1,5 @@
 #include "main.h"
+#include "dmx.h"
 #include <avr/interrupt.h>
 #include <stdint.h>
 #include <stdbool.h>
@@ -44,6 +45,8 @@ int main_ATM2560()
 			g_packet_to_export.last_touch.is_pending = 0;
 			onTouch();
 		}
+		if (g_current_uart_output == OUTPUT_TO_DMX)
+			dmx_breathing_loop();
 		refresh_screen();
 	}
 	return 0;

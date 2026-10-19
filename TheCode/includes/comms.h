@@ -46,7 +46,7 @@ typedef struct __attribute__((packed)) s_sensor_data_to_pc
 typedef enum {
 	OUTPUT_UART_TO_SERIAL = 0,
 	OUTPUT_UART_TO_JST = 1,
-	OUTPUT_TO_BMX = 2
+	OUTPUT_TO_DMX = 2
 } comm_output_e ;
 
 extern glove_directive_t	g_love_directive;

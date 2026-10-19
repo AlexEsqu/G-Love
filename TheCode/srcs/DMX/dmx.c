@@ -38,11 +38,11 @@ void dmx_init(void)
 
 	/* Enable the USART0 Data Register Empty interrupt. */
 	UCSR0B |= (1 << UDRIE0);
-	/* Timer1 runs at 1 MHz: it times the DMX break/MAB and the 35 ms pause. */
-	TCCR1A = 0;
-	TCCR1B = (1 << WGM12) | (1 << CS11);
-	OCR1A = 999;
-	TIMSK1 |= (1 << OCIE1A);
+	/* Timer3 runs at 1 MHz: it times the DMX break/MAB and the 35 ms pause. */
+	TCCR3A = 0;
+	TCCR3B = (1 << WGM32) | (1 << CS31);
+	OCR3A = 999;
+	TIMSK3 |= (1 << OCIE3A);
 	SREG |= (1 << SREG_I);
 }
 
@@ -78,11 +78,11 @@ void dmx_disable(void)
 	g_dmx_cooldown_ms = 0;
 
 	UCSR0B &= ~((1 << UDRIE0) | (1 << TXCIE0) | (1 << TXEN0));
-	TCCR1A = 0;
-	TCCR1B = 0;
-	TCNT1 = 0;
-	OCR1A = 0;
-	TIMSK1 &= ~(1 << OCIE1A);
+	TCCR3A = 0;
+	TCCR3B = 0;
+	TCNT3 = 0;
+	OCR3A = 0;
+	TIMSK3 &= ~(1 << OCIE3A);
 
 	PORTE &= ~(1 << DMX_TX_BIT);
 	SREG = status_register;
@@ -136,8 +136,8 @@ uint8_t dmx_send_frame(void)
 	g_dmx_state = DMX_BREAK;
 	DDRE |= (1 << DMX_TX_BIT);
 	PORTE &= ~(1 << DMX_TX_BIT);
-	TCNT1 = 0;
-	OCR1A = 99;
+	TCNT3 = 0;
+	OCR3A = 99;
 	SREG = status_register;
 	return 1;
 }
@@ -159,15 +159,15 @@ void dmx_breathing_loop(void)
 }
 
 // Timer/Counter1 Capture Event for DMX break and MAB timing, as well as the 35 ms pause between frames.
-void __vector_17(void) __attribute__((signal, used, externally_visible));
-void __vector_17(void)
+void TIMER3_COMPA_vect(void) __attribute__((signal, used, externally_visible));
+void TIMER3_COMPA_vect(void)
 {
 	if (g_dmx_state == DMX_BREAK)
 	{
 		PORTE |= (1 << DMX_TX_BIT);
 		g_dmx_state = DMX_MAB;
-		TCNT1 = 0;
-		OCR1A = 11;
+		TCNT3 = 0;
+		OCR3A = 11;
 	}
 	else if (g_dmx_state == DMX_MAB)
 	{
@@ -175,8 +175,8 @@ void __vector_17(void)
 		UCSR0B |= (1 << TXCIE0) | (1 << TXEN0);
 		UDR0 = 0;
 		g_dmx_state = DMX_START;
-		TCNT1 = 0;
-		OCR1A = 999;
+		TCNT3 = 0;
+		OCR3A = 999;
 	}
 	else if (g_dmx_cooldown_ms != 0)
 	{
@@ -184,9 +184,7 @@ void __vector_17(void)
 	}
 }
 
-// USART0 Data Register Empty
-void __vector_27(void) __attribute__((signal, used, externally_visible));
-void __vector_27(void)
+void dmx_uart_data_empty(void)
 {
 	if (g_dmx_state == DMX_START || g_dmx_state == DMX_SLOTS)
 	{
@@ -202,6 +200,17 @@ void __vector_27(void)
 		}
 	}
 	else if (g_dmx_state == DMX_DATA)
+	{
+		UCSR0B &= ~(1 << TXCIE0);
+		g_dmx_state = DMX_IDLE;
+		g_dmx_cooldown_ms = 35;
+	}
+}
+
+void USART0_TX_vect(void) __attribute__((signal, used, externally_visible));
+void USART0_TX_vect(void)
+{
+	if (g_dmx_state == DMX_DATA)
 	{
 		UCSR0B &= ~(1 << TXCIE0);
 		g_dmx_state = DMX_IDLE;
