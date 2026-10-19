@@ -46,12 +46,19 @@ uint16_t get_color_from_comscreen(uint16_t row, uint16_t col)
 
 void		print_comscreen_text(void)
 {
+	static const char*	debug_messages[4] =
+	{
+		"Laptop / USB",
+		"G-Love / JST",
+		"Scene / BMX",
+		"Debug"
+	};
+
 	putstr_screen(20, 80, "Com", RGB16_BLACK, FONT_SIZE_MID);
 	putstr_screen(20, 100, "mode", RGB16_BLACK, FONT_SIZE_MID);
 
 	putstr_screen(20, 130, "Currently:", RGB16_BLACK, FONT_SIZE_SMALL);
-	// gotta plug it here for debug
-	putstr_screen(20, 140, "Debug", RGB16_BLACK, FONT_SIZE_SMALL);
+	putstr_screen(20, 140, debug_messages[g_current_uart_output], RGB16_BLACK, FONT_SIZE_SMALL);
 
 	putstr_screen(85, 15, "To a", RGB16_LAPIS_CORE, FONT_SIZE_SMALL);
 	putstr_screen(75, 25, "computer", RGB16_LAPIS_CORE, FONT_SIZE_SMALL);
@@ -66,8 +73,8 @@ void		print_comscreen_text(void)
 
 void		on_touch_on_comscreen()
 {
-	uint16_t	row = g_packet_to_export.last_touch.x;
-	uint16_t	col = g_packet_to_export.last_touch.y;
+	uint16_t	row = g_packet_to_export.last_touch.y;
+	uint16_t	col = g_packet_to_export.last_touch.x;
 	uint8_t		old_output = g_current_uart_output;
 
 	if (is_top_quarter_of_screen(row, col))
@@ -83,5 +90,5 @@ void		on_touch_on_comscreen()
 		g_current_uart_output = OUTPUT_TO_BMX;
 	}
 	if (g_current_uart_output != old_output)
-		display_screen();
+		refresh_screen();
 }
