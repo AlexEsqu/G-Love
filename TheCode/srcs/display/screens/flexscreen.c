@@ -1,6 +1,80 @@
 #include "touchscreen.h"
 #include "main.h"
 
+enum
+{
+	FLEX_THUMB,
+	FLEX_INDEX,
+	FLEX_MIDDLE,
+	FLEX_RING,
+	FLEX_PINKY,
+	FLEX_FINGER_COUNT
+};
+
+typedef struct
+{
+	uint16_t row_min;
+	uint16_t row_max;
+	uint16_t col_min;
+	uint16_t col_max;
+} flex_finger_area_t;
+
+static const flex_finger_area_t g_finger_areas[FLEX_FINGER_COUNT] =
+{
+	[FLEX_THUMB] = { 135, 205, 15, 80 },
+	[FLEX_INDEX] = { 30, 90, 65, 95 },
+	[FLEX_MIDDLE] = { 10, 90, 95, 122 },
+	[FLEX_RING] = { 20, 100, 124, 147 },
+	[FLEX_PINKY] = { 40, 107, 147, 170 }
+};
+
+// plug into fsr values
+static uint8_t g_finger_red[FLEX_FINGER_COUNT] = { 255, 20, 0, 255, 0 };
+
+static int8_t get_finger_index(uint16_t row, uint16_t col)
+{
+	for (uint8_t finger = 0; finger < FLEX_FINGER_COUNT; finger++)
+	{
+		const flex_finger_area_t *area = &g_finger_areas[finger];
+		if (row >= area->row_min && row <= area->row_max
+			&& col >= area->col_min && col <= area->col_max)
+			return (int8_t)finger;
+	}
+	return -1;
+}
+
+static uint16_t blend_blue_with_red(uint8_t red_level)
+{
+	uint8_t red = (uint8_t)(((uint16_t)31 * red_level) / 255);
+	uint8_t blue = (uint8_t)(((uint16_t)31 * (255 - red_level)) / 255);
+
+	return ((uint16_t)red << 11) | blue;
+}
+
+static uint8_t get_finger_red_level(uint8_t finger, uint16_t row, uint16_t col)
+{
+	const flex_finger_area_t *area = &g_finger_areas[finger];
+
+	uint16_t height = area->row_max - area->row_min;
+	if (height == 0)
+		return g_finger_red[finger];
+
+	if (finger == FLEX_THUMB)
+	{
+		uint16_t width = 205 - 135;
+		uint16_t distance_from_palm = area->col_max - col;
+		return (uint8_t)(((uint16_t)g_finger_red[finger]
+		* distance_from_palm) / width);
+	}
+	else
+	{
+		uint16_t height = area->row_max - area->row_min;
+		uint16_t distance_from_bottom = area->row_max - row;
+		return (uint8_t)(((uint16_t)g_finger_red[finger]
+		* distance_from_bottom) / height);
+	}
+}
+
 
 void		print_nav_info_flex(uint16_t color)
 {
@@ -11,9 +85,14 @@ void		print_nav_info_flex(uint16_t color)
 
 uint16_t get_color_from_flexscreen(uint16_t row, uint16_t col)
 {
-	if (is_in_mask(row, col, &flexscreen_image))
-		return RGB16_BLUE;
-	return RGB16_BLACK;
+	if (!is_in_mask(row, col, &flexscreen_image))
+		return RGB16_BLACK;
+
+	int8_t finger = get_finger_index(row, col);
+	if (finger >= 0)
+		return blend_blue_with_red(get_finger_red_level((uint8_t)finger, row, col));
+
+	return RGB16_BLUE;
 }
 
 void		print_flexscreen_text(void)
