@@ -48,10 +48,10 @@ void		print_comscreen_text(void)
 {
 	static const char*	debug_messages[4] =
 	{
-		"Laptop / USB",
-		"G-Love / JST",
-		"Scene / BMX",
-		"Debug"
+		"Laptop / USB ",
+		"G-Love / JST ",
+		"Scene / BMX  ",
+		"Debug        "
 	};
 
 	const uint16_t	serial_light_color = g_current_uart_output == OUTPUT_UART_TO_SERIAL ? RGB16_WHITE : RGB16_LAPIS_CORE;
@@ -59,9 +59,9 @@ void		print_comscreen_text(void)
 	const uint16_t	bmx_light_color = g_current_uart_output == OUTPUT_TO_BMX ? RGB16_WHITE : RGB16_GLACIER_DEEP;
 
 	putstr_screen(15, 80, "Com", RGB16_BLACK, FONT_SIZE_MID);
-	putstr_screen(15, 100, "mode", RGB16_BLACK, FONT_SIZE_MID);
+	putstr_screen(12, 100, "mode", RGB16_BLACK, FONT_SIZE_MID);
 
-	putstr_screen(15, 130, "Currently:", RGB16_BLACK, FONT_SIZE_SMALL);
+	putstr_screen(12, 130, "Currently:", RGB16_BLACK, FONT_SIZE_SMALL);
 	putstr_screen(15, 140, debug_messages[g_current_uart_output], RGB16_BLACK, FONT_SIZE_SMALL);
 
 	putstr_screen(85, 15, "To a", serial_light_color, FONT_SIZE_SMALL);
