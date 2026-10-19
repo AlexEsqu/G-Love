@@ -54,21 +54,25 @@ void		print_comscreen_text(void)
 		"Debug"
 	};
 
-	putstr_screen(20, 80, "Com", RGB16_BLACK, FONT_SIZE_MID);
-	putstr_screen(20, 100, "mode", RGB16_BLACK, FONT_SIZE_MID);
+	const uint16_t	serial_light_color = g_current_uart_output == OUTPUT_UART_TO_SERIAL ? RGB16_WHITE : RGB16_LAPIS_CORE;
+	const uint16_t	jst_light_color = g_current_uart_output == OUTPUT_UART_TO_JST ? RGB16_WHITE : RGB16_DEEP_CYAN;
+	const uint16_t	bmx_light_color = g_current_uart_output == OUTPUT_TO_BMX ? RGB16_WHITE : RGB16_GLACIER_DEEP;
 
-	putstr_screen(20, 130, "Currently:", RGB16_BLACK, FONT_SIZE_SMALL);
-	putstr_screen(20, 140, debug_messages[g_current_uart_output], RGB16_BLACK, FONT_SIZE_SMALL);
+	putstr_screen(15, 80, "Com", RGB16_BLACK, FONT_SIZE_MID);
+	putstr_screen(15, 100, "mode", RGB16_BLACK, FONT_SIZE_MID);
 
-	putstr_screen(85, 15, "To a", RGB16_LAPIS_CORE, FONT_SIZE_SMALL);
-	putstr_screen(75, 25, "computer", RGB16_LAPIS_CORE, FONT_SIZE_SMALL);
+	putstr_screen(15, 130, "Currently:", RGB16_BLACK, FONT_SIZE_SMALL);
+	putstr_screen(15, 140, debug_messages[g_current_uart_output], RGB16_BLACK, FONT_SIZE_SMALL);
 
-	putstr_screen(205, 145, "To", RGB16_DEEP_CYAN, FONT_SIZE_SMALL);
-	putstr_screen(180, 155, "another", RGB16_DEEP_CYAN, FONT_SIZE_SMALL);
-	putstr_screen(185, 165, "G-Love", RGB16_DEEP_CYAN, FONT_SIZE_SMALL);
+	putstr_screen(85, 15, "To a", serial_light_color, FONT_SIZE_SMALL);
+	putstr_screen(75, 25, "computer", serial_light_color, FONT_SIZE_SMALL);
 
-	putstr_screen(140, 190, "To the", RGB16_GLACIER_DEEP, FONT_SIZE_SMALL);
-	putstr_screen(142, 200, "STAGE", RGB16_GLACIER_DEEP, FONT_SIZE_SMALL);
+	putstr_screen(205, 145, "To", jst_light_color, FONT_SIZE_SMALL);
+	putstr_screen(180, 155, "another", jst_light_color, FONT_SIZE_SMALL);
+	putstr_screen(185, 165, "G-Love", jst_light_color, FONT_SIZE_SMALL);
+
+	putstr_screen(140, 190, "To the", bmx_light_color, FONT_SIZE_SMALL);
+	putstr_screen(142, 200, "STAGE", bmx_light_color, FONT_SIZE_SMALL);
 }
 
 void		on_touch_on_comscreen()
