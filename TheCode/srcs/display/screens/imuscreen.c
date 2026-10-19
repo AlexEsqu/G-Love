@@ -46,6 +46,7 @@ void		on_touch_on_imuscreen()
 		g_love_directive.request_reset_imu = 1;
 		putstr_screen(55, 30, "Calibrating", RGB16_GOLD, FONT_SIZE_MID);
 		send_g_love_directive();
+		g_love_directive.request_reset_imu = 0;
 	}
 
 	print_imu_info();
