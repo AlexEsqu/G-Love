@@ -75,6 +75,9 @@ void	gc9a01_init()
 	set_pin_high(&SCREEN_PORT, SCREEN_RST);
 	set_pin_high(&SCREEN_PORT, SCREEN_DC);
 
+	set_pin_high(&SCREEN_PORT, SCREEN_RST);
+	_delay_ms(20);
+
 	// gc9a01_send_init_sequence();
 	for (uint8_t i = 0; i < GC9A01_INIT_SEQUENCE_LEN; i++)
 	{

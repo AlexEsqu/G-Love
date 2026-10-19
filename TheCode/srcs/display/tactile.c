@@ -14,9 +14,6 @@ void	cst816d_init()
 	// Set INT as input with its active-low pull-up.
 	set_pin_as_input(&TOUCH_GPIO_DDR, TOUCH_INT_PIN);
 	set_pin_high(&TOUCH_GPIO_PORT, TOUCH_INT_PIN);
-
-	// // Set RESET as output
-	// set_pin_as_output(&TOUCH_GPIO_DDR, TOUCH_RST_PIN);
 }
 
 void	debug_touch_info()
