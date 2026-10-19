@@ -90,8 +90,12 @@ uint16_t	get_color_from_image_or_background(const uint16_t row, const uint16_t c
 	return RGB16_CYAN;
 }
 
+// incremented at each full redraw (used by the flex screen to redraw its indicators)
+uint8_t	g_screen_redraw_count = 0;
+
 void	display_screen()
 {
+	g_screen_redraw_count++;
 	gc9a01_set_display_size(0, 0, TFT_WIDTH - 1, TFT_HEIGHT - 1);
 
 	gc9a01_send_command(GC9A01_MEM_WRITE);

@@ -44,7 +44,7 @@ typedef struct s_finger_leds {
 #define FSR_CHANNEL_PINKY  4
 
 // LED strip configuration
-#define NUM_LEDS 120
+#define NUM_LEDS 130
 #define END_FRAME_BYTES ((NUM_LEDS + 15) / 16)
 #define MAX_PULSES 20
 
