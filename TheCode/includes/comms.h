@@ -18,11 +18,17 @@ typedef struct __attribute__((packed)) s_sensor_data
     uint16_t crc16; // crc to protect and check data authenticity
 } t_sensor_data;
 
+// glove_directive_t.command: one-shot order for the 328P
+#define GLOVE_CMD_NONE			0
+#define GLOVE_CMD_IMU_RESET		1	// reset and calibrate the IMU again (glove must not move)
+
+// atm2561 -> atm328P
 typedef struct __attribute__((packed)) s_glove_directive
 {
 	uint16_t	magic; //magic number to detect start of packet
 	uint8_t		current_mode;
 	uint32_t	current_color;
+	uint8_t		command; // GLOVE_CMD_xxx
 	uint16_t	crc16; // crc to protect and check data authenticity
 } glove_directive_t;
 

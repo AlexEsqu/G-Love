@@ -142,15 +142,15 @@ void led_spi()
 
     for (uint16_t i = 0; i < NUM_LEDS; i++)
     {
-        uint16_t hue = (color_cycle + (uint16_t)(360UL * i / NUM_LEDS)) % 360;
+        uint16_t hue = (color_cycle + (uint16_t)(180UL * i / NUM_LEDS)) % 180;
 
         colors[i] = hsvToRgb(hue, 255, 255);
     }
     spi_send_color(colors, NUM_LEDS, BRIGHTNESS);
 
     color_cycle += LED_COLOR_SPEED;
-    if (color_cycle >= 360)
-        color_cycle -= 360;
+    if (color_cycle >= 180)
+        color_cycle -= 180;
 
     // pulses effect instead of the wheel:
 

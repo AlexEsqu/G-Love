@@ -49,6 +49,7 @@ extern uint8_t				g_touch_debounce;
 #elif defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
 extern t_sensor_data		g_sensor;
 extern uint8_t				g_len_packet;
+extern glove_directive_t	g_directive;	// last directive from the atm2561 (atm328p.c)
 #endif
 extern volatile uint16_t	g_i2C_state;
 //adc.c

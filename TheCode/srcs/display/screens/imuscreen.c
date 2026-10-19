@@ -43,7 +43,8 @@ void		on_touch_on_imuscreen()
 
 	if (is_top_quarter_of_screen(row, col))
 	{
-		; // TO-DO: plug cmd here for calibration
+		// ask the 328P to reset and calibrate the IMU (sent by send_g_love_directive)
+		g_love_directive.command = GLOVE_CMD_IMU_RESET;
 		// gc9a01_send_square(col, row, RGB16_BIO_GLOW, 4); // for sanity, to remove
 	}
 
