@@ -89,6 +89,7 @@ typedef struct {
 #include "images/font.h"
 #include "images/flexscreen.h"
 #include "images/homescreen.h"
+#include "images/comscreen.h"
 
 
 typedef enum {
@@ -136,6 +137,18 @@ typedef enum {
 	RGB16_NEO_VIOLET   = 0x4810,
 	RGB16_CYBER_PULSE  = 0x8013,
 	RGB16_LASER_ORCHID = 0xB81C,
+
+	RGB16_ABYSS_SHADOW = 0x0008, // Near-black oceanic floor base (#000040)
+	RGB16_OCEAN_BEACON = 0x043A, // Crisp marine-blue readout text (#0084D0)
+
+	RGB16_COBALT_DARK  = 0x00CD, // Rich, low-light raw cobalt grid (#0019A8)
+	RGB16_COBALT_FLARE = 0x247F, // Searing, heavily saturated electric blue (#208FFF)
+
+	RGB16_DEEP_CYAN    = 0x018D, // Dark teal/cyan component background (#00316A)
+	RGB16_BIO_GLOW     = 0x57FF, // Radiant, ice-tinted biological cyan (#5FFFFF)
+
+	RGB16_GLACIER_DEEP = 0x0A50, // Muted, frosted slate-blue divider line (#0A4A80)
+	RGB16_FROST_LIGHT  = 0xCE7F, // Piercing silver-blue bright highlight (#CCEFFF)
 
 	// Favorite: RGB16_ALIVE_AMBER RGB16_CYBER_PULSE
 

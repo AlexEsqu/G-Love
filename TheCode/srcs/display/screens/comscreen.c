@@ -41,23 +41,23 @@ uint16_t get_color_from_comscreen(uint16_t row, uint16_t col)
 
 	if (is_comframe(row, col))
 	{
-		color = RGB16_BLACK; // X-spokes and outer border
+		color = RGB16_BLACK;
 	}
 	else if (is_in_top_quarter(row, col))
 	{
-		color = RGB16_GOLD;
+		return(is_in_mask(row, col, &comscreen_image) ? RGB16_LAPIS_CORE : RGB16_LAPIS_SHADOW);
 	}
 	else if (is_in_right_quarter(row, col))
 	{
-		color = RGB16_GRAY;
+		return(is_in_mask(row, col, &comscreen_image) ? RGB16_DEEP_CYAN : RGB16_ABYSS_SHADOW);
 	}
 	else if (is_in_bottom_quarter(row, col))
 	{
-		color = RGB16_NAVY;
+		return(is_in_mask(row, col, &comscreen_image) ? RGB16_GLACIER_DEEP : RGB16_COBALT_DARK);
 	}
 	else if (is_in_left_quarter(row, col))
 	{
-		color = RGB16_PURPLE; // Fourth region for the left triangle wedge
+		return(is_in_mask(row, col, &comscreen_image) ? RGB16_FROST_LIGHT : RGB16_GLACIER_DEEP);
 	}
 
 	return color;
@@ -71,7 +71,7 @@ void		print_comscreen_text(void)
 	putstr_screen(20, 120, "mode", RGB16_BLACK, FONT_SIZE_MID);
 
 	// print_touch_info(&g_last_touch);
-	print_nav_info(RGB16_BLACK);
+	// print_nav_info(RGB16_BLACK);
 }
 
 void		on_touch_on_comscreen()
