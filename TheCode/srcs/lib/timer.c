@@ -89,7 +89,7 @@ void	stopTouchDebounce()
 
 void	concludeTouchDebounce()
 {
-	onTouch();
+	g_last_touch.is_pending = 1;
 	stopTouchDebounce();
 }
 

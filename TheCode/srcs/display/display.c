@@ -178,7 +178,7 @@ void	refresh_screen()
 		display_screen();
 		last_mode = g_touchscreen_mode;
 	}
-	else if (g_screens[g_touchscreen_mode].frame_count >= g_animation_frame)
+	else if (g_screens[g_touchscreen_mode].frame_count > g_animation_frame)
 	{
 		static uint8_t	last_frame = 0;
 		if ((last_frame != g_animation_frame))

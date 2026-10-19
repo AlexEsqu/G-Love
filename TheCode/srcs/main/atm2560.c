@@ -20,7 +20,7 @@ tft_touch_info_t	g_last_touch = {
 	.last_action = TFT_ACTION_NONE,
 	.rgb565 = 0x00,
 	.rgb888 = 0x0000,
-	.has_displayed = 0,
+	.is_pending = 0,
 };
 
 ISR(USART1_RX_vect)
@@ -142,8 +142,12 @@ int main_ATM2560()
 
 	while (1)
 	{
+		if (g_last_touch.is_pending)
+		{
+			g_last_touch.is_pending = 0;
+			onTouch();
+		}
 		refresh_screen();
-		// onTouch();
 
 		while (get_next_byte(&byte))
 		{

@@ -82,7 +82,7 @@ typedef struct {
 	tft_action_t	last_action;
 	uint16_t		rgb565;
 	uint32_t		rgb888;
-	uint8_t			has_displayed;
+	uint8_t			is_pending;
 } tft_touch_info_t;
 
 #include "images/hand.h"
